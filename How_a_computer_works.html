@@ -6,18 +6,18 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Filesystems, how a computer works and the command line | SEPwC  documentation</title>
+<title>How a computer works | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.9297a650d9dd3016d913.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="Week_2.html" rel="next" title="The basics of code"/>
+<link href="Licences.html" rel="next" title="Software licences"/>
 <link href="Expectations.html" rel="prev" title="Expectations"/>
 </head>
 <body class="antialiased text-gray scroll-smooth">
 <div class="min-h-screen xl:h-screen flex flex-col xl:grid xl:grid-layout print:block print:h-auto" data-action="keydown@window-&gt;search#focus " data-controller="sidebar search " id="page">
-<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#filesystems-how-a-computer-works-and-the-command-line" title="Skip navigation links">Skip to content</a>
+<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#how-a-computer-works" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 fixed w-full top-0 print:hidden">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -41,7 +41,7 @@
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#assessment">Assessment</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Filesystems, how a computer works and the command line</a></div><ul>
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">How a computer works</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="#filesystems">Filesystems</a></div><ul>
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#windows">Windows</a></div></li>
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#linux">Linux</a></div></li>
@@ -59,26 +59,45 @@
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#more-basic-command-line-functions">More basic command line functions</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="#software-licences">Software licences</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#copyleft">Copyleft</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#permissive">Permissive</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html">Software licences</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#copyleft">Copyleft</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#permissive">Permissive</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_2.html">The basics of code</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_3.html">Moving from spreadsheets to data</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_3.html#revision-control-with-git">Revision control with Git</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_4.html">Python and R: the basics</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_5.html">Solving issues and debugging</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_5.html#testing-code">Testing code</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_5.html#software-development">Software development</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_6.html">Python and R: part 2</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html">Mini-courses</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html#gis-r">GIS - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html#gis-python">GIS - Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html#stats-r">Stats - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html#graphs-r">Graphs - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Week_7.html#graphs-python">Graphs - Python</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html">The basics of code</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#some-terminology">Some terminology</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#defining-a-variable">Defining a variable</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#how-do-you-decide-a-good-variable-name">How do you decide a good variable name?</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#datatypes">Datatypes</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#operations">Operations</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#outputs">Outputs</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#inputs">Inputs</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#loops">Loops</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#conditionals">Conditionals</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#functions">Functions</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html">Thinking like a computer</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#making-a-jam-sandwich">Making a jam sandwich</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html">Revision control with Git</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Testing_code.html">Testing code</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Software_development.html">Software development</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python2.html">Python and R: part 2</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python3.html">Python or R 3</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html">Mini-courses</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-r">GIS - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-python">GIS - Python</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#stats-r">Stats - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-r">Graphs - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-python">Graphs - Python</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html">Assessments</a></div><ul>
@@ -96,11 +115,11 @@
 </aside>
 <main class="px-4 pt-14 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col flex-1 h-full mx-0 md:mx-auto xl:mr-0"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Filesystems, how a computer works and the command line</span>
+<span class="mr-1">/</span><span aria-current="page">How a computer works</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="filesystems-how-a-computer-works-and-the-command-line">
-<h1>Filesystems, how a computer works and the command line<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#filesystems-how-a-computer-works-and-the-command-line">¶</a></h1>
+<section id="how-a-computer-works">
+<h1>How a computer works<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#how-a-computer-works">¶</a></h1>
 <p>Computers have been around since the 1940’s. The first computers were
 mechanical; using valves to store and process information. By the 60’s and 70’s they
 had moved to silicon transistors; tiny gates that store a 1 or 0 (on or off). A modern
@@ -128,7 +147,7 @@ you can then log on and start using it. There is a lot of jargon around compters
 as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
 <section id="filesystems">
-<h2>Filesystems<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#filesystems">¶</a></h2>
+<h2>Filesystems<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#filesystems">¶</a></h2>
 <p>Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
@@ -140,19 +159,15 @@ ext4 or similar.</p>
 <p>The OS then stores files on its filesystem. Each OS has different characteristics and ways of
 storing your files. This we do care about. We’ll go through each OS in turn.</p>
 <section id="windows">
-<h3>Windows<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#windows">¶</a></h3>
+<h3>Windows<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#windows">¶</a></h3>
 <p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
-<p>Exercise: Why C:? What’s wrong with A? Google and find out.
-.. note:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">default</span></div>
-<div class="highlight"><pre><code><span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">dropdown</span>
-
-<span class="n">A</span><span class="p">:</span> <span class="ow">and</span> <span class="n">B</span><span class="p">:</span> <span class="n">were</span> <span class="n">reserved</span> <span class="k">for</span> <span class="n">floppy</span> <span class="n">disks</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">what</span> <span class="n">MSDOS</span> <span class="n">computers</span> <span class="n">generally</span> <span class="n">had</span><span class="o">.</span>
-</code></pre></div></div>
+<p>Exercise: Why C:? What’s wrong with A? Google and find out.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p>A: and B: were reserved for floppy disks, which is what MSDOS computers generally had.</p>
+</div>
 <p>From the drive, folders are seperated with a ‘' symbol. Software is generally installed
 in <code class="docutils literal notranslate">C:\Program Files</code> (or <code class="docutils literal notranslate">C:\Program Files (x86)</code> for older software). Your documents are
 in a <em>magic</em> folder called <code class="docutils literal notranslate">Documents</code>. It’s possible to get this to point to network drives or
@@ -162,7 +177,7 @@ to your local hard drive. However, a <em>standard</em> Windows 11 machine will h
 it’s in <code class="docutils literal notranslate">Documents</code>; we need a full path (see later).</p>
 </section>
 <section id="linux">
-<h3>Linux<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#linux">¶</a></h3>
+<h3>Linux<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#linux">¶</a></h3>
 <p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate">/</code> (note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate">\etc</code>, <code class="docutils literal notranslate">\bin</code>
 <code class="docutils literal notranslate">\var</code>, etc. This contain the system files. One directory is called <code class="docutils literal notranslate">\home</code>. This is where user files live. Within
@@ -173,7 +188,7 @@ folder. Temporary drives will be mounted into <code class="docutils literal notr
 a different file to <code class="docutils literal notranslate">bob.txt</code></p>
 </section>
 <section id="macos">
-<h3>MacOS<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#macos">¶</a></h3>
+<h3>MacOS<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#macos">¶</a></h3>
 <p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate">\Users</code> rather than <code class="docutils literal notranslate">\home</code>. Applications are stored <code class="docutils literal notranslate">\Applications</code>, but there
@@ -181,25 +196,29 @@ are some binaries (i.e. programmes) in <code class="docutils literal notranslate
 <p>Like Linux, MacOS is case sensitive.</p>
 </section>
 <section id="exercises">
-<h3>Exercises<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#exercises">¶</a></h3>
+<h3>Exercises<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#exercises">¶</a></h3>
+<p><a class="reference external" href="https://github.com/kai687/sphinxawesome-theme/issues/939" rel="nofollow noopener">https://github.com/kai687/sphinxawesome-theme/issues/939<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
-<p>Mac only: <a class="reference internal" href="_images/Apple_logo.png"><img alt="mac" class="align-middle" src="_images/Apple_logo.png" style="height: 12px;"/></a></p>
-<p>Linux only: <a class="reference internal" href="_images/Linux_logo.png"><img alt="linux" class="align-middle" src="_images/Linux_logo.png" style="height: 12px;"/></a></p>
-<p>Windows only: <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a></p>
-<p>Mac and Linux:  <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></p>
-<p>All OSes: <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" class="align-middle" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference internal" href="_images/Apple_logo.png"><img alt="mac" src="_images/Apple_logo.png" style="height: 12px;"/></a> Mac only</p>
+<p>Linux only: <a class="reference internal" href="_images/Linux_logo.png"><img alt="linux" src="_images/Linux_logo.png" style="height: 12px;"/></a></p>
+<p>Windows only: <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a></p>
+<p>Mac and Linux:  <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></p>
+<p>All OSes: <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a></p>
+</div>
 </section>
 </section>
 <section id="navigating-a-filesystem">
-<h2>Navigating a filesystem<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#navigating-a-filesystem">¶</a></h2>
+<h2>Navigating a filesystem<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#navigating-a-filesystem">¶</a></h2>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
 <p>The first is to list which directory you are in.</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">pwd</code></p>
 <p>which stand for “present working directory”. On Windows, you use a different command:</p>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">cd</code></p>
 <p>which actually stands for “change directory” (more on that later), but without any arguments (see later)
 prints the current directory.</p>
@@ -207,29 +226,29 @@ prints the current directory.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span>
-<span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id3">¶</a></div>
+<span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id3">¶</a></div>
 <div class="highlight"><pre><code>$ <span class="nb">pwd</span>
 /home/jh1889/work/teaching/SEPwC/source
 </code></pre></div></div>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bat</span>
-<span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id4">¶</a></div>
+<span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id4">¶</a></div>
 <div class="highlight"><pre><code><span class="p">&gt;</span> cd
 C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </code></pre></div></div>
 <p>So now you know where you are on a command line. What’s there? For this we need to list the directory.
 The command for that is:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">ls</code></p>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">dir</code></p>
 <p>You see a list of files. Depending on the system details that might give you different colours
 for directories and files, or be monochrome. The <code class="docutils literal notranslate">$</code> and <code class="docutils literal notranslate">&gt;</code> symbols are prompts; do not type them!</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span>
-<span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id5">¶</a></div>
+<span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id5">¶</a></div>
 <div class="highlight"><pre><code>$ ls
 Assessments.rst  Expectations.rst  Week_1.rst  Week_3.rst  Week_5.rst  Week_7.rst  ytemplates
 conf.py          index.rst         Week_2.rst  Week_4.rst  Week_6.rst  ystatic
@@ -237,7 +256,7 @@ conf.py          index.rst         Week_2.rst  Week_4.rst  Week_6.rst  ystatic
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bat</span>
-<span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id6">¶</a></div>
+<span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id6">¶</a></div>
 <div class="highlight"><pre><code><span class="p">&gt;</span> dir
   Volume in drive C has no label.
   Volume Serial Number is F204-1461
@@ -260,31 +279,31 @@ conf.py          index.rst         Week_2.rst  Week_4.rst  Week_6.rst  ystatic
 </code></pre></div></div>
 <p>We can now see where you are, what’s in thet directory; what about moving into a new directory? For that we use the
 change directory command:</p>
-<p><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" class="align-middle" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">cd</code></p>
 <p>We saw this already for Windows, but we need to give an argument (this is the directory we want to move into).</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">python</span>
-<span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" class="align-middle" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id7">¶</a></div>
+<span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id7">¶</a></div>
 <div class="highlight"><pre><code><span class="n">cd</span> <span class="n">ystatic</span>
 <span class="n">ls</span>
 </code></pre></div></div>
 <p>Great! We can now navigate down the filesystem. What about going up a directory?</p>
 </section>
 <section id="absolute-vs-relative-paths">
-<h2>Absolute vs Relative paths<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#absolute-vs-relative-paths">¶</a></h2>
+<h2>Absolute vs Relative paths<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#absolute-vs-relative-paths">¶</a></h2>
 <p>Most of the filepaths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate">C:</code> or <code class="docutils literal notranslate">/</code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
 paths. These are paths that start from where you curently are (be that in the command line or running
 a programme).</p>
 <p>Let’s do an example. Here’s an absolute path:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">/home/jon/my_exicting_project/data/very_important_data.csv</code></p>
 <p>This is in a directory structure like:</p>
 <p>[add image]</p>
 <p>Now let’s cd into the scripts folder</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">cd /home/jon/my_exciting_project/scripts</code></p>
 <p>The data (<em>very_important_data.csv</em>) is one directory up (now in <code class="docutils literal notranslate">my_exciting_project</code>) and then into data.
 So relative to scripts, that’s <code class="docutils literal notranslate">../data/very_important_data.csv</code></p>
@@ -302,7 +321,7 @@ from the internet) saving all this hassle.</p>
 you need to know the difference between relative and absolute paths.</p>
 </section>
 <section id="from-source-code-to-programme">
-<h2>From source code to programme<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#from-source-code-to-programme">¶</a></h2>
+<h2>From source code to programme<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#from-source-code-to-programme">¶</a></h2>
 <p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
 Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
 computer can do billions of these every second (this is the clock speed). The moving of
@@ -314,7 +333,7 @@ This is an example of assembler code for an x86 processor (i.e. what you probabl
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">python</span>
-<span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id8">¶</a></div>
+<span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id8">¶</a></div>
 <div class="highlight"><pre><code> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -357,7 +376,7 @@ come in two broad types: <cite>compiled</cite> and <cite>interpretated</cite>. C
 process to be turned into a programme. Interpreted languages do not, and can be run (executed)
 immediately</p>
 <section id="compiled-languages">
-<h3>Compiled languages<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#compiled-languages">¶</a></h3>
+<h3>Compiled languages<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#compiled-languages">¶</a></h3>
 <p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
 written in those kind of languages. Note the user does not need the source code.
@@ -365,7 +384,7 @@ Languagaes like Java are also compiled but at the time of execution
 (called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
 </section>
 <section id="interpreted-languages">
-<h3>Interpreted languages<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#interpreted-languages">¶</a></h3>
+<h3>Interpreted languages<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#interpreted-languages">¶</a></h3>
 <p>In contract interprested languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
 You therefore need another user to have the python ecutable their system to be able to run your code. The user
@@ -385,7 +404,7 @@ as the interpreter cannot optimise as well as a seperate compiler.</p>
 </section>
 </section>
 <section id="more-basic-command-line-functions">
-<h2>More basic command line functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#more-basic-command-line-functions">¶</a></h2>
+<h2>More basic command line functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#more-basic-command-line-functions">¶</a></h2>
 <p>You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
 <p>The Command Line Interface (CLI) is a powerful way of interating with a computer. Imagine
@@ -394,7 +413,7 @@ name somewhere else. In the GUI, this could take a while. In the command line it
 command.</p>
 <p>CLIs work by running the command you type, plus the arguments you give it. Arguments can be
 mandatory or optional (and therfore called options). A typical command might look like:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate">cp -r my_dir my_dir2</code></p>
 <p>This copies (<code class="docutils literal notranslate">cp</code>) <code class="docutils literal notranslate">my_dir</code> to <code class="docutils literal notranslate">my_dir2</code> recursively <code class="docutils literal notranslate">-r</code>. The two
 directory names are mandatory arguments. The <code class="docutils literal notranslate">-r</code> is optional.</p>
@@ -411,7 +430,7 @@ Linux <code class="docutils literal notranslate">-h</code> or <code class="docut
 the OS, so on Windows <code class="docutils literal notranslate">help copy</code> will display the manual page for the <code class="docutils literal notranslate">copy</code>
 command. On MacOS/Linux <code class="docutils literal notranslate">man cp</code> will do the same.</p>
 <p>So what are the basic commands you should know? Here’s a list:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" class="align-middle" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></p>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>mv</p></li>
@@ -423,7 +442,7 @@ command. On MacOS/Linux <code class="docutils literal notranslate">man cp</code>
 <li><p>rmdir</p></li>
 </ul>
 </div></blockquote>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" class="align-middle" src="_images/Windows_logo.png" style="height: 12px;"/></a></p>
+<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;"/></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>ren</p></li>
@@ -439,76 +458,6 @@ command. On MacOS/Linux <code class="docutils literal notranslate">man cp</code>
 <p class="admonition-title">Attention</p>
 <p><code class="docutils literal notranslate">rm</code>, <code class="docutils literal notranslate">del</code>, and <code class="docutils literal notranslate">rmdir</code> delete files premenantly. They do <em>not</em> move the into Trash or similar.</p>
 </div>
-</section>
-</section>
-<section id="software-licences">
-<h1>Software licences<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#software-licences">¶</a></h1>
-<p>Software needs a licence which tells your users or other developers what they are allowed
-to do with it. Most software you’ve heard of is commercial (Word, Windows, MacOs,
-Adobe Reader, Corel Draw, Photoshop, etc). You pay a fee and have access to the
-executable code for a year or forever, for example. Some software is free (i.e. you
-don’t pay to use it) but not open (you can’t see the source code, nor give it
-to someone else). All of the conditions are laid out in the “Terms and Conditions”
-which are displayed when you install the software (and that no-one ever reads despite
-ticking the little box to say you read them…)</p>
-<p>A lot of research software is free in all senses of the word. You don’t pay and
-you can see the source code, take it for yourself, edit it and re-release it. This
-type of software is called <em>open source</em>. Not only can you use it for free, you can also
-modify it.</p>
-<p>There are two things in law we have to worry about: copyright and licence. Copyright
-is granted to the writer of the software (or book, or photograph, etc). If you
-create something you own the copyright. You don’t have to do anything to get copyright,
-except be the author or creator of the content. Authors generally place a copyright
-notice on the work though, so something like:</p>
-<p>Copyright lasts for 50 years and protects the author from someone stealing their work.
-This page has a simple explination of UK copyright law. [<a class="reference external" href="https://www.gov.uk/copyright#:~:text=You%20get%20copyright%20protection%20automatically,work%2C%20including%20illustration%20and%20photography" rel="nofollow noopener">https://www.gov.uk/copyright#:~:text=You%20get%20copyright%20protection%20automatically,work%2C%20including%20illustration%20and%20photography<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>]</p>
-<p>Separately, licences tell you what you can do with some code (or image, or text). For
-commerical software, the lincence will tell you you cannot resell, give away, etc
-the software you have bought. Similarly, for open-source software the licence tells
-you what you can do with the source code, including modifying and re-releasing and under
-what conditions.</p>
-<p>There are two main types of licences: copyleft and permissive. Within those are a whole
-bunch of different licences, but let’s focus on the two main types first.</p>
-<section id="copyleft">
-<h2>Copyleft<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copyleft">¶</a></h2>
-<p>Copyleft licences (a pun on copyright, geddit?) mean you can take
-source-code, modify it, but can only re-release on a similar licence. For example,
-you could not take copyleft code, create a commercial application, then sell it.
-That would breach the licence terms. Most copyleft licneces specify the
-source code most be available under a similar copyleft licence.</p>
-<p>Common copyleft licences are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>GNU Public Licence (GPL)</p></li>
-<li><p>Mozilla public licence (MPL)</p></li>
-<li><p>LGPL (Lesser GPL); though this has some permissive terms too</p></li>
-<li><p>Creative Commons, Sahrealike (CC-SA)</p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="permissive">
-<h2>Permissive<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#permissive">¶</a></h2>
-<p>Permissive licences are much less restrictive. They impose little or no restrictions
-on what you can do if you modify code. They can either be completely open (i.e. do whatever you want!)
-or impose some restrictions, e.g. citations.</p>
-<p>Common permissive licences include:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Apache</p></li>
-<li><p>Berkley Source Distribution (BSD)</p></li>
-<li><p>MIT</p></li>
-</ul>
-</div></blockquote>
-<p>Exercise: write down basic terms for 2 permissive and 2 copyleft licences. Use wikipedia.</p>
-</section>
-<section id="adding-a-licence-to-your-code">
-<h2>Adding a licence to your code<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-a-licence-to-your-code">¶</a></h2>
-<p>If you write any code that is to be used by others you should always add a
-copyright notice and a licence. This protects you and the person using it.
-Try and get in the habit of writing both of these in your code, so something like:
-Copyright © 2023 by Jon Hill. CC-BY-SA.</p>
-<p>You then include the full licence in your distribution.</p>
-<p>Exercise: find the liecence type for some popular software</p>
 </section>
 </section>
 </article>
