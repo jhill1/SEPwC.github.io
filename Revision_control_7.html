@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Github | SEPwC  documentation</title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
+<link href="_static/togglebutton.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+</head>
+<body class="antialiased text-gray">
+<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#github" title="Skip navigation links">Skip to content</a>
+<header class="grid-area-header z-10 h-14 sm:h-18">
+<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
+<button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
+<span class="sr-only">Open navigation menu</span>
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 sm:leading-18 tracking-wider">SEPwC  documentation</span>
+</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 sm:leading-18 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
+<button aria-label="Get search results" class="text-inherit h-14 w-14 sm:h-18 sm:w-18" tabindex="-1">
+<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
+</form></div>
+</div>
+</header>
+<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
+<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
+<div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html">Expectations</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#what-we-expect-from-you">What we expect from you</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#assessment">Assessment</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html">How a computer works</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#filesystems">Filesystems</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#windows">Windows</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#linux">Linux</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#macos">MacOS</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#exercises">Exercises</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#navigating-a-filesystem">Navigating a filesystem</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#absolute-vs-relative-paths">Absolute vs Relative paths</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#from-source-code-to-programme">From source code to programme</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#compiled-languages">Compiled languages</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#interpreted-languages">Interpreted languages</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#more-basic-command-line-functions">More basic command line functions</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html">Software licences</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#copyleft">Copyleft</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#permissive">Permissive</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html">The fundementals of code</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#some-terminology">Some terminology</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#defining-a-variable">Defining a variable</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#how-do-you-decide-a-good-variable-name">How do you decide a good variable name?</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#datatypes">Datatypes</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#operations">Operations</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#outputs">Outputs</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#inputs">Inputs</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#loops">Loops</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#conditionals">Conditionals</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#functions">Functions</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html">Thinking like a computer</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#create-a-word-cloud">Create a word cloud</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#making-a-jam-sandwich">Making a jam sandwich</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#plotting-a-graph-with-options">Plotting a graph with options</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html">Revision control with Git</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#introduction">Introduction</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#setting-up-git">Setting up git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#our-first-repository">Our first repository</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#adding-files">Adding files</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#git-history">Git history</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ignoring-files">Ignoring files</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#id1">Github</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#creating-a-remote-repository">1. Creating a remote repository</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#connect-local-to-remote-repository">2. Connect local to remote repository</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ssh-background-and-setup">3. SSH Background and Setup</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-python">Intro to Python</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-r">Intro to R</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Testing_code.html">Testing code</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Software_development.html">Software development</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python2.html">Python and R: part 2</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python3.html">Python or R 3</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html">Mini-courses</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-r">GIS - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-python">GIS - Python</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#stats-r">Stats - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-r">Graphs - R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-python">Graphs - Python</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html">Assessments</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-1-something">Assessment 1: something</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-2-something-else">Assessment 2: something else</a></div></li>
+</ul>
+</li>
+</ul>
+</div>
+<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="" title="Close navigation menu">
+<span class="sr-only">Close navigation menu</span>
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</aside>
+<main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
+<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
+<span class="mr-1">/</span><span aria-current="page">Github</span>
+</nav>
+<article class="flex-1" role="main">
+<section id="github">
+<h1>Github<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#github">¶</a></h1>
+<p>Version control really comes into its own when we begin to collaborate with
+other people.  We already have most of the machinery we need to do this; the
+only thing missing is to copy changes from one repository to another.</p>
+<p>Systems like Git allow us to move work between any two repositories.  In
+practice, though, it’s easiest to use one copy as a central hub, and to keep it
+on the web rather than on someone’s laptop.  Most programmers use hosting
+services like <a class="reference external" href="https://github.com" rel="nofollow noopener">GitHub<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, <a class="reference external" href="https://bitbucket.org" rel="nofollow noopener">Bitbucket<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> or
+<a class="reference external" href="https://gitlab.com/" rel="nofollow noopener">GitLab<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> to hold those main copies; we’ll explore the pros
+and cons of this in a later episode.</p>
+<p>Let’s start by sharing the changes we’ve made to our current project with the
+world. To this end we are going to create a <em>remote</em> repository that will be
+linked to our <em>local</em> repository.</p>
+<section id="creating-a-remote-repository">
+<h2>1. Creating a remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#creating-a-remote-repository">¶</a></h2>
+<p>Log in to <a class="reference external" href="https://github.com" rel="nofollow noopener">GitHub<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, then click on the icon in the top right corner to
+create a new repository called <code class="docutils literal notranslate">planets</code>:</p>
+<a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Name your repository “planets” and then click “Create Repository”.</p>
+<p>Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
+“Initialize this repository with a README” unchecked, and keep “None” as options for both “Add
+.gitignore” and “Add a license.” See the “GitHub License and README files” exercise below for a full
+explanation of why the repository needs to be empty.</p>
+<a class="reference external image-reference" href="../images/github-create-repo-02.png"><img alt="Creating a Repository on GitHub (Step 2)" src="_images/github-create-repo-02.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>As soon as the repository is created, GitHub displays a page with a URL and some
+information on how to configure your local repository:</p>
+<a class="reference external image-reference" href="../images/github-create-repo-03.png"><img alt="Creating a Repository on GitHub (Step 3)" src="_images/github-create-repo-03.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>This effectively does the following on GitHub’s servers:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>mkdir<span class="w"> </span>planets
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>planets
+$<span class="w"> </span>git<span class="w"> </span>init
+</code></pre></div></div>
+<p>If you remember back to the earlier <a class="reference external" href="../04-changes/" rel="nofollow noopener">episode<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> where we added and
+committed our earlier work on <code class="docutils literal notranslate">mars.txt</code>, we had a diagram of the local repository
+which looked like this:</p>
+<a class="reference external image-reference" href="../images/git-staging-area.png"><img alt="The Local Repository with Git Staging Area" src="_images/git-staging-area.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Now that we have two repositories, we need a diagram like this:</p>
+<a class="reference external image-reference" href="../images/git-freshly-made-github-repo.png"><img alt="Freshly-Made GitHub Repository" src="_images/git-freshly-made-github-repo.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Note that our local repository still contains our earlier work on <code class="docutils literal notranslate">mars.txt</code>, but the
+remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
+</section>
+<section id="connect-local-to-remote-repository">
+<h2>2. Connect local to remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#connect-local-to-remote-repository">¶</a></h2>
+<p>Now we connect the two repositories.  We do this by making the
+GitHub repository a remote for the local repository.
+The home page of the repository on GitHub includes the URL string we need to
+identify it:</p>
+<a class="reference external image-reference" href="../images/github-find-repo-string.png"><img alt="Where to Find Repository URL on GitHub" src="_images/github-find-repo-string.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Click on the ‘SSH’ link to change the protocol from HTTPS to SSH.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>HTTPS vs. SSH</strong></p>
+<p>We use SSH here because, while it requires some additional configuration, it is a
+security protocol widely used by many applications.  The steps below describe SSH at a
+minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup
+and concepts of SSH and key pairs, and other material supplemental to git related SSH.</p>
+</div>
+<a class="reference external image-reference" href="../images/github-change-repo-string.png"><img alt="Changing the Repository URL on GitHub" src="_images/github-change-repo-string.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Copy that URL from the browser, go into the local <code class="docutils literal notranslate">planets</code> repository, and run
+this command:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:jh1889/planets.git
+</code></pre></div></div>
+<p>Make sure to use the URL for your repository rather than mine: the only
+difference should be your username instead of <code class="docutils literal notranslate">jh1889</code>.</p>
+<p><code class="docutils literal notranslate">origin</code> is a local name used to refer to the remote repository. It could be called
+anything, but <code class="docutils literal notranslate">origin</code> is a convention that is often used by default in git
+and GitHub, so it’s helpful to stick with this unless there’s a reason not to.</p>
+<p>We can check that the command has worked by running <code class="docutils literal notranslate">git remote -v</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">origin   git@github.com:vlad/planets.git (fetch)</span>
+<span class="go">origin   git@github.com:vlad/planets.git (push)</span>
+</code></pre></div></div>
+<p>We’ll discuss remotes in more detail in the next section, while
+talking about how they might be used for collaboration.</p>
+</section>
+<section id="ssh-background-and-setup">
+<h2>3. SSH Background and Setup<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ssh-background-and-setup">¶</a></h2>
+<p>Before I can connect to a remote repository, I need to set up a way for his computer to
+authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
+<p>We are going to set up the method that is commonly used by many different services to authenticate
+access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic
+network protocol that allows secure communication between computers using an otherwise insecure network.</p>
+<p>SSH uses what is called a key pair. This is two keys that work together to validate access. One key is
+publicly known and called the public key, and the other key called the private key is kept private.
+Very descriptive names.</p>
+<p>You can think of the public key as a padlock, and only you have the key (the private key) to open it.
+You use the public key where you want a secure method of communication, such as your GitHub account.
+You give this padlock, or public key, to GitHub and say “lock the communications to my account with this
+so that only computers that have my private key can unlock communications and send git commands as my GitHub account.”</p>
+<p>What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.</p>
+<p>The first thing we are going to do is check if this has already been done on the computer you’re on.
+Because generally speaking, this setup only needs to happen once and then you can forget about it.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Keeping your keys secure</strong></p>
+<p>You shouldn’t really forget about your SSH keys, since they keep your account secure. It’s good
+practice to audit your secure shell keys every so often. Especially if you are using multiple
+computers to access your account.</p>
+</div>
+<p>We will run the list command to check what key pairs already exist on your computer.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ls<span class="w"> </span>-al<span class="w"> </span>~/.ssh
+</code></pre></div></div>
+<p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.</p>
+<p>Our user has not set up SSH on his computer, so their output is</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">ls: cannot access '/c/Users/jh1889/.ssh': No such file or directory</span>
+</code></pre></div></div>
+<p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed.
+The file names are either <code class="docutils literal notranslate">id_ed25519</code>/<code class="docutils literal notranslate">id_ed25519.pub</code> or <code class="docutils literal notranslate">id_rsa</code>/<code class="docutils literal notranslate">id_rsa.pub</code>
+depending on how the key pairs were set up.</p>
+<p>Since they don’t exist on this computer, we will use this command to create them.</p>
+<section id="create-an-ssh-key-pair">
+<h3>3.1 Create an SSH key pair<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#create-an-ssh-key-pair">¶</a></h3>
+<p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate">-t</code> option specifies which type of
+algorithm to use and <code class="docutils literal notranslate">-C</code> attaches a comment to the key (here, our email):</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
+</code></pre></div></div>
+<p>If you are using a legacy system that doesn’t support the Ed25519 algorithm, use:
+<code class="docutils literal notranslate">$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Generating public/private ed25519 key pair.</span>
+<span class="go">Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):</span>
+</code></pre></div></div>
+<p>We want to use the default file, so just press :kbd: <cite>Enter</cite>.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Created directory '/c/Users/jh1889/.ssh'.</span>
+<span class="go">Enter passphrase (empty for no passphrase):</span>
+</code></pre></div></div>
+<p>Now, it is prompting us for a passphrase.  Since we are using computers that other people sometimes have access to,
+we want to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere,
+as there is no “reset my password” option.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enter same passphrase again:</span>
+</code></pre></div></div>
+<p>After entering the same passphrase a second time, we receive the confirmation</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Your identification has been saved in /c/Users/jh1889/.ssh/id_ed25519</span>
+<span class="go">Your public key has been saved in /c/Users/jh1889/.ssh/id_ed25519.pub</span>
+<span class="go">The key fingerprint is:</span>
+<span class="go">SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o jon.hill@york.ac.uk</span>
+<span class="go">The key's randomart image is:</span>
+<span class="go">+--[ED25519 256]--+</span>
+<span class="go">|^B== o.          |</span>
+<span class="go">|%*=.*.+          |</span>
+<span class="go">|+=.E =.+         |</span>
+<span class="go">| .=.+.o..        |</span>
+<span class="go">|....  . S        |</span>
+<span class="go">|.+ o             |</span>
+<span class="go">|+ =              |</span>
+<span class="go">|.o.o             |</span>
+<span class="go">|oo+.             |</span>
+<span class="go">+----[SHA256]-----+</span>
+</code></pre></div></div>
+<p>The “identification” is actually the private key. You should never share it.
+The public key is appropriately named.  The “key fingerprint”
+is a shorter version of a public key.</p>
+<p>Now that we have generated the SSH keys, we will find the SSH files when we check.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ls<span class="w"> </span>-al<span class="w"> </span>~/.ssh
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">drwxr-xr-x 1 jh1889 197121   0 Jul 16 14:48 ./</span>
+<span class="go">drwxr-xr-x 1 jh1889 197121   0 Jul 16 14:48 ../</span>
+<span class="go">-rw-r--r-- 1 jh1889 197121 419 Jul 16 14:48 id_ed25519</span>
+<span class="go">-rw-r--r-- 1 jh1889 197121 106 Jul 16 14:48 id_ed25519.pub</span>
+</code></pre></div></div>
+</section>
+<section id="copy-the-public-key-to-github">
+<h3>3.2 Copy the public key to GitHub<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copy-the-public-key-to-github">¶</a></h3>
+<p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code>The authenticity of host 'github.com (192.30.255.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+</code></pre></div></div>
+<p>Right, we forgot that we need to give GitHub our public key!</p>
+<p>First, we need to copy the public key.  Be sure to include the <code class="docutils literal notranslate">.pub</code> at the end, otherwise you’re looking at the private key.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI jon.hill@york.ac.uk</span>
+</code></pre></div></div>
+<p>Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click “Settings,” then on the
+settings page, click “SSH and GPG keys,” on the left side “Account settings” menu.  Click the “New SSH key” button on the right side. Now,
+you can add the title (Dracula uses the title “Vlad’s Lab Laptop” so he can remember where the original key pair
+files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
+<p>Now that we’ve set that up, let’s check our authentication again from the command line.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Hi Jon! You've successfully authenticated, but GitHub does not provide shell access.</span>
+</code></pre></div></div>
+<p>Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.</p>
+</section>
+</section>
+<section id="push-local-changes-to-a-remote">
+<h2>4. Push local changes to a remote<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#push-local-changes-to-a-remote">¶</a></h2>
+<p>Now that authentication is setup, we can return to the remote. This command will push the changes from
+our local repository to the repository on GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<p>Since we set up a passphrase, it will prompt for it.  If you completed advanced settings for your authentication, it
+will not prompt for a passphrase.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enumerating objects: 16, done.</span>
+<span class="go">Counting objects: 100% (16/16), done.</span>
+<span class="go">Delta compression using up to 8 threads.</span>
+<span class="go">Compressing objects: 100% (11/11), done.</span>
+<span class="go">Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.</span>
+<span class="go">Total 16 (delta 2), reused 0 (delta 0)</span>
+<span class="go">remote: Resolving deltas: 100% (2/2), done.</span>
+<span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go"> * [new branch]      main -&gt; main</span>
+</code></pre></div></div>
+<p>Our local and remote repositories are now in this state:</p>
+<a class="reference external image-reference" href="../images/github-repo-after-first-push.png"><img alt="GitHub Repository After First Push" src="_images/github-repo-after-first-push.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>The ‘-u’ Flag</strong></p>
+<p>You may see a <code class="docutils literal notranslate">-u</code> option used with <code class="docutils literal notranslate">git push</code> in some documentation.  This
+option is synonymous with the <code class="docutils literal notranslate">--set-upstream-to</code> option for the <code class="docutils literal notranslate">git branch</code>
+command, and is used to associate the current branch with a remote branch so
+that the <code class="docutils literal notranslate">git pull</code> command can be used without any arguments. To do this,
+simply use <code class="docutils literal notranslate">git push -u origin main</code> once the remote has been set up.</p>
+</div>
+<p>We can pull changes from the remote repository to the local one as well:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">From https://github.com/vlad/planets</span>
+<span class="go">* branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">Already up-to-date.</span>
+</code></pre></div></div>
+<p>Pulling has no effect in this case because the two repositories are already
+synchronized.  If someone else had pushed some changes to the repository on
+GitHub, though, this command would download them to our local repository.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub GUI</strong></p>
+<p>Browse to your <code class="docutils literal notranslate">planets</code> repository on GitHub.
+Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
+Hover over, and click on, the three buttons to the right of each commit.
+What information can you gather/explore from these buttons?
+How would you get that same information in the shell?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The left-most button (with the picture of a clipboard) copies the full identifier of the commit
+to the clipboard. In the shell, <code class="docutils literal notranslate">git log</code> will show you the full commit identifier for each
+commit.</p>
+<p>When you click on the middle button, you’ll see all of the changes that were made in that
+particular commit. Green shaded lines indicate additions and red ones removals. In the shell we
+can do the same thing with <code class="docutils literal notranslate">git diff</code>. In particular, <code class="docutils literal notranslate">git diff ID1..ID2</code> where ID1 and
+ID2 are commit identifiers (e.g. <code class="docutils literal notranslate">git diff a3bf1e5..041e637</code>) will show the differences
+between those two commits.</p>
+<p>The right-most button lets you view all of the files in the repository at the time of that
+commit. To do this in the shell, we’d need to checkout the repository at that particular time.
+We can do this with <code class="docutils literal notranslate">git checkout ID</code> where ID is the identifier of the commit we want to
+look at. If we do this, we need to remember to put the repository back to the right state
+afterwards!</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Uploading files directly in GitHub browser</strong></p>
+<p>Github also allows you to skip the command line and upload files directly to
+your repository without having to leave the browser. There are two options.
+First you can click the “Upload files” button in the toolbar at the top of the
+file tree. Or, you can drag and drop files from your desktop onto the file
+tree. You can read more about this <a class="reference external" href="https://help.github.com/articles/adding-a-file-to-a-repository/" rel="nofollow noopener">on this GitHub page<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub Timestamp</strong></p>
+<p>Create a remote repository on GitHub. Push the contents of your local
+repository to the remote. Make changes to your local repository and push these
+changes. Go to the repo you just created on GitHub and check the
+timestamps of the files. How does GitHub
+record times, and why?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three
+weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the
+last change to the file occurred.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Push vs. Commit</strong></p>
+<p>In this episode, we introduced the “git push” command.
+How is “git push” different from “git commit”?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>When we push changes, we’re interacting with a remote repository to update it with the changes
+we’ve made locally (often this corresponds to sharing the changes we’ve made with others).
+Commit only updates your local repository.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub License and README files</strong></p>
+<p>In this episode we learned about creating a remote repository on GitHub, but when you initialized
+your GitHub repo, you didn’t add a README.md or a license file. If you had, what do you think
+would have happened when you tried to link your local and remote repositories?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>In this case, we’d see a merge conflict due to unrelated histories. When GitHub creates a
+README.md file, it performs a commit in the remote repository. When you try to pull the remote
+repository to your local repository, Git detects that they have histories that do not share a
+common origin and refuses to merge.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">warning: no common commits</span>
+<span class="go">remote: Enumerating objects: 3, done.</span>
+<span class="go">remote: Counting objects: 100% (3/3), done.</span>
+<span class="go">remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/vlad/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go"> * [new branch]      main     -&gt; origin/main</span>
+<span class="go">fatal: refusing to merge unrelated histories</span>
+</code></pre></div></div>
+<p>You can force git to merge the two repositories with the option <code class="docutils literal notranslate">--allow-unrelated-histories</code>.
+Be careful when you use this option and carefully examine the contents of local and remote
+repositories before merging.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>--allow-unrelated-histories<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">From https://github.com/vlad/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">Merge made by the 'recursive' strategy.</span>
+<span class="go">README.md | 1 +</span>
+<span class="go">1 file changed, 1 insertion(+)</span>
+<span class="go">create mode 100644 README.md</span>
+</code></pre></div></div>
+</div>
+</section>
+</section>
+</article>
+<footer>
+<div class="mt-20 mb-4 text-sm text-gray-700">© 2023, Jon Hill Made with <a href="https://www.sphinx-doc.org">Sphinx 5.3.0</a></div>
+</footer></main>
+<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
+  Clear highlights
+</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+</div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/sphinx_highlight.js"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/theme.3666d2347a4c66e5d7a8.js"></script>
+</body>
+</html>

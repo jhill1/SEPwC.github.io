@@ -5,34 +5,34 @@
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
-<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>Revision control with Git | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
-<link href="_static/theme.9297a650d9dd3016d913.css" rel="stylesheet"/>
+<link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
 <link href="Python.html" rel="next" title="Python and R: the basics"/>
 <link href="Spreadsheets_data.html" rel="prev" title="Moving from spreadsheets to data"/>
 </head>
-<body class="antialiased text-gray scroll-smooth">
-<div class="min-h-screen xl:h-screen flex flex-col xl:grid xl:grid-layout print:block print:h-auto" data-action="keydown@window-&gt;search#focus " data-controller="sidebar search " id="page">
-<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#revision-control-with-git" title="Skip navigation links">Skip to content</a>
-<header class="grid-area-header z-10 h-14 fixed w-full top-0 print:hidden">
+<body class="antialiased text-gray">
+<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#revision-control-with-git" title="Skip navigation links">Skip to content</a>
+<header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
-<button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
+<button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
 <span class="sr-only">Open navigation menu</span>
 <svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-</button><a class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none" href="index.html" title="Back to homepage"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 tracking-wider">SEPwC  documentation</span>
-</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static z-10" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
-<button aria-label="Get search results" class="text-inherit h-14 w-14" tabindex="-1">
+</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 sm:leading-18 tracking-wider">SEPwC  documentation</span>
+</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 sm:leading-18 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
+<button aria-label="Get search results" class="text-inherit h-14 w-14 sm:h-18 sm:w-18" tabindex="-1">
 <svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
 </button>
 <input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
 </form></div>
 </div>
 </header>
-<aside class="grid-area-sidebar h-full fixed pt-14 xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
+<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
 <nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
 <div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
@@ -88,9 +88,19 @@
 </li>
 <li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></div></li>
 <li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Revision control with Git</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#introduction">Introduction</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#setting-up-git">Setting up git</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#our-first-repository">Our first repository</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#adding-files">Adding files</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#git-history">Git history</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#ignoring-files">Ignoring files</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="#id1">Github</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#creating-a-remote-repository">1. Creating a remote repository</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#connect-local-to-remote-repository">2. Connect local to remote repository</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#ssh-background-and-setup">3. SSH Background and Setup</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
@@ -118,19 +128,21 @@
 </li>
 </ul>
 </div>
-<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="sidebar#close" title="Close navigation menu">
+<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="" title="Close navigation menu">
 <span class="sr-only">Close navigation menu</span>
 <svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
 </button>
 </nav>
 </aside>
-<main class="px-4 pt-14 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col flex-1 h-full mx-0 md:mx-auto xl:mr-0"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
+<main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
 <span class="mr-1">/</span><span aria-current="page">Revision control with Git</span>
 </nav>
 <article class="flex-1" role="main">
 <section id="revision-control-with-git">
-<h1>Revision control with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#revision-control-with-git">¶</a></h1>
+<h1>Revision control with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#revision-control-with-git">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#introduction">¶</a></h2>
 <p>We’ll start by exploring how version control can be used to keep track of what one person did and when.
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:</p>
 <img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png"/>
@@ -169,8 +181,7 @@ Tools like <a class="reference external" href="https://en.wikipedia.org/wiki/Rev
 <a class="reference external" href="https://en.wikipedia.org/wiki/Apache_Subversion" rel="nofollow noopener">Subversion<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> have been around since the early 1980s and are used by
 many large companies. However, many of these are now considered legacy systems (i.e., outdated) due to various
 limitations in their capabilities.
-More modern systems, such as Git and [Mercurial](<a class="reference external" href="https://swcarpentry.github.io/hg-novice/" rel="nofollow noopener">https://swcarpentry.github.io/hg-novice/<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>),
-are <em>distributed</em>, meaning that they do not need a centralized server to host the repository.
+More modern systems, such as Git and Mercurial, are <em>distributed</em>, meaning that they do not need a centralized server to host the repository.
 These modern systems also include powerful merging tools that make it possible for
 multiple authors to work on the same files concurrently.</p>
 </div>
@@ -205,8 +216,9 @@ Google Docs or Microsoft Office Online do not fully resolve these
 problems.</p></li>
 </ul>
 </div>
+</section>
 <section id="setting-up-git">
-<h2>Setting up git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#setting-up-git">¶</a></h2>
+<h2>Setting up git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#setting-up-git">¶</a></h2>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:</p>
 <ul class="simple">
@@ -220,8 +232,8 @@ needed for the <code class="docutils literal notranslate">verb</code>. So here i
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git config --global user.name <span class="s2">"Jon Hill"</span>
-git config --global user.email <span class="s2">"jon.hill@york.ac.uk"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Jon Hill"</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
 </code></pre></div></div>
 <p>Please use your own name and email address instead of mine. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
@@ -235,7 +247,7 @@ please review <a class="reference external" href="git-privacy" rel="nofollow noo
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p><em>Line Endings</em></p>
-<p>As with other keys, when you hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or <kbd class="kbd docutils literal notranslate">↵</kbd> or on Macs, <kbd class="kbd docutils literal notranslate">Return</kbd> on your keyboard,
+<p>As with other keys, when you hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or <kbd class="kbd docutils literal notranslate">Return</kbd> on your keyboard,
 your computer encodes this input as a character.
 Different operating systems use different character(s) to represent the end of a line.
 (You may also hear these referred to as newlines or line breaks.)
@@ -250,7 +262,7 @@ On macOS and Linux:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git config --global core.autocrlf input
+<div class="highlight"><pre><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.autocrlf<span class="w"> </span>input
 </code></pre></div></div>
 <p>And on Windows:</p>
 <div class="code-wrapper" data-controller="code">
@@ -260,12 +272,8 @@ On macOS and Linux:</p>
 </code></pre></div></div>
 </div>
 <p>We also need to set our favorite text editor, following this table:</p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Editors and config</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id2">¶</a></caption>
-<colgroup>
-<col style="width: 50%"/>
-<col style="width: 50%"/>
-</colgroup>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Editors and config</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id6">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Editor</p></th>
 <th class="head"><p>Configuration command</p></th>
@@ -324,8 +332,8 @@ On macOS and Linux:</p>
 <p class="admonition-title">Caution</p>
 <p><strong>Exiting Vim</strong></p>
 <p>Note that Vim is the default editor for many programs. If you haven’t used Vim before and wish to exit a session without saving
-your changes, press <kbd class="kbd docutils literal notranslate">Esc</kbd> then type <code class="docutils literal notranslate">:q!</code> and hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or <kbd class="kbd docutils literal notranslate">↵</kbd> or on Macs, <kbd class="kbd docutils literal notranslate">Return</kbd>.
-If you want to save your changes and quit, press <kbd class="kbd docutils literal notranslate">Esc</kbd> then type <code class="docutils literal notranslate">:wq</code> and hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or <kbd class="kbd docutils literal notranslate">↵</kbd> or on Macs, <kbd class="kbd docutils literal notranslate">Return</kbd>.</p>
+your changes, press <kbd class="kbd docutils literal notranslate">Esc</kbd> then type <code class="docutils literal notranslate">:q!</code> and hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or  <kbd class="kbd docutils literal notranslate">Return</kbd>.
+If you want to save your changes and quit, press <kbd class="kbd docutils literal notranslate">Esc</kbd> then type <code class="docutils literal notranslate">:wq</code> and hit <kbd class="kbd docutils literal notranslate">Enter</kbd> or <kbd class="kbd docutils literal notranslate">Return</kbd>.</p>
 </div>
 <p>Git (2.28+) allows configuration of the name of the branch created when you
 initialize any new repository.  We should use that feature to set it to <cite>main</cite> so
@@ -333,7 +341,7 @@ it matches Gihub</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git config --global init.defaultBranch main
+<div class="highlight"><pre><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
 </code></pre></div></div>
 <p>The five commands we just ran above only need to be run once: the flag <cite>–global</cite> tells Git
 to use the settings for every project, in your user account, on this computer.</p>
@@ -341,7 +349,7 @@ to use the settings for every project, in your user account, on this computer.</
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git config --list
+<div class="highlight"><pre><code>git<span class="w"> </span>config<span class="w"> </span>--list
 </code></pre></div></div>
 <p>You can change your configuration as many times as you want: use the
 same commands to choose another editor or update your email address.</p>
@@ -354,20 +362,20 @@ relevant list of options typing <cite>git &lt;command&gt; -h</cite> or access th
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git config -h
-git config --help
+<div class="highlight"><pre><code>git<span class="w"> </span>config<span class="w"> </span>-h
+git<span class="w"> </span>config<span class="w"> </span>--help
 </code></pre></div></div>
 <p>While viewing the manual, remember the <code class="docutils literal notranslate">:</code> is a prompt waiting for commands and you can press <kbd class="kbd docutils literal notranslate">Q</kbd> to exit the manual.
 More generally, you can get the list of available <code class="docutils literal notranslate">git</code> commands and further resources of the Git manual typing:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git <span class="nb">help</span>
+<div class="highlight"><pre><code>git<span class="w"> </span><span class="nb">help</span>
 </code></pre></div></div>
 </div>
 </section>
 <section id="our-first-repository">
-<h2>Our first repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#our-first-repository">¶</a></h2>
+<h2>Our first repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#our-first-repository">¶</a></h2>
 <p>Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
@@ -375,15 +383,15 @@ is possible to send a planetary lander to Mars.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code><span class="nb">cd</span> ~/Desktop
-mkdir planets
-<span class="nb">cd</span> planets
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>~/Desktop
+mkdir<span class="w"> </span>planets
+<span class="nb">cd</span><span class="w"> </span>planets
 </code></pre></div></div>
 <p>Then we tell Git to make <code class="file docutils literal notranslate">planets/</code> a repository – a place where Git can store versions of our files:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git init
+<div class="highlight"><pre><code>git<span class="w"> </span>init
 </code></pre></div></div>
 <p>It is important to note that <code class="docutils literal notranslate">git init</code> will create a repository that
 can include subdirectories and their files – there is no need to create
@@ -403,39 +411,45 @@ we can see that Git has created a hidden directory within <code class="file docu
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>ls -a
+<div class="highlight"><pre><code>ls<span class="w"> </span>-a
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">.     ..      .git</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">.   ..      .git</span>
+</code></pre></div></div>
 <p>Git uses this special subdirectory to store all the information about the project,
 including the tracked files and sub-directories located within the project’s directory.
 If we ever delete the <code class="docutils literal notranslate">.git</code> subdirectory, we will lose the project’s history.</p>
 <p>Next, we will change the default branch to be called <code class="docutils literal notranslate">main</code>.
 This might be the default branch depending on your settings and version
-of git. See the <a class="reference internal" href="#setting-up-git"><span class="std std-ref">Setting up git</span></a> section above for more information on this change.</p>
+of git. See the <a class="reference internal" href="Revision_control_2.html#setting-up-git"><span class="std std-ref">Setting up git</span></a> section above for more information on this change.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git checkout -b main
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>main
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Switched to a new branch ‘main’</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Switched to a new branch 'main'</span>
+</code></pre></div></div>
 <p>We can check that everything is set up correctly
 by asking Git to tell us the status of our project:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line"><br/></div>
-<div class="line">No commits yet</div>
-<div class="line"><br/></div>
-<div class="line">nothing to commit (create/copy files and use “git add” to track)</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">nothing to commit (create/copy files and use "git add" to track)</span>
+</code></pre></div></div>
 <p>If you are using a different version of <cite>git</cite>, the exact
 wording of the output might be slightly different.</p>
 <div class="admonition-thought-exercise admonition">
@@ -448,13 +462,13 @@ project with the following sequence of commands:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code><span class="nb">cd</span> ~/Desktop   <span class="c1"># return to Desktop directory</span>
-<span class="nb">cd</span> planets     <span class="c1"># go into planets directory, which is already a Git repository</span>
-ls -a          <span class="c1"># ensure the .git subdirectory is still present in the planets directory</span>
-mkdir moons    <span class="c1"># make a subdirectory planets/moons</span>
-<span class="nb">cd</span> moons       <span class="c1"># go into moons subdirectory</span>
-git init       <span class="c1"># make the moons subdirectory a Git repository</span>
-ls -a          <span class="c1"># ensure the .git subdirectory is present indicating we have created a new Git repository</span>
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>~/Desktop<span class="w">   </span><span class="c1"># return to Desktop directory</span>
+<span class="nb">cd</span><span class="w"> </span>planets<span class="w">     </span><span class="c1"># go into planets directory, which is already a Git repository</span>
+ls<span class="w"> </span>-a<span class="w">          </span><span class="c1"># ensure the .git subdirectory is still present in the planets directory</span>
+mkdir<span class="w"> </span>moons<span class="w">    </span><span class="c1"># make a subdirectory planets/moons</span>
+<span class="nb">cd</span><span class="w"> </span>moons<span class="w">       </span><span class="c1"># go into moons subdirectory</span>
+git<span class="w"> </span>init<span class="w">       </span><span class="c1"># make the moons subdirectory a Git repository</span>
+ls<span class="w"> </span>-a<span class="w">          </span><span class="c1"># ensure the .git subdirectory is present indicating we have created a new Git repository</span>
 </code></pre></div></div>
 <p>Is the <cite>git init</cite> command, run inside the <cite>moons</cite> subdirectory, required for
 tracking files stored in the <cite>moons</cite> subdirectory?</p>
@@ -476,11 +490,13 @@ above:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">fatal: Not a git repository (or any of the parent directories): .git</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">fatal: Not a git repository (or any of the parent directories): .git</span>
+</code></pre></div></div>
 </div>
 <div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
@@ -498,7 +514,7 @@ that are not tracked by Git can easily be removed like any other “ordinary” 
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>rm filename
+<div class="highlight"><pre><code>rm<span class="w"> </span>filename
 </code></pre></div></div>
 <p>Similarly a directory can be removed using <cite>rm -r dirname</cite> or <cite>rm -rf dirname</cite>.
 If the files or folder being removed in this fashion are tracked by Git, then their removal
@@ -510,7 +526,7 @@ folder in the moons subdirectory by running the following command from inside th
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>rm -rf moons/.git
+<div class="highlight"><pre><code>rm<span class="w"> </span>-rf<span class="w"> </span>moons/.git
 </code></pre></div></div>
 <p>But be careful! Running this command in the wrong directory will remove
 the entire Git history of a project you might want to keep.
@@ -518,13 +534,13 @@ Therefore, always check your current directory using the command <cite>pwd</cite
 </div>
 </section>
 <section id="adding-files">
-<h2>Adding files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-files">¶</a></h2>
+<h2>Adding files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-files">¶</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code><span class="nb">cd</span> ~/Desktop/planets
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>~/Desktop/planets
 </code></pre></div></div>
 <p>Let’s create a file called <cite>mars.txt</cite> that contains some notes
 about the Red Planet’s suitability as a base.
@@ -535,95 +551,98 @@ editor you choose (it might not be <cite>nano</cite>).</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano mars.txt
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
 </code></pre></div></div>
 <p>Type the text below into the <cite>mars.txt</cite> file:</p>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+</code></pre></div></div>
 <p>Let’s first verify that the file was properly created by running the list command (<cite>ls</cite>):</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
 <div class="highlight"><pre><code>ls
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">mars.txt</div>
-</div>
-<p><cite>mars.txt</cite> contains a single line, which we can see by running:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">mars.txt</span>
+</code></pre></div></div>
+<p><code class="docutils literal notranslate">mars.txt</code> contains a single line, which we can see by running:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>cat mars.txt
+<div class="highlight"><pre><code>cat<span class="w"> </span>mars.txt
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+</code></pre></div></div>
 <p>If we check the status of our project again,
 Git tells us that it’s noticed the new file:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line"><br/></div>
-<div class="line">No commits yet</div>
-<div class="line"><br/></div>
-<div class="line">Untracked files:</div>
-<div class="line-block">
-<div class="line">(use “git add &lt;file&gt;…” to include in what will be committed)</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">mars.txt</div>
-<div class="line"><br/></div>
-</div>
-</div>
-<div class="line">nothing added to commit but untracked files present (use “git add” to track)</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">Untracked files:</span>
+<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+
+<span class="go"> mars.txt</span>
+
+<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+</code></pre></div></div>
 <p>The “untracked files” message means that there’s a file in the directory
 that Git isn’t keeping track of.
 We can tell Git to track a file using <cite>git add</cite>:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add mars.txt
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
 </code></pre></div></div>
 <p>and then check that the right thing happened:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line"><br/></div>
-<div class="line">No commits yet</div>
-<div class="line"><br/></div>
-<div class="line">Changes to be committed:</div>
-<div class="line-block">
-<div class="line">(use “git rm –cached &lt;file&gt;…” to unstage)</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">new file:   mars.txt</div>
-<div class="line"><br/></div>
-</div>
-</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use "git rm --cached &lt;file&gt;..." to unstage)</span>
+
+<span class="go">  new file:   mars.txt</span>
+</code></pre></div></div>
 <p>Git now knows that it’s supposed to keep track of <cite>mars.txt</cite>,
 but it hasn’t recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git commit -m <span class="s2">"Start notes on Mars as a base"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Start notes on Mars as a base"</span>
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">[main (root-commit) f22b25e] Start notes on Mars as a base</div>
-<div class="line">1 file changed, 1 insertion(+)</div>
-<div class="line">create mode 100644 mars.txt</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main (root-commit) f22b25e] Start notes on Mars as a base</span>
+<span class="go">1 file changed, 1 insertion(+)</span>
+<span class="go">create mode 100644 mars.txt</span>
+</code></pre></div></div>
 <p>When we run <code class="docutils literal notranslate">git commit</code>, Git takes everything we have told it to save by using <code class="docutils literal notranslate">git add</code>
 and stores a copy permanently inside the special <code class="docutils literal notranslate">.git</code> directory.
 This permanent copy is called a commit (or revision) and its short identifier is <code class="docutils literal notranslate">f22b25e</code>. Your commit may have another identifier.</p>
@@ -642,33 +661,35 @@ Use this additional space to explain why you made changes and/or what their impa
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line">nothing to commit, working tree clean</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">nothing to commit, working tree clean</span>
+</code></pre></div></div>
 <p>it tells us everything is up to date. If we want to know what we’ve done recently,
 we can ask Git to show us the project’s history using <cite>git log</cite>:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git log
+<div class="highlight"><pre><code>git<span class="w"> </span>log
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</div>
-<div class="line">Author: Jon Hill &lt;<a class="reference external" href="mailto:jon.hill%40york.ac.uk" rel="nofollow noopener">jon<span>.</span>hill<span>@</span>york<span>.</span>ac<span>.</span>uk<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</div>
-<div class="line">Date:   Thu Aug 22 09:51:46 2023 -0400</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">Start notes on Mars as a base</div>
-</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
+<span class="go">Author: Jon Hill &lt;jon.hill@york.ac.uk&gt;</span>
+<span class="go">Date:   Thu Aug 22 09:51:46 2023 -0400</span>
+
+<span class="go">   Start notes on Mars as a base</span>
+</code></pre></div></div>
 <p><code class="docutils literal notranslate">git log</code> lists all commits  made to a repository in reverse chronological order.
 The listing for each commit includes</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>the commit’s full identifier (which starts with the same characters as the short identifier printed by the <cite>git commit</cite> command earlier),</p></li>
+<li><p>the commit’s full identifier (which starts with the same characters as the short identifier printed by the <code class="docutils literal notranslate">git commit</code> command earlier),</p></li>
 <li><p>the commit’s author,</p></li>
 <li><p>when it was created,</p></li>
 <li><p>and the log message Git was given when the commit was created.</p></li>
@@ -687,45 +708,42 @@ so that our filesystem doesn’t become cluttered
 (and so that we can’t accidentally edit or delete an old version).</p>
 </div>
 <p>Now suppose we adds more information to the file.
-(Again, we’ll edit with <cite>nano</cite> and then <cite>cat</cite> the file to show its contents;
-you may use a different editor, and don’t need to <cite>cat</cite>.)</p>
+(Again, we’ll edit with <code class="docutils literal notranslate">nano</code> and then <code class="docutils literal notranslate">cat</code> the file to show its contents;
+you may use a different editor, and don’t need to <code class="docutils literal notranslate">cat</code>.)</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano mars.txt
-cat mars.txt
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-<div class="line">The two moons may be a problem for werewolves</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+</code></pre></div></div>
 <p>When we run <code class="docutils literal notranslate">git status</code> now,
 it tells us that a file it already knows about has been modified:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line">Changes not staged for commit:</div>
-<div class="line-block">
-<div class="line">(use “git add &lt;file&gt;…” to update what will be committed)</div>
-<div class="line">(use “git checkout – &lt;file&gt;…” to discard changes in working directory)</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">modified:   mars.txt</div>
-<div class="line"><br/></div>
-</div>
-</div>
-<div class="line">no changes added to commit (use “git add” and/or “git commit -a”)</div>
-</div>
-<p>The last line is the key phrase:
-“no changes added to commit”.
-We have changed this file,
-but we haven’t told Git we will want to save those changes
-(which we do with <code class="docutils literal notranslate">git add</code>)
-nor have we saved them (which we do with <code class="docutils literal notranslate">git commit</code>).
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="go">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+
+<span class="go">    modified:   mars.txt</span>
+
+<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+</code></pre></div></div>
+<p>The last line is the key phrase: “no changes added to commit”.
+We have changed this file, but we haven’t told Git we will want to save those changes
+(which we do with <code class="docutils literal notranslate">git add</code>) nor have we saved them (which we do with <code class="docutils literal notranslate">git commit</code>).
 So let’s do that now. It is good practice to always review
 our changes before saving them. We do this using <code class="docutils literal notranslate">git diff</code>.
 This shows us the differences between the current state
@@ -733,19 +751,19 @@ of the file and the most recently saved version:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git diff
+<div class="highlight"><pre><code>git<span class="w"> </span>diff
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">diff –git a/mars.txt b/mars.txt</div>
-<div class="line">index df0654a..315bf3a 100644</div>
-<div class="line">— a/mars.txt</div>
-<div class="line">+++ b/mars.txt</div>
-<div class="line">@@ -1 +1,2 @@</div>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-</div>
-<div class="line">+The two moons may be a problem for werewolves</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index df0654a..315bf3a 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1 +1,2 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go">+The two moons may be a problem for werewolves</span>
+</code></pre></div></div>
 <p>The output is cryptic because
 it is actually a series of commands for tools like editors and <code class="docutils literal notranslate">patch</code>
 telling them how to reconstruct one file given the other.
@@ -766,38 +784,35 @@ the <code class="docutils literal notranslate">+</code> marker in the first colu
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git commit -m <span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line">Changes not staged for commit:</div>
-<div class="line-block">
-<div class="line">(use “git add &lt;file&gt;…” to update what will be committed)</div>
-<div class="line">(use “git checkout – &lt;file&gt;…” to discard changes in working directory)</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">modified:   mars.txt</div>
-</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">no changes added to commit (use “git add” and/or “git commit -a”)</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="go">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+
+<span class="go">    modified:   mars.txt</span>
+
+<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+</code></pre></div></div>
 <p>Whoops:
 Git won’t commit because we didn’t use <code class="docutils literal notranslate">git add</code> first.
 Let’s fix that:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add mars.txt
-git commit -m <span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">[main 34961b1] Add concerns about effects of Mars’ moons on Wolfman</div>
-<div class="line-block">
-<div class="line">1 file changed, 1 insertion(+)</div>
-</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 34961b1] Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+</code></pre></div></div>
 <p>Git insists that we add files to the set we want to commit
 before actually committing anything. This allows us to commit our
 changes in stages and capture changes in logical portions rather than
@@ -837,112 +852,114 @@ First, we’ll add another line to the file:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano mars.txt
-cat mars.txt
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-<div class="line">The two moons may be a problem for werewolves</div>
-<div class="line">But the Mummy will appreciate the lack of humidity</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+</code></pre></div></div>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git diff
+<div class="highlight"><pre><code>git<span class="w"> </span>diff
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">diff –git a/mars.txt b/mars.txt</div>
-<div class="line">index 315bf3a..b36abfd 100644</div>
-<div class="line">— a/mars.txt</div>
-<div class="line">+++ b/mars.txt</div>
-<div class="line">@@ -1,2 +1,3 @@</div>
-<div class="line-block">
-<div class="line">Cold and dry, but everything is my favorite color</div>
-<div class="line">The two moons may be a problem for werewolves</div>
-</div>
-<div class="line">+But the Mummy will appreciate the lack of humidity</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index 315bf3a..b36abfd 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1,2 +1,3 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> The two moons may be a problem for werewolves</span>
+<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+</code></pre></div></div>
 <p>So far, so good: we’ve added one line to the end of the file
 (shown with a <cite>+</cite> in the first column). Now let’s put that change in the staging area
 and see what <code class="docutils literal notranslate">git diff</code> reports:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add mars.txt
-git diff
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>diff
 </code></pre></div></div>
-<p>There is no output:
-as far as Git can tell,
+<p>There is no output: as far as Git can tell,
 there’s no difference between what it’s been asked to save permanently
-and what’s currently in the directory.
-However, if we do this:</p>
+and what’s currently in the directory. However, if we do this:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git diff --staged
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>--staged
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">diff –git a/mars.txt b/mars.txt</div>
-<div class="line">index 315bf3a..b36abfd 100644</div>
-<div class="line">— a/mars.txt</div>
-<div class="line">+++ b/mars.txt</div>
-<div class="line">@@ -1,2 +1,3 @@</div>
-<div class="line">Cold and dry, but everything is my favorite color</div>
-<div class="line">The two moons may be a problem for werewolves</div>
-<div class="line">But the Mummy will appreciate the lack of humidity</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index 315bf3a..b36abfd 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1,2 +1,3 @@</span>
+<span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+</code></pre></div></div>
 <p>it shows us the difference between the last committed change
 and what’s in the staging area. Let’s save our changes:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git commit -m <span class="s2">"Discuss concerns about Mars' climate for Mummy"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Discuss concerns about Mars' climate for Mummy"</span>
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">[main 005937f] Discuss concerns about Mars’ climate for Mummy</div>
-<div class="line">1 file changed, 1 insertion(+)</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 005937f] Discuss concerns about Mars' climate for Mummy</span>
+<span class="go">1 file changed, 1 insertion(+)</span>
+</code></pre></div></div>
 <p>check our status:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git status
+<div class="highlight"><pre><code>git<span class="w"> </span>status
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">On branch main</div>
-<div class="line">nothing to commit, working tree clean</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">nothing to commit, working tree clean</span>
+</code></pre></div></div>
 <p>and look at the history of what we’ve done so far:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git log
+<div class="highlight"><pre><code>git<span class="w"> </span>log
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</div>
-<div class="line">Author: Vlad Dracula &lt;<a class="reference external" href="mailto:vlad%40tran.sylvan.ia" rel="nofollow noopener">vlad<span>@</span>tran<span>.</span>sylvan<span>.</span>ia<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</div>
-<div class="line">Date:   Thu Aug 22 10:14:07 2013 -0400</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">Discuss concerns about Mars’ climate for Mummy</div>
-<div class="line"><br/></div>
-</div>
-<div class="line">commit 34961b159c27df3b475cfe4415d94a6d1fcd064d</div>
-<div class="line">Author: Vlad Dracula &lt;<a class="reference external" href="mailto:vlad%40tran.sylvan.ia" rel="nofollow noopener">vlad<span>@</span>tran<span>.</span>sylvan<span>.</span>ia<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</div>
-<div class="line">Date:   Thu Aug 22 10:07:21 2013 -0400</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">Add concerns about effects of Mars’ moons on Wolfman</div>
-<div class="line"><br/></div>
-</div>
-<div class="line">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</div>
-<div class="line">Author: Vlad Dracula &lt;<a class="reference external" href="mailto:vlad%40tran.sylvan.ia" rel="nofollow noopener">vlad<span>@</span>tran<span>.</span>sylvan<span>.</span>ia<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</div>
-<div class="line">Date:   Thu Aug 22 09:51:46 2013 -0400</div>
-<div class="line"><br/></div>
-<div class="line-block">
-<div class="line">Start notes on Mars as a base</div>
-</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
+<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
+
+<span class="go">   Discuss concerns about Mars' climate for Mummy</span>
+
+<span class="go">commit 34961b159c27df3b475cfe4415d94a6d1fcd064d</span>
+<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Date:   Thu Aug 22 10:07:21 2013 -0400</span>
+
+<span class="go">    Add concerns about effects of Mars' moons on Wolfman</span>
+
+<span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
+<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Date:   Thu Aug 22 09:51:46 2013 -0400</span>
+
+<span class="go">    Start notes on Mars as a base</span>
+</code></pre></div></div>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
 <p><strong>Word-based diffing</strong></p>
@@ -975,26 +992,30 @@ the last commit you can use:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git log -1
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>-1
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</div>
-<div class="line">Author: Vlad Dracula &lt;<a class="reference external" href="mailto:vlad%40tran.sylvan.ia" rel="nofollow noopener">vlad<span>@</span>tran<span>.</span>sylvan<span>.</span>ia<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</div>
-<div class="line">Date:   Thu Aug 22 10:14:07 2013 -0400</div>
-<div class="line"><br/></div>
-<div class="line">Discuss concerns about Mars’ climate for Mummy</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
+<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
+
+<span class="go">Discuss concerns about Mars' climate for Mummy</span>
+</code></pre></div></div>
 <p>You can also reduce the quantity of information using the <code class="docutils literal notranslate">--oneline</code> option:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git log --oneline
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">005937f (HEAD -&gt; main) Discuss concerns about Mars’ climate for Mummy</div>
-<div class="line">34961b1 Add concerns about effects of Mars’ moons on Wolfman</div>
-<div class="line">f22b25e Start notes on Mars as a base</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
+<span class="go">34961b1 Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go">f22b25e Start notes on Mars as a base</span>
+</code></pre></div></div>
 <p>You can also combine the <cite>–oneline</cite> option with others. One useful
 combination adds <cite>–graph</cite> to display the commit history as a text-based
 graph and to indicate which commits are associated with the
@@ -1003,13 +1024,15 @@ current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git log --oneline --graph
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">* 005937f (HEAD -&gt; main) Discuss concerns about Mars’ climate for Mummy</div>
-<div class="line">* 34961b1 Add concerns about effects of Mars’ moons on Wolfman</div>
-<div class="line">* f22b25e Start notes on Mars as a base</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
+<span class="go">* 34961b1 Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go">* f22b25e Start notes on Mars as a base</span>
+</code></pre></div></div>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -1021,10 +1044,10 @@ current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>mkdir spaceships
-git status
-git add spaceships
-git status
+<div class="highlight"><pre><code>mkdir<span class="w"> </span>spaceships
+git<span class="w"> </span>status
+git<span class="w"> </span>add<span class="w"> </span>spaceships
+git<span class="w"> </span>status
 </code></pre></div></div>
 <p>Note, our newly created empty directory <cite>spaceships</cite> does not appear in
 the list of untracked files even if we explicitly add it (<em>via</em> <code class="docutils literal notranslate">git add</code>) to our
@@ -1039,17 +1062,17 @@ you can add all files in the directory at once by:</p></li>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add &lt;directory-with-files&gt;
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>&lt;directory-with-files&gt;
 </code></pre></div></div>
 <p>Try it for yourself:</p>
 <blockquote>
 <div><div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>touch spaceships/apollo-11 spaceships/sputnik-1
-git status
-git add spaceships
-git status
+<div class="highlight"><pre><code>touch<span class="w"> </span>spaceships/apollo-11<span class="w"> </span>spaceships/sputnik-1
+git<span class="w"> </span>status
+git<span class="w"> </span>add<span class="w"> </span>spaceships
+git<span class="w"> </span>status
 </code></pre></div></div>
 </div></blockquote>
 <p>Before moving on, we will commit these changes.</p>
@@ -1057,7 +1080,7 @@ git status
 <div><div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git commit -m <span class="s2">"Add some initial thoughts on spaceships"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add some initial thoughts on spaceships"</span>
 </code></pre></div></div>
 </div></blockquote>
 </div>
@@ -1128,46 +1151,52 @@ this exercise. Your output may vary.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano mars.txt
-cat mars.txt
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Maybe I should start with a base on Venus.</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Maybe I should start with a base on Venus.</span>
+</code></pre></div></div>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano venus.txt
-cat venus.txt
+<div class="highlight"><pre><code>nano<span class="w"> </span>venus.txt
+cat<span class="w"> </span>venus.txt
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">Venus is a nice planet and I definitely should consider it as a base.</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Venus is a nice planet and I definitely should consider it as a base.</span>
+</code></pre></div></div>
 <p>Now you can add both files to the staging area. We can do that in one line:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add mars.txt venus.txt
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt<span class="w"> </span>venus.txt
 </code></pre></div></div>
 <p>Or with multiple commands:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add mars.txt
-git add venus.txt
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>add<span class="w"> </span>venus.txt
 </code></pre></div></div>
 <p>Now the files are ready to commit. You can check that using <cite>git status</cite>. If you are ready to commit use:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git commit -m <span class="s2">"Write plans to start a base on Venus"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Write plans to start a base on Venus"</span>
 </code></pre></div></div>
-<div class="line-block">
-<div class="line">[main cc127c2]</div>
-<div class="line">Write plans to start a base on Venus</div>
-<div class="line">2 files changed, 2 insertions(+)</div>
-<div class="line">create mode 100644 venus.txt</div>
-</div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main cc127c2]</span>
+<span class="go">Write plans to start a base on Venus</span>
+<span class="go">2 files changed, 2 insertions(+)</span>
+<span class="go">create mode 100644 venus.txt</span>
+</code></pre></div></div>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
@@ -1186,42 +1215,1117 @@ commit your changes</p></li>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code><span class="nb">cd</span> ..
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>..
 </code></pre></div></div>
 <p>Create a new folder called <cite>bio</cite> and ‘move’ into it:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>mkdir bio
-<span class="nb">cd</span> bio
+<div class="highlight"><pre><code>mkdir<span class="w"> </span>bio
+<span class="nb">cd</span><span class="w"> </span>bio
 </code></pre></div></div>
 <p>Initialise git:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git init
+<div class="highlight"><pre><code>git<span class="w"> </span>init
 </code></pre></div></div>
 <p>Create your biography file <cite>me.txt</cite> using <cite>nano</cite> or another text editor.
 Once in place, add and commit it to the repository:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git add me.txt
-git commit -m <span class="s2">"Add biography file"</span>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>me.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add biography file"</span>
 </code></pre></div></div>
 <p>Modify the file as described (modify one line, add a fourth line).
 To display the differences between its updated state and its original state, use <cite>git diff</cite>:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git diff me.txt
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>me.txt
+</code></pre></div></div>
+</div>
+</section>
+<section id="git-history">
+<h2>Git history<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#git-history">¶</a></h2>
+<p>No, not the story of how Git came to be, but how do we get at the history of our commits.
+In the previous section we see we can refer to commits by the unique identifiers.
+You can refer to the <em>most recent commit</em> of the working
+directory by using the identifier <code class="docutils literal notranslate">HEAD</code>.</p>
+<p>We’ve been adding one line at a time to <code class="file docutils literal notranslate">mars.txt</code>, so it’s easy to track our
+progress by looking, so let’s do that using our <code class="docutils literal notranslate">HEAD</code>.  Before we start,
+let’s make a change to <code class="file docutils literal notranslate">mars.txt</code>, adding yet another line.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">An ill-considered change</span>
+</code></pre></div></div>
+<p>Now, let’s see what we get.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>HEAD<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index b36abfd..0848c8d 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1,3 +1,4 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> The two moons may be a problem for werewolves</span>
+<span class="go"> But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+An ill-considered change.</span>
+</code></pre></div></div>
+<p>which is the same as what you would get if you leave out <code class="docutils literal notranslate">HEAD</code> (try it).  The
+real goodness in all this is when you can refer to previous commits.  We do
+that by adding <code class="docutils literal notranslate">~1</code>
+(where “~” is “tilde”, pronounced [<strong>til</strong>-d*uh*])
+to refer to the commit one before <code class="docutils literal notranslate">HEAD</code>.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>HEAD~1<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<p>If we want to see the differences between older commits we can use <code class="docutils literal notranslate">git diff</code>
+again, but with the notation <code class="docutils literal notranslate">HEAD~1</code>, <code class="docutils literal notranslate">HEAD~2</code>, and so on, to refer to them:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>HEAD~3<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index df0654a..b36abfd 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1 +1,4 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go">+The two moons may be a problem for werewolves</span>
+<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+An ill-considered change</span>
+</code></pre></div></div>
+<p>We could also use <code class="docutils literal notranslate">git show</code> which shows us what changes we made at an older commit as
+well as the commit message, rather than the _differences_ between a commit and our
+working directory that we see by using <code class="docutils literal notranslate">git diff</code>.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>show<span class="w"> </span>HEAD~3<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
+<span class="go">Author: Jon Hill &lt;jon.hill@york.ac.uk&gt;</span>
+<span class="go">Date:   Thu Aug 22 09:51:46 2013 -0400</span>
+
+<span class="go">   Start notes on Mars as a base</span>
+
+<span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">new file mode 100644</span>
+<span class="go">index 0000000..df0654a</span>
+<span class="go">--- /dev/null</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -0,0 +1 @@</span>
+<span class="go">+Cold and dry, but everything is my favorite color</span>
+</code></pre></div></div>
+<p>We can also refer to commits using those long strings of digits and letters
+that <code class="docutils literal notranslate">git log</code> displays. These are unique IDs for the changes,
+and “unique” really does mean unique: every change to any set of files on any computer
+has a unique 40-character identifier. Our first commit was given the ID
+<code class="docutils literal notranslate">f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>, so let’s try this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>f22b25e3233b4645dabd0d81e651fe074bd8e73b<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index df0654a..93a3e13 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1 +1,4 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go">+The two moons may be a problem for werewolves</span>
+<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+An ill-considered change</span>
+</code></pre></div></div>
+<p>That’s the right answer, but typing out random 40-character strings is annoying,
+so Git lets us use just the first few characters (typically seven for normal size projects):</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>diff<span class="w"> </span>f22b25e<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">diff --git a/mars.txt b/mars.txt</span>
+<span class="go">index df0654a..93a3e13 100644</span>
+<span class="go">--- a/mars.txt</span>
+<span class="go">+++ b/mars.txt</span>
+<span class="go">@@ -1 +1,4 @@</span>
+<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go">+The two moons may be a problem for werewolves</span>
+<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+An ill-considered change</span>
+</code></pre></div></div>
+<p>So we can save changes to files and see what we’ve changed. Now, how can we restore older versions of things?
+Let’s suppose we change our mind about the last update to <code class="docutils literal notranslate">mars.txt</code> (the “ill-considered change”).</p>
+<p><code class="docutils literal notranslate">git status</code> now tells us that the file has been changed, but those changes haven’t been staged:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go"> (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="go"> (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+
+<span class="go">   modified:   mars.txt</span>
+
+<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+</code></pre></div></div>
+<p>We can put things back the way they were by using <code class="docutils literal notranslate">git checkout</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+</code></pre></div></div>
+<p>As you might guess from its name, <code class="docutils literal notranslate">git checkout</code> checks out (i.e. restores) an old version of a file.
+In this case, we’re telling Git that we want to recover the version of the file recorded in <code class="docutils literal notranslate">HEAD</code>,
+which is the last saved commit. If we want to go back even further,
+we can use a commit identifier instead:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>f22b25e<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">(use "git reset HEAD &lt;file&gt;..." to unstage)</span>
+
+<span class="go">  modified:   mars.txt</span>
+</code></pre></div></div>
+<p>Notice that the changes are currently in the staging area.
+Again, we can put things back the way they were
+by using <code class="docutils literal notranslate">git checkout</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Don’t Lose Your HEAD</strong></p>
+<p>Above we used</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>f22b25e<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<p>to revert <code class="docutils literal notranslate">mars.txt</code> to its state after the commit <code class="docutils literal notranslate">f22b25e</code>. But be careful!
+The command <code class="docutils literal notranslate">checkout</code> has other important functionalities and Git will misunderstand
+your intentions if you are not accurate with the typing. For example,
+if you forget <cite>mars.txt</cite> in the previous command.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>f22b25e
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Note: checking out 'f22b25e'.</span>
+</code></pre></div></div>
+<p>You are in <cite>‘detached HEAD</cite>’ state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.</p>
+<p>If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using <code class="docutils literal notranslate">-b</code> with the checkout command again. Example:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;new-branch-name
+
+HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>f22b25e<span class="w"> </span>Start<span class="w"> </span>notes<span class="w"> </span>on<span class="w"> </span>Mars<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>base
+</code></pre></div></div>
+<p>The “detached HEAD” is like “look, but don’t touch” here,
+so you shouldn’t make any changes in this state.
+After investigating your repo’s past state, reattach your <code class="docutils literal notranslate">HEAD</code> with <code class="docutils literal notranslate">git checkout main</code>.</p>
+</div>
+<p>It’s important to remember that we must use the commit number that identifies the state of the repository
+<em>before</em> the change we’re trying to undo. A common mistake is to use the number of
+the commit in which we made the change we’re trying to discard. In the example below, we want to
+retrieve the state from before the most recent commit (<code class="docutils literal notranslate">HEAD~1</code>), which is commit <code class="docutils literal notranslate">f22b25e</code>:</p>
+<img alt="The git commit process" src="_images/git-checkout.png"/>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Simplifying the Common Case</strong></p>
+<p>If you read the output of <code class="docutils literal notranslate">git status</code> carefully,
+you’ll see that it includes this hint:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+</code></pre></div></div>
+<p>As it says, <code class="docutils literal notranslate">git checkout</code> without a version identifier restores files to the state saved in <code class="docutils literal notranslate">HEAD</code>.
+The double dash <cite>–</cite> is needed to separate the names of the files being recovered
+from the command itself: without it,
+Git would try to use the name of the file as the commit identifier.</p>
+</div>
+<p>The fact that files can be reverted one by one tends to change the way people organize their work.
+If everything is in one large document, it’s hard (but not impossible) to undo changes to the introduction
+without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files,
+on the other hand, moving backward and forward in time becomes much easier.</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Recovering Older Versions of a File</strong></p>
+<p>Jennifer has made changes to the Python script that she has been working on for weeks, and the
+modifications she made this morning “broke” the script and it no longer runs. She has spent
+~ 1hr trying to fix it, with no luck…</p>
+<p>Luckily, she has been keeping track of her project’s versions using Git! Which commands below will
+let her recover the last committed version of her Python script called
+<code class="docutils literal notranslate">data_cruncher.py</code>?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate">$ git checkout HEAD</code></p></li>
+<li><p><code class="docutils literal notranslate">$ git checkout HEAD data_cruncher.py</code></p></li>
+<li><p><code class="docutils literal notranslate">$ git checkout HEAD~1 data_cruncher.py</code></p></li>
+<li><p><code class="docutils literal notranslate">$ git checkout &lt;unique ID of last commit&gt; data_cruncher.py</code></p></li>
+<li><p>Both 2 and 4</p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The answer is (5)-Both 2 and 4.</p>
+<p>The <code class="docutils literal notranslate">checkout</code> command restores files from the repository, overwriting the files in your working
+directory. Answers 2 and 4 both restore the <em>latest</em> version <em>in the repository</em> of the file
+<code class="docutils literal notranslate">data_cruncher.py</code>. Answer 2 uses <code class="docutils literal notranslate">HEAD</code> to indicate the <em>latest</em>, whereas answer 4 uses the
+unique ID of the last commit, which is what <code class="docutils literal notranslate">HEAD</code> means.</p>
+<p>Answer 3 gets the version of <code class="docutils literal notranslate">data_cruncher.py</code> from the commit <em>before</em> <code class="docutils literal notranslate">HEAD</code>, which is NOT
+what we wanted.</p>
+<p>Answer 1 can be dangerous! Without a filename, <code class="docutils literal notranslate">git checkout</code> will restore <strong>all files</strong>
+in the current directory (and all directories below it) to their state at the commit specified.
+This command will restore <code class="docutils literal notranslate">data_cruncher.py</code> to the latest commit version, but it will also
+restore <em>any other files that are changed</em> to that version, erasing any changes you may
+have made to those files!</p>
+<p>As discussed above, you are left in a <em>detached</em> <cite>HEAD</cite> state, and you don’t want to be there.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Reverting a Commit</strong></p>
+<p>Jennifer is collaborating with colleagues on her Python script.  She
+realizes her last commit to the project’s repository contained an error, and
+wants to undo it.  Jennifer wants to undo correctly so everyone in the project’s
+repository gets the correct change. The command <code class="docutils literal notranslate">git revert [erroneous commit ID]</code> will create a
+new commit that reverses the erroneous commit.</p>
+<p>The command <code class="docutils literal notranslate">git revert</code> is different from <code class="docutils literal notranslate">git checkout [commit ID]</code>
+because <cite>git checkout</cite> returns the files not yet committed within the local repository
+to a previous state, whereas <code class="docutils literal notranslate">git revert</code>
+reverses changes committed to the local and project repositories.</p>
+<p>Below are the right steps and explanations for Jennifer to use <code class="docutils literal notranslate">git revert</code>,
+what is the missing command?</p>
+<ol class="arabic simple">
+<li><p><cite>________ # Look at the git history of the project to find the commit ID</cite></p></li>
+<li><p>Copy the ID (the first few characters of the ID, e.g. 0b1d055).</p></li>
+<li><p><code class="docutils literal notranslate">git revert [commit ID]</code></p></li>
+<li><p>Type in the new commit message.</p></li>
+<li><p>Save and close</p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The command <code class="docutils literal notranslate">git log</code> lists project history with commit IDs.</p>
+<p>The command <code class="docutils literal notranslate">git show HEAD</code> shows changes made at the latest commit, and lists
+the commit ID; however, Jennifer should double-check it is the correct commit, and no one
+else has committed changes to the repository.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Understanding Workflow and History</strong></p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>planets
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Venus is beautiful and full of love"</span><span class="w"> </span>&gt;<span class="w"> </span>venus.txt
+git<span class="w"> </span>add<span class="w"> </span>venus.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Venus is too hot to be suitable as a base"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>venus.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Comment on Venus as an unsuitable base"</span>
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>venus.txt
+cat<span class="w"> </span>venus.txt<span class="w"> </span><span class="c1">#this will print the contents of venus.txt to the screen</span>
+</code></pre></div></div>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate">Venus is too hot to be suitable as a base</code></p></li>
+<li><p><code class="docutils literal notranslate">Venus is beautiful and full of love</code></p></li>
+<li><p><code class="docutils literal notranslate">Venus is beautiful and full of love</code>
+<code class="docutils literal notranslate">Venus is too hot to be suitable as a base</code></p></li>
+<li><p><code class="docutils literal notranslate">Error because you have changed venus.txt without committing the changes</code></p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The answer is 2.</p>
+<p>The command <code class="docutils literal notranslate">git add venus.txt</code> places the current version of <code class="docutils literal notranslate">venus.txt</code> into the staging area.
+The changes to the file from the second <code class="docutils literal notranslate">echo</code> command are only applied to the working copy,
+not the version in the staging area.</p>
+<p>So, when <code class="docutils literal notranslate">git commit -m "Comment on Venus as an unsuitable base"</code> is executed,
+the version of <code class="docutils literal notranslate">venus.txt</code> committed to the repository is the one from the staging area and
+has only one line.</p>
+<p>At this time, the working copy still has the second line (and
+<code class="docutils literal notranslate">git status</code> will show that the file is modified). However, <code class="docutils literal notranslate">git checkout HEAD venus.txt</code>
+replaces the working copy with the most recently committed version of <code class="docutils literal notranslate">venus.txt</code>.</p>
+<p>So, <code class="docutils literal notranslate">cat venus.txt</code> will output
+<code class="docutils literal notranslate">Venus is beautiful and full of love.</code></p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Checking Understanding of ``git diff``</strong></p>
+<p>Consider this command: <code class="docutils literal notranslate">git diff HEAD~9 mars.txt</code>. What do you predict this command
+will do if you execute it? What happens when you do execute it? Why?</p>
+<p>Try another command, <code class="docutils literal notranslate">git diff [ID] mars.txt</code>, where [ID] is replaced with
+the unique identifier for your most recent commit. What do you think will happen,
+and what does happen?</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Getting Rid of Staged Changes</strong></p>
+<p><code class="docutils literal notranslate">git checkout</code> can be used to restore a previous commit when unstaged changes have
+been made, but will it also work for changes that have been staged but not committed?
+Make a change to <code class="docutils literal notranslate">mars.txt</code>, add that change, and use <code class="docutils literal notranslate">git checkout</code> to see if
+you can remove your change.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Explore and Summarize Histories</strong></p>
+<p>Exploring history is an important part of Git, and often it is a challenge to find
+the right commit ID, especially if the commit is from several months ago.</p>
+<p>Imagine the <code class="docutils literal notranslate">planets</code> project has more than 50 files.
+You would like to find a commit that modifies some specific text in <code class="docutils literal notranslate">mars.txt</code>.
+When you type <code class="docutils literal notranslate">git log</code>, a very long list appeared.
+How can you narrow down the search?</p>
+<p>Recall that the <code class="docutils literal notranslate">git diff</code> command allows us to explore one specific file,
+e.g., <code class="docutils literal notranslate">git diff mars.txt</code>. We can apply a similar idea here.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<p>Unfortunately some of these commit messages are very ambiguous, e.g., <code class="docutils literal notranslate">update files</code>.
+How can you search through these files?</p>
+<p>Both <code class="docutils literal notranslate">git diff</code> and <code class="docutils literal notranslate">git log</code> are very useful and they summarize a different part of the history
+for you. Is it possible to combine both? Let’s try the following:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>--patch<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<p>You should get a long list of output, and you should be able to see both commit messages and
+the difference between each commit.</p>
+<p>Question: What does the following command do?</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>log<span class="w"> </span>--patch<span class="w"> </span>HEAD~9<span class="w"> </span>*.txt
+</code></pre></div></div>
+</div>
+</section>
+<section id="ignoring-files">
+<h2>Ignoring files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ignoring-files">¶</a></h2>
+<p>What if we have files that we do not want Git to track for us,
+like backup files created by our editor or intermediate files created during data analysis?
+Let’s create a few dummy files:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>mkdir<span class="w"> </span>results
+touch<span class="w"> </span>a.dat<span class="w"> </span>b.dat<span class="w"> </span>c.dat<span class="w"> </span>results/a.out<span class="w"> </span>results/b.out
+</code></pre></div></div>
+<p>and see what Git says:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Untracked files:</span>
+<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+
+<span class="go">    a.dat</span>
+<span class="go">    b.dat</span>
+<span class="go">    c.dat</span>
+<span class="go">    results/</span>
+
+<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+</code></pre></div></div>
+<p>Putting these files under version control would be a waste of disk space.
+What’s worse, having them all listed could distract us from changes that actually matter,
+so let’s tell Git to ignore them.</p>
+<p>We do this by creating a file in the root directory of our project called <code class="docutils literal notranslate">.gitignore</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>nano<span class="w"> </span>.gitignore
+cat<span class="w"> </span>.gitignore
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">*.dat</span>
+<span class="go">results/</span>
+</code></pre></div></div>
+<p>These patterns tell Git to ignore any file whose name ends in <code class="docutils literal notranslate">.dat</code>
+and everything in the <code class="docutils literal notranslate">results</code> directory. (If any of these files were already being tracked,
+Git would continue to track them.)</p>
+<p>Once we have created this file, the output of <code class="docutils literal notranslate">git status</code> is much cleaner:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Untracked files:</span>
+<span class="go">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+
+<span class="go">    .gitignore</span>
+
+<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+</code></pre></div></div>
+<p>The only thing Git notices now is the newly-created <code class="docutils literal notranslate">.gitignore</code> file.
+You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore
+the same things that we’re ignoring. Let’s add and commit <code class="docutils literal notranslate">.gitignore</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Ignore data files and the results folder."</span>
+git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">nothing to commit, working tree clean</span>
+</code></pre></div></div>
+<p>As a bonus, using <code class="docutils literal notranslate">.gitignore</code> helps us avoid accidentally adding files to the repository that we don’t want to track:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>a.dat
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">The following paths are ignored by one of your .gitignore files:</span>
+<span class="go">a.dat</span>
+<span class="go">Use -f if you really want to add them.</span>
+</code></pre></div></div>
+<p>If we really want to override our ignore settings, we can use <code class="docutils literal notranslate">git add -f</code> to force Git to add something. For example,
+<code class="docutils literal notranslate">git add -f a.dat</code>. We can also always see the status of ignored files if we want:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>status<span class="w"> </span>--ignored
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">Ignored files:</span>
+<span class="go"> (use "git add -f &lt;file&gt;..." to include in what will be committed)</span>
+
+<span class="go">        a.dat</span>
+<span class="go">        b.dat</span>
+<span class="go">        c.dat</span>
+<span class="go">        results/</span>
+
+<span class="go">nothing to commit, working tree clean</span>
+</code></pre></div></div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Ignoring Nested Files</strong></p>
+<p>Given a directory structure that looks like:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">results/data</span>
+<span class="go">results/plots</span>
+</code></pre></div></div>
+<p>How would you ignore only <code class="docutils literal notranslate">results/plots</code> and not <code class="docutils literal notranslate">results/data</code>?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><strong>Solution</strong></p>
+<p>If you only want to ignore the contents of
+<code class="docutils literal notranslate">results/plots</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
+only the <code class="docutils literal notranslate">/plots/</code> subfolder by adding the following line to
+your .gitignore:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">results/plots/</span>
+</code></pre></div></div>
+<p>This line will ensure only the contents of <code class="docutils literal notranslate">results/plots</code> is ignored, and
+not the contents of <code class="docutils literal notranslate">results/data</code>.
+As with most programming issues, there are a few alternative ways that one may ensure this ignore rule is followed.
+The “Ignoring Nested Files: Variation” exercise has a slightly
+different directory structure that presents an alternative solution.
+Further, the discussion page has more detail on ignore rules.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Including Specific Files</strong></p>
+<p>How would you ignore all <code class="docutils literal notranslate">.dat</code> files in your root directory except for
+<code class="docutils literal notranslate">final.dat</code>?
+Hint: Find out what <cite>!</cite> (the exclamation point operator) does</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><strong>Solution</strong></p>
+<p>You would add the following two lines to your .gitignore:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">\*.dat           # ignore all data files</span>
+<span class="go">!final.dat      # except final.data</span>
+</code></pre></div></div>
+<p>The exclamation point operator will include a previously excluded entry.</p>
+<p>Note also that because you’ve previously committed <code class="docutils literal notranslate">.dat</code> files in this
+lesson they will not be ignored with this new rule. Only future additions
+of <code class="docutils literal notranslate">.dat</code> files added to the root directory will be ignored.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Ignoring Nested Files: Variation</strong></p>
+<p>Given a directory structure that looks similar to the earlier Nested Files
+exercise, but with a slightly different directory structure:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">results/data</span>
+<span class="go">results/images</span>
+<span class="go">results/plots</span>
+<span class="go">results/analysis</span>
+</code></pre></div></div>
+<p>How would you ignore all of the contents in the results folder, but not <code class="docutils literal notranslate">results/data</code>?</p>
+<p>Hint: think a bit about how you created an exception with the <code class="docutils literal notranslate">!</code> operator
+before.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><strong>Solution</strong></p>
+<p>If you want to ignore the contents of
+<code class="docutils literal notranslate">results/</code> but not those of <code class="docutils literal notranslate">results/data/</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
+the contents of results folder, but create an exception for the contents of the
+<code class="docutils literal notranslate">results/data</code> subfolder. Your .gitignore would look like this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">results/*               # ignore everything in results folder</span>
+<span class="go">!results/data/          # do not ignore results/data/ contents</span>
+</code></pre></div></div>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>The Order of Rules</strong></p>
+<p>Given a <cite>.gitignore</cite> file with the following contents:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">*.dat</span>
+<span class="go">!*.dat</span>
+</code></pre></div></div>
+<p>What will be the result?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><strong>Solution</strong></p>
+<p>The <code class="docutils literal notranslate">!</code> modifier will negate an entry from a previously defined ignore pattern.
+Because the <code class="docutils literal notranslate">!*.dat</code> entry negates all of the previous <code class="docutils literal notranslate">.dat</code> files in the <code class="docutils literal notranslate">.gitignore</code>,
+none of them will be ignored, and all <code class="docutils literal notranslate">.dat</code> files will be tracked.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Log Files</strong></p>
+<p>You wrote a script that creates many intermediate log-files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, <code class="docutils literal notranslate">log_03</code>, etc.
+You want to keep them but you do not want to track them through <code class="docutils literal notranslate">git</code>.</p>
+<ol class="arabic simple">
+<li><p>Write <strong>one</strong> <code class="docutils literal notranslate">.gitignore</code> entry that excludes files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, etc.</p></li>
+<li><p>Test your “ignore pattern” by creating some dummy files of the form <code class="docutils literal notranslate">log_01</code>, etc.</p></li>
+<li><p>You find that the file <code class="docutils literal notranslate">log_01</code> is very important after all, add it to the tracked files without changing the <code class="docutils literal notranslate">.gitignore</code> again.</p></li>
+<li><p>Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via <code class="docutils literal notranslate">.gitignore</code>.</p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>append either <cite>log_*</cite>  or  <cite>log*</cite>  as a new entry in your .gitignore</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>track <cite>log_01</cite> using   <cite>git add -f log_01</cite></p></li>
+</ol>
+</div>
+</section>
+<section id="id1">
+<h2>Github<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id1">¶</a></h2>
+<p>Version control really comes into its own when we begin to collaborate with
+other people.  We already have most of the machinery we need to do this; the
+only thing missing is to copy changes from one repository to another.</p>
+<p>Systems like Git allow us to move work between any two repositories.  In
+practice, though, it’s easiest to use one copy as a central hub, and to keep it
+on the web rather than on someone’s laptop.  Most programmers use hosting
+services like <a class="reference external" href="https://github.com" rel="nofollow noopener">GitHub<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, <a class="reference external" href="https://bitbucket.org" rel="nofollow noopener">Bitbucket<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> or
+<a class="reference external" href="https://gitlab.com/" rel="nofollow noopener">GitLab<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> to hold those main copies; we’ll explore the pros
+and cons of this in a later episode.</p>
+<p>Let’s start by sharing the changes we’ve made to our current project with the
+world. To this end we are going to create a <em>remote</em> repository that will be
+linked to our <em>local</em> repository.</p>
+<section id="creating-a-remote-repository">
+<h3>1. Creating a remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#creating-a-remote-repository">¶</a></h3>
+<p>Log in to <a class="reference external" href="https://github.com" rel="nofollow noopener">GitHub<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, then click on the icon in the top right corner to
+create a new repository called <code class="docutils literal notranslate">planets</code>:</p>
+<a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Name your repository “planets” and then click “Create Repository”.</p>
+<p>Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
+“Initialize this repository with a README” unchecked, and keep “None” as options for both “Add
+.gitignore” and “Add a license.” See the “GitHub License and README files” exercise below for a full
+explanation of why the repository needs to be empty.</p>
+<a class="reference external image-reference" href="../images/github-create-repo-02.png"><img alt="Creating a Repository on GitHub (Step 2)" src="_images/github-create-repo-02.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>As soon as the repository is created, GitHub displays a page with a URL and some
+information on how to configure your local repository:</p>
+<a class="reference external image-reference" href="../images/github-create-repo-03.png"><img alt="Creating a Repository on GitHub (Step 3)" src="_images/github-create-repo-03.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>This effectively does the following on GitHub’s servers:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>mkdir<span class="w"> </span>planets
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>planets
+$<span class="w"> </span>git<span class="w"> </span>init
+</code></pre></div></div>
+<p>If you remember back to the earlier <a class="reference external" href="../04-changes/" rel="nofollow noopener">episode<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> where we added and
+committed our earlier work on <code class="docutils literal notranslate">mars.txt</code>, we had a diagram of the local repository
+which looked like this:</p>
+<a class="reference external image-reference" href="../images/git-staging-area.png"><img alt="The Local Repository with Git Staging Area" src="_images/git-staging-area.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Now that we have two repositories, we need a diagram like this:</p>
+<a class="reference external image-reference" href="../images/git-freshly-made-github-repo.png"><img alt="Freshly-Made GitHub Repository" src="_images/git-freshly-made-github-repo.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Note that our local repository still contains our earlier work on <code class="docutils literal notranslate">mars.txt</code>, but the
+remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
+</section>
+<section id="connect-local-to-remote-repository">
+<h3>2. Connect local to remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#connect-local-to-remote-repository">¶</a></h3>
+<p>Now we connect the two repositories.  We do this by making the
+GitHub repository a remote for the local repository.
+The home page of the repository on GitHub includes the URL string we need to
+identify it:</p>
+<a class="reference external image-reference" href="../images/github-find-repo-string.png"><img alt="Where to Find Repository URL on GitHub" src="_images/github-find-repo-string.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Click on the ‘SSH’ link to change the protocol from HTTPS to SSH.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>HTTPS vs. SSH</strong></p>
+<p>We use SSH here because, while it requires some additional configuration, it is a
+security protocol widely used by many applications.  The steps below describe SSH at a
+minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup
+and concepts of SSH and key pairs, and other material supplemental to git related SSH.</p>
+</div>
+<a class="reference external image-reference" href="../images/github-change-repo-string.png"><img alt="Changing the Repository URL on GitHub" src="_images/github-change-repo-string.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Copy that URL from the browser, go into the local <code class="docutils literal notranslate">planets</code> repository, and run
+this command:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:jh1889/planets.git
+</code></pre></div></div>
+<p>Make sure to use the URL for your repository rather than mine: the only
+difference should be your username instead of <code class="docutils literal notranslate">jh1889</code>.</p>
+<p><code class="docutils literal notranslate">origin</code> is a local name used to refer to the remote repository. It could be called
+anything, but <code class="docutils literal notranslate">origin</code> is a convention that is often used by default in git
+and GitHub, so it’s helpful to stick with this unless there’s a reason not to.</p>
+<p>We can check that the command has worked by running <code class="docutils literal notranslate">git remote -v</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">origin   git@github.com:vlad/planets.git (fetch)</span>
+<span class="go">origin   git@github.com:vlad/planets.git (push)</span>
+</code></pre></div></div>
+<p>We’ll discuss remotes in more detail in the next section, while
+talking about how they might be used for collaboration.</p>
+</section>
+<section id="ssh-background-and-setup">
+<h3>3. SSH Background and Setup<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ssh-background-and-setup">¶</a></h3>
+<p>Before I can connect to a remote repository, I need to set up a way for his computer to
+authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
+<p>We are going to set up the method that is commonly used by many different services to authenticate
+access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic
+network protocol that allows secure communication between computers using an otherwise insecure network.</p>
+<p>SSH uses what is called a key pair. This is two keys that work together to validate access. One key is
+publicly known and called the public key, and the other key called the private key is kept private.
+Very descriptive names.</p>
+<p>You can think of the public key as a padlock, and only you have the key (the private key) to open it.
+You use the public key where you want a secure method of communication, such as your GitHub account.
+You give this padlock, or public key, to GitHub and say “lock the communications to my account with this
+so that only computers that have my private key can unlock communications and send git commands as my GitHub account.”</p>
+<p>What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.</p>
+<p>The first thing we are going to do is check if this has already been done on the computer you’re on.
+Because generally speaking, this setup only needs to happen once and then you can forget about it.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Keeping your keys secure</strong></p>
+<p>You shouldn’t really forget about your SSH keys, since they keep your account secure. It’s good
+practice to audit your secure shell keys every so often. Especially if you are using multiple
+computers to access your account.</p>
+</div>
+<p>We will run the list command to check what key pairs already exist on your computer.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ls<span class="w"> </span>-al<span class="w"> </span>~/.ssh
+</code></pre></div></div>
+<p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.</p>
+<p>Our user has not set up SSH on his computer, so their output is</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">ls: cannot access '/c/Users/jh1889/.ssh': No such file or directory</span>
+</code></pre></div></div>
+<p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed.
+The file names are either <code class="docutils literal notranslate">id_ed25519</code>/<code class="docutils literal notranslate">id_ed25519.pub</code> or <code class="docutils literal notranslate">id_rsa</code>/<code class="docutils literal notranslate">id_rsa.pub</code>
+depending on how the key pairs were set up.</p>
+<p>Since they don’t exist on this computer, we will use this command to create them.</p>
+<section id="create-an-ssh-key-pair">
+<h4>3.1 Create an SSH key pair<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#create-an-ssh-key-pair">¶</a></h4>
+<p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate">-t</code> option specifies which type of
+algorithm to use and <code class="docutils literal notranslate">-C</code> attaches a comment to the key (here, our email):</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
+</code></pre></div></div>
+<p>If you are using a legacy system that doesn’t support the Ed25519 algorithm, use:
+<code class="docutils literal notranslate">$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Generating public/private ed25519 key pair.</span>
+<span class="go">Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):</span>
+</code></pre></div></div>
+<p>We want to use the default file, so just press :kbd: <cite>Enter</cite>.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Created directory '/c/Users/jh1889/.ssh'.</span>
+<span class="go">Enter passphrase (empty for no passphrase):</span>
+</code></pre></div></div>
+<p>Now, it is prompting us for a passphrase.  Since we are using computers that other people sometimes have access to,
+we want to create a passphrase.  Be sure to use something memorable or save your passphrase somewhere,
+as there is no “reset my password” option.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enter same passphrase again:</span>
+</code></pre></div></div>
+<p>After entering the same passphrase a second time, we receive the confirmation</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Your identification has been saved in /c/Users/jh1889/.ssh/id_ed25519</span>
+<span class="go">Your public key has been saved in /c/Users/jh1889/.ssh/id_ed25519.pub</span>
+<span class="go">The key fingerprint is:</span>
+<span class="go">SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o jon.hill@york.ac.uk</span>
+<span class="go">The key's randomart image is:</span>
+<span class="go">+--[ED25519 256]--+</span>
+<span class="go">|^B== o.          |</span>
+<span class="go">|%*=.*.+          |</span>
+<span class="go">|+=.E =.+         |</span>
+<span class="go">| .=.+.o..        |</span>
+<span class="go">|....  . S        |</span>
+<span class="go">|.+ o             |</span>
+<span class="go">|+ =              |</span>
+<span class="go">|.o.o             |</span>
+<span class="go">|oo+.             |</span>
+<span class="go">+----[SHA256]-----+</span>
+</code></pre></div></div>
+<p>The “identification” is actually the private key. You should never share it.
+The public key is appropriately named.  The “key fingerprint”
+is a shorter version of a public key.</p>
+<p>Now that we have generated the SSH keys, we will find the SSH files when we check.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ls<span class="w"> </span>-al<span class="w"> </span>~/.ssh
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">drwxr-xr-x 1 jh1889 197121   0 Jul 16 14:48 ./</span>
+<span class="go">drwxr-xr-x 1 jh1889 197121   0 Jul 16 14:48 ../</span>
+<span class="go">-rw-r--r-- 1 jh1889 197121 419 Jul 16 14:48 id_ed25519</span>
+<span class="go">-rw-r--r-- 1 jh1889 197121 106 Jul 16 14:48 id_ed25519.pub</span>
+</code></pre></div></div>
+</section>
+<section id="copy-the-public-key-to-github">
+<h4>3.2 Copy the public key to GitHub<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copy-the-public-key-to-github">¶</a></h4>
+<p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code>The authenticity of host 'github.com (192.30.255.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+</code></pre></div></div>
+<p>Right, we forgot that we need to give GitHub our public key!</p>
+<p>First, we need to copy the public key.  Be sure to include the <code class="docutils literal notranslate">.pub</code> at the end, otherwise you’re looking at the private key.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI jon.hill@york.ac.uk</span>
+</code></pre></div></div>
+<p>Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click “Settings,” then on the
+settings page, click “SSH and GPG keys,” on the left side “Account settings” menu.  Click the “New SSH key” button on the right side. Now,
+you can add the title (Dracula uses the title “Vlad’s Lab Laptop” so he can remember where the original key pair
+files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
+<p>Now that we’ve set that up, let’s check our authentication again from the command line.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Hi Jon! You've successfully authenticated, but GitHub does not provide shell access.</span>
+</code></pre></div></div>
+<p>Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.</p>
+</section>
+</section>
+<section id="push-local-changes-to-a-remote">
+<h3>4. Push local changes to a remote<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#push-local-changes-to-a-remote">¶</a></h3>
+<p>Now that authentication is setup, we can return to the remote. This command will push the changes from
+our local repository to the repository on GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<p>Since we set up a passphrase, it will prompt for it.  If you completed advanced settings for your authentication, it
+will not prompt for a passphrase.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enumerating objects: 16, done.</span>
+<span class="go">Counting objects: 100% (16/16), done.</span>
+<span class="go">Delta compression using up to 8 threads.</span>
+<span class="go">Compressing objects: 100% (11/11), done.</span>
+<span class="go">Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.</span>
+<span class="go">Total 16 (delta 2), reused 0 (delta 0)</span>
+<span class="go">remote: Resolving deltas: 100% (2/2), done.</span>
+<span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go"> * [new branch]      main -&gt; main</span>
+</code></pre></div></div>
+<p>Our local and remote repositories are now in this state:</p>
+<a class="reference external image-reference" href="../images/github-repo-after-first-push.png"><img alt="GitHub Repository After First Push" src="_images/github-repo-after-first-push.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>The ‘-u’ Flag</strong></p>
+<p>You may see a <code class="docutils literal notranslate">-u</code> option used with <code class="docutils literal notranslate">git push</code> in some documentation.  This
+option is synonymous with the <code class="docutils literal notranslate">--set-upstream-to</code> option for the <code class="docutils literal notranslate">git branch</code>
+command, and is used to associate the current branch with a remote branch so
+that the <code class="docutils literal notranslate">git pull</code> command can be used without any arguments. To do this,
+simply use <code class="docutils literal notranslate">git push -u origin main</code> once the remote has been set up.</p>
+</div>
+<p>We can pull changes from the remote repository to the local one as well:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">From https://github.com/vlad/planets</span>
+<span class="go">* branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">Already up-to-date.</span>
+</code></pre></div></div>
+<p>Pulling has no effect in this case because the two repositories are already
+synchronized.  If someone else had pushed some changes to the repository on
+GitHub, though, this command would download them to our local repository.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub GUI</strong></p>
+<p>Browse to your <code class="docutils literal notranslate">planets</code> repository on GitHub.
+Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
+Hover over, and click on, the three buttons to the right of each commit.
+What information can you gather/explore from these buttons?
+How would you get that same information in the shell?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The left-most button (with the picture of a clipboard) copies the full identifier of the commit
+to the clipboard. In the shell, <code class="docutils literal notranslate">git log</code> will show you the full commit identifier for each
+commit.</p>
+<p>When you click on the middle button, you’ll see all of the changes that were made in that
+particular commit. Green shaded lines indicate additions and red ones removals. In the shell we
+can do the same thing with <code class="docutils literal notranslate">git diff</code>. In particular, <code class="docutils literal notranslate">git diff ID1..ID2</code> where ID1 and
+ID2 are commit identifiers (e.g. <code class="docutils literal notranslate">git diff a3bf1e5..041e637</code>) will show the differences
+between those two commits.</p>
+<p>The right-most button lets you view all of the files in the repository at the time of that
+commit. To do this in the shell, we’d need to checkout the repository at that particular time.
+We can do this with <code class="docutils literal notranslate">git checkout ID</code> where ID is the identifier of the commit we want to
+look at. If we do this, we need to remember to put the repository back to the right state
+afterwards!</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Uploading files directly in GitHub browser</strong></p>
+<p>Github also allows you to skip the command line and upload files directly to
+your repository without having to leave the browser. There are two options.
+First you can click the “Upload files” button in the toolbar at the top of the
+file tree. Or, you can drag and drop files from your desktop onto the file
+tree. You can read more about this <a class="reference external" href="https://help.github.com/articles/adding-a-file-to-a-repository/" rel="nofollow noopener">on this GitHub page<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub Timestamp</strong></p>
+<p>Create a remote repository on GitHub. Push the contents of your local
+repository to the remote. Make changes to your local repository and push these
+changes. Go to the repo you just created on GitHub and check the
+timestamps of the files. How does GitHub
+record times, and why?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three
+weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the
+last change to the file occurred.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Push vs. Commit</strong></p>
+<p>In this episode, we introduced the “git push” command.
+How is “git push” different from “git commit”?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>When we push changes, we’re interacting with a remote repository to update it with the changes
+we’ve made locally (often this corresponds to sharing the changes we’ve made with others).
+Commit only updates your local repository.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>GitHub License and README files</strong></p>
+<p>In this episode we learned about creating a remote repository on GitHub, but when you initialized
+your GitHub repo, you didn’t add a README.md or a license file. If you had, what do you think
+would have happened when you tried to link your local and remote repositories?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>In this case, we’d see a merge conflict due to unrelated histories. When GitHub creates a
+README.md file, it performs a commit in the remote repository. When you try to pull the remote
+repository to your local repository, Git detects that they have histories that do not share a
+common origin and refuses to merge.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">warning: no common commits</span>
+<span class="go">remote: Enumerating objects: 3, done.</span>
+<span class="go">remote: Counting objects: 100% (3/3), done.</span>
+<span class="go">remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/vlad/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go"> * [new branch]      main     -&gt; origin/main</span>
+<span class="go">fatal: refusing to merge unrelated histories</span>
+</code></pre></div></div>
+<p>You can force git to merge the two repositories with the option <code class="docutils literal notranslate">--allow-unrelated-histories</code>.
+Be careful when you use this option and carefully examine the contents of local and remote
+repositories before merging.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>--allow-unrelated-histories<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">From https://github.com/vlad/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">Merge made by the 'recursive' strategy.</span>
+<span class="go">README.md | 1 +</span>
+<span class="go">1 file changed, 1 insertion(+)</span>
+<span class="go">create mode 100644 README.md</span>
 </code></pre></div></div>
 </div>
 </section>
 </section>
+</section>
 </article>
 <footer>
-<div class="mt-20 mb-4 text-sm text-gray-700 print:mt-4">© 2023, Jon Hill Made with <a href="https://www.sphinx-doc.org">Sphinx 4.5.0</a></div>
+<div class="mt-20 mb-4 text-sm text-gray-700">© 2023, Jon Hill Made with <a href="https://www.sphinx-doc.org">Sphinx 5.3.0</a></div>
 </footer></main>
 <button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
   Clear highlights
@@ -1231,12 +2335,14 @@ To display the differences between its updated state and its original state, use
 <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
 <script src="_static/jquery.js"></script>
 <script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
 <script src="_static/doctools.js"></script>
+<script src="_static/sphinx_highlight.js"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/theme.3051a0ec24cad00d4d88.js"></script>
+<script src="_static/theme.3666d2347a4c66e5d7a8.js"></script>
 </body>
 </html>
