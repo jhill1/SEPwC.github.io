@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Ignoring files | SEPwC  documentation</title>
+<title>Intro to Python | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
@@ -15,7 +15,7 @@
 </head>
 <body class="antialiased text-gray">
 <div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#ignoring-files" title="Skip navigation links">Skip to content</a>
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#intro-to-python" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -99,11 +99,21 @@
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
 </ul>
 </li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python: the fundementals</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-python">Intro to Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-r">Intro to R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-loops">Python Loops</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#for-loops"><cite>for</cite> Loops</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#while-loop"><cite>while</cite> loop</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html">R: the fundementals</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#intro-to-r">Intro to R</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
@@ -134,250 +144,162 @@
 </aside>
 <main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Ignoring files</span>
+<span class="mr-1">/</span><span aria-current="page">Intro to Python</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="ignoring-files">
-<h1>Ignoring files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ignoring-files">¶</a></h1>
-<p>What if we have files that we do not want Git to track for us,
-like backup files created by our editor or intermediate files created during data analysis?
-Let’s create a few dummy files:</p>
+<section id="intro-to-python">
+<h1>Intro to Python<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intro-to-python">¶</a></h1>
+<p>Python is an interpreted language that has become incredibily popular. Due to that
+there are modules that will do just about anything. This makes Python a really
+powerful tool for writing code to analyse any number of problems.</p>
+<p>Python can be run on the command line, in a Jupyter notebook, in Google Colab,
+as a standalone script, or even as a full GUI program. There are modules
+for plotting (matplotlib), scientific algorithms (scipy), numerical algorithms
+(numpy) and GIS (gdal).</p>
+<p>Let’s get a simple python code running!</p>
+<p>We want to calculate the height of a ball after time, t, which we can do using this formula</p>
+<div class="math notranslate nohighlight">
+\[y(t) = v_{0}t- \frac{1}{2}gt^2\]</div>
+<p>where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y(t)\)</span> is the height of the ball at time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity of tha ball (at <span class="math notranslate nohighlight">\(t=0\)</span>), and</p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity</p></li>
+</ul>
+</div></blockquote>
+<p>Let’s work this out by hand for a ball thrown at 5 m/s, with <span class="math notranslate nohighlight">\(g=9.81\)</span>, at <span class="math notranslate nohighlight">\(t=0.5\)</span></p>
+<p>We have:</p>
+<div class="math notranslate nohighlight">
+\[y = 5 \times 0.5 - (\frac{1}{2} \times 9.81 \times 0.5^2)\]</div>
+<p>I get that to be:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}y = 2.5 - 1.22625\\y = 1.27375\end{aligned}\end{align} \]</div>
+<p>using a calculator. So let’s do that in python:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>mkdir<span class="w"> </span>results
-touch<span class="w"> </span>a.dat<span class="w"> </span>b.dat<span class="w"> </span>c.dat<span class="w"> </span>results/a.out<span class="w"> </span>results/b.out
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mf">0.5</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="mf">9.81</span><span class="o">*</span><span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
-<p>and see what Git says:</p>
+<p>Great! Our first python code! Let’s build this up to use variables. Type the following code and execute:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Untracked files:</span>
-<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">time</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
 
-<span class="go">    a.dat</span>
-<span class="go">    b.dat</span>
-<span class="go">    c.dat</span>
-<span class="go">    results/</span>
+<span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+<p>This code is, inessence, identical to the one above, but instead of <em>hardcoding</em> the numebrs, we’ve used
+variables. The formula is now written in good, descriptive variable names, using spaces and parantheses to
+separate the terms for readability. Not that exciting yet. What if we want to calculate the height for a
+bunch of times? Let’s add a loop!</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
 
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
 </code></pre></div></div>
-<p>Putting these files under version control would be a waste of disk space.
-What’s worse, having them all listed could distract us from changes that actually matter,
-so let’s tell Git to ignore them.</p>
-<p>We do this by creating a file in the root directory of our project called <code class="docutils literal notranslate">.gitignore</code>:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano<span class="w"> </span>.gitignore
-cat<span class="w"> </span>.gitignore
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">*.dat</span>
-<span class="go">results/</span>
-</code></pre></div></div>
-<p>These patterns tell Git to ignore any file whose name ends in <code class="docutils literal notranslate">.dat</code>
-and everything in the <code class="docutils literal notranslate">results</code> directory. (If any of these files were already being tracked,
-Git would continue to track them.)</p>
-<p>Once we have created this file, the output of <code class="docutils literal notranslate">git status</code> is much cleaner:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Untracked files:</span>
-<span class="go">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
-
-<span class="go">    .gitignore</span>
-
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
-</code></pre></div></div>
-<p>The only thing Git notices now is the newly-created <code class="docutils literal notranslate">.gitignore</code> file.
-You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore
-the same things that we’re ignoring. Let’s add and commit <code class="docutils literal notranslate">.gitignore</code>:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Ignore data files and the results folder."</span>
-git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">nothing to commit, working tree clean</span>
-</code></pre></div></div>
-<p>As a bonus, using <code class="docutils literal notranslate">.gitignore</code> helps us avoid accidentally adding files to the repository that we don’t want to track:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>a.dat
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">The following paths are ignored by one of your .gitignore files:</span>
-<span class="go">a.dat</span>
-<span class="go">Use -f if you really want to add them.</span>
-</code></pre></div></div>
-<p>If we really want to override our ignore settings, we can use <code class="docutils literal notranslate">git add -f</code> to force Git to add something. For example,
-<code class="docutils literal notranslate">git add -f a.dat</code>. We can also always see the status of ignored files if we want:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status<span class="w"> </span>--ignored
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Ignored files:</span>
-<span class="go"> (use "git add -f &lt;file&gt;..." to include in what will be committed)</span>
-
-<span class="go">        a.dat</span>
-<span class="go">        b.dat</span>
-<span class="go">        c.dat</span>
-<span class="go">        results/</span>
-
-<span class="go">nothing to commit, working tree clean</span>
-</code></pre></div></div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Ignoring Nested Files</strong></p>
-<p>Given a directory structure that looks like:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/data</span>
-<span class="go">results/plots</span>
-</code></pre></div></div>
-<p>How would you ignore only <code class="docutils literal notranslate">results/plots</code> and not <code class="docutils literal notranslate">results/data</code>?</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>If you only want to ignore the contents of
-<code class="docutils literal notranslate">results/plots</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
-only the <code class="docutils literal notranslate">/plots/</code> subfolder by adding the following line to
-your .gitignore:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/plots/</span>
-</code></pre></div></div>
-<p>This line will ensure only the contents of <code class="docutils literal notranslate">results/plots</code> is ignored, and
-not the contents of <code class="docutils literal notranslate">results/data</code>.
-As with most programming issues, there are a few alternative ways that one may ensure this ignore rule is followed.
-The “Ignoring Nested Files: Variation” exercise has a slightly
-different directory structure that presents an alternative solution.
-Further, the discussion page has more detail on ignore rules.</p>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Including Specific Files</strong></p>
-<p>How would you ignore all <code class="docutils literal notranslate">.dat</code> files in your root directory except for
-<code class="docutils literal notranslate">final.dat</code>?
-Hint: Find out what <cite>!</cite> (the exclamation point operator) does</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>You would add the following two lines to your .gitignore:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">\*.dat           # ignore all data files</span>
-<span class="go">!final.dat      # except final.data</span>
-</code></pre></div></div>
-<p>The exclamation point operator will include a previously excluded entry.</p>
-<p>Note also that because you’ve previously committed <code class="docutils literal notranslate">.dat</code> files in this
-lesson they will not be ignored with this new rule. Only future additions
-of <code class="docutils literal notranslate">.dat</code> files added to the root directory will be ignored.</p>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Ignoring Nested Files: Variation</strong></p>
-<p>Given a directory structure that looks similar to the earlier Nested Files
-exercise, but with a slightly different directory structure:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/data</span>
-<span class="go">results/images</span>
-<span class="go">results/plots</span>
-<span class="go">results/analysis</span>
-</code></pre></div></div>
-<p>How would you ignore all of the contents in the results folder, but not <code class="docutils literal notranslate">results/data</code>?</p>
-<p>Hint: think a bit about how you created an exception with the <code class="docutils literal notranslate">!</code> operator
-before.</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>If you want to ignore the contents of
-<code class="docutils literal notranslate">results/</code> but not those of <code class="docutils literal notranslate">results/data/</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
-the contents of results folder, but create an exception for the contents of the
-<code class="docutils literal notranslate">results/data</code> subfolder. Your .gitignore would look like this:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/*               # ignore everything in results folder</span>
-<span class="go">!results/data/          # do not ignore results/data/ contents</span>
-</code></pre></div></div>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>The Order of Rules</strong></p>
-<p>Given a <cite>.gitignore</cite> file with the following contents:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">*.dat</span>
-<span class="go">!*.dat</span>
-</code></pre></div></div>
-<p>What will be the result?</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>The <code class="docutils literal notranslate">!</code> modifier will negate an entry from a previously defined ignore pattern.
-Because the <code class="docutils literal notranslate">!*.dat</code> entry negates all of the previous <code class="docutils literal notranslate">.dat</code> files in the <code class="docutils literal notranslate">.gitignore</code>,
-none of them will be ignored, and all <code class="docutils literal notranslate">.dat</code> files will be tracked.</p>
-</div>
+<p>This is not the most elegant way to do this, but it works. You now have the height of the ball
+at time 0 to 0.9 in steps of 0.1. Note the indentation. In Python <em>whitespace</em> matters. It signifies
+which statements are part of the <cite>for</cite> loop. You must be consistant with indentation or your
+code will not run.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Log Files</strong></p>
-<p>You wrote a script that creates many intermediate log-files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, <code class="docutils literal notranslate">log_03</code>, etc.
-You want to keep them but you do not want to track them through <code class="docutils literal notranslate">git</code>.</p>
-<ol class="arabic simple">
-<li><p>Write <strong>one</strong> <code class="docutils literal notranslate">.gitignore</code> entry that excludes files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, etc.</p></li>
-<li><p>Test your “ignore pattern” by creating some dummy files of the form <code class="docutils literal notranslate">log_01</code>, etc.</p></li>
-<li><p>You find that the file <code class="docutils literal notranslate">log_01</code> is very important after all, add it to the tracked files without changing the <code class="docutils literal notranslate">.gitignore</code> again.</p></li>
-<li><p>Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via <code class="docutils literal notranslate">.gitignore</code>.</p></li>
-</ol>
+<p><strong>What happens if the code isn’t indented correctly?</strong></p>
+<p>Take the code here:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Let’s edit that to produce some wierd indentation:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+  <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+<p>What error do you see?</p>
+<p>What about this code? What will it print?</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<ol class="arabic simple">
-<li><p>append either <cite>log_*</cite>  or  <cite>log*</cite>  as a new entry in your .gitignore</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>track <cite>log_01</cite> using   <cite>git add -f log_01</cite></p></li>
-</ol>
+<p>The code above will print a single <cite>time</cite>, <cite>vert_position</cite> pair which will
+be the values at the final iteration of the loop.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">0.9 0.5269499999999994</span>
+</code></pre></div></div>
 </div>
+<p>Shall we plot this?</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+
+<span class="c1"># set up the problem</span>
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="c1"># loop through the times, calculating the height</span>
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">heights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vert_position</span><span class="p">)</span>
+
+<span class="c1"># the times and heights are now stored, so we can plot</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">heights</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<img alt="_images/Python_ball_graph.png" src="_images/Python_ball_graph.png"/>
+<p>That’s not bad for a few lines of code. You can’t publish that graph (no axes labels, etc), but for
+your first Python program I think that’s pretty good!</p>
+<p>In the above we have used the following Python features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>printing</p></li>
+<li><p>comments</p></li>
+<li><p>lists</p></li>
+<li><p>importing modules</p></li>
+<li><p>loops and list comprehension</p></li>
+<li><p>very basic matplotlib</p></li>
+<li><p>variable names</p></li>
+</ul>
+</div></blockquote>
+<p>We’ve covered some of these in the pseudo-code chapter, so here we’re going to stick to the
+Python-specific parts and go through these in more detail.</p>
 </section>
 </article>
 <footer>
@@ -399,6 +321,7 @@ You want to keep them but you do not want to track them through <code class="doc
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="_static/theme.3666d2347a4c66e5d7a8.js"></script>
 </body>
 </html>

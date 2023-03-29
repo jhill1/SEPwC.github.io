@@ -6,18 +6,18 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Python and R: the basics | SEPwC  documentation</title>
+<title>Python: the fundementals | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="Issues.html" rel="next" title="Solving issues and debugging"/>
+<link href="R.html" rel="next" title="R: the fundementals"/>
 <link href="Revision_control.html" rel="prev" title="Revision control with Git"/>
 </head>
 <body class="antialiased text-gray">
 <div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#python-and-r-the-basics" title="Skip navigation links">Skip to content</a>
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#python-the-fundementals" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -101,11 +101,21 @@
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
 </ul>
 </li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Python and R: the basics</a></div><ul>
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Python: the fundementals</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#intro-to-python">Intro to Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#intro-to-r">Intro to R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="#python-loops">Python Loops</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#for-loops"><cite>for</cite> Loops</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#while-loop"><cite>while</cite> loop</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html">R: the fundementals</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#intro-to-r">Intro to R</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
@@ -136,13 +146,13 @@
 </aside>
 <main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Python and R: the basics</span>
+<span class="mr-1">/</span><span aria-current="page">Python: the fundementals</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="python-and-r-the-basics">
-<h1>Python and R: the basics<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-and-r-the-basics">¶</a></h1>
+<section id="python-the-fundementals">
+<h1>Python: the fundementals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-the-fundementals">¶</a></h1>
 <p>We’re now going to learn the basics of a language. If you’ve chosen
-Python, keep reading. If you’ve choosen R <a class="reference internal" href="#intro-to-r"><span class="std std-ref">go to this section</span></a>.</p>
+Python, keep reading. If you’ve choosen R <a class="reference internal" href="R.html#r-the-fundementals"><span class="std std-ref">go to this section</span></a>.</p>
 <p>Computer languages are much simpler than natural langauages, but much
 stricter. We have to get the syntax correct or things won’t work. However
 interpreted languages tell you what is wrong, so it’s not as bad as it sounds.</p>
@@ -207,7 +217,60 @@ bunch of times? Let’s add a loop!</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
 </code></pre></div></div>
 <p>This is not the most elegant way to do this, but it works. You now have the height of the ball
-at time 0 to 0.9 in steps of 0.1.</p>
+at time 0 to 0.9 in steps of 0.1. Note the indentation. In Python <em>whitespace</em> matters. It signifies
+which statements are part of the <cite>for</cite> loop. You must be consistant with indentation or your
+code will not run.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>What happens if the code isn’t indented correctly?</strong></p>
+<p>Take the code here:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Let’s edit that to produce some wierd indentation:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+  <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+<p>What error do you see?</p>
+<p>What about this code? What will it print?</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="n">initial_velocity</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">vert_position</span> <span class="o">=</span> <span class="n">initial_velocity</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">)</span>
+</code></pre></div></div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The code above will print a single <cite>time</cite>, <cite>vert_position</cite> pair which will
+be the values at the final iteration of the loop.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">0.9 0.5269499999999994</span>
+</code></pre></div></div>
+</div>
 <p>Shall we plot this?</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
@@ -247,104 +310,167 @@ your first Python program I think that’s pretty good!</p>
 <p>We’ve covered some of these in the pseudo-code chapter, so here we’re going to stick to the
 Python-specific parts and go through these in more detail.</p>
 </section>
-<section id="intro-to-r">
-<h2>Intro to R<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intro-to-r">¶</a></h2>
-<p>R is an interpreted language that has become incredibily popular, but
-was originally designed as a free, open-source version of “S”; a statistical
-analysis package. Due to populularity, there are libaries that will do just about anything.
-This makes R a really powerful tool for writing code to analyse any number of problems.</p>
-<p>R can be run on the command line, in a popular GUI call R-Studio,
-as a standalone script, even on websites. There are libraries
-for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and GIS (r-gdal).</p>
-<p>Let’s get a simple R code running!</p>
-<p>We want to calculate the height of a ball after time, t, which we can do using this formula</p>
+<section id="python-loops">
+<h2>Python Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-loops">¶</a></h2>
+<p>As we saw in the coding fundementals, loops are a tool to iterate over
+many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
+or through time (as in the example above). They are therefore fundemental
+to a lot of data analysis.</p>
+<p>Suppose we want to make a table to convert Celsius to Farenheit:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">-20  -4.0</span>
+<span class="go">-15   5.0</span>
+<span class="go">-10  14.0</span>
+<span class="go">-5  23.0</span>
+<span class="go">0  32.0</span>
+<span class="go">5  41.0</span>
+<span class="go">10  50.0</span>
+<span class="go">15  59.0</span>
+<span class="go">20  68.0</span>
+<span class="go">25  77.0</span>
+<span class="go">30  86.0</span>
+<span class="go">35  95.0</span>
+<span class="go">40 104.0</span>
+</code></pre></div></div>
+<p>How do we write a program that prints out such a table? We know that</p>
 <div class="math notranslate nohighlight">
-\[y(t) = v_{0}t- \frac{1}{2}gt^2\]</div>
-<p>where:</p>
+\[F = \frac{9}{5}C + 32\]</div>
+<p>and a single line in this table is:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</code></pre></div></div>
+<p>We could therefore write:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</code></pre></div></div>
+<p>This is error prone though. What if we make a typo (likely)? How would we know? Also this
+is very boring and repetative. The entire idea of writing code it to remove the
+repetative, boring stuff and let the computer do that work. This is where loops come in.</p>
+<section id="for-loops">
+<h3><cite>for</cite> Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#for-loops">¶</a></h3>
+<p>‘for’ loops work in Python using a control variable (the thing that increments each loop) and
+an iterator (the thing we’re iterating over). This is a really powerful concept as
+we can iterate over a list or a counter with the same construct. This is all
+a bit abstract, so let’s do some examples.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The above creates a list (of numbers) and then iterates over that list
+with the control variable being the individual item in the list. You should
+see the following:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">6</span>
+<span class="go">7</span>
+<span class="go">10</span>
+</code></pre></div></div>
+<p>Note the indentation? We covered that briefly in the last section. Unlike other languages
+Python uses white space to denote which statements are included in the <cite>for</cite> loop. They must
+be indented to the same level, but there are no rules for how much. Most programmers
+use 4 spaces. Some use 8, some (rarely) use 3.</p>
+<p>I would recommend sticking to 4 spaces. In a text editor it’s worth setting your <kbd class="kbd docutils literal notranslate">Tab</kbd>
+to be four spaces, rather than the <cite>tab</cite> character.</p>
+<p>Going back to loops…we can also iterate over the list using a counter.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+<p>The output will be identical to the above, but we’re accessing the list via the index
+(here, the variable <cite>i</cite>). What does <cite>i</cite> do then? Let’s edit the code and find out.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">5</span>
+</code></pre></div></div>
+<p><cite>i</cite> goes from 0 (Python starts counting from 0. R starts from 1) to the length of the list - 1. The <cite>range</cite> function
+creates a list contining those numbers. So although this loops looks different to the first one we created,
+it’s actually identical in terms of it’s construction.</p>
+<p>The <cite>range</cite> function is <code class="docutils literal notranslate">range(start, stop, increment)</code>
+which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, but not including, <cite>stop</cite>.
+We can also write <cite>range(stop)</cite> as an abbreviation for <cite>range(0, stop, 1)</cite>, or <cite>range(start,stop)</cite> to assume an increment
+of 1.</p>
+<p>For loops are a really useful way of doing the same thing to each item in a list.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Writing our table for conversion using a `for` loop?</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(y(t)\)</span> is the height of the ball at time <span class="math notranslate nohighlight">\(t\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity of tha ball (at <span class="math notranslate nohighlight">\(t=0\)</span>), and</p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> is the acceleration due to gravity</p></li>
-</ul>
+<div><p>Write out the Farenheit to Celsius conversion table using a for loop.</p>
 </div></blockquote>
-<p>Let’s work this out by hand for a ball thrown at 5 m/s, with <span class="math notranslate nohighlight">\(g=9.81\)</span>, at <span class="math notranslate nohighlight">\(t=0.5\)</span></p>
-<p>We have:</p>
-<div class="math notranslate nohighlight">
-\[y = 5 \times 0.5 - (\frac{1}{2} \times 9.81 \times 0.5^2)\]</div>
-<p>I get that to be:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}y = 2.5 - 1.22625\\y = 1.27375\end{aligned}\end{align} \]</div>
-<p>using a calculator. So let’s do that in python:</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">R</span></div>
-<div class="highlight"><pre><code><span class="nf">print</span><span class="p">(</span><span class="m">5</span><span class="o">*</span><span class="m">0.5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">0.5</span><span class="o">*</span><span class="m">9.81</span><span class="o">*</span><span class="m">0.5</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
 </code></pre></div></div>
-<p>Great! Our first R code! Let’s build this up to use variables. Type the following code and execute:</p>
+<p>This version uses the <cite>range</cite> function to go from -20 to 41 (note: not 40!) in steps of 5
+and calculates F, before printing C and F. You could do this in one line of code, which
+we will come to later.</p>
+</div>
+<p>In a <cite>for</cite> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
+Python also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
+</section>
+<section id="while-loop">
+<h3><cite>while</cite> loop<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#while-loop">¶</a></h3>
+<p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">R</span></div>
-<div class="highlight"><pre><code><span class="n">time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.5</span>
-<span class="n">initial_velocity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
-<span class="n">gravity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">9.81</span>
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">2</span><span class="o">&gt;</span>
+    <span class="o">...</span>
 
-<span class="n">vert_position</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">initial_velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gravity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">vert_position</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">first</span> <span class="n">statement</span> <span class="n">after</span> <span class="n">the</span> <span class="n">loop</span><span class="o">&gt;</span>
 </code></pre></div></div>
-<p>This code is, inessence, identical to the one above, but instead of <em>hardcoding</em> the numebrs, we’ve used
-variables. The formula is now written in good, descriptive variable names, using spaces and parantheses to
-separate the terms for readability. Not that exciting yet. What if we want to calculate the height for a
-bunch of times? Let’s add a loop!</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">R</span></div>
-<div class="highlight"><pre><code><span class="n">times</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span>
-<span class="n">initial_velocity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
-<span class="n">gravity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">9.81</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">times</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">vert_position</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">initial_velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gravity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">vert_position</span><span class="p">))</span>
-<span class="w"> </span><span class="p">}</span>
-</code></pre></div></div>
-<p>This is not the most elegant way to do this, but it works. You now have the height of the ball
-at time 0 to 0.9 in steps of 0.1.</p>
-<p>Shall we plot this?</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">R</span></div>
-<div class="highlight"><pre><code><span class="c1"># set up the problem</span>
-<span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span>
-<span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="n">initial_velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
-<span class="n">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.81</span>
-
-<span class="c1"># loop through the times, calculating the height</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">times</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">vert_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initial_velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gravity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
-<span class="w">    </span><span class="n">heights</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">heights</span><span class="p">,</span><span class="n">vert_position</span><span class="p">)</span>
-<span class="w"> </span><span class="p">}</span>
-
-<span class="c1"># the times and heights are now stored, so we can plot</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span>
-</code></pre></div></div>
-<img alt="_images/R_ball_graph.png" src="_images/R_ball_graph.png"/>
-<p>That’s not bad for a few lines of code. You can’t publish that graph (axes labels without units, etc), but for
-your first R program I think that’s pretty good!</p>
-<p>In the above we have used the following R features:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>printing</p></li>
-<li><p>comments</p></li>
-<li><p>vectors</p></li>
-<li><p>loops and list comprehension</p></li>
-<li><p>very basic plotting</p></li>
-<li><p>variable names</p></li>
-</ul>
-</div></blockquote>
-<p>We’ve covered some of these in the pseudo-code chapter, so here we’re going to stick to the
-R-specific parts and go through these in more detail.</p>
+</section>
 </section>
 </section>
 </article>

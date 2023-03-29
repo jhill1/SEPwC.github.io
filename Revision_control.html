@@ -101,6 +101,8 @@
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
 </ul>
 </li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#collaboration-with-git">Collaboration with Git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#conflict">Conflict!</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
@@ -140,9 +142,9 @@
 </nav>
 <article class="flex-1" role="main">
 <section id="revision-control-with-git">
-<h1>Revision control with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#revision-control-with-git">¶</a></h1>
+<h1>Revision control with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#revision-control-with-git">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#introduction">¶</a></h2>
+<h2>Introduction<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#introduction">¶</a></h2>
 <p>We’ll start by exploring how version control can be used to keep track of what one person did and when.
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:</p>
 <img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png"/>
@@ -218,7 +220,7 @@ problems.</p></li>
 </div>
 </section>
 <section id="setting-up-git">
-<h2>Setting up git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#setting-up-git">¶</a></h2>
+<h2>Setting up git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#setting-up-git">¶</a></h2>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:</p>
 <ul class="simple">
@@ -273,7 +275,7 @@ On macOS and Linux:</p>
 </div>
 <p>We also need to set our favorite text editor, following this table:</p>
 <table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Editors and config</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id6">¶</a></caption>
+<caption><span class="caption-text">Editors and config</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id6">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Editor</p></th>
 <th class="head"><p>Configuration command</p></th>
@@ -375,7 +377,7 @@ More generally, you can get the list of available <code class="docutils literal 
 </div>
 </section>
 <section id="our-first-repository">
-<h2>Our first repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#our-first-repository">¶</a></h2>
+<h2>Our first repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#our-first-repository">¶</a></h2>
 <p>Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
@@ -423,7 +425,7 @@ including the tracked files and sub-directories located within the project’s d
 If we ever delete the <code class="docutils literal notranslate">.git</code> subdirectory, we will lose the project’s history.</p>
 <p>Next, we will change the default branch to be called <code class="docutils literal notranslate">main</code>.
 This might be the default branch depending on your settings and version
-of git. See the <a class="reference internal" href="Revision_control_2.html#setting-up-git"><span class="std std-ref">Setting up git</span></a> section above for more information on this change.</p>
+of git. See the <a class="reference internal" href="#setting-up-git"><span class="std std-ref">Setting up git</span></a> section above for more information on this change.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">bash</span></div>
@@ -534,7 +536,7 @@ Therefore, always check your current directory using the command <cite>pwd</cite
 </div>
 </section>
 <section id="adding-files">
-<h2>Adding files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-files">¶</a></h2>
+<h2>Adding files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-files">¶</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
 <div class="code-wrapper" data-controller="code">
@@ -1248,7 +1250,7 @@ To display the differences between its updated state and its original state, use
 </div>
 </section>
 <section id="git-history">
-<h2>Git history<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#git-history">¶</a></h2>
+<h2>Git history<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#git-history">¶</a></h2>
 <p>No, not the story of how Git came to be, but how do we get at the history of our commits.
 In the previous section we see we can refer to commits by the unique identifiers.
 You can refer to the <em>most recent commit</em> of the working
@@ -1667,7 +1669,7 @@ the difference between each commit.</p>
 </div>
 </section>
 <section id="ignoring-files">
-<h2>Ignoring files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ignoring-files">¶</a></h2>
+<h2>Ignoring files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ignoring-files">¶</a></h2>
 <p>What if we have files that we do not want Git to track for us,
 like backup files created by our editor or intermediate files created during data analysis?
 Let’s create a few dummy files:</p>
@@ -1909,7 +1911,7 @@ You want to keep them but you do not want to track them through <code class="doc
 </div>
 </section>
 <section id="id1">
-<h2>Github<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id1">¶</a></h2>
+<h2>Github<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id1">¶</a></h2>
 <p>Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.</p>
@@ -1923,7 +1925,7 @@ and cons of this in a later episode.</p>
 world. To this end we are going to create a <em>remote</em> repository that will be
 linked to our <em>local</em> repository.</p>
 <section id="creating-a-remote-repository">
-<h3>1. Creating a remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#creating-a-remote-repository">¶</a></h3>
+<h3>1. Creating a remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#creating-a-remote-repository">¶</a></h3>
 <p>Log in to <a class="reference external" href="https://github.com" rel="nofollow noopener">GitHub<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, then click on the icon in the top right corner to
 create a new repository called <code class="docutils literal notranslate">planets</code>:</p>
 <a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
@@ -1954,7 +1956,7 @@ which looked like this:</p>
 remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
 </section>
 <section id="connect-local-to-remote-repository">
-<h3>2. Connect local to remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#connect-local-to-remote-repository">¶</a></h3>
+<h3>2. Connect local to remote repository<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#connect-local-to-remote-repository">¶</a></h3>
 <p>Now we connect the two repositories.  We do this by making the
 GitHub repository a remote for the local repository.
 The home page of the repository on GitHub includes the URL string we need to
@@ -1998,7 +2000,7 @@ and GitHub, so it’s helpful to stick with this unless there’s a reason not t
 talking about how they might be used for collaboration.</p>
 </section>
 <section id="ssh-background-and-setup">
-<h3>3. SSH Background and Setup<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ssh-background-and-setup">¶</a></h3>
+<h3>3. SSH Background and Setup<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ssh-background-and-setup">¶</a></h3>
 <p>Before I can connect to a remote repository, I need to set up a way for his computer to
 authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
 <p>We are going to set up the method that is commonly used by many different services to authenticate
@@ -2039,7 +2041,7 @@ The file names are either <code class="docutils literal notranslate">id_ed25519<
 depending on how the key pairs were set up.</p>
 <p>Since they don’t exist on this computer, we will use this command to create them.</p>
 <section id="create-an-ssh-key-pair">
-<h4>3.1 Create an SSH key pair<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#create-an-ssh-key-pair">¶</a></h4>
+<h4>3.1 Create an SSH key pair<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#create-an-ssh-key-pair">¶</a></h4>
 <p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate">-t</code> option specifies which type of
 algorithm to use and <code class="docutils literal notranslate">-C</code> attaches a comment to the key (here, our email):</p>
 <div class="code-wrapper" data-controller="code">
@@ -2110,7 +2112,7 @@ is a shorter version of a public key.</p>
 </code></pre></div></div>
 </section>
 <section id="copy-the-public-key-to-github">
-<h4>3.2 Copy the public key to GitHub<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copy-the-public-key-to-github">¶</a></h4>
+<h4>3.2 Copy the public key to GitHub<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copy-the-public-key-to-github">¶</a></h4>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
@@ -2159,7 +2161,7 @@ files are located), paste your SSH key into the field, and click the “Add SSH 
 </section>
 </section>
 <section id="push-local-changes-to-a-remote">
-<h3>4. Push local changes to a remote<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#push-local-changes-to-a-remote">¶</a></h3>
+<h3>4. Push local changes to a remote<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#push-local-changes-to-a-remote">¶</a></h3>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from
 our local repository to the repository on GitHub:</p>
 <div class="code-wrapper" data-controller="code">
@@ -2321,6 +2323,721 @@ repositories before merging.</p>
 </code></pre></div></div>
 </div>
 </section>
+</section>
+<section id="collaboration-with-git">
+<h2>Collaboration with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#collaboration-with-git">¶</a></h2>
+<p>For the next step, get into pairs.  One person will be the “Owner” and the other
+will be the “Collaborator”. The goal is that the Collaborator add changes into
+the Owner’s repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Practicing By Yourself</strong></p>
+<p>If you’re working through this lesson on your own, you can carry on by opening
+a second terminal window.
+This window will represent your partner, working on another computer. You
+won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
+</div>
+<p>The Owner needs to give the Collaborator access. On GitHub, click the “Settings”
+button on the right, select “Collaborators”, click “Add people”, and
+then enter your partner’s username.</p>
+<a class="reference external image-reference" href="../images/github-add-collaborators.png"><img alt="Adding Collaborators on GitHub" src="_images/github-add-collaborators.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>To accept access to the Owner’s repo, the Collaborator
+needs to go to <a class="reference external" href="https://github.com/notifications" rel="nofollow noopener">https://github.com/notifications<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+or check for email notification. Once there she can accept access to the Owner’s repo.</p>
+<p>Next, the Collaborator needs to download a copy of the Owner’s repository to her
+machine. This is called “cloning a repo”.</p>
+<p>The Collaborator doesn’t want to overwrite her own version of <code class="docutils literal notranslate">planets.git</code>, so
+needs to clone the Owner’s repository to a different location than her own
+repository with the same name.</p>
+<p>To clone the Owner’s repo into her <code class="docutils literal notranslate">Desktop</code> folder, the Collaborator enters:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:jh1889/planets.git<span class="w"> </span>~/Desktop/jh1889-planets
+</code></pre></div></div>
+<p>Replace ‘jh1889’ with the Owner’s username.</p>
+<p>If you choose to clone without the clone path
+(<code class="docutils literal notranslate">~/Desktop/jh1889-planets</code>) specified at the end,
+you will clone inside your own planets folder!
+Make sure to navigate to the <code class="docutils literal notranslate">Desktop</code> folder first.</p>
+<a class="reference external image-reference" href="../images/github-collaboration.png"><img alt="After Creating Clone of Repository" src="_images/github-collaboration.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>The Collaborator can now make a change in her clone of the Owner’s repository,
+exactly the same way as we’ve been doing before:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>~/Desktop/jh1889-planets
+nano<span class="w"> </span>pluto.txt
+cat<span class="w"> </span>pluto.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">It is so a planet!</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>pluto.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes about Pluto"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">1 file changed, 1 insertion(+)</span>
+<span class="go">create mode 100644 pluto.txt</span>
+</code></pre></div></div>
+<p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enumerating objects: 4, done.</span>
+<span class="go">Counting objects: 4, done.</span>
+<span class="go">Delta compression using up to 4 threads.</span>
+<span class="go">Compressing objects: 100% (2/2), done.</span>
+<span class="go">Writing objects: 100% (3/3), 306 bytes, done.</span>
+<span class="go">Total 3 (delta 0), reused 0 (delta 0)</span>
+<span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go">   9272da5..29aba7c  main -&gt; main</span>
+</code></pre></div></div>
+<p>Note that we didn’t have to create a remote called <code class="docutils literal notranslate">origin</code>: Git uses this
+name by default when we clone a repository.  (This is why <code class="docutils literal notranslate">origin</code> was a
+sensible choice earlier when we were setting up remotes by hand.)</p>
+<p>Take a look at the Owner’s repository on GitHub again, and you should be
+able to see the new commit made by the Collaborator. You may need to refresh
+your browser to see the new commit.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Some more about remotes</strong></p>
+<p>In this section and the previous one, our local repository has had
+a single “remote”, called <code class="docutils literal notranslate">origin</code>. A remote is a copy of the repository
+that is hosted somewhere else, that we can push to and pull from, and
+there’s no reason that you have to work with only one. For example,
+on some large projects you might have your own copy in your own GitHub
+account (you’d probably call this <code class="docutils literal notranslate">origin</code>) and also the main “upstream”
+project repository (let’s call this <code class="docutils literal notranslate">upstream</code> for the sake of examples).
+You would pull from <code class="docutils literal notranslate">upstream</code> from time to
+time to get the latest updates that other people have committed.</p>
+<p>Remember that the name you give to a remote only exists locally. It’s
+an alias that you choose - whether <code class="docutils literal notranslate">origin</code>, or <code class="docutils literal notranslate">upstream</code>, or <code class="docutils literal notranslate">fred</code> -
+and not something intrinstic to the remote repository.</p>
+<p>The <code class="docutils literal notranslate">git remote</code> family of commands is used to set up and alter the remotes
+associated with a repository. Here are some of the most useful ones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate">git remote -v</code> lists all the remotes that are configured (we already used
+this in the last section)</p></li>
+<li><p><code class="docutils literal notranslate">git remote add [name] [url]</code> is used to add a new remote</p></li>
+<li><p><code class="docutils literal notranslate">git remote remove [name]</code> removes a remote. Note that it doesn’t affect the
+remote repository at all - it just removes the link to it from the local repo.</p></li>
+<li><p><code class="docutils literal notranslate">git remote set-url [name] [newurl]</code> changes the URL that is associated
+with the remote. This is useful if it has moved, e.g. to a different GitHub
+account, or from GitHub to a different hosting service. Or, if we made a typo when
+adding it!</p></li>
+<li><p><code class="docutils literal notranslate">git remote rename [oldname] [newname]</code> changes the local alias by which a remote
+is known - its name. For example, one could use this to change <code class="docutils literal notranslate">upstream</code> to <code class="docutils literal notranslate">fred</code>.</p></li>
+</ul>
+</div>
+<p>To download the Collaborator’s changes from GitHub, the Owner now enters:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">remote: Enumerating objects: 4, done.</span>
+<span class="go">remote: Counting objects: 100% (4/4), done.</span>
+<span class="go">remote: Compressing objects: 100% (2/2), done.</span>
+<span class="go">remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/jh1889/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">   9272da5..29aba7c  main     -&gt; origin/main</span>
+<span class="go">Updating 9272da5..29aba7c</span>
+<span class="go">Fast-forward</span>
+<span class="go"> pluto.txt | 1 +</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+<span class="go"> create mode 100644 pluto.txt</span>
+</code></pre></div></div>
+<p>Now the three repositories (Owner’s local, Collaborator’s local, and Owner’s on
+GitHub) are back in sync.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>A Basic Collaborative Workflow</strong></p>
+<p>In practice, it is good to be sure that you have an updated version of the
+repository you are collaborating on, so you should <code class="docutils literal notranslate">git pull</code> before making
+our changes. The basic collaborative workflow would be:</p>
+<ul class="simple">
+<li><p>update your local repo with <code class="docutils literal notranslate">git pull origin main</code>,</p></li>
+<li><p>make your changes and stage them with <code class="docutils literal notranslate">git add</code>,</p></li>
+<li><p>commit your changes with <code class="docutils literal notranslate">git commit -m</code>, and</p></li>
+<li><p>upload the changes to GitHub with <code class="docutils literal notranslate">git push origin main</code></p></li>
+</ul>
+<p>It is better to make many commits with smaller changes rather than
+of one commit with massive changes: small commits are easier to
+read and review.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Switch Roles and Repeat</strong></p>
+<p>Switch roles and repeat the whole process.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Review Changes</strong></p>
+<p>The Owner pushed commits to the repository without giving any information
+to the Collaborator. How can the Collaborator find out what has changed with
+command line? And on GitHub?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>On the command line, the Collaborator can use <code class="docutils literal notranslate">git fetch origin main</code>
+to get the remote changes into the local repository, but without merging
+them. Then by running <code class="docutils literal notranslate">git diff main origin/main</code> the Collaborator
+will see the changes output in the terminal.</p>
+<p>On GitHub, the Collaborator can go to the repository and click on
+“commits” to view the most recent commits pushed to the repository.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Comment Changes in GitHub</strong></p>
+<p>The Collaborator has some questions about one line change made by the Owner and
+has some suggestions to propose.</p>
+<p>With GitHub, it is possible to comment on the diff of a commit. Over the line of
+code to comment, a blue comment icon appears to open a comment window.</p>
+<p>The Collaborator posts her comments and suggestions using the GitHub interface.</p>
+</div>
+</section>
+<section id="conflict">
+<h2>Conflict!<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#conflict">¶</a></h2>
+<p>As soon as people can work in parallel, they’ll likely step on each other’s
+toes. This will even happen with a single person: if we are working on
+a piece of software on both our laptop and a server in the lab, we could make
+different changes to each copy. Version control helps us manage these
+conflicts by giving us tools to resolve overlapping changes.</p>
+<p>To see how we can resolve conflicts, we must first create one. The file
+<code class="docutils literal notranslate">mars.txt</code> currently looks like this in both partners’ copies of our <code class="docutils literal notranslate">planets</code>
+repository:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+</code></pre></div></div>
+<p>Let’s add a line to the collaborator’s copy only:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">This line added to one copy</span>
+</code></pre></div></div>
+<p>and then push the change to GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in our home copy"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 5ae9631] Add a line in our home copy</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="k">done</span>.
+Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5</span>/5<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Delta<span class="w"> </span>compression<span class="w"> </span>using<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span><span class="m">8</span><span class="w"> </span>threads
+Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+Writing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="m">331</span><span class="w"> </span>bytes<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">331</span>.00<span class="w"> </span>KiB/s,<span class="w"> </span><span class="k">done</span>.
+Total<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">2</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+remote:<span class="w"> </span>Resolving<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>,<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="nb">local</span><span class="w"> </span>objects.
+To<span class="w"> </span>https://github.com/jh1889/planets.git
+<span class="w">   </span>29aba7c..dabb4c8<span class="w">  </span>main<span class="w"> </span>-&gt;<span class="w"> </span>main
+</code></pre></div></div>
+<p>Now let’s have the owner make a different change to their copy
+<em>without</em> updating from GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>nano<span class="w"> </span>mars.txt
+cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">We added a different line in the other copy</span>
+</code></pre></div></div>
+<p>We can commit the change locally:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in my copy"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 07ebc69] Add a line in my copy</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+</code></pre></div></div>
+<p>but Git won’t let us push it to GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go"> ! [rejected]        main -&gt; main (fetch first)</span>
+<span class="go">error: failed to push some refs to 'https://github.com/jh1889/planets.git'</span>
+<span class="go">hint: Updates were rejected because the remote contains work that you do</span>
+<span class="go">hint: not have locally. This is usually caused by another repository pushing</span>
+<span class="go">hint: to the same ref. You may want to first integrate the remote changes</span>
+<span class="go">hint: (e.g., 'git pull ...') before pushing again.</span>
+<span class="go">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span>
+</code></pre></div></div>
+<a class="reference external image-reference" href="../images/conflict.png"><img alt="The Conflicting Changes" src="_images/conflict.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>Git rejects the push because it detects that the remote repository has new updates that have not been
+incorporated into the local branch. What we have to do is pull the changes from GitHub,
+merge them into the copy we’re currently working in, and then push that.
+Let’s start by pulling:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">remote: Enumerating objects: 5, done.</span>
+<span class="go">remote: Counting objects: 100% (5/5), done.</span>
+<span class="go">remote: Compressing objects: 100% (1/1), done.</span>
+<span class="go">remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/jh1889/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">    29aba7c..dabb4c8  main     -&gt; origin/main</span>
+<span class="go">Auto-merging mars.txt</span>
+<span class="go">CONFLICT (content): Merge conflict in mars.txt</span>
+<span class="go">Automatic merge failed; fix conflicts and then commit the result.</span>
+</code></pre></div></div>
+<p>The <code class="docutils literal notranslate">git pull</code> command updates the local repository to include those
+changes already included in the remote repository.
+After the changes from remote branch have been fetched, Git detects that changes made to the local copy
+overlap with those made to the remote repository, and therefore refuses to merge the two versions to
+stop us from trampling on our previous work. The conflict is marked in
+in the affected file:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="go">We added a different line in the other copy</span>
+<span class="go">=======</span>
+<span class="go">This line added to one copy</span>
+<span class="go">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d</span>
+</code></pre></div></div>
+<p>Our change is preceded by <code class="docutils literal notranslate">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>.
+Git has then inserted <code class="docutils literal notranslate">=======</code> as a separator between the conflicting changes
+and marked the end of the content downloaded from GitHub with <code class="docutils literal notranslate">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+(The string of letters and digits after that marker
+identifies the commit we’ve just downloaded.)</p>
+<p>It is now up to us to edit this file to remove these markers
+and reconcile the changes.
+We can do anything we want: keep the change made in the local repository, keep
+the change made in the remote repository, write something new to replace both,
+or get rid of the change entirely.
+Let’s replace both so that the file looks like this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>cat<span class="w"> </span>mars.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">We removed the conflict on this line</span>
+</code></pre></div></div>
+<p>To finish merging, we add <code class="docutils literal notranslate">mars.txt</code> to the changes being made by the merge
+and then commit:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+git<span class="w"> </span>status
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">On branch main</span>
+<span class="go">All conflicts fixed but you are still merging.</span>
+<span class="go">  (use "git commit" to conclude merge)</span>
+
+<span class="go">Changes to be committed:</span>
+
+<span class="go">    modified:   mars.txt</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Merge changes from GitHub"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 2abf2b1] Merge changes from GitHub</span>
+</code></pre></div></div>
+<p>Now we can push our changes to GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enumerating objects: 10, done.</span>
+<span class="go">Counting objects: 100% (10/10), done.</span>
+<span class="go">Delta compression using up to 8 threads</span>
+<span class="go">Compressing objects: 100% (6/6), done.</span>
+<span class="go">Writing objects: 100% (6/6), 645 bytes | 645.00 KiB/s, done.</span>
+<span class="go">Total 6 (delta 4), reused 0 (delta 0)</span>
+<span class="go">remote: Resolving deltas: 100% (4/4), completed with 2 local objects.</span>
+<span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go">   dabb4c8..2abf2b1  main -&gt; main</span>
+</code></pre></div></div>
+<p>Git keeps track of what we’ve merged with what,
+so we don’t have to fix things by hand again
+when the collaborator who made the first change pulls again:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">remote: Enumerating objects: 10, done.</span>
+<span class="go">remote: Counting objects: 100% (10/10), done.</span>
+<span class="go">remote: Compressing objects: 100% (2/2), done.</span>
+<span class="go">remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (6/6), done.</span>
+<span class="go">From https://github.com/jh1889/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">    dabb4c8..2abf2b1  main     -&gt; origin/main</span>
+<span class="go">Updating dabb4c8..2abf2b1</span>
+<span class="go">Fast-forward</span>
+<span class="go"> mars.txt | 2 +-</span>
+<span class="go"> 1 file changed, 1 insertion(+), 1 deletion(-)</span>
+</code></pre></div></div>
+<p>We get the merged file:</p>
+<p>We don’t need to merge again because Git knows someone has already done that.</p>
+<p>Git’s ability to resolve conflicts is very useful, but conflict resolution
+costs time and effort, and can introduce errors if conflicts are not resolved
+correctly. If you find yourself resolving a lot of conflicts in a project,
+consider these technical approaches to reducing them:</p>
+<ul class="simple">
+<li><p>Pull from upstream more frequently, especially before starting new work</p></li>
+<li><p>Use topic branches to segregate work, merging to main when complete</p></li>
+<li><p>Make smaller more atomic commits</p></li>
+<li><p>Where logically appropriate, break large files into smaller ones so that it is
+less likely that two authors will alter the same file simultaneously</p></li>
+</ul>
+<p>Conflicts can also be minimized with project management strategies:</p>
+<ul class="simple">
+<li><p>Clarify who is responsible for what areas with your collaborators</p></li>
+<li><p>Discuss what order tasks should be carried out in with your collaborators so
+that tasks expected to change the same lines won’t be worked on simultaneously</p></li>
+<li><p>If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
+project convention that is governing and use code style tools (e.g.
+<code class="docutils literal notranslate">htmltidy</code>, <code class="docutils literal notranslate">perltidy</code>, <code class="docutils literal notranslate">rubocop</code>, etc.) to enforce, if necessary</p></li>
+</ul>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Conflicts on non-text files</strong></p>
+<p>What does Git do when there is a conflict in an image or some other non-text file
+that is stored in version control?</p>
+<p>Let’s try it. Suppose I takes a picture of Martian surface and
+call it <code class="docutils literal notranslate">mars.jpg</code>.</p>
+<p>If you do not have an image file of Mars available, you can create
+a dummy binary file like this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>head<span class="w"> </span>-c<span class="w"> </span><span class="m">1024</span><span class="w"> </span>/dev/urandom<span class="w"> </span>&gt;<span class="w"> </span>mars.jpg
+ls<span class="w"> </span>-lh<span class="w"> </span>mars.jpg
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">-rw-r--r-- 1 jh1889 57095 1.0K Mar  8 20:24 mars.jpg</span>
+</code></pre></div></div>
+<p><code class="docutils literal notranslate">ls</code> shows us that this created a 1-kilobyte file. It is full of
+random bytes read from the special file, <code class="docutils literal notranslate">/dev/urandom</code>.</p>
+<p>Now, suppose I add <code class="docutils literal notranslate">mars.jpg</code> to my repository:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>mars.jpg
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add picture of Martian surface"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 8e4115c] Add picture of Martian surface</span>
+<span class="go"> 1 file changed, 0 insertions(+), 0 deletions(-)</span>
+<span class="go"> create mode 100644 mars.jpg</span>
+</code></pre></div></div>
+<p>Suppose that someone else has added a similar picture in the meantime.
+Her’s is a picture of the Martian sky, but it is <em>also</em> called <code class="docutils literal notranslate">mars.jpg</code>.
+When I try to push, I get a familiar message:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go"> ! [rejected]        main -&gt; main (fetch first)</span>
+<span class="go">error: failed to push some refs to 'https://github.com/vlad/planets.git'</span>
+<span class="go">hint: Updates were rejected because the remote contains work that you do</span>
+<span class="go">hint: not have locally. This is usually caused by another repository pushing</span>
+<span class="go">hint: to the same ref. You may want to first integrate the remote changes</span>
+<span class="go">hint: (e.g., 'git pull ...') before pushing again.</span>
+<span class="go">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span>
+</code></pre></div></div>
+<p>We’ve learned that we must pull first and resolve any conflicts:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<p>When there is a conflict on an image or other binary file, git prints
+a message like this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">remote: Counting objects: 3, done.</span>
+<span class="go">remote: Compressing objects: 100% (3/3), done.</span>
+<span class="go">remote: Total 3 (delta 0), reused 0 (delta 0)</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/jh1889/planets.git</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">   6a67967..439dc8c  main     -&gt; origin/main</span>
+<span class="go">warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)</span>
+<span class="go">Auto-merging mars.jpg</span>
+<span class="go">CONFLICT (add/add): Merge conflict in mars.jpg</span>
+<span class="go">Automatic merge failed; fix conflicts and then commit the result.</span>
+</code></pre></div></div>
+<p>The conflict message here is mostly the same as it was for <code class="docutils literal notranslate">mars.txt</code>, but
+there is one key additional line:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)</span>
+</code></pre></div></div>
+<p>Git cannot automatically insert conflict markers into an image as it does
+for text files. So, instead of editing the image file, we must check out
+the version we want to keep. Then we can add and commit this version.</p>
+<p>On the key line above, Git has conveniently given us commit identifiers
+for the two versions of <code class="docutils literal notranslate">mars.jpg</code>. My version is <code class="docutils literal notranslate">HEAD</code>, and my partner’s
+version is <code class="docutils literal notranslate">439dc8c0...</code>. If we want to use my version, we can use
+<code class="docutils literal notranslate">git checkout</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.jpg
+git<span class="w"> </span>add<span class="w"> </span>mars.jpg
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of surface instead of sky"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 21032c3] Use image of surface instead of sky</span>
+</code></pre></div></div>
+<p>If instead we want to use my partner’s version, we can use <code class="docutils literal notranslate">git checkout</code> with
+the other commit identifier, <code class="docutils literal notranslate">439dc8c0</code>:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>439dc8c0<span class="w"> </span>mars.jpg
+git<span class="w"> </span>add<span class="w"> </span>mars.jpg
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of sky instead of surface"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main da21b34] Use image of sky instead of surface</span>
+</code></pre></div></div>
+<p>We can also keep <em>both</em> images. The catch is that we cannot keep them
+under the same name. But, we can check out each version in succession
+and <em>rename</em> it, then add the renamed versions. First, check out each
+image and rename it:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.jpg
+git<span class="w"> </span>mv<span class="w"> </span>mars.jpg<span class="w"> </span>mars-surface.jpg
+git<span class="w"> </span>checkout<span class="w"> </span>439dc8c0<span class="w"> </span>mars.jpg
+mv<span class="w"> </span>mars.jpg<span class="w"> </span>mars-sky.jpg
+</code></pre></div></div>
+<p>Then, remove the old <code class="docutils literal notranslate">mars.jpg</code> and add the two new files:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>rm<span class="w"> </span>mars.jpg
+git<span class="w"> </span>add<span class="w"> </span>mars-surface.jpg
+git<span class="w"> </span>add<span class="w"> </span>mars-sky.jpg
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use two images: surface and sky"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[main 94ae08c] Use two images: surface and sky</span>
+<span class="go"> 2 files changed, 0 insertions(+), 0 deletions(-)</span>
+<span class="go"> create mode 100644 mars-sky.jpg</span>
+<span class="go"> rename mars.jpg =&gt; mars-surface.jpg (100%)</span>
+</code></pre></div></div>
+<p>Now both images of Mars are checked into the repository, and <code class="docutils literal notranslate">mars.jpg</code>
+no longer exists.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>A Typical Work Session</strong></p>
+<p>You sit down at your computer to work on a shared project that is tracked in a
+remote Git repository. During your work session, you take the following
+actions, but not in this order:</p>
+<ul class="simple">
+<li><p><em>Make changes</em> by appending the number <code class="docutils literal notranslate">100</code> to a text file <code class="docutils literal notranslate">numbers.txt</code></p></li>
+<li><p><em>Update remote</em> repository to match the local repository</p></li>
+<li><p><em>Celebrate</em> your success with some fancy beverage(s)</p></li>
+<li><p><em>Update local</em> repository to match the remote repository</p></li>
+<li><p><em>Stage changes</em> to be committed</p></li>
+<li><p><em>Commit changes</em> to the local repository</p></li>
+</ul>
+<p>In what order should you perform these actions to minimize the chances of
+conflicts? Put the commands above in order in the <em>action</em> column of the table
+below. When you have the order right, see if you can write the corresponding
+commands in the <em>command</em> column. A few steps are populated to get you
+started.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>order</p></th>
+<th class="head"><p>action</p></th>
+<th class="head"><p>command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate">echo 100 &gt;&gt; numbers.txt</code></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Celebrate!</p></td>
+<td><p><code class="docutils literal notranslate">AFK</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>order</p></th>
+<th class="head"><p>action</p></th>
+<th class="head"><p>command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Update local</p></td>
+<td><p><code class="docutils literal notranslate">git pull origin main</code></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Make changes</p></td>
+<td><p><code class="docutils literal notranslate">echo 100 &gt;&gt; numbers.txt</code></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Stage changes</p></td>
+<td><p><code class="docutils literal notranslate">git add numbers.txt</code></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Commit changes</p></td>
+<td><p><code class="docutils literal notranslate">git commit -m "Add 100 to numbers.txt"</code></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Update remote</p></td>
+<td><p><code class="docutils literal notranslate">git push origin main</code></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Celebrate!</p></td>
+<td><p><code class="docutils literal notranslate">AFK</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 </article>

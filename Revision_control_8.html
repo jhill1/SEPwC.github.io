@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Ignoring files | SEPwC  documentation</title>
+<title>Collaboration with Git | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
@@ -15,7 +15,7 @@
 </head>
 <body class="antialiased text-gray">
 <div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#ignoring-files" title="Skip navigation links">Skip to content</a>
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#collaboration-with-git" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -99,6 +99,8 @@
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
 </ul>
 </li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
@@ -134,249 +136,198 @@
 </aside>
 <main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Ignoring files</span>
+<span class="mr-1">/</span><span aria-current="page">Collaboration with Git</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="ignoring-files">
-<h1>Ignoring files<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#ignoring-files">¶</a></h1>
-<p>What if we have files that we do not want Git to track for us,
-like backup files created by our editor or intermediate files created during data analysis?
-Let’s create a few dummy files:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>mkdir<span class="w"> </span>results
-touch<span class="w"> </span>a.dat<span class="w"> </span>b.dat<span class="w"> </span>c.dat<span class="w"> </span>results/a.out<span class="w"> </span>results/b.out
-</code></pre></div></div>
-<p>and see what Git says:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Untracked files:</span>
-<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
-
-<span class="go">    a.dat</span>
-<span class="go">    b.dat</span>
-<span class="go">    c.dat</span>
-<span class="go">    results/</span>
-
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
-</code></pre></div></div>
-<p>Putting these files under version control would be a waste of disk space.
-What’s worse, having them all listed could distract us from changes that actually matter,
-so let’s tell Git to ignore them.</p>
-<p>We do this by creating a file in the root directory of our project called <code class="docutils literal notranslate">.gitignore</code>:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>nano<span class="w"> </span>.gitignore
-cat<span class="w"> </span>.gitignore
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">*.dat</span>
-<span class="go">results/</span>
-</code></pre></div></div>
-<p>These patterns tell Git to ignore any file whose name ends in <code class="docutils literal notranslate">.dat</code>
-and everything in the <code class="docutils literal notranslate">results</code> directory. (If any of these files were already being tracked,
-Git would continue to track them.)</p>
-<p>Once we have created this file, the output of <code class="docutils literal notranslate">git status</code> is much cleaner:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Untracked files:</span>
-<span class="go">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
-
-<span class="go">    .gitignore</span>
-
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
-</code></pre></div></div>
-<p>The only thing Git notices now is the newly-created <code class="docutils literal notranslate">.gitignore</code> file.
-You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore
-the same things that we’re ignoring. Let’s add and commit <code class="docutils literal notranslate">.gitignore</code>:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Ignore data files and the results folder."</span>
-git<span class="w"> </span>status
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">nothing to commit, working tree clean</span>
-</code></pre></div></div>
-<p>As a bonus, using <code class="docutils literal notranslate">.gitignore</code> helps us avoid accidentally adding files to the repository that we don’t want to track:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>a.dat
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">The following paths are ignored by one of your .gitignore files:</span>
-<span class="go">a.dat</span>
-<span class="go">Use -f if you really want to add them.</span>
-</code></pre></div></div>
-<p>If we really want to override our ignore settings, we can use <code class="docutils literal notranslate">git add -f</code> to force Git to add something. For example,
-<code class="docutils literal notranslate">git add -f a.dat</code>. We can also always see the status of ignored files if we want:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>git<span class="w"> </span>status<span class="w"> </span>--ignored
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">On branch main</span>
-<span class="go">Ignored files:</span>
-<span class="go"> (use "git add -f &lt;file&gt;..." to include in what will be committed)</span>
-
-<span class="go">        a.dat</span>
-<span class="go">        b.dat</span>
-<span class="go">        c.dat</span>
-<span class="go">        results/</span>
-
-<span class="go">nothing to commit, working tree clean</span>
-</code></pre></div></div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Ignoring Nested Files</strong></p>
-<p>Given a directory structure that looks like:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/data</span>
-<span class="go">results/plots</span>
-</code></pre></div></div>
-<p>How would you ignore only <code class="docutils literal notranslate">results/plots</code> and not <code class="docutils literal notranslate">results/data</code>?</p>
+<section id="collaboration-with-git">
+<h1>Collaboration with Git<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#collaboration-with-git">¶</a></h1>
+<p>For the next step, get into pairs.  One person will be the “Owner” and the other
+will be the “Collaborator”. The goal is that the Collaborator add changes into
+the Owner’s repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Practicing By Yourself</strong></p>
+<p>If you’re working through this lesson on your own, you can carry on by opening
+a second terminal window.
+This window will represent your partner, working on another computer. You
+won’t need to give anyone access on GitHub, because both ‘partners’ are you.</p>
 </div>
+<p>The Owner needs to give the Collaborator access. On GitHub, click the “Settings”
+button on the right, select “Collaborators”, click “Add people”, and
+then enter your partner’s username.</p>
+<a class="reference external image-reference" href="../images/github-add-collaborators.png"><img alt="Adding Collaborators on GitHub" src="_images/github-add-collaborators.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>To accept access to the Owner’s repo, the Collaborator
+needs to go to <a class="reference external" href="https://github.com/notifications" rel="nofollow noopener">https://github.com/notifications<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+or check for email notification. Once there she can accept access to the Owner’s repo.</p>
+<p>Next, the Collaborator needs to download a copy of the Owner’s repository to her
+machine. This is called “cloning a repo”.</p>
+<p>The Collaborator doesn’t want to overwrite her own version of <code class="docutils literal notranslate">planets.git</code>, so
+needs to clone the Owner’s repository to a different location than her own
+repository with the same name.</p>
+<p>To clone the Owner’s repo into her <code class="docutils literal notranslate">Desktop</code> folder, the Collaborator enters:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:jh1889/planets.git<span class="w"> </span>~/Desktop/jh1889-planets
+</code></pre></div></div>
+<p>Replace ‘jh1889’ with the Owner’s username.</p>
+<p>If you choose to clone without the clone path
+(<code class="docutils literal notranslate">~/Desktop/jh1889-planets</code>) specified at the end,
+you will clone inside your own planets folder!
+Make sure to navigate to the <code class="docutils literal notranslate">Desktop</code> folder first.</p>
+<a class="reference external image-reference" href="../images/github-collaboration.png"><img alt="After Creating Clone of Repository" src="_images/github-collaboration.png"/><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>
+<p>The Collaborator can now make a change in her clone of the Owner’s repository,
+exactly the same way as we’ve been doing before:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code><span class="nb">cd</span><span class="w"> </span>~/Desktop/jh1889-planets
+nano<span class="w"> </span>pluto.txt
+cat<span class="w"> </span>pluto.txt
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">It is so a planet!</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>add<span class="w"> </span>pluto.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes about Pluto"</span>
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">1 file changed, 1 insertion(+)</span>
+<span class="go">create mode 100644 pluto.txt</span>
+</code></pre></div></div>
+<p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">Enumerating objects: 4, done.</span>
+<span class="go">Counting objects: 4, done.</span>
+<span class="go">Delta compression using up to 4 threads.</span>
+<span class="go">Compressing objects: 100% (2/2), done.</span>
+<span class="go">Writing objects: 100% (3/3), 306 bytes, done.</span>
+<span class="go">Total 3 (delta 0), reused 0 (delta 0)</span>
+<span class="go">To https://github.com/jh1889/planets.git</span>
+<span class="go">   9272da5..29aba7c  main -&gt; main</span>
+</code></pre></div></div>
+<p>Note that we didn’t have to create a remote called <code class="docutils literal notranslate">origin</code>: Git uses this
+name by default when we clone a repository.  (This is why <code class="docutils literal notranslate">origin</code> was a
+sensible choice earlier when we were setting up remotes by hand.)</p>
+<p>Take a look at the Owner’s repository on GitHub again, and you should be
+able to see the new commit made by the Collaborator. You may need to refresh
+your browser to see the new commit.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>If you only want to ignore the contents of
-<code class="docutils literal notranslate">results/plots</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
-only the <code class="docutils literal notranslate">/plots/</code> subfolder by adding the following line to
-your .gitignore:</p>
+<p class="admonition-title">Learn more</p>
+<p><strong>Some more about remotes</strong></p>
+<p>In this section and the previous one, our local repository has had
+a single “remote”, called <code class="docutils literal notranslate">origin</code>. A remote is a copy of the repository
+that is hosted somewhere else, that we can push to and pull from, and
+there’s no reason that you have to work with only one. For example,
+on some large projects you might have your own copy in your own GitHub
+account (you’d probably call this <code class="docutils literal notranslate">origin</code>) and also the main “upstream”
+project repository (let’s call this <code class="docutils literal notranslate">upstream</code> for the sake of examples).
+You would pull from <code class="docutils literal notranslate">upstream</code> from time to
+time to get the latest updates that other people have committed.</p>
+<p>Remember that the name you give to a remote only exists locally. It’s
+an alias that you choose - whether <code class="docutils literal notranslate">origin</code>, or <code class="docutils literal notranslate">upstream</code>, or <code class="docutils literal notranslate">fred</code> -
+and not something intrinstic to the remote repository.</p>
+<p>The <code class="docutils literal notranslate">git remote</code> family of commands is used to set up and alter the remotes
+associated with a repository. Here are some of the most useful ones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate">git remote -v</code> lists all the remotes that are configured (we already used
+this in the last section)</p></li>
+<li><p><code class="docutils literal notranslate">git remote add [name] [url]</code> is used to add a new remote</p></li>
+<li><p><code class="docutils literal notranslate">git remote remove [name]</code> removes a remote. Note that it doesn’t affect the
+remote repository at all - it just removes the link to it from the local repo.</p></li>
+<li><p><code class="docutils literal notranslate">git remote set-url [name] [newurl]</code> changes the URL that is associated
+with the remote. This is useful if it has moved, e.g. to a different GitHub
+account, or from GitHub to a different hosting service. Or, if we made a typo when
+adding it!</p></li>
+<li><p><code class="docutils literal notranslate">git remote rename [oldname] [newname]</code> changes the local alias by which a remote
+is known - its name. For example, one could use this to change <code class="docutils literal notranslate">upstream</code> to <code class="docutils literal notranslate">fred</code>.</p></li>
+</ul>
+</div>
+<p>To download the Collaborator’s changes from GitHub, the Owner now enters:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></div>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/plots/</span>
+<div class="highlight"><pre><code><span class="go">remote: Enumerating objects: 4, done.</span>
+<span class="go">remote: Counting objects: 100% (4/4), done.</span>
+<span class="go">remote: Compressing objects: 100% (2/2), done.</span>
+<span class="go">remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0</span>
+<span class="go">Unpacking objects: 100% (3/3), done.</span>
+<span class="go">From https://github.com/jh1889/planets</span>
+<span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
+<span class="go">   9272da5..29aba7c  main     -&gt; origin/main</span>
+<span class="go">Updating 9272da5..29aba7c</span>
+<span class="go">Fast-forward</span>
+<span class="go"> pluto.txt | 1 +</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+<span class="go"> create mode 100644 pluto.txt</span>
 </code></pre></div></div>
-<p>This line will ensure only the contents of <code class="docutils literal notranslate">results/plots</code> is ignored, and
-not the contents of <code class="docutils literal notranslate">results/data</code>.
-As with most programming issues, there are a few alternative ways that one may ensure this ignore rule is followed.
-The “Ignoring Nested Files: Variation” exercise has a slightly
-different directory structure that presents an alternative solution.
-Further, the discussion page has more detail on ignore rules.</p>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Including Specific Files</strong></p>
-<p>How would you ignore all <code class="docutils literal notranslate">.dat</code> files in your root directory except for
-<code class="docutils literal notranslate">final.dat</code>?
-Hint: Find out what <cite>!</cite> (the exclamation point operator) does</p>
-</div>
+<p>Now the three repositories (Owner’s local, Collaborator’s local, and Owner’s on
+GitHub) are back in sync.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>You would add the following two lines to your .gitignore:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">\*.dat           # ignore all data files</span>
-<span class="go">!final.dat      # except final.data</span>
-</code></pre></div></div>
-<p>The exclamation point operator will include a previously excluded entry.</p>
-<p>Note also that because you’ve previously committed <code class="docutils literal notranslate">.dat</code> files in this
-lesson they will not be ignored with this new rule. Only future additions
-of <code class="docutils literal notranslate">.dat</code> files added to the root directory will be ignored.</p>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>Ignoring Nested Files: Variation</strong></p>
-<p>Given a directory structure that looks similar to the earlier Nested Files
-exercise, but with a slightly different directory structure:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/data</span>
-<span class="go">results/images</span>
-<span class="go">results/plots</span>
-<span class="go">results/analysis</span>
-</code></pre></div></div>
-<p>How would you ignore all of the contents in the results folder, but not <code class="docutils literal notranslate">results/data</code>?</p>
-<p>Hint: think a bit about how you created an exception with the <code class="docutils literal notranslate">!</code> operator
-before.</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>If you want to ignore the contents of
-<code class="docutils literal notranslate">results/</code> but not those of <code class="docutils literal notranslate">results/data/</code>, you can change your <code class="docutils literal notranslate">.gitignore</code> to ignore
-the contents of results folder, but create an exception for the contents of the
-<code class="docutils literal notranslate">results/data</code> subfolder. Your .gitignore would look like this:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">results/*               # ignore everything in results folder</span>
-<span class="go">!results/data/          # do not ignore results/data/ contents</span>
-</code></pre></div></div>
-</div>
-<div class="admonition-thought-exercise admonition">
-<p class="admonition-title">Thought exercise</p>
-<p><strong>The Order of Rules</strong></p>
-<p>Given a <cite>.gitignore</cite> file with the following contents:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">*.dat</span>
-<span class="go">!*.dat</span>
-</code></pre></div></div>
-<p>What will be the result?</p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p><strong>Solution</strong></p>
-<p>The <code class="docutils literal notranslate">!</code> modifier will negate an entry from a previously defined ignore pattern.
-Because the <code class="docutils literal notranslate">!*.dat</code> entry negates all of the previous <code class="docutils literal notranslate">.dat</code> files in the <code class="docutils literal notranslate">.gitignore</code>,
-none of them will be ignored, and all <code class="docutils literal notranslate">.dat</code> files will be tracked.</p>
+<p class="admonition-title">Learn more</p>
+<p><strong>A Basic Collaborative Workflow</strong></p>
+<p>In practice, it is good to be sure that you have an updated version of the
+repository you are collaborating on, so you should <code class="docutils literal notranslate">git pull</code> before making
+our changes. The basic collaborative workflow would be:</p>
+<ul class="simple">
+<li><p>update your local repo with <code class="docutils literal notranslate">git pull origin main</code>,</p></li>
+<li><p>make your changes and stage them with <code class="docutils literal notranslate">git add</code>,</p></li>
+<li><p>commit your changes with <code class="docutils literal notranslate">git commit -m</code>, and</p></li>
+<li><p>upload the changes to GitHub with <code class="docutils literal notranslate">git push origin main</code></p></li>
+</ul>
+<p>It is better to make many commits with smaller changes rather than
+of one commit with massive changes: small commits are easier to
+read and review.</p>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Log Files</strong></p>
-<p>You wrote a script that creates many intermediate log-files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, <code class="docutils literal notranslate">log_03</code>, etc.
-You want to keep them but you do not want to track them through <code class="docutils literal notranslate">git</code>.</p>
-<ol class="arabic simple">
-<li><p>Write <strong>one</strong> <code class="docutils literal notranslate">.gitignore</code> entry that excludes files of the form <code class="docutils literal notranslate">log_01</code>, <code class="docutils literal notranslate">log_02</code>, etc.</p></li>
-<li><p>Test your “ignore pattern” by creating some dummy files of the form <code class="docutils literal notranslate">log_01</code>, etc.</p></li>
-<li><p>You find that the file <code class="docutils literal notranslate">log_01</code> is very important after all, add it to the tracked files without changing the <code class="docutils literal notranslate">.gitignore</code> again.</p></li>
-<li><p>Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via <code class="docutils literal notranslate">.gitignore</code>.</p></li>
-</ol>
+<p><strong>Switch Roles and Repeat</strong></p>
+<p>Switch roles and repeat the whole process.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Review Changes</strong></p>
+<p>The Owner pushed commits to the repository without giving any information
+to the Collaborator. How can the Collaborator find out what has changed with
+command line? And on GitHub?</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<ol class="arabic simple">
-<li><p>append either <cite>log_*</cite>  or  <cite>log*</cite>  as a new entry in your .gitignore</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>track <cite>log_01</cite> using   <cite>git add -f log_01</cite></p></li>
-</ol>
+<p>On the command line, the Collaborator can use <code class="docutils literal notranslate">git fetch origin main</code>
+to get the remote changes into the local repository, but without merging
+them. Then by running <code class="docutils literal notranslate">git diff main origin/main</code> the Collaborator
+will see the changes output in the terminal.</p>
+<p>On GitHub, the Collaborator can go to the repository and click on
+“commits” to view the most recent commits pushed to the repository.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Learn more</p>
+<p><strong>Comment Changes in GitHub</strong></p>
+<p>The Collaborator has some questions about one line change made by the Owner and
+has some suggestions to propose.</p>
+<p>With GitHub, it is possible to comment on the diff of a commit. Over the line of
+code to comment, a blue comment icon appears to open a comment window.</p>
+<p>The Collaborator posts her comments and suggestions using the GitHub interface.</p>
 </div>
 </section>
 </article>
