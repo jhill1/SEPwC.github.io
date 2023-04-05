@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Python Loops | SEPwC  documentation</title>
+<title>R Loops | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
@@ -15,7 +15,7 @@
 </head>
 <body class="antialiased text-gray">
 <div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#python-loops" title="Skip navigation links">Skip to content</a>
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#r-loops" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -150,11 +150,11 @@
 </aside>
 <main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Python Loops</span>
+<span class="mr-1">/</span><span aria-current="page">R Loops</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="python-loops">
-<h1>Python Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-loops">¶</a></h1>
+<section id="r-loops">
+<h1>R Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-loops">¶</a></h1>
 <p>As we saw in the coding fundementals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
 or through time (as in the example above). They are therefore fundemental
@@ -183,29 +183,29 @@ to a lot of data analysis.</p>
 <p>and a single line in this table is:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
-<span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-20</span>
+<span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
 </code></pre></div></div>
 <p>We could therefore write:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-20</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-15</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-10</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-5</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">35</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
+<span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">40</span><span class="p">;</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">)</span>
 </code></pre></div></div>
 <p>This is error prone though. What if we make a typo (likely)? How would we know? Also this
 is very boring and repetative. The entire idea of writing code it to remove the
@@ -218,63 +218,73 @@ we can iterate over a list or a counter with the same construct. This is all
 a bit abstract, so let’s do some examples.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">my_list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<p>The above creates a list (of numbers) and then iterates over that list
+<p>The above creates a vector (of numbers) and then iterates over that list
 with the control variable being the individual item in the list. You should
 see the following:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">output</span></div>
+<div class="highlight"><pre><code><span class="go">[1] 1</span>
+<span class="go">[1] 2</span>
+<span class="go">[1] 3</span>
+<span class="go">[1] 6</span>
+<span class="go">[1] 7</span>
+<span class="go">[1] 10</span>
+</code></pre></div></div>
+<p>The loop is made using the <cite>for</cite> command, which is then followed by the loop conditions
+in parenthesis <cite>(  )</cite>. The loop itself is delimited using curly braces <cite>{  }</cite>. R doesn’t care
+about indentation as long as the <cite>{ }</cite> contains the statements within the loop. So this code
+works just as well:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="w"> </span><span class="nf">for </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">my_list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)}</span>
+</code></pre></div></div>
+<p>But it not as readable! Remmeber, when writing code we are writing code for humans
+to read it, rather than computer to execute it.</p>
+<p>Going back to loops…we can also iterate over the list using a counter.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="m">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The output will be identical to the above, but we’re accessing the list via the index
+(here, the variable <cite>i</cite>). What does <cite>i</cite> do then? Let’s edit the code and find out.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="m">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w"> </span><span class="p">}</span>
+</code></pre></div></div>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">output</span></div>
 <div class="highlight"><pre><code><span class="go">1</span>
 <span class="go">2</span>
 <span class="go">3</span>
-<span class="go">6</span>
-<span class="go">7</span>
-<span class="go">10</span>
-</code></pre></div></div>
-<p>Note the indentation? We covered that briefly in the last section. Unlike other languages
-Python uses white space to denote which statements are included in the <cite>for</cite> loop. They must
-be indented to the same level, but there are no rules for how much. Most programmers
-use 4 spaces. Some use 8, some (rarely) use 3.</p>
-<p>I would recommend sticking to 4 spaces. In a text editor it’s worth setting your <kbd class="kbd docutils literal notranslate">Tab</kbd>
-to be four spaces, rather than the <cite>tab</cite> character.</p>
-<p>Going back to loops…we can also iterate over the list using a counter.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-   <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</code></pre></div></div>
-<p>The output will be identical to the above, but we’re accessing the list via the index
-(here, the variable <cite>i</cite>). What does <cite>i</cite> do then? Let’s edit the code and find out.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-   <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div></div>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">0</span>
-<span class="go">1</span>
-<span class="go">2</span>
-<span class="go">3</span>
 <span class="go">4</span>
 <span class="go">5</span>
+<span class="go">6</span>
 </code></pre></div></div>
-<p><cite>i</cite> goes from 0 (Python starts counting from 0. R starts from 1) to the length of the list - 1. The <cite>range</cite> function
+<p><cite>i</cite> goes from 1 (R starts counting from 1, Python from 0) to the length of the list. The <cite>seq</cite> function
 creates a list contining those numbers. So although this loops looks different to the first one we created,
 it’s actually identical in terms of it’s construction.</p>
-<p>The <cite>range</cite> function is <code class="docutils literal notranslate">range(start, stop, increment)</code>
-which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, but not including, <cite>stop</cite>.
-We can also write <cite>range(stop)</cite> as an abbreviation for <cite>range(0, stop, 1)</cite>, or <cite>range(start,stop)</cite> to assume an increment
+<p>The <cite>seq</cite> function is <cite>seq(start, stop, increment)</cite>
+which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, and including, <cite>stop</cite>.
+We can also write <cite>seq(stop)</cite> as an abbreviation for <cite>seq(1, stop, 1)</cite>, or <cite>seq(start,stop)</cite> to assume an increment
 of 1.</p>
 <p>For loops are a really useful way of doing the same thing to each item in a list.</p>
 <div class="admonition-practical-exercise admonition">
@@ -288,55 +298,58 @@ of 1.</p>
 <p class="admonition-title">Solution</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="nf">for </span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-20</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="bp">F</span><span class="p">))</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<p>This version uses the <cite>range</cite> function to go from -20 to 41 (note: not 40!) in steps of 5
-and calculates F, before printing C and F. You could do this in one line of code, which
-we will come to later.</p>
+<p>This version uses the <cite>seq</cite> function to go from -20 to 40 in steps of 5
+and calculates F, before printing C and F. Note the use of <cite>paste</cite> to join the
+two number together on one line.</p>
 </div>
 <p>In a <cite>for</cite> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
-Python also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
+R also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
 </section>
 <section id="while-loop">
 <h2><cite>while</cite> loop<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#while-loop">¶</a></h2>
 <p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">1</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">2</span><span class="o">&gt;</span>
-    <span class="o">...</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="nf">while </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">statement</span><span class="w"> </span><span class="m">1</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">statement</span><span class="w"> </span><span class="m">2</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kc">...</span>
+<span class="p">}</span>
 
-<span class="o">&lt;</span><span class="n">first</span> <span class="n">statement</span> <span class="n">after</span> <span class="n">the</span> <span class="n">loop</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">first</span><span class="w"> </span><span class="n">statement</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">loop</span><span class="o">&gt;</span>
 </code></pre></div></div>
 <p>We can write code to do a simple counter:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></div>
 <p>This will loop until the counter is greater than 10. So we will see:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">1</span>
-<span class="go">2</span>
-<span class="go">3</span>
-<span class="go">4</span>
-<span class="go">5</span>
-<span class="go">6</span>
-<span class="go">7</span>
-<span class="go">8</span>
-<span class="go">9</span>
-<span class="go">10</span>
-<span class="go">11</span>
+<div class="highlight"><pre><code><span class="go">[1] 1</span>
+<span class="go">[1] 2</span>
+<span class="go">[1] 3</span>
+<span class="go">[1] 4</span>
+<span class="go">[1] 5</span>
+<span class="go">[1] 6</span>
+<span class="go">[1] 7</span>
+<span class="go">[1] 8</span>
+<span class="go">[1] 9</span>
+<span class="go">[1] 10</span>
+<span class="go">[1] 11</span>
 </code></pre></div></div>
 <p>Note the counter started from 0 and the while loop kept going until it was <cite>&gt;10</cite>. The condition
 can be any conditional statement, including key presses (but that requires some knowledge we don’t have yet).</p>
@@ -351,15 +364,15 @@ can be any conditional statement, including key presses (but that requires some 
 <p class="admonition-title">Solution</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
-<span class="k">while</span> <span class="n">C</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-    <span class="n">C</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="code-lang">R</span></div>
+<div class="highlight"><pre><code><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-20</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<p>This is very easy to read an understand; especially the ending condition (unlike
-the the loop above where we had to use 41…).</p>
+<p>This is very easy to read an understand; especially the ending condition.</p>
 </div>
 </section>
 </section>

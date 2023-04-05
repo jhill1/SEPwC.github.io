@@ -6,18 +6,16 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Software licences | SEPwC  documentation</title>
+<title>Python comments | SEPwC  documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="Code_basics.html" rel="next" title="The fundementals of code"/>
-<link href="How_a_computer_works.html" rel="prev" title="How a computer works"/>
 </head>
 <body class="antialiased text-gray">
 <div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#software-licences" title="Skip navigation links">Skip to content</a>
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#python-comments" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 sm:h-18">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -35,7 +33,7 @@
 <aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
 <nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
 <div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html">Expectations</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#what-we-expect-from-you">What we expect from you</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#assessment">Assessment</a></div></li>
@@ -59,10 +57,10 @@
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#more-basic-command-line-functions">More basic command line functions</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Software licences</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#copyleft">Copyleft</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#permissive">Permissive</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html">Software licences</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#copyleft">Copyleft</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#permissive">Permissive</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html">The fundementals of code</a></div><ul>
@@ -73,6 +71,7 @@
 </li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#datatypes">Datatypes</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#operations">Operations</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#booleans-and-logic">Booleans and Logic</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#outputs">Outputs</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#inputs">Inputs</a></div></li>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#loops">Loops</a></div></li>
@@ -101,11 +100,30 @@
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
 </ul>
 </li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python and R: the basics</a></div><ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python: the fundementals</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-python">Intro to Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-r">Intro to R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-loops">Python Loops</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#for-loops"><cite>for</cite> Loops</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#while-loop"><cite>while</cite> loop</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-conditionals">Python conditionals</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#basic-if-statement">Basic <cite>if</cite> statement</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html">R: the fundementals</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#intro-to-r">Intro to R</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-loops">R Loops</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#for-loops"><cite>for</cite> Loops</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#while-loop"><cite>while</cite> loop</a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
@@ -136,77 +154,146 @@
 </aside>
 <main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Software licences</span>
+<span class="mr-1">/</span><span aria-current="page">Python comments</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="software-licences">
-<h1>Software licences<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#software-licences">¶</a></h1>
-<p>Software needs a licence which tells your users or other developers what they are allowed
-to do with it. Most software you’ve heard of is commercial (Word, Windows, MacOs,
-Adobe Reader, Corel Draw, Photoshop, etc). You pay a fee and have access to the
-executable code for a year or forever, for example. Some software is free (i.e. you
-don’t pay to use it) but not open (you can’t see the source code, nor give it
-to someone else). All of the conditions are laid out in the “Terms and Conditions”
-which are displayed when you install the software (and that no-one ever reads despite
-ticking the little box to say you read them…)</p>
-<p>A lot of research software is free in all senses of the word. You don’t pay and
-you can see the source code, take it for yourself, edit it and re-release it. This
-type of software is called <em>open source</em>. Not only can you use it for free, you can also
-modify it.</p>
-<p>There are two things in law we have to worry about: copyright and licence. Copyright
-is granted to the writer of the software (or book, or photograph, etc). If you
-create something you own the copyright. You don’t have to do anything to get copyright,
-except be the author or creator of the content. Authors generally place a copyright
-notice on the work though, so something like:</p>
-<p>Copyright lasts for 50 years and protects the author from someone stealing their work.
-This page has a simple explination of UK copyright law. [<a class="reference external" href="https://www.gov.uk/copyright#:~:text=You%20get%20copyright%20protection%20automatically,work%2C%20including%20illustration%20and%20photography" rel="nofollow noopener">https://www.gov.uk/copyright#:~:text=You%20get%20copyright%20protection%20automatically,work%2C%20including%20illustration%20and%20photography<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>]</p>
-<p>Separately, licences tell you what you can do with some code (or image, or text). For
-commerical software, the lincence will tell you you cannot resell, give away, etc
-the software you have bought. Similarly, for open-source software the licence tells
-you what you can do with the source code, including modifying and re-releasing and under
-what conditions.</p>
-<p>There are two main types of licences: copyleft and permissive. Within those are a whole
-bunch of different licences, but let’s focus on the two main types first.</p>
-<section id="copyleft">
-<h2>Copyleft<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#copyleft">¶</a></h2>
-<p>Copyleft licences (a pun on copyright, geddit?) mean you can take
-source-code, modify it, but can only re-release on a similar licence. For example,
-you could not take copyleft code, create a commercial application, then sell it.
-That would breach the licence terms. Most copyleft licneces specify the
-source code most be available under a similar copyleft licence.</p>
-<p>Common copyleft licences are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>GNU Public Licence (GPL)</p></li>
-<li><p>Mozilla public licence (MPL)</p></li>
-<li><p>LGPL (Lesser GPL); though this has some permissive terms too</p></li>
-<li><p>Creative Commons, Sahrealike (CC-SA)</p></li>
-</ul>
-</div></blockquote>
+<section id="python-comments">
+<h1>Python comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-comments">¶</a></h1>
+<p>All computer languages have some mechaisms to add text that is not part of the code
+itself. These are called comments. The idea of these snippets of text are to provide
+commentary to help someone (including future you) understand the code
+that has been written.</p>
+<p>Python has multiple ways of adding comments, which actually provide slightly different
+functions. In this section we’re going to stick to the PEP (Python Enhacement Protocols)
+styles to keep your code consistant.
+<a class="reference external" href="https://peps.python.org/" rel="nofollow noopener">https://peps.python.org/<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+<p>Python has three styles of comments: inline, block and documentation.</p>
+<section id="inline-comments">
+<h2>Inline comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#inline-comments">¶</a></h2>
+<p>Inline comments occur within the line of code:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Increment x</span>
+</code></pre></div></div>
+<p>This style of comment should be avoided if possible. The above example is distracting
+and unecessary. It may sometimtes be useful, for example:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># account for boundary cell</span>
+</code></pre></div></div>
+<p>Here, the same style is used, but as the line of code is so short, as is the comment, this
+may be preferable to the second style of comments</p>
 </section>
-<section id="permissive">
-<h2>Permissive<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#permissive">¶</a></h2>
-<p>Permissive licences are much less restrictive. They impose little or no restrictions
-on what you can do if you modify code. They can either be completely open (i.e. do whatever you want!)
-or impose some restrictions, e.g. citations.</p>
-<p>Common permissive licences include:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Apache</p></li>
-<li><p>Berkley Source Distribution (BSD)</p></li>
-<li><p>MIT</p></li>
-</ul>
-</div></blockquote>
-<p>Exercise: write down basic terms for 2 permissive and 2 copyleft licences. Use wikipedia.</p>
+<section id="block-comments">
+<h2>Block comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#block-comments">¶</a></h2>
+<p>Block comments occupy one or more lines. In python they look like:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="c1"># incrememnt count to account for boundary cell</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+<p>Or if you want multiple lines:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="c1"># incrememnt count to</span>
+<span class="c1"># account for boundary cell</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+<p>The PEP8 guidance says lines of code should be sorter than 72 characters (this includes comments), hence
+why you may “wrap” comments onto multiple lines.</p>
 </section>
-<section id="adding-a-licence-to-your-code">
-<h2>Adding a licence to your code<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#adding-a-licence-to-your-code">¶</a></h2>
-<p>If you write any code that is to be used by others you should always add a
-copyright notice and a licence. This protects you and the person using it.
-Try and get in the habit of writing both of these in your code, so something like:
-Copyright © 2023 by Jon Hill. CC-BY-SA.</p>
-<p>You then include the full licence in your distribution.</p>
-<p>Exercise: find the liecence type for some popular software</p>
+<section id="documentation-comments">
+<h2>Documentation comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#documentation-comments">¶</a></h2>
+<p>Python also has a second style of comments that also act as a way of documentating code. They should be used
+underneath functions, classes and modules where public facing (i.e. where documentation is helpful!).</p>
+<p>An example is something like this:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Form a complex number.</span>
+
+<span class="sd">    Keyword arguments:</span>
+<span class="sd">    real -- the real part (default 0.0)</span>
+<span class="sd">    imag -- the imaginary part (default 0.0)</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">imag</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">real</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">complex_zero</span>
+    <span class="o">...</span>
+</code></pre></div></div>
+<p>The above function, <cite>complex</cite> returns a complex number. The docstring, delimited by the three ” marks states
+what the function does, what the arguments are. You may also add what is returned (though here, it’s obvious!).</p>
+</section>
+<section id="what-to-comment">
+<h2>What to comment<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#what-to-comment">¶</a></h2>
+<p>The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
+be useful for the people that come after you (including you) so they can understand the code better.
+They should not simply repeat the code, nor be used to explain code that could have better variable names.
+It’s often easier to say what <em>not</em> to do, so let’s head in that direction…</p>
+<p>This is poor coding and commenting:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="c1"># A dictionary of families who live in each city</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"York"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Powell"</span><span class="p">,</span> <span class="s2">"Brantley"</span><span class="p">,</span> <span class="s2">"Young"</span><span class="p">],</span>
+    <span class="s2">"Stevenage"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Montgomery"</span><span class="p">],</span>
+    <span class="s2">"Rotherham"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Hill"</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="c1"># For each city</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="c1"># If there are no families in the city</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mydict</span><span class="p">[</span><span class="n">p</span><span class="p">]:</span>
+            <span class="c1"># Say that there are no families</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"None."</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The comments relaly help understand the code and the intentions, but there are
+completely superfluous if the code was writen well:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">families_by_city</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"York"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Powell"</span><span class="p">,</span> <span class="s2">"Brantley"</span><span class="p">,</span> <span class="s2">"Young"</span><span class="p">],</span>
+    <span class="s2">"Stevenage"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Montgomery"</span><span class="p">],</span>
+    <span class="s2">"Rotherham"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Hill"</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">no_families</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">families_by_city</span><span class="p">[</span><span class="n">city</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No families in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+</code></pre></div></div>
+<p>This code doesn’t need any comments now; the variable names make things a lot clearer. You
+can’t compensate for poor style by adding comments…</p>
+<p>You should also avoid comments that simply repeat the code:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="k">return</span> <span class="n">a</span>  <span class="c1"># Returns a</span>
+</code></pre></div></div>
+<p>That comments adds nothing to the understanding. If <cite>a</cite> was a proper variable name, e.g. <cite>list_of_cells</cite> then even adding a comment becomes somewhat
+redundant. Add a docstring to the top of a function and there is no need at all to comment the return statement.</p>
+<p>The best hint for comments is to write them at the top of code blocks:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="c1"># we now extend this mask - we only need to do this, if the</span>
+<span class="c1"># no data occurs (i.e. no contiguous data)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">nodata</span> <span class="ow">in</span> <span class="n">orig_raster</span><span class="p">):</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">ncols</span><span class="p">,</span> <span class="n">nrows</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="n">dist</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extend_mask</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">dist</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+<p>The code itself might not make perfect sense to someone new to the whole code, but the comment above helps orient them
+if there some error in that part of the code. It also helps to explain <em>why</em> rather than the how in comments. The how
+is in the code. The why is how it’s written.</p>
 </section>
 </section>
 </article>
