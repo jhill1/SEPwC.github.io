@@ -2,20 +2,12 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPHGXML15W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GPHGXML15W');
-</script>
-
+<head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>R: the fundementals | SEPwC  documentation</title>
+<link href="_static/docsearch.b8f54ae248851a9ad851.css" rel="stylesheet"/>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
 <link href="_static/togglebutton.css" rel="stylesheet"/>
@@ -186,14 +178,14 @@
 </nav>
 <article class="flex-1" role="main">
 <section id="r-the-fundementals">
-<h1>R: the fundementals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-the-fundementals">¶</a></h1>
+<h1>R: the fundementals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-the-fundementals">¶</a></h1>
 <p>We’re now going to learn the basics of a language. If you’ve chosen
 R, keep reading. If you’ve choosen Python <a class="reference internal" href="Python.html#python-the-fundementals"><span class="std std-ref">go to this section</span></a>.</p>
 <p>Computer languages are much simpler than natural langauages, but much
 stricter. We have to get the syntax correct or things won’t work. However
 interpreted languages tell you what is wrong, so it’s not as bad as it sounds.</p>
 <section id="intro-to-r">
-<h2>Intro to R<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intro-to-r">¶</a></h2>
+<h2>Intro to R<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intro-to-r">¶</a></h2>
 <p>R is an interpreted language that has become incredibily popular, but
 was originally designed as a free, open-source version of “S”; a statistical
 analysis package. Due to populularity, there are libaries that will do just about anything.
@@ -292,7 +284,7 @@ your first R program I think that’s pretty good!</p>
 R-specific parts and go through these in more detail.</p>
 </section>
 <section id="r-loops">
-<h2>R Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-loops">¶</a></h2>
+<h2>R Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-loops">¶</a></h2>
 <p>As we saw in the coding fundementals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
 or through time (as in the example above). They are therefore fundemental
@@ -349,7 +341,7 @@ to a lot of data analysis.</p>
 is very boring and repetative. The entire idea of writing code it to remove the
 repetative, boring stuff and let the computer do that work. This is where loops come in.</p>
 <section id="r-for-loops">
-<h3>R <cite>for</cite> Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-for-loops">¶</a></h3>
+<h3>R <cite>for</cite> Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-for-loops">¶</a></h3>
 <p>‘for’ loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
@@ -450,7 +442,7 @@ two number together on one line.</p>
 R also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
 </section>
 <section id="r-while-loop">
-<h3>R <cite>while</cite> loop<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-while-loop">¶</a></h3>
+<h3>R <cite>while</cite> loop<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-while-loop">¶</a></h3>
 <p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
@@ -515,7 +507,7 @@ can be any conditional statement, including key presses (but that requires some 
 </section>
 </section>
 <section id="r-conditionals">
-<h2>R conditionals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-conditionals">¶</a></h2>
+<h2>R conditionals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-conditionals">¶</a></h2>
 <p>As we saw in the coding fundementals, conditionals are a tool to make decisions
 in code; they control the flow of code. We can make those decisions based on the state of the program at the time.</p>
 <p>We want to inform the user if their climate is either a hot desert, arctic desert, temperate rainforest, or tropical
@@ -529,7 +521,7 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 </code></pre></div></div>
 <p>How do we write a program that prints out such a statement, based on that input? We know the following:</p>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Environments</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id1">¶</a></caption>
+<caption><span class="caption-text">Environments</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id1">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Temperature</p></th>
 <th class="head"><p>Humidity</p></th>
@@ -558,7 +550,7 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 <p>So we need to be able to make a decision, based on those the variables, temperature and humidity.
 This is where <cite>if</cite> statements come in.</p>
 <section id="r-if-statement">
-<h3>R <cite>if</cite> statement<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-if-statement">¶</a></h3>
+<h3>R <cite>if</cite> statement<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-if-statement">¶</a></h3>
 <p>The <cite>if</cite> statment consists of an <cite>if</cite> condition, followed by zero or more <cite>else if</cite> conditions. A final <cite>else</cite>
 statement can be used to capture the situation where everything is <cite>FALSE</cite>.
 In general, we can put together multiple conditions. Only the first condition that is <cite>TRUE</cite> is executed.</p>
@@ -768,7 +760,7 @@ there is repeated code and it might be harder to follow the logic. I prefer the 
 </section>
 </section>
 <section id="r-comments">
-<h2>R comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-comments">¶</a></h2>
+<h2>R comments<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#r-comments">¶</a></h2>
 <p>All computer languages have some mechaisms to add text that is not part of the code
 itself. These are called comments. The idea of these snippets of text are to provide
 commentary to help someone (including future you) understand the code
@@ -776,7 +768,7 @@ that has been written.</p>
 <p>R has a single way of adding comments, but can be used in two different ways;
 inline comments and block comments.</p>
 <section id="inline-comments-r">
-<h3>Inline comments (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#inline-comments-r">¶</a></h3>
+<h3>Inline comments (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#inline-comments-r">¶</a></h3>
 <p>Inline comments occur within the line of code:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
@@ -794,7 +786,7 @@ and unecessary. It may sometimtes be useful, for example:</p>
 may be preferable to the second style of comments</p>
 </section>
 <section id="block-comments-r">
-<h3>Block comments (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#block-comments-r">¶</a></h3>
+<h3>Block comments (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#block-comments-r">¶</a></h3>
 <p>Block comments occupy one or more lines. In python they look like:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
@@ -812,7 +804,7 @@ may be preferable to the second style of comments</p>
 </code></pre></div></div>
 </section>
 <section id="what-to-comment-r">
-<h3>What to comment (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#what-to-comment-r">¶</a></h3>
+<h3>What to comment (R)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#what-to-comment-r">¶</a></h3>
 <p>The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
 be useful for the people that come after you (including you) so they can understand the code better.
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
