@@ -2,11 +2,11 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Solving issues and debugging" href="Issues.html" /><link rel="prev" title="Python: the fundementals" href="Python.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>R: the fundementals - SEPwC documentation</title>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
+        <title>R: the fundamentals - SEPwC documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -160,12 +160,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundementals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">R: the fundementals</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">R: the fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
@@ -206,21 +206,21 @@
           </label>
         </div>
         <article role="main">
-          <section id="r-the-fundementals">
-<h1>R: the fundementals<a class="headerlink" href="#r-the-fundementals" title="Permalink to this headline">#</a></h1>
+          <section id="r-the-fundamentals">
+<h1>R: the fundamentals<a class="headerlink" href="#r-the-fundamentals" title="Permalink to this heading">#</a></h1>
 <p>We’re now going to learn the basics of a language. If you’ve chosen
-R, keep reading. If you’ve choosen Python <a class="reference internal" href="Python.html#python-the-fundementals"><span class="std std-ref">go to this section</span></a>.</p>
-<p>Computer languages are much simpler than natural langauages, but much
+R, keep reading. If you’ve chosen Python <span class="xref std std-ref">go to this section</span>.</p>
+<p>Computer languages are much simpler than natural languages, but much
 stricter. We have to get the syntax correct or things won’t work. However
 interpreted languages tell you what is wrong, so it’s not as bad as it sounds.</p>
 <section id="intro-to-r">
-<h2>Intro to R<a class="headerlink" href="#intro-to-r" title="Permalink to this headline">#</a></h2>
-<p>R is an interpreted language that has become incredibily popular, but
+<h2>Intro to R<a class="headerlink" href="#intro-to-r" title="Permalink to this heading">#</a></h2>
+<p>R is an interpreted language that has become incredibly popular, but
 was originally designed as a free, open-source version of “S”; a statistical
-analysis package. Due to populularity, there are libaries that will do just about anything.
+analysis package. Due to popularity, there are libraries that will do just about anything.
 This makes R a really powerful tool for writing code to analyse any number of problems.</p>
 <p>R can be run on the command line, in a popular GUI call R-Studio,
-as a standalone script, even on websites. There are libraries
+as a stand-alone script, even on websites. There are libraries
 for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and GIS (r-gdal).</p>
 <p>Let’s get a simple R code running!</p>
 <p>We want to calculate the height of a ball after time, t, which we can do using this formula</p>
@@ -254,8 +254,8 @@ for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and
 <span class="nf">print</span><span class="p">(</span><span class="n">vert_position</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This code is, inessence, identical to the one above, but instead of <em>hardcoding</em> the numebrs, we’ve used
-variables. The formula is now written in good, descriptive variable names, using spaces and parantheses to
+<p>This code is, in essence, identical to the one above, but instead of <em>hard-coding</em> the numbers, we’ve used
+variables. The formula is now written in good, descriptive variable names, using spaces and parentheses to
 separate the terms for readability. Not that exciting yet. What if we want to calculate the height for a
 bunch of times? Let’s add a loop!</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">times</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span>
@@ -288,7 +288,7 @@ at time 0 to 0.9 in steps of 0.1.</p>
 </pre></div>
 </div>
 <img alt="_images/R_ball_graph.png" src="_images/R_ball_graph.png"/>
-<p>That’s not bad for a few lines of code. You can’t publish that graph (axes labels without units, etc), but for
+<p>That’s not bad for a few lines of code. You can’t publish that graph (axes labels without units, etc.), but for
 your first R program I think that’s pretty good!</p>
 <p>In the above we have used the following R features:</p>
 <blockquote>
@@ -305,12 +305,12 @@ your first R program I think that’s pretty good!</p>
 R-specific parts and go through these in more detail.</p>
 </section>
 <section id="r-loops">
-<h2>R Loops<a class="headerlink" href="#r-loops" title="Permalink to this headline">#</a></h2>
-<p>As we saw in the coding fundementals, loops are a tool to iterate over
+<h2>R Loops<a class="headerlink" href="#r-loops" title="Permalink to this heading">#</a></h2>
+<p>As we saw in the coding fundamentals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
-or through time (as in the example above). They are therefore fundemental
+or through time (as in the example above). They are therefore fundamental
 to a lot of data analysis.</p>
-<p>Suppose we want to make a table to convert Celsius to Farenheit:</p>
+<p>Suppose we want to make a table to convert Celsius to Fahrenheit:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">-20  -4.0</span>
 <span class="go">-15   5.0</span>
 <span class="go">-10  14.0</span>
@@ -353,10 +353,10 @@ to a lot of data analysis.</p>
 </pre></div>
 </div>
 <p>This is error prone though. What if we make a typo (likely)? How would we know? Also this
-is very boring and repetative. The entire idea of writing code it to remove the
-repetative, boring stuff and let the computer do that work. This is where loops come in.</p>
+is very boring and repetitive. The entire idea of writing code it to remove the
+repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
 <section id="r-for-loops">
-<h3>R <cite>for</cite> Loops<a class="headerlink" href="#r-for-loops" title="Permalink to this headline">#</a></h3>
+<h3>R <cite>for</cite> Loops<a class="headerlink" href="#r-for-loops" title="Permalink to this heading">#</a></h3>
 <p>‘for’ loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
@@ -387,7 +387,7 @@ works just as well:</p>
 <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)}</span>
 </pre></div>
 </div>
-<p>But it not as readable! Remmeber, when writing code we are writing code for humans
+<p>But it not as readable! Remember, when writing code we are writing code for humans
 to read it, rather than computer to execute it.</p>
 <p>Going back to loops…we can also iterate over the list using a counter.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
@@ -413,7 +413,7 @@ to read it, rather than computer to execute it.</p>
 </pre></div>
 </div>
 <p><cite>i</cite> goes from 1 (R starts counting from 1, Python from 0) to the length of the list. The <cite>seq</cite> function
-creates a list contining those numbers. So although this loops looks different to the first one we created,
+creates a list containing those numbers. So although this loops looks different to the first one we created,
 it’s actually identical in terms of it’s construction.</p>
 <p>The <cite>seq</cite> function is <cite>seq(start, stop, increment)</cite>
 which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, and including, <cite>stop</cite>.
@@ -424,7 +424,7 @@ of 1.</p>
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Writing our table for conversion using a `for` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Farenheit to Celsius conversion table using a <cite>for</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>for</cite> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -443,7 +443,7 @@ two number together on one line.</p>
 R also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
 </section>
 <section id="r-while-loop">
-<h3>R <cite>while</cite> loop<a class="headerlink" href="#r-while-loop" title="Permalink to this headline">#</a></h3>
+<h3>R <cite>while</cite> loop<a class="headerlink" href="#r-while-loop" title="Permalink to this heading">#</a></h3>
 <p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">while </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="n">statement</span><span class="w"> </span><span class="m">1</span><span class="o">&gt;</span>
@@ -482,7 +482,7 @@ can be any conditional statement, including key presses (but that requires some 
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Writing our table for conversion using a `while` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Farenheit to Celsius conversion table using a <cite>while</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>while</cite> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -500,8 +500,8 @@ can be any conditional statement, including key presses (but that requires some 
 </section>
 </section>
 <section id="r-conditionals">
-<h2>R conditionals<a class="headerlink" href="#r-conditionals" title="Permalink to this headline">#</a></h2>
-<p>As we saw in the coding fundementals, conditionals are a tool to make decisions
+<h2>R conditionals<a class="headerlink" href="#r-conditionals" title="Permalink to this heading">#</a></h2>
+<p>As we saw in the coding fundamentals, conditionals are a tool to make decisions
 in code; they control the flow of code. We can make those decisions based on the state of the program at the time.</p>
 <p>We want to inform the user if their climate is either a hot desert, arctic desert, temperate rainforest, or tropical
 rainforest. We ask them to supply either a “high” or “low” temperature and either a “high” or “low” humidity.</p>
@@ -513,11 +513,6 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 <p>How do we write a program that prints out such a statement, based on that input? We know the following:</p>
 <div class="table-wrapper"><table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Environments</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Temperature</p></th>
 <th class="head"><p>Humidity</p></th>
@@ -546,8 +541,8 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 <p>So we need to be able to make a decision, based on those the variables, temperature and humidity.
 This is where <cite>if</cite> statements come in.</p>
 <section id="r-if-statement">
-<h3>R <cite>if</cite> statement<a class="headerlink" href="#r-if-statement" title="Permalink to this headline">#</a></h3>
-<p>The <cite>if</cite> statment consists of an <cite>if</cite> condition, followed by zero or more <cite>else if</cite> conditions. A final <cite>else</cite>
+<h3>R <cite>if</cite> statement<a class="headerlink" href="#r-if-statement" title="Permalink to this heading">#</a></h3>
+<p>The <cite>if</cite> statement consists of an <cite>if</cite> condition, followed by zero or more <cite>else if</cite> conditions. A final <cite>else</cite>
 statement can be used to capture the situation where everything is <cite>FALSE</cite>.
 In general, we can put together multiple conditions. Only the first condition that is <cite>TRUE</cite> is executed.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -630,7 +625,7 @@ an message.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
 <p>Note the error message we gave in the <cite>else</cite> block contains what the user
-had supplied us with. It often helps to print out the variables in quesiton
+had supplied us with. It often helps to print out the variables in question
 when you do the else like this. It helps you, the programmer, to debug and it helps
 the user possibly see what to change to fix. Here, we’ve also told the user what they should be</p>
 <p>In reality, these variable should be checked before hand and a more informative error message could
@@ -692,7 +687,7 @@ if the first one is <cite>FALSE</cite>, <cite>mark</cite> must be less than 40 o
 Then what does it do? You should see:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">  [1] "This mark is too high."</span>
 
-<span class="go">which is becasue 100 is converted to a string by R to do the comparison. "test" is &gt; than "100" ("t" is</span>
+<span class="go">which is because 100 is converted to a string by R to do the comparison. "test" is &gt; than "100" ("t" is</span>
 <span class="go">after "1" in the alphabet). You need to be careful of this when doing comparisons!</span>
 </pre></div>
 </div>
@@ -732,27 +727,27 @@ Then what does it do? You should see:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The advantage here is we can have more nuanced error messages (relating to temperature or humidity, ratehr than both), but
+<p>The advantage here is we can have more nuanced error messages (relating to temperature or humidity, rather than both), but
 there is repeated code and it might be harder to follow the logic. I prefer the previous version, but this works just fine.</p>
 </div>
 </section>
 </section>
 <section id="r-comments">
-<h2>R comments<a class="headerlink" href="#r-comments" title="Permalink to this headline">#</a></h2>
-<p>All computer languages have some mechaisms to add text that is not part of the code
+<h2>R comments<a class="headerlink" href="#r-comments" title="Permalink to this heading">#</a></h2>
+<p>All computer languages have some mechanisms to add text that is not part of the code
 itself. These are called comments. The idea of these snippets of text are to provide
 commentary to help someone (including future you) understand the code
 that has been written.</p>
 <p>R has a single way of adding comments, but can be used in two different ways;
 inline comments and block comments.</p>
 <section id="inline-comments-r">
-<h3>Inline comments (R)<a class="headerlink" href="#inline-comments-r" title="Permalink to this headline">#</a></h3>
+<h3>Inline comments (R)<a class="headerlink" href="#inline-comments-r" title="Permalink to this heading">#</a></h3>
 <p>Inline comments occur within the line of code:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span><span class="c1"># Increment x</span>
 </pre></div>
 </div>
 <p>This style of comment should be avoided if possible. The above example is distracting
-and unecessary. It may sometimtes be useful, for example:</p>
+and unnecessary. It may sometimes be useful, for example:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span><span class="c1"># account for boundary cell</span>
 </pre></div>
 </div>
@@ -760,21 +755,21 @@ and unecessary. It may sometimtes be useful, for example:</p>
 may be preferable to the second style of comments</p>
 </section>
 <section id="block-comments-r">
-<h3>Block comments (R)<a class="headerlink" href="#block-comments-r" title="Permalink to this headline">#</a></h3>
+<h3>Block comments (R)<a class="headerlink" href="#block-comments-r" title="Permalink to this heading">#</a></h3>
 <p>Block comments occupy one or more lines. In python they look like:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># incrememnt count to account for boundary cell</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># increment count to account for boundary cell</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <p>Or if you want multiple lines:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># incrememnt count to</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># increment count to</span>
 <span class="c1"># account for boundary cell</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
 <section id="what-to-comment-r">
-<h3>What to comment (R)<a class="headerlink" href="#what-to-comment-r" title="Permalink to this headline">#</a></h3>
+<h3>What to comment (R)<a class="headerlink" href="#what-to-comment-r" title="Permalink to this heading">#</a></h3>
 <p>The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
 be useful for the people that come after you (including you) so they can understand the code better.
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
@@ -799,8 +794,8 @@ It’s often easier to say what <em>not</em> to do, so let’s head in that dire
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The comments relaly help understand the code and the intentions, but there are
-completely superfluous if the code was writen well:</p>
+<p>The comments really help understand the code and the intentions, but there are
+completely superfluous if the code was written well:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">families_by_city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
 <span class="w">    </span><span class="s">"York"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"Powell"</span><span class="p">,</span><span class="w"> </span><span class="s">"Brantley"</span><span class="p">,</span><span class="w"> </span><span class="s">"Young"</span><span class="p">),</span>
 <span class="w">    </span><span class="s">"Stevenage"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"Montgomery"</span><span class="p">),</span>
@@ -902,7 +897,7 @@ is in the code. The why is how it’s written.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">R: the fundementals</a><ul>
+<li><a class="reference internal" href="#">R: the fundamentals</a><ul>
 <li><a class="reference internal" href="#intro-to-r">Intro to R</a></li>
 <li><a class="reference internal" href="#r-loops">R Loops</a><ul>
 <li><a class="reference internal" href="#r-for-loops">R <cite>for</cite> Loops</a></li>
@@ -933,7 +928,9 @@ is in the code. The why is how it’s written.</p>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>

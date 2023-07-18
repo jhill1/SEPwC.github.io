@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" /><link rel="prev" title="The fundementals of code" href="Code_basics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" /><link rel="prev" title="The fundamentals of code" href="Code_basics.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
         <title>Thinking like a computer - SEPwC documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -160,12 +160,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundementals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Thinking like a computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundementals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
@@ -207,14 +207,14 @@
         </div>
         <article role="main">
           <section id="thinking-like-a-computer">
-<h1>Thinking like a computer<a class="headerlink" href="#thinking-like-a-computer" title="Permalink to this headline">#</a></h1>
+<h1>Thinking like a computer<a class="headerlink" href="#thinking-like-a-computer" title="Permalink to this heading">#</a></h1>
 <p>To write code, we have to think in terms of algorithms and logic flow. We have covered the basics of code structures above, so now
-we can arrange those to form algorithms and then into programs. We can think about this in terms of psuedo-code (like I wrote above).
-Remember, psuedo-code is not a formal language but is code written to be read by a human with no concerns about syntax. We can also
+we can arrange those to form algorithms and then into programs. We can think about this in terms of pseudo-code (like I wrote above).
+Remember, pseudo-code is not a formal language but is code written to be read by a human with no concerns about syntax. We can also
 depict code as a flow diagram; this is more useful as we build more complex algorithms.</p>
 <p>Let’s build software to do some simple tasks.</p>
 <section id="create-a-word-cloud">
-<h2>Create a word cloud<a class="headerlink" href="#create-a-word-cloud" title="Permalink to this headline">#</a></h2>
+<h2>Create a word cloud<a class="headerlink" href="#create-a-word-cloud" title="Permalink to this heading">#</a></h2>
 <p>We want to create a word cloud of a text file only including
 words that occur more than 2 times <em>and</em> does not include
 the words “and”, “the”, “or”.</p>
@@ -227,7 +227,7 @@ the words “and”, “the”, “or”.</p>
       <span class="n">remove</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
 
 <span class="n">unique_words</span> <span class="o">=</span> <span class="n">get_unique</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="n">counts</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">unqiue_words</span><span class="p">))</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">unique_words</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
    <span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">unique_words</span><span class="p">)</span>
    <span class="n">counts</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
@@ -246,16 +246,16 @@ need to write some of these ourselves. The gist of the above code is:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>load in the text</p></li>
-<li><p>seperate into words (removing punctuation, spaces, etc)</p></li>
+<li><p>separate into words (removing punctuation, spaces, etc.)</p></li>
 <li><p>loop through the list of words and remove and, the, or</p></li>
-<li><p>get a list of unqiue words</p></li>
+<li><p>get a list of unique words</p></li>
 <li><p>make an empty list of counts which is the same length as the unique words</p></li>
 <li><p>loop through the list of words and find out where this is in the unique word list, incrementing the correct count value</p></li>
 <li><p>loop through the words a third time, removing those where the count is less than 2</p></li>
 <li><p>make out word cloud</p></li>
 </ol>
 </div></blockquote>
-<p>Let’s run through an exmaple of that. Here’s our text:</p>
+<p>Let’s run through an example of that. Here’s our text:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Need some sample, random, text and noise,</div>
@@ -265,9 +265,9 @@ need to write some of these ourselves. The gist of the above code is:</p>
 </div></blockquote>
 <dl class="simple">
 <dt>The text above should generate word cloud containing the words:</dt><dd><ul class="simple">
-<li><p>random (3 occurances)</p></li>
-<li><p>need (4 occurances)</p></li>
-<li><p>times (3 occurances)</p></li>
+<li><p>random (3 occurrences)</p></li>
+<li><p>need (4 occurrences)</p></li>
+<li><p>times (3 occurrences)</p></li>
 </ul>
 </dd>
 </dl>
@@ -330,7 +330,7 @@ need to write some of these ourselves. The gist of the above code is:</p>
 <li><p>need</p></li>
 </ul>
 </div></blockquote>
-<p>We then create a list of unqiue words (we’ll do that code later), which would give us:</p>
+<p>We then create a list of unique words (we’ll do that code later), which would give us:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>need</p></li>
@@ -349,15 +349,10 @@ need to write some of these ourselves. The gist of the above code is:</p>
 </ul>
 </div></blockquote>
 <p>We then count the number of times those words occur, by looping over the original word list and counting them.
-We know there are 13 unique words. We set up a list where the count is sotred in the same location as the unique
+We know there are 13 unique words. We set up a list where the count is sorted in the same location as the unique
 word, so our lists are like this:</p>
 <div class="table-wrapper"><table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Unique word count</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
 <th class="head"><p>Word</p></th>
@@ -420,20 +415,20 @@ word, so our lists are like this:</p>
 </tbody>
 </table></div>
 <p>We now have a count of each word and we loop through a final time (step 7) to remove those with
-fewer than 3 occurances (or in other words with more than 2 occurrances).</p>
-<p>Step 8 is then make the word cloud from the remining words (“times”, “random” and “need”)</p>
+fewer than 3 occurrences (or in other words with more than 2 occurrences).</p>
+<p>Step 8 is then make the word cloud from the remaining words (“times”, “random” and “need”)</p>
 </section>
 <section id="making-a-jam-sandwich">
-<h2>Making a jam sandwich<a class="headerlink" href="#making-a-jam-sandwich" title="Permalink to this headline">#</a></h2>
+<h2>Making a jam sandwich<a class="headerlink" href="#making-a-jam-sandwich" title="Permalink to this heading">#</a></h2>
 <p>Write down the steps to make a jam sandwich. Create a flow diagram of the list. You can then reveal the answer</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Make sure you are very precise in your desciptions</p>
+<p>Make sure you are very precise in your description</p>
 </div>
 </section>
 <section id="plotting-a-graph-with-options">
-<h2>Plotting a graph with options<a class="headerlink" href="#plotting-a-graph-with-options" title="Permalink to this headline">#</a></h2>
-<p>Write down the psuedo-code needed to read in the data below
+<h2>Plotting a graph with options<a class="headerlink" href="#plotting-a-graph-with-options" title="Permalink to this heading">#</a></h2>
+<p>Write down the pseudo-code needed to read in the data below
 and plot a graph of time (x axis) vs wave height (y axis).
 Allow the user to flip the graph (so wave height vs time).</p>
 </section>
@@ -460,7 +455,7 @@ Allow the user to flip the graph (so wave height vs time).</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">The fundementals of code</div>
+                <div class="title">The fundamentals of code</div>
                 
               </div>
             </a>
@@ -514,7 +509,9 @@ Allow the user to flip the graph (so wave height vs time).</p>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>

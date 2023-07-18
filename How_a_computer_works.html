@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Software licences" href="Licences.html" /><link rel="prev" title="Expectations" href="Expectations.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
         <title>How a computer works - SEPwC documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -160,12 +160,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">How a computer works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundementals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundementals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
@@ -207,7 +207,7 @@
         </div>
         <article role="main">
           <section id="how-a-computer-works">
-<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this headline">#</a></h1>
+<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this heading">#</a></h1>
 <p>Computers have been around since the 1940’s. The first computers were
 mechanical; using valves to store and process information. By the 60’s and 70’s they
 had moved to silicon transistors; tiny gates that store a 1 or 0 (on or off). A modern
@@ -218,28 +218,28 @@ thicker than the CPU transistor!).</p>
 them well:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>A CPU: the processing unit of the computer. Carries out the instructns (we are going to give it!)</p></li>
+<li><p>A CPU: the processing unit of the computer. Carries out the instructions (we are going to give it!)</p></li>
 <li><p>RAM: Random Access Memory, or often memory. Typical computers have 4 - 16 Gb (giga bytes). This
-is non-permananet storage. Turn your computer off and what is in RAM disappears.</p></li>
-<li><p>Storage. Often a hard (drive) disk (HDD) or a solid state drive (SSD). This is permanant
+is non-permanent storage. Turn your computer off and what is in RAM disappears.</p></li>
+<li><p>Storage. Often a hard (drive) disk (HDD) or a solid state drive (SSD). This is permanent
 storage and where you keep your files.</p></li>
 <li><p>Graphics card or chip: Modern computers can display more colours than the eye can see and at a resolution
 that is comparable to the human eye. To do that they have a dedicated chip, often called a GPU
 (Graphical Processing Unit). NVidia is a popular brand.</p></li>
-<li><p>Operating System (OS): This is Windows, Linux, MacOS, etc. It lives on the storage.</p></li>
+<li><p>Operating System (OS): This is Windows, Linux, MacOS, etc.. It lives on the storage.</p></li>
 <li><p>BIOS: Basic Input-Output System. Computers need something to tell them what to do when you
 turn it on. The BIOS does this. It’s a very basic OS on a chip.</p></li>
 </ul>
 <p>A computer works by reading the BIOS, which then starts the OS loading from disk to RAM. Once done,
-you can then log on and start using it. There is a lot of jargon around compters. We will try and cover this
+you can then log on and start using it. There is a lot of jargon around computers. We will try and cover this
 as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
 <section id="filesystems">
-<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this headline">#</a></h2>
+<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this heading">#</a></h2>
 <p>Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
-have come across things like FAT95, NTFS, ext4, journalling, etc. These are all types of filesystems.
+have come across things like FAT95, NTFS, ext4, journaling, etc. These are all types of filesystems.
 Fortunately, we rarely need to care about this (unless we want to plug storage
 from a Mac into Windows or vice-versa); the OS takes care of this for us. Each OS uses a different filesystem.
 Macs use Apple File System (APFS), Windows uses NTFS, Linux uses
@@ -247,7 +247,7 @@ ext4 or similar.</p>
 <p>The OS then stores files on its filesystem. Each OS has different characteristics and ways of
 storing your files. This we do care about. We’ll go through each OS in turn.</p>
 <section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h3>
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
 <p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
@@ -256,7 +256,7 @@ the root drive where Windows actually lives, along with your programs (apps) and
 <p class="admonition-title">Learn more</p>
 <p>A: and B: were reserved for floppy disks, which is what MSDOS computers generally had.</p>
 </div>
-<p>From the drive, folders are seperated with a ‘' symbol. Software is generally installed
+<p>From the drive, folders are separated with a ‘' symbol. Software is generally installed
 in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span></code> (or <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)</span></code> for older software). Your documents are
 in a <em>magic</em> folder called <code class="docutils literal notranslate"><span class="pre">Documents</span></code>. It’s possible to get this to point to network drives or
 to your local hard drive. However, a <em>standard</em> Windows 11 machine will have this pointing to
@@ -265,18 +265,18 @@ to your local hard drive. However, a <em>standard</em> Windows 11 machine will h
 it’s in <code class="docutils literal notranslate"><span class="pre">Documents</span></code>; we need a full path (see later).</p>
 </section>
 <section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h3>
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">#</a></h3>
 <p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
 <code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. This contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> there is a directory with your username. Within there are your images, music, etc.</p>
 <p>Unlike Windows, drives can be mounted anywhere in the file structure and this is generally transparent to the user. So for example
-<code class="docutils literal notranslate"><span class="pre">\home</span></code> can be mounted onto a completely seperate physical hard drive to the rest of the folders. The same applies to <em>any</em>
+<code class="docutils literal notranslate"><span class="pre">\home</span></code> can be mounted onto a completely separate physical hard drive to the rest of the folders. The same applies to <em>any</em>
 folder. Temporary drives will be mounted into <code class="docutils literal notranslate"><span class="pre">\media</span></code> or <code class="docutils literal notranslate"><span class="pre">\mnt</span></code>. Note that Linux filenames are case-senstive, so <code class="docutils literal notranslate"><span class="pre">Bob.txt</span></code> is
 a different file to <code class="docutils literal notranslate"><span class="pre">bob.txt</span></code></p>
 </section>
 <section id="macos">
-<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">#</a></h3>
 <p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
@@ -284,7 +284,7 @@ are some binaries (i.e. programmes) in <code class="docutils literal notranslate
 <p>Like Linux, MacOS is case sensitive.</p>
 </section>
 <section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/kai687/sphinxawesome-theme/issues/939">https://github.com/kai687/sphinxawesome-theme/issues/939</a></p>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
@@ -299,7 +299,7 @@ symbols.</p>
 </section>
 </section>
 <section id="navigating-a-filesystem">
-<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this headline">#</a></h2>
+<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this heading">#</a></h2>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
 <p>The first is to list which directory you are in.</p>
@@ -365,7 +365,7 @@ conf.py<span class="w">          </span>index.rst<span class="w">         </span
 </pre></div>
 </div>
 </div>
-<p>We can now see where you are, what’s in thet directory; what about moving into a new directory? For that we use the
+<p>We can now see where you are, what’s in that directory; what about moving into a new directory? For that we use the
 change directory command:</p>
 <p><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
@@ -380,10 +380,10 @@ change directory command:</p>
 <p>Great! We can now navigate down the filesystem. What about going up a directory?</p>
 </section>
 <section id="absolute-vs-relative-paths">
-<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this headline">#</a></h2>
-<p>Most of the filepaths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
+<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this heading">#</a></h2>
+<p>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
-paths. These are paths that start from where you curently are (be that in the command line or running
+paths. These are paths that start from where you currently are (be that in the command line or running
 a programme).</p>
 <p>Let’s do an example. Here’s an absolute path:</p>
 <p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
@@ -402,24 +402,24 @@ have to edit every path in the script. However, if I give relative paths, as lon
 structure is the same, the script will work.</p>
 <p>The downside of relative paths is that you must have the same directory structure, relative to
 the script. If you move the script elsewhere, things might break. You can, of course,
-mix and match; so pull data from an absolut path in one place and from a relative path
+mix and match; so pull data from an absolute path in one place and from a relative path
 in another. Finally, you can ask the user where to get data from too (or pull data
 from the internet) saving all this hassle.</p>
-<p>However, when starting to write your own script you will <cite>hardcode</cite> the filenames and hence
+<p>However, when starting to write your own script you will <cite>hard-code</cite> the filenames and hence
 you need to know the difference between relative and absolute paths.</p>
 </section>
 <section id="from-source-code-to-programme">
-<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this headline">#</a></h2>
+<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this heading">#</a></h2>
 <p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
 Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
 computer can do billions of these every second (this is the clock speed). The moving of
 gates allow the computer to add two numbers or multiple two numbers or move data around, etc.
-These are called instructions. The CPU translate these intructions into moving those gates around
+These are called instructions. The CPU translate these instructions into moving those gates around
 to actually do something. Ultimately, all computer code does this. It is possible to write
 computer code at this level: assembler code. Back in the day this is how you programmed computers.
 This is an example of assembler code for an x86 processor (i.e. what you probably have):</p>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -454,53 +454,54 @@ This is an example of assembler code for an x86 processor (i.e. what you probabl
 </pre></div>
 </div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">1</a><span class="fn-bracket">]</span></span>
+<p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
+</aside>
+</aside>
 <p>Fortunately, things have moved on and we can write code in <cite>higher level languages</cite>. These
-come in two broad types: <cite>compiled</cite> and <cite>interpretated</cite>. Compiled languages go through a two-step
+come in two broad types: <cite>compiled</cite> and <cite>interpreted</cite>. Compiled languages go through a two-step
 process to be turned into a programme. Interpreted languages do not, and can be run (executed)
 immediately</p>
 <section id="compiled-languages">
-<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this headline">#</a></h3>
+<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this heading">#</a></h3>
 <p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
 written in those kind of languages. Note the user does not need the source code.
-Languagaes like Java are also compiled but at the time of execution
+Languages like Java are also compiled but at the time of execution
 (called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
 </section>
 <section id="interpreted-languages">
-<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this headline">#</a></h3>
-<p>In contract interprested languages are not compiled. You execute the source code. So you can write a text file
+<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this heading">#</a></h3>
+<p>In contract interpreted languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
-You therefore need another user to have the python ecutable their system to be able to run your code. The user
+You therefore need another user to have the python executable their system to be able to run your code. The user
 must also have your source code. This is the main difference between compiled and interpreted languages.
 Compiled languages are a lot more flexible and require the user to do less. Interpreted languages are
 easier (don’t need to compile!) but need a user to set something up ahead of time.</p>
-<p>The line betwen these is getting blurred all the time as you can compile Python into an executable and use C
+<p>The line between these is getting blurred all the time as you can compile Python into an executable and use C
 within a Python programme without pre-compiling. However, for most users, the distinction is clear: if you
 must compile to run, then it’s a compiled language. If you don’t need to do that it’s interpreted.
 Some languages are both.</p>
 <p>So what happens during compiling or interpretation? Remember that assemble code above? That’s what the compiler
 does to your source code. It turns it from human readable code to those CPU instructions. Modern compilers
 are very clever and can optimise your code very well to get the most out of your computer. Interpreters do the
-same thing but on the fly. The python exectuable (or R) is therefore turning your code into those kind of
+same thing but on the fly. The python executable (or R) is therefore turning your code into those kind of
 instructions as it’s running the code. Interpreted languages are therefore generally slower than compiled code
-as the interpreter cannot optimise as well as a seperate compiler.</p>
+as the interpreter cannot optimise as well as a separate compiler.</p>
 </section>
 </section>
 <section id="more-basic-command-line-functions">
-<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this headline">#</a></h2>
+<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this heading">#</a></h2>
 <p>You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
-<p>The Command Line Interface (CLI) is a powerful way of interating with a computer. Imagine
+<p>The Command Line Interface (CLI) is a powerful way of interacting with a computer. Imagine
 you have a folder full of images and you want to move those that have “_final_” in their
 name somewhere else. In the GUI, this could take a while. In the command line it’s a single
 command.</p>
 <p>CLIs work by running the command you type, plus the arguments you give it. Arguments can be
-mandatory or optional (and therfore called options). A typical command might look like:</p>
+mandatory or optional (and therefore called options). A typical command might look like:</p>
 <p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;"/></a>
 <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">my_dir</span> <span class="pre">my_dir2</span></code></p>
 <p>This copies (<code class="docutils literal notranslate"><span class="pre">cp</span></code>) <code class="docutils literal notranslate"><span class="pre">my_dir</span></code> to <code class="docutils literal notranslate"><span class="pre">my_dir2</span></code> recursively <code class="docutils literal notranslate"><span class="pre">-r</span></code>. The two
@@ -544,7 +545,7 @@ command. On MacOS/Linux <code class="docutils literal notranslate"><span class="
 <p>Exercise: practice on those commands</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, and <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> delete files premenantly. They do <em>not</em> move the into Trash or similar.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, and <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> delete files permanently. They do <em>not</em> move the into Trash or similar.</p>
 </div>
 </section>
 </section>
@@ -636,7 +637,9 @@ command. On MacOS/Linux <code class="docutils literal notranslate"><span class="
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>

@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python: the fundementals" href="Python.html" /><link rel="prev" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
         <title>Revision control with Git - SEPwC documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
@@ -160,12 +160,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundementals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundementals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
@@ -207,9 +207,9 @@
         </div>
         <article role="main">
           <section id="revision-control-with-git">
-<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this headline">#</a></h1>
+<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p id="index-0">We’ll start by exploring how version control can be used to keep track of what one person did and when.
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:</p>
 <img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png"/>
@@ -285,7 +285,7 @@ problems.</p></li>
 </div>
 </section>
 <section id="setting-up-git">
-<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">#</a></h2>
+<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this heading">#</a></h2>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:</p>
 <ul class="simple">
@@ -335,10 +335,6 @@ On macOS and Linux:</p>
 <p>We also need to set our favorite text editor, following this table:</p>
 <div class="table-wrapper"><table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Editors and config</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 50%"/>
-<col style="width: 50%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Editor</p></th>
 <th class="head"><p>Configuration command</p></th>
@@ -432,7 +428,7 @@ More generally, you can get the list of available <code class="docutils literal 
 </div>
 </section>
 <section id="our-first-repository">
-<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this headline">#</a></h2>
+<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this heading">#</a></h2>
 <p>Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
@@ -563,7 +559,7 @@ Therefore, always check your current directory using the command <cite>pwd</cite
 </div>
 </section>
 <section id="adding-files">
-<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this headline">#</a></h2>
+<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this heading">#</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/planets
@@ -579,7 +575,7 @@ editor you choose (it might not be <cite>nano</cite>).</p>
 </pre></div>
 </div>
 <p>Type the text below into the <cite>mars.txt</cite> file:</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <p>Let’s first verify that the file was properly created by running the list command (<cite>ls</cite>):</p>
@@ -593,7 +589,7 @@ editor you choose (it might not be <cite>nano</cite>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <p>If we check the status of our project again,
@@ -707,7 +703,7 @@ you may use a different editor, and don’t need to <code class="docutils litera
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 </pre></div>
 </div>
@@ -741,7 +737,7 @@ of the file and the most recently saved version:</p>
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,2 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go">+The two moons may be a problem for werewolves</span>
 </pre></div>
 </div>
@@ -762,7 +758,7 @@ In particular,
 the <code class="docutils literal notranslate"><span class="pre">+</span></code> marker in the first column shows where we added a line.</p></li>
 </ol>
 <p>After reviewing our change, it’s time to commit it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on werewolves"</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
@@ -779,10 +775,10 @@ the <code class="docutils literal notranslate"><span class="pre">+</span></code>
 Git won’t commit because we didn’t use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> first.
 Let’s fix that:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on Wolfman"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on werewolves"</span>
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars' moons on Wolfman</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars' moons on werewolves</span>
 <span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
@@ -826,7 +822,7 @@ First, we’ll add another line to the file:</p>
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
@@ -839,7 +835,7 @@ cat<span class="w"> </span>mars.txt
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,2 +1,3 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go"> The two moons may be a problem for werewolves</span>
 <span class="go">+But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
@@ -862,7 +858,7 @@ and what’s currently in the directory. However, if we do this:</p>
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,2 +1,3 @@</span>
-<span class="go">Cold and dry, but everything is my favorite color</span>
+<span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
@@ -898,7 +894,7 @@ and what’s in the staging area. Let’s save our changes:</p>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:07:21 2013 -0400</span>
 
-<span class="go">    Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go">    Add concerns about effects of Mars' moons on werewolves</span>
 
 <span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
@@ -913,7 +909,7 @@ and what’s in the staging area. Let’s save our changes:</p>
 <p>Sometimes, e.g. in the case of the text documents a line-wise
 diff is too coarse. That is where the <code class="docutils literal notranslate"><span class="pre">--color-words</span></code> option of
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> comes in very useful as it highlights the changed
-words using colors.</p>
+words using colours.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
@@ -951,7 +947,7 @@ the last commit you can use:</p>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
-<span class="go">34961b1 Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go">34961b1 Add concerns about effects of Mars' moons on werewolves</span>
 <span class="go">f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
@@ -964,7 +960,7 @@ current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
-<span class="go">* 34961b1 Add concerns about effects of Mars' moons on Wolfman</span>
+<span class="go">* 34961b1 Add concerns about effects of Mars' moons on werewolves</span>
 <span class="go">* f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
@@ -1149,7 +1145,7 @@ To display the differences between its updated state and its original state, use
 </div>
 </section>
 <section id="git-history">
-<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this headline">#</a></h2>
+<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this heading">#</a></h2>
 <p>No, not the story of how Git came to be, but how do we get at the history of our commits.
 In the previous section we see we can refer to commits by the unique identifiers.
 You can refer to the <em>most recent commit</em> of the working
@@ -1157,7 +1153,7 @@ directory by using the identifier <code class="docutils literal notranslate"><sp
 <p>We’ve been adding one line at a time to <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code>, so it’s easy to track our
 progress by looking, so let’s do that using our <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.  Before we start,
 let’s make a change to <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code>, adding yet another line.</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 <span class="go">An ill-considered change</span>
@@ -1172,7 +1168,7 @@ let’s make a change to <code class="file docutils literal notranslate"><span c
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,3 +1,4 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go"> The two moons may be a problem for werewolves</span>
 <span class="go"> But the Mummy will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change.</span>
@@ -1196,7 +1192,7 @@ again, but with the notation <code class="docutils literal notranslate"><span cl
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go">+The two moons may be a problem for werewolves</span>
 <span class="go">+But the Mummy will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
@@ -1220,7 +1216,7 @@ working directory that we see by using <code class="docutils literal notranslate
 <span class="go">--- /dev/null</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -0,0 +1 @@</span>
-<span class="go">+Cold and dry, but everything is my favorite color</span>
+<span class="go">+Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <p>We can also refer to commits using those long strings of digits and letters
@@ -1236,7 +1232,7 @@ has a unique 40-character identifier. Our first commit was given the ID
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go">+The two moons may be a problem for werewolves</span>
 <span class="go">+But the Mummy will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
@@ -1252,7 +1248,7 @@ so Git lets us use just the first few characters (typically seven for normal siz
 <span class="go">--- a/mars.txt</span>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
-<span class="go"> Cold and dry, but everything is my favorite color</span>
+<span class="go"> Cold and dry, but everything is my favourite colour</span>
 <span class="go">+The two moons may be a problem for werewolves</span>
 <span class="go">+But the Mummy will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
@@ -1279,7 +1275,7 @@ Let’s suppose we change our mind about the last update to <code class="docutil
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
@@ -1292,7 +1288,7 @@ we can use a commit identifier instead:</p>
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
@@ -1340,7 +1336,7 @@ HEAD<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span
 </div>
 <p>The “detached HEAD” is like “look, but don’t touch” here,
 so you shouldn’t make any changes in this state.
-After investigating your repo’s past state, reattach your <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</p>
+After investigating your repos’ past state, reattach your <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</p>
 </div>
 <p>It’s important to remember that we must use the commit number that identifies the state of the repository
 <em>before</em> the change we’re trying to undo. A common mistake is to use the number of
@@ -1508,7 +1504,7 @@ the difference between each commit.</p>
 </div>
 </section>
 <section id="ignoring-files">
-<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this headline">#</a></h2>
+<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
 <p>What if we have files that we do not want Git to track for us,
 like backup files created by our editor or intermediate files created during data analysis?
 Let’s create a few dummy files:</p>
@@ -1698,7 +1694,7 @@ You want to keep them but you do not want to track them through <code class="doc
 <li><p>Write <strong>one</strong> <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> entry that excludes files of the form <code class="docutils literal notranslate"><span class="pre">log_01</span></code>, <code class="docutils literal notranslate"><span class="pre">log_02</span></code>, etc.</p></li>
 <li><p>Test your “ignore pattern” by creating some dummy files of the form <code class="docutils literal notranslate"><span class="pre">log_01</span></code>, etc.</p></li>
 <li><p>You find that the file <code class="docutils literal notranslate"><span class="pre">log_01</span></code> is very important after all, add it to the tracked files without changing the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> again.</p></li>
-<li><p>Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p></li>
+<li><p>Discuss with your neighbour what other types of files could reside in your directory that you do not want to track and thus would exclude via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p></li>
 </ol>
 </div>
 <div class="toggle admonition">
@@ -1712,7 +1708,7 @@ You want to keep them but you do not want to track them through <code class="doc
 </div>
 </section>
 <section id="github">
-<h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h2>
+<h2>Github<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
 <p>Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.</p>
@@ -1726,7 +1722,7 @@ and cons of this in a later episode.</p>
 world. To this end we are going to create a <em>remote</em> repository that will be
 linked to our <em>local</em> repository.</p>
 <section id="creating-a-remote-repository">
-<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this headline">#</a></h3>
+<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this heading">#</a></h3>
 <p>Log in to <a class="reference external" href="https://github.com">GitHub</a>, then click on the icon in the top right corner to
 create a new repository called <code class="docutils literal notranslate"><span class="pre">planets</span></code>:</p>
 <a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png"/></a>
@@ -1755,7 +1751,7 @@ which looked like this:</p>
 remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
 </section>
 <section id="connect-local-to-remote-repository">
-<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this headline">#</a></h3>
+<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this heading">#</a></h3>
 <p>Now we connect the two repositories.  We do this by making the
 GitHub repository a remote for the local repository.
 The home page of the repository on GitHub includes the URL string we need to
@@ -1793,7 +1789,7 @@ and GitHub, so it’s helpful to stick with this unless there’s a reason not t
 talking about how they might be used for collaboration.</p>
 </section>
 <section id="ssh-background-and-setup">
-<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this headline">#</a></h3>
+<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this heading">#</a></h3>
 <p>Before I can connect to a remote repository, I need to set up a way for his computer to
 authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
 <p>We are going to set up the method that is commonly used by many different services to authenticate
@@ -1830,7 +1826,7 @@ The file names are either <code class="docutils literal notranslate"><span class
 depending on how the key pairs were set up.</p>
 <p>Since they don’t exist on this computer, we will use this command to create them.</p>
 <section id="create-an-ssh-key-pair">
-<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this headline">#</a></h4>
+<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this heading">#</a></h4>
 <p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate"><span class="pre">-t</span></code> option specifies which type of
 algorithm to use and <code class="docutils literal notranslate"><span class="pre">-C</span></code> attaches a comment to the key (here, our email):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
@@ -1839,7 +1835,7 @@ algorithm to use and <code class="docutils literal notranslate"><span class="pre
 <p>If you are using a legacy system that doesn’t support the Ed25519 algorithm, use:
 <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">4096</span> <span class="pre">-C</span> <span class="pre">"your_email@example.com"</span></code></p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Generating public/private ed25519 key pair.</span>
-<span class="go">Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):</span>
+<span class="go">Enter file in which to save the key (/c/Users/jh1889/.ssh/id_ed25519):</span>
 </pre></div>
 </div>
 <p>We want to use the default file, so just press :kbd: <cite>Enter</cite>.</p>
@@ -1887,7 +1883,7 @@ is a shorter version of a public key.</p>
 </div>
 </section>
 <section id="copy-the-public-key-to-github">
-<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this headline">#</a></h4>
+<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this heading">#</a></h4>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </pre></div>
@@ -1911,8 +1907,7 @@ git@github.com: Permission denied (publickey).
 </div>
 <p>Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click “Settings,” then on the
 settings page, click “SSH and GPG keys,” on the left side “Account settings” menu.  Click the “New SSH key” button on the right side. Now,
-you can add the title (Dracula uses the title “Vlad’s Lab Laptop” so he can remember where the original key pair
-files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
+you can add the title (use the name of your computer, e.g. “laptop”), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.</p>
 <p>Now that we’ve set that up, let’s check our authentication again from the command line.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </pre></div>
@@ -1924,7 +1919,7 @@ files are located), paste your SSH key into the field, and click the “Add SSH 
 </section>
 </section>
 <section id="push-local-changes-to-a-remote">
-<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this headline">#</a></h3>
+<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this heading">#</a></h3>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from
 our local repository to the repository on GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
@@ -2072,14 +2067,14 @@ repositories before merging.</p>
 </section>
 </section>
 <section id="collaboration-with-git">
-<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this headline">#</a></h2>
+<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this heading">#</a></h2>
 <p>For the next step, get into pairs.  One person will be the “Owner” and the other
 will be the “Collaborator”. The goal is that the Collaborator add changes into
 the Owner’s repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><strong>Practicing By Yourself</strong></p>
+<p><strong>Practising By Yourself</strong></p>
 <p>If you’re working through this lesson on your own, you can carry on by opening
 a second terminal window.
 This window will represent your partner, working on another computer. You
@@ -2159,7 +2154,7 @@ You would pull from <code class="docutils literal notranslate"><span class="pre"
 time to get the latest updates that other people have committed.</p>
 <p>Remember that the name you give to a remote only exists locally. It’s
 an alias that you choose - whether <code class="docutils literal notranslate"><span class="pre">origin</span></code>, or <code class="docutils literal notranslate"><span class="pre">upstream</span></code>, or <code class="docutils literal notranslate"><span class="pre">fred</span></code> -
-and not something intrinstic to the remote repository.</p>
+and not something intrinsic to the remote repository.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code> family of commands is used to set up and alter the remotes
 associated with a repository. Here are some of the most useful ones:</p>
 <ul class="simple">
@@ -2245,7 +2240,7 @@ code to comment, a blue comment icon appears to open a comment window.</p>
 </div>
 </section>
 <section id="conflict">
-<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this headline">#</a></h2>
+<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this heading">#</a></h2>
 <p>As soon as people can work in parallel, they’ll likely step on each other’s
 toes. This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
@@ -2257,7 +2252,7 @@ repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
@@ -2267,7 +2262,7 @@ repository:</p>
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 <span class="go">This line added to one copy</span>
@@ -2302,7 +2297,7 @@ To<span class="w"> </span>https://github.com/jh1889/planets.git
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 <span class="go">We added a different line in the other copy</span>
@@ -2361,7 +2356,7 @@ in the affected file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 <span class="go">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
@@ -2385,7 +2380,7 @@ Let’s replace both so that the file looks like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favorite color</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 <span class="go">We removed the conflict on this line</span>
@@ -2498,14 +2493,14 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </pre></div>
 </div>
 <p>Suppose that someone else has added a similar picture in the meantime.
-Her’s is a picture of the Martian sky, but it is <em>also</em> called <code class="docutils literal notranslate"><span class="pre">mars.jpg</span></code>.
+Here’s is a picture of the Martian sky, but it is <em>also</em> called <code class="docutils literal notranslate"><span class="pre">mars.jpg</span></code>.
 When I try to push, I get a familiar message:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">To https://github.com/jh1889/planets.git</span>
 <span class="go"> ! [rejected]        main -&gt; main (fetch first)</span>
-<span class="go">error: failed to push some refs to 'https://github.com/vlad/planets.git'</span>
+<span class="go">error: failed to push some refs to 'https://github.com/jh1889/planets.git'</span>
 <span class="go">hint: Updates were rejected because the remote contains work that you do</span>
 <span class="go">hint: not have locally. This is usually caused by another repository pushing</span>
 <span class="go">hint: to the same ref. You may want to first integrate the remote changes</span>
@@ -2608,11 +2603,6 @@ below. When you have the order right, see if you can write the corresponding
 commands in the <em>command</em> column. A few steps are populated to get you
 started.</p>
 <div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -2650,11 +2640,6 @@ started.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-<col style="width: 33%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -2783,7 +2768,9 @@ started.</p>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
