@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>R: part 2 &#8212; SEPwC  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python or R 3" href="Python3.html" />
+    <link rel="prev" title="Python: part 2" href="Python2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Code_basics.html">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python or R 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/jhill1/SEPwC.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/R2.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-functions">
+   R functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-r-function">
+     Using a R function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-your-own-r-functions">
+     Writing your own R functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-arguments-in-r">
+       Function arguments in R
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-libraries">
+   R libraries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-libraries">
+     Loading libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sourcing-other-code">
+     Sourcing other code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>R: part 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-functions">
+   R functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-r-function">
+     Using a R function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-your-own-r-functions">
+     Writing your own R functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-arguments-in-r">
+       Function arguments in R
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-libraries">
+   R libraries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-libraries">
+     Loading libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sourcing-other-code">
+     Sourcing other code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="r-part-2">
+<h1>R: part 2<a class="headerlink" href="#r-part-2" title="Permalink to this headline">#</a></h1>
+<section id="r-functions">
+<h2>R functions<a class="headerlink" href="#r-functions" title="Permalink to this headline">#</a></h2>
+<p>Functions are blocks of code that can be called frequently. Rather than copy and paste the same block of
+code which is identical apart from a single variable you can instead create a function.</p>
+<p>You pass data to a function in the form of parameters and it returns a result or performs a task successfully.</p>
+<section id="using-a-r-function">
+<h3>Using a R function<a class="headerlink" href="#using-a-r-function" title="Permalink to this headline">#</a></h3>
+<p>We’ve used a number of R functions already.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vert_position</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The first thing to note is that a function is called with <cite>()</cite> parenthesies. Sometimes it gives back
+a value (called “returning a value”), sometimes it does not. Sometimes there are things in between the
+parantheses, sometimes not (these things are called “arguments”).</p>
+<p>So using, or calling, a R function is easy. Give the function name, open the brackets, add any arguments you need (seperated by commas),
+close your brackets, if you are expecting a number back, store it:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">return_value</span> <span class="o">=</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As we’ve seen already you can nest functions within other functions!</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;hola&quot;</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="s">&quot;long&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we’re calling the <cite>print</cite> function to print out the result of the <code class="docutils literal notranslate"><span class="pre">paste</span></code> function, which pastes together a string, the <code class="docutils literal notranslate"><span class="pre">length</span></code> of a list
+and another string. Three functions nested within each ohter. This is equivalent of:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">len</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;hola&quot;</span><span class="p">,</span><span class="n">len</span><span class="p">,</span><span class="s">&quot;long&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Nested functions</strong></p>
+<blockquote>
+<div><p>Write a single line of code to print the <code class="docutils literal notranslate"><span class="pre">log10</span></code> of a 1000</p>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">log10</span><span class="p">(</span><span class="m">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We call the <cite>log10()</cite> function inside of the <cite>print()</cite> function.</p>
+</div>
+</section>
+<section id="writing-your-own-r-functions">
+<h3>Writing your own R functions<a class="headerlink" href="#writing-your-own-r-functions" title="Permalink to this headline">#</a></h3>
+<p>Whilst it’s all well and good to use functions, you will need to write them too. R allows you to create your own functions</p>
+<p>They follow this pattern:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_hello</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The name of of the function above is <code class="docutils literal notranslate"><span class="pre">print_hello</span></code>. The function keyword tells R this is a function and the content between the <code class="docutils literal notranslate"><span class="pre">{</span>&#160;&#160; <span class="pre">}</span></code> is the function body.</p>
+<p>We can then call this function in out main code:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_function</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">my_function</span><span class="p">()</span> <span class="c1"># call the function named my_function</span>
+</pre></div>
+</div>
+<p>We type the name of the function, followed by parentheses.</p>
+<p>Functions are useful when we can pass data into them. We do this via arguments:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">greetings</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">,</span><span class="n">fname</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">greetings</span><span class="p">(</span><span class="s">&quot;Hughie&quot;</span><span class="p">)</span>
+<span class="nf">greetings</span><span class="p">(</span><span class="s">&quot;Louie&quot;</span><span class="p">)</span>
+<span class="nf">greetings</span><span class="p">(</span><span class="s">&quot;Dewie&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Farenheit.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFarenheit</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">Centrigrade</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="bp">F</span> <span class="o">=</span> <span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="m">32.0</span>
+
+    <span class="n">return</span> <span class="bp">F</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This function takes a value (Centrigrade) and converts it to Farenheit, returning that number. We would use it something like this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFarenheit</span> <span class="o">&lt;-</span> <span class="nf">funtion</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="bp">F</span> <span class="o">=</span> <span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="m">32.0</span>
+
+    <span class="n">return</span> <span class="bp">F</span>
+<span class="p">}</span>
+
+<span class="c1"># store the number</span>
+<span class="n">water_freezing</span> <span class="o">=</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+
+<span class="c1"># nested functions to print it</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Water freezes at &quot;</span><span class="p">,</span><span class="nf">toFarenheit</span><span class="p">(</span><span class="m">0</span><span class="p">),</span><span class="s">&quot; deg F&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="function-arguments-in-r">
+<h4>Function arguments in R<a class="headerlink" href="#function-arguments-in-r" title="Permalink to this headline">#</a></h4>
+<p>A function can take any number of inputs via arguments. You can even specify an unknown number of arguments</p>
+<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the funciton takes
+two keyword arguments:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+
+    <span class="n">return</span>
+ <span class="p">}</span>
+
+<span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see that by specifying two arguments in the function decleration we have access to those values inside the function.
+What happens if the user supplies only a single argument, not two as we’ve asked? Try the code below:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+
+    <span class="n">return</span>
+ <span class="p">}</span>
+
+<span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What error message did you get?</p>
+<div class="admonition-check-your-answer-class-toggle admonition">
+<p class="admonition-title">Check your answer
+ :class: toggle</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="o">:</span>
+<span class="n">argument</span> <span class="s">&quot;name&quot;</span> <span class="n">is</span> <span class="n">missing</span><span class="p">,</span> <span class="n">with</span> <span class="n">no</span> <span class="n">default</span>
+</pre></div>
+</div>
+</div>
+<p>We can also write function that have default values.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+
+    <span class="n">return</span>
+ <span class="p">}</span>
+
+<span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When running this, we can give the <code class="docutils literal notranslate"><span class="pre">name</span></code> argument and we get a default <code class="docutils literal notranslate"><span class="pre">greeting</span></code>. We could also set the <code class="docutils literal notranslate"><span class="pre">greeting</span></code> ourselves:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+
+    <span class="n">return</span>
+ <span class="p">}</span>
+
+<span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">,</span> <span class="s">&quot;Ey-up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, you may note I’ve switched the order of the arguments around. What happens if we didn’t?</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+
+    <span class="n">return</span>
+ <span class="p">}</span>
+
+<span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-check-your-answer-class-toggle admonition">
+<p class="admonition-title">Check your answer
+ :class: toggle</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="o">:</span>
+<span class="n">argument</span> <span class="s">&quot;name&quot;</span> <span class="n">is</span> <span class="n">missing</span><span class="p">,</span> <span class="n">with</span> <span class="n">no</span> <span class="n">default</span>
+</pre></div>
+</div>
+</div>
+<p>R tells us that we have forgotten to give an argument as <code class="docutils literal notranslate"><span class="pre">name</span></code> is missing.</p>
+</section>
+</section>
+</section>
+<section id="r-libraries">
+<h2>R libraries<a class="headerlink" href="#r-libraries" title="Permalink to this headline">#</a></h2>
+<p>When writing code we want to package up functionality/code into descrete bundles. In R these are called libraries or packages.
+You can then put this library on the internet such that other can download, install it and use it. You can also save your own code
+this way and use it in other code you write.</p>
+<p>We’re not going to get into creating your own R package/module here, but we will use R libraries a lot, so we will focus on using
+libraries, rather than creating them.</p>
+<section id="loading-libraries">
+<h3>Loading libraries<a class="headerlink" href="#loading-libraries" title="Permalink to this headline">#</a></h3>
+<p>Libraries are loaded via either the <code class="docutils literal notranslate"><span class="pre">library</span></code> or <code class="docutils literal notranslate"><span class="pre">require</span></code> functions.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will load the ggplot2 library and namepsace into your current code. It will also load any other libraries that are required. If the library cannot be found, the code will stop executing.</p>
+<p>R then allows you to call any functions within that library. Technically R does a search for functions so you may have two functions of the same name (e.g. <code class="docutils literal notranslate"><span class="pre">sum()</span></code>) so R has syntax to make sure it uses the correct one; the <code class="docutils literal notranslate"><span class="pre">::</span></code> notation. For example both <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">base</span></code> contain a function <code class="docutils literal notranslate"><span class="pre">intersect()</span></code>. To make sure you call the correct one:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">dplyr</span><span class="o">::</span><span class="nf">intersect</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This can be good practice throughout your code, but requires some care and attention.</p>
+</section>
+<section id="sourcing-other-code">
+<h3>Sourcing other code<a class="headerlink" href="#sourcing-other-code" title="Permalink to this headline">#</a></h3>
+<p>You can also include the contents of another script directly into your own using the <code class="docutils literal notranslate"><span class="pre">source</span></code> function.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;common_funcs.R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would load the contents of a files “common_funcs.R” into the current environment. R assumes this script is in the current directory.</p>
+<p>This can allow you to build a library of common functions, but not make them into a full package. Unlike the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function this does not allow you to use namespaces to seperate out functions or variables.</p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Python2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python: part 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Python3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python or R 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jon Hill<br/>
+  
+      &copy; Copyright 2023, Jon Hill.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

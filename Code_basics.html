@@ -2,186 +2,475 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta charset="utf-8"/>
-<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>The fundementals of code | SEPwC  documentation</title>
-<link href="_static/docsearch.b8f54ae248851a9ad851.css" rel="stylesheet"/>
-<link href="_static/pygments.css" rel="stylesheet"/>
-<link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
-<link href="_static/togglebutton.css" rel="stylesheet"/>
-<link href="search.html" rel="search" title="Search"/>
-<link href="genindex.html" rel="index" title="Index"/>
-<link href="Algorithms.html" rel="next" title="Thinking like a computer"/>
-<link href="Licences.html" rel="prev" title="Software licences"/>
-</head>
-<body class="antialiased text-gray">
-<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#the-fundementals-of-code" title="Skip navigation links">Skip to content</a>
-<header class="grid-area-header z-10 h-14 sm:h-18">
-<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
-<button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
-<span class="sr-only">Open navigation menu</span>
-<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 sm:leading-18 tracking-wider">SEPwC  documentation</span>
-</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 sm:leading-18 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
-<button aria-label="Get search results" class="text-inherit h-14 w-14 sm:h-18 sm:w-18" tabindex="-1">
-<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-</button>
-<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
-</form></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The fundamentals of code &#8212; SEPwC  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Thinking like a computer" href="Algorithms.html" />
+    <link rel="prev" title="Software licences" href="Licences.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python or R 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
-</header>
-<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
-<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
-<div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html">Expectations</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#what-we-expect-from-you">What we expect from you</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#assessment">Assessment</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html">How a computer works</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#filesystems">Filesystems</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#windows">Windows</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#linux">Linux</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#macos">MacOS</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#exercises">Exercises</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#navigating-a-filesystem">Navigating a filesystem</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#absolute-vs-relative-paths">Absolute vs Relative paths</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#from-source-code-to-programme">From source code to programme</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#compiled-languages">Compiled languages</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#interpreted-languages">Interpreted languages</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#more-basic-command-line-functions">More basic command line functions</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html">Software licences</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#copyleft">Copyleft</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#permissive">Permissive</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">The fundementals of code</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#some-terminology">Some terminology</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="#defining-a-variable">Defining a variable</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#how-do-you-decide-a-good-variable-name">How do you decide a good variable name?</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#datatypes">Datatypes</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#operations">Operations</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#booleans-and-logic">Booleans and Logic</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#outputs">Outputs</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#inputs">Inputs</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#loops">Loops</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#conditionals">Conditionals</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#functions">Functions</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html">Thinking like a computer</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#create-a-word-cloud">Create a word cloud</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#making-a-jam-sandwich">Making a jam sandwich</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#plotting-a-graph-with-options">Plotting a graph with options</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html">Revision control with Git</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#introduction">Introduction</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#setting-up-git">Setting up git</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#our-first-repository">Our first repository</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#adding-files">Adding files</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#git-history">Git history</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ignoring-files">Ignoring files</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#id1">Github</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#creating-a-remote-repository">1. Creating a remote repository</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#connect-local-to-remote-repository">2. Connect local to remote repository</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ssh-background-and-setup">3. SSH Background and Setup</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python: the fundementals</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-python">Intro to Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-loops">Python Loops</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-for-loops">Python <cite>for</cite> Loops</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-while-loop">Python <cite>while</cite> loop</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-conditionals">Python conditionals</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-if-statement">Python <cite>if</cite> statement</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-comments">Python comments</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#inline-comments-python">Inline comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#block-comments-python">Block comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#documentation-comments-python">Documentation comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#what-to-comment-python">What to comment (Python)</a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html">R: the fundementals</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#intro-to-r">Intro to R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-loops">R Loops</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-for-loops">R <cite>for</cite> Loops</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-while-loop">R <cite>while</cite> loop</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-conditionals">R conditionals</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-if-statement">R <cite>if</cite> statement</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-comments">R comments</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#inline-comments-r">Inline comments (R)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#block-comments-r">Block comments (R)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#what-to-comment-r">What to comment (R)</a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Testing_code.html">Testing code</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Software_development.html">Software development</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python2.html">Python and R: part 2</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python3.html">Python or R 3</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html">Mini-courses</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-r">GIS - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-python">GIS - Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#stats-r">Stats - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-r">Graphs - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-python">Graphs - Python</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html">Assessments</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-1-something">Assessment 1: something</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-2-something-else">Assessment 2: something else</a></div></li>
-</ul>
-</li>
-</ul>
-</div>
-<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="" title="Close navigation menu">
-<span class="sr-only">Close navigation menu</span>
-<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
 </button>
-</nav>
-</aside>
-<main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
-<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">The fundementals of code</span>
-</nav>
-<article class="flex-1" role="main">
-<section id="the-fundementals-of-code">
-<h1>The fundementals of code<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#the-fundementals-of-code">¶</a></h1>
+<a href="https://github.com/jhill1/SEPwC.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Code_basics.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-terminology">
+   Some terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-a-variable">
+   Defining a variable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-you-decide-a-good-variable-name">
+     How do you decide a good variable name?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datatypes">
+   Datatypes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations">
+   Operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#booleans-and-logic">
+   Booleans and Logic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outputs">
+   Outputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputs">
+   Inputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionals">
+   Conditionals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The fundamentals of code</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-terminology">
+   Some terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-a-variable">
+   Defining a variable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-you-decide-a-good-variable-name">
+     How do you decide a good variable name?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datatypes">
+   Datatypes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations">
+   Operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#booleans-and-logic">
+   Booleans and Logic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outputs">
+   Outputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputs">
+   Inputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionals">
+   Conditionals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="the-fundamentals-of-code">
+<h1>The fundamentals of code<a class="headerlink" href="#the-fundamentals-of-code" title="Permalink to this headline">#</a></h1>
 <section id="some-terminology">
-<h2>Some terminology<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#some-terminology">¶</a></h2>
-<p>Computer programming is full of jargon. Fortunately, most of the jargon is comoon across all
+<h2>Some terminology<a class="headerlink" href="#some-terminology" title="Permalink to this headline">#</a></h2>
+<p>Computer programming is full of jargon. Fortunately, most of the jargon is common across all
 languages. The idea of this chapter is to cover those basics so that when we get to a language
 we can focus on the language, rather than also learning the jargon!  In this chapter we’re going to use pseudo-code.
 This is code-like text that is easier to read.
@@ -192,89 +481,68 @@ There is no fixed syntax (you can make up your own!) and it’s designed for us 
 <p><strong>Datatype</strong>: the type of data held by a variable. A floating point number (1.342), an integer (2), a string (“silly_string”), a character (“c”),
 or any other thing that can be defined.</p>
 <p><strong>Outputs</strong>: what you code spits out. A line of text onto the screen, an image, a file, even a noise!</p>
-<p><strong>Inputs</strong>: what you code needs to run. This can be “hardcoded” or you can ask the user to supply it.</p>
+<p><strong>Inputs</strong>: what you code needs to run. This can be “hard-coded” or you can ask the user to supply it.</p>
 <p><strong>Loops</strong>: code often needs to do the same thing on a long list of data. We often use loops to do this. Loops can be nested (i.e. a loop within a loop)</p>
 <p><strong>Conditionals</strong>: you often run a bit of code if a certain condition is met, for example if the variable contains a number greater than 5, do this, otherwise do that.
 This creates a logic flow to your code and allows decisions to be made.</p>
-<p><strong>Functions</strong>: if you find yourself doing the same few line sof code again, and again, we don’t type them out repeatedly, we instead create a function which
+<p><strong>Functions</strong>: if you find yourself doing the same few line of code again, and again, we don’t type them out repeatedly, we instead create a function which
 we can call every time we want to run those lines. Functions take input (called arguments) and return data back to the main program (where you can store it
 in a variable, for example).</p>
 </section>
 <section id="defining-a-variable">
-<h2>Defining a variable<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#defining-a-variable">¶</a></h2>
+<h2>Defining a variable<a class="headerlink" href="#defining-a-variable" title="Permalink to this headline">#</a></h2>
 <p>A variable is a container to store your data. Most variables in interpreted languages are defined when you use them first time. In compiled language you need to decide
 up-front which variables you need. Variables can change what they store throughout the code.</p>
 <p>Some examples:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span>
-</code></pre></div></div>
-<p>I’ve create a variable called <code class="docutils literal notranslate">my_data</code> which contains a list of numbers.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_favourite_number</span> <span class="o">=</span> <span class="mi">7</span>
-</code></pre></div></div>
-<p>This varibale contains a single number, 7.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
-</code></pre></div></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span>
+</pre></div>
+</div>
+<p>I’ve create a variable called <code class="docutils literal notranslate"><span class="pre">my_data</span></code> which contains a list of numbers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_favourite_number</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>This variable contains a single number, 7.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
 <p>This variable contains the number for pi to five decimal places.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">name</span> <span class="o">=</span> <span class="s2">"Jon"</span>
-</code></pre></div></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Jon&quot;</span>
+</pre></div>
+</div>
 <p>This variable contains text.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">loaded_data</span> <span class="o">=</span> <span class="n">load_csv_file</span><span class="p">(</span><span class="s2">"mega_data_set.csv"</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_data</span> <span class="o">=</span> <span class="n">load_csv_file</span><span class="p">(</span><span class="s2">&quot;mega_data_set.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>This variable contains whatever the “mega_data_set.csv” file contains.</p>
 <p>What about changing what’s in a variable? Just set it:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_name</span> <span class="o">=</span> <span class="s2">"Jon"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Jon&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
-<span class="n">my_name</span><span class="o">=</span><span class="s2">"Fred"</span>
+<span class="n">my_name</span><span class="o">=</span><span class="s2">&quot;Fred&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>What the above code will do is set the variable “my_name” to Jon, print it to screen, then set “my_name” to Fred and print that to screen.
 What the users sees is:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">Jon</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Jon</span>
 <span class="go">Fred</span>
-</code></pre></div></div>
-<p>All the above examples require the variable to be known up front (hardcoded). What if we don’t know?</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">filname</span> <span class="o">=</span> <span class="n">ask_user_for_file</span><span class="p">()</span>
-</code></pre></div></div>
+</pre></div>
+</div>
+<p>All the above examples require the variable to be known up front (hard-coded). What if we don’t know?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">ask_user_for_file</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>Assuming the function (see below) works, filename will contain whatever the user tells us. We can then do something like:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">data</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div></div>
-<p>where filename was given by the user and we then load in that file. That way nothing is hardcoded.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where filename was given by the user and we then load in that file. That way nothing is hard-coded.</p>
 <section id="how-do-you-decide-a-good-variable-name">
-<h3>How do you decide a good variable name?<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#how-do-you-decide-a-good-variable-name">¶</a></h3>
+<h3>How do you decide a good variable name?<a class="headerlink" href="#how-do-you-decide-a-good-variable-name" title="Permalink to this headline">#</a></h3>
 <p>A good variable name should make sense, make the code readable to a human and be clear. In the above
-I’ve used _ to seperate words. This is good practice. You can also use CamelCase (i.e. a captial letter to
-seperate words). Whichever you do, be consistant!</p>
+I’ve used _ to separate words. This is good practice. You can also use CamelCase (i.e. a capital letter to
+separate words). Whichever you do, be consistent!</p>
 <p>Good variables:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">users_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users_name</span>
 <span class="n">temperature</span>
 <span class="n">input_filename</span>
 <span class="n">output_filename</span>
@@ -282,12 +550,10 @@ seperate words). Whichever you do, be consistant!</p>
 <span class="n">topography_raster</span>
 <span class="n">rivers_shapefile</span>
 <span class="n">max_reef_growth_rate</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Bad variables:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 <span class="n">temp</span>
 <span class="n">fi</span>
 <span class="n">fo</span>
@@ -295,14 +561,15 @@ seperate words). Whichever you do, be consistant!</p>
 <span class="n">top</span>
 <span class="n">rs</span>
 <span class="n">mrgr</span>
-</code></pre></div></div>
-<p>The first list is clear with little doubt what that variable contains. The second list is not that helpful. Is temp temporary or temperature? chemdat might be ok, but a bit hard
+</pre></div>
+</div>
+<p>The first list is clear with little doubt what that variable contains. The second list is not that helpful. Is temp temporary or temperature? chemdat might be OK, but a bit hard
 to read. top is not helpful, topography or the top of something? x and rs could be anything! In 5 year’s time you will not remember what mrgr is, but max_reef_growth_rate will
 always make sense. Note I’ve not typed maximum_reef_growth_rate as I feel max is reasonable shorthand for maximum, but others would disagree with me on that!</p>
 </section>
 </section>
 <section id="datatypes">
-<h2>Datatypes<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#datatypes">¶</a></h2>
+<h2>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">#</a></h2>
 <p>The variables we create can store any kind of data. In interpreted languages that can even change throughout the code. In compiled language you often have
 to fix the kind of data up front. That kind of data is the datatype.</p>
 <p>Common datatypes are float (for a floating point number, 1.23412), integer (1, for example), a string (“like this one”) a boolean (true or false). We can also make up
@@ -314,142 +581,120 @@ a fixed number of floats, e.g. <cite>[1.1, 23.5, 12321.2343242, 582.11]</cite>. 
 <div class="line">2   4   5   6   7</div>
 </div>
 <p>We can even make datatypes that mix all of these together (along with some functions to operate on them) to create
-objects. For now, we’re going to focus on the basic datatypes and will revist this idea later on (as R and Python have
+objects. For now, we’re going to focus on the basic datatypes and will revisit this idea later on (as R and Python have
 different names for some of them).</p>
 </section>
 <section id="operations">
-<h2>Operations<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#operations">¶</a></h2>
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">#</a></h2>
 <p>Operations are how to start to manipulate data. For example:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">user_input</span> <span class="o">=</span> <span class="n">get_user_number</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You gave me"</span> <span class="n">user_input</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_input</span> <span class="o">=</span> <span class="n">get_user_number</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You gave me&quot;</span> <span class="n">user_input</span><span class="p">)</span>
 <span class="n">new_value</span> <span class="o">=</span> <span class="n">user_input</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You now have "</span> <span class="n">new_value</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You now have &quot;</span> <span class="n">new_value</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>So the above, if the user put in 2, the user would see</p>
 <blockquote>
 <div><p>You gave me 2
 You now have 7</p>
 </div></blockquote>
 <p>Operations cover any mathematical operation (multiply, divide, subtract), but also some more
-specialist ones like “modulus” which gives you the reminder of a divsion. We can also “overload”
+specialist ones like “modulus” which gives you the reminder of a division. We can also “overload”
 operations so “add” works on multiple data types, for example:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_string</span> <span class="o">=</span> <span class="s2">"hello"</span>
-<span class="n">ending</span> <span class="o">=</span> <span class="s2">" world"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="n">ending</span> <span class="o">=</span> <span class="s2">&quot; world&quot;</span>
 
 <span class="n">complete_string</span> <span class="o">=</span> <span class="n">my_string</span> <span class="o">+</span> <span class="n">ending</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Which will do what you think it does and put “hello world” into complete_string. Which
 symbol is used depends on the language and not all languages can do this.</p>
 </section>
 <section id="booleans-and-logic">
-<h2>Booleans and Logic<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#booleans-and-logic">¶</a></h2>
+<h2>Booleans and Logic<a class="headerlink" href="#booleans-and-logic" title="Permalink to this headline">#</a></h2>
 <p>A boolean is either <cite>true</cite> or <cite>false</cite>. In code this is very important as it allows our code
 to make decisions based on the value of variables.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>
 <span class="mi">15</span> <span class="o">==</span> <span class="mi">15</span>
 <span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">1</span>
 <span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span>
 <span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">||</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">3</span>
-</code></pre></div></div>
-<p>All the above will return <cite>true</cite>. 3 is less than 5, etc. The <cite>&amp;&amp;</cite> means <em>and</em>, so <em>both</em> booleans must
+</pre></div>
+</div>
+<p>All the above will return <cite>true</cite>. 3 is less than 5, etc. The <cite>&amp;&amp;</cite> means <em>and</em>, so <em>both</em> boolean must
 be true for that statement to also be true; so 4 must be less than 5 <em>and</em> 5 must be less than 6. The
-<cite>||</cite> means <em>or</em>. In this case only 1 of the booleans must be true for the statement to also return <cite>true</cite>.
+<cite>||</cite> means <em>or</em>. In this case only 1 of the boolean must be true for the statement to also return <cite>true</cite>.
 So either 4 must be less than 5 (<cite>true</cite>) <em>or</em> 6 must be less than 3 (<cite>false</cite>).</p>
 <p>If we then add some variables into the mix.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Will print:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">output</span></div>
-<div class="highlight"><pre><code><span class="go">True</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">True</span>
 <span class="go">False</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 </section>
 <section id="outputs">
-<h2>Outputs<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#outputs">¶</a></h2>
-<p>The output is something you, the programmer decides. It might be a text file, a CSV file, a graphic, etc, etc, it
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">#</a></h2>
+<p>The output is something you, the programmer decides. It might be a text file, a CSV file, a graphic, etc., etc., it
 may just be the result printed to screen.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_secret</span> <span class="o">=</span> <span class="s2">"I'm Batman..."</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_secret</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m Batman...&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_secret</span><span class="p">)</span>
-<span class="n">write</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="s2">"My_Secret.txt"</span><span class="p">,</span> <span class="n">my_secret</span><span class="p">)</span>
+<span class="n">write</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="s2">&quot;My_Secret.txt&quot;</span><span class="p">,</span> <span class="n">my_secret</span><span class="p">)</span>
 <span class="n">speak</span><span class="p">(</span><span class="n">my_secret</span><span class="p">)</span>
-</code></pre></div></div>
-<p>Will output the contents of <code class="docutils literal notranslate">my_secret</code> to the screen, to a file and say it. Not much of a secret now…</p>
+</pre></div>
+</div>
+<p>Will output the contents of <code class="docutils literal notranslate"><span class="pre">my_secret</span></code> to the screen, to a file and say it. Not much of a secret now…</p>
 </section>
 <section id="inputs">
-<h2>Inputs<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#inputs">¶</a></h2>
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">#</a></h2>
 <p>Input are, unsurprisingly, the opposite of outputs. Like the outputs of a program they come in many forms.
-The simplest are the <em>hardcoded</em> inputs.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">my_file</span> <span class="o">=</span> <span class="s2">"top_secret_data.csv"</span>
+The simplest are the <em>hard-coded</em> inputs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="s2">&quot;top_secret_data.csv&quot;</span>
 <span class="n">secret_data</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">my_file</span><span class="p">)</span>
-</code></pre></div></div>
-<p>Here the input is the file “top_secret_data.csv”, which is hardocded into the program. The program will
+</pre></div>
+</div>
+<p>Here the input is the file “top_secret_data.csv”, which is hard-coded into the program. The program will
 read whatever is in that file so to read in different data you could a) swap the filename to something else
 or b) replace the contents of the file with your new data.</p>
-<p>Neither is particularlly convinient to a user and would need explaining. A better solution is to ask the user
+<p>Neither is particularly convenient to a user and would need explaining. A better solution is to ask the user
 which file to use. So how can we do this? We can use the command-line argument idea we learnt last week:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">command_line_arguments</span> <span class="o">=</span> <span class="n">get_command_line_args</span><span class="p">(</span><span class="s2">"--input_file"</span><span class="p">,</span> <span class="s2">"--output_file"</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">command_line_arguments</span> <span class="o">=</span> <span class="n">get_command_line_args</span><span class="p">(</span><span class="s2">&quot;--input_file&quot;</span><span class="p">,</span> <span class="s2">&quot;--output_file&quot;</span><span class="p">)</span>
 <span class="n">input_file</span> <span class="o">=</span> <span class="n">command_line_argument</span><span class="p">[</span><span class="n">input_file</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Or we could pop-up a little box, which you’ll be familiar to you:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">input_file</span> <span class="o">=</span> <span class="n">ask_file_pop_up</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">ask_file_pop_up</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 </section>
 <section id="loops">
-<h2>Loops<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#loops">¶</a></h2>
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
 <p>A lot of time we need to repeat the same thing on bits of data. Imagine a scenario where we have a
 huge list of files we need to extract a single bit of data from each of these. We need to do the thing
 (parse and extract the files) a lot of times. To do this we can loop over the files:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">storage</span> <span class="o">=</span> <span class="n">StorageContainer</span>
-<span class="n">list_of_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"file1.csv"</span><span class="p">,</span> <span class="s2">"file2.csv"</span><span class="p">,</span> <span class="o">.....</span> <span class="s2">"file3.csv"</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">storage</span> <span class="o">=</span> <span class="n">StorageContainer</span>
+<span class="n">list_of_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;file1.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;file2.csv&quot;</span><span class="p">,</span> <span class="o">.....</span> <span class="s2">&quot;file3.csv&quot;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">each</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">list_of_files</span>
    <span class="n">file_contents</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
    <span class="n">data_I_need</span> <span class="o">=</span> <span class="n">grab_data</span><span class="p">(</span><span class="n">file_contents</span><span class="p">)</span>
    <span class="n">put</span><span class="p">(</span><span class="n">data_I_need</span> <span class="n">into</span> <span class="n">storage</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>This is a really powerful concept and one of the main things we do when process data using code. Here’s
 another example looping over cells in a raster (DEM or topography) file</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">raster</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">raster</span><span class="p">(</span><span class="s2">"my_raster_file.tif"</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raster</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">raster</span><span class="p">(</span><span class="s2">&quot;my_raster_file.tif&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">each</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">raster</span><span class="o">.</span><span class="n">x_direction</span>
    <span class="k">for</span> <span class="n">each</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">raster</span> <span class="ow">in</span> <span class="n">raster</span><span class="o">.</span><span class="n">y_direction</span>
       <span class="n">raster</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>This code sets each cell in the raster to x*y where x is the number of cells in the east-west direction
 and y is the number of cells in the north-south direction. This is a bit abstract, so let’s go through this
 is step-by-step.</p>
@@ -519,70 +764,55 @@ x and y will do for each loop:</p>
 </div>
 </section>
 <section id="conditionals">
-<h2>Conditionals<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#conditionals">¶</a></h2>
-<p>Conditional statements run code based on a variable meeting some condition. They allow code to <em>brnch</em> and
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
+<p>Conditional statements run code based on a variable meeting some condition. They allow code to <em>branch</em> and
 perform actions based on some criteria.</p>
 <p>For example, only take a square root if the number if &gt; than 0</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
   <span class="n">square_root</span> <span class="o">=</span> <span class="n">square_root</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>This means the square root will only be calculated if our number is greater than zero. But what if it’s equal to or
 less than zero? We may need to add another condition or catch all the other possibilities, so:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
    <span class="n">square_root</span> <span class="o">=</span> <span class="n">square_root</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="k">else</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"Can't take the square root of "</span> <span class="n">number</span> <span class="s2">". Exiting"</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can&#39;t take the square root of &quot;</span> <span class="n">number</span> <span class="s2">&quot;. Exiting&quot;</span><span class="p">)</span>
    <span class="n">exit</span><span class="p">()</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Here, if the condition is not met, the program prints an error message and exits</p>
 <p>We can nest conditions too, like we did with the loops.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span>
    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">100</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"Your number is &gt; 0 and &lt; 100)</span>
-</code></pre></div></div>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your number is &gt; 0 and &lt; 100)</span>
+</pre></div>
+</div>
 <p>The above can also be written using logic:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">100</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"Your number is &gt; 0 and &lt; 100)</span>
-</code></pre></div></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">100</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your number is &gt; 0 and &lt; 100)</span>
+</pre></div>
+</div>
 <p>You can negate conditionals too:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="k">if</span> <span class="ow">not</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span>
    <span class="n">square_root</span> <span class="o">=</span> <span class="n">square_root</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>This is <em>exactly</em> equivalent to our first example above (note the <em>not</em> and the &lt;= which is opposite to &gt;)</p>
-<p>In all languages you will find things like is equal to (for example ==), is less than, greater than, less than or equal to, etc.
+<p>In all languages you will find things like is equal to (for example ==), is less than, greater than, less than or equal to, etc..
 Most languages have some form of “or” and “and” operations.</p>
 </section>
 <section id="functions">
-<h2>Functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#functions">¶</a></h2>
-<p>Function are for bits of code you run lots or compelx code that can be wrapped up so the main code is easier to read.
-Rather than have a sorting algorithm in your code, you wrap that code into a function and then your code is earier to read.</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">a_list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+<p>Function are for bits of code you run lots or complex code that can be wrapped up so the main code is easier to read.
+Rather than have a sorting algorithm in your code, you wrap that code into a function and then your code is easier to read.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a_list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">sort</span><span class="p">(</span><span class="n">a_list_of_numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>Is much easier to read than:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">a_list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a_list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">a_list_of_numbers</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -594,7 +824,8 @@ Rather than have a sorting algorithm in your code, you wrap that code into a fun
       <span class="n">a_list_of_numbers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">number2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a_list_of_numbers</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>The algorithm above is a bubble sort.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
@@ -608,29 +839,26 @@ to understand and code from scratch.</p>
 computers with remarkably limited memory resources.</p>
 <p><strong>Example:</strong></p>
 <p>First pass through the list:</p>
-<p>Starting with <code class="docutils literal notranslate">[4, 2, 6, 3, 9]</code>, the algorithm compares the first two elements in the array, 4 and 2. It swaps them because 2 &lt; 4: <code class="docutils literal notranslate">[2, 4, 6, 3, 9]</code></p>
+<p>Starting with <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">3,</span> <span class="pre">9]</span></code>, the algorithm compares the first two elements in the array, 4 and 2. It swaps them because 2 &lt; 4: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">3,</span> <span class="pre">9]</span></code></p>
 <p>It compares the next two values, 4 and 6. As 4 &lt; 6, these are already in order so nothing is swapped.</p>
-<p>The next two values are swapped because 3 &lt; 6: <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
+<p>The next two values are swapped because 3 &lt; 6: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
 <p>The last two values, 6 and 9, are already in order, so the algorithm does not swap them.</p>
 <p>Second pass through the list:</p>
-<p>2 &lt; 4, so there is no need to swap positions so we stay with: <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
-<p>The algorithm swaps the next two values because 3 &lt; 4: <code class="docutils literal notranslate">[2, 3, 4, 6, 9]</code></p>
-<p>No swap as 4 &lt; 6: <code class="docutils literal notranslate">[2, 3, 4, 6, 9]</code></p>
-<p>Again, 6 &lt; 9, so no swap occurs: <code class="docutils literal notranslate">[2, 3, 4, 6, 9]</code></p>
+<p>2 &lt; 4, so there is no need to swap positions so we stay with: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p>The algorithm swaps the next two values because 3 &lt; 4: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p>No swap as 4 &lt; 6: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p>Again, 6 &lt; 9, so no swap occurs: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
 <p>The list is already sorted, but the bubble sort algorithm doesn’t realize this. Rather, it needs to complete an entire pass through the list without swapping any
 values to know the list is sorted.</p>
 <p>Third pass through the list:</p>
-<p><code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code> =&gt; <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
-<p><code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code> =&gt; <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
-<p><code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code> =&gt; <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
-<p><code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code> =&gt; <code class="docutils literal notranslate">[2, 4, 3, 6, 9]</code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code></p>
 <p>Clearly bubble sort is far from the most efficient sorting algorithm. Still, it’s simple to implement yourself.</p>
 </div>
 <p>So we would then create the sort algorithm into a function</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">function</span> <span class="n">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
    <span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -646,31 +874,58 @@ values to know the list is sorted.</p>
 <span class="n">a_list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">sort</span><span class="p">(</span><span class="n">a_list_of_numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
-</code></pre></div></div>
+</pre></div>
+</div>
 <p>We now have a function that sorts number in our code. The main code is easier to read and we can sort any lists of numbers
-as many times as we wish, without writing the same code over and over. This really comes in handy (as we shall see when tesing code).</p>
+as many times as we wish, without writing the same code over and over. This really comes in handy (as we shall see when test code).</p>
 </section>
 </section>
-</article>
-<footer>
-<div class="mt-20 mb-4 text-sm text-gray-700">© 2023, Jon Hill Made with <a href="https://www.sphinx-doc.org">Sphinx 5.3.0</a></div>
-</footer></main>
-<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
-  Clear highlights
-</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Licences.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Software licences</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Algorithms.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Thinking like a computer</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jon Hill<br/>
+  
+      &copy; Copyright 2023, Jon Hill.<br/>
+</p>
+        </footer>
+    </div>
+    
 </div>
-<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-<script src="_static/jquery.js"></script>
-<script src="_static/underscore.js"></script>
-<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-<script src="_static/doctools.js"></script>
-<script src="_static/sphinx_highlight.js"></script>
-<script>let toggleHintShow = 'Click to show';</script>
-<script>let toggleHintHide = 'Click to hide';</script>
-<script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/theme.3666d2347a4c66e5d7a8.js"></script>
-</body>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>

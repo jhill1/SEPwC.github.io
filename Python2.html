@@ -2,204 +2,872 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta charset="utf-8"/>
-<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Python and R: part 2 | SEPwC  documentation</title>
-<link href="_static/docsearch.b8f54ae248851a9ad851.css" rel="stylesheet"/>
-<link href="_static/pygments.css" rel="stylesheet"/>
-<link href="_static/theme.313ea551d1799b2102b1.css" rel="stylesheet"/>
-<link href="_static/togglebutton.css" rel="stylesheet"/>
-<link href="search.html" rel="search" title="Search"/>
-<link href="genindex.html" rel="index" title="Index"/>
-<link href="Python3.html" rel="next" title="Python or R 3"/>
-<link href="Software_development.html" rel="prev" title="Software development"/>
-</head>
-<body class="antialiased text-gray">
-<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
-<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-18 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#python-and-r-part-2" title="Skip navigation links">Skip to content</a>
-<header class="grid-area-header z-10 h-14 sm:h-18">
-<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
-<button class="xl:hidden h-14 w-14 sm:h-18 sm:w-18 leading-14 sm:leading-18 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
-<span class="sr-only">Open navigation menu</span>
-<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 sm:leading-18 tracking-wider">SEPwC  documentation</span>
-</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 sm:leading-18 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
-<button aria-label="Get search results" class="text-inherit h-14 w-14 sm:h-18 sm:w-18" tabindex="-1">
-<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-</button>
-<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
-</form></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python: part 2 &#8212; SEPwC  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="R: part 2" href="R2.html" />
+    <link rel="prev" title="Software development" href="Software_development.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Code_basics.html">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python or R 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
-</header>
-<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
-<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
-<div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html">Expectations</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#what-we-expect-from-you">What we expect from you</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Expectations.html#assessment">Assessment</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html">How a computer works</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#filesystems">Filesystems</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#windows">Windows</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#linux">Linux</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#macos">MacOS</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#exercises">Exercises</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#navigating-a-filesystem">Navigating a filesystem</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#absolute-vs-relative-paths">Absolute vs Relative paths</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#from-source-code-to-programme">From source code to programme</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#compiled-languages">Compiled languages</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#interpreted-languages">Interpreted languages</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="How_a_computer_works.html#more-basic-command-line-functions">More basic command line functions</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html">Software licences</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#copyleft">Copyleft</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#permissive">Permissive</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html">The fundementals of code</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#some-terminology">Some terminology</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#defining-a-variable">Defining a variable</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#how-do-you-decide-a-good-variable-name">How do you decide a good variable name?</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#datatypes">Datatypes</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#operations">Operations</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#booleans-and-logic">Booleans and Logic</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#outputs">Outputs</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#inputs">Inputs</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#loops">Loops</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#conditionals">Conditionals</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Code_basics.html#functions">Functions</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html">Thinking like a computer</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#create-a-word-cloud">Create a word cloud</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#making-a-jam-sandwich">Making a jam sandwich</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Algorithms.html#plotting-a-graph-with-options">Plotting a graph with options</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html">Revision control with Git</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#introduction">Introduction</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#setting-up-git">Setting up git</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#our-first-repository">Our first repository</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#adding-files">Adding files</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#git-history">Git history</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ignoring-files">Ignoring files</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#id1">Github</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#creating-a-remote-repository">1. Creating a remote repository</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#connect-local-to-remote-repository">2. Connect local to remote repository</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#ssh-background-and-setup">3. SSH Background and Setup</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#push-local-changes-to-a-remote">4. Push local changes to a remote</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Revision_control.html#conflict">Conflict!</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html">Python: the fundementals</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#intro-to-python">Intro to Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-loops">Python Loops</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-for-loops">Python <cite>for</cite> Loops</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-while-loop">Python <cite>while</cite> loop</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-conditionals">Python conditionals</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-if-statement">Python <cite>if</cite> statement</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#python-comments">Python comments</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#inline-comments-python">Inline comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#block-comments-python">Block comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#documentation-comments-python">Documentation comments (Python)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python.html#what-to-comment-python">What to comment (Python)</a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html">R: the fundementals</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#intro-to-r">Intro to R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-loops">R Loops</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-for-loops">R <cite>for</cite> Loops</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-while-loop">R <cite>while</cite> loop</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-conditionals">R conditionals</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-if-statement">R <cite>if</cite> statement</a></div></li>
-</ul>
-</li>
-<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#r-comments">R comments</a></div><ul>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#inline-comments-r">Inline comments (R)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#block-comments-r">Block comments (R)</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="R.html#what-to-comment-r">What to comment (R)</a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Issues.html">Solving issues and debugging</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Testing_code.html">Testing code</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Software_development.html">Software development</a></div></li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Python and R: part 2</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Python3.html">Python or R 3</a></div></li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html">Mini-courses</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-r">GIS - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#gis-python">GIS - Python</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#stats-r">Stats - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-r">Graphs - R</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Mini_courses.html#graphs-python">Graphs - Python</a></div></li>
-</ul>
-</li>
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html">Assessments</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-1-something">Assessment 1: something</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="Assessments.html#assessment-2-something-else">Assessment 2: something else</a></div></li>
-</ul>
-</li>
-</ul>
-</div>
-<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="" title="Close navigation menu">
-<span class="sr-only">Close navigation menu</span>
-<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
 </button>
-</nav>
-</aside>
-<main class="px-10 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-action="scroll-&gt;scroll#showButton" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
-<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">SEPwC  documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Python and R: part 2</span>
-</nav>
-<article class="flex-1" role="main">
-<section id="python-and-r-part-2">
-<h1>Python and R: part 2<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#python-and-r-part-2">¶</a></h1>
+<a href="https://github.com/jhill1/SEPwC.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Python2.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-functions">
+   Python functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-python-function">
+     Using a Python function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-your-own-python-functions">
+     Writing your own Python functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-arguments-in-python">
+       Function arguments in Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-modules">
+   Python modules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-statement">
+     Import statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-modules-as-scripts">
+     Executing modules as scripts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-search-path">
+     Module search path
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seeing-what-is-in-a-module">
+     Seeing what is in a module
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python: part 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-functions">
+   Python functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-python-function">
+     Using a Python function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-your-own-python-functions">
+     Writing your own Python functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-arguments-in-python">
+       Function arguments in Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-modules">
+   Python modules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-statement">
+     Import statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-modules-as-scripts">
+     Executing modules as scripts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-search-path">
+     Module search path
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seeing-what-is-in-a-module">
+     Seeing what is in a module
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="python-part-2">
+<h1>Python: part 2<a class="headerlink" href="#python-part-2" title="Permalink to this headline">#</a></h1>
+<p>In this next section of Python</p>
+<section id="python-functions">
+<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this headline">#</a></h2>
+<p>Whenever you write some code you get tempted to cpoy and paste a block, change a variable, and have two nearly
+identical blocks of code, bar one variable. Might be OK with a single repeat, but what if you then need to
+do that 10 times, or 100 times, or a million times?</p>
+<p>This is where functions come in. You can generalise a but of code and package it up so you can call it
+repeatedly. That might be within the same script; it might be as part of many scripts.</p>
+<section id="using-a-python-function">
+<h3>Using a Python function<a class="headerlink" href="#using-a-python-function" title="Permalink to this headline">#</a></h3>
+<p>We’ve used a number of Python functions already.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first thing to note is that a function is called with <cite>()</cite> parenthesies. Sometimes it gives back
+a value (called “returning a value”), sometimes it doesn not. Sometimes there are things inbetween the
+parantheses, sometimes not (these are called “arguments”).</p>
+<p>So using, or calling, a Python function is easy. Give the function name, open the brackets, add any arguments you need (seperated by commas),
+close your brackets, if you are expecting a number back, store it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">return_value</span> <span class="o">=</span> <span class="n">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As we’ve seen already you can nest functions within other functions!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we’re calling the <cite>range</cite> function to go from <cite>0</cite> to the length of my_list (<cite>len(my_list)</cite>) in steps of 1. But <cite>len()</cite> is
+also a function. The return value of <cite>len(my_list)</cite> gets put in place of that bit of code. This is eaxtly equivlant of doing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where we store the length in a variable, then use it.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Nested functions</strong></p>
+<blockquote>
+<div><p>Write a single line of code to print the length of a list (which has the variable name <cite>my_list</cite>)</p>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We call the <cite>len()</cite> function inside of the <cite>print()</cite> function.</p>
+</div>
 </section>
-</article>
-<footer>
-<div class="mt-20 mb-4 text-sm text-gray-700">© 2023, Jon Hill Made with <a href="https://www.sphinx-doc.org">Sphinx 5.3.0</a></div>
-</footer></main>
-<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
-  Clear highlights
-</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+<section id="writing-your-own-python-functions">
+<h3>Writing your own Python functions<a class="headerlink" href="#writing-your-own-python-functions" title="Permalink to this headline">#</a></h3>
+<p>Whilst it’s all well and good to use functions, you will need to write them too. Python allows you to create your own functions</p>
+<p>They follow this pattern:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
+
+    <span class="c1"># do what you need to do</span>
+
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>The key thing are the keyword <cite>def</cite> folloed by the name of your function and the arguments expected, then a a <cite>:</cite>. Next comes your
+function body (indented; remember whitespace matters!). At the end of your function, use the <cite>return</cite> keyword (with a value if you want
+to return something).</p>
+<p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Farenheit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">):</span>
+
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
+
+    <span class="k">return</span> <span class="n">F</span>
+</pre></div>
+</div>
+<p>This function takes a value (Centrigrade) and converts it to Farenheit, returning that number. We would use it something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">):</span>
+
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
+
+    <span class="k">return</span> <span class="n">F</span>
+
+<span class="n">water_freezing</span> <span class="o">=</span> <span class="n">toFarenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Water freezes at &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">toFarenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; deg F&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="function-arguments-in-python">
+<h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Permalink to this headline">#</a></h4>
+<p>A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (kwargs) or generic arguments (args).</p>
+<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the funciton takes
+two keyword arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+<span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see that by specifying two arguments in the function decleration we have access to those values inside the function.
+What happens if the user supplies only a single argument, not two as we’ve asked? Try the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+<span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What error message did you get?</p>
+<div class="admonition-check-your-answer-class-toggle admonition">
+<p class="admonition-title">Check your answer
+ :class: toggle</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>     <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+      <span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+      <span class="mi">5</span>     <span class="k">return</span>
+<span class="o">----&gt;</span> <span class="mi">7</span> <span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">print_greeting</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span>
+</pre></div>
 </div>
 </div>
-<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-<script src="_static/jquery.js"></script>
-<script src="_static/underscore.js"></script>
-<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-<script src="_static/doctools.js"></script>
-<script src="_static/sphinx_highlight.js"></script>
-<script>let toggleHintShow = 'Click to show';</script>
-<script>let toggleHintHide = 'Click to hide';</script>
-<script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/theme.3666d2347a4c66e5d7a8.js"></script>
-</body>
+<p>We can also write function that have default values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+<span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When running this, we can give the <code class="docutils literal notranslate"><span class="pre">name</span></code> argument and we get a default <code class="docutils literal notranslate"><span class="pre">greeting</span></code>. We could also set the <code class="docutils literal notranslate"><span class="pre">greeting</span></code> ourselves:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+<span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Bryan&quot;</span><span class="p">,</span> <span class="s2">&quot;Ey-up&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, you may note I’ve switched the order of the arguments around. What happens if we didn’t?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+<span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Bryan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-check-your-answer-class-toggle admonition">
+<p class="admonition-title">Check your answer
+ :class: toggle</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+  <span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">non</span><span class="o">-</span><span class="n">default</span> <span class="n">argument</span> <span class="n">follows</span> <span class="n">default</span> <span class="n">argument</span>
+</pre></div>
+</div>
+</div>
+<p>Python tells us that we have a syntax error and to swap the arguments around.</p>
+<p>I mentioned earlier that you could pass an arbitrary number of arguments into a python function. This isn’t used very often, but you will see it
+in a few places when using Python. Let’s think about a function to add some numbers together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum:&quot;</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">sum_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This prints:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sum: <span class="m">6</span>
+</pre></div>
+</div>
+<p>What if we wanted to add 9 numbers togther? Or 1 million? This is where <code class="docutils literal notranslate"><span class="pre">*args</span></code> comes in. <code class="docutils literal notranslate"><span class="pre">*args</span></code> gives us an argument list of any length:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+
+   <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+      <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">n</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+
+<span class="n">sum_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This gives us the same result as last time, but we can also do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+
+   <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+      <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">n</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+
+<span class="n">sum_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sum_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">sum_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Inside the function, the argument is represented by a tuple. We can therefore iterate over this and write code accordingly. We can also force
+keyword arguments using a similar approach called <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data type of argument:&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">))</span>
+
+<span class="n">intro</span><span class="p">(</span><span class="n">Firstname</span><span class="o">=</span><span class="s2">&quot;Sita&quot;</span><span class="p">,</span> <span class="n">Lastname</span><span class="o">=</span><span class="s2">&quot;Sharma&quot;</span><span class="p">,</span> <span class="n">Age</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">Phone</span><span class="o">=</span><span class="mi">1234567890</span><span class="p">)</span>
+<span class="n">intro</span><span class="p">(</span><span class="n">Firstname</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">Lastname</span><span class="o">=</span><span class="s2">&quot;Wood&quot;</span><span class="p">,</span> <span class="n">Email</span><span class="o">=</span><span class="s2">&quot;johnwood@nomail.com&quot;</span><span class="p">,</span> <span class="n">Country</span><span class="o">=</span><span class="s2">&quot;Wakanda&quot;</span><span class="p">,</span> <span class="n">Age</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">Phone</span><span class="o">=</span><span class="mi">9876543210</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> requires a keyword (which can be anything) and a value (which can be anything). Inside the function this is presented as a dictionary.</p>
+</section>
+</section>
+</section>
+<section id="python-modules">
+<h2>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">#</a></h2>
+<p>When writing code we want to package up functionality/code into descrete bundles. In Python these are called modules or packages.
+You can then put this module on the internet such that other can download, install it and use it. You can also save your own code
+this way and use it in other code you write.</p>
+<p>We’re not going to get into creating your own Python package/module here, but we will use Python modules a lot, so we will focus on using
+modules, ratehr than creating them.</p>
+<section id="import-statement">
+<h3>Import statement<a class="headerlink" href="#import-statement" title="Permalink to this headline">#</a></h3>
+<p>To use an existing module or package in your code you must <code class="docutils literal notranslate"><span class="pre">import</span></code> it.</p>
+<p>Let’s create a small script and save the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fibonacci numbers module</span>
+
+<span class="k">def</span> <span class="nf">write_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># write Fibonacci series up to n</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">return_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>   <span class="c1"># return Fibonacci series up to n</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Write the above into a file called <code class="docutils literal notranslate"><span class="pre">fibo.py</span></code> and save it. In that same directory, open your interpreter and do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
+
+<span class="n">fibo</span><span class="o">.</span><span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">series</span> <span class="o">=</span> <span class="n">fibo</span><span class="o">.</span><span class="n">return_fibonacci</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see we import the code we have already written. We can then call the functions we added from that module. Note the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.
+A function is referred to via the original module <code class="docutils literal notranslate"><span class="pre">.</span></code> function name. This seperates your current namesapce from the module’s.
+You can assign this to a local variable is you wish:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
+
+<span class="n">fb</span> <span class="o">=</span> <span class="n">fibo</span><span class="o">.</span><span class="n">write_fibonacci</span>
+
+<span class="n">fb</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also import single functions or items from a module, ratehr than the whole module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">write_fibonacci</span>
+
+<span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that I no longer need to use the <code class="docutils literal notranslate"><span class="pre">.</span></code> format to access that function. The function is imported into my current namespace. You can import the whole module into your namespace too:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is generally not advised as it pollutes your namespace, but you will see this a lot!</p>
+<p>We can also rename the module as we <code class="docutils literal notranslate"><span class="pre">import</span></code> it. This is very common for a number of popular modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span> <span class="k">as</span> <span class="nn">fib</span>
+
+<span class="n">fib</span><span class="o">.</span><span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You will often see:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>for example.</p>
+</section>
+<section id="executing-modules-as-scripts">
+<h3>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this headline">#</a></h3>
+<p>Python is a versatile language, so modules can also be scripts! Python has a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code> which is set to a value of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is a file is called as a script.</p>
+<p>Running something like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python fibo.py
+</pre></div>
+</div>
+<p>will set this <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable to <cite>__main__`</cite>.</p>
+<p>Exercise: try this</p>
+<p>We can make use of this to write a script within our module. Add the following code to the bottom of <code class="docutils literal notranslate"><span class="pre">fibo.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+   <span class="kn">import</span> <span class="nn">sys</span>
+   <span class="n">write_fibonacci</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>The call the script directly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python fibo.py <span class="m">10</span>
+</pre></div>
+</div>
+<p>You can, of course, still import the module as before and that code will not be run. This is really useful for running a test suite for example or
+creating a structure of common functions across a number of projects/scripts.</p>
+</section>
+<section id="module-search-path">
+<h3>Module search path<a class="headerlink" href="#module-search-path" title="Permalink to this headline">#</a></h3>
+<p>Where does Python look for modules? Python will look for modules in the following order:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The directory contining the input script (or current directory where no script is specified)</p></li>
+<li><p>using the PYTHONPATH environment variable</p></li>
+<li><p>The system default path</p></li>
+</ul>
+</div></blockquote>
+<p>However, you can modify this as a programmer too. We can use the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/home/jhill1/python/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will add the directory to the end of that list above.</p>
+</section>
+<section id="seeing-what-is-in-a-module">
+<h3>Seeing what is in a module<a class="headerlink" href="#seeing-what-is-in-a-module" title="Permalink to this headline">#</a></h3>
+<p>The built-in function <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is used to find out which names a module defines. It returns a sorted list of strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">fibo</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;return_fibonacci&#39;</span><span class="p">,</span> <span class="s1">&#39;write_fibonacci&#39;</span><span class="p">]</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;__breakpointhook__&#39;</span><span class="p">,</span> <span class="s1">&#39;__displayhook__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__excepthook__&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;__interactivehook__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;__stderr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__stdin__&#39;</span><span class="p">,</span> <span class="s1">&#39;__stdout__&#39;</span><span class="p">,</span> <span class="s1">&#39;__unraisablehook__&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;_clear_type_cache&#39;</span><span class="p">,</span> <span class="s1">&#39;_current_frames&#39;</span><span class="p">,</span> <span class="s1">&#39;_debugmallocstats&#39;</span><span class="p">,</span> <span class="s1">&#39;_framework&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;_getframe&#39;</span><span class="p">,</span> <span class="s1">&#39;_git&#39;</span><span class="p">,</span> <span class="s1">&#39;_home&#39;</span><span class="p">,</span> <span class="s1">&#39;_xoptions&#39;</span><span class="p">,</span> <span class="s1">&#39;abiflags&#39;</span><span class="p">,</span> <span class="s1">&#39;addaudithook&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;api_version&#39;</span><span class="p">,</span> <span class="s1">&#39;argv&#39;</span><span class="p">,</span> <span class="s1">&#39;audit&#39;</span><span class="p">,</span> <span class="s1">&#39;base_exec_prefix&#39;</span><span class="p">,</span> <span class="s1">&#39;base_prefix&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;breakpointhook&#39;</span><span class="p">,</span> <span class="s1">&#39;builtin_module_names&#39;</span><span class="p">,</span> <span class="s1">&#39;byteorder&#39;</span><span class="p">,</span> <span class="s1">&#39;call_tracing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;callstats&#39;</span><span class="p">,</span> <span class="s1">&#39;copyright&#39;</span><span class="p">,</span> <span class="s1">&#39;displayhook&#39;</span><span class="p">,</span> <span class="s1">&#39;dont_write_bytecode&#39;</span><span class="p">,</span> <span class="s1">&#39;exc_info&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;excepthook&#39;</span><span class="p">,</span> <span class="s1">&#39;exec_prefix&#39;</span><span class="p">,</span> <span class="s1">&#39;executable&#39;</span><span class="p">,</span> <span class="s1">&#39;exit&#39;</span><span class="p">,</span> <span class="s1">&#39;flags&#39;</span><span class="p">,</span> <span class="s1">&#39;float_info&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;float_repr_style&#39;</span><span class="p">,</span> <span class="s1">&#39;get_asyncgen_hooks&#39;</span><span class="p">,</span> <span class="s1">&#39;get_coroutine_origin_tracking_depth&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;getallocatedblocks&#39;</span><span class="p">,</span> <span class="s1">&#39;getdefaultencoding&#39;</span><span class="p">,</span> <span class="s1">&#39;getdlopenflags&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;getfilesystemencodeerrors&#39;</span><span class="p">,</span> <span class="s1">&#39;getfilesystemencoding&#39;</span><span class="p">,</span> <span class="s1">&#39;getprofile&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;getrecursionlimit&#39;</span><span class="p">,</span> <span class="s1">&#39;getrefcount&#39;</span><span class="p">,</span> <span class="s1">&#39;getsizeof&#39;</span><span class="p">,</span> <span class="s1">&#39;getswitchinterval&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;gettrace&#39;</span><span class="p">,</span> <span class="s1">&#39;hash_info&#39;</span><span class="p">,</span> <span class="s1">&#39;hexversion&#39;</span><span class="p">,</span> <span class="s1">&#39;implementation&#39;</span><span class="p">,</span> <span class="s1">&#39;int_info&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;intern&#39;</span><span class="p">,</span> <span class="s1">&#39;is_finalizing&#39;</span><span class="p">,</span> <span class="s1">&#39;last_traceback&#39;</span><span class="p">,</span> <span class="s1">&#39;last_type&#39;</span><span class="p">,</span> <span class="s1">&#39;last_value&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;maxsize&#39;</span><span class="p">,</span> <span class="s1">&#39;maxunicode&#39;</span><span class="p">,</span> <span class="s1">&#39;meta_path&#39;</span><span class="p">,</span> <span class="s1">&#39;modules&#39;</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;path_hooks&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;path_importer_cache&#39;</span><span class="p">,</span> <span class="s1">&#39;platform&#39;</span><span class="p">,</span> <span class="s1">&#39;prefix&#39;</span><span class="p">,</span> <span class="s1">&#39;ps1&#39;</span><span class="p">,</span> <span class="s1">&#39;ps2&#39;</span><span class="p">,</span> <span class="s1">&#39;pycache_prefix&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;set_asyncgen_hooks&#39;</span><span class="p">,</span> <span class="s1">&#39;set_coroutine_origin_tracking_depth&#39;</span><span class="p">,</span> <span class="s1">&#39;setdlopenflags&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;setprofile&#39;</span><span class="p">,</span> <span class="s1">&#39;setrecursionlimit&#39;</span><span class="p">,</span> <span class="s1">&#39;setswitchinterval&#39;</span><span class="p">,</span> <span class="s1">&#39;settrace&#39;</span><span class="p">,</span> <span class="s1">&#39;stderr&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;stdin&#39;</span><span class="p">,</span> <span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;thread_info&#39;</span><span class="p">,</span> <span class="s1">&#39;unraisablehook&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;version_info&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;warnoptions&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Software_development.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Software development</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="R2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">R: part 2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jon Hill<br/>
+  
+      &copy; Copyright 2023, Jon Hill.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>
