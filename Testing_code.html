@@ -1,277 +1,736 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Software development" href="Software_development.html" /><link rel="prev" title="Solving issues and debugging" href="Issues.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
-        <title>Testing code - SEPwC documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing code &#8212; SEPwC  documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
-    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">SEPwC  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
-  
-  <span class="sidebar-brand-text">SEPwC  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python and R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python or R 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Assessments.html">Assessments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
-</ul>
-
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main">
-          <section id="testing-code">
-<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this heading">#</a></h1>
-</section>
-
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="Software_development.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Software development</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="Issues.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Solving issues and debugging</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, Jon Hill
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            <div class="icons">
-              
-            </div>
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer no-toc">
-      
-      
-      
-    </aside>
-  </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    </body>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Software development" href="Software_development.html" />
+    <link rel="prev" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Code_basics.html">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Testing_code.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhill1/SEPwC.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-testing">
+   Simple testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-tests">
+   Regression tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-tests">
+   Unit tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-tests">
+   Static tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ui-tests">
+   UI tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-frameworks">
+   Testing frameworks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-pytest">
+     Python: pytest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-testthat">
+     R: testthat
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-testing">
+   Continuous testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">
+     Adding a workflow to your repoistory
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Testing code</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-testing">
+   Simple testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-tests">
+   Regression tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-tests">
+   Unit tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-tests">
+   Static tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ui-tests">
+   UI tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-frameworks">
+   Testing frameworks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-pytest">
+     Python: pytest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-testthat">
+     R: testthat
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-testing">
+   Continuous testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">
+     Adding a workflow to your repoistory
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="testing-code">
+<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this headline">¶</a></h1>
+<p>You’ve spend days writing the most elegant and beautiful code imaginable. It’s readable, well designed and runs quickly. How do you know it runs correctly? How do you know how easy it is to break? This is where testing comes in.</p>
+<p>Testing is integral to writing software as otherwise there is no point in writing it. You will, of course, test in some way as you write code as you will run your code to check it doesn’t give syntax errors at least! In this chapter you’ll learn how to transition from informal <em>ad hoc</em> testing (simple testing), to automated testing (also known as unit testing). This will:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fewer bugs. Because you’re explicit about how your code should behave, you will have fewer bugs. The reason why is a bit like the reason double entry book-keeping works: because you describe the behaviour of your code in two places, both in your code and in your tests, you are able to check one against the other. With informal testing, it’s tempting to just explore typical and authentic usage, similar to writing examples. However, when writing formal tests, it’s natural to adopt a more adversarial mindset and to anticipate how unexpected inputs could break your code.</p></li>
+<li><p>Better code structure. Code that is well designed tends to be easy to test and you can turn this to your advantage. If you are struggling to write tests, consider if the problem is actually the design of your function(s). The process of writing tests is a great way to get free, private, and personalized feedback on how well-factored your code is. Functions that are easier to test are usually easier to understand and re-combine in new ways.</p></li>
+<li><p>Bug fixing. When we start to fix a bug, we first convert it into a (failing) test. This is wonderfully effective at making your goal very concrete: make this test pass. This is basically a special case of a general methodology known as test driven development (see later chapter on software development).</p></li>
+<li><p>Robust code. If you know that all the major functionality of your package is well covered by the tests, you can confidently make big changes without worrying about accidentally breaking something.</p></li>
+</ul>
+</div></blockquote>
+<p>In this chapter we will discover the different types of tests and how to formalise those tests into something that can be automated.</p>
+<div class="section" id="simple-testing">
+<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this headline">¶</a></h2>
+<p>Whilst most guides and internet sites deal with more formalised testing, we should start at a more fundamental level. Testing code invovled running it. You should run your code often to check for syntax errors and unexpected errors. Rather than spending hours writing code, then test; it is much more productiuve to write a block of code, then test the code to that point.</p>
+<p>Basic testing involves created a subset of your input data (if any) and printing out variables to check they are what you expect them to be, given the data read in. This is <em>not</em> a robust method of testing code, but will give you confidence as you go along. This is also useful if you don’t know <em>exactly</em> what you’ll get after a block of code (e.g. from an external library). By printing it out, we can check what <code class="docutils literal notranslate"><span class="pre">type</span></code> and what the data looks like. In a formal test it’s impossible to do that until you see the data anyway.</p>
+<p>You <em>are</em> testing your code by running code like this, but informally. The problem will arise in a few months time when you come back to this and you will struggle to remember all the informal tests you ran. If you want to add a new feature you’ll probbaly break some of the past informal tests.</p>
+<p>Example of loading a dataset and checking it (strip all but header and three rows), print and check. Need to create an awkward data set to to make the point, e.g. getting datetimes correct and indexing.</p>
+</div>
+<div class="section" id="regression-tests">
+<h2>Regression tests<a class="headerlink" href="#regression-tests" title="Permalink to this headline">¶</a></h2>
+<p>When it comes to formal testing, the first type of test is called a <em>regression test</em>. This takes a full run of the code and checks that output is what is expected. This could be based on theoretical consideration or from past executions of the code. The distinction to other kinds of tests is that the whole program is run from start to finish.</p>
+<p>Examples of theorteical and past behaviour</p>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<p>Whilst regression tests test the whole executation, unit tests only test a single function or object within the code. The generally check against theoretical results (or simple calculations) with strictly controlled input to the function. This is often where we test unexpected behaviour too; for example putting two strings into a function to add two numbers: do we get a sensible error message?</p>
+<p>Unit tests are designed to test each function to the limits and make sure it returns the right answers and behaves correctly if the wrong kind of data is passed in. If all the program’s functions are tested then, in theory, the whole program should work.</p>
+<p>Unit tests also help with debugging. If a user reports a bug, the error message often gives the funciton that it occurred in. Using the user’s data you can create a unit test to confirm the bug (replicate it). Then debug your code until that new test passes.</p>
+<p>Examples; simple function with assert, assert nearly, etc.</p>
+</div>
+<div class="section" id="static-tests">
+<h2>Static tests<a class="headerlink" href="#static-tests" title="Permalink to this headline">¶</a></h2>
+<p>The above tests involve running the code. Another type of testing is called static testing or <em>linting</em>. This checks the syntax of the code against specified standards. It was invted initiall for the C programming language where the programmer has to manage memory themselves and a linter helped spot potential issues there. For R and Python a linter check our code against published standards.</p>
+<p>For Python, the standards are set by the community and written up as “PEP” (Python Enhancement Proposal) documents. In R the standards are also community-based but with less formal acceptance. A common style used is the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> style.</p>
+<p>Regardless of the style chosen, the important thing is <em>consistancy</em>. Consistancy within functions/modules/objects is most important, consistancy within projects is next, consistancy across projects is least important. It is also important to know when to <em>break</em> consistancy. Your golden rule for breaking a linter recommendation is if it doesn’t improve readability of the code. Code is read more than it is written and the computer doesn’t care about readiability as long as it’s valid syntax.</p>
+<p>Whilst linters are valuable tools to check your consistancy they are not hard and fast rules to follow.</p>
+<p>Examples from R and Python</p>
+</div>
+<div class="section" id="ui-tests">
+<h2>UI tests<a class="headerlink" href="#ui-tests" title="Permalink to this headline">¶</a></h2>
+<p>User interface testing is perhaps the hardest thing to test. When presented with any type of user interface (GUI, CLI, or even through files) users will do the oddest things from your point of view as a programmer. This is normal as we are all the sum of our experiences. However, sticking to conventions helps ameleriote some fof the potentional issues here.</p>
+<p>UI testing is a type of regression testing. You can automate CLI-based UI’s easily. Automating GUI’s is trcikier, but possible. For our purposes we will stick to CLIs.</p>
+<p>Example of testing a CLI</p>
+</div>
+<div class="section" id="testing-frameworks">
+<h2>Testing frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this headline">¶</a></h2>
+<p>The tests above have been manual in nature. Testing comes into it’s own when it’s automated. It may still need to be initated manually (see below for fully automatic, continuous testing), but all tests are run and the results summarised automatically.</p>
+<p>Both R and Python have testing frameworks; modules/libraries that help set-up, run and tear-down all tests in your code. We’ll cover each in turn, but skip to whichever language you’ve chosen.</p>
+<div class="section" id="python-pytest">
+<h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Permalink to this headline">¶</a></h3>
+<p>Python has a few testing packages. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is a very common one. It</p>
+<p>We’re going to test our Farenheit to Celcius and vice-vera functions from the first Python chapter. Let’s get these two functions in an Python test file and save it:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
+
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
+
+    <span class="k">return</span> <span class="n">F</span>
+
+<span class="k">def</span> <span class="nf">toCentigrade</span><span class="p">(</span><span class="n">Farenheit</span><span class="p">):</span>
+
+    <span class="n">C</span> <span class="o">=</span>  <span class="p">(</span><span class="n">Farenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.py</span></code>.</p>
+<p>We can then use a seperate file to create our tests. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is largely automated in terms of finding and running tests; we simply need to stick to a naming convention of having <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code> or <code class="docutils literal notranslate"><span class="pre">*_test.py</span></code> in the filename. <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">will</span> <span class="pre">then</span> <span class="pre">find</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">those</span> <span class="pre">files</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">current</span> <span class="pre">directory</span> <span class="pre">and</span> <span class="pre">any</span> <span class="pre">subdirectories.</span> <span class="pre">You</span> <span class="pre">can</span> <span class="pre">organise</span> <span class="pre">your</span> <span class="pre">tests</span> <span class="pre">into</span> <span class="pre">files,</span> <span class="pre">with</span> <span class="pre">our</span> <span class="pre">without</span> <span class="pre">classes.</span> <span class="pre">If</span> <span class="pre">you</span> <span class="pre">do</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">class</span> <span class="pre">it</span> <span class="pre">*must*</span> <span class="pre">begin</span> <span class="pre">with</span> <span class="pre">&quot;Test&quot;.</span> <span class="pre">For</span> <span class="pre">our</span> <span class="pre">check</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">above</span> <span class="pre">two</span> <span class="pre">functions</span> <span class="pre">we</span> <span class="pre">will</span> <span class="pre">create</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">class,</span> <span class="pre">with</span> <span class="pre">three</span> <span class="pre">methods</span> <span class="pre">to</span> <span class="pre">run</span> <span class="pre">a</span> <span class="pre">total</span> <span class="pre">of</span> <span class="pre">five</span> <span class="pre">tests.</span> <span class="pre">Create</span> <span class="pre">a</span> <span class="pre">file</span> <span class="pre">called</span> <span class="pre">``test_temperature_conversion.py</span></code> (note the filename convention here, prepend <code class="docutils literal notranslate"><span class="pre">test_</span></code> to the filname of the thing you’re testing).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">temperature_conversion</span>
+
+<span class="k">class</span> <span class="nc">TestTemperatureConversion</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">test_c_to_f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">temp_c</span> <span class="o">=</span> <span class="n">temperature_conversion</span><span class="o">.</span><span class="n">toCentigrade</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">temp_c</span><span class="o">==</span><span class="mi">10</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">temp_c</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">test_f_to_c</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">temp_f</span> <span class="o">=</span> <span class="n">temperature_conversion</span><span class="o">.</span><span class="n">toFarenheit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">temp_f</span> <span class="o">==</span> <span class="mi">50</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">temp_f</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">test_that_will_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">temp_c</span> <span class="o">=</span> <span class="n">temperature_conversion</span><span class="o">.</span><span class="n">toCentigrade</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">temp_c</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>We can run that from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test_temperature_conversion.py
+</pre></div>
+</div>
+<p>which gives the output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">=================================</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">=================================</span>
+platform<span class="w"> </span>linux<span class="w"> </span>--<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.6.9,<span class="w"> </span>pytest-6.2.4,<span class="w"> </span>py-1.10.0,<span class="w"> </span>pluggy-0.13.1
+rootdir:<span class="w"> </span>/home/jh1889/work/teaching/SEPwC/code_examples
+collected<span class="w"> </span><span class="m">3</span><span class="w"> </span>items
+
+test_temperature_conversion.py<span class="w"> </span>..F<span class="w">                                              </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+
+<span class="o">======================================</span><span class="w"> </span><span class="nv">FAILURES</span><span class="w"> </span><span class="o">=======================================</span>
+____________________<span class="w"> </span>TestTemperatureConversion.test_that_will_fail<span class="w"> </span>____________________
+
+<span class="nv">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;test_temperature_conversion.TestTemperatureConversion<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>0x7fb900264518&gt;
+
+<span class="w">    </span>def<span class="w"> </span>test_that_will_fail<span class="o">(</span>self<span class="o">)</span>:
+<span class="w">        </span><span class="nv">temp_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>temperature_conversion.toCentigrade<span class="o">(</span><span class="m">50</span><span class="o">)</span>
+
+&gt;<span class="w">       </span>assert<span class="w"> </span><span class="nv">temp_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span>
+E<span class="w">       </span>assert<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span>
+
+test_temperature_conversion.py:23:<span class="w"> </span><span class="nv">AssertionError</span>
+<span class="o">===============================</span><span class="w"> </span>short<span class="w"> </span><span class="nb">test</span><span class="w"> </span>summary<span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">===============================</span>
+FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
+<span class="o">=============================</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">2</span><span class="w"> </span>passed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.15s<span class="w"> </span><span class="o">=============================</span>
+</pre></div>
+</div>
+<p>This gives a summary of the system, including the version of Python and pytest; the directory the test was run from and the number of tests (3). The main results comes next with the filename and <code class="docutils literal notranslate"><span class="pre">..F</span></code>. This tells us 2 tests have passed and one has failed. Details of the failure are then posted underneath, with the line of code and then (very useful) the values used in the assertion.</p>
+<p>You may not want to run all the tests; just a specific test. We can tell pytest to do just that:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
+</pre></div>
+</div>
+<p>This runs just the test named <code class="docutils literal notranslate"><span class="pre">test_that_will_fail</span></code> in the class <code class="docutils literal notranslate"><span class="pre">TestTemperatureConversion</span></code> in the file <code class="docutils literal notranslate"><span class="pre">test_temperature_conversion.py</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> has a lot of other useful features such as marking tests, checking for wanted exceptions and fixtures. Have a look around the documentation of pytest to learn more.</p>
+</div>
+<div class="section" id="r-testthat">
+<h3>R: testthat<a class="headerlink" href="#r-testthat" title="Permalink to this headline">¶</a></h3>
+<p>The first thing that you need to do is install the testthat R package. This can be done from CRAN using the code below.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once testthat is installed, you can load it into your R sessions just like any other R package.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We’re going to test our Farenheit to Celcius and vice-vera functions from the first R chapter. Let’s get these two functions in an R test file and save it:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">F_to_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">F_temp</span><span class="p">){</span>
+<span class="w">    </span><span class="n">C_temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">F_temp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="o">/</span><span class="m">9</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">C_temp</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">C_to_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">C_temp</span><span class="p">){</span>
+<span class="w">    </span><span class="n">F_temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">C_temp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">F_temp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code>.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function of the testthat package to write sime simple tests for our two functions. The <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function follows a simple structure with two arguments: <code class="docutils literal notranslate"><span class="pre">desc</span></code> provides a description (in quotes) of whatever is being tested, and <code class="docutils literal notranslate"><span class="pre">code</span></code> provides whatever code (within curly brackets) to test.</p>
+<p>Within the bracketed code to be tested, one or more <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> functions are run; each call to <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> is an independent test. The <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> function takes two arguments: <code class="docutils literal notranslate"><span class="pre">object</span></code> is the object that is being examined by the function and <code class="docutils literal notranslate"><span class="pre">condition</span></code> is the condition that the object is meant to satisfy.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_C</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>We can create the same test for the <code class="docutils literal notranslate"><span class="pre">C_to_F</span></code> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>You can run those two tests if you’ve compied them into your R session (along with the <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code> file: hint <code class="docutils literal notranslate"><span class="pre">source</span></code>).</p>
+<p>The better idea is to simply run all the tests at once. So let’s create a test file with the following contents (includign a fake test that will fail).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">);</span>
+<span class="nf">context</span><span class="p">(</span><span class="s">&quot;Temperature function testing&quot;</span><span class="p">);</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;temperature_conversion.R&quot;</span><span class="p">);</span>
+
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">temp_C</span><span class="p">,</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">})</span>
+
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">})</span>
+
+<span class="c1"># This test will fail</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fahrenheit to Celsius wrong&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Save that as <code class="docutils literal notranslate"><span class="pre">test-temperature_conversion.R</span></code> (note the convention here; use the same filename as what is to be tested, with <code class="docutils literal notranslate"><span class="pre">test-</span></code> pre-pended).</p>
+<p>We can run that from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>test-temperature_conversion.R
+</pre></div>
+</div>
+<p>which gives the output:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🎊
+<span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🥳
+──<span class="w"> </span><span class="nf">Failure </span><span class="p">(</span><span class="o">???</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span><span class="w"> </span>──────────────────────────────────
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
+<span class="n">Backtrace</span><span class="o">:</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">reporter</span><span class="o">$</span><span class="nf">stop_if_needed</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">failed</span>
+<span class="n">Calls</span><span class="o">:</span><span class="w"> </span><span class="n">test_that</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Anonymous</span><span class="o">&gt;</span>
+<span class="n">Execution</span><span class="w"> </span><span class="n">halted</span>
+</pre></div>
+</div>
+<p>If you’re in an R session you can run all tests in a directory:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_dir</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which gives the output:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>✔<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">S</span><span class="w">  </span><span class="n">OK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Context</span>
+✖<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="m">4</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Temperature</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">testing</span>
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span>
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
+<span class="n">Backtrace</span><span class="o">:</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+══<span class="w"> </span><span class="n">Results</span><span class="w"> </span>═══════════════════════════════════════════════════════════════════════════════════════════════════════════
+──<span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span>──────────────────────────────────────────────────────────────────────────────────────────────────────
+<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span>
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
+<span class="n">Backtrace</span><span class="o">:</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">FAIL</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">WARN</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SKIP</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">PASS</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">failures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="continuous-testing">
+<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Permalink to this headline">¶</a></h2>
+<p>Unitill now you have been resonsible for running the tests. If you’re disciplined then you ran them (and fixed errors) before you committed new code to your repository. There is an easier way though, with continuous integration (or CI) of tests.</p>
+<p>There are a number of services out there that will do this, but the most common to use is GitHub’s Actions. THis allows you to add the tests at any point (e.g. when committing, or at a pull request) and is faily simple to set up.</p>
+<div class="section" id="adding-a-workflow-to-your-repoistory">
+<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Permalink to this headline">¶</a></h3>
+<p>On GitHub, go to your respository and open the actions tab:</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Spreadsheets_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Moving from spreadsheets to data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Software_development.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Software development</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jon Hill<br/>
+    
+        &copy; Copyright 2023, Jon Hill.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
 </html>

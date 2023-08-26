@@ -1,218 +1,564 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python: the fundementals" href="Python.html" /><link rel="prev" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.04.07"/>
-        <title>Revision control with Git - SEPwC documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revision control with Git &#8212; SEPwC  documentation</title>
     
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
     
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">SEPwC  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
-  
-  <span class="sidebar-brand-text">SEPwC  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Expectations.html">Expectations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Revision control with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundementals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python and R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python or R 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Assessments.html">Assessments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
+    <link rel="prev" title="R: part 3" href="R3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Code_basics.html">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="How_a_computer_works.html">
+   How a computer works
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Licences.html">
+   Software licences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Code_basics.html">
+   The fundamentals of code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Algorithms.html">
+   Thinking like a computer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R.html">
+   R: the fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Issues.html">
+   Solving issues and debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Mini_courses.html">
+   Mini-courses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
 </ul>
 
-</div>
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
 
-      </div>
-      
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Revision_control.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhill1/SEPwC.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
         </div>
-        <article role="main">
-          <section id="revision-control-with-git">
-<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git">
+   Setting up git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-first-repository">
+   Our first repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-files">
+   Adding files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-history">
+   Git history
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ignoring-files">
+   Ignoring files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github">
+   Github
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-remote-repository">
+     1. Creating a remote repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connect-local-to-remote-repository">
+     2. Connect local to remote repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ssh-background-and-setup">
+     3. SSH Background and Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-an-ssh-key-pair">
+       3.1 Create an SSH key pair
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#copy-the-public-key-to-github">
+       3.2 Copy the public key to GitHub
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push-local-changes-to-a-remote">
+     4. Push local changes to a remote
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaboration-with-git">
+   Collaboration with Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conflict">
+   Conflict!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Revision control with Git</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git">
+   Setting up git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-first-repository">
+   Our first repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-files">
+   Adding files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-history">
+   Git history
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ignoring-files">
+   Ignoring files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github">
+   Github
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-remote-repository">
+     1. Creating a remote repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connect-local-to-remote-repository">
+     2. Connect local to remote repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ssh-background-and-setup">
+     3. SSH Background and Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-an-ssh-key-pair">
+       3.1 Create an SSH key pair
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#copy-the-public-key-to-github">
+       3.2 Copy the public key to GitHub
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push-local-changes-to-a-remote">
+     4. Push local changes to a remote
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaboration-with-git">
+   Collaboration with Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conflict">
+   Conflict!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="revision-control-with-git">
+<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">We’ll start by exploring how version control can be used to keep track of what one person did and when.
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:</p>
-<img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png"/>
+<img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png" />
 <p>Which one is actually the final version? Which order to the files actually go in (in case
 I wanted to go back to a previous version)?</p>
 <p>We’ve all been in this situation before: it seems unnecessary to have
@@ -224,15 +570,15 @@ LibreOffice’s <a class="reference external" href="https://help.libreoffice.org
 <p>Version control systems start with a base version of the document and then record changes you make each step of the way. You can
 think of it as a recording of your progress: you can rewind to start at the base document and play back each change you made,
 eventually arriving at your more recent version.</p>
-<img alt="Changes Are Saved Sequentially" src="_images/play-changes.png"/>
+<img alt="Changes Are Saved Sequentially" src="_images/play-changes.png" />
 <p>Once you think of changes as separate from the document itself, you
 can then think about “playing back” different sets of changes on the base document, ultimately
 resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document.</p>
-<img alt="Different Versions Can be Saved" src="_images/versions.png"/>
+<img alt="Different Versions Can be Saved" src="_images/versions.png" />
 <p>Unless multiple users make changes to the same section of the document - a conflict - you can
 incorporate two sets of changes into the same base document.</p>
-<img alt="Multiple Versions Can be Merged" src="_images/merge.png"/>
+<img alt="Multiple Versions Can be Merged" src="_images/merge.png" />
 <p>A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to decide
 which changes will be made to the next version (each record of these changes is
@@ -283,9 +629,9 @@ Google Docs or Microsoft Office Online do not fully resolve these
 problems.</p></li>
 </ul>
 </div>
-</section>
-<section id="setting-up-git">
-<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="setting-up-git">
+<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h2>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:</p>
 <ul class="simple">
@@ -296,8 +642,8 @@ of configurations we will set as we get started with Git:</p>
 <p>On a command line, Git commands are written as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">verb</span> <span class="pre">options</span></code>,
 where <code class="docutils literal notranslate"><span class="pre">verb</span></code> is what we actually want to do and <code class="docutils literal notranslate"><span class="pre">options</span></code> is additional optional information which may be
 needed for the <code class="docutils literal notranslate"><span class="pre">verb</span></code>. So here is how I might setup my new laptop:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Jon Hill"</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Jon Hill&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;jon.hill@york.ac.uk&quot;</span>
 </pre></div>
 </div>
 <p>Please use your own name and email address instead of mine. This user name and email will be associated with your subsequent Git activity,
@@ -333,8 +679,12 @@ On macOS and Linux:</p>
 </div>
 </div>
 <p>We also need to set our favorite text editor, following this table:</p>
-<div class="table-wrapper"><table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Editors and config</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<table class="table" id="id3">
+<caption><span class="caption-text">Editors and config</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Editor</p></th>
 <th class="head"><p>Configuration command</p></th>
@@ -342,52 +692,52 @@ On macOS and Linux:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Atom</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"atom</span> <span class="pre">--wait"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;atom</span> <span class="pre">--wait&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>nano</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"nano</span> <span class="pre">-w"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;nano</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>BBEdit (Mac, with command line tools)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"bbedit</span> <span class="pre">-w"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;bbedit</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Sublime Text (Mac)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"/Applications/Sublime\</span> <span class="pre">Text.app/Contents/SharedSupport/bin/subl</span> <span class="pre">-n</span> <span class="pre">-w"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;/Applications/Sublime\</span> <span class="pre">Text.app/Contents/SharedSupport/bin/subl</span> <span class="pre">-n</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Sublime Text (Win, 32-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Sublime Text (Win, 64-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"'c:/program</span> <span class="pre">files/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Notepad (Win)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"c:/Windows/System32/notepad.exe"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;c:/Windows/System32/notepad.exe&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Notepad++ (Win, 32-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Notepad++ (Win, 64-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"'c:/program</span> <span class="pre">files/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Kate (Linux)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"kate"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;kate&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Gedit (Linux)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"gedit</span> <span class="pre">--wait</span> <span class="pre">--new-window"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;gedit</span> <span class="pre">--wait</span> <span class="pre">--new-window&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Scratch (Linux)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"scratch-text-editor"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;scratch-text-editor&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Emacs</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"emacs"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;emacs&quot;</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Vim</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"vim"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;vim&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>VS Code</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">"code</span> <span class="pre">--wait"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;code</span> <span class="pre">--wait&quot;</span></code></p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>It is possible to reconfigure the text editor for Git whenever you want to change it.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -426,9 +776,9 @@ More generally, you can get the list of available <code class="docutils literal 
 </pre></div>
 </div>
 </div>
-</section>
-<section id="our-first-repository">
-<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="our-first-repository">
+<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this headline">¶</a></h2>
 <p>Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
@@ -470,7 +820,7 @@ of git. See the <a class="reference internal" href="#setting-up-git"><span class
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>main
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to a new branch 'main'</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to a new branch &#39;main&#39;</span>
 </pre></div>
 </div>
 <p>We can check that everything is set up correctly
@@ -482,7 +832,7 @@ by asking Git to tell us the status of our project:</p>
 
 <span class="go">No commits yet</span>
 
-<span class="go">nothing to commit (create/copy files and use "git add" to track)</span>
+<span class="go">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>If you are using a different version of <cite>git</cite>, the exact
@@ -557,9 +907,9 @@ folder in the moons subdirectory by running the following command from inside th
 the entire Git history of a project you might want to keep.
 Therefore, always check your current directory using the command <cite>pwd</cite>.</p>
 </div>
-</section>
-<section id="adding-files">
-<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="adding-files">
+<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this headline">¶</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/planets
@@ -602,11 +952,11 @@ Git tells us that it’s noticed the new file:</p>
 <span class="go">No commits yet</span>
 
 <span class="go">Untracked files:</span>
-<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
 <span class="go"> mars.txt</span>
 
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>The “untracked files” message means that there’s a file in the directory
@@ -624,7 +974,7 @@ We can tell Git to track a file using <cite>git add</cite>:</p>
 <span class="go">No commits yet</span>
 
 <span class="go">Changes to be committed:</span>
-<span class="go">  (use "git rm --cached &lt;file&gt;..." to unstage)</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
 
 <span class="go">  new file:   mars.txt</span>
 </pre></div>
@@ -632,7 +982,7 @@ We can tell Git to track a file using <cite>git add</cite>:</p>
 <p>Git now knows that it’s supposed to keep track of <cite>mars.txt</cite>,
 but it hasn’t recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Start notes on Mars as a base"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Start notes on Mars as a base&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main (root-commit) f22b25e] Start notes on Mars as a base</span>
@@ -714,12 +1064,12 @@ it tells us that a file it already knows about has been modified:</p>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
-<span class="go">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
-<span class="go">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
 <span class="go">    modified:   mars.txt</span>
 
-<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 <p>The last line is the key phrase: “no changes added to commit”.
@@ -758,27 +1108,27 @@ In particular,
 the <code class="docutils literal notranslate"><span class="pre">+</span></code> marker in the first column shows where we added a line.</p></li>
 </ol>
 <p>After reviewing our change, it’s time to commit it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on werewolves"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
-<span class="go">  (use "git add &lt;file&gt;..." to update what will be committed)</span>
-<span class="go">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
 <span class="go">    modified:   mars.txt</span>
 
-<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 <p>Whoops:
 Git won’t commit because we didn’t use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> first.
 Let’s fix that:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add concerns about effects of Mars' moons on werewolves"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars' moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars&#39; moons on werewolves</span>
 <span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
@@ -814,7 +1164,7 @@ Try to stage things manually,
 or you might find yourself searching for “git undo commit” more
 than you would like!</p>
 </div>
-<img alt="The git staging area" src="_images/git-staging-area.png"/>
+<img alt="The git staging area" src="_images/git-staging-area.png" />
 <p>Let’s watch as our changes to a file move from our editor
 to the staging area and into long-term storage.
 First, we’ll add another line to the file:</p>
@@ -865,10 +1215,10 @@ and what’s currently in the directory. However, if we do this:</p>
 </div>
 <p>it shows us the difference between the last committed change
 and what’s in the staging area. Let’s save our changes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Discuss concerns about Mars' climate for Mummy"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Discuss concerns about Mars&#39; climate for Mummy&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 005937f] Discuss concerns about Mars' climate for Mummy</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 005937f] Discuss concerns about Mars&#39; climate for Mummy</span>
 <span class="go">1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
@@ -888,13 +1238,13 @@ and what’s in the staging area. Let’s save our changes:</p>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
 
-<span class="go">   Discuss concerns about Mars' climate for Mummy</span>
+<span class="go">   Discuss concerns about Mars&#39; climate for Mummy</span>
 
 <span class="go">commit 34961b159c27df3b475cfe4415d94a6d1fcd064d</span>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:07:21 2013 -0400</span>
 
-<span class="go">    Add concerns about effects of Mars' moons on werewolves</span>
+<span class="go">    Add concerns about effects of Mars&#39; moons on werewolves</span>
 
 <span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
@@ -939,15 +1289,15 @@ the last commit you can use:</p>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
 
-<span class="go">Discuss concerns about Mars' climate for Mummy</span>
+<span class="go">Discuss concerns about Mars&#39; climate for Mummy</span>
 </pre></div>
 </div>
 <p>You can also reduce the quantity of information using the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
-<span class="go">34961b1 Add concerns about effects of Mars' moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
+<span class="go">34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
 <span class="go">f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
@@ -959,8 +1309,8 @@ current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy</span>
-<span class="go">* 34961b1 Add concerns about effects of Mars' moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
+<span class="go">* 34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
 <span class="go">* f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
@@ -1002,7 +1352,7 @@ git<span class="w"> </span>status
 </div></blockquote>
 <p>Before moving on, we will commit these changes.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add some initial thoughts on spaceships"</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add some initial thoughts on spaceships&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1011,7 +1361,7 @@ git<span class="w"> </span>status
 we first need to add the changed files to the staging area
 (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>) and then commit the staged changes to the
 repository (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>):</p>
-<img alt="The git commit process" src="_images/git-committing.png"/>
+<img alt="The git commit process" src="_images/git-committing.png" />
 <div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
 <p><strong>Choosing a Commit Message</strong></p>
@@ -1035,12 +1385,12 @@ but answer 3 is good: short, descriptive, and imperative.</p>
 <p>Which command(s) below would save the changes of <cite>myfile.txt</cite>
 to my local Git repository?</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">"my</span> <span class="pre">recent</span> <span class="pre">changes"</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">myfile.txt</span></code>
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">"my</span> <span class="pre">recent</span> <span class="pre">changes"</span></code></p></li>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code>
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">"my</span> <span class="pre">recent</span> <span class="pre">changes"</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">myfile.txt</span> <span class="pre">"my</span> <span class="pre">recent</span> <span class="pre">changes"</span></code></p></li>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">myfile.txt</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
 </ol>
 </div>
 <div class="toggle admonition">
@@ -1095,7 +1445,7 @@ git<span class="w"> </span>add<span class="w"> </span>venus.txt
 </pre></div>
 </div>
 <p>Now the files are ready to commit. You can check that using <cite>git status</cite>. If you are ready to commit use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Write plans to start a base on Venus"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Write plans to start a base on Venus&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main cc127c2]</span>
@@ -1134,7 +1484,7 @@ commit your changes</p></li>
 <p>Create your biography file <cite>me.txt</cite> using <cite>nano</cite> or another text editor.
 Once in place, add and commit it to the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>me.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add biography file"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add biography file&quot;</span>
 </pre></div>
 </div>
 <p>Modify the file as described (modify one line, add a fourth line).
@@ -1143,9 +1493,9 @@ To display the differences between its updated state and its original state, use
 </pre></div>
 </div>
 </div>
-</section>
-<section id="git-history">
-<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="git-history">
+<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this headline">¶</a></h2>
 <p>No, not the story of how Git came to be, but how do we get at the history of our commits.
 In the previous section we see we can refer to commits by the unique identifiers.
 You can refer to the <em>most recent commit</em> of the working
@@ -1262,12 +1612,12 @@ Let’s suppose we change our mind about the last update to <code class="docutil
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
-<span class="go"> (use "git add &lt;file&gt;..." to update what will be committed)</span>
-<span class="go"> (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go"> (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
 <span class="go">   modified:   mars.txt</span>
 
-<span class="go">no changes added to commit (use "git add" and/or "git commit -a")</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
 <p>We can put things back the way they were by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>:</p>
@@ -1296,7 +1646,7 @@ cat<span class="w"> </span>mars.txt
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes to be committed:</span>
-<span class="go">(use "git reset HEAD &lt;file&gt;..." to unstage)</span>
+<span class="go">(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
 
 <span class="go">  modified:   mars.txt</span>
 </pre></div>
@@ -1321,7 +1671,7 @@ if you forget <cite>mars.txt</cite> in the previous command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>f22b25e
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Note: checking out 'f22b25e'.</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Note: checking out &#39;f22b25e&#39;.</span>
 </pre></div>
 </div>
 <p>You are in <cite>‘detached HEAD</cite>’ state. You can look around, make experimental
@@ -1342,13 +1692,13 @@ After investigating your repos’ past state, reattach your <code class="docutil
 <em>before</em> the change we’re trying to undo. A common mistake is to use the number of
 the commit in which we made the change we’re trying to discard. In the example below, we want to
 retrieve the state from before the most recent commit (<code class="docutils literal notranslate"><span class="pre">HEAD~1</span></code>), which is commit <code class="docutils literal notranslate"><span class="pre">f22b25e</span></code>:</p>
-<img alt="The git commit process" src="_images/git-checkout.png"/>
+<img alt="The git commit process" src="_images/git-checkout.png" />
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
 <p><strong>Simplifying the Common Case</strong></p>
 <p>If you read the output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> carefully,
 you’ll see that it includes this hint:</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
 </pre></div>
 </div>
 <p>As it says, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> without a version identifier restores files to the state saved in <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.
@@ -1426,10 +1776,10 @@ else has committed changes to the repository.</p>
 <p class="admonition-title">Thought exercise</p>
 <p><strong>Understanding Workflow and History</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>planets
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Venus is beautiful and full of love"</span><span class="w"> </span>&gt;<span class="w"> </span>venus.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Venus is beautiful and full of love&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>venus.txt
 git<span class="w"> </span>add<span class="w"> </span>venus.txt
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Venus is too hot to be suitable as a base"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>venus.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Comment on Venus as an unsuitable base"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Venus is too hot to be suitable as a base&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>venus.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Comment on Venus as an unsuitable base&quot;</span>
 git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>venus.txt
 cat<span class="w"> </span>venus.txt<span class="w"> </span><span class="c1">#this will print the contents of venus.txt to the screen</span>
 </pre></div>
@@ -1448,7 +1798,7 @@ cat<span class="w"> </span>venus.txt<span class="w"> </span><span class="c1">#th
 <p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">venus.txt</span></code> places the current version of <code class="docutils literal notranslate"><span class="pre">venus.txt</span></code> into the staging area.
 The changes to the file from the second <code class="docutils literal notranslate"><span class="pre">echo</span></code> command are only applied to the working copy,
 not the version in the staging area.</p>
-<p>So, when <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">"Comment</span> <span class="pre">on</span> <span class="pre">Venus</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">unsuitable</span> <span class="pre">base"</span></code> is executed,
+<p>So, when <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Comment</span> <span class="pre">on</span> <span class="pre">Venus</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">unsuitable</span> <span class="pre">base&quot;</span></code> is executed,
 the version of <code class="docutils literal notranslate"><span class="pre">venus.txt</span></code> committed to the repository is the one from the staging area and
 has only one line.</p>
 <p>At this time, the working copy still has the second line (and
@@ -1502,9 +1852,9 @@ the difference between each commit.</p>
 </pre></div>
 </div>
 </div>
-</section>
-<section id="ignoring-files">
-<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="ignoring-files">
+<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this headline">¶</a></h2>
 <p>What if we have files that we do not want Git to track for us,
 like backup files created by our editor or intermediate files created during data analysis?
 Let’s create a few dummy files:</p>
@@ -1518,14 +1868,14 @@ touch<span class="w"> </span>a.dat<span class="w"> </span>b.dat<span class="w"> 
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Untracked files:</span>
-<span class="go"> (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
 <span class="go">    a.dat</span>
 <span class="go">    b.dat</span>
 <span class="go">    c.dat</span>
 <span class="go">    results/</span>
 
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>Putting these files under version control would be a waste of disk space.
@@ -1549,18 +1899,18 @@ Git would continue to track them.)</p>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Untracked files:</span>
-<span class="go">  (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
 <span class="go">    .gitignore</span>
 
-<span class="go">nothing added to commit but untracked files present (use "git add" to track)</span>
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 <p>The only thing Git notices now is the newly-created <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.
 You might think we wouldn’t want to track it, but everyone we’re sharing our repository with will probably want to ignore
 the same things that we’re ignoring. Let’s add and commit <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.gitignore
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Ignore data files and the results folder."</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ignore data files and the results folder.&quot;</span>
 git<span class="w"> </span>status
 </pre></div>
 </div>
@@ -1584,7 +1934,7 @@ git<span class="w"> </span>status
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Ignored files:</span>
-<span class="go"> (use "git add -f &lt;file&gt;..." to include in what will be committed)</span>
+<span class="go"> (use &quot;git add -f &lt;file&gt;...&quot; to include in what will be committed)</span>
 
 <span class="go">        a.dat</span>
 <span class="go">        b.dat</span>
@@ -1706,9 +2056,9 @@ You want to keep them but you do not want to track them through <code class="doc
 <li><p>track <cite>log_01</cite> using   <cite>git add -f log_01</cite></p></li>
 </ol>
 </div>
-</section>
-<section id="github">
-<h2>Github<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="github">
+<h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
 <p>Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.</p>
@@ -1721,20 +2071,20 @@ and cons of this in a later episode.</p>
 <p>Let’s start by sharing the changes we’ve made to our current project with the
 world. To this end we are going to create a <em>remote</em> repository that will be
 linked to our <em>local</em> repository.</p>
-<section id="creating-a-remote-repository">
-<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this heading">#</a></h3>
+<div class="section" id="creating-a-remote-repository">
+<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this headline">¶</a></h3>
 <p>Log in to <a class="reference external" href="https://github.com">GitHub</a>, then click on the icon in the top right corner to
 create a new repository called <code class="docutils literal notranslate"><span class="pre">planets</span></code>:</p>
-<a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png"/></a>
+<a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png" /></a>
 <p>Name your repository “planets” and then click “Create Repository”.</p>
 <p>Note: Since this repository will be connected to a local repository, it needs to be empty. Leave
 “Initialize this repository with a README” unchecked, and keep “None” as options for both “Add
 .gitignore” and “Add a license.” See the “GitHub License and README files” exercise below for a full
 explanation of why the repository needs to be empty.</p>
-<a class="reference external image-reference" href="../images/github-create-repo-02.png"><img alt="Creating a Repository on GitHub (Step 2)" src="_images/github-create-repo-02.png"/></a>
+<a class="reference external image-reference" href="../images/github-create-repo-02.png"><img alt="Creating a Repository on GitHub (Step 2)" src="_images/github-create-repo-02.png" /></a>
 <p>As soon as the repository is created, GitHub displays a page with a URL and some
 information on how to configure your local repository:</p>
-<a class="reference external image-reference" href="../images/github-create-repo-03.png"><img alt="Creating a Repository on GitHub (Step 3)" src="_images/github-create-repo-03.png"/></a>
+<a class="reference external image-reference" href="../images/github-create-repo-03.png"><img alt="Creating a Repository on GitHub (Step 3)" src="_images/github-create-repo-03.png" /></a>
 <p>This effectively does the following on GitHub’s servers:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>planets
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>planets
@@ -1744,19 +2094,19 @@ $<span class="w"> </span>git<span class="w"> </span>init
 <p>If you remember back to the earlier <a class="reference external" href="../04-changes/">episode</a> where we added and
 committed our earlier work on <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>, we had a diagram of the local repository
 which looked like this:</p>
-<a class="reference external image-reference" href="../images/git-staging-area.png"><img alt="The Local Repository with Git Staging Area" src="_images/git-staging-area.png"/></a>
+<a class="reference external image-reference" href="../images/git-staging-area.png"><img alt="The Local Repository with Git Staging Area" src="_images/git-staging-area.png" /></a>
 <p>Now that we have two repositories, we need a diagram like this:</p>
-<a class="reference external image-reference" href="../images/git-freshly-made-github-repo.png"><img alt="Freshly-Made GitHub Repository" src="_images/git-freshly-made-github-repo.png"/></a>
+<a class="reference external image-reference" href="../images/git-freshly-made-github-repo.png"><img alt="Freshly-Made GitHub Repository" src="_images/git-freshly-made-github-repo.png" /></a>
 <p>Note that our local repository still contains our earlier work on <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>, but the
 remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
-</section>
-<section id="connect-local-to-remote-repository">
-<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="connect-local-to-remote-repository">
+<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this headline">¶</a></h3>
 <p>Now we connect the two repositories.  We do this by making the
 GitHub repository a remote for the local repository.
 The home page of the repository on GitHub includes the URL string we need to
 identify it:</p>
-<a class="reference external image-reference" href="../images/github-find-repo-string.png"><img alt="Where to Find Repository URL on GitHub" src="_images/github-find-repo-string.png"/></a>
+<a class="reference external image-reference" href="../images/github-find-repo-string.png"><img alt="Where to Find Repository URL on GitHub" src="_images/github-find-repo-string.png" /></a>
 <p>Click on the ‘SSH’ link to change the protocol from HTTPS to SSH.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
@@ -1766,7 +2116,7 @@ security protocol widely used by many applications.  The steps below describe SS
 minimum level for GitHub. A supplemental episode to this lesson discusses advanced setup
 and concepts of SSH and key pairs, and other material supplemental to git related SSH.</p>
 </div>
-<a class="reference external image-reference" href="../images/github-change-repo-string.png"><img alt="Changing the Repository URL on GitHub" src="_images/github-change-repo-string.png"/></a>
+<a class="reference external image-reference" href="../images/github-change-repo-string.png"><img alt="Changing the Repository URL on GitHub" src="_images/github-change-repo-string.png" /></a>
 <p>Copy that URL from the browser, go into the local <code class="docutils literal notranslate"><span class="pre">planets</span></code> repository, and run
 this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:jh1889/planets.git
@@ -1787,9 +2137,9 @@ and GitHub, so it’s helpful to stick with this unless there’s a reason not t
 </div>
 <p>We’ll discuss remotes in more detail in the next section, while
 talking about how they might be used for collaboration.</p>
-</section>
-<section id="ssh-background-and-setup">
-<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="ssh-background-and-setup">
+<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this headline">¶</a></h3>
 <p>Before I can connect to a remote repository, I need to set up a way for his computer to
 authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
 <p>We are going to set up the method that is commonly used by many different services to authenticate
@@ -1818,28 +2168,28 @@ computers to access your account.</p>
 </div>
 <p>Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.</p>
 <p>Our user has not set up SSH on his computer, so their output is</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">ls: cannot access '/c/Users/jh1889/.ssh': No such file or directory</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">ls: cannot access &#39;/c/Users/jh1889/.ssh&#39;: No such file or directory</span>
 </pre></div>
 </div>
 <p>If SSH has been set up on the computer you’re using, the public and private key pairs will be listed.
 The file names are either <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>/<code class="docutils literal notranslate"><span class="pre">id_ed25519.pub</span></code> or <code class="docutils literal notranslate"><span class="pre">id_rsa</span></code>/<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>
 depending on how the key pairs were set up.</p>
 <p>Since they don’t exist on this computer, we will use this command to create them.</p>
-<section id="create-an-ssh-key-pair">
-<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this heading">#</a></h4>
+<div class="section" id="create-an-ssh-key-pair">
+<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this headline">¶</a></h4>
 <p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate"><span class="pre">-t</span></code> option specifies which type of
 algorithm to use and <code class="docutils literal notranslate"><span class="pre">-C</span></code> attaches a comment to the key (here, our email):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"jon.hill@york.ac.uk"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;jon.hill@york.ac.uk&quot;</span>
 </pre></div>
 </div>
 <p>If you are using a legacy system that doesn’t support the Ed25519 algorithm, use:
-<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">4096</span> <span class="pre">-C</span> <span class="pre">"your_email@example.com"</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">4096</span> <span class="pre">-C</span> <span class="pre">&quot;your_email&#64;example.com&quot;</span></code></p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Generating public/private ed25519 key pair.</span>
 <span class="go">Enter file in which to save the key (/c/Users/jh1889/.ssh/id_ed25519):</span>
 </pre></div>
 </div>
 <p>We want to use the default file, so just press :kbd: <cite>Enter</cite>.</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Created directory '/c/Users/jh1889/.ssh'.</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Created directory &#39;/c/Users/jh1889/.ssh&#39;.</span>
 <span class="go">Enter passphrase (empty for no passphrase):</span>
 </pre></div>
 </div>
@@ -1854,7 +2204,7 @@ as there is no “reset my password” option.</p>
 <span class="go">Your public key has been saved in /c/Users/jh1889/.ssh/id_ed25519.pub</span>
 <span class="go">The key fingerprint is:</span>
 <span class="go">SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o jon.hill@york.ac.uk</span>
-<span class="go">The key's randomart image is:</span>
+<span class="go">The key&#39;s randomart image is:</span>
 <span class="go">+--[ED25519 256]--+</span>
 <span class="go">|^B== o.          |</span>
 <span class="go">|%*=.*.+          |</span>
@@ -1881,19 +2231,19 @@ is a shorter version of a public key.</p>
 <span class="go">-rw-r--r-- 1 jh1889 197121 106 Jul 16 14:48 id_ed25519.pub</span>
 </pre></div>
 </div>
-</section>
-<section id="copy-the-public-key-to-github">
-<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="copy-the-public-key-to-github">
+<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this headline">¶</a></h4>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host 'github.com (192.30.255.112)' can't be established.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;github.com (192.30.255.112)&#39; can&#39;t be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? y
-Please type 'yes', 'no' or the fingerprint: yes
-Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+Please type &#39;yes&#39;, &#39;no&#39; or the fingerprint: yes
+Warning: Permanently added &#39;github.com&#39; (RSA) to the list of known hosts.
 git@github.com: Permission denied (publickey).
 </pre></div>
 </div>
@@ -1912,14 +2262,14 @@ you can add the title (use the name of your computer, e.g. “laptop”), paste 
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Hi Jon! You've successfully authenticated, but GitHub does not provide shell access.</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Hi Jon! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span>
 </pre></div>
 </div>
 <p>Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.</p>
-</section>
-</section>
-<section id="push-local-changes-to-a-remote">
-<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="push-local-changes-to-a-remote">
+<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this headline">¶</a></h3>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from
 our local repository to the repository on GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
@@ -1939,7 +2289,7 @@ will not prompt for a passphrase.</p>
 </pre></div>
 </div>
 <p>Our local and remote repositories are now in this state:</p>
-<a class="reference external image-reference" href="../images/github-repo-after-first-push.png"><img alt="GitHub Repository After First Push" src="_images/github-repo-after-first-push.png"/></a>
+<a class="reference external image-reference" href="../images/github-repo-after-first-push.png"><img alt="GitHub Repository After First Push" src="_images/github-repo-after-first-push.png" /></a>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
 <p><strong>The ‘-u’ Flag</strong></p>
@@ -2057,17 +2407,17 @@ repositories before merging.</p>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">From https://github.com/vlad/planets</span>
 <span class="go"> * branch            main     -&gt; FETCH_HEAD</span>
-<span class="go">Merge made by the 'recursive' strategy.</span>
+<span class="go">Merge made by the &#39;recursive&#39; strategy.</span>
 <span class="go">README.md | 1 +</span>
 <span class="go">1 file changed, 1 insertion(+)</span>
 <span class="go">create mode 100644 README.md</span>
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="collaboration-with-git">
-<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="collaboration-with-git">
+<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this headline">¶</a></h2>
 <p>For the next step, get into pairs.  One person will be the “Owner” and the other
 will be the “Collaborator”. The goal is that the Collaborator add changes into
 the Owner’s repository. We will switch roles at the end, so both persons will
@@ -2083,7 +2433,7 @@ won’t need to give anyone access on GitHub, because both ‘partners’ are yo
 <p>The Owner needs to give the Collaborator access. On GitHub, click the “Settings”
 button on the right, select “Collaborators”, click “Add people”, and
 then enter your partner’s username.</p>
-<a class="reference external image-reference" href="../images/github-add-collaborators.png"><img alt="Adding Collaborators on GitHub" src="_images/github-add-collaborators.png"/></a>
+<a class="reference external image-reference" href="../images/github-add-collaborators.png"><img alt="Adding Collaborators on GitHub" src="_images/github-add-collaborators.png" /></a>
 <p>To accept access to the Owner’s repo, the Collaborator
 needs to go to <a class="reference external" href="https://github.com/notifications">https://github.com/notifications</a>
 or check for email notification. Once there she can accept access to the Owner’s repo.</p>
@@ -2101,7 +2451,7 @@ repository with the same name.</p>
 (<code class="docutils literal notranslate"><span class="pre">~/Desktop/jh1889-planets</span></code>) specified at the end,
 you will clone inside your own planets folder!
 Make sure to navigate to the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder first.</p>
-<a class="reference external image-reference" href="../images/github-collaboration.png"><img alt="After Creating Clone of Repository" src="_images/github-collaboration.png"/></a>
+<a class="reference external image-reference" href="../images/github-collaboration.png"><img alt="After Creating Clone of Repository" src="_images/github-collaboration.png" /></a>
 <p>The Collaborator can now make a change in her clone of the Owner’s repository,
 exactly the same way as we’ve been doing before:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/jh1889-planets
@@ -2113,7 +2463,7 @@ cat<span class="w"> </span>pluto.txt
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>pluto.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes about Pluto"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add notes about Pluto&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">1 file changed, 1 insertion(+)</span>
@@ -2238,9 +2588,9 @@ has some suggestions to propose.</p>
 code to comment, a blue comment icon appears to open a comment window.</p>
 <p>The Collaborator posts her comments and suggestions using the GitHub interface.</p>
 </div>
-</section>
-<section id="conflict">
-<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="conflict">
+<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this headline">¶</a></h2>
 <p>As soon as people can work in parallel, they’ll likely step on each other’s
 toes. This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
@@ -2270,7 +2620,7 @@ cat<span class="w"> </span>mars.txt
 </div>
 <p>and then push the change to GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in our home copy"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add a line in our home copy&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 5ae9631] Add a line in our home copy</span>
@@ -2305,7 +2655,7 @@ cat<span class="w"> </span>mars.txt
 </div>
 <p>We can commit the change locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in my copy"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add a line in my copy&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 07ebc69] Add a line in my copy</span>
@@ -2318,15 +2668,15 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">To https://github.com/jh1889/planets.git</span>
 <span class="go"> ! [rejected]        main -&gt; main (fetch first)</span>
-<span class="go">error: failed to push some refs to 'https://github.com/jh1889/planets.git'</span>
+<span class="go">error: failed to push some refs to &#39;https://github.com/jh1889/planets.git&#39;</span>
 <span class="go">hint: Updates were rejected because the remote contains work that you do</span>
 <span class="go">hint: not have locally. This is usually caused by another repository pushing</span>
 <span class="go">hint: to the same ref. You may want to first integrate the remote changes</span>
-<span class="go">hint: (e.g., 'git pull ...') before pushing again.</span>
-<span class="go">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span>
+<span class="go">hint: (e.g., &#39;git pull ...&#39;) before pushing again.</span>
+<span class="go">hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</span>
 </pre></div>
 </div>
-<a class="reference external image-reference" href="../images/conflict.png"><img alt="The Conflicting Changes" src="_images/conflict.png"/></a>
+<a class="reference external image-reference" href="../images/conflict.png"><img alt="The Conflicting Changes" src="_images/conflict.png" /></a>
 <p>Git rejects the push because it detects that the remote repository has new updates that have not been
 incorporated into the local branch. What we have to do is pull the changes from GitHub,
 merge them into the copy we’re currently working in, and then push that.
@@ -2394,14 +2744,14 @@ git<span class="w"> </span>status
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">All conflicts fixed but you are still merging.</span>
-<span class="go">  (use "git commit" to conclude merge)</span>
+<span class="go">  (use &quot;git commit&quot; to conclude merge)</span>
 
 <span class="go">Changes to be committed:</span>
 
 <span class="go">    modified:   mars.txt</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Merge changes from GitHub"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge changes from GitHub&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 2abf2b1] Merge changes from GitHub</span>
@@ -2484,7 +2834,7 @@ ls<span class="w"> </span>-lh<span class="w"> </span>mars.jpg
 random bytes read from the special file, <code class="docutils literal notranslate"><span class="pre">/dev/urandom</span></code>.</p>
 <p>Now, suppose I add <code class="docutils literal notranslate"><span class="pre">mars.jpg</span></code> to my repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add picture of Martian surface"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add picture of Martian surface&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 8e4115c] Add picture of Martian surface</span>
@@ -2500,12 +2850,12 @@ When I try to push, I get a familiar message:</p>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">To https://github.com/jh1889/planets.git</span>
 <span class="go"> ! [rejected]        main -&gt; main (fetch first)</span>
-<span class="go">error: failed to push some refs to 'https://github.com/jh1889/planets.git'</span>
+<span class="go">error: failed to push some refs to &#39;https://github.com/jh1889/planets.git&#39;</span>
 <span class="go">hint: Updates were rejected because the remote contains work that you do</span>
 <span class="go">hint: not have locally. This is usually caused by another repository pushing</span>
 <span class="go">hint: to the same ref. You may want to first integrate the remote changes</span>
-<span class="go">hint: (e.g., 'git pull ...') before pushing again.</span>
-<span class="go">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span>
+<span class="go">hint: (e.g., &#39;git pull ...&#39;) before pushing again.</span>
+<span class="go">hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</span>
 </pre></div>
 </div>
 <p>We’ve learned that we must pull first and resolve any conflicts:</p>
@@ -2541,7 +2891,7 @@ version is <code class="docutils literal notranslate"><span class="pre">439dc8c0
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.jpg
 git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of surface instead of sky"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use image of surface instead of sky&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 21032c3] Use image of surface instead of sky</span>
@@ -2551,7 +2901,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 the other commit identifier, <code class="docutils literal notranslate"><span class="pre">439dc8c0</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>439dc8c0<span class="w"> </span>mars.jpg
 git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of sky instead of surface"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use image of sky instead of surface&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main da21b34] Use image of sky instead of surface</span>
@@ -2571,7 +2921,7 @@ mv<span class="w"> </span>mars.jpg<span class="w"> </span>mars-sky.jpg
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>mars.jpg
 git<span class="w"> </span>add<span class="w"> </span>mars-surface.jpg
 git<span class="w"> </span>add<span class="w"> </span>mars-sky.jpg
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use two images: surface and sky"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use two images: surface and sky&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 94ae08c] Use two images: surface and sky</span>
@@ -2602,7 +2952,12 @@ conflicts? Put the commands above in order in the <em>action</em> column of the 
 below. When you have the order right, see if you can write the corresponding
 commands in the <em>command</em> column. A few steps are populated to get you
 started.</p>
-<div class="table-wrapper"><table class="docutils align-default">
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -2635,11 +2990,16 @@ started.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">AFK</span></code></p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="table-wrapper"><table class="docutils align-default">
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -2661,7 +3021,7 @@ started.</p>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
 <td><p>Commit changes</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">"Add</span> <span class="pre">100</span> <span class="pre">to</span> <span class="pre">numbers.txt"</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Add</span> <span class="pre">100</span> <span class="pre">to</span> <span class="pre">numbers.txt&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
 <td><p>Update remote</p></td>
@@ -2672,110 +3032,50 @@ started.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">AFK</span></code></p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
-</section>
-</section>
+</div>
+</div>
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="Python.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Python: the fundementals</div>
+
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="Spreadsheets_data.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Moving from spreadsheets to data</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, Jon Hill
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            <div class="icons">
               
-            </div>
-          </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="R3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">R: part 3</p>
         </div>
-        
-      </footer>
+    </a>
+    <a class='right-next' id="next-link" href="Spreadsheets_data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Moving from spreadsheets to data</p>
     </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Revision control with Git</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#setting-up-git">Setting up git</a></li>
-<li><a class="reference internal" href="#our-first-repository">Our first repository</a></li>
-<li><a class="reference internal" href="#adding-files">Adding files</a></li>
-<li><a class="reference internal" href="#git-history">Git history</a></li>
-<li><a class="reference internal" href="#ignoring-files">Ignoring files</a></li>
-<li><a class="reference internal" href="#github">Github</a><ul>
-<li><a class="reference internal" href="#creating-a-remote-repository">1. Creating a remote repository</a></li>
-<li><a class="reference internal" href="#connect-local-to-remote-repository">2. Connect local to remote repository</a></li>
-<li><a class="reference internal" href="#ssh-background-and-setup">3. SSH Background and Setup</a><ul>
-<li><a class="reference internal" href="#create-an-ssh-key-pair">3.1 Create an SSH key pair</a></li>
-<li><a class="reference internal" href="#copy-the-public-key-to-github">3.2 Copy the public key to GitHub</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#collaboration-with-git">Collaboration with Git</a></li>
-<li><a class="reference internal" href="#conflict">Conflict!</a></li>
-</ul>
-</li>
-</ul>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Jon Hill<br/>
+    
+        &copy; Copyright 2023, Jon Hill.<br/>
+  </p>
+</footer>
+</main>
 
-          </div>
-        </div>
+
       </div>
-      
-      
-    </aside>
-  </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    </body>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
 </html>
