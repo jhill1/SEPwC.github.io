@@ -39,7 +39,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Testing code" href="Testing_code.html" />
+    <link rel="next" title="Python: part 2" href="Python2.html" />
     <link rel="prev" title="R: the fundamentals" href="R.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -144,16 +134,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python2.html">
    Python: part 2
   </a>
@@ -165,17 +145,37 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Python3.html">
-   Python or R 3
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -337,6 +337,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#simple-issues">
    Simple issues
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-examples">
+     R examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-examples">
+     Python examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning-examples">
+     Warning examples
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bugs">
@@ -381,6 +398,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#simple-issues">
    Simple issues
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-examples">
+     R examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-examples">
+     Python examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning-examples">
+     Warning examples
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bugs">
@@ -409,7 +443,8 @@ title="Print to PDF"
                 
   <section id="solving-issues-and-debugging">
 <h1>Solving issues and debugging<a class="headerlink" href="#solving-issues-and-debugging" title="Permalink to this headline">#</a></h1>
-<p>When writing code you will inevitavely get it wrong occasionally. You will therefore always hit some issues when writing any code. Some issues are easy to fix (you’ve typo’d a library or module), whilst some are
+<p>When writing code you will inevitavely get it wrong occasionally. You will therefore always hit some
+issues when writing any code. Some issues are easy to fix (you’ve typo’d a library or module), whilst some are
 extremely difficult to fix (a bug deep in a library that is used by a library you use). Here, we’re going to concentrate on what kind of issues
 you might come across and how you might go about understanding them.</p>
 <p>The same kind of issues will crop up for both Python and R. I will give examples of both as we go through.</p>
@@ -418,10 +453,16 @@ you might come across and how you might go about understanding them.</p>
 <p>There are several types of issues you will come across:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>warnings: These are not errors. They could be anything from “this code will go out of date in 10 years time” to “you haven’t set something you should have. This may not work”. Read it carefully and decide if you need to care or not.</p></li>
-<li><p>errors: These are errors and you need to fix them. R and Python will tell you where the error is and often how to fix it. These are your problem to deal with.</p></li>
-<li><p>bugs: These are also errors and you also need to fix them. However, you may get no warnings, or message, just output you didn’t expect! A bug is simply unexpected beahviour. It is usually your problem to deal with, however, it is possible the bug is in a library you’re using. We will learn how to report these kind of issues if we need to.</p></li>
-<li><p>seg faults: This is a major error in the code. A segmentation fault (or seg fault) is usually caused by accessing memory you shouldn’t have access to. In Python and R these are very rare as memory allocation is handled for us, rather than by us. However, libraries like numpy use C and hence we could experience one of these.</p></li>
+<li><p>warnings: These are not errors. They could be anything from “this code will go out of date in 10 years time”
+to “you haven’t set something you should have. This may not work”. Read it carefully and decide if you need to care or not.</p></li>
+<li><p>errors: These are errors and you need to fix them. R and Python will tell you where the error is and often how to fix it.
+These are your problem to deal with.</p></li>
+<li><p>bugs: These are also errors and you also need to fix them. However, you may get no warnings, or message, just output you
+didn’t expect! A bug is simply unexpected beahviour. It is usually your problem to deal with, however, it is possible
+the bug is in a library you’re using. We will learn how to report these kind of issues if we need to.</p></li>
+<li><p>seg faults: This is a major error in the code. A segmentation fault (or seg fault) is usually caused by accessing memory
+you shouldn’t have access to. In Python and R these are very rare as memory allocation is handled for us, rather than by
+us. However, libraries like numpy use C and hence we could experience one of these.</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -430,11 +471,119 @@ you might come across and how you might go about understanding them.</p>
 <p>The majority of issues encountered when writing code are really straight forward. You have messed up the syntax, or typo’d a library name, etc.
 This happens a lot. As someone who has used dozens of programming languages over the years I often mix them up and type some weird hybrid
 of R, Python, Perl, PHP and/or Matlab. Possibly with a bit of Fortran and C in there too. Each language has it’s own idiosynchronies which you
-will get used to. In addiiton, it’s very easy to type a <cite>[</cite> instead of a <cite>{</cite>.</p>
-<p>What makes these errors simple though is that you are told about them when you run the code! Sometimes a bit obscurely, but once you can decipher
-the error message</p>
-<p>Examples of R issues, Python issues; type errors and the like</p>
-<p>Examples of warnings</p>
+will get used to. In addiiton, it’s very easy to type a <code class="docutils literal notranslate"><span class="pre">[</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">{</span></code>.</p>
+<p>What makes these errors simple though is that you are told about them when you run the code!
+Sometimes a bit obscurely, but once you can decipher the error message they are easy to fix.</p>
+<section id="r-examples">
+<h3>R examples<a class="headerlink" href="#r-examples" title="Permalink to this headline">#</a></h3>
+<p>If we make an error in our R code we will receive a message like:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">libary</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>gives</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Error <span class="k">in</span> libary<span class="o">(</span>ggplot2<span class="o">)</span> : could not find <span class="k">function</span> <span class="s2">&quot;libary&quot;</span>
+</pre></div>
+</div>
+<p>Note R doesn’t tell us what the mistake is, just that it couldn’t find a function called <code class="docutils literal notranslate"><span class="pre">libary</span></code> which is a
+typo (and should be <code class="docutils literal notranslate"><span class="pre">library</span></code>). We’ll get similar messages if we typo a variable name (<code class="docutils literal notranslate"><span class="pre">object</span> <span class="pre">not</span> <span class="pre">found</span></code>).
+This can be frustrating, especially if the typo is not easy to spot! It’s also frustrating that R does not often
+tell you the line number or give you an indication of where the error is.</p>
+<p>Some common messages you will see and their meaning:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Object not found</strong>: a variable name is mistyped - remember they are case-sensitive</p></li>
+<li><p><strong>Cannot open the connection</strong>: a filename or path is not correct</p></li>
+<li><p><strong>subscript out of bounds</strong>: You tried to access a vector or data.frame with a subscript that doesn’t exist</p></li>
+<li><p><strong>non-numeric argument to a binary operator</strong>: R is expecting a number. You’ve given it something else (a vector, a string?)</p></li>
+<li><p><strong>unexpected symbol</strong>: You’ve forgotten a <code class="docutils literal notranslate"><span class="pre">(</span></code> or a <code class="docutils literal notranslate"><span class="pre">,</span></code> or similar.</p></li>
+</ul>
+</div></blockquote>
+<p>So if R is a bit annoying and doesn’t tell you where the error is precisely, can you do anything about that? Yes!
+R does contain a function called <code class="docutils literal notranslate"><span class="pre">traceback</span></code> that goes back up your code to the error.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span> <span class="o">+</span> <span class="m">1</span>
+<span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">g</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will give a “non-numeric” error. Try typing <code class="docutils literal notranslate"><span class="pre">traceback()</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">traceback</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>to give:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2</span>: f<span class="o">(</span>x<span class="o">)</span> at <span class="c1">#1</span>
+<span class="m">1</span>: g<span class="o">(</span><span class="s2">&quot;a&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>So we now know it was the g(“a”) causing the issue and the error occured in the f function</p>
+</section>
+<section id="python-examples">
+<h3>Python examples<a class="headerlink" href="#python-examples" title="Permalink to this headline">#</a></h3>
+<p>If we make an error in our Python code we will receive a message like:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">impot</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+<p>gives</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>impot numpy
+      ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+<p>Python generally tells you what the error is and even points to it in a small representation of your code.
+Consider the following simple code.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">calculate_sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will give you:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>      <span class="m">5</span> <span class="nv">x</span> <span class="o">=</span> <span class="m">5</span>
+      <span class="m">6</span> <span class="nv">y</span> <span class="o">=</span> <span class="m">10</span>
+----&gt; <span class="m">7</span> <span class="nv">z</span> <span class="o">=</span> calculate_sum<span class="o">(</span>x, w<span class="o">)</span>
+      <span class="m">8</span> print<span class="o">(</span>z<span class="o">)</span>
+
+NameError: name <span class="s1">&#39;w&#39;</span> is not defined
+</pre></div>
+</div>
+<p>Line number, exact error and some context. Easy! The only thing is to work out what is meant by the error type.</p>
+<p>Some common errors you will see and their meaning:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>NameError</strong>: The variable or function doesn’t exist</p></li>
+<li><p><strong>TypeError</strong>: You’ve tried to do an operation using the wrong kind of data, e.g. add an integer and a string.</p></li>
+<li><p><strong>IndexError</strong>: You’ve tried to acces a list or dictionary out of the range</p></li>
+<li><p><strong>AttributeError</strong>: You’ve tried to use a method on an object that doesn’t exist</p></li>
+</ul>
+</div></blockquote>
+<p>In more complex code, Python will also give a <em>stack trace</em> where you can see the various
+functions that eventually lead to where the error is. Let’s look at this simple code:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example.py</span>
+<span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="n">nam</span><span class="p">)</span>
+
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;Jon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There’s an error here (<code class="docutils literal notranslate"><span class="pre">nam</span></code> instead of <code class="docutils literal notranslate"><span class="pre">name</span></code>). When we run this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">&quot;test.py&quot;</span>, line <span class="m">5</span>, <span class="k">in</span> &lt;module&gt;
+    say<span class="o">(</span><span class="s1">&#39;Jon&#39;</span><span class="o">)</span>
+  File <span class="s2">&quot;test.py&quot;</span>, line <span class="m">3</span>, <span class="k">in</span> say
+    print<span class="o">(</span><span class="s1">&#39;Hello, &#39;</span> + nam<span class="o">)</span>
+NameError: name <span class="s1">&#39;nam&#39;</span> is not defined
+</pre></div>
+</div>
+<p>We read this from the bottom up. The error is a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>. It is on line 3 of our code. We caused this by calling
+the <code class="docutils literal notranslate"><span class="pre">say</span></code> function on line 5. We can see this is a bug in the <code class="docutils literal notranslate"><span class="pre">say</span></code> function. If that’s our code we can fix, if it’s not
+re-read any documentation for the function and ehck you’re passing in the correct data.</p>
+</section>
+<section id="warning-examples">
+<h3>Warning examples<a class="headerlink" href="#warning-examples" title="Permalink to this headline">#</a></h3>
+</section>
 </section>
 <section id="bugs">
 <h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">#</a></h2>
@@ -474,10 +623,10 @@ the error message</p>
             <p class="prev-next-title">R: the fundamentals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Testing_code.html" title="next page">
+    <a class='right-next' id="next-link" href="Python2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Testing code</p>
+        <p class="prev-next-title">Python: part 2</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

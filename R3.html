@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Acknowledgements &#8212; SEPwC  documentation</title>
+    <title>R: part 3 &#8212; SEPwC  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -39,6 +39,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Revision control with Git" href="Revision_control.html" />
+    <link rel="prev" title="Python: part 3" href="Python3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -90,7 +92,7 @@
   Contents:
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Expectations.html">
    Expectations
@@ -146,8 +148,8 @@
    Python: part 3
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    R: part 3
   </a>
  </li>
@@ -272,7 +274,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/acknowledgements.rst.txt"
+        <a href="_sources/R3.rst.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -309,23 +311,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-datetimes">
+   R: Datetimes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-dataframes">
+   R dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-tidyverse">
+   R: tidyverse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-namespace">
+   R namespace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-objects">
+   R objects
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Acknowledgements</h1>
+                <h1>R: part 3</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-datetimes">
+   R: Datetimes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-dataframes">
+   R dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-tidyverse">
+   R: tidyverse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-namespace">
+   R namespace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-objects">
+   R objects
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -333,16 +412,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="acknowledgements">
-<h1>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h1>
-<p>This course was developed in my mind over many years. I jumped at the opportunity to make it real. It is influenced
-by a number of collaborators and colleagues. Thanks to the Software Carpentry initiative for their courses, training
-and influence. The git-novice course was the influence for the Git section. Thanks to colleagues David Ham, Colin Cotter
-and Lawrence Mitchel who created courses at their institutions which influenced me greatly. Thanks to Marijan Beg at Imperial
-College London for making his Python course open. I borrowed material from there for the Python and R sections.</p>
-<p>Thanks also to the fantastic group of developers that have made all the software used here. R, Python, Sphinx, Linux,
-matplotlib, ggplot2, numpy, gdal, etc. The list should go on, but there is simply too much. The fact that so much of this
-software is free (in terms of beer and speech) is amazing.</p>
+  <section id="r-part-3">
+<h1>R: part 3<a class="headerlink" href="#r-part-3" title="Permalink to this headline">#</a></h1>
+<section id="r-datetimes">
+<h2>R: Datetimes<a class="headerlink" href="#r-datetimes" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-dataframes">
+<h2>R dataframes<a class="headerlink" href="#r-dataframes" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-tidyverse">
+<h2>R: tidyverse<a class="headerlink" href="#r-tidyverse" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-namespace">
+<h2>R namespace<a class="headerlink" href="#r-namespace" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-objects">
+<h2>R objects<a class="headerlink" href="#r-objects" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
 
@@ -353,6 +439,20 @@ software is free (in terms of beer and speech) is amazing.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Python3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python: part 3</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Revision_control.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Revision control with Git</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

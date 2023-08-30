@@ -39,8 +39,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Revision control with Git" href="Revision_control.html" />
-    <link rel="prev" title="Thinking like a computer" href="Algorithms.html" />
+    <link rel="next" title="Testing code" href="Testing_code.html" />
+    <link rel="prev" title="Revision control with Git" href="Revision_control.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,16 +118,6 @@
    Thinking like a computer
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
@@ -144,6 +134,36 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Testing_code.html">
    Testing code
   </a>
@@ -154,23 +174,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python or R 3
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -324,14 +329,77 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-management">
+   Data Management
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-formats">
+     Data formats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-processing-pipeline">
+     The processing pipeline
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#raw-data">
+       Raw data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cleaned-data">
+       Cleaned data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-friendly-data">
+       Analysis friendly data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-doi">
+       Create a DOI
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-excel">
    Using Excel
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processing-data">
+     Pre-processing data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#priliminary-visualisation">
+     Priliminary visualisation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#csv-files">
    CSV files
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-csv-in-r">
+     Reading CSV in R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-csv-in-python">
+     Reading CSV in Python
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-data-formats">
@@ -341,6 +409,26 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#netcdf">
      NetCDF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geotiff">
+     GeoTIFF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xml">
+     XML
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#json">
+     JSON
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sql">
+     SQL
     </a>
    </li>
   </ul>
@@ -365,14 +453,77 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-management">
+   Data Management
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-formats">
+     Data formats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-processing-pipeline">
+     The processing pipeline
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#raw-data">
+       Raw data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cleaned-data">
+       Cleaned data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-friendly-data">
+       Analysis friendly data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-doi">
+       Create a DOI
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-excel">
    Using Excel
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processing-data">
+     Pre-processing data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#priliminary-visualisation">
+     Priliminary visualisation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#csv-files">
    CSV files
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-csv-in-r">
+     Reading CSV in R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-csv-in-python">
+     Reading CSV in Python
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-data-formats">
@@ -382,6 +533,26 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#netcdf">
      NetCDF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geotiff">
+     GeoTIFF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xml">
+     XML
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#json">
+     JSON
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sql">
+     SQL
     </a>
    </li>
   </ul>
@@ -400,24 +571,246 @@ title="Print to PDF"
 <h1>Moving from spreadsheets to data<a class="headerlink" href="#moving-from-spreadsheets-to-data" title="Permalink to this headline">#</a></h1>
 <p>We often use spreadsheets to store data, visualise those data and even analyise it. It’s therefore useful
 to think about the differences between a spreadsheet of data and what a computer will do with it.</p>
+<p>When loading data into a program you are <strong>parsing</strong> the data from a file into variables. Whilst this
+can be done manually, there are libraries and tools to help us do this for most common
+data formats.</p>
+<section id="data-management">
+<h2>Data Management<a class="headerlink" href="#data-management" title="Permalink to this headline">#</a></h2>
+<p>Given data is a key part of most research codes, it is really important data is properly managed. Like your code,
+different versions need to be tracked and labelled to make sure any processing is clear.</p>
+<section id="data-formats">
+<h3>Data formats<a class="headerlink" href="#data-formats" title="Permalink to this headline">#</a></h3>
+<p>Data comes in many formats. We need to think about what this is and how to read it.</p>
+<p>Human readable data is any data that can be opened in a text editor and a human can decipher it. This means
+the data is text based (even if it’s numbers), not binary (zeros and ones). Common human readable data
+are CSV (comma seperated values) or XML (eXtensible Markup Language).</p>
+<p>Machine readable is data that can easily be read by a computer program. This means it needs to be
+well structured, labelled and with clear definiaitons of what things are. It can be in binary format
+which is impossible (I assume!) for humans to read.</p>
+<p>What we would like as programmers is human readable data that is also machine readable. Human readable
+data is much easier to debug (as we can read it!), but it also needs to be machine readable
+to make our code easier to write!</p>
+<p>Common formats you might come across are:</p>
+<ul class="simple">
+<li><p>CSV (human and machine readable)</p></li>
+<li><p>XML(human and machine readable)</p></li>
+<li><p>Excel sheets (machine only)</p></li>
+<li><p>NetCDF (machine only)</p></li>
+<li><p>TIF (machine only)</p></li>
+</ul>
+</section>
+<section id="the-processing-pipeline">
+<h3>The processing pipeline<a class="headerlink" href="#the-processing-pipeline" title="Permalink to this headline">#</a></h3>
+<p>Regardless of data source, most data needs some form of pre-processing to be ready for analysis or use in any script
+we write. Sometimes the data pre-processing is very simple and we can write it within our script itself. Sometimes
+we may write a seperate script. Occasionaly we may have to do it by hand. So whilst all data will go through
+the pipeline below, it may be within our script.</p>
+<img alt="The data processing pipeline going from raw data, cleaned data, machine read data to published data." src="_images/data_processing_pipeline.png" />
+<section id="raw-data">
+<h4>Raw data<a class="headerlink" href="#raw-data" title="Permalink to this headline">#</a></h4>
+<p>This should always be saved as you downloaded it, was sent it, or how it came from the instrument or device. Store
+and label as such.</p>
+</section>
+<section id="cleaned-data">
+<h4>Cleaned data<a class="headerlink" href="#cleaned-data" title="Permalink to this headline">#</a></h4>
+<p>This should be the raw data as you’d wish it had been given to you but is <strong>non-destructive</strong>. For example,
+save in a decent format (CSV, XML, GeoTIFF etc), replace column names with meaningful names (e.g. name1 -&gt; surname),
+replace any missing data with a standard value (e.g. NA, NaN, -9999 are all common).</p>
+<p>At this point we may need to think about how we’re going to store the data. Revision control systems are an excellent way
+of tracking data processing. They interact best with text-based formats (CSV, XML). This means we have a single file
+(ratehr than multiple versions) but the RCS can keep track of the versions for us. However, large data in binary format
+is very difficult to track in RCS. It effectively creates a brand new copy each time (as it can’t detect the changes
+properly). Here, it might be better to keep this disk based with clear filenames or directories.</p>
+<p>You should also make the filename useful (the date, the site, etc) and create a README or similar to label and describe
+the data.</p>
+</section>
+<section id="analysis-friendly-data">
+<h4>Analysis friendly data<a class="headerlink" href="#analysis-friendly-data" title="Permalink to this headline">#</a></h4>
+<p>The above two steps will always need to be done in some way. This step heavily depends on what your script is going to do and may be able
+to be done programmitically in your script. Examples of this step are to make each column a variable, so for example if your data records
+<code class="docutils literal notranslate"><span class="pre">female_treated</span></code>, <code class="docutils literal notranslate"><span class="pre">female_untreated</span></code>, <code class="docutils literal notranslate"><span class="pre">male_treated</span></code>, <code class="docutils literal notranslate"><span class="pre">male_untrested</span></code>, split this into <code class="docutils literal notranslate"><span class="pre">sex`</span> <span class="pre">and</span> <span class="pre">``treated</span></code>. This
+will enable easier analysis later.</p>
+<p>It is also advised to remove any units frm the data and either add it to the column header/label or as a seperate column (the latter is
+important if the units change, for example a mix of mm and m). It may be easier to translate all values to the same units rather than having
+a seperate unit column.</p>
+<p>It may also be easier to seperate your data into multiple files that are linked using some consistant ID. Here, we are moving towards
+more of a relational database structure, but it means we can manipulate data more easily any script we write. Again, this may be done
+within the script rather than explicitly with the data.</p>
+<p>The final processing step may be to convert from <code class="docutils literal notranslate"><span class="pre">wide</span></code> format to <code class="docutils literal notranslate"><span class="pre">long</span></code> format. Both R and Python can do this automatically
+and we’ll cover this later.</p>
+</section>
+<section id="create-a-doi">
+<h4>Create a DOI<a class="headerlink" href="#create-a-doi" title="Permalink to this headline">#</a></h4>
+<p>If your dataset is part of the research (e.g. collected by you) it might be a good idea to deposit the data in
+a respoitory and obtain a DOI (Digital Object Identifier) to that others can use the data and cite you. Common
+repositories for this are FigShare, Dryad, and Zenodo.</p>
+<p>All the processing above can be largely automated. Any processing software should be treated like any other software and
+stored in revision control, preferably alongside your data. It then details your processing pipeline. Otherwsie, document
+the processing done in a README or similar.</p>
+</section>
+</section>
+</section>
 <section id="using-excel">
 <h2>Using Excel<a class="headerlink" href="#using-excel" title="Permalink to this headline">#</a></h2>
-<p>Excel is one of the most ubiquitous peices of software in the world. It’s spawned many copies
-including Google Sheets, Libreoffice Sheets, etc</p>
+<p>Excel is one of the most ubiquitous peices of software in the world today. It’s spawned many copies
+including Google Sheets, Libreoffice Sheets, etc and itself is based on previous spreadsheet packages
+(VisiCalc, Lotus 1-2-3, etc).</p>
+<p>Spreadhseets offer a tabular view of data. They consist of cells, arranged in rows and columns. Columns are
+often labelled using the alphabet (A, B, C, etc) and rows via a number. Each cell can therefore be located using a letter
+and number combination, e.g. A3. A user can input data into each cell or use formulas, e.g. <code class="docutils literal notranslate"><span class="pre">=5*3</span></code>, showing <code class="docutils literal notranslate"><span class="pre">15</span></code> in the cell.</p>
+<p>Like computer programs, spreadsheets can create formulaalues using formulas that take values from variables. Unlike
+a computer program the variable is another cell (rather than a named thing). For example, <code class="docutils literal notranslate"><span class="pre">=5*C3</span></code> would make that
+cell the value sof C3 multiplied by 5. These formulas can be chained together and hence produce quite complex spreadsheets,
+even to run simple algorithms, without resorting to computer code at all. Couple that to nice visual formatting
+and you can see why spreadsheets are ubiqutious office software!</p>
+<p>What a spreadsheet is not, is a database. A database is many tables of data that are related to each other (this is a
+<strong>relational database</strong>). A spreadsheet can contain many tables, but lacks the relational aspect to the data. It is
+however very common to call a spreadsheet or group of spreadsheets a database. It is therefore very common
+to have data in the form of a spreadsheet that we then want to load into our script or software.</p>
+<section id="pre-processing-data">
+<h3>Pre-processing data<a class="headerlink" href="#pre-processing-data" title="Permalink to this headline">#</a></h3>
+<p>Given that data often arrives in the form of a spreadsheet and that we sometimes need to clean the data as
+detailed above. If you are doing this manually, Excel or similar are excellent tools for doing so. Remeber to document
+the changes you made.</p>
+</section>
+<section id="priliminary-visualisation">
+<h3>Priliminary visualisation<a class="headerlink" href="#priliminary-visualisation" title="Permalink to this headline">#</a></h3>
+<p>As Excel etc are widely used they are very well tested! It can often save a lot of time graphing data
+in Excel to check you have loaded your data into your script correctly. The advnatage of any script is that it
+can process vasts amount of data, whereas Excel is limited. If you need to create a small subset of data
+using Excel or similar and from that you can check your script is running correctly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>However useful Excel and similar tools are though, they should be avoided for storing your final data in.
+They often have inbuilt algorithms to chnage data based on it’s format, e.g. SEPT2 (a gene name) can be
+translated into a date by Excel. If that chnage is then saved the data integrity is lost. <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">This occurs
+in the scientific literature.</a></p>
+</div>
+</section>
 </section>
 <section id="csv-files">
 <h2>CSV files<a class="headerlink" href="#csv-files" title="Permalink to this headline">#</a></h2>
 <p>CSV files are text files. They contain data in text format, with columns seperated by a delimiter
 and rows seperated by a new line.</p>
-<p>The delimaiter is often a comma ‘,’, hence CSV (Comma Seperated Values). Other common delimiters
-are whitespace, :kbd:Tab, or pipe symbols :kbd:|</p>
+<p>The delimaiter is often a comma <cite>,</cite>, hence CSV (Comma Seperated Values). Other common delimiters
+are whitespace, <kbd class="kbd docutils literal notranslate">Tab</kbd>, or pipe symbols <kbd class="kbd docutils literal notranslate">|</kbd>. Data that contains the delimiter can be quoted
+using <cite>“</cite>.</p>
+<p>CSV is obviously a spreadsheet-based data storage format. Data will be in the form of a table with columns
+and rows. The first row may be a header contining the information about each column or that may be
+in a seperate file (e.g. a text file).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There is no well-defined standard format for CSV files. They can therefore be difficult to process
+when gathered from different sources.</p>
+</div>
+<p>Both R and Python can read in CSV files. R can do this without any additional libraries. Python has a few
+options.</p>
+<section id="reading-csv-in-r">
+<h3>Reading CSV in R<a class="headerlink" href="#reading-csv-in-r" title="Permalink to this headline">#</a></h3>
+<p>CSV files are handled in R without an additional libraries. <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html">The full documentation can be found online</a> but some brief examples:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read CSV into DataFrame</span>
+<span class="n">read_csv</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read with custom delimiter</span>
+<span class="n">read_csv</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read without header</span>
+<span class="n">read_csv</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file_noheader.csv&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># Replaces all -1 and empty string as &lt;NA&gt;</span>
+<span class="n">read_csv</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file.csv&#39;</span><span class="p">,</span><span class="n">na.strings</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+
+<span class="c1"># Keep String as Character.</span>
+<span class="n">read_csv</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file_noheader.csv&#39;</span><span class="p">,</span> <span class="n">stringsAsFactors</span><span class="o">=</span><span class="s">&#39;FALSE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://www.tidyverse.org/">Tidyverse</a> collection of packages has some additional
+function to read in CSV and we’’ cover those later.</p>
+</section>
+<section id="reading-csv-in-python">
+<h3>Reading CSV in Python<a class="headerlink" href="#reading-csv-in-python" title="Permalink to this headline">#</a></h3>
+<p>Python contains a useful <cite>csv</cite> library to help us here. It can handle different delimiters,
+quotes and headers making it much easier than trying to parse data ourselves. You can find
+the <a class="reference external" href="https://docs.python.org/3/library/csv.html">full documentation for the CSV module online</a>
+but briefly we can load data in using code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eggs.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+<span class="n">spamreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spamreader</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The above reads the CSV file by row and prints out the content. The <cite>row</cite> variable is a list
+with each item containing the column data from that row.</p>
+<p>EXAMPLE</p>
+<p>Alternatively, you can read the data as a dictionary. Here we assume the CSV has a header:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;names.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <cite>row</cite> variable is now a dictionary, with the items labelled by whatever was in the first row (the header).
+As a programmer you would need to know that information beforehand to use them correctly.</p>
+<p>EXAMPLE</p>
+<p>We will cover the other main option, pandas, later.</p>
+</section>
 </section>
 <section id="other-data-formats">
 <h2>Other data formats<a class="headerlink" href="#other-data-formats" title="Permalink to this headline">#</a></h2>
 <p>There are a lot of data formats out there. Rather than cover all of them, here are some common ones that you may come across</p>
 <section id="netcdf">
 <h3>NetCDF<a class="headerlink" href="#netcdf" title="Permalink to this headline">#</a></h3>
-<p>Network Common Data Format. This is a binary file format which store large arrays of data that are linked in some ways. Often used for spatial data. Arrays will be latitude, longitude and then values based on those arrays, e.g. sea surface temperature. It can handle multiple dimensions, so it is possible to store three-dimensional field that vary in time (4D!).</p>
+<p>Network Common Data Format. This is a binary file format which store large arrays of data that are linked in
+some ways. Often used for spatial data. Arrays will be latitude, longitude and then values based on
+those arrays, e.g. sea surface temperature. It can handle multiple dimensions, so it is possible to
+store three-dimensional field that vary in time (4D!).</p>
+</section>
+<section id="geotiff">
+<h3>GeoTIFF<a class="headerlink" href="#geotiff" title="Permalink to this headline">#</a></h3>
+<p>Raster data (height data on a grid or similar) is often stored in a GeoTIFF file which is based on the common image format.
+TIFF is a lossless image format (unlike JPEG or GIF) and also contains a header. It’s this header that is crucial! It can
+contain the locational data and projection space.</p>
+</section>
+<section id="xml">
+<h3>XML<a class="headerlink" href="#xml" title="Permalink to this headline">#</a></h3>
+<p>XML (eXtensible Markup Language) is a tree-structed, tag-based format that is human and machine readable but can also
+contain binary data. An example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;employees&gt;</span>
+  <span class="nt">&lt;employee&gt;</span>
+    <span class="nt">&lt;firstName&gt;</span>John<span class="nt">&lt;/firstName&gt;</span> <span class="nt">&lt;lastName&gt;</span>Doe<span class="nt">&lt;/lastName&gt;</span>
+  <span class="nt">&lt;/employee&gt;</span>
+  <span class="nt">&lt;employee&gt;</span>
+    <span class="nt">&lt;firstName&gt;</span>Anna<span class="nt">&lt;/firstName&gt;</span> <span class="nt">&lt;lastName&gt;</span>Smith<span class="nt">&lt;/lastName&gt;</span>
+  <span class="nt">&lt;/employee&gt;</span>
+  <span class="nt">&lt;employee&gt;</span>
+    <span class="nt">&lt;firstName&gt;</span>Peter<span class="nt">&lt;/firstName&gt;</span> <span class="nt">&lt;lastName&gt;</span>Jones<span class="nt">&lt;/lastName&gt;</span>
+  <span class="nt">&lt;/employee&gt;</span>
+<span class="nt">&lt;/employees&gt;</span>
+</pre></div>
+</div>
+<p>Both R and Python have XML parsers available.</p>
+</section>
+<section id="json">
+<h3>JSON<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h3>
+<p>JSON (JavaScript Object Notation) is another text-based format that is human and machine readable. It is
+similar in structure to a dictionary.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;employees&quot;</span><span class="p">:[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Smith&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Jones&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">]}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Both R and Python have JSON parsers available.</p>
+</section>
+<section id="sql">
+<h3>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">#</a></h3>
+<p>SQL (Structured Quary Language, pronounced “sequel”) is a common database language that contains tables.
+Both Python and R can interact with SQL-based databases, like MySQL.</p>
 </section>
 </section>
 </section>
@@ -430,17 +823,17 @@ are whitespace, :kbd:Tab, or pipe symbols :kbd:|</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Algorithms.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Revision_control.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Thinking like a computer</p>
+            <p class="prev-next-title">Revision control with Git</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Revision_control.html" title="next page">
+    <a class='right-next' id="next-link" href="Testing_code.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Revision control with Git</p>
+        <p class="prev-next-title">Testing code</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

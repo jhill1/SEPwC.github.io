@@ -39,7 +39,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
+    <link rel="next" title="Python: the fundamentals" href="Python.html" />
     <link rel="prev" title="The fundamentals of code" href="Code_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -144,6 +134,36 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Testing_code.html">
    Testing code
   </a>
@@ -154,23 +174,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python or R 3
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -324,18 +329,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-word-cloud">
-   Create a word cloud
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#making-a-jam-sandwich">
    Making a jam sandwich
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-a-graph-with-options">
-   Plotting a graph with options
+  <a class="reference internal nav-link" href="#creating-the-sum-of-an-integer-number">
+   Creating the sum of an integer number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-word-cloud">
+   Create a word cloud
   </a>
  </li>
 </ul>
@@ -358,18 +363,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-word-cloud">
-   Create a word cloud
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#making-a-jam-sandwich">
    Making a jam sandwich
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-a-graph-with-options">
-   Plotting a graph with options
+  <a class="reference internal nav-link" href="#creating-the-sum-of-an-integer-number">
+   Creating the sum of an integer number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-word-cloud">
+   Create a word cloud
   </a>
  </li>
 </ul>
@@ -389,12 +394,74 @@ we can arrange those to form algorithms and then into programs. We can think abo
 Remember, pseudo-code is not a formal language but is code written to be read by a human with no concerns about syntax. We can also
 depict code as a flow diagram; this is more useful as we build more complex algorithms.</p>
 <p>Let’s build software to do some simple tasks.</p>
+<section id="making-a-jam-sandwich">
+<h2>Making a jam sandwich<a class="headerlink" href="#making-a-jam-sandwich" title="Permalink to this headline">#</a></h2>
+<p>Write down the steps to make a jam sandwich. You can then reveal the answer</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Make sure you are very precise in your description</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>take two slices of bread from the packet. Reject the slice if it is a end-crust and replace with another.</p></li>
+<li><p>spread a thin layer of jam on one side of each slice</p></li>
+<li><p>put the two slices together with the jam side of each slice touching</p></li>
+<li><p>cut diagonally from corner to corner to form two triangles</p></li>
+<li><p>place both triangles on a plate to serve</p></li>
+</ul>
+</div>
+</section>
+<section id="creating-the-sum-of-an-integer-number">
+<h2>Creating the sum of an integer number<a class="headerlink" href="#creating-the-sum-of-an-integer-number" title="Permalink to this headline">#</a></h2>
+<p>Given an integer number, like 1023, create the sum of those individual numbers. For example,
+1023 would be 1 + 0 + 2 + 3 = 6</p>
+<p>Write a list of steps and have a go at psuedo-code to do this.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>split the number into individaul components to make a list</p></li>
+<li><p>intialise our sum to zero</p></li>
+<li><p>loop over the list and add the numbers together</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10456</span>
+
+<span class="c1"># no language has a function to split, *but* if we turn it into a string, we can</span>
+<span class="c1"># split it easily in most!</span>
+<span class="n">number_as_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="n">chars</span> <span class="o">=</span> <span class="n">as_chars</span><span class="p">(</span><span class="n">number_as_string</span><span class="p">)</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chars</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The solution needed a bit of lateral thinking in terms of thinking how a computer would represent an
+integer and how you might break it up. Don’t worry if your psuedo code didn’t contain that
+level of detail!</p>
+</section>
 <section id="create-a-word-cloud">
 <h2>Create a word cloud<a class="headerlink" href="#create-a-word-cloud" title="Permalink to this headline">#</a></h2>
 <p>We want to create a word cloud of a text file only including
 words that occur more than 2 times <em>and</em> does not include
-the words “and”, “the”, “or”.</p>
-<p>Let’s start by writing the pseudo-code.</p>
+the words “and”, “the”, “or”. Let’s start with a list.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>load in the text</p></li>
+<li><p>separate into words (removing punctuation, spaces, etc.)</p></li>
+<li><p>loop through the list of words and remove and, the, or</p></li>
+<li><p>get a list of unique words</p></li>
+<li><p>make an empty list of counts which is the same length as the unique words</p></li>
+<li><p>loop through the list of words and find out where this is in the unique word list, incrementing the correct count value</p></li>
+<li><p>loop through the words a third time, removing those where the count is less than 2</p></li>
+<li><p>make out word cloud</p></li>
+</ol>
+</div></blockquote>
+<p>Let’s start writing the pseudo-code. A possible solution is below.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">load_textfile</span><span class="p">(</span><span class="s2">&quot;our text_file.txt&quot;</span><span class="p">)</span>
 <span class="n">words</span> <span class="o">=</span> <span class="n">split_into_words</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
@@ -417,21 +484,8 @@ the words “and”, “the”, “or”.</p>
  <span class="n">make_word_cloud</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The above code is quite complex and makes a lot of assumption on what functions are there. We might
-need to write some of these ourselves. The gist of the above code is:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>load in the text</p></li>
-<li><p>separate into words (removing punctuation, spaces, etc.)</p></li>
-<li><p>loop through the list of words and remove and, the, or</p></li>
-<li><p>get a list of unique words</p></li>
-<li><p>make an empty list of counts which is the same length as the unique words</p></li>
-<li><p>loop through the list of words and find out where this is in the unique word list, incrementing the correct count value</p></li>
-<li><p>loop through the words a third time, removing those where the count is less than 2</p></li>
-<li><p>make out word cloud</p></li>
-</ol>
-</div></blockquote>
-<p>Let’s run through an example of that. Here’s our text:</p>
+</div>
+<p>The code is quite complex so let’s run through an example of that. Here’s our text:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">Need some sample, random, text and noise,</div>
@@ -599,20 +653,6 @@ word, so our lists are like this:</p>
 fewer than 3 occurrences (or in other words with more than 2 occurrences).</p>
 <p>Step 8 is then make the word cloud from the remaining words (“times”, “random” and “need”)</p>
 </section>
-<section id="making-a-jam-sandwich">
-<h2>Making a jam sandwich<a class="headerlink" href="#making-a-jam-sandwich" title="Permalink to this headline">#</a></h2>
-<p>Write down the steps to make a jam sandwich. Create a flow diagram of the list. You can then reveal the answer</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Make sure you are very precise in your description</p>
-</div>
-</section>
-<section id="plotting-a-graph-with-options">
-<h2>Plotting a graph with options<a class="headerlink" href="#plotting-a-graph-with-options" title="Permalink to this headline">#</a></h2>
-<p>Write down the pseudo-code needed to read in the data below
-and plot a graph of time (x axis) vs wave height (y axis).
-Allow the user to flip the graph (so wave height vs time).</p>
-</section>
 </section>
 
 
@@ -630,10 +670,10 @@ Allow the user to flip the graph (so wave height vs time).</p>
             <p class="prev-next-title">The fundamentals of code</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Spreadsheets_data.html" title="next page">
+    <a class='right-next' id="next-link" href="Python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Moving from spreadsheets to data</p>
+        <p class="prev-next-title">Python: the fundamentals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

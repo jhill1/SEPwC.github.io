@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -144,6 +134,36 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Testing_code.html">
    Testing code
   </a>
@@ -154,23 +174,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python or R 3
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -485,14 +490,15 @@ or any other thing that can be defined.</p>
 <p><strong>Loops</strong>: code often needs to do the same thing on a long list of data. We often use loops to do this. Loops can be nested (i.e. a loop within a loop)</p>
 <p><strong>Conditionals</strong>: you often run a bit of code if a certain condition is met, for example if the variable contains a number greater than 5, do this, otherwise do that.
 This creates a logic flow to your code and allows decisions to be made.</p>
-<p><strong>Functions</strong>: if you find yourself doing the same few line of code again, and again, we don’t type them out repeatedly, we instead create a function which
-we can call every time we want to run those lines. Functions take input (called arguments) and return data back to the main program (where you can store it
-in a variable, for example).</p>
+<p><strong>Functions</strong>: if you find yourself doing the same few line of code again, and again, we don’t type them out repeatedly, we instead
+create a function which we can call every time we want to run those lines. Functions take input (called arguments) and
+return data back to the main program (where you can store it in a variable, for example).</p>
 </section>
 <section id="defining-a-variable">
 <h2>Defining a variable<a class="headerlink" href="#defining-a-variable" title="Permalink to this headline">#</a></h2>
-<p>A variable is a container to store your data. Most variables in interpreted languages are defined when you use them first time. In compiled language you need to decide
-up-front which variables you need. Variables can change what they store throughout the code.</p>
+<p>A variable is a container to store your data. Most variables in interpreted languages are defined when you use them first time.
+In compiled language you need to decide up-front which variables you need. Variables can change what they store throughout the code,
+including the type of data they store.</p>
 <p>Some examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span>
 </pre></div>
@@ -563,16 +569,48 @@ separate words). Whichever you do, be consistent!</p>
 <span class="n">mrgr</span>
 </pre></div>
 </div>
-<p>The first list is clear with little doubt what that variable contains. The second list is not that helpful. Is temp temporary or temperature? chemdat might be OK, but a bit hard
-to read. top is not helpful, topography or the top of something? x and rs could be anything! In 5 year’s time you will not remember what mrgr is, but max_reef_growth_rate will
-always make sense. Note I’ve not typed maximum_reef_growth_rate as I feel max is reasonable shorthand for maximum, but others would disagree with me on that!</p>
+<p>The first list is clear with little doubt what that variable contains. The second list is not that helpful.
+Is temp temporary or temperature? chemdat might be OK, but a bit hard
+to read. top is not helpful, topography or the top of something? x and rs could be anything! In
+5 year’s time you will not remember what mrgr is, but max_reef_growth_rate will
+always make sense. Note I’ve not typed maximum_reef_growth_rate as I feel max is reasonable shorthand
+for maximum, but others would disagree with me on that!</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Datatypes</strong></p>
+<p>What would make a good variable name for the following?</p>
+<ul class="simple">
+<li><p>A list of student names</p></li>
+<li><p>A single student name</p></li>
+<li><p>grain size data for a single location</p></li>
+<li><p>A list of the above grain size data</p></li>
+<li><p>sea surface temperature</p></li>
+<li><p>the point-by-point trakectory of an object</p></li>
+<li><p>an input filename supplied by the user</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>These are suggestions!</p>
+<ul class="simple">
+<li><p>student_names</p></li>
+<li><p>name (or student_name)</p></li>
+<li><p>grain_size</p></li>
+<li><p>grain_sizes</p></li>
+<li><p>sea_surface_temperature (or possibly sst as that is a standard acronym)</p></li>
+<li><p>trajectory</p></li>
+<li><p>input_filename</p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="datatypes">
 <h2>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">#</a></h2>
-<p>The variables we create can store any kind of data. In interpreted languages that can even change throughout the code. In compiled language you often have
+<p>The variables we create can store any kind of data. In interpreted languages that can even change throughout the
+code. In compiled language you often have
 to fix the kind of data up front. That kind of data is the datatype.</p>
-<p>Common datatypes are float (for a floating point number, 1.23412), integer (1, for example), a string (“like this one”) a boolean (true or false). We can also make up
+<p>Common datatypes are float (for a floating point number, 1.23412), integer (1, for example),
+a string (“like this one”) a boolean (true or false). We can also make up
 our own datatypes! We can take the basic kinds and join them together, so for example, we can have a “list” datatype, which can contain
 a fixed number of floats, e.g. <cite>[1.1, 23.5, 12321.2343242, 582.11]</cite>. We could then make lists of lists, which we can think of as a table:</p>
 <div class="line-block">
@@ -583,6 +621,32 @@ a fixed number of floats, e.g. <cite>[1.1, 23.5, 12321.2343242, 582.11]</cite>. 
 <p>We can even make datatypes that mix all of these together (along with some functions to operate on them) to create
 objects. For now, we’re going to focus on the basic datatypes and will revisit this idea later on (as R and Python have
 different names for some of them).</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Datatypes</strong></p>
+<p>What kind of data are the following? (They will be one of interger, float, string, character or list)</p>
+<ul class="simple">
+<li><p>1.0</p></li>
+<li><p>1</p></li>
+<li><p>1 divded by 2</p></li>
+<li><p>Hello</p></li>
+<li><p>42e-45</p></li>
+<li><p>&#64;</p></li>
+<li><p>4, 56, 2345.23423, 324, 45.34</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>1.0: float</p></li>
+<li><p>1: integer</p></li>
+<li><p>1 divided by 2: float (0.5)</p></li>
+<li><p>Hello: string</p></li>
+<li><p>42e-45: float, 0.00000…42</p></li>
+<li><p>&#64;: character</p></li>
+<li><p>4, 56, 2345.23423, 324, 45.34: list (of floats and integers)</p></li>
+</ul>
+</div>
 </section>
 <section id="operations">
 <h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">#</a></h2>
@@ -609,6 +673,30 @@ operations so “add” works on multiple data types, for example:</p>
 </div>
 <p>Which will do what you think it does and put “hello world” into complete_string. Which
 symbol is used depends on the language and not all languages can do this.</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Datatypes</strong></p>
+<p>What is the answer to the following operations?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var_1 = 5
+var_2 = 10
+var_3 = 20
+
+? = var_1 + var_2
+? = var_1 * var_1
+? = var_3 / var_1
+? = ((var_3 / var_1) * var_1) + var_2
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>15</p></li>
+<li><p>25</p></li>
+<li><p>2</p></li>
+<li><p>20</p></li>
+</ul>
+</div>
 </section>
 <section id="booleans-and-logic">
 <h2>Booleans and Logic<a class="headerlink" href="#booleans-and-logic" title="Permalink to this headline">#</a></h2>
@@ -635,6 +723,36 @@ So either 4 must be less than 5 (<cite>true</cite>) <em>or</em> 6 must be less t
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">True</span>
 <span class="go">False</span>
 </pre></div>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Datatypes</strong></p>
+<p>What is the answer to the following boolean operations?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var_1 = 5
+var_2 = 10
+var_3 = 20
+
+? = var_1 &lt; var_2
+? = var_3 &lt; var_2 / var_1
+? = var_3 == var_1
+? = var_3 &lt; var_2 &amp;&amp; var_2 &gt; var_1
+? = var_3 &lt; var_2 || var_2 &lt; var_1
+? = var_1 &gt;= 5
+? = var_3 &lt;= var_2 / 2
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>False</p></li>
+<li><p>False</p></li>
+<li><p>False</p></li>
+<li><p>True</p></li>
+<li><p>False</p></li>
+<li><p>True</p></li>
+<li><p>True</p></li>
+</ul>
 </div>
 </section>
 <section id="outputs">
@@ -762,6 +880,40 @@ x and y will do for each loop:</p>
 <div class="line">4 8 12 16</div>
 <div class="line">5 10 15 20</div>
 </div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Loops</strong></p>
+<p>What’s the largest number printed out in this code?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max_x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">max_y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max_x</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">max_y</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>6. The loop will go:
+.. line-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Loops</strong></p>
+<p>How many nested loops do you need to traverse all values in a three-dimensional array?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Three. One per dimension.</p>
+</div>
 </section>
 <section id="conditionals">
 <h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
@@ -801,6 +953,32 @@ less than zero? We may need to add another condition or catch all the other poss
 <p>This is <em>exactly</em> equivalent to our first example above (note the <em>not</em> and the &lt;= which is opposite to &gt;)</p>
 <p>In all languages you will find things like is equal to (for example ==), is less than, greater than, less than or equal to, etc..
 Most languages have some form of “or” and “and” operations.</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Conditionals</strong></p>
+<p>Which statement will be printed out?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max_x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">max_y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">max_x</span> <span class="o">&gt;</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi!&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">max_x</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">max_y</span> <span class="o">&lt;</span><span class="mi">4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">max_x</span> <span class="o">==</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola!&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">max_y</span> <span class="o">==</span> <span class="mi">4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hej!&quot;</span><span class="p">)</span>
+<span class="k">else</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Hola! will be printed. The first if is not true, so we move to the next, which is also not true.
+The third is true, so we go inside that conditional and hence print(“Hola!”) is executed. The forth
+statement is also true, but the code will not enter that block as it is par tof the same <code class="docutils literal notranslate"><span class="pre">if..else</span></code> block.
+The <code class="docutils literal notranslate"><span class="pre">else</span></code> would be executed if none of the satements were true.</p>
+</div>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>

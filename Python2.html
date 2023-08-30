@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="R: part 2" href="R2.html" />
-    <link rel="prev" title="Software development" href="Software_development.html" />
+    <link rel="prev" title="Solving issues and debugging" href="Issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -143,16 +133,6 @@
    Solving issues and debugging
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Python: part 2
@@ -165,17 +145,37 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Python3.html">
-   Python or R 3
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -379,6 +379,45 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-dictionaries">
+   Python: dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-with-python-dictionaries">
+     Looping with Python dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-dictionary-functions">
+     Useful dictionary functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-files">
+   Python: Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-command-line-arguments">
+   Python: command line arguments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-the-command-line">
+     Python and the command line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-command-line-interface">
+     Advanced command line interface
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -445,6 +484,45 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#seeing-what-is-in-a-module">
      Seeing what is in a module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-dictionaries">
+   Python: dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-with-python-dictionaries">
+     Looping with Python dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-dictionary-functions">
+     Useful dictionary functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-files">
+   Python: Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-command-line-arguments">
+   Python: command line arguments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-the-command-line">
+     Python and the command line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-command-line-interface">
+     Advanced command line interface
     </a>
    </li>
   </ul>
@@ -525,7 +603,7 @@ also a function. The return value of <cite>len(my_list)</cite> gets put in place
 function body (indented; remember whitespace matters!). At the end of your function, use the <cite>return</cite> keyword (with a value if you want
 to return something).</p>
 <p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Farenheit.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
 
     <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
 
@@ -533,7 +611,7 @@ to return something).</p>
 </pre></div>
 </div>
 <p>This function takes a value (Centrigrade) and converts it to Farenheit, returning that number. We would use it something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
 
     <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
 
@@ -821,6 +899,147 @@ creating a structure of common functions across a number of projects/scripts.</p
 </div>
 </section>
 </section>
+<section id="python-dictionaries">
+<h2>Python: dictionaries<a class="headerlink" href="#python-dictionaries" title="Permalink to this headline">#</a></h2>
+<p>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
+<p>Python has dictionaries as an in-built datatype, set up using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> braces:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="mi">3452345</span><span class="p">,</span> <span class="s1">&#39;Mildred&#39;</span><span class="p">:</span> <span class="mi">532354</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You can then access using the keys, much like in a list:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can add to a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s1">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">435353</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">telelphone</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To check if a key is used in a dictionary, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Bob&#39;</span> <span class="ow">in</span> <span class="n">telephone</span>
+<span class="s1">&#39;Jack&#39;</span> <span class="ow">in</span> <span class="n">telephone</span>
+</pre></div>
+</div>
+<p>In addition to the <code class="docutils literal notranslate"><span class="pre">{}</span></code> construction you can also use <code class="docutils literal notranslate"><span class="pre">dict</span></code> construction:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">3452345</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Mildred&#39;</span><span class="p">,</span> <span class="mi">53235</span><span class="p">)])</span>
+<span class="c1"># or even</span>
+<span class="n">telephone</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Bob</span><span class="o">=</span><span class="mi">3452345</span><span class="p">,</span> <span class="n">Mildred</span><span class="o">=</span><span class="mi">53235</span><span class="p">)</span>
+<span class="c1"># works for simple string keys</span>
+</pre></div>
+</div>
+<section id="looping-with-python-dictionaries">
+<h3>Looping with Python dictionaries<a class="headerlink" href="#looping-with-python-dictionaries" title="Permalink to this headline">#</a></h3>
+<p>Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">knights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="c1"># or</span>
+<span class="k">for</span> <span class="n">knight</span> <span class="ow">in</span> <span class="n">knights</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">knight</span><span class="p">,</span> <span class="n">knights</span><span class="p">[</span><span class="n">knight</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="useful-dictionary-functions">
+<h3>Useful dictionary functions<a class="headerlink" href="#useful-dictionary-functions" title="Permalink to this headline">#</a></h3>
+<p>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively.</p>
+</section>
+</section>
+<section id="python-files">
+<h2>Python: Files<a class="headerlink" href="#python-files" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="python-command-line-arguments">
+<h2>Python: command line arguments<a class="headerlink" href="#python-command-line-arguments" title="Permalink to this headline">#</a></h2>
+<p>The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
+The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
+in the course, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l
+</pre></div>
+</div>
+<p>which is the command to list things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, in a Unix shell with the option supplied to make it a table <code class="docutils literal notranslate"><span class="pre">-l</span></code>.
+Similaraly, we’ve covered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r dir1 dir2
+</pre></div>
+</div>
+<p>Here, there are three options. The <code class="docutils literal notranslate"><span class="pre">-r</span></code> flag, the directory to copy <code class="docutils literal notranslate"><span class="pre">dir1</span></code>, and where to copy it to, <code class="docutils literal notranslate"><span class="pre">dir2</span></code>.</p>
+<p>Python has both in-built handling of command line options, but also a number of modules to give us quite
+advanced usage options.</p>
+<section id="python-and-the-command-line">
+<h3>Python and the command line<a class="headerlink" href="#python-and-the-command-line" title="Permalink to this headline">#</a></h3>
+<p>When you run a Python script, with some arbitrary text after:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python arg_script.py arg1 arg2 arg3
+</pre></div>
+</div>
+<p>that text is passed to the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module in Python. Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.py</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import sys
+
+print<span class="o">(</span><span class="s2">&quot;Argument list&quot;</span>, str<span class="o">(</span>sys.argv<span class="o">))</span>
+print<span class="o">(</span><span class="s2">&quot;Length: &quot;</span>, len<span class="o">(</span>sys.argv<span class="o">))</span>
+</pre></div>
+</div>
+<p>Now run that on the command line.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python arg_script.py arg1 arg2 arg3
+</pre></div>
+</div>
+<p>Your output is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Length: <span class="m">4</span>
+Argument List: <span class="o">[</span><span class="s1">&#39;arg_script.py&#39;</span>, <span class="s1">&#39;arg1&#39;</span>, <span class="s1">&#39;arg2&#39;</span>, <span class="s1">&#39;arg3&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>The arguments are stored in <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. The first is always the name of the script. The rest
+are what the user has given. These could be files or options of some kind (e.g. keywords).
+Within our script we access them as we would any other list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">copy_from</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">copy_to</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Security bugs in code are often due to user input not being <strong>parsed</strong> correctly. If your application
+interacts with a database, for example, and the user can input which field to search, it may be possible
+to construct input which can then delete the database. You must always check what the user is giving you before
+using it, especially when it comes to files, databases, or URLs.</p>
+</div>
+</section>
+<section id="advanced-command-line-interface">
+<h3>Advanced command line interface<a class="headerlink" href="#advanced-command-line-interface" title="Permalink to this headline">#</a></h3>
+<p>Python has a number of modules that make command line parsing a lot easier and more functional. The most commonly used is
+<code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
+<p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. Moreover,
+the module will help with error messages, etc when the user gives incorrect arguments.</p>
+<p>The core functionality of <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is the <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparser</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparser</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+                     <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+                     <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Brief one line of what the program does&quot;</span><span class="p">,</span>
+                     <span class="n">epilog</span><span class="o">=</span><span class="s2">&quot;Any text at the bottom of help, e.g. copyright&quot;</span>
+                     <span class="p">)</span>
+</pre></div>
+</div>
+<p>Once an ArgumentParser is set-up you can then add optional and positional arguments to that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the file to read the data from&quot;</span><span class="p">)</span> <span class="c1"># a positional argument</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--count&#39;</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;How many times to copy&quot;</span><span class="p">)</span>         <span class="c1"># option that takes a value</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+                    <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Print progress&quot;</span><span class="p">)</span>                 <span class="c1"># on/off flag</span>
+</pre></div>
+</div>
+<p>You can also specify which variable the argument is parsered into, the type, if an argument is required, if it should be a list
+and a lot more too.</p>
+<p>You then parse the argument and put them in variables as you see fit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="n">boundary_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">filename</span>
+<span class="n">polygon_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">polygon</span>
+<span class="n">default_PhysID</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">default_PhysID</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -831,11 +1050,11 @@ creating a structure of common functions across a number of projects/scripts.</p
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Software_development.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Issues.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Software development</p>
+            <p class="prev-next-title">Solving issues and debugging</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="R2.html" title="next page">

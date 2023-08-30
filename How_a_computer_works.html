@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software licences" href="Licences.html" />
-    <link rel="prev" title="Expectations" href="Expectations.html" />
+    <link rel="prev" title="Acknowledgements" href="acknowledgements.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -94,8 +94,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -144,6 +134,36 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Python2.html">
+   Python: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R2.html">
+   R: part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python3.html">
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Testing_code.html">
    Testing code
   </a>
@@ -154,23 +174,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python or R 3
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Mini_courses.html">
    Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
   </a>
  </li>
  <li class="toctree-l1">
@@ -509,16 +514,22 @@ from a Mac into Windows or vice-versa); the OS takes care of this for us. Each O
 Macs use Apple File System (APFS), Windows uses NTFS, Linux uses
 ext4 or similar.</p>
 <p>The OS then stores files on its filesystem. Each OS has different characteristics and ways of
-storing your files. This we do care about. We’ll go through each OS in turn.</p>
+storing your files. This we do care about. As we will be writing software that will load in data from
+files at some point, we need to understand how to access files and hence, we need to
+understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
 <section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h3>
 <p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
-<p>Exercise: Why C:? What’s wrong with A? Google and find out.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>** Why C:?**
+What’s wrong with A? Google and find out.</p>
+</div>
 <div class="toggle admonition">
-<p class="admonition-title">Learn more</p>
-<p>A: and B: were reserved for floppy disks, which is what MSDOS computers generally had.</p>
+<p class="admonition-title">Solution</p>
+<p>A: and B: were reserved for floppy disks, which is what early MSDOS computers generally had.</p>
 </div>
 <p>From the drive, folders are separated with a ‘' symbol. Software is generally installed
 in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span></code> (or <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)</span></code> for older software). Your documents are
@@ -549,7 +560,6 @@ are some binaries (i.e. programmes) in <code class="docutils literal notranslate
 </section>
 <section id="exercises">
 <h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://github.com/kai687/sphinxawesome-theme/issues/939">https://github.com/kai687/sphinxawesome-theme/issues/939</a></p>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
 <div class="admonition tip">
@@ -642,6 +652,143 @@ change directory command:</p>
 </div>
 </div>
 <p>Great! We can now navigate down the filesystem. What about going up a directory?</p>
+<p>In all OSes the <code class="docutils literal notranslate"><span class="pre">..</span></code> is the parent directory to where we currently are. Similarly, <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory. So to go up
+one level we run the command:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ..
+</pre></div>
+</div>
+</div>
+<p>We can traverse up and down in quite complex ways using this. Let’s imagine we want to go up two directories, then down into
+a subfolder:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../../subfolder
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\subfolder
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Windows drives, labelled A, B, C, D, etc are a small ‘gotcha’ when using <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Try this (assuming
+you have two drive letters available):</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> H:Documents
+</pre></div>
+</div>
+</div>
+<p>And nothing will happen. The prompt will still say <code class="docutils literal notranslate"><span class="pre">C:</span></code>. The command has worked, but Windows wants you
+to swap drives first. You have to type the drive letter to do so:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id12" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>H<span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<p>You will then find you prompt has switch to <code class="docutils literal notranslate"><span class="pre">H:\Documents</span></code>. This has caught me out a number of times.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Navigating a filesystem</strong></p>
+<p>Download <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/cli_example.zip">this zip file</a>
+to your Home directory. Extract it. Keep the original zip file (or make a note to download again later).</p>
+<p>What we are going to do is use the graphical and CLI navigation side-by-side to show how to navigate a filesystem.</p>
+<p>Open up the Windows file explorer, Nautilus (or similar on Linux), or Finder on Mac. You should see your home directory.</p>
+<p>Assuming the zip file has been extracted you should see a folder called <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> like this image:</p>
+<img alt="image of files and folders" src="_images/filesystem_gui_ex1_1.png" />
+<p>Double-click the <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> folder</p>
+<p>In a command line:</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id13" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example
+ <span class="k">dir</span>
+ pwd
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id14" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> cli_example
+ ls
+ <span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<p>You should see three folders both in the command line and the GUI.</p>
+<img alt="image of files and folders" src="_images/filesystem_gui_ex1_2.png" />
+<p>Let’s now go a few folders down. Double-click on <code class="docutils literal notranslate"><span class="pre">data_files</span></code>, then <code class="docutils literal notranslate"><span class="pre">sedimentary_data</span></code>, then <code class="docutils literal notranslate"><span class="pre">site1</span></code>. You
+should see:</p>
+<img alt="image of files and folders" src="_images/filesystem_gui_ex1_3.png" />
+<p>Let’s do the the same in the command line:</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id15" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> data_files\sedimentary_data\site1
+ <span class="k">dir</span>
+ pwd
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id16" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> data_files/sedimentay_data/site1
+ ls
+ <span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<p>Note that we can put several directories together. We can do the same to go up, then back down directories:</p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id17" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\gis_data\site_locations
+ <span class="k">dir</span>
+ pwd
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id18" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../gis_data/site_locations
+ ls
+ <span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<p>And in the GUI, if you go up one directory, then into <code class="docutils literal notranslate"><span class="pre">gis_data</span></code>, then <code class="docutils literal notranslate"><span class="pre">site_locations</span></code> you should see:</p>
+<img alt="image of files and folders" src="_images/filesystem_gui_ex1_4.png" />
+<p>Feel free to continue to explore the folders, using both the GUI and CLI to navigate. Remember to use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to
+find where you are if you need to.</p>
+</div>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p><strong>Navigating a filesystem</strong></p>
+<p>Imagine the following filesytem of folders:</p>
+<img alt="An example filesytem of directories" src="_images/filesystem-challenge.png" />
+<p>The output of <code class="docutils literal notranslate"><span class="pre">pwd</span></code> is <code class="docutils literal notranslate"><span class="pre">Figures</span></code>. (For each question we start here!)</p>
+<ul class="simple">
+<li><p>Question 1: How would we move to the <code class="docutils literal notranslate"><span class="pre">papers</span></code> folder?</p></li>
+<li><p>Quesiton 2: If I run the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../work</span></code>, what would happen?</p></li>
+<li><p>Question 3: I run the commands <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../../</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">work/backup</span></code>. Where am I now?</p></li>
+<li><p>Quesiton 4: In one command, move to the <code class="docutils literal notranslate"><span class="pre">2021-01-27</span></code> folder from <code class="docutils literal notranslate"><span class="pre">Figures</span></code></p></li>
+<li><p>Question 5: how would the above be simpler if <code class="docutils literal notranslate"><span class="pre">Users</span></code> was at the root of the filesystem?</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>Question 1: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..\..\</span></code> in Windows</p></li>
+<li><p>Question 2: An error would occur as we would move up two directories to <code class="docutils literal notranslate"><span class="pre">papers</span></code>, then try and move into the <code class="docutils literal notranslate"><span class="pre">work</span></code> folder which does not exist</p></li>
+<li><p>Question 3: In the <code class="docutils literal notranslate"><span class="pre">backup</span></code> directory.</p></li>
+<li><p>Question 4: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../../work/backup/2021-01-07</span></code></p></li>
+<li><p>Question 5: If Users was at the root, we could start from there, giving an absolute path, e.g. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/Users/work/backup/2021-01-07</span></code></p></li>
+</ul>
+</div>
 </section>
 <section id="absolute-vs-relative-paths">
 <h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this headline">#</a></h2>
@@ -682,8 +829,8 @@ These are called instructions. The CPU translate these instructions into moving 
 to actually do something. Ultimately, all computer code does this. It is possible to write
 computer code at this level: assembler code. Back in the day this is how you programmed computers.
 This is an example of assembler code for an x86 processor (i.e. what you probably have):</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id19" title="Permalink to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -781,6 +928,13 @@ directory names are mandatory arguments. The <code class="docutils literal notra
 Linux <code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code> is used. You can also use the help that comes with
 the OS, so on Windows <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">copy</span></code> will display the manual page for the <code class="docutils literal notranslate"><span class="pre">copy</span></code>
 command. On MacOS/Linux <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">cp</span></code> will do the same.</p>
+<p>Why should we care about this? Many higher-level langauges like Python and R can move, copy,
+create, and delete files. Their functions to do this are based heavily on the command line
+commands to do the same thing. By understanding how the commands built into the OS we’re using, we
+simplify somethings later. Moreover, many tools we will use later to help use develop better software
+(like revision control) are also based on these commands. Finally, by getting a better
+understanding of how the computer works, we can be more efficient at using one and hence get
+more done when programming.</p>
 <p>So what are the basic commands you should know? Here’s a list:</p>
 <p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
 <blockquote>
@@ -805,10 +959,100 @@ command. On MacOS/Linux <code class="docutils literal notranslate"><span class="
 <li><p>rmdir</p></li>
 </ul>
 </div></blockquote>
-<p>Exercise: practice on those commands</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p><code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, and <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> delete files permanently. They do <em>not</em> move the into Trash or similar.</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Find what the basic commands do</strong></p>
+<p>For the list of commands above, search for each one, or use the help system, and work out what they do.
+Have a look through the options too. Some might not be that useful and you may neve need them, but some
+very useful!</p>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Using some basic commands</strong></p>
+<p>We’re going to carry out some file operations in the GUI file manager first, then do the exact same commands in the command line
+using the zip file and folder we extracted earlier.</p>
+<p><em>Using the GUI</em></p>
+<ul class="simple">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">cli_example/data_files/gis_data/site_locations</span></code></p></li>
+<li><p>make a new directory <code class="docutils literal notranslate"><span class="pre">site_2</span></code></p></li>
+<li><p>Copy all the files there <strong>except</strong> site1.csv to <code class="docutils literal notranslate"><span class="pre">site_2</span></code> directory</p></li>
+<li><p>rename all the files from <code class="docutils literal notranslate"><span class="pre">site_1.*</span></code> to <code class="docutils literal notranslate"><span class="pre">site_2.*</span></code></p></li>
+</ul>
+<p>You should have something like this:</p>
+<img alt="image of files and folders" src="_images/commands_exercise_1.png" />
+<ul class="simple">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">cli_example/data_files/notes</span></code></p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code></p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">cli_examples/documents/notes</span></code></p></li>
+<li><p>Move the <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code> file one direcotry up to <code class="docutils literal notranslate"><span class="pre">cli_example\documents</span></code></p></li>
+<li><p>Delete the notes folder</p></li>
+</ul>
+<img alt="image of files and folders" src="_images/commands_exercise_2.png" />
+<ul class="simple">
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> to <code class="docutils literal notranslate"><span class="pre">cli_example_gui</span></code></p></li>
+</ul>
+<p>Now reset, by extract/unzip-ing the <code class="docutils literal notranslate"><span class="pre">cli_example.zip</span></code> (to make a new version of the original folder).</p>
+<p><em>Using the CLI</em></p>
+<p>Do the same as above, but using the command line only. The only exception is the last bullet point where you should rename to
+<code class="docutils literal notranslate"><span class="pre">cli_example_cli</span></code></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id20" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> cli_example/data_files/gid_data/site_locations
+ mkdir site_2
+ cp site_1.* site_2
+ <span class="nb">cd</span> site_2
+ mv site_1.prj site_2.prj
+ mv site_1.qpj site_2.qpj
+ mv site_1.cpg site_2.cpg
+ mv site_1.dbf site_2.dbf
+ mv site_1.shp site_2.shp
+ mv site_1.shx site_2.shx
+ <span class="nb">cd</span> ../../../notes
+ rm notes.txt
+ <span class="nb">cd</span> ../../documents/
+ mv notes/notes.txt .
+ rmdir notes
+ <span class="nb">cd</span> ../
+ mv cli_example cli_example_cli
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id21" title="Permalink to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example\data_files\gid_data\site_locations
+ <span class="k">md</span> site_2
+ <span class="k">copy</span> site_1.* site_2
+ <span class="k">cd</span> site_2
+ <span class="k">ren</span> site_1.prj site_2.prj
+ <span class="k">ren</span> site_1.qpj site_2.qpj
+ <span class="k">ren</span> site_1.cpg site_2.cpg
+ <span class="k">ren</span> site_1.dbf site_2.dbf
+ <span class="k">ren</span> site_1.shp site_2.shp
+ <span class="k">ren</span> site_1.shx site_2.shx
+ <span class="k">cd</span> ..\..\..\notes
+ <span class="k">del</span> notes.txt
+ <span class="k">cd</span> ..\..\documents
+ <span class="k">ren</span> notes\notes.txt .
+ <span class="k">rmdir</span> notes
+ <span class="k">cd</span> ..\
+ <span class="k">ren</span> cli_example cli_example_cli
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Learn More</p>
+<p>In the above example, the renaming of files with the same name, but different extensions is a little cumbersome. It was fine with six
+files, but what if there were 100 files. On the command line that’s annoying. In the GUI it would be very annoying! In Linux there is the
+<code class="docutils literal notranslate"><span class="pre">rename</span></code> command that can do it in one go. You can also write a small <code class="docutils literal notranslate"><span class="pre">bash</span></code> script to do it in a loop. In windows you can download tools
+that do this or, like Linux, write a short script to do it. This shows the power of the command line and scripting.</p>
 </div>
 </section>
 </section>
@@ -821,11 +1065,11 @@ command. On MacOS/Linux <code class="docutils literal notranslate"><span class="
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Expectations.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="acknowledgements.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Expectations</p>
+            <p class="prev-next-title">Acknowledgements</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Licences.html" title="next page">

@@ -39,7 +39,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python or R 3" href="Python3.html" />
+    <link rel="next" title="Python: part 3" href="Python3.html" />
     <link rel="prev" title="Python: part 2" href="Python2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -119,16 +119,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python.html">
    Python: the fundamentals
   </a>
@@ -144,16 +134,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Python2.html">
    Python: part 2
   </a>
@@ -165,7 +145,32 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Python3.html">
-   Python or R 3
+   Python: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="R3.html">
+   R: part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Revision_control.html">
+   Revision control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Spreadsheets_data.html">
+   Moving from spreadsheets to data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Testing_code.html">
+   Testing code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software_development.html">
+   Software development
   </a>
  </li>
  <li class="toctree-l1">
@@ -369,6 +374,33 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-dictionaries">
+   R dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-with-dictionaries">
+     Looping with dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-files">
+   R files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-apply-family">
+   R apply family
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-command-line-arguments">
+   R command line arguments
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -428,6 +460,33 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-dictionaries">
+   R dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looping-with-dictionaries">
+     Looping with dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-files">
+   R files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-apply-family">
+   R apply family
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-command-line-arguments">
+   R command line arguments
+  </a>
  </li>
 </ul>
 
@@ -653,6 +712,54 @@ libraries, rather than creating them.</p>
 <p>This can allow you to build a library of common functions, but not make them into a full package. Unlike the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function this does not allow you to use namespaces to seperate out functions or variables.</p>
 </section>
 </section>
+<section id="r-dictionaries">
+<h2>R dictionaries<a class="headerlink" href="#r-dictionaries" title="Permalink to this headline">#</a></h2>
+<p>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
+<p>R doesn’t have a built-in dictionary datatype, <em>but</em> vectors, matricies, lists etc can behave like dictionaries.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="o">=</span><span class="m">3452345</span><span class="p">,</span> <span class="s">&#39;Mildred&#39;</span><span class="o">=</span><span class="m">532354</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can then access using the keys, much like in a list:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s">&#39;Bob&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can add to a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="m">435353</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">telelphone</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To check if a key is used in a dictionary, you can use the <code class="docutils literal notranslate"><span class="pre">%in%</span></code> keyword. However, R will look in the <code class="docutils literal notranslate"><span class="pre">values</span></code> by default, so we have to tell it to look in the <code class="docutils literal notranslate"><span class="pre">names()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="s">&#39;Bob&#39;</span> <span class="o">%in%</span> <span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span>
+<span class="s">&#39;Jack&#39;</span> <span class="o">%in%</span> <span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="looping-with-dictionaries">
+<h3>Looping with dictionaries<a class="headerlink" href="#looping-with-dictionaries" title="Permalink to this headline">#</a></h3>
+<p>Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them. You can loop as you would a vector:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;gallahad&#39;</span><span class="o">=</span><span class="s">&#39;the pure&#39;</span><span class="p">,</span> <span class="s">&#39;robin&#39;</span><span class="o">=</span><span class="s">&#39;the brave&#39;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="n">knights</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>which loops over the values. If we want to loop over the keys:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;gallahad&#39;</span><span class="o">=</span><span class="s">&#39;the pure&#39;</span><span class="p">,</span> <span class="s">&#39;robin&#39;</span><span class="o">=</span><span class="s">&#39;the brave&#39;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="nf">names</span><span class="p">(</span><span class="n">knights</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">knights</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="r-files">
+<h2>R files<a class="headerlink" href="#r-files" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-apply-family">
+<h2>R apply family<a class="headerlink" href="#r-apply-family" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="r-command-line-arguments">
+<h2>R command line arguments<a class="headerlink" href="#r-command-line-arguments" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
 
@@ -673,7 +780,7 @@ libraries, rather than creating them.</p>
     <a class='right-next' id="next-link" href="Python3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python or R 3</p>
+        <p class="prev-next-title">Python: part 3</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
