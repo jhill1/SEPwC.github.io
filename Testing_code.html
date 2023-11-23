@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testing code &#8212; SEPwC  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,12 +18,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -35,8 +36,8 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software development" href="Software_development.html" />
@@ -48,21 +49,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,10 +58,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -96,6 +87,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="acknowledgements.html">
    Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Expectations.html">
+   Expectations
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,6 +175,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="genindex.html">
    Index
   </a>
@@ -186,148 +187,87 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
             </div>
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Testing_code.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhill1/SEPwC.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
         </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Testing_code.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simple-testing">
    Simple testing
@@ -384,11 +324,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Testing code</h1>
@@ -461,12 +402,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section id="testing-code">
-<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="testing-code">
+<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this headline">¶</a></h1>
 <p>You’ve spend days writing the most elegant and beautiful code imaginable. It’s readable, well designed and runs quickly. How do you know it runs correctly? How do you know how easy it is to break? This is where testing comes in.</p>
 <p>Testing is integral to writing software as otherwise there is no point in writing it. You will, of course, test in some way as you write code as you will run your code to check it doesn’t give syntax errors at least! In this chapter you’ll learn how to transition from informal <em>ad hoc</em> testing (simple testing), to automated testing (also known as unit testing). This will:</p>
 <blockquote>
@@ -478,45 +418,45 @@ title="Print to PDF"
 </ul>
 </div></blockquote>
 <p>In this chapter we will discover the different types of tests and how to formalise those tests into something that can be automated.</p>
-<section id="simple-testing">
-<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this headline">#</a></h2>
+<div class="section" id="simple-testing">
+<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this headline">¶</a></h2>
 <p>Whilst most guides and internet sites deal with more formalised testing, we should start at a more fundamental level. Testing code invovled running it. You should run your code often to check for syntax errors and unexpected errors. Rather than spending hours writing code, then test; it is much more productiuve to write a block of code, then test the code to that point.</p>
 <p>Basic testing involves created a subset of your input data (if any) and printing out variables to check they are what you expect them to be, given the data read in. This is <em>not</em> a robust method of testing code, but will give you confidence as you go along. This is also useful if you don’t know <em>exactly</em> what you’ll get after a block of code (e.g. from an external library). By printing it out, we can check what <code class="docutils literal notranslate"><span class="pre">type</span></code> and what the data looks like. In a formal test it’s impossible to do that until you see the data anyway.</p>
 <p>You <em>are</em> testing your code by running code like this, but informally. The problem will arise in a few months time when you come back to this and you will struggle to remember all the informal tests you ran. If you want to add a new feature you’ll probbaly break some of the past informal tests.</p>
 <p>Example of loading a dataset and checking it (strip all but header and three rows), print and check. Need to create an awkward data set to to make the point, e.g. getting datetimes correct and indexing.</p>
-</section>
-<section id="regression-tests">
-<h2>Regression tests<a class="headerlink" href="#regression-tests" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="regression-tests">
+<h2>Regression tests<a class="headerlink" href="#regression-tests" title="Permalink to this headline">¶</a></h2>
 <p>When it comes to formal testing, the first type of test is called a <em>regression test</em>. This takes a full run of the code and checks that output is what is expected. This could be based on theoretical consideration or from past executions of the code. The distinction to other kinds of tests is that the whole program is run from start to finish.</p>
 <p>Examples of theorteical and past behaviour</p>
-</section>
-<section id="unit-tests">
-<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
 <p>Whilst regression tests test the whole executation, unit tests only test a single function or object within the code. The generally check against theoretical results (or simple calculations) with strictly controlled input to the function. This is often where we test unexpected behaviour too; for example putting two strings into a function to add two numbers: do we get a sensible error message?</p>
 <p>Unit tests are designed to test each function to the limits and make sure it returns the right answers and behaves correctly if the wrong kind of data is passed in. If all the program’s functions are tested then, in theory, the whole program should work.</p>
 <p>Unit tests also help with debugging. If a user reports a bug, the error message often gives the funciton that it occurred in. Using the user’s data you can create a unit test to confirm the bug (replicate it). Then debug your code until that new test passes.</p>
 <p>Examples; simple function with assert, assert nearly, etc.</p>
-</section>
-<section id="static-tests">
-<h2>Static tests<a class="headerlink" href="#static-tests" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="static-tests">
+<h2>Static tests<a class="headerlink" href="#static-tests" title="Permalink to this headline">¶</a></h2>
 <p>The above tests involve running the code. Another type of testing is called static testing or <em>linting</em>. This checks the syntax of the code against specified standards. It was invted initiall for the C programming language where the programmer has to manage memory themselves and a linter helped spot potential issues there. For R and Python a linter check our code against published standards.</p>
 <p>For Python, the standards are set by the community and written up as “PEP” (Python Enhancement Proposal) documents. In R the standards are also community-based but with less formal acceptance. A common style used is the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> style.</p>
 <p>Regardless of the style chosen, the important thing is <em>consistancy</em>. Consistancy within functions/modules/objects is most important, consistancy within projects is next, consistancy across projects is least important. It is also important to know when to <em>break</em> consistancy. Your golden rule for breaking a linter recommendation is if it doesn’t improve readability of the code. Code is read more than it is written and the computer doesn’t care about readiability as long as it’s valid syntax.</p>
 <p>Whilst linters are valuable tools to check your consistancy they are not hard and fast rules to follow.</p>
 <p>Examples from R and Python</p>
-</section>
-<section id="ui-tests">
-<h2>UI tests<a class="headerlink" href="#ui-tests" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="ui-tests">
+<h2>UI tests<a class="headerlink" href="#ui-tests" title="Permalink to this headline">¶</a></h2>
 <p>User interface testing is perhaps the hardest thing to test. When presented with any type of user interface (GUI, CLI, or even through files) users will do the oddest things from your point of view as a programmer. This is normal as we are all the sum of our experiences. However, sticking to conventions helps ameleriote some fof the potentional issues here.</p>
 <p>UI testing is a type of regression testing. You can automate CLI-based UI’s easily. Automating GUI’s is trcikier, but possible. For our purposes we will stick to CLIs.</p>
 <p>Example of testing a CLI</p>
-</section>
-<section id="testing-frameworks">
-<h2>Testing frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="testing-frameworks">
+<h2>Testing frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this headline">¶</a></h2>
 <p>The tests above have been manual in nature. Testing comes into it’s own when it’s automated. It may still need to be initated manually (see below for fully automatic, continuous testing), but all tests are run and the results summarised automatically.</p>
 <p>Both R and Python have testing frameworks; modules/libraries that help set-up, run and tear-down all tests in your code. We’ll cover each in turn, but skip to whichever language you’ve chosen.</p>
-<section id="python-pytest">
-<h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Permalink to this headline">#</a></h3>
+<div class="section" id="python-pytest">
+<h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Permalink to this headline">¶</a></h3>
 <p>Python has a few testing packages. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is a very common one. It</p>
 <p>We’re going to test our Farenheit to Celcius and vice-vera functions from the first Python chapter. Let’s get these two functions in an Python test file and save it:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
@@ -560,44 +500,44 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>We can run that from the command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest test_temperature_conversion.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test_temperature_conversion.py
 </pre></div>
 </div>
 <p>which gives the output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">=================================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">=================================</span>
-platform linux -- Python <span class="m">3</span>.6.9, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
-rootdir: /home/jh1889/work/teaching/SEPwC/code_examples
-collected <span class="m">3</span> items
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">=================================</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">=================================</span>
+platform<span class="w"> </span>linux<span class="w"> </span>--<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.6.9,<span class="w"> </span>pytest-6.2.4,<span class="w"> </span>py-1.10.0,<span class="w"> </span>pluggy-0.13.1
+rootdir:<span class="w"> </span>/home/jh1889/work/teaching/SEPwC/code_examples
+collected<span class="w"> </span><span class="m">3</span><span class="w"> </span>items
 
-test_temperature_conversion.py ..F                                              <span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+test_temperature_conversion.py<span class="w"> </span>..F<span class="w">                                              </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
 
-<span class="o">======================================</span> <span class="nv">FAILURES</span> <span class="o">=======================================</span>
-____________________ TestTemperatureConversion.test_that_will_fail ____________________
+<span class="o">======================================</span><span class="w"> </span><span class="nv">FAILURES</span><span class="w"> </span><span class="o">=======================================</span>
+____________________<span class="w"> </span>TestTemperatureConversion.test_that_will_fail<span class="w"> </span>____________________
 
-<span class="nv">self</span> <span class="o">=</span> &lt;test_temperature_conversion.TestTemperatureConversion object at 0x7fb900264518&gt;
+<span class="nv">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;test_temperature_conversion.TestTemperatureConversion<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>0x7fb900264518&gt;
 
-    def test_that_will_fail<span class="o">(</span>self<span class="o">)</span>:
-        <span class="nv">temp_c</span> <span class="o">=</span> temperature_conversion.toCentigrade<span class="o">(</span><span class="m">50</span><span class="o">)</span>
+<span class="w">    </span>def<span class="w"> </span>test_that_will_fail<span class="o">(</span>self<span class="o">)</span>:
+<span class="w">        </span><span class="nv">temp_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>temperature_conversion.toCentigrade<span class="o">(</span><span class="m">50</span><span class="o">)</span>
 
-&gt;       assert <span class="nv">temp_c</span> <span class="o">==</span> <span class="m">2</span>
-E       assert <span class="m">10</span>.0 <span class="o">==</span> <span class="m">2</span>
+&gt;<span class="w">       </span>assert<span class="w"> </span><span class="nv">temp_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span>
+E<span class="w">       </span>assert<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span>
 
-test_temperature_conversion.py:23: <span class="nv">AssertionError</span>
-<span class="o">===============================</span> short <span class="nb">test</span> summary <span class="nv">info</span> <span class="o">===============================</span>
-FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
-<span class="o">=============================</span> <span class="m">1</span> failed, <span class="m">2</span> passed <span class="k">in</span> <span class="m">0</span>.15s <span class="o">=============================</span>
+test_temperature_conversion.py:23:<span class="w"> </span><span class="nv">AssertionError</span>
+<span class="o">===============================</span><span class="w"> </span>short<span class="w"> </span><span class="nb">test</span><span class="w"> </span>summary<span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">===============================</span>
+FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
+<span class="o">=============================</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">2</span><span class="w"> </span>passed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.15s<span class="w"> </span><span class="o">=============================</span>
 </pre></div>
 </div>
 <p>This gives a summary of the system, including the version of Python and pytest; the directory the test was run from and the number of tests (3). The main results comes next with the filename and <code class="docutils literal notranslate"><span class="pre">..F</span></code>. This tells us 2 tests have passed and one has failed. Details of the failure are then posted underneath, with the line of code and then (very useful) the values used in the assertion.</p>
 <p>You may not want to run all the tests; just a specific test. We can tell pytest to do just that:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>test_temperature_conversion.py::TestTemperatureConversion::test_that_will_fail
 </pre></div>
 </div>
 <p>This runs just the test named <code class="docutils literal notranslate"><span class="pre">test_that_will_fail</span></code> in the class <code class="docutils literal notranslate"><span class="pre">TestTemperatureConversion</span></code> in the file <code class="docutils literal notranslate"><span class="pre">test_temperature_conversion.py</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> has a lot of other useful features such as marking tests, checking for wanted exceptions and fixtures. Have a look around the documentation of pytest to learn more.</p>
-</section>
-<section id="r-testthat">
-<h3>R: testthat<a class="headerlink" href="#r-testthat" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="r-testthat">
+<h3>R: testthat<a class="headerlink" href="#r-testthat" title="Permalink to this headline">¶</a></h3>
 <p>The first thing that you need to do is install the testthat R package. This can be done from CRAN using the code below.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
 </pre></div>
@@ -607,42 +547,42 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
 </pre></div>
 </div>
 <p>We’re going to test our Farenheit to Celcius and vice-vera functions from the first R chapter. Let’s get these two functions in an R test file and save it:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">F_to_C</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">F_temp</span><span class="p">){</span>
-    <span class="n">C_temp</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">F_temp</span> <span class="o">-</span> <span class="m">32</span><span class="p">)</span> <span class="o">*</span> <span class="m">5</span><span class="o">/</span><span class="m">9</span><span class="p">;</span>
-    <span class="nf">return</span><span class="p">(</span><span class="n">C_temp</span><span class="p">);</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">F_to_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">F_temp</span><span class="p">){</span>
+<span class="w">    </span><span class="n">C_temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">F_temp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="o">/</span><span class="m">9</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">C_temp</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">C_to_F</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">C_temp</span><span class="p">){</span>
-    <span class="n">F_temp</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">C_temp</span> <span class="o">*</span> <span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="p">)</span> <span class="o">+</span> <span class="m">32</span><span class="p">;</span>
-    <span class="nf">return</span><span class="p">(</span><span class="n">F_temp</span><span class="p">);</span>
+<span class="n">C_to_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">C_temp</span><span class="p">){</span>
+<span class="w">    </span><span class="n">F_temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">C_temp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">9</span><span class="o">/</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">F_temp</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code>.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function of the testthat package to write sime simple tests for our two functions. The <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function follows a simple structure with two arguments: <code class="docutils literal notranslate"><span class="pre">desc</span></code> provides a description (in quotes) of whatever is being tested, and <code class="docutils literal notranslate"><span class="pre">code</span></code> provides whatever code (within curly brackets) to test.</p>
 <p>Within the bracketed code to be tested, one or more <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> functions are run; each call to <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> is an independent test. The <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> function takes two arguments: <code class="docutils literal notranslate"><span class="pre">object</span></code> is the object that is being examined by the function and <code class="docutils literal notranslate"><span class="pre">condition</span></code> is the condition that the object is meant to satisfy.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span> <span class="o">=</span> <span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 
-  <span class="n">temp_C</span> <span class="o">&lt;-</span> <span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+<span class="w">  </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is the correct value</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">object</span> <span class="o">=</span> <span class="n">temp_C</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_C</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is numeric</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">object</span> <span class="o">=</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 <p>We can create the same test for the <code class="docutils literal notranslate"><span class="pre">C_to_F</span></code> function:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span> <span class="o">=</span> <span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 
-  <span class="n">temp_F</span> <span class="o">&lt;-</span> <span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is the correct value</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">object</span> <span class="o">=</span> <span class="n">temp_F</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is numeric</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">object</span> <span class="o">=</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 <span class="p">})</span>
 </pre></div>
 </div>
@@ -652,56 +592,56 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
 <span class="nf">context</span><span class="p">(</span><span class="s">&quot;Temperature function testing&quot;</span><span class="p">);</span>
 <span class="nf">source</span><span class="p">(</span><span class="s">&quot;temperature_conversion.R&quot;</span><span class="p">);</span>
 
-<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 
-  <span class="n">temp_C</span> <span class="o">&lt;-</span> <span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+<span class="w">  </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is numeric</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span> <span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_C</span><span class="p">),</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is the correct value</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">temp_C</span><span class="p">,</span> <span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">temp_C</span><span class="p">,</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 <span class="p">})</span>
 
-<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 
-  <span class="n">temp_F</span> <span class="o">&lt;-</span> <span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is numeric</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span> <span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is numeric</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">temp_F</span><span class="p">),</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 
-  <span class="c1"># Test that the result is the correct value</span>
-  <span class="nf">expect_that</span><span class="p">(</span> <span class="n">temp_F</span><span class="p">,</span> <span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span> <span class="p">);</span>
+<span class="w">  </span><span class="c1"># Test that the result is the correct value</span>
+<span class="w">  </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">50</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 <span class="p">})</span>
 
 <span class="c1"># This test will fail</span>
-<span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span> <span class="o">=</span> <span class="s">&quot;Fahrenheit to Celsius wrong&quot;</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">temp_F</span> <span class="o">&lt;-</span> <span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
-    <span class="nf">expect_that</span><span class="p">(</span> <span class="n">object</span> <span class="o">=</span> <span class="n">temp_F</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="p">);</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fahrenheit to Celsius wrong&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">expect_that</span><span class="p">(</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 <p>Save that as <code class="docutils literal notranslate"><span class="pre">test-temperature_conversion.R</span></code> (note the convention here; use the same filename as what is to be tested, with <code class="docutils literal notranslate"><span class="pre">test-</span></code> pre-pended).</p>
 <p>We can run that from the command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript test-temperature_conversion.R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>test-temperature_conversion.R
 </pre></div>
 </div>
 <p>which gives the output:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="n">passed</span> 🎊
-<span class="n">Test</span> <span class="n">passed</span> 🥳
-── <span class="nf">Failure </span><span class="p">(</span><span class="o">???</span><span class="p">)</span><span class="o">:</span> <span class="n">Fahrenheit</span> <span class="n">to</span> <span class="n">Celsius</span> <span class="n">wrong</span> ──────────────────────────────────
-<span class="n">`x`</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">`expected`.</span>
-<span class="m">1</span><span class="o">/</span><span class="m">1</span> <span class="n">mismatches</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">10</span> <span class="o">-</span> <span class="m">2</span> <span class="o">==</span> <span class="m">8</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🎊
+<span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🥳
+──<span class="w"> </span><span class="nf">Failure </span><span class="p">(</span><span class="o">???</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span><span class="w"> </span>──────────────────────────────────
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
 <span class="n">Backtrace</span><span class="o">:</span>
-    ▆
- <span class="m">1</span><span class="n">.</span> └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">temp_F</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
- <span class="m">2</span><span class="n">.</span>   └─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span> <span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
- <span class="m">3</span><span class="n">.</span>     └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="kc">...</span><span class="p">,</span> <span class="n">expected.label</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
 
-<span class="n">Error</span> <span class="n">in</span> <span class="n">reporter</span><span class="o">$</span><span class="nf">stop_if_needed</span><span class="p">()</span> <span class="o">:</span> <span class="n">Test</span> <span class="n">failed</span>
-<span class="n">Calls</span><span class="o">:</span> <span class="n">test_that</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">Anonymous</span><span class="o">&gt;</span>
-<span class="n">Execution</span> <span class="n">halted</span>
+<span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">reporter</span><span class="o">$</span><span class="nf">stop_if_needed</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">failed</span>
+<span class="n">Calls</span><span class="o">:</span><span class="w"> </span><span class="n">test_that</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Anonymous</span><span class="o">&gt;</span>
+<span class="n">Execution</span><span class="w"> </span><span class="n">halted</span>
 </pre></div>
 </div>
 <p>If you’re in an R session you can run all tests in a directory:</p>
@@ -709,57 +649,55 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
 </pre></div>
 </div>
 <p>which gives the output:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>✔ <span class="o">|</span> <span class="bp">F</span> <span class="n">W</span> <span class="n">S</span>  <span class="n">OK</span> <span class="o">|</span> <span class="n">Context</span>
-✖ <span class="o">|</span> <span class="m">1</span>       <span class="m">4</span> <span class="o">|</span> <span class="n">Temperature</span> <span class="n">function</span> <span class="n">testing</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>✔<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">S</span><span class="w">  </span><span class="n">OK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Context</span>
+✖<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="m">4</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Temperature</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">testing</span>
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span> <span class="n">Fahrenheit</span> <span class="n">to</span> <span class="n">Celsius</span> <span class="n">wrong</span>
-<span class="n">`x`</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">`expected`.</span>
-<span class="m">1</span><span class="o">/</span><span class="m">1</span> <span class="n">mismatches</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">10</span> <span class="o">-</span> <span class="m">2</span> <span class="o">==</span> <span class="m">8</span>
+<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span>
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
 <span class="n">Backtrace</span><span class="o">:</span>
-    ▆
- <span class="m">1</span><span class="n">.</span> └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">temp_F</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span> <span class="n">at</span> <span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
- <span class="m">2</span><span class="n">.</span>   └─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span> <span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
- <span class="m">3</span><span class="n">.</span>     └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="kc">...</span><span class="p">,</span> <span class="n">expected.label</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-══ <span class="n">Results</span> ═══════════════════════════════════════════════════════════════════════════════════════════════════════════
-── <span class="n">Failed</span> <span class="n">tests</span> ──────────────────────────────────────────────────────────────────────────────────────────────────────
-<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span> <span class="n">Fahrenheit</span> <span class="n">to</span> <span class="n">Celsius</span> <span class="n">wrong</span>
-<span class="n">`x`</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">`expected`.</span>
-<span class="m">1</span><span class="o">/</span><span class="m">1</span> <span class="n">mismatches</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">10</span> <span class="o">-</span> <span class="m">2</span> <span class="o">==</span> <span class="m">8</span>
+══<span class="w"> </span><span class="n">Results</span><span class="w"> </span>═══════════════════════════════════════════════════════════════════════════════════════════════════════════
+──<span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span>──────────────────────────────────────────────────────────────────────────────────────────────────────
+<span class="nf">Failure </span><span class="p">(</span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span>
+<span class="n">`x`</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">`expected`.</span>
+<span class="m">1</span><span class="o">/</span><span class="m">1</span><span class="w"> </span><span class="n">mismatches</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">8</span>
 <span class="n">Backtrace</span><span class="o">:</span>
-    ▆
- <span class="m">1</span><span class="n">.</span> └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">temp_F</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span> <span class="n">at</span> <span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
- <span class="m">2</span><span class="n">.</span>   └─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span> <span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
- <span class="m">3</span><span class="n">.</span>     └─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="kc">...</span><span class="p">,</span> <span class="n">expected.label</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_that</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_F</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">test</span><span class="o">-</span><span class="n">temperature_conversion.R</span><span class="o">:</span><span class="m">30</span><span class="o">:</span><span class="m">4</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w">   </span>└─<span class="nf">testthat </span><span class="p">(</span><span class="n">local</span><span class="p">)</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w">     </span>└─<span class="n">testthat</span><span class="o">::</span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">expected.label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">)</span>
 
-<span class="p">[</span> <span class="n">FAIL</span> <span class="m">1</span> <span class="o">|</span> <span class="n">WARN</span> <span class="m">0</span> <span class="o">|</span> <span class="n">SKIP</span> <span class="m">0</span> <span class="o">|</span> <span class="n">PASS</span> <span class="m">4</span> <span class="p">]</span>
-<span class="n">Error</span><span class="o">:</span> <span class="n">Test</span> <span class="n">failures</span>
+<span class="p">[</span><span class="w"> </span><span class="n">FAIL</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">WARN</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SKIP</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">PASS</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">failures</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="continuous-testing">
-<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="continuous-testing">
+<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Permalink to this headline">¶</a></h2>
 <p>Unitill now you have been resonsible for running the tests. If you’re disciplined then you ran them (and fixed errors) before you committed new code to your repository. There is an easier way though, with continuous integration (or CI) of tests.</p>
 <p>There are a number of services out there that will do this, but the most common to use is GitHub’s Actions. THis allows you to add the tests at any point (e.g. when committing, or at a pull request) and is faily simple to set up.</p>
-<section id="adding-a-workflow-to-your-repoistory">
-<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Permalink to this headline">#</a></h3>
+<div class="section" id="adding-a-workflow-to-your-repoistory">
+<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Permalink to this headline">¶</a></h3>
 <p>On GitHub, go to your respository and open the actions tab:</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Spreadsheets_data.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -775,28 +713,24 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Jon Hill<br/>
+    
+        &copy; Copyright 2023, Jon Hill.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

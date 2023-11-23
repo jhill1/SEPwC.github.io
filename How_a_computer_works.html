@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How a computer works &#8212; SEPwC  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,12 +18,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -35,8 +36,8 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software licences" href="Licences.html" />
@@ -48,21 +49,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,10 +58,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -186,148 +177,87 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
             </div>
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/How_a_computer_works.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhill1/SEPwC.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
         </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/How_a_computer_works.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#filesystems">
    Filesystems
@@ -389,11 +319,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>How a computer works</h1>
@@ -471,12 +402,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section id="how-a-computer-works">
-<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="how-a-computer-works">
+<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this headline">¶</a></h1>
 <p>Computers have been around since the 1940’s. The first computers were
 mechanical; using valves to store and process information. By the 60’s and 70’s they
 had moved to silicon transistors; tiny gates that store a 1 or 0 (on or off). A modern
@@ -503,8 +433,8 @@ turn it on. The BIOS does this. It’s a very basic OS on a chip.</p></li>
 you can then log on and start using it. There is a lot of jargon around computers. We will try and cover this
 as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
-<section id="filesystems">
-<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this headline">#</a></h2>
+<div class="section" id="filesystems">
+<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this headline">¶</a></h2>
 <p>Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
@@ -517,8 +447,8 @@ ext4 or similar.</p>
 storing your files. This we do care about. As we will be writing software that will load in data from
 files at some point, we need to understand how to access files and hence, we need to
 understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h3>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
@@ -538,9 +468,9 @@ to your local hard drive. However, a <em>standard</em> Windows 11 machine will h
 <code class="docutils literal notranslate"><span class="pre">C:\Users\*Username*\</span></code>. Likwise for, <code class="docutils literal notranslate"><span class="pre">Downloads</span></code>, <code class="docutils literal notranslate"><span class="pre">Music</span></code>, <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>, <code class="docutils literal notranslate"><span class="pre">Pictures</span></code>, etc.</p>
 <p>Why do we care? When writing code, we often need to know exactly where a file is; it’s not enough to know
 it’s in <code class="docutils literal notranslate"><span class="pre">Documents</span></code>; we need a full path (see later).</p>
-</section>
-<section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
 <code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. This contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
@@ -549,17 +479,17 @@ to Windows - yes, they use the opposite direction). In root you then find a bunc
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> can be mounted onto a completely separate physical hard drive to the rest of the folders. The same applies to <em>any</em>
 folder. Temporary drives will be mounted into <code class="docutils literal notranslate"><span class="pre">\media</span></code> or <code class="docutils literal notranslate"><span class="pre">\mnt</span></code>. Note that Linux filenames are case-senstive, so <code class="docutils literal notranslate"><span class="pre">Bob.txt</span></code> is
 a different file to <code class="docutils literal notranslate"><span class="pre">bob.txt</span></code></p>
-</section>
-<section id="macos">
-<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
 <p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
 are some binaries (i.e. programmes) in <code class="docutils literal notranslate"><span class="pre">\bin</span></code>, etc.</p>
 <p>Like Linux, MacOS is case sensitive.</p>
-</section>
-<section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
 <div class="admonition tip">
@@ -570,10 +500,10 @@ symbols.</p>
 <p>Mac and Linux:  <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
 <p>All OSes: <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></p>
 </div>
-</section>
-</section>
-<section id="navigating-a-filesystem">
-<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="navigating-a-filesystem">
+<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
 <p>The first is to list which directory you are in.</p>
@@ -586,14 +516,14 @@ command line. We’re going to explore using both. Before we do this, we need a 
 prints the current directory.</p>
 <p>These commands will print your current directory, so something like:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 /home/jh1889/work/teaching/SEPwC/source
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> cd
 C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </pre></div>
@@ -608,15 +538,15 @@ The command for that is:</p>
 <p>You see a list of files. Depending on the system details that might give you different colours
 for directories and files, or be monochrome. The <code class="docutils literal notranslate"><span class="pre">$</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols are prompts; do not type them!</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
-Assessments.rst  Expectations.rst  Week_1.rst  Week_3.rst  Week_5.rst  Week_7.rst  ytemplates
-conf.py          index.rst         Week_2.rst  Week_4.rst  Week_6.rst  ystatic
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+Assessments.rst<span class="w">  </span>Expectations.rst<span class="w">  </span>Week_1.rst<span class="w">  </span>Week_3.rst<span class="w">  </span>Week_5.rst<span class="w">  </span>Week_7.rst<span class="w">  </span>ytemplates
+conf.py<span class="w">          </span>index.rst<span class="w">         </span>Week_2.rst<span class="w">  </span>Week_4.rst<span class="w">  </span>Week_6.rst<span class="w">  </span>ystatic
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> dir
   Volume in drive C has no label.
   Volume Serial Number is F204-1461
@@ -645,7 +575,7 @@ change directory command:</p>
 <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
 <p>We saw this already for Windows, but we need to give an argument (this is the directory we want to move into).</p>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ystatic</span>
 <span class="n">ls</span>
 </pre></div>
@@ -655,21 +585,21 @@ change directory command:</p>
 <p>In all OSes the <code class="docutils literal notranslate"><span class="pre">..</span></code> is the parent directory to where we currently are. Similarly, <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory. So to go up
 one level we run the command:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ..
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
 </div>
 <p>We can traverse up and down in quite complex ways using this. Let’s imagine we want to go up two directories, then down into
 a subfolder:</p>
 <div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../../subfolder
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../subfolder
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\subfolder
 </pre></div>
 </div>
@@ -679,7 +609,7 @@ a subfolder:</p>
 <p>Windows drives, labelled A, B, C, D, etc are a small ‘gotcha’ when using <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Try this (assuming
 you have two drive letters available):</p>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> H:Documents
 </pre></div>
 </div>
@@ -687,7 +617,7 @@ you have two drive letters available):</p>
 <p>And nothing will happen. The prompt will still say <code class="docutils literal notranslate"><span class="pre">C:</span></code>. The command has worked, but Windows wants you
 to swap drives first. You have to type the drive letter to do so:</p>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id12" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>H<span class="p">:</span>
 </pre></div>
 </div>
@@ -706,7 +636,7 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 <p>Double-click the <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> folder</p>
 <p>In a command line:</p>
 <div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id13" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example
  <span class="k">dir</span>
  pwd
@@ -714,10 +644,10 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id14" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> cli_example
- ls
- <span class="nb">pwd</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cli_example
+<span class="w"> </span>ls
+<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
 </div>
@@ -728,7 +658,7 @@ should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_3.png" />
 <p>Let’s do the the same in the command line:</p>
 <div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id15" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> data_files\sedimentary_data\site1
  <span class="k">dir</span>
  pwd
@@ -736,16 +666,16 @@ should see:</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id16" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> data_files/sedimentay_data/site1
- ls
- <span class="nb">pwd</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>data_files/sedimentay_data/site1
+<span class="w"> </span>ls
+<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
 </div>
 <p>Note that we can put several directories together. We can do the same to go up, then back down directories:</p>
 <div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id17" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\gis_data\site_locations
  <span class="k">dir</span>
  pwd
@@ -753,10 +683,10 @@ should see:</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id18" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../gis_data/site_locations
- ls
- <span class="nb">pwd</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../gis_data/site_locations
+<span class="w"> </span>ls
+<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
 </div>
@@ -789,9 +719,9 @@ find where you are if you need to.</p>
 <li><p>Question 5: If Users was at the root, we could start from there, giving an absolute path, e.g. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/Users/work/backup/2021-01-07</span></code></p></li>
 </ul>
 </div>
-</section>
-<section id="absolute-vs-relative-paths">
-<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="absolute-vs-relative-paths">
+<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this headline">¶</a></h2>
 <p>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
 paths. These are paths that start from where you currently are (be that in the command line or running
@@ -818,9 +748,9 @@ in another. Finally, you can ask the user where to get data from too (or pull da
 from the internet) saving all this hassle.</p>
 <p>However, when starting to write your own script you will <cite>hard-code</cite> the filenames and hence
 you need to know the difference between relative and absolute paths.</p>
-</section>
-<section id="from-source-code-to-programme">
-<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="from-source-code-to-programme">
+<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this headline">¶</a></h2>
 <p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
 Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
 computer can do billions of these every second (this is the clock speed). The moving of
@@ -830,7 +760,7 @@ to actually do something. Ultimately, all computer code does this. It is possibl
 computer code at this level: assembler code. Back in the day this is how you programmed computers.
 This is an example of assembler code for an x86 processor (i.e. what you probably have):</p>
 <div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id19" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -874,16 +804,16 @@ This is an example of assembler code for an x86 processor (i.e. what you probabl
 come in two broad types: <cite>compiled</cite> and <cite>interpreted</cite>. Compiled languages go through a two-step
 process to be turned into a programme. Interpreted languages do not, and can be run (executed)
 immediately</p>
-<section id="compiled-languages">
-<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this headline">#</a></h3>
+<div class="section" id="compiled-languages">
+<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this headline">¶</a></h3>
 <p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
 written in those kind of languages. Note the user does not need the source code.
 Languages like Java are also compiled but at the time of execution
 (called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
-</section>
-<section id="interpreted-languages">
-<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="interpreted-languages">
+<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this headline">¶</a></h3>
 <p>In contract interpreted languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
 You therefore need another user to have the python executable their system to be able to run your code. The user
@@ -900,10 +830,10 @@ are very clever and can optimise your code very well to get the most out of your
 same thing but on the fly. The python executable (or R) is therefore turning your code into those kind of
 instructions as it’s running the code. Interpreted languages are therefore generally slower than compiled code
 as the interpreter cannot optimise as well as a separate compiler.</p>
-</section>
-</section>
-<section id="more-basic-command-line-functions">
-<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="more-basic-command-line-functions">
+<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this headline">¶</a></h2>
 <p>You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
 <p>The Command Line Interface (CLI) is a powerful way of interacting with a computer. Imagine
@@ -1003,29 +933,29 @@ using the zip file and folder we extracted earlier.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id20" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> cli_example/data_files/gid_data/site_locations
- mkdir site_2
- cp site_1.* site_2
- <span class="nb">cd</span> site_2
- mv site_1.prj site_2.prj
- mv site_1.qpj site_2.qpj
- mv site_1.cpg site_2.cpg
- mv site_1.dbf site_2.dbf
- mv site_1.shp site_2.shp
- mv site_1.shx site_2.shx
- <span class="nb">cd</span> ../../../notes
- rm notes.txt
- <span class="nb">cd</span> ../../documents/
- mv notes/notes.txt .
- rmdir notes
- <span class="nb">cd</span> ../
- mv cli_example cli_example_cli
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cli_example/data_files/gid_data/site_locations
+<span class="w"> </span>mkdir<span class="w"> </span>site_2
+<span class="w"> </span>cp<span class="w"> </span>site_1.*<span class="w"> </span>site_2
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>site_2
+<span class="w"> </span>mv<span class="w"> </span>site_1.prj<span class="w"> </span>site_2.prj
+<span class="w"> </span>mv<span class="w"> </span>site_1.qpj<span class="w"> </span>site_2.qpj
+<span class="w"> </span>mv<span class="w"> </span>site_1.cpg<span class="w"> </span>site_2.cpg
+<span class="w"> </span>mv<span class="w"> </span>site_1.dbf<span class="w"> </span>site_2.dbf
+<span class="w"> </span>mv<span class="w"> </span>site_1.shp<span class="w"> </span>site_2.shp
+<span class="w"> </span>mv<span class="w"> </span>site_1.shx<span class="w"> </span>site_2.shx
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../../notes
+<span class="w"> </span>rm<span class="w"> </span>notes.txt
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../documents/
+<span class="w"> </span>mv<span class="w"> </span>notes/notes.txt<span class="w"> </span>.
+<span class="w"> </span>rmdir<span class="w"> </span>notes
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../
+<span class="w"> </span>mv<span class="w"> </span>cli_example<span class="w"> </span>cli_example_cli
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id21" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example\data_files\gid_data\site_locations
  <span class="k">md</span> site_2
  <span class="k">copy</span> site_1.* site_2
@@ -1054,17 +984,15 @@ files, but what if there were 100 files. On the command line that’s annoying. 
 <code class="docutils literal notranslate"><span class="pre">rename</span></code> command that can do it in one go. You can also write a small <code class="docutils literal notranslate"><span class="pre">bash</span></code> script to do it in a loop. In windows you can download tools
 that do this or, like Linux, write a short script to do it. This shows the power of the command line and scripting.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="acknowledgements.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1080,28 +1008,24 @@ that do this or, like Linux, write a short script to do it. This shows the power
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Jon Hill<br/>
+    
+        &copy; Copyright 2023, Jon Hill.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

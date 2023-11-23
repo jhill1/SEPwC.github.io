@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python: the fundamentals &#8212; SEPwC  documentation</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,12 +18,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -35,8 +36,8 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -49,21 +50,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,10 +59,14 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -95,8 +86,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
+  <a class="reference internal" href="acknowledgements.html">
+   Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
@@ -180,11 +171,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="genindex.html">
    Index
   </a>
@@ -192,148 +178,87 @@
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
             </div>
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Python.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jhill1/SEPwC.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
         </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Python.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#intro-to-python">
    Intro to Python
@@ -407,13 +332,19 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-exercises">
+   Python Exercises
+  </a>
+ </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Python: the fundamentals</h1>
@@ -499,25 +430,29 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-exercises">
+   Python Exercises
+  </a>
+ </li>
 </ul>
 
                         </nav>
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section id="python-the-fundamentals">
-<h1>Python: the fundamentals<a class="headerlink" href="#python-the-fundamentals" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="python-the-fundamentals">
+<h1>Python: the fundamentals<a class="headerlink" href="#python-the-fundamentals" title="Permalink to this headline">¶</a></h1>
 <p>We’re now going to learn the basics of a language. If you’ve chosen
 Python, keep reading. If you’ve choose R <a class="reference internal" href="R.html#r-the-fundamentals"><span class="std std-ref">go to this section</span></a>.</p>
 <p>Computer languages are much simpler than natural languages, but much
 stricter. We have to get the syntax correct or things won’t work. However
 interpreted languages tell you what is wrong, so it’s not as bad as it sounds.</p>
-<section id="intro-to-python">
-<h2>Intro to Python<a class="headerlink" href="#intro-to-python" title="Permalink to this headline">#</a></h2>
+<div class="section" id="intro-to-python">
+<h2>Intro to Python<a class="headerlink" href="#intro-to-python" title="Permalink to this headline">¶</a></h2>
 <p>Python is an interpreted language that has become incredibly popular. Due to that
 there are modules that will do just about anything. This makes Python a really
 powerful tool for writing code to analyse any number of problems.</p>
@@ -653,9 +588,9 @@ your first Python program I think that’s pretty good!</p>
 </div></blockquote>
 <p>We’ve covered some of these in the pseudo-code chapter, so here we’re going to stick to the
 Python-specific parts and go through these in more detail.</p>
-</section>
-<section id="python-loops">
-<h2>Python Loops<a class="headerlink" href="#python-loops" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="python-loops">
+<h2>Python Loops<a class="headerlink" href="#python-loops" title="Permalink to this headline">¶</a></h2>
 <p>As we saw in the coding fundamentals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
 or through time (as in the example above). They are therefore fundamental
@@ -663,17 +598,17 @@ to a lot of data analysis.</p>
 <p>Suppose we want to make a table to convert Celsius to Fahrenheit:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">-20  -4.0</span>
 <span class="go">-15   5.0</span>
-<span class="go">-10  14.0</span>
-<span class="go">-5  23.0</span>
-<span class="go">0  32.0</span>
-<span class="go">5  41.0</span>
-<span class="go">10  50.0</span>
-<span class="go">15  59.0</span>
-<span class="go">20  68.0</span>
-<span class="go">25  77.0</span>
-<span class="go">30  86.0</span>
-<span class="go">35  95.0</span>
-<span class="go">40 104.0</span>
+<span class="go">-10   14.0</span>
+<span class="go"> -5   23.0</span>
+<span class="go">  0   32.0</span>
+<span class="go">  5   41.0</span>
+<span class="go"> 10   50.0</span>
+<span class="go"> 15   59.0</span>
+<span class="go"> 20   68.0</span>
+<span class="go"> 25   77.0</span>
+<span class="go"> 30   86.0</span>
+<span class="go"> 35   95.0</span>
+<span class="go"> 40   104.0</span>
 </pre></div>
 </div>
 <p>How do we write a program that prints out such a table? We know that</p>
@@ -681,33 +616,35 @@ to a lot of data analysis.</p>
 \[F = \frac{9}{5}C + 32\]</div>
 <p>and a single line in this table is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
-<span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We could therefore write:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span> <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This is error prone though. What if we make a typo (likely)? How would we know? Also this
-is very boring and repetitive. The entire idea of writing code it to remove the
+<p>This is error prone though. What if we make a typo (which is likely)? How would we know?
+Also this is very boring and repetitive. Note, I’ve used <code class="docutils literal notranslate"><span class="pre">;</span></code> to seperate out
+statements so they can go on a single line.</p>
+<p>The entire idea of writing code it to remove the
 repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
-<section id="python-for-loops">
-<h3>Python <cite>for</cite> Loops<a class="headerlink" href="#python-for-loops" title="Permalink to this headline">#</a></h3>
-<p>‘for’ loops work in Python using a control variable (the thing that increments each loop) and
+<div class="section" id="python-for-loops">
+<h3>Python <cite>for</cite> Loops<a class="headerlink" href="#python-for-loops" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
 a bit abstract, so let’s do some examples.</p>
@@ -728,7 +665,7 @@ see the following:</p>
 </pre></div>
 </div>
 <p>Note the indentation? We covered that briefly in the last section. Unlike other languages
-Python uses white space to denote which statements are included in the <cite>for</cite> loop. They must
+Python uses white space to denote which statements are included in the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. They must
 be indented to the same level, but there are no rules for how much. Most programmers
 use 4 spaces. Some use 8, some (rarely) use 3.</p>
 <p>I would recommend sticking to 4 spaces. In a text editor it’s worth setting your <kbd class="kbd docutils literal notranslate">Tab</kbd>
@@ -740,7 +677,7 @@ to be four spaces, rather than the <cite>tab</cite> character.</p>
 </pre></div>
 </div>
 <p>The output will be identical to the above, but we’re accessing the list via the index
-(here, the variable <cite>i</cite>). What does <cite>i</cite> do then? Let’s edit the code and find out.</p>
+(here, the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>). What does <code class="docutils literal notranslate"><span class="pre">i</span></code> do then? Let’s edit the code and find out.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -754,25 +691,25 @@ to be four spaces, rather than the <cite>tab</cite> character.</p>
 <span class="go">5</span>
 </pre></div>
 </div>
-<p><cite>i</cite> goes from 0 (Python starts counting from 0. R starts from 1) to the length of the list - 1. The <cite>range</cite> function
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code> goes from 0 (Python starts counting from 0. R starts from 1) to the length of the list - 1. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function
 creates a list containing those numbers. So although this loops looks different to the first one we created,
 it’s actually identical in terms of it’s construction.</p>
-<p>The <cite>range</cite> function is <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">increment)</span></code>
-which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, but not including, <cite>stop</cite>.
-We can also write <cite>range(stop)</cite> as an abbreviation for <cite>range(0, stop, 1)</cite>, or <cite>range(start,stop)</cite> to assume an increment
+<p>The <code class="docutils literal notranslate"><span class="pre">range</span></code> function is <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">increment)</span></code>
+which generates a list of integers: <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">start+increment</span></code>, <code class="docutils literal notranslate"><span class="pre">start+2*increment</span></code>, and so on up to, but not including, <code class="docutils literal notranslate"><span class="pre">stop</span></code>.
+We can also write <code class="docutils literal notranslate"><span class="pre">range(stop)</span></code> as an abbreviation for <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">stop,</span> <span class="pre">1)</span></code>, or <code class="docutils literal notranslate"><span class="pre">range(start,stop)</span></code> to assume an increment
 of 1.</p>
 <p>For loops are a really useful way of doing the same thing to each item in a list.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Writing our table for conversion using a `for` loop?</strong></p>
+<p><strong>Writing our table for conversion using a ``for`` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>for</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -780,12 +717,12 @@ of 1.</p>
 and calculates F, before printing C and F. You could do this in one line of code, which
 we will come to later.</p>
 </div>
-<p>In a <cite>for</cite> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
-Python also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
-</section>
-<section id="python-while-loop">
-<h3>Python <cite>while</cite> loop<a class="headerlink" href="#python-while-loop" title="Permalink to this headline">#</a></h3>
-<p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
+<p>In a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
+Python also has a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which will keep going as long as some condition is true.</p>
+</div>
+<div class="section" id="python-while-loop">
+<h3>Python <cite>while</cite> loop<a class="headerlink" href="#python-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">1</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">statement</span> <span class="mi">2</span><span class="o">&gt;</span>
@@ -819,16 +756,16 @@ Python also has a <cite>while</cite> loop which will keep going as long as some 
 can be any conditional statement, including key presses (but that requires some knowledge we don’t have yet).</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Writing our table for conversion using a `while` loop?</strong></p>
+<p><strong>Writing our table for conversion using a ``while`` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>while</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
 <span class="k">while</span> <span class="n">C</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
     <span class="n">C</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
@@ -836,10 +773,10 @@ can be any conditional statement, including key presses (but that requires some 
 <p>This is very easy to read an understand; especially the ending condition (unlike
 the the loop above where we had to use 41…).</p>
 </div>
-</section>
-</section>
-<section id="python-conditionals">
-<h2>Python conditionals<a class="headerlink" href="#python-conditionals" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="python-conditionals">
+<h2>Python conditionals<a class="headerlink" href="#python-conditionals" title="Permalink to this headline">¶</a></h2>
 <p>As we saw in the coding fundamentals, conditionals are a tool to make decisions
 in code; they control the flow of code. We can make those decisions based on the state of the program at the time.</p>
 <p>We want to inform the user if their climate is either a hot desert, arctic desert, temperate rainforest, or tropical
@@ -851,7 +788,7 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 </div>
 <p>How do we write a program that prints out such a statement, based on that input? We know the following:</p>
 <table class="table" id="id1">
-<caption><span class="caption-text">Environments</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-text">Environments</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -883,12 +820,12 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 </tbody>
 </table>
 <p>So we need to be able to make a decision, based on those the variables, temperature and humidity.
-This is where <cite>if</cite> statements come in.</p>
-<section id="python-if-statement">
-<h3>Python <cite>if</cite> statement<a class="headerlink" href="#python-if-statement" title="Permalink to this headline">#</a></h3>
-<p>The <cite>if</cite> statement consists of an <cite>if</cite> condition, followed by zero or more <cite>elif</cite> conditions. A final <cite>else</cite>
-statement can be used to capture the situation where everything is <cite>False</cite>.
-In general, we can put together multiple conditions. Only the first condition that is <cite>True</cite> is executed.</p>
+This is where <code class="docutils literal notranslate"><span class="pre">if</span></code> statements come in.</p>
+<div class="section" id="python-if-statement">
+<h3>Python <cite>if</cite> statement<a class="headerlink" href="#python-if-statement" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
+statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">True</span></code> is executed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
 <span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
@@ -917,9 +854,10 @@ In general, we can put together multiple conditions. Only the first condition th
 <p>Not the best of code, engineering-wise, but it will work. Try it out.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Add an `else` block</strong></p>
+<p><strong>Add an ``else`` block</strong></p>
 <blockquote>
-<div><p>Amend the example below to add an <cite>else</cite> block to print something if humidity is not “high”</p>
+<div><p>Amend the example below to add an <code class="docutils literal notranslate"><span class="pre">else</span></code> block to print a message about not understanding the input
+if humidity is not “high”</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -940,7 +878,7 @@ so you should see:</p>
 </div>
 </div>
 <p>We now need to do all combinations, with some logic to decide a few things. There are (as always!)
-a number of ways of doing this. This is using <cite>elif</cite> and boolean operators:</p>
+a number of ways of doing this. This is using <code class="docutils literal notranslate"><span class="pre">elif</span></code> and boolean operators:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 
@@ -956,22 +894,22 @@ a number of ways of doing this. This is using <cite>elif</cite> and boolean oper
    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I don&#39;t understand the inputs&quot;</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature: &quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Humidity: &quot;</span><span class="p">,</span> <span class="n">humidity</span><span class="p">)</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Both should be `high` or `low`&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Both should be &#39;high&#39; or &#39;low&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we’ve used the <cite>and</cite> operator to check that <em>both</em> temperature and humidity are
+<p>Here, we’ve used the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator to check that <em>both</em> temperature and humidity are
 set appropriately. If the user supplies anything other than “high” or “low” it should print
-an message.</p>
+a message.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
-<p>Note the error message we gave in the <cite>else</cite> block contains what the user
+<p>Note the error message we gave in the <code class="docutils literal notranslate"><span class="pre">else</span></code> block contains what the user
 had supplied us with. It often helps to print out the variables in question
 when you do the else like this. It helps you, the programmer, to debug and it helps
 the user possibly see what to change to fix. Here, we’ve also told the user what they should be</p>
 <p>In reality, these variable should be checked before hand and a more informative error message could
 be given <em>before</em> any processing takes place. This code is so tiny that it makes no difference.</p>
 </div>
-<p>The second way of working out the logic is by nested <cite>if</cite> statements. Here’s an example:</p>
+<p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span><span class="o">=</span><span class="mi">71</span>
 
 <span class="k">if</span> <span class="n">mark</span> <span class="o">&gt;=</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">mark</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
@@ -1010,13 +948,13 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 <li><p>otherwise the mark is between 0 and 39 (inclusive), which is a fail mark.</p></li>
 </ul>
 </div></blockquote>
-<p>Check you understand the flow of the code and note that the <cite>if</cite> statements are done in order, so
-if the first one is <cite>False</cite>, <cite>mark</cite> must be less than 40 or greater than 100.</p>
+<p>Check you understand the flow of the code and note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> statements are done in order, so
+if the first one is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">mark</span></code> must be less than 40 or greater than 100.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Test the code</strong></p>
 <blockquote>
-<div><p>Try the code above with different values of <cite>mark</cite>. Does it work as expected?</p>
+<div><p>Try the code above with different values of <code class="docutils literal notranslate"><span class="pre">mark</span></code>. Does it work as expected?</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -1038,11 +976,11 @@ Then what does it do? You should see something like:</p>
 </pre></div>
 </div>
 </div>
-<p>Now you’ve seen nested <cite>if</cite> statements in action. Try the final practical exercise of this section.</p>
+<p>Now you’ve seen nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements in action. Try the final practical exercise of this section.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Nested `if` version</strong></p>
-<p>Re-write the environment code using nested <cite>if</cite> statements</p>
+<p><strong>Nested ``if`` version</strong></p>
+<p>Re-write the environment code using nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -1073,10 +1011,10 @@ Then what does it do? You should see something like:</p>
 <p>The advantage here is we can have more nuanced error messages (relating to temperature or humidity, rather than both), but
 there is repeated code and it might be harder to follow the logic. I prefer the previous version, but this works just fine.</p>
 </div>
-</section>
-</section>
-<section id="python-comments">
-<h2>Python comments<a class="headerlink" href="#python-comments" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="python-comments">
+<h2>Python comments<a class="headerlink" href="#python-comments" title="Permalink to this headline">¶</a></h2>
 <p>All computer languages have some mechanisms to add text that is not part of the code
 itself. These are called comments. The idea of these snippets of text are to provide
 commentary to help someone (including future you) understand the code
@@ -1086,8 +1024,8 @@ functions. In this section we’re going to stick to the PEP (Python Enhancement
 styles to keep your code consistent.
 <a class="reference external" href="https://peps.python.org/">https://peps.python.org/</a></p>
 <p>Python has three styles of comments: inline, block and documentation.</p>
-<section id="inline-comments-python">
-<h3>Inline comments (Python)<a class="headerlink" href="#inline-comments-python" title="Permalink to this headline">#</a></h3>
+<div class="section" id="inline-comments-python">
+<h3>Inline comments (Python)<a class="headerlink" href="#inline-comments-python" title="Permalink to this headline">¶</a></h3>
 <p>Inline comments occur within the line of code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Increment x</span>
 </pre></div>
@@ -1099,9 +1037,9 @@ and unnecessary. It may sometimes be useful, for example:</p>
 </div>
 <p>Here, the same style is used, but as the line of code is so short, as is the comment, this
 may be preferable to the second style of comments</p>
-</section>
-<section id="block-comments-python">
-<h3>Block comments (Python)<a class="headerlink" href="#block-comments-python" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="block-comments-python">
+<h3>Block comments (Python)<a class="headerlink" href="#block-comments-python" title="Permalink to this headline">¶</a></h3>
 <p>Block comments occupy one or more lines. In python they look like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># increment count to account for boundary cell</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1115,14 +1053,14 @@ may be preferable to the second style of comments</p>
 </div>
 <p>The PEP8 guidance says lines of code should be sorter than 72 characters (this includes comments), hence
 why you may “wrap” comments onto multiple lines.</p>
-</section>
-<section id="documentation-comments-python">
-<h3>Documentation comments (Python)<a class="headerlink" href="#documentation-comments-python" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="documentation-comments-python">
+<h3>Documentation comments (Python)<a class="headerlink" href="#documentation-comments-python" title="Permalink to this headline">¶</a></h3>
 <p>Python also has a second style of comments that also act as a way of documenting code. They should be used
 underneath functions, classes and modules where public facing (i.e. where documentation is helpful!).</p>
 <p>An example is something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Form a complex number.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Form a complex number.</span>
 
 <span class="sd">    Keyword arguments:</span>
 <span class="sd">    real -- the real part (default 0.0)</span>
@@ -1133,11 +1071,11 @@ underneath functions, classes and modules where public facing (i.e. where docume
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>The above function, <cite>complex</cite> returns a complex number. The docstring, delimited by the three ” marks states
+<p>The above function, <code class="docutils literal notranslate"><span class="pre">complex</span></code> returns a complex number. The docstring, delimited by the three <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> marks states
 what the function does, what the arguments are. You may also add what is returned (though here, it’s obvious!).</p>
-</section>
-<section id="what-to-comment-python">
-<h3>What to comment (Python)<a class="headerlink" href="#what-to-comment-python" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="what-to-comment-python">
+<h3>What to comment (Python)<a class="headerlink" href="#what-to-comment-python" title="Permalink to this headline">¶</a></h3>
 <p>The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
 be useful for the people that come after you (including you) so they can understand the code better.
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
@@ -1179,7 +1117,7 @@ can’t compensate for poor style by adding comments…</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">a</span>  <span class="c1"># Returns a</span>
 </pre></div>
 </div>
-<p>That comments adds nothing to the understanding. If <cite>a</cite> was a proper variable name, e.g. <cite>list_of_cells</cite> then even adding a comment becomes somewhat
+<p>That comments adds nothing to the understanding. If <code class="docutils literal notranslate"><span class="pre">a</span></code> was a proper variable name, e.g. <code class="docutils literal notranslate"><span class="pre">list_of_cells</span></code> then even adding a comment becomes somewhat
 redundant. Add a docstring to the top of a function and there is no need at all to comment the return statement.</p>
 <p>The best hint for comments is to write them at the top of code blocks:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># we now extend this mask - we only need to do this, if the</span>
@@ -1194,18 +1132,103 @@ redundant. Add a docstring to the top of a function and there is no need at all 
 <p>The code itself might not make perfect sense to someone new to the whole code, but the comment above helps orient them
 if there some error in that part of the code. It also helps to explain <em>why</em> rather than the how in comments. The how
 is in the code. The why is how it’s written.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+<div class="section" id="python-exercises">
+<h2>Python Exercises<a class="headerlink" href="#python-exercises" title="Permalink to this headline">¶</a></h2>
+<p>Try the following exercsies. For any of the exercises, feel free to type out the code and try it for real first, or figure out and see if you were right.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Will the code below work?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Fred&quot;</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">name</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have a great name, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>No. You cannot compare a number to a string</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>What is printed here?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The number 13 is printed only. The range goes in steps of 2, so hits 15 on the second
+iteration, which is equal to the upper limit of range, so the loop terminates.</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>What is printed here?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This one is tricky! What is printed are the last values of the loop, so “40   104.0”. The print
+statement is not indented to within the loop, so is only run when the loop is finished.</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>What’s with <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code>? In all the exercises above converting centigrade to Farenheit I’ve used <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code>.
+Why not <code class="docutils literal notranslate"><span class="pre">9/5</span></code>? Let’s try it.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+<span class="c1"># Where therefore expect F to be -4</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This one is very subtle. <code class="docutils literal notranslate"><span class="pre">9/5*C</span></code> is done in integer maths. <code class="docutils literal notranslate"><span class="pre">9/5</span></code> comes out as <code class="docutils literal notranslate"><span class="pre">1</span></code> (try it in python). You therefore get the
+wrong answer. By typing <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code> we push python into using floating point maths so you get <code class="docutils literal notranslate"><span class="pre">1.8</span></code>. You only need one floating
+point number in an operation to make it all floaitng point, so just using <code class="docutils literal notranslate"><span class="pre">9.0/5</span></code> will suffice. This is a very easy bug to introduce
+into any code (I have!) so it’s worth getting in the habit of typing <code class="docutils literal notranslate"><span class="pre">9.0</span></code> or <code class="docutils literal notranslate"><span class="pre">9.</span></code> when using any number you mean to be a float
+in python.</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Write a program to convert some old data in square feet to SI units (metres squared).
+1 foot = 0.3048 metres. So 1 foot squared is 0.092903 metres squared.</p>
+<p>Out data goes from 2 ft sq to 20 ft sq in steps of 2, inclusive. Print your conversions.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">conversion</span> <span class="o">=</span> <span class="mf">0.092903</span>
+<span class="k">for</span> <span class="n">sqft</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">sqm</span> <span class="o">=</span> <span class="n">sqft</span> <span class="o">*</span> <span class="n">conversion</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sqft</span><span class="p">,</span> <span class="n">sqm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
 
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Algorithms.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1221,28 +1244,24 @@ is in the code. The why is how it’s written.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Jon Hill<br/>
+    
+        &copy; Copyright 2023, Jon Hill.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
