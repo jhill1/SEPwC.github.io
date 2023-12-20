@@ -455,7 +455,7 @@ the root drive where Windows actually lives, along with your programs (apps) and
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p>** Why C:?**
-What’s wrong with A? Google and find out.</p>
+What’s wrong with A? Search and find out.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -473,7 +473,7 @@ it’s in <code class="docutils literal notranslate"><span class="pre">Documents
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
-<code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. This contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
+<code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. These contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> there is a directory with your username. Within there are your images, music, etc.</p>
 <p>Unlike Windows, drives can be mounted anywhere in the file structure and this is generally transparent to the user. So for example
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> can be mounted onto a completely separate physical hard drive to the rest of the folders. The same applies to <em>any</em>
@@ -482,7 +482,7 @@ a different file to <code class="docutils literal notranslate"><span class="pre"
 </div>
 <div class="section" id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
-<p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux Apple added some
+<p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
 are some binaries (i.e. programmes) in <code class="docutils literal notranslate"><span class="pre">\bin</span></code>, etc.</p>
@@ -694,6 +694,8 @@ should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_4.png" />
 <p>Feel free to continue to explore the folders, using both the GUI and CLI to navigate. Remember to use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to
 find where you are if you need to.</p>
+<p>Once you’ve done this in Windows or Linux (or Mac), try on the other operating system as it’s good to have a basic understanding
+of both main types.</p>
 </div>
 <div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
@@ -738,7 +740,7 @@ a programme).</p>
 So relative to scripts, that’s <code class="docutils literal notranslate"><span class="pre">../data/very_important_data.csv</span></code></p>
 <p>This is a really useful thing. Rather than give a full/absolute path, we can give relative paths
 to file. Imagine I had written a script that used absolute paths to data on my computer and gave that to
-you. It would not work as you’re not on my computer and you are not logged in as me. You would then
+you. It would not work as you’re not on my computer and you are not logged in as me even if you were. You would then
 have to edit every path in the script. However, if I give relative paths, as long as the directory
 structure is the same, the script will work.</p>
 <p>The downside of relative paths is that you must have the same directory structure, relative to
@@ -753,12 +755,14 @@ you need to know the difference between relative and absolute paths.</p>
 <h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this headline">¶</a></h2>
 <p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
 Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
-computer can do billions of these every second (this is the clock speed). The moving of
+computer can do billions of these every second (this is the clock speed so 1 Ghz can do 1
+billion ‘things’ per second). The moving of these
 gates allow the computer to add two numbers or multiple two numbers or move data around, etc.
 These are called instructions. The CPU translate these instructions into moving those gates around
 to actually do something. Ultimately, all computer code does this. It is possible to write
-computer code at this level: assembler code. Back in the day this is how you programmed computers.
-This is an example of assembler code for an x86 processor (i.e. what you probably have):</p>
+computer code at this level: assembler code. Back in the day (i.e. when I started programming),
+this is how you programmed computers, especially for games where you needed maximum performance.
+This is an example of assembler code for an x86 processor (i.e. what the type of processor you probably have):</p>
 <div class="literal-block-wrapper docutils container" id="id19">
 <div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
@@ -808,13 +812,13 @@ immediately</p>
 <h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this headline">¶</a></h3>
 <p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
-written in those kind of languages. Note the user does not need the source code.
+written in those kind of languages. Note that the user does not need the source code.
 Languages like Java are also compiled but at the time of execution
 (called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
 </div>
 <div class="section" id="interpreted-languages">
 <h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this headline">¶</a></h3>
-<p>In contract interpreted languages are not compiled. You execute the source code. So you can write a text file
+<p>In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
 You therefore need another user to have the python executable their system to be able to run your code. The user
 must also have your source code. This is the main difference between compiled and interpreted languages.
@@ -827,8 +831,8 @@ Some languages are both.</p>
 <p>So what happens during compiling or interpretation? Remember that assemble code above? That’s what the compiler
 does to your source code. It turns it from human readable code to those CPU instructions. Modern compilers
 are very clever and can optimise your code very well to get the most out of your computer. Interpreters do the
-same thing but on the fly. The python executable (or R) is therefore turning your code into those kind of
-instructions as it’s running the code. Interpreted languages are therefore generally slower than compiled code
+same thing but as you execute the script. The python (or R) executable is therefore turning your code/script into those kind of
+instructions as it’s running. Interpreted languages are therefore generally slower than compiled code
 as the interpreter cannot optimise as well as a separate compiler.</p>
 </div>
 </div>
@@ -897,8 +901,8 @@ more done when programming.</p>
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Find what the basic commands do</strong></p>
 <p>For the list of commands above, search for each one, or use the help system, and work out what they do.
-Have a look through the options too. Some might not be that useful and you may neve need them, but some
-very useful!</p>
+Have a look through the options too. Some might not be that useful and you may never need them, but some
+are very useful!</p>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>

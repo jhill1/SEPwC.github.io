@@ -582,6 +582,48 @@ numbers were supplied by a user or in the data. The warnings can therefore be ve
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p>Try the following codes and check you understand the warning or error.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span> <span class="o">=</span> <span class="p">(</span>
+ <span class="s1">&#39;https://example.com/1&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;https://example.com/2&quot;,</span>
+ <span class="s1">&#39;https://example.com/3</span>
+ <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w"> </span><span class="s">&#39;https://example.com/1&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="s">&#39;https://example.com/2&quot;,</span>
+<span class="s"> &#39;</span><span class="n">https</span><span class="o">://</span><span class="n">example.com</span><span class="o">/</span><span class="m">3</span>
+<span class="w"> </span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;username1&#39;</span>
+<span class="k">pass</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Mercedes&#39;</span>
+<span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Aston Martin&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span> <span class="ow">is</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10000</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The first example (R and Python) contains two errors. ‘<a class="reference external" href="https://example.com/2">https://example.com/2</a>” uses different
+quote marks to start and end. If you fixed that, there then a missing ‘ at the
+end of the third URL.</p>
+<p>The second set of examples (R and Python) both use <em>reserved words</em>. You cannot use those
+for variable names.</p>
+<p>The final two examples issue warnings. The Python example checks you meant <cite>is</cite> not <cite>==</cite>.
+The R example prints a wanring about max.print (i.e. you’ve printed too much!). We can
+alter that.</p>
 </div>
 </div>
 </div>
@@ -606,8 +648,8 @@ Application Programming Interface or API) changes.</p></li>
 a race condition (wrong order) etc. Parallel programming is very hard because of this.</p></li>
 <li><p>Resource bugs: Using an unitilised variable or a null pointer. This are actually quite hard to generate in
 interpreted languages like Python and R.</p></li>
-<li><p>Syntax: Using <code class="docutils literal notranslate"><span class="pre">x==5</span></code> rather than <code class="docutils literal notranslate"><span class="pre">x=5</span></code>. Can be valid syntax but not what you expected. Again, in
-interpreted languages this is hard to do as you get an error.</p></li>
+<li><p>Syntax: Using <code class="docutils literal notranslate"><span class="pre">x==5</span></code> rather than <code class="docutils literal notranslate"><span class="pre">x=5</span></code> can be valid syntax but not what you expected. Again, in
+interpreted languages this is hard to do as you get an error or warning.</p></li>
 <li><p>Human: When working in teams it is really important to communicate and use tests. It is very easy to
 add bugs by not updating comments, not documenting code correctly and duplicating code.</p></li>
 </ul>
@@ -618,7 +660,7 @@ about by not checking user input fully. So rather than running a query on a data
 code deletes the entire database.</p>
 <div class="section" id="reporting-a-bug">
 <h3>Reporting a bug<a class="headerlink" href="#reporting-a-bug" title="Permalink to this headline">¶</a></h3>
-<p>One of the best ways of giving back to the open souce communicty is to report bugs when you
+<p>One of the best ways of giving back to the open souce community is to report bugs when you
 come across them. As a beginner programmer it’s more likely that the error is in your code
 rather than a well-used library like <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. However, you may well
 find the odd bug as you go.</p>
@@ -637,6 +679,8 @@ and libraries are open source and hence issues/bugs are reported.</p>
 <p><strong>Reproducing a bug</strong></p>
 <p>Find a bug on github for an R or Python package/library which has an MRE.</p>
 <p>Can you replicate the bug and the error message?</p>
+<p><a class="reference external" href="https://github.com/tidyverts/tsibble/issues/300">Here’s an example for R using tsibble.</a></p>
+<p><a class="reference external" href="https://github.com/numpy/numpy/issues/24593">Here’s an example for Python.</a></p>
 </div>
 </div>
 </div>
@@ -670,11 +714,11 @@ Note that’ve not copied any of the specific parts of the error in a search, e.
 <span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">lib</span><span class="o">.</span><span class="n">pyx</span><span class="p">:</span><span class="mi">668</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astype_intsafe</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>You’ll note that they are speciifc to the version of Python I’m using and to where pandas is installed, and even the
+<p>You’ll note that they are specific to the version of Python I’m using and to where pandas is installed, and even the
 OS I’m using. Anyone using Windows, Python 3.11 and a version of pandas installed via Anaconda will have very
 different paths to mine! Search engines aren’t that good…</p>
 <p>The above example is also a good example of the fact this is <em>your</em> error. It is not a bug in the pandas library.
-The code creates a number as a striong that cannot be converted into an int (as it’s a floating point number).</p>
+The code creates a number as a string that cannot be converted into an int (as it’s a floating point number).</p>
 <p>Let’s do an example in R now.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Date</span><span class="o">=</span><span class="nf">as.Date</span><span class="p">(</span><span class="nf">character</span><span class="p">()),</span>
 <span class="w">             </span><span class="n">country</span><span class="o">=</span><span class="nf">factor</span><span class="p">(),</span>
@@ -698,7 +742,7 @@ your code. The easiset form of debugging is called “print debugging”. You in
 print statements around code to output the contents of variables to help you
 understand the flow of the program. The downside of this debugging is you have to
 add and then <em>remove</em> a lot of print statements!</p>
-<p>If I’m not sure why code isn’t working, and perhaps more importantly, where,
+<p>If I’m not sure why code is not working, and perhaps more importantly, where,
 I first add “programming noise”; print statements like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PN: 1&quot;</span><span class="p">)</span>
 
@@ -713,20 +757,25 @@ really zero in on a line or lines of code that are breaking.</p>
 of any key variable sduring the loop. When you code breaks you know exactly which
 loop index it was on. Running this in RStudio or Spyder means you can then
 explore your data using that index. Very helpful!</p>
-<p>However print debugging can be unweidly, producing massive amoutns of output
+<p>However print debugging can be unweidly, producing massive amounts of output
 that can be be as hard to decipher as the error you’re trying to fix.</p>
-<p>EXERCISE on print debugging (R and Python)</p>
+<div class="admonition-practical-exercise-python admonition">
+<p class="admonition-title">Practical exercise - Python</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>There were erros in syntax and logic! My version is below. More elgant solutions
+can be found too.</p>
+</div>
 <p>Another way, alluded to above, is within R (or Rstudio) or ipython (or Spyder) is
 to run your code. When you get to the error your variables are still available and
 you can explore them to see what might be wrong.</p>
 <p>EXERCISE on console debugging (R and Python)</p>
-<p>I’ve been writing code in one form or another for <em>cough*35 years*cough</em> and
+<p>I’ve been writing code in one form or another for <em>cough</em> 35 years <em>cough</em> and
 I <em>still</em> use print debugging, especially in when writing code for multiple
-cores. It’s incredibly useful and quick. However, some bugs or errors are
-best fixed using specialist debugging software called a debugger.</p>
-<p>pdb</p>
-<p>R equiv?</p>
-<p>Exercises: Bug spotting (inc running debugger)</p>
+cores (parallel programming). It’s incredibly useful and quick. However, some bugs or errors are
+best fixed using specialist debugging software called a debugger. We’ll cover
+debuggers in the optional mini-courses at the end.</p>
 </div>
 </div>
 
