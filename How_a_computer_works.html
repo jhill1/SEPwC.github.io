@@ -1,482 +1,355 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>How a computer works &#8212; SEPwC  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'How_a_computer_works';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software licences" href="Licences.html" />
     <link rel="prev" title="Acknowledgements" href="acknowledgements.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   How a computer works
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Licences.html">
-   Software licences
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Code_basics.html">
-   The fundamentals of code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Algorithms.html">
-   Thinking like a computer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R.html">
-   R: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Issues.html">
-   Solving issues and debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R2.html">
-   R: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
-   R: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mini_courses.html">
-   Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/How_a_computer_works.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/How_a_computer_works.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="btn__text-container">.rst</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filesystems">
-   Filesystems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#windows">
-     Windows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux">
-     Linux
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#macos">
-     MacOS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navigating-a-filesystem">
-   Navigating a filesystem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#absolute-vs-relative-paths">
-   Absolute vs Relative paths
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-source-code-to-programme">
-   From source code to programme
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiled-languages">
-     Compiled languages
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interpreted-languages">
-     Interpreted languages
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-basic-command-line-functions">
-   More basic command line functions
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How a computer works</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filesystems">
-   Filesystems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#windows">
-     Windows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux">
-     Linux
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#macos">
-     MacOS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navigating-a-filesystem">
-   Navigating a filesystem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#absolute-vs-relative-paths">
-   Absolute vs Relative paths
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-source-code-to-programme">
-   From source code to programme
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiled-languages">
-     Compiled languages
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interpreted-languages">
-     Interpreted languages
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-basic-command-line-functions">
-   More basic command line functions
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>How a computer works</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-source-code-to-programme">From source code to programme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages">Compiled languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-languages">Interpreted languages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-basic-command-line-functions">More basic command line functions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="how-a-computer-works">
-<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this headline">#</a></h1>
+<h1>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this heading">#</a></h1>
 <p>Computers have been around since the 1940’s. The first computers were
 mechanical; using valves to store and process information. By the 60’s and 70’s they
 had moved to silicon transistors; tiny gates that store a 1 or 0 (on or off). A modern
@@ -504,7 +377,7 @@ you can then log on and start using it. There is a lot of jargon around computer
 as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
 <section id="filesystems">
-<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this headline">#</a></h2>
+<h2>Filesystems<a class="headerlink" href="#filesystems" title="Permalink to this heading">#</a></h2>
 <p>Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
@@ -518,14 +391,14 @@ storing your files. This we do care about. As we will be writing software that w
 files at some point, we need to understand how to access files and hence, we need to
 understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
 <section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h3>
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
 <p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>** Why C:?**
-What’s wrong with A? Google and find out.</p>
+<p><strong>Why C:?</strong>
+What’s wrong with A? Search and find out.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -540,10 +413,10 @@ to your local hard drive. However, a <em>standard</em> Windows 11 machine will h
 it’s in <code class="docutils literal notranslate"><span class="pre">Documents</span></code>; we need a full path (see later).</p>
 </section>
 <section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h3>
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">#</a></h3>
 <p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
-<code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. This contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
+<code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. These contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> there is a directory with your username. Within there are your images, music, etc.</p>
 <p>Unlike Windows, drives can be mounted anywhere in the file structure and this is generally transparent to the user. So for example
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> can be mounted onto a completely separate physical hard drive to the rest of the folders. The same applies to <em>any</em>
@@ -551,15 +424,15 @@ folder. Temporary drives will be mounted into <code class="docutils literal notr
 a different file to <code class="docutils literal notranslate"><span class="pre">bob.txt</span></code></p>
 </section>
 <section id="macos">
-<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
-<p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux Apple added some
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">#</a></h3>
+<p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
 are some binaries (i.e. programmes) in <code class="docutils literal notranslate"><span class="pre">\bin</span></code>, etc.</p>
 <p>Like Linux, MacOS is case sensitive.</p>
 </section>
 <section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h3>
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
 <div class="admonition tip">
@@ -573,7 +446,7 @@ symbols.</p>
 </section>
 </section>
 <section id="navigating-a-filesystem">
-<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this headline">#</a></h2>
+<h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Permalink to this heading">#</a></h2>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
 <p>The first is to list which directory you are in.</p>
@@ -746,7 +619,7 @@ should see:</p>
 <p>Note that we can put several directories together. We can do the same to go up, then back down directories:</p>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id17" title="Permalink to this code">#</a></div>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\gis_data\site_locations
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\gis_data\site_locations
  <span class="k">dir</span>
  pwd
 </pre></div>
@@ -754,7 +627,7 @@ should see:</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id18" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../gis_data/site_locations
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="nb">cd</span> ../../gis_data/site_locations
  ls
  <span class="nb">pwd</span>
 </pre></div>
@@ -764,8 +637,12 @@ should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_4.png" />
 <p>Feel free to continue to explore the folders, using both the GUI and CLI to navigate. Remember to use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to
 find where you are if you need to.</p>
+<p>Once you’ve done this in Windows or Linux (or Mac), try on the other operating system as it’s good to have a basic understanding
+of both main types.</p>
 </div>
-<div class="admonition-thought-exercise admonition">
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/F2K68Wjq7qY" style="border: 0; height: 345px; width: 560px">
+</iframe></div><div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
 <p><strong>Navigating a filesystem</strong></p>
 <p>Imagine the following filesytem of folders:</p>
@@ -791,7 +668,7 @@ find where you are if you need to.</p>
 </div>
 </section>
 <section id="absolute-vs-relative-paths">
-<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this headline">#</a></h2>
+<h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this heading">#</a></h2>
 <p>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
 paths. These are paths that start from where you currently are (be that in the command line or running
@@ -808,7 +685,7 @@ a programme).</p>
 So relative to scripts, that’s <code class="docutils literal notranslate"><span class="pre">../data/very_important_data.csv</span></code></p>
 <p>This is a really useful thing. Rather than give a full/absolute path, we can give relative paths
 to file. Imagine I had written a script that used absolute paths to data on my computer and gave that to
-you. It would not work as you’re not on my computer and you are not logged in as me. You would then
+you. It would not work as you’re not on my computer and you are not logged in as me even if you were. You would then
 have to edit every path in the script. However, if I give relative paths, as long as the directory
 structure is the same, the script will work.</p>
 <p>The downside of relative paths is that you must have the same directory structure, relative to
@@ -820,17 +697,19 @@ from the internet) saving all this hassle.</p>
 you need to know the difference between relative and absolute paths.</p>
 </section>
 <section id="from-source-code-to-programme">
-<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this headline">#</a></h2>
+<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Permalink to this heading">#</a></h2>
 <p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
 Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
-computer can do billions of these every second (this is the clock speed). The moving of
+computer can do billions of these every second (this is the clock speed so 1 Ghz can do 1
+billion ‘things’ per second). The moving of these
 gates allow the computer to add two numbers or multiple two numbers or move data around, etc.
 These are called instructions. The CPU translate these instructions into moving those gates around
 to actually do something. Ultimately, all computer code does this. It is possible to write
-computer code at this level: assembler code. Back in the day this is how you programmed computers.
-This is an example of assembler code for an x86 processor (i.e. what you probably have):</p>
+computer code at this level: assembler code. Back in the day (i.e. when I started programming),
+this is how you programmed computers, especially for games where you needed maximum performance.
+This is an example of assembler code for an x86 processor (i.e. what the type of processor you probably have):</p>
 <div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1">1</a></span><a class="headerlink" href="#id19" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id19" title="Permalink to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -865,26 +744,27 @@ This is an example of assembler code for an x86 processor (i.e. what you probabl
 </pre></div>
 </div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
+</aside>
+</aside>
 <p>Fortunately, things have moved on and we can write code in <cite>higher level languages</cite>. These
 come in two broad types: <cite>compiled</cite> and <cite>interpreted</cite>. Compiled languages go through a two-step
 process to be turned into a programme. Interpreted languages do not, and can be run (executed)
 immediately</p>
 <section id="compiled-languages">
-<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this headline">#</a></h3>
+<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Permalink to this heading">#</a></h3>
 <p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
-written in those kind of languages. Note the user does not need the source code.
+written in those kind of languages. Note that the user does not need the source code.
 Languages like Java are also compiled but at the time of execution
 (called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
 </section>
 <section id="interpreted-languages">
-<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this headline">#</a></h3>
-<p>In contract interpreted languages are not compiled. You execute the source code. So you can write a text file
+<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Permalink to this heading">#</a></h3>
+<p>In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
 You therefore need another user to have the python executable their system to be able to run your code. The user
 must also have your source code. This is the main difference between compiled and interpreted languages.
@@ -897,13 +777,13 @@ Some languages are both.</p>
 <p>So what happens during compiling or interpretation? Remember that assemble code above? That’s what the compiler
 does to your source code. It turns it from human readable code to those CPU instructions. Modern compilers
 are very clever and can optimise your code very well to get the most out of your computer. Interpreters do the
-same thing but on the fly. The python executable (or R) is therefore turning your code into those kind of
-instructions as it’s running the code. Interpreted languages are therefore generally slower than compiled code
+same thing but as you execute the script. The python (or R) executable is therefore turning your code/script into those kind of
+instructions as it’s running. Interpreted languages are therefore generally slower than compiled code
 as the interpreter cannot optimise as well as a separate compiler.</p>
 </section>
 </section>
 <section id="more-basic-command-line-functions">
-<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this headline">#</a></h2>
+<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Permalink to this heading">#</a></h2>
 <p>You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
 <p>The Command Line Interface (CLI) is a powerful way of interacting with a computer. Imagine
@@ -967,8 +847,8 @@ more done when programming.</p>
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Find what the basic commands do</strong></p>
 <p>For the list of commands above, search for each one, or use the help system, and work out what they do.
-Have a look through the options too. Some might not be that useful and you may neve need them, but some
-very useful!</p>
+Have a look through the options too. Some might not be that useful and you may never need them, but some
+are very useful!</p>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
@@ -1058,50 +938,116 @@ that do this or, like Linux, write a short script to do it. This shows the power
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="acknowledgements.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Acknowledgements</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="acknowledgements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Acknowledgements</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Licences.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Licences.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Software licences</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-source-code-to-programme">From source code to programme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages">Compiled languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-languages">Interpreted languages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-basic-command-line-functions">More basic command line functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

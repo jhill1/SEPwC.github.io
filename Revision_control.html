@@ -1,529 +1,361 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Revision control with Git &#8212; SEPwC  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Revision_control';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
-    <link rel="prev" title="R: part 3" href="R3.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="Python: part 2" href="Python2.html" />
+    <link rel="prev" title="Solving issues and debugging" href="Issues.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Expectations.html">
-   Expectations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="How_a_computer_works.html">
-   How a computer works
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Licences.html">
-   Software licences
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Code_basics.html">
-   The fundamentals of code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Algorithms.html">
-   Thinking like a computer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R.html">
-   R: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Issues.html">
-   Solving issues and debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R2.html">
-   R: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
-   R: part 3
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mini_courses.html">
-   Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assessments.html">
-   Assessments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Revision control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Revision_control.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Revision_control.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="btn__text-container">.rst</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-git">
-   Setting up git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#our-first-repository">
-   Our first repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-files">
-   Adding files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-history">
-   Git history
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ignoring-files">
-   Ignoring files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   Github
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-remote-repository">
-     1. Creating a remote repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connect-local-to-remote-repository">
-     2. Connect local to remote repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ssh-background-and-setup">
-     3. SSH Background and Setup
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-an-ssh-key-pair">
-       3.1 Create an SSH key pair
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#copy-the-public-key-to-github">
-       3.2 Copy the public key to GitHub
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push-local-changes-to-a-remote">
-     4. Push local changes to a remote
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaboration-with-git">
-   Collaboration with Git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conflict">
-   Conflict!
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Revision control with Git</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-git">
-   Setting up git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#our-first-repository">
-   Our first repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-files">
-   Adding files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-history">
-   Git history
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ignoring-files">
-   Ignoring files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   Github
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-remote-repository">
-     1. Creating a remote repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connect-local-to-remote-repository">
-     2. Connect local to remote repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ssh-background-and-setup">
-     3. SSH Background and Setup
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-an-ssh-key-pair">
-       3.1 Create an SSH key pair
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#copy-the-public-key-to-github">
-       3.2 Copy the public key to GitHub
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push-local-changes-to-a-remote">
-     4. Push local changes to a remote
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaboration-with-git">
-   Collaboration with Git
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conflict">
-   Conflict!
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Revision control with Git</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-repository">Our first repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-files">Adding files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-history">Git history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">Ignoring files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">Github</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository">1. Creating a remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-local-to-remote-repository">2. Connect local to remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-background-and-setup">3. SSH Background and Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-ssh-key-pair">3.1 Create an SSH key pair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-public-key-to-github">3.2 Copy the public key to GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-with-git">Collaboration with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conflict">Conflict!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="revision-control-with-git">
-<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this headline">#</a></h1>
+<h1>Revision control with Git<a class="headerlink" href="#revision-control-with-git" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p id="index-0">We’ll start by exploring how version control can be used to keep track of what one person did and when.
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:</p>
 <img alt="A lot of files with not very descriptive names like final_final_final.txt" src="_images/revisions.png" />
@@ -599,7 +431,7 @@ problems.</p></li>
 </div>
 </section>
 <section id="setting-up-git">
-<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">#</a></h2>
+<h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Permalink to this heading">#</a></h2>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:</p>
 <ul class="simple">
@@ -649,10 +481,6 @@ On macOS and Linux:</p>
 <p>We also need to set our favorite text editor, following this table:</p>
 <table class="table" id="id3">
 <caption><span class="caption-text">Editors and config</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Editor</p></th>
 <th class="head"><p>Configuration command</p></th>
@@ -746,7 +574,7 @@ More generally, you can get the list of available <code class="docutils literal 
 </div>
 </section>
 <section id="our-first-repository">
-<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this headline">#</a></h2>
+<h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Permalink to this heading">#</a></h2>
 <p>Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
@@ -877,7 +705,7 @@ Therefore, always check your current directory using the command <cite>pwd</cite
 </div>
 </section>
 <section id="adding-files">
-<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this headline">#</a></h2>
+<h2>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this heading">#</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Desktop/planets
@@ -1463,7 +1291,7 @@ To display the differences between its updated state and its original state, use
 </div>
 </section>
 <section id="git-history">
-<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this headline">#</a></h2>
+<h2>Git history<a class="headerlink" href="#git-history" title="Permalink to this heading">#</a></h2>
 <p>No, not the story of how Git came to be, but how do we get at the history of our commits.
 In the previous section we see we can refer to commits by the unique identifiers.
 You can refer to the <em>most recent commit</em> of the working
@@ -1822,7 +1650,7 @@ the difference between each commit.</p>
 </div>
 </section>
 <section id="ignoring-files">
-<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this headline">#</a></h2>
+<h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">#</a></h2>
 <p>What if we have files that we do not want Git to track for us,
 like backup files created by our editor or intermediate files created during data analysis?
 Let’s create a few dummy files:</p>
@@ -2026,7 +1854,7 @@ You want to keep them but you do not want to track them through <code class="doc
 </div>
 </section>
 <section id="github">
-<h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h2>
+<h2>Github<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
 <p>Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.</p>
@@ -2040,7 +1868,7 @@ and cons of this in a later episode.</p>
 world. To this end we are going to create a <em>remote</em> repository that will be
 linked to our <em>local</em> repository.</p>
 <section id="creating-a-remote-repository">
-<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this headline">#</a></h3>
+<h3>1. Creating a remote repository<a class="headerlink" href="#creating-a-remote-repository" title="Permalink to this heading">#</a></h3>
 <p>Log in to <a class="reference external" href="https://github.com">GitHub</a>, then click on the icon in the top right corner to
 create a new repository called <code class="docutils literal notranslate"><span class="pre">planets</span></code>:</p>
 <a class="reference external image-reference" href="../images/github-create-repo-01.png"><img alt="Creating a Repository on GitHub (Step 1)" src="_images/github-create-repo-01.png" /></a>
@@ -2069,7 +1897,7 @@ which looked like this:</p>
 remote repository on GitHub appears empty as it doesn’t contain any files yet.</p>
 </section>
 <section id="connect-local-to-remote-repository">
-<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this headline">#</a></h3>
+<h3>2. Connect local to remote repository<a class="headerlink" href="#connect-local-to-remote-repository" title="Permalink to this heading">#</a></h3>
 <p>Now we connect the two repositories.  We do this by making the
 GitHub repository a remote for the local repository.
 The home page of the repository on GitHub includes the URL string we need to
@@ -2107,7 +1935,7 @@ and GitHub, so it’s helpful to stick with this unless there’s a reason not t
 talking about how they might be used for collaboration.</p>
 </section>
 <section id="ssh-background-and-setup">
-<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this headline">#</a></h3>
+<h3>3. SSH Background and Setup<a class="headerlink" href="#ssh-background-and-setup" title="Permalink to this heading">#</a></h3>
 <p>Before I can connect to a remote repository, I need to set up a way for his computer to
 authenticate with GitHub so it knows it’s me trying to connect to my remote repository.</p>
 <p>We are going to set up the method that is commonly used by many different services to authenticate
@@ -2144,7 +1972,7 @@ The file names are either <code class="docutils literal notranslate"><span class
 depending on how the key pairs were set up.</p>
 <p>Since they don’t exist on this computer, we will use this command to create them.</p>
 <section id="create-an-ssh-key-pair">
-<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this headline">#</a></h4>
+<h4>3.1 Create an SSH key pair<a class="headerlink" href="#create-an-ssh-key-pair" title="Permalink to this heading">#</a></h4>
 <p>To create an SSH key pair we use this command, where the <code class="docutils literal notranslate"><span class="pre">-t</span></code> option specifies which type of
 algorithm to use and <code class="docutils literal notranslate"><span class="pre">-C</span></code> attaches a comment to the key (here, our email):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -C <span class="s2">&quot;jon.hill@york.ac.uk&quot;</span>
@@ -2201,7 +2029,7 @@ is a shorter version of a public key.</p>
 </div>
 </section>
 <section id="copy-the-public-key-to-github">
-<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this headline">#</a></h4>
+<h4>3.2 Copy the public key to GitHub<a class="headerlink" href="#copy-the-public-key-to-github" title="Permalink to this heading">#</a></h4>
 <p>Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -T git@github.com
 </pre></div>
@@ -2237,7 +2065,7 @@ you can add the title (use the name of your computer, e.g. “laptop”), paste 
 </section>
 </section>
 <section id="push-local-changes-to-a-remote">
-<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this headline">#</a></h3>
+<h3>4. Push local changes to a remote<a class="headerlink" href="#push-local-changes-to-a-remote" title="Permalink to this heading">#</a></h3>
 <p>Now that authentication is setup, we can return to the remote. This command will push the changes from
 our local repository to the repository on GitHub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin main
@@ -2385,7 +2213,7 @@ repositories before merging.</p>
 </section>
 </section>
 <section id="collaboration-with-git">
-<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this headline">#</a></h2>
+<h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Permalink to this heading">#</a></h2>
 <p>For the next step, get into pairs.  One person will be the “Owner” and the other
 will be the “Collaborator”. The goal is that the Collaborator add changes into
 the Owner’s repository. We will switch roles at the end, so both persons will
@@ -2403,7 +2231,7 @@ button on the right, select “Collaborators”, click “Add people”, and
 then enter your partner’s username.</p>
 <a class="reference external image-reference" href="../images/github-add-collaborators.png"><img alt="Adding Collaborators on GitHub" src="_images/github-add-collaborators.png" /></a>
 <p>To accept access to the Owner’s repo, the Collaborator
-needs to go to <a class="reference external" href="https://github.com/notifications">https://github.com/notifications</a>
+needs to go to <a class="github reference external" href="https://github.com/notifications">notifications</a>
 or check for email notification. Once there she can accept access to the Owner’s repo.</p>
 <p>Next, the Collaborator needs to download a copy of the Owner’s repository to her
 machine. This is called “cloning a repo”.</p>
@@ -2558,7 +2386,7 @@ code to comment, a blue comment icon appears to open a comment window.</p>
 </div>
 </section>
 <section id="conflict">
-<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this headline">#</a></h2>
+<h2>Conflict!<a class="headerlink" href="#conflict" title="Permalink to this heading">#</a></h2>
 <p>As soon as people can work in parallel, they’ll likely step on each other’s
 toes. This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
@@ -2921,11 +2749,6 @@ below. When you have the order right, see if you can write the corresponding
 commands in the <em>command</em> column. A few steps are populated to get you
 started.</p>
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -2963,11 +2786,6 @@ started.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>order</p></th>
 <th class="head"><p>action</p></th>
@@ -3006,50 +2824,120 @@ started.</p>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="R3.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">R: part 3</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Spreadsheets_data.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Moving from spreadsheets to data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Issues.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Solving issues and debugging</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Python2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python: part 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-first-repository">Our first repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-files">Adding files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-history">Git history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">Ignoring files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">Github</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository">1. Creating a remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-local-to-remote-repository">2. Connect local to remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-background-and-setup">3. SSH Background and Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-ssh-key-pair">3.1 Create an SSH key pair</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-public-key-to-github">3.2 Copy the public key to GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-with-git">Collaboration with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conflict">Conflict!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

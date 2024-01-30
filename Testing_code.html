@@ -1,472 +1,354 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Testing code &#8212; SEPwC  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Testing_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software development" href="Software_development.html" />
     <link rel="prev" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="How_a_computer_works.html">
-   How a computer works
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Licences.html">
-   Software licences
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Code_basics.html">
-   The fundamentals of code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Algorithms.html">
-   Thinking like a computer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R.html">
-   R: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Issues.html">
-   Solving issues and debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R2.html">
-   R: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
-   R: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mini_courses.html">
-   Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Testing_code.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Testing_code.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="btn__text-container">.rst</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-testing">
-   Simple testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression-tests">
-   Regression tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unit-tests">
-   Unit tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#static-tests">
-   Static tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ui-tests">
-   UI tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-frameworks">
-   Testing frameworks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-pytest">
-     Python: pytest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-testthat">
-     R: testthat
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continuous-testing">
-   Continuous testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">
-     Adding a workflow to your repoistory
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Testing code</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-testing">
-   Simple testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression-tests">
-   Regression tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unit-tests">
-   Unit tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#static-tests">
-   Static tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ui-tests">
-   UI tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-frameworks">
-   Testing frameworks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-pytest">
-     Python: pytest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-testthat">
-     R: testthat
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continuous-testing">
-   Continuous testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">
-     Adding a workflow to your repoistory
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Testing code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing">Simple testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-tests">Regression tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-tests">Static tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ui-tests">UI tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-frameworks">Testing frameworks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pytest">Python: pytest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-testthat">R: testthat</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-testing">Continuous testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">Adding a workflow to your repoistory</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="testing-code">
-<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this headline">#</a></h1>
+<h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this heading">#</a></h1>
 <p>You’ve spend days writing the most elegant and beautiful code imaginable. It’s readable, well designed and runs quickly. How do you know it runs correctly? How do you know how easy it is to break? This is where testing comes in.</p>
 <p>Testing is integral to writing software as otherwise there is no point in writing it. You will, of course, test in some way as you write code as you will run your code to check it doesn’t give syntax errors at least! In this chapter you’ll learn how to transition from informal <em>ad hoc</em> testing (simple testing), to automated testing (also known as unit testing). This will:</p>
 <blockquote>
@@ -479,26 +361,26 @@ title="Print to PDF"
 </div></blockquote>
 <p>In this chapter we will discover the different types of tests and how to formalise those tests into something that can be automated.</p>
 <section id="simple-testing">
-<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this headline">#</a></h2>
+<h2>Simple testing<a class="headerlink" href="#simple-testing" title="Permalink to this heading">#</a></h2>
 <p>Whilst most guides and internet sites deal with more formalised testing, we should start at a more fundamental level. Testing code invovled running it. You should run your code often to check for syntax errors and unexpected errors. Rather than spending hours writing code, then test; it is much more productiuve to write a block of code, then test the code to that point.</p>
 <p>Basic testing involves created a subset of your input data (if any) and printing out variables to check they are what you expect them to be, given the data read in. This is <em>not</em> a robust method of testing code, but will give you confidence as you go along. This is also useful if you don’t know <em>exactly</em> what you’ll get after a block of code (e.g. from an external library). By printing it out, we can check what <code class="docutils literal notranslate"><span class="pre">type</span></code> and what the data looks like. In a formal test it’s impossible to do that until you see the data anyway.</p>
 <p>You <em>are</em> testing your code by running code like this, but informally. The problem will arise in a few months time when you come back to this and you will struggle to remember all the informal tests you ran. If you want to add a new feature you’ll probbaly break some of the past informal tests.</p>
 <p>Example of loading a dataset and checking it (strip all but header and three rows), print and check. Need to create an awkward data set to to make the point, e.g. getting datetimes correct and indexing.</p>
 </section>
 <section id="regression-tests">
-<h2>Regression tests<a class="headerlink" href="#regression-tests" title="Permalink to this headline">#</a></h2>
+<h2>Regression tests<a class="headerlink" href="#regression-tests" title="Permalink to this heading">#</a></h2>
 <p>When it comes to formal testing, the first type of test is called a <em>regression test</em>. This takes a full run of the code and checks that output is what is expected. This could be based on theoretical consideration or from past executions of the code. The distinction to other kinds of tests is that the whole program is run from start to finish.</p>
 <p>Examples of theorteical and past behaviour</p>
 </section>
 <section id="unit-tests">
-<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">#</a></h2>
+<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this heading">#</a></h2>
 <p>Whilst regression tests test the whole executation, unit tests only test a single function or object within the code. The generally check against theoretical results (or simple calculations) with strictly controlled input to the function. This is often where we test unexpected behaviour too; for example putting two strings into a function to add two numbers: do we get a sensible error message?</p>
 <p>Unit tests are designed to test each function to the limits and make sure it returns the right answers and behaves correctly if the wrong kind of data is passed in. If all the program’s functions are tested then, in theory, the whole program should work.</p>
 <p>Unit tests also help with debugging. If a user reports a bug, the error message often gives the funciton that it occurred in. Using the user’s data you can create a unit test to confirm the bug (replicate it). Then debug your code until that new test passes.</p>
 <p>Examples; simple function with assert, assert nearly, etc.</p>
 </section>
 <section id="static-tests">
-<h2>Static tests<a class="headerlink" href="#static-tests" title="Permalink to this headline">#</a></h2>
+<h2>Static tests<a class="headerlink" href="#static-tests" title="Permalink to this heading">#</a></h2>
 <p>The above tests involve running the code. Another type of testing is called static testing or <em>linting</em>. This checks the syntax of the code against specified standards. It was invted initiall for the C programming language where the programmer has to manage memory themselves and a linter helped spot potential issues there. For R and Python a linter check our code against published standards.</p>
 <p>For Python, the standards are set by the community and written up as “PEP” (Python Enhancement Proposal) documents. In R the standards are also community-based but with less formal acceptance. A common style used is the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> style.</p>
 <p>Regardless of the style chosen, the important thing is <em>consistancy</em>. Consistancy within functions/modules/objects is most important, consistancy within projects is next, consistancy across projects is least important. It is also important to know when to <em>break</em> consistancy. Your golden rule for breaking a linter recommendation is if it doesn’t improve readability of the code. Code is read more than it is written and the computer doesn’t care about readiability as long as it’s valid syntax.</p>
@@ -506,17 +388,17 @@ title="Print to PDF"
 <p>Examples from R and Python</p>
 </section>
 <section id="ui-tests">
-<h2>UI tests<a class="headerlink" href="#ui-tests" title="Permalink to this headline">#</a></h2>
+<h2>UI tests<a class="headerlink" href="#ui-tests" title="Permalink to this heading">#</a></h2>
 <p>User interface testing is perhaps the hardest thing to test. When presented with any type of user interface (GUI, CLI, or even through files) users will do the oddest things from your point of view as a programmer. This is normal as we are all the sum of our experiences. However, sticking to conventions helps ameleriote some fof the potentional issues here.</p>
 <p>UI testing is a type of regression testing. You can automate CLI-based UI’s easily. Automating GUI’s is trcikier, but possible. For our purposes we will stick to CLIs.</p>
 <p>Example of testing a CLI</p>
 </section>
 <section id="testing-frameworks">
-<h2>Testing frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this headline">#</a></h2>
+<h2>Testing frameworks<a class="headerlink" href="#testing-frameworks" title="Permalink to this heading">#</a></h2>
 <p>The tests above have been manual in nature. Testing comes into it’s own when it’s automated. It may still need to be initated manually (see below for fully automatic, continuous testing), but all tests are run and the results summarised automatically.</p>
 <p>Both R and Python have testing frameworks; modules/libraries that help set-up, run and tear-down all tests in your code. We’ll cover each in turn, but skip to whichever language you’ve chosen.</p>
 <section id="python-pytest">
-<h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Permalink to this headline">#</a></h3>
+<h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Permalink to this heading">#</a></h3>
 <p>Python has a few testing packages. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is a very common one. It</p>
 <p>We’re going to test our Farenheit to Celcius and vice-vera functions from the first Python chapter. Let’s get these two functions in an Python test file and save it:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
@@ -597,7 +479,7 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
 <p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> has a lot of other useful features such as marking tests, checking for wanted exceptions and fixtures. Have a look around the documentation of pytest to learn more.</p>
 </section>
 <section id="r-testthat">
-<h3>R: testthat<a class="headerlink" href="#r-testthat" title="Permalink to this headline">#</a></h3>
+<h3>R: testthat<a class="headerlink" href="#r-testthat" title="Permalink to this heading">#</a></h3>
 <p>The first thing that you need to do is install the testthat R package. This can be done from CRAN using the code below.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
 </pre></div>
@@ -742,61 +624,126 @@ FAILED test_temperature_conversion.py::TestTemperatureConversion::test_that_will
 </section>
 </section>
 <section id="continuous-testing">
-<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Permalink to this headline">#</a></h2>
+<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Permalink to this heading">#</a></h2>
 <p>Unitill now you have been resonsible for running the tests. If you’re disciplined then you ran them (and fixed errors) before you committed new code to your repository. There is an easier way though, with continuous integration (or CI) of tests.</p>
 <p>There are a number of services out there that will do this, but the most common to use is GitHub’s Actions. THis allows you to add the tests at any point (e.g. when committing, or at a pull request) and is faily simple to set up.</p>
 <section id="adding-a-workflow-to-your-repoistory">
-<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Permalink to this headline">#</a></h3>
+<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Permalink to this heading">#</a></h3>
 <p>On GitHub, go to your respository and open the actions tab:</p>
 </section>
 </section>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Spreadsheets_data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Moving from spreadsheets to data</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Spreadsheets_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Moving from spreadsheets to data</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Software_development.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Software_development.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Software development</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing">Simple testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-tests">Regression tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-tests">Static tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ui-tests">UI tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-frameworks">Testing frameworks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pytest">Python: pytest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-testthat">R: testthat</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-testing">Continuous testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">Adding a workflow to your repoistory</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,554 +1,382 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Python: part 2 &#8212; SEPwC  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Python2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="R: part 2" href="R2.html" />
-    <link rel="prev" title="Solving issues and debugging" href="Issues.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Revision control with Git" href="Revision_control.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="How_a_computer_works.html">
-   How a computer works
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Licences.html">
-   Software licences
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Code_basics.html">
-   The fundamentals of code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Algorithms.html">
-   Thinking like a computer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R.html">
-   R: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Issues.html">
-   Solving issues and debugging
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R2.html">
-   R: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
-   R: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mini_courses.html">
-   Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Python2.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Python2.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="btn__text-container">.rst</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-functions">
-   Python functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-python-function">
-     Using a Python function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-your-own-python-functions">
-     Writing your own Python functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#function-arguments-in-python">
-       Function arguments in Python
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-modules">
-   Python modules
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-statement">
-     Import statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-modules-as-scripts">
-     Executing modules as scripts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#module-search-path">
-     Module search path
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seeing-what-is-in-a-module">
-     Seeing what is in a module
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-dictionaries">
-   Python: dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-with-python-dictionaries">
-     Looping with Python dictionaries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-dictionary-functions">
-     Useful dictionary functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-files">
-   Python: Files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-command-line-arguments">
-   Python: command line arguments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-and-the-command-line">
-     Python and the command line
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advanced-command-line-interface">
-     Advanced command line interface
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python: part 2</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-functions">
-   Python functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-a-python-function">
-     Using a Python function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-your-own-python-functions">
-     Writing your own Python functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#function-arguments-in-python">
-       Function arguments in Python
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-modules">
-   Python modules
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-statement">
-     Import statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-modules-as-scripts">
-     Executing modules as scripts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#module-search-path">
-     Module search path
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seeing-what-is-in-a-module">
-     Seeing what is in a module
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-dictionaries">
-   Python: dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-with-python-dictionaries">
-     Looping with Python dictionaries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-dictionary-functions">
-     Useful dictionary functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-files">
-   Python: Files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-command-line-arguments">
-   Python: command line arguments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-and-the-command-line">
-     Python and the command line
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advanced-command-line-interface">
-     Advanced command line interface
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python: part 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-functions">Python functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-python-function">Using a Python function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-python-functions">Writing your own Python functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments-in-python">Function arguments in Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-modules">Python modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-statement">Import statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-modules-as-scripts">Executing modules as scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-search-path">Module search path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seeing-what-is-in-a-module">Seeing what is in a module</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-dictionaries">Python: dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-python-dictionaries">Looping with Python dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-dictionary-functions">Useful dictionary functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-the-command-line">Python and the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-command-line-interface">Advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user">Getting input from a user</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-exercises-2">Python Exercises 2</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="python-part-2">
-<h1>Python: part 2<a class="headerlink" href="#python-part-2" title="Permalink to this headline">#</a></h1>
+<h1>Python: part 2<a class="headerlink" href="#python-part-2" title="Permalink to this heading">#</a></h1>
 <p>In this next section of Python</p>
 <section id="python-functions">
-<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this headline">#</a></h2>
+<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this heading">#</a></h2>
 <p>Whenever you write some code you get tempted to cpoy and paste a block, change a variable, and have two nearly
 identical blocks of code, bar one variable. Might be OK with a single repeat, but what if you then need to
 do that 10 times, or 100 times, or a million times?</p>
 <p>This is where functions come in. You can generalise a but of code and package it up so you can call it
 repeatedly. That might be within the same script; it might be as part of many scripts.</p>
 <section id="using-a-python-function">
-<h3>Using a Python function<a class="headerlink" href="#using-a-python-function" title="Permalink to this headline">#</a></h3>
+<h3>Using a Python function<a class="headerlink" href="#using-a-python-function" title="Permalink to this heading">#</a></h3>
 <p>We’ve used a number of Python functions already.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
@@ -589,7 +417,7 @@ also a function. The return value of <cite>len(my_list)</cite> gets put in place
 </div>
 </section>
 <section id="writing-your-own-python-functions">
-<h3>Writing your own Python functions<a class="headerlink" href="#writing-your-own-python-functions" title="Permalink to this headline">#</a></h3>
+<h3>Writing your own Python functions<a class="headerlink" href="#writing-your-own-python-functions" title="Permalink to this heading">#</a></h3>
 <p>Whilst it’s all well and good to use functions, you will need to write them too. Python allows you to create your own functions</p>
 <p>They follow this pattern:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
@@ -622,7 +450,7 @@ to return something).</p>
 </pre></div>
 </div>
 <section id="function-arguments-in-python">
-<h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Permalink to this headline">#</a></h4>
+<h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Permalink to this heading">#</a></h4>
 <p>A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (kwargs) or generic arguments (args).</p>
 <p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the funciton takes
 two keyword arguments:</p>
@@ -756,14 +584,14 @@ keyword arguments using a similar approach called <code class="docutils literal 
 </section>
 </section>
 <section id="python-modules">
-<h2>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">#</a></h2>
+<h2>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this heading">#</a></h2>
 <p>When writing code we want to package up functionality/code into descrete bundles. In Python these are called modules or packages.
 You can then put this module on the internet such that other can download, install it and use it. You can also save your own code
 this way and use it in other code you write.</p>
 <p>We’re not going to get into creating your own Python package/module here, but we will use Python modules a lot, so we will focus on using
 modules, ratehr than creating them.</p>
 <section id="import-statement">
-<h3>Import statement<a class="headerlink" href="#import-statement" title="Permalink to this headline">#</a></h3>
+<h3>Import statement<a class="headerlink" href="#import-statement" title="Permalink to this heading">#</a></h3>
 <p>To use an existing module or package in your code you must <code class="docutils literal notranslate"><span class="pre">import</span></code> it.</p>
 <p>Let’s create a small script and save the file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fibonacci numbers module</span>
@@ -829,7 +657,7 @@ You can assign this to a local variable is you wish:</p>
 <p>for example.</p>
 </section>
 <section id="executing-modules-as-scripts">
-<h3>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this headline">#</a></h3>
+<h3>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this heading">#</a></h3>
 <p>Python is a versatile language, so modules can also be scripts! Python has a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code> which is set to a value of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is a file is called as a script.</p>
 <p>Running something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python fibo.py
@@ -851,7 +679,7 @@ You can assign this to a local variable is you wish:</p>
 creating a structure of common functions across a number of projects/scripts.</p>
 </section>
 <section id="module-search-path">
-<h3>Module search path<a class="headerlink" href="#module-search-path" title="Permalink to this headline">#</a></h3>
+<h3>Module search path<a class="headerlink" href="#module-search-path" title="Permalink to this heading">#</a></h3>
 <p>Where does Python look for modules? Python will look for modules in the following order:</p>
 <blockquote>
 <div><ul class="simple">
@@ -868,7 +696,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 <p>will add the directory to the end of that list above.</p>
 </section>
 <section id="seeing-what-is-in-a-module">
-<h3>Seeing what is in a module<a class="headerlink" href="#seeing-what-is-in-a-module" title="Permalink to this headline">#</a></h3>
+<h3>Seeing what is in a module<a class="headerlink" href="#seeing-what-is-in-a-module" title="Permalink to this heading">#</a></h3>
 <p>The built-in function <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is used to find out which names a module defines. It returns a sorted list of strings:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="nb">dir</span><span class="p">(</span><span class="n">fibo</span><span class="p">)</span>
@@ -900,7 +728,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 </section>
 <section id="python-dictionaries">
-<h2>Python: dictionaries<a class="headerlink" href="#python-dictionaries" title="Permalink to this headline">#</a></h2>
+<h2>Python: dictionaries<a class="headerlink" href="#python-dictionaries" title="Permalink to this heading">#</a></h2>
 <p>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
 <p>Python has dictionaries as an in-built datatype, set up using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> braces:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="mi">3452345</span><span class="p">,</span> <span class="s1">&#39;Mildred&#39;</span><span class="p">:</span> <span class="mi">532354</span><span class="p">}</span>
@@ -928,7 +756,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </pre></div>
 </div>
 <section id="looping-with-python-dictionaries">
-<h3>Looping with Python dictionaries<a class="headerlink" href="#looping-with-python-dictionaries" title="Permalink to this headline">#</a></h3>
+<h3>Looping with Python dictionaries<a class="headerlink" href="#looping-with-python-dictionaries" title="Permalink to this heading">#</a></h3>
 <p>Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">knights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -941,15 +769,68 @@ creating a structure of common functions across a number of projects/scripts.</p
 </div>
 </section>
 <section id="useful-dictionary-functions">
-<h3>Useful dictionary functions<a class="headerlink" href="#useful-dictionary-functions" title="Permalink to this headline">#</a></h3>
+<h3>Useful dictionary functions<a class="headerlink" href="#useful-dictionary-functions" title="Permalink to this heading">#</a></h3>
 <p>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively.</p>
 </section>
 </section>
 <section id="python-files">
-<h2>Python: Files<a class="headerlink" href="#python-files" title="Permalink to this headline">#</a></h2>
+<h2>Python: Files<a class="headerlink" href="#python-files" title="Permalink to this heading">#</a></h2>
+<p>Writing software for scientific/research purposes often invovles reading in
+data from files. Python file handling is very powerful, but surprisingly
+easy to use and manage.</p>
+<section id="first-a-diversion">
+<h3>First, a diversion…<a class="headerlink" href="#first-a-diversion" title="Permalink to this heading">#</a></h3>
+<p>Files in computing have a very long history and there’s a lot of baggage
+carried over from this history. Some of this creeps into the jargon
+we end up using. First, there’s the two main types of files
+we will come across: text and binary. Python handles these two
+types of file differently. When it comes to text files there are special
+characters at the end of each line for a EOL or End of Line.</p>
+<p>From these two file types, all the other files you may come across then
+come into being. We’ll learn a lot more in the data section.</p>
+</section>
+<section id="opening-and-closing-files">
+<h3>Opening and closing files<a class="headerlink" href="#opening-and-closing-files" title="Permalink to this heading">#</a></h3>
+<p>Before reading or writing data to a file we must first open that
+file and specify if we are going to read from it, or write to it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above opens the file with name <cite>my_file.txt</cite> (in the current directory) in <cite>read</cite> mode.
+The variable <cite>file</cite> is the file handle. It’s the variable by which you can access the file
+on disk.</p>
+<p>The various modes are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>r</cite>: open an existing file for a read operation.</p></li>
+<li><p><cite>w</cite>: open an existing file for a write operation. If the file already contains some data, then it will be overridden but if the file is not present then it creates the file as well.</p></li>
+<li><p><cite>a</cite>: open an existing file for append operation. It won’t override existing data.</p></li>
+<li><p><cite>r+</cite>: To read and write data into the file. The previous data in the file will be overridden.</p></li>
+<li><p><cite>w+</cite>: To write and read data. It will override existing data.</p></li>
+<li><p><cite>a+</cite>: To append and read data from the file. It won’t override existing data.</p></li>
+</ul>
+<p>A file, once finished with, needs closing too.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># do things</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>It’s useful to get into the habit of closing files or using the Python <cite>with</cite> statement
+to prevent files being left open. This is especially important when writing to
+a file as often the data is “bufferred” by the system and only gets written once
+the file handle is lost (i.e. <cite>.close()</cite> is called or the variable goes out of scope).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="c1"># do things</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <cite>file.close()</cite> is now redundant, but can still be put in the code. All variables create in the <cite>with</cite>
+block then disappear afterwards (this has caused me a few bugs in the past).</p>
+</section>
 </section>
 <section id="python-command-line-arguments">
-<h2>Python: command line arguments<a class="headerlink" href="#python-command-line-arguments" title="Permalink to this headline">#</a></h2>
+<h2>Python: command line arguments<a class="headerlink" href="#python-command-line-arguments" title="Permalink to this heading">#</a></h2>
 <p>The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
 The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
 in the course, for example:</p>
@@ -965,7 +846,7 @@ Similaraly, we’ve covered:</p>
 <p>Python has both in-built handling of command line options, but also a number of modules to give us quite
 advanced usage options.</p>
 <section id="python-and-the-command-line">
-<h3>Python and the command line<a class="headerlink" href="#python-and-the-command-line" title="Permalink to this headline">#</a></h3>
+<h3>Python and the command line<a class="headerlink" href="#python-and-the-command-line" title="Permalink to this heading">#</a></h3>
 <p>When you run a Python script, with some arbitrary text after:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python arg_script.py arg1 arg2 arg3
 </pre></div>
@@ -1004,7 +885,7 @@ using it, especially when it comes to files, databases, or URLs.</p>
 </div>
 </section>
 <section id="advanced-command-line-interface">
-<h3>Advanced command line interface<a class="headerlink" href="#advanced-command-line-interface" title="Permalink to this headline">#</a></h3>
+<h3>Advanced command line interface<a class="headerlink" href="#advanced-command-line-interface" title="Permalink to this heading">#</a></h3>
 <p>Python has a number of modules that make command line parsing a lot easier and more functional. The most commonly used is
 <code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. Moreover,
@@ -1039,54 +920,234 @@ and a lot more too.</p>
 </pre></div>
 </div>
 </section>
+<section id="getting-input-from-a-user">
+<h3>Getting input from a user<a class="headerlink" href="#getting-input-from-a-user" title="Permalink to this heading">#</a></h3>
+<p>If you want to ask the user something, e.g. a file name
+or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you wish to continue (Y/N)?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+    <span class="c1"># do something</span>
+<span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+    <span class="c1"># do something else</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I didn&#39;t understand &quot;</span> <span class="o">+</span> <span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the input is returned as a string, so you may need to convert
+to a floating point number or integer, etc. As with command line
+arguments, be careful with any user input and check it carefully
+before using it.</p>
+</section>
+</section>
+<section id="python-exercises-2">
+<h2>Python Exercises 2<a class="headerlink" href="#python-exercises-2" title="Permalink to this heading">#</a></h2>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Write the number guessing game out in Python. You may need
+to search the internet for which module
+to import to do random integers</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># we create a guess that cannot be the answer...</span>
+
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your guess? &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You guessed right!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Modify the guessing game code to include a maximum
+number of tries (5). If the number of tries is 5 then
+print a message to say the user lost the game</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have 5 tries to guess&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">max_tries</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># we create a guess that cannot be the answer...</span>
+
+<span class="k">while</span> <span class="n">tries</span> <span class="o">&lt;</span> <span class="n">max_tries</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your guess? &quot;</span><span class="p">))</span>
+    <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You guessed right!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, you had 5 goes. I win!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Issues.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Solving issues and debugging</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Revision_control.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Revision control with Git</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="R2.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="R2.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">R: part 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-functions">Python functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-python-function">Using a Python function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-python-functions">Writing your own Python functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments-in-python">Function arguments in Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-modules">Python modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-statement">Import statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-modules-as-scripts">Executing modules as scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-search-path">Module search path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seeing-what-is-in-a-module">Seeing what is in a module</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-dictionaries">Python: dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-python-dictionaries">Looping with Python dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-dictionary-functions">Useful dictionary functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-the-command-line">Python and the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-command-line-interface">Advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user">Getting input from a user</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-exercises-2">Python Exercises 2</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

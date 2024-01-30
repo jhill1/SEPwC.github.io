@@ -1,455 +1,364 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Solving issues and debugging &#8212; SEPwC  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Issues';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python: part 2" href="Python2.html" />
+    <link rel="next" title="Revision control with Git" href="Revision_control.html" />
     <link rel="prev" title="R: the fundamentals" href="R.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">SEPwC  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="How_a_computer_works.html">
-   How a computer works
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Licences.html">
-   Software licences
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Code_basics.html">
-   The fundamentals of code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Algorithms.html">
-   Thinking like a computer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R.html">
-   R: the fundamentals
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Solving issues and debugging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python2.html">
-   Python: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R2.html">
-   R: part 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Python3.html">
-   Python: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="R3.html">
-   R: part 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Revision_control.html">
-   Revision control with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Spreadsheets_data.html">
-   Moving from spreadsheets to data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Testing_code.html">
-   Testing code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Software_development.html">
-   Software development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Mini_courses.html">
-   Mini-courses
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solving issues and debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/jhill1/SEPwC.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Issues.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Issues.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="btn__text-container">.rst</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-issues">
-   Types of issues
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-issues">
-   Simple issues
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-examples">
-     R examples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-examples">
-     Python examples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning-examples">
-     Warning examples
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bugs">
-   Bugs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fixing-errors">
-   Fixing Errors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debuggers">
-   Debuggers
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Solving issues and debugging</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-issues">
-   Types of issues
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-issues">
-   Simple issues
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-examples">
-     R examples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-examples">
-     Python examples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning-examples">
-     Warning examples
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bugs">
-   Bugs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fixing-errors">
-   Fixing Errors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debuggers">
-   Debuggers
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solving issues and debugging</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-issues">Types of issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-issues">Simple issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-examples">R examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-examples">Python examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-examples">Warning examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-warning-examples">R warning examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-warning-example">Python warning example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bugs">Bugs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-a-bug">Reporting a bug</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-errors">Fixing Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="solving-issues-and-debugging">
-<h1>Solving issues and debugging<a class="headerlink" href="#solving-issues-and-debugging" title="Permalink to this headline">#</a></h1>
+<h1>Solving issues and debugging<a class="headerlink" href="#solving-issues-and-debugging" title="Permalink to this heading">#</a></h1>
 <p>When writing code you will inevitavely get it wrong occasionally. You will therefore always hit some
 issues when writing any code. Some issues are easy to fix (you’ve typo’d a library or module), whilst some are
 extremely difficult to fix (a bug deep in a library that is used by a library you use). Here, we’re going to concentrate on what kind of issues
 you might come across and how you might go about understanding them.</p>
 <p>The same kind of issues will crop up for both Python and R. I will give examples of both as we go through.</p>
 <section id="types-of-issues">
-<h2>Types of issues<a class="headerlink" href="#types-of-issues" title="Permalink to this headline">#</a></h2>
+<h2>Types of issues<a class="headerlink" href="#types-of-issues" title="Permalink to this heading">#</a></h2>
 <p>There are several types of issues you will come across:</p>
 <blockquote>
 <div><ul class="simple">
@@ -467,7 +376,7 @@ us. However, libraries like numpy use C and hence we could experience one of the
 </div></blockquote>
 </section>
 <section id="simple-issues">
-<h2>Simple issues<a class="headerlink" href="#simple-issues" title="Permalink to this headline">#</a></h2>
+<h2>Simple issues<a class="headerlink" href="#simple-issues" title="Permalink to this heading">#</a></h2>
 <p>The majority of issues encountered when writing code are really straight forward. You have messed up the syntax, or typo’d a library name, etc.
 This happens a lot. As someone who has used dozens of programming languages over the years I often mix them up and type some weird hybrid
 of R, Python, Perl, PHP and/or Matlab. Possibly with a bit of Fortran and C in there too. Each language has it’s own idiosynchronies which you
@@ -475,7 +384,7 @@ will get used to. In addiiton, it’s very easy to type a <code class="docutils 
 <p>What makes these errors simple though is that you are told about them when you run the code!
 Sometimes a bit obscurely, but once you can decipher the error message they are easy to fix.</p>
 <section id="r-examples">
-<h3>R examples<a class="headerlink" href="#r-examples" title="Permalink to this headline">#</a></h3>
+<h3>R examples<a class="headerlink" href="#r-examples" title="Permalink to this heading">#</a></h3>
 <p>If we make an error in our R code we will receive a message like:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">libary</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 </pre></div>
@@ -517,7 +426,7 @@ R does contain a function called <code class="docutils literal notranslate"><spa
 <p>So we now know it was the g(“a”) causing the issue and the error occured in the f function</p>
 </section>
 <section id="python-examples">
-<h3>Python examples<a class="headerlink" href="#python-examples" title="Permalink to this headline">#</a></h3>
+<h3>Python examples<a class="headerlink" href="#python-examples" title="Permalink to this heading">#</a></h3>
 <p>If we make an error in our Python code we will receive a message like:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">impot</span> <span class="n">numpy</span>
 </pre></div>
@@ -579,80 +488,351 @@ NameError: name <span class="s1">&#39;nam&#39;</span> is not defined
 </div>
 <p>We read this from the bottom up. The error is a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>. It is on line 3 of our code. We caused this by calling
 the <code class="docutils literal notranslate"><span class="pre">say</span></code> function on line 5. We can see this is a bug in the <code class="docutils literal notranslate"><span class="pre">say</span></code> function. If that’s our code we can fix, if it’s not
-re-read any documentation for the function and ehck you’re passing in the correct data.</p>
+re-read any documentation for the function and check you’re passing in the correct data.</p>
 </section>
 <section id="warning-examples">
-<h3>Warning examples<a class="headerlink" href="#warning-examples" title="Permalink to this headline">#</a></h3>
+<h3>Warning examples<a class="headerlink" href="#warning-examples" title="Permalink to this heading">#</a></h3>
+<p>Warnings are non-critical messages, normally issued by a library or module you’re using. However, most of the time
+they are an error (as in you’re getting the wrong answer) but the code can still continue. You should therefore
+pay attention and decide if you do need to care.</p>
+<section id="r-warning-examples">
+<h4>R warning examples<a class="headerlink" href="#r-warning-examples" title="Permalink to this heading">#</a></h4>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span> <span class="nf">c</span><span class="p">(</span> <span class="m">1</span> <span class="p">,</span> <span class="m">1</span> <span class="p">),</span> <span class="nf">c</span><span class="p">(</span> <span class="m">2</span> <span class="p">,</span> <span class="m">3</span> <span class="p">)</span> <span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">NA</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">In</span> <span class="nf">cor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span> <span class="o">:</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="n">is</span> <span class="n">zero</span>
+</pre></div>
+</div>
+<p>Here, the user has tried to perform a correlation with 2 points. The warning shows this isn’t a good idea,
+but the <code class="docutils literal notranslate"><span class="pre">cor</span></code> function could produce an answer (albeit <code class="docutils literal notranslate"><span class="pre">NA</span></code>).</p>
+</section>
+<section id="python-warning-example">
+<h4>Python warning example<a class="headerlink" href="#python-warning-example" title="Permalink to this heading">#</a></h4>
+<p>In this example I divide by zero; mathmatically producing infinity.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">0</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">f6baf8772c4a</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span> <span class="ne">RuntimeWarning</span><span class="p">:</span> <span class="n">divide</span> <span class="n">by</span> <span class="n">zero</span> <span class="n">encountered</span> <span class="ow">in</span> <span class="n">divide</span>
+   <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="n">inf</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Note I get a <code class="docutils literal notranslate"><span class="pre">RuntimeWarning</span></code> which gives a message and the line of code. I still get an answer,
+here, <code class="docutils literal notranslate"><span class="pre">inf</span></code>.</p>
+<p>It’s unlikely I actually wanted that, but I would need to work out a way of dealing with this if the
+numbers were supplied by a user or in the data. The warnings can therefore be very useful!</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Try the following codes and check you understand the warning or error.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span> <span class="o">=</span> <span class="p">(</span>
+ <span class="s1">&#39;https://example.com/1&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;https://example.com/2&quot;,</span>
+ <span class="s1">&#39;https://example.com/3</span>
+ <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+ <span class="s">&#39;https://example.com/1&#39;</span><span class="p">,</span>
+ <span class="s">&#39;https://example.com/2&quot;,</span>
+<span class="s"> &#39;</span><span class="n">https</span><span class="o">://</span><span class="n">example.com</span><span class="o">/</span><span class="m">3</span>
+ <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;username1&#39;</span>
+<span class="k">pass</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s">&#39;Mercedes&#39;</span>
+<span class="n">next</span> <span class="o">=</span> <span class="s">&#39;Aston Martin&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span> <span class="ow">is</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10000</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>The first example (R and Python) contains two errors. ‘<a class="reference external" href="https://example.com/2">https://example.com/2</a>” uses different
+quote marks to start and end. If you fixed that, there then a missing ‘ at the
+end of the third URL.</p>
+<p>The second set of examples (R and Python) both use <em>reserved words</em>. You cannot use those
+for variable names.</p>
+<p>The final two examples issue warnings. The Python example checks you meant <cite>is</cite> not <cite>==</cite>.
+The R example prints a wanring about max.print (i.e. you’ve printed too much!). We can
+alter that.</p>
+</div>
+</section>
 </section>
 </section>
 <section id="bugs">
-<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">#</a></h2>
-<p>Code with a simple bug (some namespace thing, probably)</p>
-<p>Security bugs - e.g. parsing user code without checking</p>
-<p>Examples of reporting a bug - github</p>
-<p>Examples of bugs</p>
-<p>Example of sag fault</p>
+<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this heading">#</a></h2>
+<p>Bugs are errors in the code that result in incorrect output or the program to fail. In other words
+they are unintential behaviours of the code. With ever more complex software being developed which uses
+a stack of other libraries to create the functionality making sure your code is bug free is getting harder
+but yet more important. It’s also important to note that bugs are always introduced by programmers; they
+don’t manifest themselves!</p>
+<p>There are a number of different categories of bugs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Arthimetic: dividing by zero, creating a number larger than the computer can handle, loss of precision etc
+can all introduce bugs</p></li>
+<li><p>Control flow: your logic may not be correct, so the program goes into a branch not expected.</p></li>
+<li><p>Interfacing: If you use other libraries (which you will!) you can pass incorrect data to them. This
+is particularlly challenging when a library updates on a system and the interface (called the
+Application Programming Interface or API) changes.</p></li>
+<li><p>Concurrency: when using more than one core or using threads you can end up deadlocking (nothing runs) or
+a race condition (wrong order) etc. Parallel programming is very hard because of this.</p></li>
+<li><p>Resource bugs: Using an unitilised variable or a null pointer. This are actually quite hard to generate in
+interpreted languages like Python and R.</p></li>
+<li><p>Syntax: Using <code class="docutils literal notranslate"><span class="pre">x==5</span></code> rather than <code class="docutils literal notranslate"><span class="pre">x=5</span></code> can be valid syntax but not what you expected. Again, in
+interpreted languages this is hard to do as you get an error or warning.</p></li>
+<li><p>Human: When working in teams it is really important to communicate and use tests. It is very easy to
+add bugs by not updating comments, not documenting code correctly and duplicating code.</p></li>
+</ul>
+</div></blockquote>
+<p>Of special note are security bugs. These will not be of major concern to us, but if you develop something
+that interacts with both a computer and the internet this can cause severe damage. They generally come
+about by not checking user input fully. So rather than running a query on a databse the user supplied
+code deletes the entire database.</p>
+<section id="reporting-a-bug">
+<h3>Reporting a bug<a class="headerlink" href="#reporting-a-bug" title="Permalink to this heading">#</a></h3>
+<p>One of the best ways of giving back to the open souce community is to report bugs when you
+come across them. As a beginner programmer it’s more likely that the error is in your code
+rather than a well-used library like <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. However, you may well
+find the odd bug as you go.</p>
+<p>When reporting a bug you need to give enough information for the developer to recreate the problem.
+The most useful thing to provide is an example code which is as small as possible; a
+minimum reproduceable example or MRE. You would take your failing code and strip away anything
+that is not associated with the bug. You should then describe the error/issue, and give details
+of your set-up, including Python or R version, your operating system and what you expected to happen.</p>
+<p>What are come examples of bugs? They are actually quite easy to find as most of R and Python modules
+and libraries are open source and hence issues/bugs are reported.</p>
+<p>Here is an example of a bug in matplotlib:</p>
+<img alt="Screenshot of an example bug on github." src="_images/example_bug.png" />
+<p>It always worth searching the Open and Closed bugs to see if your issue is there first.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Reproducing a bug</strong></p>
+<p>Find a bug on github for an R or Python package/library which has an MRE.</p>
+<p>Can you replicate the bug and the error message?</p>
+<p><a class="reference external" href="https://github.com/tidyverts/tsibble/issues/300">Here’s an example for R using tsibble.</a></p>
+<p><a class="reference external" href="https://github.com/numpy/numpy/issues/24593">Here’s an example for Python.</a></p>
+</div>
+</section>
 </section>
 <section id="fixing-errors">
-<h2>Fixing Errors<a class="headerlink" href="#fixing-errors" title="Permalink to this headline">#</a></h2>
-<p>Read error carefully</p>
-<p>Search for the error (and include other info).</p>
-<p>Reminder that the error is theirs most of the time</p>
-<p>Get them to think about what this means for a user using their code</p>
+<h2>Fixing Errors<a class="headerlink" href="#fixing-errors" title="Permalink to this heading">#</a></h2>
+<p>We have discussed how to get an error, warning or bug, but so far we can’t fix them!</p>
+<p>The first thing it to read it carefully, using the stack trace or traceback and try to
+understand it yourself. If you can’t figure it out, then you can try searching for the
+error message on the internet. Copy and paste the error removing any filepaths.</p>
+<p>Try the following:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:[</span><span class="s1">&#39;1.0692e+06&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;1.0692e+06&#39;</span>
+</pre></div>
+</div>
+<p>The error is much longer than I gave here, but try copying and pasting the lower part into a search
+engine and you will hopefully find a page with some answers on what the error is and even how to fix it.
+Note that’ve not copied any of the specific parts of the error in a search, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">dtypes</span><span class="o">/</span><span class="n">cast</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1154</span><span class="p">,</span> <span class="ow">in</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">skipna</span><span class="p">)</span>
+   <span class="mi">1150</span> <span class="k">elif</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+   <span class="mi">1151</span>
+   <span class="mi">1152</span>     <span class="c1"># work around NumPy brokenness, #1987</span>
+   <span class="mi">1153</span>     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">):</span>
+<span class="o">-&gt;</span> <span class="mi">1154</span>         <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">astype_intsafe</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+   <span class="mi">1156</span>     <span class="c1"># if we have a datetime/timedelta array of objects</span>
+   <span class="mi">1157</span>     <span class="c1"># then coerce to a proper dtype and recall astype_nansafe</span>
+   <span class="mi">1159</span>     <span class="k">elif</span> <span class="n">is_datetime64_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+
+<span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">lib</span><span class="o">.</span><span class="n">pyx</span><span class="p">:</span><span class="mi">668</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astype_intsafe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You’ll note that they are specific to the version of Python I’m using and to where pandas is installed, and even the
+OS I’m using. Anyone using Windows, Python 3.11 and a version of pandas installed via Anaconda will have very
+different paths to mine! Search engines aren’t that good…</p>
+<p>The above example is also a good example of the fact this is <em>your</em> error. It is not a bug in the pandas library.
+The code creates a number as a string that cannot be converted into an int (as it’s a floating point number).</p>
+<p>Let’s do an example in R now.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Date</span><span class="o">=</span><span class="nf">as.Date</span><span class="p">(</span><span class="nf">character</span><span class="p">()),</span>
+             <span class="n">country</span><span class="o">=</span><span class="nf">factor</span><span class="p">(),</span>
+             <span class="n">total</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(),</span>
+             <span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">$</span><span class="n">total</span> <span class="o">&lt;-</span> <span class="m">7</span>
+
+<span class="n">Error</span> <span class="n">in</span> <span class="nf">`$&lt;-.data.frame`</span><span class="p">(</span><span class="n">`*tmp*`</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">7</span><span class="p">)</span> <span class="o">:</span>
+    <span class="n">replacement</span> <span class="n">has</span> <span class="m">1</span> <span class="n">row</span><span class="p">,</span> <span class="n">data</span> <span class="n">has</span> <span class="m">0</span>
+</pre></div>
+</div>
+<p>I would copy and paste the error, replacing some terms, something like
+<code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">in</span> <span class="pre">`$&lt;-.data.frame`(`*tmp*`,</span> <span class="pre">total,</span> <span class="pre">replacement</span> <span class="pre">has</span> <span class="pre">1</span> <span class="pre">row,</span> <span class="pre">data</span> <span class="pre">has</span> <span class="pre">0</span></code>
+a number of website come up which help understand the error message a bit more.</p>
 </section>
-<section id="debuggers">
-<h2>Debuggers<a class="headerlink" href="#debuggers" title="Permalink to this headline">#</a></h2>
-<p>pdb</p>
-<p>R equiv?</p>
-<p>Exercises: Bug spotting (inc running debugger)</p>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>Once you have some understanding of the error and the cause you can start to debug
+your code. The easiset form of debugging is called “print debugging”. You insert
+print statements around code to output the contents of variables to help you
+understand the flow of the program. The downside of this debugging is you have to
+add and then <em>remove</em> a lot of print statements!</p>
+<p>If I’m not sure why code is not working, and perhaps more importantly, where,
+I first add “programming noise”; print statements like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PN: 1&quot;</span><span class="p">)</span>
+
+<span class="o">...</span> <span class="n">some</span> <span class="n">code</span> <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PN: 2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By watching the print statements I can zero in where the code is breaking. I can then
+really zero in on a line or lines of code that are breaking.</p>
+<p>If the error is in a loop, it can be helpful to print the loop index and the value
+of any key variable sduring the loop. When you code breaks you know exactly which
+loop index it was on. Running this in RStudio or Spyder means you can then
+explore your data using that index. Very helpful!</p>
+<p>However print debugging can be unweidly, producing massive amounts of output
+that can be be as hard to decipher as the error you’re trying to fix.</p>
+<div class="admonition-practical-exercise-python admonition">
+<p class="admonition-title">Practical exercise - Python</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>There were erros in syntax and logic! My version is below. More elgant solutions
+can be found too.</p>
+</div>
+<p>Another way, alluded to above, is within R (or Rstudio) or ipython (or Spyder) is
+to run your code. When you get to the error your variables are still available and
+you can explore them to see what might be wrong.</p>
+<p>EXERCISE on console debugging (R and Python)</p>
+<p>I’ve been writing code in one form or another for <em>cough</em> 35 years <em>cough</em> and
+I <em>still</em> use print debugging, especially in when writing code for multiple
+cores (parallel programming). It’s incredibly useful and quick. However, some bugs or errors are
+best fixed using specialist debugging software called a debugger. We’ll cover
+debuggers in the optional mini-courses at the end.</p>
 </section>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="R.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">R: the fundamentals</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Python2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python: part 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Jon Hill<br/>
-  
-      &copy; Copyright 2023, Jon Hill.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="R.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">R: the fundamentals</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Revision_control.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Revision control with Git</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-issues">Types of issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-issues">Simple issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-examples">R examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-examples">Python examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-examples">Warning examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-warning-examples">R warning examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-warning-example">Python warning example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bugs">Bugs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-a-bug">Reporting a bug</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-errors">Fixing Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
