@@ -345,6 +345,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">Reading files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
@@ -825,8 +827,112 @@ the file handle is lost (i.e. <cite>.close()</cite> is called or the variable go
     <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The <cite>file.close()</cite> is now redundant, but can still be put in the code. All variables create in the <cite>with</cite>
-block then disappear afterwards (this has caused me a few bugs in the past).</p>
+<p>The <cite>file.close()</cite> is now redundant, but can still be used in the code to make it clear. All variables create in the <cite>with</cite>
+block disappear afterwards (this has caused me a few bugs in the past), but makes the scope of your variables
+clear.</p>
+</section>
+<section id="reading-files">
+<h3>Reading files<a class="headerlink" href="#reading-files" title="Permalink to this heading">#</a></h3>
+<p>We can now open and close files, how do we get information from them? We’ll focus on text files for now. Most
+binary files have a Python module to read them, so are more specialist in nature.</p>
+<p>We can read text files line-by-line or in one go. To read line-by-line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># This will print every line one by one in the file</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">file</span></code> operator is also an iterable object, so a loop over each element in the <code class="docutils literal notranslate"><span class="pre">file</span></code> allows us
+to read the text line-by-line.</p>
+<p>If we want to read in all the text at once:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">file.read()</span></code> function grabs all the text from the file into memory (and here prints immediately, but can also
+be stored in a variable). The <code class="docutils literal notranslate"><span class="pre">read()</span></code> function can also take an argument for the number of characters to read,
+for example this reads the first 5 characters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>My preferred way of reading text files is by line and performing any operations on a line-by-line basis. This
+works for most files as data in text files tends to be organised that way. I use the <code class="docutils literal notranslate"><span class="pre">readline()</span></code> function
+to make this very clear. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datafile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is an example of the type of processing; here splitting the line of text
+into words (seperated by spaces) and creating a list of those.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Download this text file. Write code to open the file
+and read all the contents in one go and save into a variable.
+Print that variable to screen.</p>
+<p>Then write a version that reads in the file line by, splitting
+the lines by commas and printing to screen each line.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code, wrapping both parts into one code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="writing-files">
+<h3>Writing files<a class="headerlink" href="#writing-files" title="Permalink to this heading">#</a></h3>
+<p>Writing files is a bit different to reading files. You are in charge of putting the line breaks in!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello World!!!&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No, really, hello!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above opens a text file for writing (note the <code class="docutils literal notranslate"><span class="pre">'w'</span></code>) and writes a single line of text. Try it.</p>
+<p>To get multiple lines we either need to create a string with those newline characters in it <em>or</em> use
+the <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> function with a list of strings. As with a lot of things in Python there are a number of ways
+of doing this!</p>
+<p>Let’s add some newlines to the example above first.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">\n</span></code> character - this is a newline character. So you will now have a file that contains:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hellow World!!!
+No, really, hello!
+</pre></div>
+</div>
+<p>We could acheive the same thing using <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> but we are still responsible for adding the newlines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Produces the same output as above. If your list of strings doesn’t have newline characters, then something like
+this works well:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">contents</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Here, we join each element of contents with a newline character. We could also do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we using generator expressions (the <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">for</span> <span class="pre">l</span> <span class="pre">in</span> <span class="pre">contents</span></code>) and formatting expressions to stick a string a newline
+together.</p>
+<p>All of the above are correct and will work fine. Some may argue for one way being more ‘Pythonic’ than
+others, but your job is to write clear code so use whichever is clearest for you.</p>
 </section>
 </section>
 <section id="python-command-line-arguments">
@@ -1087,6 +1193,8 @@ print a message to say the user lost the game</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">Reading files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
