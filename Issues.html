@@ -9,6 +9,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPHGXML15W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GPHGXML15W');
+    </script>
+    
     <title>Solving issues and debugging &#8212; SEPwC  documentation</title>
   
   
@@ -338,7 +347,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-errors">Fixing Errors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-debugging">Console debugging</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -708,15 +720,68 @@ that can be be as hard to decipher as the error you’re trying to fix.</p>
 <p>There were erros in syntax and logic! My version is below. More elgant solutions
 can be found too.</p>
 </div>
+<div class="admonition-practical-exercise-r admonition">
+<p class="admonition-title">Practical exercise - R</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>There were erros in syntax and logic! My version is below. More elgant solutions
+can be found too.</p>
+</div>
+<section id="console-debugging">
+<h3>Console debugging<a class="headerlink" href="#console-debugging" title="Permalink to this heading">#</a></h3>
 <p>Another way, alluded to above, is within R (or Rstudio) or ipython (or Spyder) is
 to run your code. When you get to the error your variables are still available and
 you can explore them to see what might be wrong.</p>
-<p>EXERCISE on console debugging (R and Python)</p>
+<p>Let’s do a similar exercise to the above in the console. Launch either the Python or R
+console (in Spyder or RStudio is fine).</p>
+<div class="admonition-practical-exercise-python admonition">
+<p class="admonition-title">Practical exercise - Python</p>
+<blockquote>
+<div></div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>My first error was:</p>
+<p>I then tried to fix that line alone in the console:</p>
+<p>That works, so now I can try the next line by itself. That also gives an error:</p>
+<p>I see the issue: <cite>“</cite> instead of <cite>‘</cite>. So again, get that line right in the console.</p>
+<p>Got that done, so now I can copy and paste the loop only. Yet another error:</p>
+<p>I can see the issue (forgot an <cite>s</cite>). so fix that and try again. I can fix it by pressing up and
+navigating to the right place and fix the code. I can then use the arrows to go back to the bottom
+of the code block and press return to re-run. An now the code produces something!</p>
+<p>Not quite right, but runs now at least. A little trick in ipython is to use the <cite>%history</cite> which gives
+all the code I’ve run. I can grab that and re-write my base code. I can then debug as above or continue
+in the ipython console.</p>
+<p>My final code is:</p>
+</div>
+</div>
+<div class="admonition-practical-exercise-r admonition">
+<p class="admonition-title">Practical exercise - R</p>
+<blockquote>
+<div></div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>My first error was, copying and pasting the code in the R console:</p>
+<p>A lot of errors. We can probably fix them from top to bottom. So let’s
+try dealing with the first error by editing the <cite>descriptions</cite> variable.
+We can try in the console to get it to work. Pressing up in the R console until
+we get to the line. Then edit the line; note the backtick vs <cite>‘</cite>. so
+<cite>descriptions = c(‘funny’, ‘cute’, ‘friendly’)</cite>. That works! Do the same
+for the <cite>animals</cite> variable too.</p>
+<p>Now let’s deal with the loops error; once we have the two vectors set-up
+properly, copy and paste the loop:</p>
+<p>Typo! It should be <cite>descriptions</cite>. Fix that by pressing up, and editing the code; you’ll then
+need to copy and paste the rest of the loop in. Success! Running code!</p>
+<p>Not quite right, but runs now at least. Now we need to edit the loop to get the logic right.</p>
+<p>My final code is:</p>
+</div>
+</div>
 <p>I’ve been writing code in one form or another for <em>cough</em> 35 years <em>cough</em> and
 I <em>still</em> use print debugging, especially in when writing code for multiple
 cores (parallel programming). It’s incredibly useful and quick. However, some bugs or errors are
 best fixed using specialist debugging software called a debugger. We’ll cover
 debuggers in the optional mini-courses at the end.</p>
+</section>
 </section>
 </section>
 
@@ -780,7 +845,10 @@ debuggers in the optional mini-courses at the end.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-errors">Fixing Errors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-debugging">Console debugging</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

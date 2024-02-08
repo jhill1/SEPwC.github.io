@@ -9,6 +9,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPHGXML15W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GPHGXML15W');
+    </script>
+    
     <title>Python: part 2 &#8212; SEPwC  documentation</title>
   
   
@@ -772,7 +781,90 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 <section id="useful-dictionary-functions">
 <h3>Useful dictionary functions<a class="headerlink" href="#useful-dictionary-functions" title="Permalink to this heading">#</a></h3>
-<p>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively.</p>
+<p>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively. Both of these return lists
+which can be looped over, e.g.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">keys</span><span class="p">(</span><span class="n">knights</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">knights</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>is a common idiom you will see in Python code.</p>
+<div class="admonition-practical-exercise-capital-cities admonition">
+<p class="admonition-title">Practical exercise - capital cities</p>
+<blockquote>
+<div><p>Create a dictionary that holds a country as the key, and the capital
+city as the value, e.g. Germany - Berlin, UK - London.</p>
+</div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<dl class="simple">
+<dt>capitals = {</dt><dd><p>“Germany”: “Berlin”,
+“UK”: “London”,
+“USA”: “Washington DC”,
+“France”: “Paris”,
+“Burkina Faso”: “Ouagadougou”</p>
+</dd>
+</dl>
+<p>}</p>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-add admonition">
+<p class="admonition-title">Practical exercise - capital cities: add</p>
+<blockquote>
+<div><p>Add more countries to your list, without creating a new variable.</p>
+</div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>capitals[“Italy”] = “Rome”
+capitals[“Mexico”] = “Mexico City”</p>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-delete admonition">
+<p class="admonition-title">Practical exercise - capital cities: delete</p>
+<blockquote>
+<div><p>Remove the UK from the list. You may have to search the internet to find the answer to this one!</p>
+</div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>del capitals[“UK”]</p>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-edit admonition">
+<p class="admonition-title">Practical exercise - capital cities: edit</p>
+<blockquote>
+<div><p>Edit the value for one of your capitals. Ouagadougou is also known as Wagadugu</p>
+</div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>capitals[“Burkina Faso”] = “Wagadugu”</p>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-functions admonition">
+<p class="admonition-title">Practical exercise - capital cities: functions</p>
+<blockquote>
+<div><p>Find out how you might do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check if a key exists in a dictionary</p></li>
+<li><p>Check the length of a dictionary</p></li>
+<li><p>Create a copy of a dictionary</p></li>
+<li><p>Clear a dictionary</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<dl class="simple">
+<dt>if (“UK” in captials):</dt><dd><p>print(cpatials[“UK”])</p>
+</dd>
+</dl>
+<p>print(len(captials))</p>
+<p>capitals_mkII = copy(capitals)</p>
+<p>clear(pactials)</p>
+</div>
+</div>
 </section>
 </section>
 <section id="python-files">
@@ -873,7 +965,8 @@ to make this very clear. For example:</p>
 into words (seperated by spaces) and creating a list of those.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Download this text file. Write code to open the file
+<p>Download <a class="reference external" href="https://raw.githubusercontent.com/jhill1/SEPwC/master/code_examples/depth_data.csv">this text file</a> .
+Write code to open the file
 and read all the contents in one go and save into a variable.
 Print that variable to screen.</p>
 <p>Then write a version that reads in the file line by, splitting
@@ -882,9 +975,21 @@ the lines by commas and printing to screen each line.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code, wrapping both parts into one code.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;depth_data.csv&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">all_file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">all_file</span><span class="p">)</span>
+
+<span class="c1"># the file will be closed above as the &quot;with&quot;</span>
+<span class="c1"># block has ended.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;depth_data.csv&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>which produces:</p>
+<p>Note how the second method has produced lists (due to the <cite>split()</cite> function) which
+we could iterate over and do something sensible with, e.g. opening the file in the first
+element, perhaps.</p>
 </div>
 </section>
 <section id="writing-files">
