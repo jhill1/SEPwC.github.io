@@ -349,7 +349,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tricks-with-r-dictionaries">Some useful tricks with R dictionaries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R: files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-tables-csv-files">Read and write tables/csv files</a></li>
 </ul>
 </li>
@@ -595,7 +595,7 @@ libraries, rather than creating them.</p>
 </pre></div>
 </div>
 <p>You can add to a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="m">435353</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">435353</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">telelphone</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -638,10 +638,82 @@ you reassign the output back into telephone:</p>
 helper functions to do this so you code is cleaner.</p>
 <p>R does have libraries that make proper dictionaries. <cite>hash</cite> is one such library.
 If you are making heavy use of dictionaries, it may be better to use that library instead!</p>
+<div class="admonition-practical-exercise-capital-cities admonition">
+<p class="admonition-title">Practical exercise - capital cities</p>
+<p>Create a dictionary that holds a country as the key, and the capital
+city as the value, e.g. Germany - Berlin, UK - London.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+    <span class="s">&quot;Germany&quot;</span><span class="o">=</span><span class="s">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s">&quot;UK&quot;</span><span class="o">=</span><span class="s">&quot;London&quot;</span><span class="p">,</span>
+    <span class="s">&quot;USA&quot;</span><span class="o">=</span><span class="s">&quot;Washington DC&quot;</span><span class="p">,</span>
+    <span class="s">&quot;France&quot;</span><span class="o">=</span><span class="s">&quot;Paris&quot;</span><span class="p">,</span>
+    <span class="s">&quot;Burkina Faso&quot;</span><span class="o">=</span><span class="s">&quot;Ouagadougou&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-add admonition">
+<p class="admonition-title">Practical exercise - capital cities: add</p>
+<p>Add more countries to your list, without creating a new variable.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s">&quot;Italy&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;Rome&quot;</span>
+<span class="n">capitals</span><span class="p">[</span><span class="s">&quot;Mexico&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;Mexico City&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-delete admonition">
+<p class="admonition-title">Practical exercise - capital cities: delete</p>
+<p>Remove the UK from the list. You may have to search the internet to find the answer to this one!</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">&lt;-</span> <span class="n">capitals</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">capitals</span><span class="p">)</span> <span class="o">!=</span> <span class="s">&quot;UK&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-edit admonition">
+<p class="admonition-title">Practical exercise - capital cities: edit</p>
+<p>Edit the value for one of your capitals. Ouagadougou is also known as Wagadugu</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s">&quot;Burkina Faso&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;Wagadugu&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise-capital-cities-functions admonition">
+<p class="admonition-title">Practical exercise - capital cities: functions</p>
+<p>Find out how you might do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check if a key exists in a dictionary</p></li>
+<li><p>Check the length of a dictionary</p></li>
+<li><p>Create a copy of a dictionary</p></li>
+<li><p>Clear a dictionary</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="s">&#39;UK&#39;</span> <span class="o">%in%</span> <span class="nf">names</span><span class="p">(</span><span class="n">capitals</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">capitals</span><span class="p">))</span>
+
+<span class="n">capitals_mkII</span> <span class="o">&lt;-</span> <span class="n">capitals</span>
+
+<span class="n">capitals</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="r-files">
-<h2>R files<a class="headerlink" href="#r-files" title="Permalink to this heading">#</a></h2>
+<h2>R: files<a class="headerlink" href="#r-files" title="Permalink to this heading">#</a></h2>
 <p>Writing software for scientific/research purposes often invovles reading in
 data from files. R file handling is very powerful, but surprisingly
 easy to use and manage, but there are a lot of overlapping functions
@@ -669,6 +741,46 @@ it. In other words <cite>read.table</cite> is more flexible in reading in data a
 can read in data seperated by spaces, semi-colons, pipes, etc. Both
 functions return a data frame object (we’ll learn more on this later),
 with the columns labelled by the headers.</p>
+<p>Similarly if we have data in a variable, we can get R to write this out
+in a CSV or table, easily:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">write.csv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&#39;new_file.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">df</span></code> is your data frame which contains the data, with the filename
+given by the <code class="docutils literal notranslate"><span class="pre">file</span></code> argument.</p>
+<p>There are a number of arguements you can give to the function to get the
+data file to look as you wish. This includes appending to an existing file,
+the type of quotes to use, the seperator and whether to use row and column names.</p>
+<p>It’s worth finding the R manuals online to see these and experiment a little.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Write your <cite>capitals</cite> dictionary into a file, seperated by commas, so country in
+column 1 and the city in column 2. Each country is then on a new line.
+This creates a CSV file, which you can load into Excel, etc.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;Germany&quot;</span><span class="o">:</span> <span class="s">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s">&quot;UK&quot;</span><span class="o">:</span> <span class="s">&quot;London&quot;</span><span class="p">,</span>
+    <span class="s">&quot;USA&quot;</span><span class="o">:</span> <span class="s">&quot;Washington DC&quot;</span><span class="p">,</span>
+    <span class="s">&quot;France&quot;</span><span class="o">:</span> <span class="s">&quot;Paris&quot;</span><span class="p">,</span>
+    <span class="s">&quot;Burkina Faso&quot;</span><span class="o">:</span> <span class="s">&quot;Ouagadougou&quot;</span>
+<span class="p">}</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="n">capitals</span><span class="p">,</span><span class="s">&quot;capitals.csv&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The file then contains:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC$ more captials.csv
+<span class="s2">&quot;Germany&quot;</span>,<span class="s2">&quot;Berlin&quot;</span>
+<span class="s2">&quot;UK&quot;</span>,<span class="s2">&quot;London&quot;</span>
+<span class="s2">&quot;USA&quot;</span>,<span class="s2">&quot;Washington DC&quot;</span>
+<span class="s2">&quot;France&quot;</span>,<span class="s2">&quot;Paris&quot;</span>
+<span class="s2">&quot;Burkina Faso&quot;</span>,<span class="s2">&quot;Ouagadougou&quot;</span>
+</pre></div>
+</div>
+<p>Why did I use the <cite>write.table</cite> function? What happens if <cite>write.csv</cite> is used?</p>
+</div>
 </section>
 </section>
 <section id="r-command-line-arguments">
@@ -1012,7 +1124,7 @@ print a message to say the user lost the game</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tricks-with-r-dictionaries">Some useful tricks with R dictionaries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R: files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-tables-csv-files">Read and write tables/csv files</a></li>
 </ul>
 </li>
