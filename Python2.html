@@ -352,7 +352,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">Reading files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
@@ -360,8 +359,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-the-command-line">Python and the command line</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-command-line-interface">Advanced command line interface</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user">Getting input from a user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-advanced-command-line-interface">Python advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user-in-python">Getting input from a user in Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-exercises-2">Python Exercises 2</a></li>
@@ -486,9 +485,8 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 </pre></div>
 </div>
 <p>What error message did you get?</p>
-<div class="admonition-check-your-answer-class-toggle admonition">
-<p class="admonition-title">Check your answer
- :class: toggle</p>
+<div class="toggle admonition">
+<p class="admonition-title">Check your answer</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>     <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
       <span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
@@ -529,9 +527,8 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 <span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Bryan&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition-check-your-answer-class-toggle admonition">
-<p class="admonition-title">Check your answer
- :class: toggle</p>
+<div class="toggle admonition">
+<p class="admonition-title">Check your answer</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
   <span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
                  <span class="o">^</span>
@@ -793,58 +790,55 @@ which can be looped over, e.g.</p>
 <p>is a common idiom you will see in Python code.</p>
 <div class="admonition-practical-exercise-capital-cities admonition">
 <p class="admonition-title">Practical exercise - capital cities</p>
-<blockquote>
-<div><p>Create a dictionary that holds a country as the key, and the capital
+<p>Create a dictionary that holds a country as the key, and the capital
 city as the value, e.g. Germany - Berlin, UK - London.</p>
-</div></blockquote>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<dl class="simple">
-<dt>capitals = {</dt><dd><p>“Germany”: “Berlin”,
-“UK”: “London”,
-“USA”: “Washington DC”,
-“France”: “Paris”,
-“Burkina Faso”: “Ouagadougou”</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UK&quot;</span><span class="p">:</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;USA&quot;</span><span class="p">:</span> <span class="s2">&quot;Washington DC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;France&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Burkina Faso&quot;</span><span class="p">:</span> <span class="s2">&quot;Ouagadougou&quot;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 <div class="admonition-practical-exercise-capital-cities-add admonition">
 <p class="admonition-title">Practical exercise - capital cities: add</p>
-<blockquote>
-<div><p>Add more countries to your list, without creating a new variable.</p>
-</div></blockquote>
+<p>Add more countries to your list, without creating a new variable.</p>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>capitals[“Italy”] = “Rome”
-capitals[“Mexico”] = “Mexico City”</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Italy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Rome&quot;</span>
+<span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Mexico&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Mexico City&quot;</span>
+</pre></div>
 </div>
 </div>
 <div class="admonition-practical-exercise-capital-cities-delete admonition">
 <p class="admonition-title">Practical exercise - capital cities: delete</p>
-<blockquote>
-<div><p>Remove the UK from the list. You may have to search the internet to find the answer to this one!</p>
-</div></blockquote>
+<p>Remove the UK from the list. You may have to search the internet to find the answer to this one!</p>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>del capitals[“UK”]</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;UK&quot;</span><span class="p">]</span>
+</pre></div>
 </div>
 </div>
 <div class="admonition-practical-exercise-capital-cities-edit admonition">
 <p class="admonition-title">Practical exercise - capital cities: edit</p>
-<blockquote>
-<div><p>Edit the value for one of your capitals. Ouagadougou is also known as Wagadugu</p>
-</div></blockquote>
+<p>Edit the value for one of your capitals. Ouagadougou is also known as Wagadugu</p>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>capitals[“Burkina Faso”] = “Wagadugu”</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Burkina Faso&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Wagadugu&quot;</span>
+</pre></div>
 </div>
 </div>
 <div class="admonition-practical-exercise-capital-cities-functions admonition">
 <p class="admonition-title">Practical exercise - capital cities: functions</p>
-<blockquote>
-<div><p>Find out how you might do the following:</p>
+<p>Find out how you might do the following:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Check if a key exists in a dictionary</p></li>
@@ -853,16 +847,18 @@ capitals[“Mexico”] = “Mexico City”</p>
 <li><p>Clear a dictionary</p></li>
 </ul>
 </div></blockquote>
-</div></blockquote>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<dl class="simple">
-<dt>if (“UK” in captials):</dt><dd><p>print(cpatials[“UK”])</p>
-</dd>
-</dl>
-<p>print(len(captials))</p>
-<p>capitals_mkII = copy(capitals)</p>
-<p>clear(pactials)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="s2">&quot;UK&quot;</span> <span class="ow">in</span> <span class="n">captials</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;UK&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">capitals</span><span class="p">))</span>
+
+<span class="n">capitals_mkII</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">capitals</span><span class="p">)</span>
+
+<span class="n">clear</span><span class="p">(</span><span class="n">capitals</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -872,8 +868,6 @@ capitals[“Mexico”] = “Mexico City”</p>
 <p>Writing software for scientific/research purposes often invovles reading in
 data from files. Python file handling is very powerful, but surprisingly
 easy to use and manage.</p>
-<section id="first-a-diversion">
-<h3>First, a diversion…<a class="headerlink" href="#first-a-diversion" title="Permalink to this heading">#</a></h3>
 <p>Files in computing have a very long history and there’s a lot of baggage
 carried over from this history. Some of this creeps into the jargon
 we end up using. First, there’s the two main types of files
@@ -882,7 +876,6 @@ types of file differently. When it comes to text files there are special
 characters at the end of each line for a EOL or End of Line.</p>
 <p>From these two file types, all the other files you may come across then
 come into being. We’ll learn a lot more in the data section.</p>
-</section>
 <section id="opening-and-closing-files">
 <h3>Opening and closing files<a class="headerlink" href="#opening-and-closing-files" title="Permalink to this heading">#</a></h3>
 <p>Before reading or writing data to a file we must first open that
@@ -987,6 +980,17 @@ the lines by commas and printing to screen each line.</p>
 </pre></div>
 </div>
 <p>which produces:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>File,Top,Bottom
+core_13.xlsx,22.75,30
+core_16.xlsx,27,33
+core_17.xlsx,27.75,43
+
+<span class="o">[</span><span class="s1">&#39;File&#39;</span>, <span class="s1">&#39;Top&#39;</span>, <span class="s1">&#39;Bottom\n&#39;</span><span class="o">]</span>
+<span class="o">[</span><span class="s1">&#39;core_13.xlsx&#39;</span>, <span class="s1">&#39;22.75&#39;</span>, <span class="s1">&#39;30\n&#39;</span><span class="o">]</span>
+<span class="o">[</span><span class="s1">&#39;core_16.xlsx&#39;</span>, <span class="s1">&#39;27&#39;</span>, <span class="s1">&#39;33\n&#39;</span><span class="o">]</span>
+<span class="o">[</span><span class="s1">&#39;core_17.xlsx&#39;</span>, <span class="s1">&#39;27.75&#39;</span>, <span class="s1">&#39;43\n&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
 <p>Note how the second method has produced lists (due to the <cite>split()</cite> function) which
 we could iterate over and do something sensible with, e.g. opening the file in the first
 element, perhaps.</p>
@@ -1038,6 +1042,37 @@ this works well:</p>
 together.</p>
 <p>All of the above are correct and will work fine. Some may argue for one way being more ‘Pythonic’ than
 others, but your job is to write clear code so use whichever is clearest for you.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Write your <cite>capitals</cite> dictionary into a file, seperated by commas, so country in
+column 1 and the city in column 2. Each country is then on a new line.
+This creates a CSV file, which you can load into Excel, etc.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code, wrapping both parts into one code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UK&quot;</span><span class="p">:</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;USA&quot;</span><span class="p">:</span> <span class="s2">&quot;Washington DC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;France&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Burkina Faso&quot;</span><span class="p">:</span> <span class="s2">&quot;Ouagadougou&quot;</span>
+<span class="p">}</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;capitals.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">capitals</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">country</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">capitals</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The file then contains:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@mirovia:~/work/teaching/SEPwC/source$ more capitals.csv
+Germany,Berlin
+UK,London
+USA,Washington DC
+France,Paris
+Burkina Faso,Ouagadougou
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="python-command-line-arguments">
@@ -1063,10 +1098,10 @@ advanced usage options.</p>
 </pre></div>
 </div>
 <p>that text is passed to the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module in Python. Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.py</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import sys
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
-print<span class="o">(</span><span class="s2">&quot;Argument list&quot;</span>, str<span class="o">(</span>sys.argv<span class="o">))</span>
-print<span class="o">(</span><span class="s2">&quot;Length: &quot;</span>, len<span class="o">(</span>sys.argv<span class="o">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Argument list&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Now run that on the command line.</p>
@@ -1094,9 +1129,26 @@ interacts with a database, for example, and the user can input which field to se
 to construct input which can then delete the database. You must always check what the user is giving you before
 using it, especially when it comes to files, databases, or URLs.</p>
 </div>
+<div class="admonition-practical-exercise-simple-command-line-arguments admonition">
+<p class="admonition-title">Practical exercise - simple command line arguments</p>
+<p>Write a simple python script to get all command line arguments given to it
+and print them out on individual lines. Do not include the script name.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># note the 1:, I&#39;m skipping the 0-th element!</span>
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">arg</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="advanced-command-line-interface">
-<h3>Advanced command line interface<a class="headerlink" href="#advanced-command-line-interface" title="Permalink to this heading">#</a></h3>
+<section id="python-advanced-command-line-interface">
+<h3>Python advanced command line interface<a class="headerlink" href="#python-advanced-command-line-interface" title="Permalink to this heading">#</a></h3>
 <p>Python has a number of modules that make command line parsing a lot easier and more functional. The most commonly used is
 <code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. Moreover,
@@ -1130,9 +1182,57 @@ and a lot more too.</p>
 <span class="n">default_PhysID</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">default_PhysID</span>
 </pre></div>
 </div>
+<div class="admonition-practical-exercise-more-complex-arguments admonition">
+<p class="admonition-title">Practical exercise - more complex arguments</p>
+<p>Write a simple python script that returns the square of a given number,
+e.g. if the users give 2, the program returns 4 to screen.
+It must have the following arguments using <cite>argparse</cite>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <cite>int</cite> value of 0, 1 or 2.
+This increases the verbosity of the output from just the number (<cite>verbosity==0</cite>)
+to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
+<li><p>restrict the input number to an integer only</p></li>
+<li><p>add a check for negative numbers as input</p></li>
+<li><p>optional output to a file</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;display a square of a given number&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbosity&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;increase output verbosity&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">parse</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--output_file&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span>
+<span class="n">output_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">output_file</span>
+
+<span class="k">if</span> <span class="n">square</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please provide a positive integer&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">square</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">output_file</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The square of </span><span class="si">{</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="getting-input-from-a-user">
-<h3>Getting input from a user<a class="headerlink" href="#getting-input-from-a-user" title="Permalink to this heading">#</a></h3>
+<section id="getting-input-from-a-user-in-python">
+<h3>Getting input from a user in Python<a class="headerlink" href="#getting-input-from-a-user-in-python" title="Permalink to this heading">#</a></h3>
 <p>If you want to ask the user something, e.g. a file name
 or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you wish to continue (Y/N)?&quot;</span><span class="p">)</span>
@@ -1296,7 +1396,6 @@ print a message to say the user lost the game</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-files">Python: Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-a-diversion">First, a diversion…</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-and-closing-files">Opening and closing files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">Reading files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">Writing files</a></li>
@@ -1304,8 +1403,8 @@ print a message to say the user lost the game</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-command-line-arguments">Python: command line arguments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-the-command-line">Python and the command line</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-command-line-interface">Advanced command line interface</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user">Getting input from a user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-advanced-command-line-interface">Python advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user-in-python">Getting input from a user in Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-exercises-2">Python Exercises 2</a></li>

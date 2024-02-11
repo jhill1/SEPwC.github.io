@@ -346,11 +346,20 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dictionaries">R dictionaries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-dictionaries">Looping with dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tricks-with-r-dictionaries">Some useful tricks with R dictionaries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-apply-family">R apply family</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-command-line-arguments">R command line arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-tables-csv-files">Read and write tables/csv files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-command-line-arguments">R command line arguments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-and-the-command-line">R and the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-advanced-command-line-interface">R advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user-in-r">Getting input from a user in R</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-exercises-2">R Exercises 2</a></li>
 </ul>
             </nav>
         </div>
@@ -491,9 +500,8 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 </pre></div>
 </div>
 <p>What error message did you get?</p>
-<div class="admonition-check-your-answer-class-toggle admonition">
-<p class="admonition-title">Check your answer
- :class: toggle</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="o">:</span>
 <span class="n">argument</span> <span class="s">&quot;name&quot;</span> <span class="n">is</span> <span class="n">missing</span><span class="p">,</span> <span class="n">with</span> <span class="n">no</span> <span class="n">default</span>
 </pre></div>
@@ -532,9 +540,8 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition-check-your-answer-class-toggle admonition">
-<p class="admonition-title">Check your answer
- :class: toggle</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span> <span class="o">:</span>
 <span class="n">argument</span> <span class="s">&quot;name&quot;</span> <span class="n">is</span> <span class="n">missing</span><span class="p">,</span> <span class="n">with</span> <span class="n">no</span> <span class="n">default</span>
 </pre></div>
@@ -614,15 +621,332 @@ libraries, rather than creating them.</p>
 </pre></div>
 </div>
 </section>
+<section id="some-useful-tricks-with-r-dictionaries">
+<h3>Some useful tricks with R dictionaries<a class="headerlink" href="#some-useful-tricks-with-r-dictionaries" title="Permalink to this heading">#</a></h3>
+<p>Because R doesn’t have built in dictionaries, it’s a bit cumbersome to
+delete items and manipulate a dictionary in place. You often find yourself
+reassigning the dictionary to the same variable. For example:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span> <span class="o">!=</span> <span class="s">&quot;Grenville&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Gives the <cite>telephone</cite> dictionary without <cite>“Grenville”</cite>. To make that change permanaent,
+you reassign the output back into telephone:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">&lt;-</span> <span class="n">telephone</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span> <span class="o">!=</span> <span class="s">&quot;Grenville&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If any code you write makes eavy use of dictionaries, it is worth writing little
+helper functions to do this so you code is cleaner.</p>
+<p>R does have libraries that make proper dictionaries. <cite>hash</cite> is one such library.
+If you are making heavy use of dictionaries, it may be better to use that library instead!</p>
+</section>
 </section>
 <section id="r-files">
 <h2>R files<a class="headerlink" href="#r-files" title="Permalink to this heading">#</a></h2>
+<p>Writing software for scientific/research purposes often invovles reading in
+data from files. R file handling is very powerful, but surprisingly
+easy to use and manage, but there are a lot of overlapping functions
+that do very similar things.</p>
+<p>Files in computing have a very long history and there’s a lot of baggage
+carried over from this history. Some of this creeps into the jargon
+we end up using. First, there’s the two main types of files
+we will come across: text and binary. R handles these two
+types of file differently. When it comes to text files there are special
+characters at the end of each line for a EOL or End of Line.</p>
+<p>From these two file types, all the other files you may come across then
+come into being. We’ll learn a lot more in the data section.</p>
+<section id="read-and-write-tables-csv-files">
+<h3>Read and write tables/csv files<a class="headerlink" href="#read-and-write-tables-csv-files" title="Permalink to this heading">#</a></h3>
+<p>Most of the time when using R you end up reading data from CSV
+(Comma Seperated Values) or tables (the same as CSV, but seperated by
+something other than a comma!). The syntax for these function is very similar.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">,</span><span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Those two lines of code produce identical results. The <cite>read.csv</cite> has
+the seperator (<cite>sep=</cite>) set to <cite>,</cite> by default. In <cite>read.table</cite> we specify
+it. In other words <cite>read.table</cite> is more flexible in reading in data as it
+can read in data seperated by spaces, semi-colons, pipes, etc. Both
+functions return a data frame object (we’ll learn more on this later),
+with the columns labelled by the headers.</p>
 </section>
-<section id="r-apply-family">
-<h2>R apply family<a class="headerlink" href="#r-apply-family" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="r-command-line-arguments">
 <h2>R command line arguments<a class="headerlink" href="#r-command-line-arguments" title="Permalink to this heading">#</a></h2>
+<p>The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
+The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
+in the course, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l
+</pre></div>
+</div>
+<p>which is the command to list things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, in a Unix shell with the option supplied to make it a table <code class="docutils literal notranslate"><span class="pre">-l</span></code>.
+Similaraly, we’ve covered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r dir1 dir2
+</pre></div>
+</div>
+<p>Here, there are three options. The <code class="docutils literal notranslate"><span class="pre">-r</span></code> flag, the directory to copy <code class="docutils literal notranslate"><span class="pre">dir1</span></code>, and where to copy it to, <code class="docutils literal notranslate"><span class="pre">dir2</span></code>.</p>
+<p>R has both in-built handling of command line options, but also a number of modules to give us quite
+advanced usage options.</p>
+<section id="r-and-the-command-line">
+<h3>R and the command line<a class="headerlink" href="#r-and-the-command-line" title="Permalink to this heading">#</a></h3>
+<p>When you run a R script via the Rscript command, with some arbitrary text after:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript arg_script.R arg1 arg2 arg3
+</pre></div>
+</div>
+<p>that text is passed to the <cite>script for you to access. Let’s create this simple script, named ``arg_script.R`</cite></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Now run that on the command line.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript arg_script.R arg1 arg2 arg3
+</pre></div>
+</div>
+<p>Your output is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC/code_examples$ Rscript command_args.R arg1 arg2 arg3
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;arg1&quot;</span> <span class="s2">&quot;arg2&quot;</span> <span class="s2">&quot;arg3&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;Length: 3&quot;</span>
+</pre></div>
+</div>
+<p>The arguments are stored in <code class="docutils literal notranslate"><span class="pre">args</span></code>. The first is always the name of the script, however, we
+automaticlaly removed that by using the <cite>trainlingOnly=True</cite> argument. Try it without:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC/code_examples$ Rscript command_args.R arg1 arg2 arg3
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;/usr/lib/R/bin/exec/R&quot;</span> <span class="s2">&quot;--no-echo&quot;</span>             <span class="s2">&quot;--no-restore&quot;</span>
+<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="s2">&quot;--file=command_args.R&quot;</span> <span class="s2">&quot;--args&quot;</span>                <span class="s2">&quot;arg1&quot;</span>
+<span class="o">[</span><span class="m">7</span><span class="o">]</span> <span class="s2">&quot;arg2&quot;</span>                  <span class="s2">&quot;arg3&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;Length: 8&quot;</span>
+</pre></div>
+</div>
+<p>Oh! That’s not quite what we were expecting. You can see what <cite>Rscript</cite> actually does under the hood; it calls
+the R command with <cite>–no-echo</cite>, <cite>–no-restore</cite> and the <cite>–file</cite> arguments, with the further <cite>–args</cite> argument. Only
+then do we see our actual arguments. So best to leave <cite>trailingOnly=TRUE</cite>.</p>
+<p>Within our script we access them as we would any other list:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">copy_from</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">copy_to</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Security bugs in code are often due to user input not being <strong>parsed</strong> correctly. If your application
+interacts with a database, for example, and the user can input which field to search, it may be possible
+to construct input which can then delete the database. You must always check what the user is giving you before
+using it, especially when it comes to files, databases, or URLs.</p>
+</div>
+<div class="admonition-practical-exercise-simple-command-line-arguments admonition">
+<p class="admonition-title">Practical exercise - simple command line arguments</p>
+<p>Write a simple R script to get all command line arguments given to it
+and print them out on individual lines. Do not include the script name or the other
+R specific things; just the user arguments.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<blockquote>
+<div><div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="m">1</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">arg</span> <span class="n">in</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="s">&quot; &quot;</span> <span class="p">,</span> <span class="n">arg</span><span class="p">))</span>
+    <span class="n">count</span> <span class="o">&lt;-</span> <span class="n">count</span> <span class="o">+</span> <span class="m">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</section>
+<section id="r-advanced-command-line-interface">
+<h3>R advanced command line interface<a class="headerlink" href="#r-advanced-command-line-interface" title="Permalink to this heading">#</a></h3>
+<p>R has a number of libraries that make command line parsing a lot easier and more functional. The most commonly used is
+<code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
+<p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">commandArgs</span></code>
+function. Moreover, the library will help with error messages, etc when the user gives incorrect arguments.</p>
+<p>The core functionality of <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is the <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;argparse&quot;</span><span class="p">)</span>
+
+
+<span class="n">parser</span> <span class="o">=</span> <span class="nf">ArgumentParser</span><span class="p">(</span>
+                    <span class="n">prog</span><span class="o">=</span><span class="s">&quot;Name&quot;</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s">&quot;Brief one line of what the program does&quot;</span><span class="p">,</span>
+                    <span class="n">epilog</span><span class="o">=</span><span class="s">&quot;Any text at the bottom of help, e.g. copyright&quot;</span>
+                    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Once an OptionParser is set-up you can then add optional and positional arguments to that.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">$</span><span class="nf">add_option</span><span class="p">(</span><span class="s">&quot;filename&quot;</span>
+                  <span class="n">help</span><span class="o">=</span><span class="s">&quot;the file to read the data from&quot;</span><span class="p">)</span> <span class="c1"># a positional argument</span>
+<span class="n">parser</span><span class="o">$</span><span class="nf">add_option</span><span class="p">(</span><span class="s">&#39;-c&#39;</span><span class="p">,</span> <span class="s">&#39;--count&#39;</span>
+                  <span class="n">help</span><span class="o">=</span><span class="s">&quot;How many times to copy&quot;</span><span class="p">)</span>         <span class="c1"># option that takes a value</span>
+<span class="n">parser</span><span class="o">$</span><span class="nf">add_option</span><span class="p">(</span><span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;--verbose&#39;</span><span class="p">,</span>
+                  <span class="n">action</span><span class="o">=</span><span class="s">&#39;store_true&#39;</span><span class="p">,</span>
+                  <span class="n">help</span><span class="o">=</span><span class="s">&quot;Print progress&quot;</span><span class="p">)</span>                 <span class="c1"># on/off flag</span>
+</pre></div>
+</div>
+<p>You can also specify which variable the argument is parsered into, the type, if an argument is required, if it should be a list
+and a lot more too.</p>
+<p>You then parse the argument and put them in variables as you see fit</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">$</span><span class="nf">parse_args</span><span class="p">()</span>
+<span class="n">boundary_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">$</span><span class="n">filename</span>
+<span class="n">polygon_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">$</span><span class="n">polygon</span>
+<span class="n">default_PhysID</span> <span class="o">=</span> <span class="n">args</span><span class="o">$</span><span class="n">default_PhysID</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise-more-complex-arguments admonition">
+<p class="admonition-title">Practical exercise - more complex arguments</p>
+<p>Write a simple R script that returns the square of a given number,
+e.g. if the users give 2, the program returns 4 to screen.
+It must have the following arguments using <cite>argparse</cite>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <cite>int</cite> value of 0, 1 or 2.
+This increases the verbosity of the output from just the number (<cite>verbosity==0</cite>)
+to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
+<li><p>restrict the input number to an integer only</p></li>
+<li><p>add a check for negative numbers as input</p></li>
+<li><p>optional output to a file</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<blockquote>
+<div><div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">argparse</span><span class="p">)</span>
+
+<span class="n">parser</span> <span class="o">&lt;-</span> <span class="nf">argparse.ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">$</span><span class="nf">add_argument</span><span class="p">(</span><span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="n">int</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s">&quot;display a square of a given number&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">$</span><span class="nf">add_argument</span><span class="p">(</span><span class="s">&quot;-v&quot;</span><span class="p">,</span> <span class="s">&quot;--verbosity&quot;</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="n">int</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">],</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s">&quot;increase output verbosity&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
+<span class="n">parse</span><span class="o">$</span><span class="nf">add_argument</span><span class="p">(</span><span class="s">&quot;--output_file&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">&lt;-</span> <span class="n">parser</span><span class="o">$</span><span class="nf">parse_args</span><span class="p">()</span>
+<span class="n">square</span> <span class="o">&lt;-</span> <span class="n">args.square</span>
+<span class="n">output_file</span> <span class="o">&lt;-</span> <span class="n">args.output_file</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">square</span> <span class="o">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Please provide a positive integer&quot;</span><span class="p">)</span>
+    <span class="nf">exit</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="o">&lt;-</span> <span class="n">square</span><span class="o">**</span><span class="m">2</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">args</span><span class="o">$</span><span class="n">verbosity</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;The square of &quot;</span><span class="p">,</span><span class="n">square</span><span class="p">,</span> <span class="s">&quot;equals &quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">args.verbosity</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">square</span><span class="p">,</span><span class="s">&quot;^2 == &quot;</span><span class="p">,</span><span class="n">answer</span><span class="p">))</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">#if (output_file != NA) {</span>
+<span class="c1">#    with open(output_file, &quot;w&quot;) as f:</span>
+<span class="c1">#        f.write(f&quot;The square of {square} equals {answer}\n&quot;)</span>
+<span class="c1">#}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</section>
+<section id="getting-input-from-a-user-in-r">
+<h3>Getting input from a user in R<a class="headerlink" href="#getting-input-from-a-user-in-r" title="Permalink to this heading">#</a></h3>
+<p>If you want to ask the user something, e.g. a file name
+or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">readLines</span></code> function.
+However, this is a bit hacky; it wasn’t really design for this, so
+it works well enough, but for running within an <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> <em>and</em> in the console
+it needs some work. We point it at a “stdin” file (i.e. the keyboard) and
+ask for a single line.</p>
+<p>If you search online for how to read user input from keyboard in R you will find
+reference to the <code class="docutils literal notranslate"><span class="pre">scan</span></code>, <code class="docutils literal notranslate"><span class="pre">readline</span></code> and <code class="docutils literal notranslate"><span class="pre">readlines</span></code> functions. They all work
+well in an interactive environment, but not when running as a batch script via <code class="docutils literal notranslate"><span class="pre">Rscript</span></code>.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">&lt;-</span> <span class="nf">readLines</span><span class="p">(</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;stdin&quot;</span><span class="p">),</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s">&quot;Y&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1"># do something</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s">&quot;N&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1"># do something else</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;I didn&#39;t understand &quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the input is returned as a string, so you may need to convert
+to a floating point number or integer, etc. As with command line
+arguments, be careful with any user input and check it carefully
+before using it.</p>
+</section>
+</section>
+<section id="r-exercises-2">
+<h2>R Exercises 2<a class="headerlink" href="#r-exercises-2" title="Permalink to this heading">#</a></h2>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Write the number guessing game out in R. You may need
+to search the internet for how to handle random numbers.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
+
+<span class="n">number</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="c1"># we create a guess that cannot be the answer...</span>
+
+<span class="nf">while </span><span class="p">(</span><span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Type your guess&quot;</span><span class="p">)</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">readLines</span><span class="p">(</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;stdin&quot;</span><span class="p">),</span><span class="m">1</span><span class="p">))</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Correct! You guessed right!&quot;</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Bye!&quot;</span><span class="p">)</span>
+        <span class="nf">stop</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Modify the guessing game code to include a maximum
+number of tries (5). If the number of tries is 5 then
+print a message to say the user lost the game</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>This is my code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have 5 tries to guess&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">max_tries</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># we create a guess that cannot be the answer...</span>
+
+<span class="k">while</span> <span class="n">tries</span> <span class="o">&lt;</span> <span class="n">max_tries</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your guess? &quot;</span><span class="p">))</span>
+    <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You guessed right!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, you had 5 goes. I win!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 
@@ -685,11 +1009,20 @@ libraries, rather than creating them.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dictionaries">R dictionaries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-dictionaries">Looping with dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tricks-with-r-dictionaries">Some useful tricks with R dictionaries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-apply-family">R apply family</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-command-line-arguments">R command line arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-files">R files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-write-tables-csv-files">Read and write tables/csv files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-command-line-arguments">R command line arguments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-and-the-command-line">R and the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-advanced-command-line-interface">R advanced command line interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-input-from-a-user-in-r">Getting input from a user in R</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-exercises-2">R Exercises 2</a></li>
 </ul>
   </nav></div>
 
