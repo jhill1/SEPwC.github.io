@@ -838,7 +838,7 @@ more done when programming.</p>
 <p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>ren</p></li>
+<li><p>ren or mv</p></li>
 <li><p>md</p></li>
 <li><p>copy</p></li>
 <li><p>dir</p></li>
@@ -904,9 +904,9 @@ using the zip file and folder we extracted earlier.</p>
  <span class="nb">cd</span> ../../../notes
  rm notes.txt
  <span class="nb">cd</span> ../../documents/
- mv notes/notes.txt .
+ mv notes/notes.txt ..
  rmdir notes
- <span class="nb">cd</span> ../
+ <span class="nb">cd</span> ../../
  mv cli_example cli_example_cli
 </pre></div>
 </div>
@@ -926,9 +926,9 @@ using the zip file and folder we extracted earlier.</p>
  <span class="k">cd</span> ..\..\..\notes
  <span class="k">del</span> notes.txt
  <span class="k">cd</span> ..\..\documents
- <span class="k">ren</span> notes\notes.txt .
+ mv notes\notes.txt ..
  <span class="k">rmdir</span> notes
- <span class="k">cd</span> ..\
+ <span class="k">cd</span> ..\..\
  <span class="k">ren</span> cli_example cli_example_cli
 </pre></div>
 </div>
