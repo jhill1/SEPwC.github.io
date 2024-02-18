@@ -64,7 +64,7 @@ the root drive where Windows actually lives, along with your programs (apps) and
 
     A: and B: were reserved for floppy disks, which is what early MSDOS computers generally had.
 
-From the drive, folders are separated with a '\' symbol. Software is generally installed
+From the drive, folders are separated with a ``\`` symbol (backslash). Software is generally installed
 in ``C:\Program Files`` (or ``C:\Program Files (x86)`` for older software). Your documents are
 in a *magic* folder called ``Documents``. It's possible to get this to point to network drives or 
 to your local hard drive. However, a *standard* Windows 11 machine will have this pointing to 
@@ -76,7 +76,7 @@ it's in ``Documents``; we need a full path (see later).
 Linux
 ^^^^^
 
-Linux organises things around the root drive, which is access via ``/`` (note the direction of the slash compared 
+Linux organises things around the root drive, which is access via ``/`` (forward slash: note the direction of the slash compared 
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, ``\etc``, ``\bin``
 ``\var``, etc. These contain the system files. One directory is called ``\home``. This is where user files live. Within 
 ``\home`` there is a directory with your username. Within there are your images, music, etc.
@@ -369,9 +369,9 @@ a subfolder:
     The output of ``pwd`` is ``Figures``. (For each question we start here!)
 
     * Question 1: How would we move to the ``papers`` folder?
-    * Quesiton 2: If I run the command ``cd ../../work``, what would happen?
+    * Question 2: If I run the command ``cd ../../work``, what would happen?
     * Question 3: I run the commands ``cd ../../../``, followed by ``cd work/backup``. Where am I now?
-    * Quesiton 4: In one command, move to the ``2021-01-27`` folder from ``Figures``
+    * Question 4: In one command, move to the ``2021-01-27`` folder from ``Figures``
     * Question 5: how would the above be simpler if ``Users`` was at the root of the filesystem?
         
 .. admonition:: Solution
@@ -396,11 +396,8 @@ a programme).
 Let's do an example. Here's an absolute path:
 
 |maclin|
-``/home/jon/my_exicting_project/data/very_important_data.csv``
+``/home/jon/my_exciting_project/data/very_important_data.csv``
 
-This is in a directory structure like:
-
-[add image]
 
 Now let's cd into the scripts folder
 
@@ -569,7 +566,7 @@ So what are the basic commands you should know? Here's a list:
 
 |win|
 
- - ren
+ - ren or move
  - md
  - copy
  - dir
@@ -579,6 +576,10 @@ So what are the basic commands you should know? Here's a list:
 .. Attention::
    
    ``rm``, ``del``, and ``rmdir`` delete files permanently. They do *not* move the into Trash or similar. 
+
+
+..  youtube:: WUlRxCAYHTY
+   :align: center
 
 
 .. admonition:: Practical exercise
@@ -646,9 +647,9 @@ So what are the basic commands you should know? Here's a list:
         cd ../../../notes
         rm notes.txt
         cd ../../documents/
-        mv notes/notes.txt .
+        mv notes/notes.txt ..
         rmdir notes
-        cd ../
+        cd ../../
         mv cli_example cli_example_cli
 
     .. code-block:: bat
@@ -667,9 +668,9 @@ So what are the basic commands you should know? Here's a list:
         cd ..\..\..\notes
         del notes.txt
         cd ..\..\documents
-        ren notes\notes.txt .
+        move notes\notes.txt ..
         rmdir notes
-        cd ..\
+        cd ..\..\
         ren cli_example cli_example_cli
 
 
