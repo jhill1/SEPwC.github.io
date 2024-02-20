@@ -345,15 +345,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-objects">Python objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-namespace">Python: namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-namespaces">The namespaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scope">Python Scope</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-datetimes">Python: Datetimes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pandas-module">Python: Pandas module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-numpy">Python: Numpy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-numpy">How to import NumPy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-fundamentals">NumPy array fundamentals</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">Array attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-basic-array">How to create a basic array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">Numpy array attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-basic-array">How to create a basic array</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-removing-and-sorting-elements">Adding, removing, and sorting elements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-know-the-shape-and-size-of-an-array">How do you know the shape and size of an array?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-reshape-an-array">Can you reshape an array?</a></li>
@@ -361,12 +363,42 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-an-array-from-existing-data">How to create an array from existing data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-array-operations">Basic array operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposing-and-reshaping-a-matrix">Transposing and reshaping a matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposing-and-reshaping-a-matrix">Transposing and reshaping a matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-namespace">Python: namespace</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-namespaces">The namespaces</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scope">Python Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pandas-module">Python: Pandas module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-structures-in-pandas">Basic data structures in pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-creation">Object creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-data">Viewing data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selection">Selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem">Getitem (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-label">Selection by label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-position">Selection by position</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">Missing data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#panda-operations">panda Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stats">Stats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User defined functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#value-counts">Value Counts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">Merge</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concat">Concat</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join">Join</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping">Reshaping</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivot-tables">Pivot tables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categoricals">Categoricals</a></li>
 </ul>
 </li>
 </ul>
@@ -462,6 +494,173 @@ all of the variables and functions from the <code class="docutils literal notran
 most other modules/libraries in Python create objects of some kind. You therefore need to be familiar with the
 idea of a varable, e.g. <code class="docutils literal notranslate"><span class="pre">buddy</span></code> being able to have a function to call using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation. When you see
 this; you are dealing with an object.</p>
+</section>
+<section id="python-namespace">
+<h2>Python: namespace<a class="headerlink" href="#python-namespace" title="Link to this heading">#</a></h2>
+<p>Namespace and scope are the section of code where your variables are valid. A namespace
+is a collection of currently defined symbolic names; basically a dictionary of variable
+names pointing to the object in memory. There are several layers of namespaces in Python:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Built-in</p></li>
+<li><p>Global</p></li>
+<li><p>Enclosing</p></li>
+<li><p>Local</p></li>
+</ol>
+</div></blockquote>
+<p>These have different lifespans and Python handles the creation and deletion of the namesapces
+as our code is executed.</p>
+<section id="the-namespaces">
+<h3>The namespaces<a class="headerlink" href="#the-namespaces" title="Link to this heading">#</a></h3>
+<p>The built-in namespace contains all of Python’s built-in object which are
+availabel everytime you run any Python. We can
+look at this:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;ArithmeticError&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AssertionError&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;AttributeError&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;BaseException&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;BlockingIOError&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;BrokenPipeError&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;BufferError&#39;</span><span class="p">,</span>
+ <span class="o">...</span>
+</pre></div>
+</div>
+<p>You can see things like error objects, <code class="docutils literal notranslate"><span class="pre">False</span></code> etc in the list generated, as well as built-in
+functions like <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+<p>The global namespace is created at the main level of any python program. As soon as the main body of any
+Python code is executed this namespace created. You may have more than one of these as <code class="docutils literal notranslate"><span class="pre">import</span></code>
+statements create a global namespace for themselves. However, when you read <code class="docutils literal notranslate"><span class="pre">global</span></code> in terms if namespace
+think of it as the one associated with your program.</p>
+<p>Local and enclosing namespaces are like sub-namespaces when you create a function. The variables (and functions!)
+created only exist within that function.</p>
+</section>
+<section id="python-scope">
+<h3>Python Scope<a class="headerlink" href="#python-scope" title="Link to this heading">#</a></h3>
+<p>These namespaces mean variables of the same name can exist at the same time. As long as they are
+in a different namespace they won’t interfere with each other. But how does Python know which one
+to use. This is the concept of scope.</p>
+<p>Python looks for variables in the reverse order of the list above, so we will look
+for a variable in:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Local</p></li>
+<li><p>Enclosing</p></li>
+<li><p>Global</p></li>
+<li><p>Built-in</p></li>
+</ol>
+</div></blockquote>
+<p>If you look for <code class="docutils literal notranslate"><span class="pre">max()</span></code> function, Python will look in the local, th enclosing, then global
+then the built-in namespaces.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
+
+    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">func2</span><span class="p">()</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Before you run this, what will be printed? Now let’s add another <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
+
+    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See if you can work out what will be printed this time. Our final exercise:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
+
+    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What ahppens this time? Did you use a fresh ipython or script?</p>
+<p>So how do you modify variables that aren’t in the current scope?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">x</span></code> inside <code class="docutils literal notranslate"><span class="pre">func1</span></code> is a local reference. As <code class="docutils literal notranslate"><span class="pre">func1</span></code> exits that reference
+is deleted. The <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> then uses the <code class="docutils literal notranslate"><span class="pre">x</span></code> in the global namespace.</p>
+<p>What if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a list and we try and modify it?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">41</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, both the global <em>and</em> <cite>local</cite> give the same answer. We’ve modified the global variable within
+the function. However, if we create a list of the same variable name, we’ll have similar
+behaviour to the previous example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we want <code class="docutils literal notranslate"><span class="pre">func1</span></code> to actually modify the global variable we have to tell Python explicitly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you create a global variable within a function it will be available to the global namesapce:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(run in a new ipython or as a script as <code class="docutils literal notranslate"><span class="pre">x</span></code> has already been created). Constructs such as <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, etc
+do not create scope.</p>
+</section>
 </section>
 <section id="python-datetimes">
 <h2>Python: Datetimes<a class="headerlink" href="#python-datetimes" title="Link to this heading">#</a></h2>
@@ -585,9 +784,6 @@ However, we need another python module <code class="docutils literal notranslate
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;London:&quot;</span><span class="p">,</span> <span class="n">datetime_London</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y, %H:%M:%S&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</section>
-<section id="python-pandas-module">
-<h2>Python: Pandas module<a class="headerlink" href="#python-pandas-module" title="Link to this heading">#</a></h2>
 </section>
 <section id="python-numpy">
 <h2>Python: Numpy<a class="headerlink" href="#python-numpy" title="Link to this heading">#</a></h2>
@@ -714,9 +910,8 @@ However, you will find these terms in codes that are mathematical in
 nature and use NumPy!</p>
 </div>
 </section>
-</section>
-<section id="array-attributes">
-<h2>Array attributes<a class="headerlink" href="#array-attributes" title="Link to this heading">#</a></h2>
+<section id="numpy-array-attributes">
+<h3>Numpy array attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h3>
 <p>The number of dimensions of an array is contained in the <code class="docutils literal notranslate"><span class="pre">ndim</span></code> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
 <span class="go">2</span>
@@ -747,7 +942,7 @@ only one “data type”. The data type is recorded in the <code class="docutils
 </div>
 </section>
 <section id="how-to-create-a-basic-array">
-<h2>How to create a basic array<a class="headerlink" href="#how-to-create-a-basic-array" title="Link to this heading">#</a></h2>
+<h3>How to create a basic array<a class="headerlink" href="#how-to-create-a-basic-array" title="Link to this heading">#</a></h3>
 <p>Besides creating an array from a sequence of elements, you can easily create an
 array filled with <code class="docutils literal notranslate"><span class="pre">0</span></code>’s:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
@@ -805,6 +1000,7 @@ specify which data type you want using the <code class="docutils literal notrans
 <span class="go">array([1, 1])</span>
 </pre></div>
 </div>
+</section>
 <section id="adding-removing-and-sorting-elements">
 <h3>Adding, removing, and sorting elements<a class="headerlink" href="#adding-removing-and-sorting-elements" title="Link to this heading">#</a></h3>
 <p>Sorting an element is simple with <code class="docutils literal notranslate"><span class="pre">np.sort()</span></code>. You can specify the axis, kind,
@@ -1240,9 +1436,8 @@ and arrays in higher dimensions.</p>
 </pre></div>
 </div>
 </section>
-</section>
 <section id="transposing-and-reshaping-a-matrix">
-<h2>Transposing and reshaping a matrix<a class="headerlink" href="#transposing-and-reshaping-a-matrix" title="Link to this heading">#</a></h2>
+<h3>Transposing and reshaping a matrix<a class="headerlink" href="#transposing-and-reshaping-a-matrix" title="Link to this heading">#</a></h3>
 <p>It’s common to need to transpose your matrices. NumPy arrays have the property
 <code class="docutils literal notranslate"><span class="pre">T</span></code> that allows you to transpose a matrix.</p>
 <img alt="_images/np_transposing_reshaping.png" src="_images/np_transposing_reshaping.png" />
@@ -1350,174 +1545,248 @@ can reverse the contents of the row at index position 1 (the second row):</p>
 <span class="go"> [ 9  2 11 12]]</span>
 </pre></div>
 </div>
-<p><em>Image credits: Jay Alammar https://jalammar.github.io/</em></p>
-<p>Material is based on <a class="reference external" href="https://numpy.org/doc/stable/license">https://numpy.org/doc/stable/license</a>.html#</p>
+<p><em>Image credits: `Jay Alammar &lt;https://jalammar.github.io/&gt;`_</em>.</p>
+<p>Material is based on <a class="reference external" href="https://numpy.org/doc/stable/license.html">Numpy’s starter guide &lt;https://numpy.org/doc/stable/user/absolute_beginners.html&gt;’_.
+See original `licence</a></p>
 </section>
-<section id="python-namespace">
-<h2>Python: namespace<a class="headerlink" href="#python-namespace" title="Link to this heading">#</a></h2>
-<p>Namespace and scope are the section of code where your variables are valid. A namespace
-is a collection of currently defined symbolic names; basically a dictionary of variable
-names pointing to the object in memory. There are several layers of namespaces in Python:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Built-in</p></li>
-<li><p>Global</p></li>
-<li><p>Enclosing</p></li>
-<li><p>Local</p></li>
-</ol>
-</div></blockquote>
-<p>These have different lifespans and Python handles the creation and deletion of the namesapces
-as our code is executed.</p>
-<section id="the-namespaces">
-<h3>The namespaces<a class="headerlink" href="#the-namespaces" title="Link to this heading">#</a></h3>
-<p>The built-in namespace contains all of Python’s built-in object which are
-availabel everytime you run any Python. We can
-look at this:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-<span class="p">[</span><span class="s1">&#39;ArithmeticError&#39;</span><span class="p">,</span>
- <span class="s1">&#39;AssertionError&#39;</span><span class="p">,</span>
- <span class="s1">&#39;AttributeError&#39;</span><span class="p">,</span>
- <span class="s1">&#39;BaseException&#39;</span><span class="p">,</span>
- <span class="s1">&#39;BlockingIOError&#39;</span><span class="p">,</span>
- <span class="s1">&#39;BrokenPipeError&#39;</span><span class="p">,</span>
- <span class="s1">&#39;BufferError&#39;</span><span class="p">,</span>
- <span class="o">...</span>
-</pre></div>
-</div>
-<p>You can see things like error objects, <code class="docutils literal notranslate"><span class="pre">False</span></code> etc in the list generated, as well as built-in
-functions like <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
-<p>The global namespace is created at the main level of any python program. As soon as the main body of any
-Python code is executed this namespace created. You may have more than one of these as <code class="docutils literal notranslate"><span class="pre">import</span></code>
-statements create a global namespace for themselves. However, when you read <code class="docutils literal notranslate"><span class="pre">global</span></code> in terms if namespace
-think of it as the one associated with your program.</p>
-<p>Local and enclosing namespaces are like sub-namespaces when you create a function. The variables (and functions!)
-created only exist within that function.</p>
 </section>
-<section id="python-scope">
-<h3>Python Scope<a class="headerlink" href="#python-scope" title="Link to this heading">#</a></h3>
-<p>These namespaces mean variables of the same name can exist at the same time. As long as they are
-in a different namespace they won’t interfere with each other. But how does Python know which one
-to use. This is the concept of scope.</p>
-<p>Python looks for variables in the reverse order of the list above, so we will look
-for a variable in:</p>
+<section id="python-pandas-module">
+<h2>Python: Pandas module<a class="headerlink" href="#python-pandas-module" title="Link to this heading">#</a></h2>
+<p>pandas is a Python package providing fast, flexible, and expressive data structures
+designed to make working with “relational” or “labeled” data both easy and intuitive.
+It aims to be the fundamental high-level building block for doing practical,
+real-world data analysis in Python.</p>
+<p>pandas is well suited for many different kinds of data:</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p>Local</p></li>
-<li><p>Enclosing</p></li>
-<li><p>Global</p></li>
-<li><p>Built-in</p></li>
-</ol>
+<div><ul class="simple">
+<li><p>Tabular data with heterogeneously-typed columns, as in an SQL table or Excel spreadsheet</p></li>
+<li><p>Ordered and unordered (not necessarily fixed-frequency) time series data.</p></li>
+<li><p>Arbitrary matrix data (homogeneously typed or heterogeneous) with row and column labels</p></li>
+<li><p>Any other form of observational / statistical data sets. The data need not be labeled at all to be placed into a pandas data structure.</p></li>
+</ul>
 </div></blockquote>
-<p>If you look for <code class="docutils literal notranslate"><span class="pre">max()</span></code> function, Python will look in the local, th enclosing, then global
-then the built-in namespaces.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
-
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
-
-    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">func2</span><span class="p">()</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<p>Basically, if you are handling data, pandas is useful!</p>
+<p>We normally import as follows:</p>
+<section id="basic-data-structures-in-pandas">
+<h3>Basic data structures in pandas<a class="headerlink" href="#basic-data-structures-in-pandas" title="Link to this heading">#</a></h3>
+<p>pandas provides two types of classes for handling data:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code>: a one-dimensional labeled array holding data of any type</dt><dd><p>such as integers, strings, Python objects etc.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>: a two-dimensional data structure that holds data like
+a two-dimension array or a table with rows and columns.</p></li>
+</ol>
+</section>
+<section id="object-creation">
+<h3>Object creation<a class="headerlink" href="#object-creation" title="Link to this heading">#</a></h3>
+<p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by passing a list of values, letting pandas create
+a default <code class="xref py py-class docutils literal notranslate"><span class="pre">RangeIndex</span></code>.</p>
+<p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by passing a NumPy array with a datetime index using <code class="xref py py-func docutils literal notranslate"><span class="pre">date_range()</span></code>
+and labeled columns:</p>
+<p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by passing a dictionary of objects where the keys are the column
+labels and the values are the column values.</p>
+<p>The columns of the resulting <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> have different
+datatypes:</p>
+<p>If you’re using IPython, tab completion for column names (as well as public
+attributes) is automatically enabled. Here’s a subset of the attributes that
+will be completed:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">df2</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>  <span class="c1"># noqa: E225, E999</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">A</span>                  <span class="n">df2</span><span class="o">.</span><span class="n">bool</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">abs</span>                <span class="n">df2</span><span class="o">.</span><span class="n">boxplot</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">add</span>                <span class="n">df2</span><span class="o">.</span><span class="n">C</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">add_prefix</span>         <span class="n">df2</span><span class="o">.</span><span class="n">clip</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">add_suffix</span>         <span class="n">df2</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">align</span>              <span class="n">df2</span><span class="o">.</span><span class="n">copy</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">all</span>                <span class="n">df2</span><span class="o">.</span><span class="n">count</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">any</span>                <span class="n">df2</span><span class="o">.</span><span class="n">combine</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">append</span>             <span class="n">df2</span><span class="o">.</span><span class="n">D</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">apply</span>              <span class="n">df2</span><span class="o">.</span><span class="n">describe</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">B</span>                  <span class="n">df2</span><span class="o">.</span><span class="n">duplicated</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">diff</span>
 </pre></div>
 </div>
-<p>Before you run this, what will be printed? Now let’s add another <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
-
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
-
-    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">func2</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
+<p>As you can see, the columns <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, and <code class="docutils literal notranslate"><span class="pre">D</span></code> are automatically
+tab completed. <code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">F</span></code> are there as well; the rest of the attributes have been
+truncated for brevity.</p>
+</section>
+<section id="viewing-data">
+<h3>Viewing data<a class="headerlink" href="#viewing-data" title="Link to this heading">#</a></h3>
+<p>Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.tail()</span></code> to view the top and bottom rows of the frame
+respectively:</p>
+<p>Display the <code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.index</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.columns</span></code>:</p>
+<p>Return a NumPy representation of the underlying data with <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_numpy()</span></code>
+without the index or column labels:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>NumPy arrays have one dtype for the entire array while pandas DataFrames
+have one dtype per column</strong>. When you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_numpy()</span></code>, pandas will
+find the NumPy dtype that can hold <em>all</em> of the dtypes in the DataFrame.
+If the common data type is <code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_numpy()</span></code> will require
+copying data.</p>
 </div>
-<p>See if you can work out what will be printed this time. Our final exercise:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;enclosing&quot;</span>
-
-    <span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">func2</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">describe()</span></code> shows a quick statistic summary of your data:</p>
+<p>Transposing your data:</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_index()</span></code> sorts by an axis:</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code> sorts by values:</p>
+</section>
+<section id="selection">
+<h3>Selection<a class="headerlink" href="#selection" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While standard Python / NumPy expressions for selecting and setting are
+intuitive and come in handy for interactive work, for production code, we
+recommend the optimized pandas data access methods, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.at()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.iat()</span></code>,
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.loc()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.iloc()</span></code>.</p>
 </div>
-<p>What ahppens this time? Did you use a fresh ipython or script?</p>
-<p>So how do you modify variables that aren’t in the current scope?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">40</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
+<section id="getitem">
+<h4>Getitem (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)<a class="headerlink" href="#getitem" title="Link to this heading">#</a></h4>
+<p>For a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>, passing a single label selects a columns and
+yields a <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> equivalent to <code class="docutils literal notranslate"><span class="pre">df.A</span></code>:</p>
+<p>For a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>, passing a slice <code class="docutils literal notranslate"><span class="pre">:</span></code> selects matching rows:</p>
+</section>
+<section id="selection-by-label">
+<h4>Selection by label<a class="headerlink" href="#selection-by-label" title="Link to this heading">#</a></h4>
+<p>Selecting a row matching a label:</p>
+<p>Selecting all rows (<code class="docutils literal notranslate"><span class="pre">:</span></code>) with a select column labels:</p>
+<p>For label slicing, both endpoints are <em>included</em>:</p>
+<p>Selecting a single row and column label returns a scalar:</p>
+<p>For getting fast access to a scalar (equivalent to the prior method):</p>
+</section>
+<section id="selection-by-position">
+<h4>Selection by position<a class="headerlink" href="#selection-by-position" title="Link to this heading">#</a></h4>
+<p>Select via the position of the passed integers:</p>
+<p>Integer slices acts similar to NumPy/Python:</p>
+<p>Lists of integer position locations:</p>
+<p>For slicing rows explicitly:</p>
+<p>For slicing columns explicitly:</p>
+<p>For getting a value explicitly:</p>
+<p>For getting fast access to a scalar (equivalent to the prior method):</p>
+</section>
+<section id="boolean-indexing">
+<h4>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Link to this heading">#</a></h4>
+<p>Select rows where <code class="docutils literal notranslate"><span class="pre">df.A</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Selecting values from a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> where a boolean condition is met:</p>
+<p>Using <code class="xref py py-func docutils literal notranslate"><span class="pre">isin()</span></code> method for filtering:</p>
+</section>
+<section id="setting">
+<h4>Setting<a class="headerlink" href="#setting" title="Link to this heading">#</a></h4>
+<p>Setting a new column automatically aligns the data by the indexes:</p>
+<p>Setting values by label:</p>
+<p>Setting values by position:</p>
+<p>Setting by assigning with a NumPy array:</p>
+<p>The result of the prior setting operations:</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">where</span></code> operation with setting:</p>
+</section>
+<section id="missing-data">
+<h4>Missing data<a class="headerlink" href="#missing-data" title="Link to this heading">#</a></h4>
+<p>For NumPy data types, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> represents missing data. It is by
+default not included in computations.</p>
+<p>Reindexing allows you to change/add/delete the index on a specified axis. This
+returns a copy of the data:</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.dropna()</span></code> drops any rows that have missing data:</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code> fills missing data:</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">isna()</span></code> gets the boolean mask where values are <code class="docutils literal notranslate"><span class="pre">nan</span></code>:</p>
+</section>
+</section>
+<section id="panda-operations">
+<h3>panda Operations<a class="headerlink" href="#panda-operations" title="Link to this heading">#</a></h3>
+<section id="stats">
+<h4>Stats<a class="headerlink" href="#stats" title="Link to this heading">#</a></h4>
+<p>Operations in general <em>exclude</em> missing data.</p>
+<p>Calculate the mean value for each column:</p>
+<p>Calculate the mean value for each row:</p>
+<p>Operating with another <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> with a different index or column
+will align the result with the union of the index or column labels. In addition, pandas
+automatically broadcasts along the specified dimension and will fill unaligned labels with <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
+</section>
+<section id="user-defined-functions">
+<h4>User defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h4>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.agg()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.transform()</span></code> applies a user defined function
+that reduces or broadcasts its result respectively.</p>
+</section>
+<section id="value-counts">
+<h4>Value Counts<a class="headerlink" href="#value-counts" title="Link to this heading">#</a></h4>
+</section>
+<section id="string-methods">
+<h4>String Methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h4>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> is equipped with a set of string processing methods in the <code class="docutils literal notranslate"><span class="pre">str</span></code>
+attribute that make it easy to operate on each element of the array, as in the
+code snippet below.</p>
+</section>
+</section>
+<section id="merge">
+<h3>Merge<a class="headerlink" href="#merge" title="Link to this heading">#</a></h3>
+<section id="concat">
+<h4>Concat<a class="headerlink" href="#concat" title="Link to this heading">#</a></h4>
+<p>pandas provides various facilities for easily combining together <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> objects with various kinds of set logic for the indexes
+and relational algebra functionality in the case of join / merge-type
+operations.</p>
+<p>Concatenating pandas objects together row-wise with <code class="xref py py-func docutils literal notranslate"><span class="pre">concat()</span></code>:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding a column to a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> is relatively fast. However, adding
+a row requires a copy, and may be expensive. We recommend passing a
+pre-built list of records to the <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> constructor instead
+of building a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by iteratively appending records to it.</p>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">x</span></code> inside <code class="docutils literal notranslate"><span class="pre">func1</span></code> is a local reference. As <code class="docutils literal notranslate"><span class="pre">func1</span></code> exits that reference
-is deleted. The <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> then uses the <code class="docutils literal notranslate"><span class="pre">x</span></code> in the global namespace.</p>
-<p>What if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a list and we try and modify it?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">41</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Here, both the global <em>and</em> <cite>local</cite> give the same answer. We’ve modified the global variable within
-the function. However, if we create a list of the same variable name, we’ll have similar
-behaviour to the previous example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If we want <code class="docutils literal notranslate"><span class="pre">func1</span></code> to actually modify the global variable we have to tell Python explicitly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">x</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If you create a global variable within a function it will be available to the global namesapce:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">x</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">func1</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>(run in a new ipython or as a script as <code class="docutils literal notranslate"><span class="pre">x</span></code> has already been created). Constructs such as <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, etc
-do not create scope.</p>
+</section>
+<section id="join">
+<h4>Join<a class="headerlink" href="#join" title="Link to this heading">#</a></h4>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">merge()</span></code> enables SQL style join types along specific columns.</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">merge()</span></code> on unique keys:</p>
+</section>
+<section id="grouping">
+<h4>Grouping<a class="headerlink" href="#grouping" title="Link to this heading">#</a></h4>
+<p>By “group by” we are referring to a process involving one or more of the
+following steps:</p>
+<ul class="simple">
+<li><p><strong>Splitting</strong> the data into groups based on some criteria</p></li>
+<li><p><strong>Applying</strong> a function to each group independently</p></li>
+<li><p><strong>Combining</strong> the results into a data structure</p></li>
+</ul>
+<p>Grouping by a column label, selecting column labels, and then applying the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrameGroupBy.sum()</span></code> function to the resulting
+groups:</p>
+<p>Grouping by multiple columns label forms <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code>.</p>
+</section>
+</section>
+<section id="reshaping">
+<h3>Reshaping<a class="headerlink" href="#reshaping" title="Link to this heading">#</a></h3>
+<section id="stack">
+<h4>Stack<a class="headerlink" href="#stack" title="Link to this heading">#</a></h4>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">stack()</span></code> method “compresses” a level in the DataFrame’s
+columns:</p>
+<p>With a “stacked” DataFrame or Series (having a <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code> as the
+<code class="docutils literal notranslate"><span class="pre">index</span></code>), the inverse operation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">stack()</span></code> is
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">unstack()</span></code>, which by default unstacks the <strong>last level</strong>:</p>
+</section>
+<section id="pivot-tables">
+<h4>Pivot tables<a class="headerlink" href="#pivot-tables" title="Link to this heading">#</a></h4>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">pivot_table()</span></code> pivots a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> specifying the <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code></p>
+</section>
+</section>
+<section id="time-series">
+<h3>Time series<a class="headerlink" href="#time-series" title="Link to this heading">#</a></h3>
+<p>pandas has simple, powerful, and efficient functionality for performing
+resampling operations during frequency conversion (e.g., converting secondly
+data into 5-minutely data). This is extremely common in, but not limited to,
+financial applications.</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.tz_localize()</span></code> localizes a time series to a time zone:</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.tz_convert()</span></code> converts a timezones aware time series to another time zone:</p>
+<p>Adding a non-fixed duration (<code class="xref py py-class docutils literal notranslate"><span class="pre">BusinessDay</span></code>) to a time series:</p>
+</section>
+<section id="categoricals">
+<h3>Categoricals<a class="headerlink" href="#categoricals" title="Link to this heading">#</a></h3>
+<p>pandas can include categorical data in a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>Converting the raw grades to a categorical data type:</p>
+<p>Rename the categories to more meaningful names:</p>
+<p>Reorder the categories and simultaneously add the missing categories (methods under <code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.cat()</span></code> return a new <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by default):</p>
+<p>Sorting is per order in the categories, not lexical order:</p>
+<p>Grouping by a categorical column with <code class="docutils literal notranslate"><span class="pre">observed=False</span></code> also shows empty categories:</p>
 </section>
 </section>
 </section>
@@ -1568,15 +1837,17 @@ do not create scope.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-objects">Python objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-namespace">Python: namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-namespaces">The namespaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scope">Python Scope</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-datetimes">Python: Datetimes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pandas-module">Python: Pandas module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-numpy">Python: Numpy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-numpy">How to import NumPy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-fundamentals">NumPy array fundamentals</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">Array attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-basic-array">How to create a basic array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">Numpy array attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-basic-array">How to create a basic array</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-removing-and-sorting-elements">Adding, removing, and sorting elements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-know-the-shape-and-size-of-an-array">How do you know the shape and size of an array?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-reshape-an-array">Can you reshape an array?</a></li>
@@ -1584,12 +1855,42 @@ do not create scope.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-an-array-from-existing-data">How to create an array from existing data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-array-operations">Basic array operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposing-and-reshaping-a-matrix">Transposing and reshaping a matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposing-and-reshaping-a-matrix">Transposing and reshaping a matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-namespace">Python: namespace</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-namespaces">The namespaces</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scope">Python Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pandas-module">Python: Pandas module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-structures-in-pandas">Basic data structures in pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-creation">Object creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-data">Viewing data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selection">Selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem">Getitem (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-label">Selection by label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-by-position">Selection by position</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">Missing data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#panda-operations">panda Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stats">Stats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User defined functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#value-counts">Value Counts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">Merge</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concat">Concat</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join">Join</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping">Grouping</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping">Reshaping</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivot-tables">Pivot tables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series">Time series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categoricals">Categoricals</a></li>
 </ul>
 </li>
 </ul>
