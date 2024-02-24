@@ -346,7 +346,24 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-dplyr-and-tidyr">What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">Pipes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutate">Mutate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-apply-combine-data-analysis-and-the-summarize-function">Split-apply-combine data analysis and the <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-by-and-summarize-functions">The <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#counting">Counting</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-with-pivot-longer-and-pivot-wider">Reshaping with pivot_longer and pivot_wider</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivoting-from-long-to-wide-format">Pivoting from long to wide format</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivoting-from-wide-to-long-format">Pivoting from wide to long format</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data">Exporting data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 </ul>
@@ -370,6 +387,640 @@ document.write(`
 </section>
 <section id="r-tidyverse">
 <h2>R: tidyverse<a class="headerlink" href="#r-tidyverse" title="Link to this heading">#</a></h2>
+<p>This chapter is taken from the <a class="reference external" href="https://datacarpentry.org/R-ecology-lesson/03-dplyr.html">Data Carpentary on the tidyverse</a> under
+CC-BY 4.0 licence.</p>
+<p>Bracket subsetting is handy, but it can be cumbersome and difficult to read,
+especially for complicated operations. Enter <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>. <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> is a package for
+helping with tabular data manipulation. It pairs nicely with <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> which
+enables you to swiftly convert between different data formats for plotting and analysis.</p>
+<p>The <cite>tidyverse</cite> package is an “umbrella-package” that installs <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>,
+and several other useful packages for data analysis, such as  <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>, <code class="docutils literal notranslate"><span class="pre">tibble</span></code>, etc.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> package tries to address 3 common issues that arise when
+doing data analysis in R:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The results from a base R function sometimes depend on the type of data.</p></li>
+<li><p>R expressions are used in a non standard way, which can be confusing for new
+learners.</p></li>
+<li><p>The existence of hidden arguments having default operations that new learners are not aware
+of.</p></li>
+</ol>
+</div></blockquote>
+<section id="what-are-dplyr-and-tidyr">
+<h3>What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?<a class="headerlink" href="#what-are-dplyr-and-tidyr" title="Link to this heading">#</a></h3>
+<p>The package <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides helper tools for the most common data manipulation
+tasks. It is built to work directly with data frames with the
+ability to work directly with data stored in an external database. The benefits of
+doing this are that the data can be managed natively in a relational database,
+queries can be conducted on that database, and only the results of the query are
+returned.</p>
+<p>This addresses a common problem with R in that all operations are conducted
+in-memory and thus the amount of data you can work with is limited by available
+memory. The database connections essentially remove that limitation in that you
+can connect to a database of many hundreds of GB, conduct queries on it directly, and pull
+back into R only what you need for analysis.</p>
+<p>The package <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> addresses the common problem of wanting to reshape your data for
+plotting and usage by different R functions. For example, sometimes we want data sets where we have one
+row per measurement. Other times we want a data frame where each measurement type has its
+own column, and rows are instead more aggregated groups
+(e.g., a time period, an experimental unit like a plot or a batch number).
+Moving back and forth between these formats is non-trivial, and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> gives you tools
+for this and more sophisticated data manipulation.</p>
+<p>We’ll read in our data using the <cite>read_csv()</cite> function from the
+tidyverse package <code class="docutils literal notranslate"><span class="pre">readr</span></code>.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;data_raw/portal_data_joined.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">## inspect the data</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">surveys</span><span class="p">)</span>
+<span class="c1">## preview the data</span>
+<span class="nf">view</span><span class="p">(</span><span class="n">surveys</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we’re going to learn some of the most common <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">select()</span></code>: subset columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter()</span></code>: subset rows on conditions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mutate()</span></code>: create new columns by using information from other columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>: create summary statistics on grouped data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arrange()</span></code>: sort results</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code>: count discrete values</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="selecting-columns-and-filtering-rows">
+<h3>Selecting columns and filtering rows<a class="headerlink" href="#selecting-columns-and-filtering-rows" title="Link to this heading">#</a></h3>
+<p>To select columns of a data frame, use <code class="docutils literal notranslate"><span class="pre">select()</span></code>. The first argument
+to this function is the data frame (<code class="docutils literal notranslate"><span class="pre">surveys</span></code>), and the subsequent
+arguments are the columns to keep.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To select all columns <em>except</em> certain ones, put a “-” in front of
+the variable to exclude it.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">record_id</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">species_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will select all the variables in <code class="docutils literal notranslate"><span class="pre">surveys</span></code> except <code class="docutils literal notranslate"><span class="pre">record_id</span></code>
+and <code class="docutils literal notranslate"><span class="pre">species_id</span></code>.</p>
+<p>To choose rows based on a specific criterion, use <code class="docutils literal notranslate"><span class="pre">filter()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1995</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pipes">
+<h3>Pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h3>
+<p>What if you want to select and filter at the same time? There are three
+ways to do this: use intermediate steps, nested functions, or pipes.</p>
+<p>With intermediate steps, you create a temporary data frame and use
+that as input to the next function, like this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+<span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">surveys2</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is readable, but can clutter up your workspace with lots of objects that
+you have to name individually. With multiple steps, that can be hard to keep track of.</p>
+<p>You can also nest functions (i.e. one function inside of another), like this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is handy, but can be difficult to read if too many functions are nested, as
+R evaluates the expression from the inside out (in this case, filtering, then selecting).</p>
+<p>The last option, <em>pipes</em>, are a recent addition to R. Pipes let you take
+the output of one function and send it directly to the next, which is useful
+when you need to do many things to the same dataset.  Pipes in R look like
+<code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> and are made available via the <code class="docutils literal notranslate"><span class="pre">magrittr</span></code> package, installed automatically
+with <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>. If you use RStudio, you can type the pipe with <kbd class="kbd docutils literal notranslate">Ctrl</kbd> +
+<kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">M</kbd> if you have a PC or <kbd class="kbd docutils literal notranslate">Cmd</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">M</kbd>: if you have a Mac.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above code, we use the pipe to send the <code class="docutils literal notranslate"><span class="pre">surveys</span></code> dataset first through
+<code class="docutils literal notranslate"><span class="pre">filter()</span></code> to keep rows where <code class="docutils literal notranslate"><span class="pre">weight</span></code> is less than 5, then through <code class="docutils literal notranslate"><span class="pre">select()</span></code>
+to keep only the <code class="docutils literal notranslate"><span class="pre">species_id</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>, and <code class="docutils literal notranslate"><span class="pre">weight</span></code> columns. Since <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> takes
+the object on its left and passes it as the first argument to the function on
+its right, we don’t need to explicitly include the data frame as an argument
+to the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">select()</span></code> functions any more.</p>
+<p>Some may find it helpful to read the pipe like the word “then.” For instance,
+in the example above, we took the data frame <code class="docutils literal notranslate"><span class="pre">surveys</span></code>, <em>then</em> we <code class="docutils literal notranslate"><span class="pre">filter``ed</span>
+<span class="pre">for</span> <span class="pre">rows</span> <span class="pre">with</span> <span class="pre">``weight</span> <span class="pre">&lt;</span> <span class="pre">5</span></code>, <em>then</em> we <code class="docutils literal notranslate"><span class="pre">select``ed</span> <span class="pre">columns</span> <span class="pre">``species_id</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">weight</span></code>. The <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions by themselves are somewhat simple,
+but by combining them into linear workflows with the pipe we can accomplish
+more complex manipulations of data frames.</p>
+<p>If we want to create a new object with this smaller version of the data, we
+can assign it a new name:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+
+<span class="n">surveys_sml</span>
+</pre></div>
+</div>
+<p>Note that the final data frame is the leftmost part of this expression.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Using pipes, subset the <code class="docutils literal notranslate"><span class="pre">surveys</span></code> data to include animals collected before
+1995 and retain only the columns <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>, and <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1995</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="mutate">
+<h3>Mutate<a class="headerlink" href="#mutate" title="Link to this heading">#</a></h3>
+<p>Frequently you’ll want to create new columns based on the values in existing
+columns, for example to do unit conversions, or to find the ratio of values in two
+columns. For this we’ll use <cite>mutate()</cite>.</p>
+<p>To create a new column of weight in kg:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also create a second new column based on the first new column within the same call of <cite>mutate()</cite>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span>
+<span class="w">         </span><span class="n">weight_lb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight_kg</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If this runs off your screen and you just want to see the first few rows, you
+can use a pipe to view the <cite>head()</cite> of the data. (Pipes work with non-<code class="docutils literal notranslate"><span class="pre">dplyr</span></code>
+functions, too, as long as the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> or <cite>magrittr</cite> package is loaded).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The first few rows of the output are full of <cite>NA`s, so if we wanted to remove
+those we could insert a `filter()</cite> in the chain:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">is.na()</span></code> is a function that determines whether something is an <code class="docutils literal notranslate"><span class="pre">NA</span></code>. The <code class="docutils literal notranslate"><span class="pre">!</span></code>
+symbol negates the result, so we’re asking for every row where weight <em>is not</em> an <code class="docutils literal notranslate"><span class="pre">NA</span></code>.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Create a new data frame from the <code class="docutils literal notranslate"><span class="pre">surveys</span></code>
+data that meets the following criteria: contains only the <code class="docutils literal notranslate"><span class="pre">species_id</span></code> column and a new column called
+<code class="docutils literal notranslate"><span class="pre">hindfoot_cm</span></code> containing the <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> values (currently in mm)
+converted to centimeters. In this <code class="docutils literal notranslate"><span class="pre">hindfoot_cm</span></code> column, there are no <code class="docutils literal notranslate"><span class="pre">NA</span></code> and all values are less than 3.</p>
+<p><em>Hint</em>: think about how the commands should be ordered to produce this data frame!</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_hindfoot_cm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">hindfoot_cm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hindfoot_length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">hindfoot_cm</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">hindfoot_cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="split-apply-combine-data-analysis-and-the-summarize-function">
+<h3>Split-apply-combine data analysis and the <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> function<a class="headerlink" href="#split-apply-combine-data-analysis-and-the-summarize-function" title="Link to this heading">#</a></h3>
+<p>Many data analysis tasks can be approached using the <em>split-apply-combine</em>
+paradigm: split the data into groups, apply some analysis to each group, and
+then combine the results. Key functions of <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> for this workflow are
+<cite>group_by()</cite> and <cite>summarize()</cite>.</p>
+<section id="the-group-by-and-summarize-functions">
+<h4>The <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions<a class="headerlink" href="#the-group-by-and-summarize-functions" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">group_by()</span></code> is often used together with <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>, which collapses each
+group into a single-row summary of that group.  <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> takes as arguments
+the column names that contain the <strong>categorical</strong> variables for which you want
+to calculate the summary statistics. So to compute the mean <cite>weight</cite> by sex:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You may also have noticed that the output from these calls doesn’t run off the
+screen anymore. It’s one of the advantages of <cite>tbl_df</cite> over data frame.</p>
+<p>You can also group by multiple columns:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here, we used <code class="docutils literal notranslate"><span class="pre">tail()</span></code> to look at the last six rows of our summary. Before, we had
+used <cite>head()</cite> to look at the first six rows. We can see that the <code class="docutils literal notranslate"><span class="pre">sex</span></code> column contains
+<code class="docutils literal notranslate"><span class="pre">NA</span></code> values because some animals had escaped before their sex and body weights
+could be determined. The resulting <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> column does not contain <code class="docutils literal notranslate"><span class="pre">NA</span></code> but
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code> (which refers to “Not a Number”) because <code class="docutils literal notranslate"><span class="pre">mean()</span></code> was called on a vector of
+<code class="docutils literal notranslate"><span class="pre">NA</span></code> values while at the same time setting <code class="docutils literal notranslate"><span class="pre">na.rm</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>. To avoid this, we can
+remove the missing values for weight before we attempt to calculate the summary
+statistics on weight. Because the missing values are removed first, we can omit
+<code class="docutils literal notranslate"><span class="pre">na.rm</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> when computing the mean:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Here, again, the output from these calls doesn’t run off the screen
+anymore. If you want to display more data, you can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function
+at the end of your chain with the argument <cite>n</cite> specifying the number of rows to
+display:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the data are grouped, you can also summarize multiple variables at the same
+time (and not necessarily on the same variable). For instance, we could add a
+column indicating the minimum weight for each species for each sex:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span>
+<span class="w">              </span><span class="n">min_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>It is sometimes useful to rearrange the result of a query to inspect the values. For instance, we can
+sort on <code class="docutils literal notranslate"><span class="pre">min_weight</span></code> to put the lighter species first:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span>
+<span class="w">              </span><span class="n">min_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">min_weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To sort in descending order, we need to add the <cite>desc()</cite> function. If we want to sort the results by decreasing order of mean weight:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span>
+<span class="w">            </span><span class="n">min_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="nf">desc</span><span class="p">(</span><span class="n">mean_weight</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="counting">
+<h4>Counting<a class="headerlink" href="#counting" title="Link to this heading">#</a></h4>
+<p>When working with data, we often want to know the number of observations found
+for each factor or combination of factors. For this task, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides
+<code class="docutils literal notranslate"><span class="pre">count()</span></code>. For example, if we wanted to count the number of rows of data for
+each sex, we would do:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">count()</span></code> function is shorthand for something we’ve already seen: grouping by a variable,
+and summarizing it by counting the number of observations in that group.
+In other words, <code class="docutils literal notranslate"><span class="pre">surveys</span> <span class="pre">%&gt;%</span> <span class="pre">count()</span></code> is equivalent to:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>For convenience, <code class="docutils literal notranslate"><span class="pre">count()</span></code> provides the <code class="docutils literal notranslate"><span class="pre">sort</span></code> argument:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Previous example shows the use of <code class="docutils literal notranslate"><span class="pre">count()</span></code> to count the number of rows/observations
+for <em>one</em> factor (i.e., <code class="docutils literal notranslate"><span class="pre">sex</span></code>). If we wanted to count <em>combination of factors</em>,
+such as <code class="docutils literal notranslate"><span class="pre">sex</span></code> and <code class="docutils literal notranslate"><span class="pre">species</span></code>, we would specify the first and the second factor
+as the arguments of <code class="docutils literal notranslate"><span class="pre">count()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With the above code, we can proceed with <cite>arrange()</cite> to sort the table
+according to a number of criteria so that we have a better comparison.
+For instance, we might want to arrange the table above in (i) an alphabetical order of
+the levels of the species and (ii) in descending order of the count:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">arrange</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="nf">desc</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>From the table above, we may learn that, for instance, there are 75 observations of
+the <em>albigula</em> species that are not specified for its sex (i.e. <code class="docutils literal notranslate"><span class="pre">NA</span></code>).</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>How many animals were caught in each <code class="docutils literal notranslate"><span class="pre">plot_type</span></code> surveyed?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">plot_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> to find the mean, min, and max hindfoot
+length for each species (using <code class="docutils literal notranslate"><span class="pre">species_id</span></code>). Also add the number of
+observations (hint: see <code class="docutils literal notranslate"><span class="pre">?n</span></code>).</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span>
+<span class="w">        </span><span class="n">mean_hindfoot_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span>
+<span class="w">        </span><span class="n">min_hindfoot_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span>
+<span class="w">        </span><span class="n">max_hindfoot_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n</span><span class="p">()</span>
+<span class="w">    </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>What was the heaviest animal measured in each year? Return the columns <code class="docutils literal notranslate"><span class="pre">year</span></code>,
+<code class="docutils literal notranslate"><span class="pre">genus</span></code>, <code class="docutils literal notranslate"><span class="pre">species_id</span></code>, and <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">genus</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">arrange</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="reshaping-with-pivot-longer-and-pivot-wider">
+<h3>Reshaping with pivot_longer and pivot_wider<a class="headerlink" href="#reshaping-with-pivot-longer-and-pivot-wider" title="Link to this heading">#</a></h3>
+<p>In the [spreadsheet
+lesson](<a class="reference external" href="https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/">https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/</a>),
+we discussed how to structure our data leading to the four rules defining a tidy
+dataset:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Each variable has its own column</p></li>
+<li><p>Each observation has its own row</p></li>
+<li><p>Each value must have its own cell</p></li>
+<li><p>Each type of observational unit forms a table</p></li>
+</ol>
+</div></blockquote>
+<p>Here we examine the fourth rule: Each type of observational unit forms a table.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">surveys</span></code>, the rows of <code class="docutils literal notranslate"><span class="pre">surveys</span></code> contain the values of variables associated
+with each record (the unit), values such as the weight or sex of each animal
+associated with each record. What if instead of comparing records, we
+wanted to compare the different mean weight of each genus between plots? (Ignoring <code class="docutils literal notranslate"><span class="pre">plot_type</span></code> for simplicity).</p>
+<p>We’d need to create a new table where each row (the unit) is comprised of values of variables
+associated with each plot. In practical terms this means the values
+in <cite>genus</cite> would become the names of column variables and the cells would contain the
+values of the mean weight observed on each plot.</p>
+<p>Having created a new table, it is therefore straightforward to explore the
+relationship between the weight of different genera within, and between, the
+plots. The key point here is that we are still following a tidy data structure,
+but we have <strong>reshaped</strong> the data according to the observations of interest:
+average genus weight per plot instead of recordings per date.</p>
+<p>The opposite transformation would be to transform column names into values of
+a variable.</p>
+<p>We can do both these of transformations with two <cite>tidyr</cite> functions, <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>.</p>
+<p>These may sound like dramatically different data layouts, but there are some tools that make
+transitions between these layouts more straightforward than you might think! The gif below
+shows how these two formats relate to each other, and gives you an idea of how we can use R
+to shift from one format to the other.</p>
+<img alt="animation of pivot from wide to long" src="_images/tidyr-pivot_wider_longer.gif" />
+<section id="pivoting-from-long-to-wide-format">
+<h4>Pivoting from long to wide format<a class="headerlink" href="#pivoting-from-long-to-wide-format" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> takes three principal arguments:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>the data</p></li>
+<li><p>the <em>names_from</em> column variable whose values will become new column names.</p></li>
+<li><p>the <em>values_from</em> column variable whose values will fill the new column variables.</p></li>
+</ol>
+</div></blockquote>
+<p>Further arguments include <code class="docutils literal notranslate"><span class="pre">values_fill</span></code> which, if set, fills in missing values with
+the value provided.</p>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> to transform surveys to find the mean weight of each
+genus in each plot over the entire survey period. We use <code class="docutils literal notranslate"><span class="pre">filter()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> to filter our observations and variables of
+interest, and create a new variable for the <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code>.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">genus</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+
+<span class="nf">str</span><span class="p">(</span><span class="n">surveys_gw</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This yields <code class="docutils literal notranslate"><span class="pre">surveys_gw</span></code> where the observations for each plot are distributed across
+multiple rows, 196 observations of 3 variables.
+Using <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> with the names from <cite>genus</cite> and with values from <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> this becomes
+24 observations of 11 variables, one row for each plot.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genus</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_weight</span><span class="p">)</span>
+
+<span class="nf">str</span><span class="p">(</span><span class="n">surveys_wide</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="diagram explaining pivot to wider format" src="_images/pivot_wider_graphic.png" />
+<p>We could now plot comparisons between the weight of genera (one is called a genus,
+multiple are called genera) in different plots,
+although we may wish to fill in the missing values first.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genus</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_weight</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="pivoting-from-wide-to-long-format">
+<h4>Pivoting from wide to long format<a class="headerlink" href="#pivoting-from-wide-to-long-format" title="Link to this heading">#</a></h4>
+<p>The opposing situation could occur if we had been provided with data in the
+form of <code class="docutils literal notranslate"><span class="pre">surveys_wide</span></code>, where the genus names are column names, but we
+wish to treat them as values of a genus variable instead.</p>
+<p>In this situation we are reshaping the column names and turning them into a
+pair of new variables. One variable represents the column names as values, and
+the other variable contains the values previously associated with the column names.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code> takes four principal arguments:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>the data</p></li>
+<li><p>the <em>names_to</em> column variable we wish to create from column names.</p></li>
+<li><p>the <em>values_to</em> column variable we wish to create and fill with values.</p></li>
+<li><p><em>cols</em> are the name of the columns we use to make this pivot (or to drop).</p></li>
+</ol>
+</div></blockquote>
+<p>To recreate <cite>surveys_gw</cite> from <cite>surveys_wide</cite> we would create a names variable called
+<cite>genus</cite> and value variable called <cite>mean_weight</cite>.</p>
+<p>In pivoting longer, we also need to specify what columns to reshape. If the columns are directly adjacent as they are here, we don’t even need to list the all out: we can just use the <cite>:</cite> operator!</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;genus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span>
+
+<span class="nf">str</span><span class="p">(</span><span class="n">surveys_long</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="diagrom of a pivot to longer format" src="_images/pivot_longer_graphic.png" />
+<p>Note that now the <code class="docutils literal notranslate"><span class="pre">NA</span></code> genera are included in the long format data frame. Pivoting wider
+and then longer can be a useful way to balance out a dataset so that every
+replicate has the same composition</p>
+<p>We could also have used a specification for what columns to exclude. In this example,
+we will use all columns <em>except</em> <cite>plot_id</cite> for the names variable. By using the minus sign
+in the <code class="docutils literal notranslate"><span class="pre">cols</span></code> argument, we omit <cite>plot_id</cite> from being reshaped</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;genus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Reshape the <cite>surveys</cite> data frame with <cite>year</cite> as columns, <cite>plot_id</cite>
+as rows, and the
+number of genera per plot as the values. You will need to summarize before
+reshaping, and use the function <cite>n_distinct()</cite> to get the number of unique
+genera within a particular chunk of data. It’s a powerful function! See
+<code class="docutils literal notranslate"><span class="pre">?n_distinct</span></code> for more.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide_genera</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">n_genera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n_distinct</span><span class="p">(</span><span class="n">genus</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n_genera</span><span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">surveys_wide_genera</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>Now take that data frame and <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code> it, so each row is a unique
+<code class="docutils literal notranslate"><span class="pre">plot_id</span></code> by <code class="docutils literal notranslate"><span class="pre">year</span></code> combination.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide_genera</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;n_genera&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">surveys</span></code> data set has
+two measurement columns: <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> and <code class="docutils literal notranslate"><span class="pre">weight</span></code>. This makes it
+difficult to do things like look at the relationship between mean values of
+each measurement per year in different plot types. Let’s walk through a
+common solution for this type of problem. First, use <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code> to create a
+dataset where we have a names column called <cite>measurement</cite> and a
+<code class="docutils literal notranslate"><span class="pre">value</span></code> column that takes on the value of either <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> or
+<code class="docutils literal notranslate"><span class="pre">weight</span></code>. <em>Hint</em>: You’ll need to specify which columns will be part of the reshape.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<blockquote>
+<div><dl class="simple">
+<dt>surveys_long &lt;- surveys %&gt;%</dt><dd><p>pivot_longer(names_to = “measurement”, values_to = “value”, cols = c(hindfoot_length, weight))</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p>With this new data set, calculate the average of each
+<code class="docutils literal notranslate"><span class="pre">measurement</span></code> in each <cite>year</cite> for each different <code class="docutils literal notranslate"><span class="pre">plot_type</span></code>. Then
+<code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> them into a data set with a column for <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> and
+<code class="docutils literal notranslate"><span class="pre">weight</span></code>. <em>Hint</em>: You only need to specify the names and values
+columns for <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code>.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_long</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">measurement</span><span class="p">,</span><span class="w"> </span><span class="n">plot_type</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measurement</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="exporting-data">
+<h3>Exporting data<a class="headerlink" href="#exporting-data" title="Link to this heading">#</a></h3>
+<p>Now that you have learned how to use <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> to extract information from
+or summarize your raw data, you may want to export these new data sets to share
+them with your collaborators or for archival.</p>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function used for reading CSV files into R, there is
+a <code class="docutils literal notranslate"><span class="pre">write_csv()</span></code> function that generates CSV files from data frames.</p>
+<p>Before using <code class="docutils literal notranslate"><span class="pre">write_csv()</span></code>, we are going to create a new folder, <code class="docutils literal notranslate"><span class="pre">data</span></code>,
+in our working directory that will store this generated dataset. We don’t want
+to write generated datasets in the same directory as our raw data. It’s good
+practice to keep them separate. The <code class="docutils literal notranslate"><span class="pre">data_raw</span></code> folder should only contain the raw,
+unaltered data, and should be left alone to make sure we don’t delete or modify
+it. In contrast, our script will generate the contents of the <cite>data</cite>
+directory, so even if the files it contains are deleted, we can always
+re-generate them.</p>
+<p>In preparation for our next lesson on plotting, we are going to prepare a
+cleaned up version of the data set that doesn’t include any missing data.</p>
+<p>Let’s start by removing observations of animals for which <code class="docutils literal notranslate"><span class="pre">weight</span></code> and
+<code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> are missing, or the <code class="docutils literal notranslate"><span class="pre">sex</span></code> has not been determined:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span><span class="w">          </span><span class="c1"># remove missing weight</span>
+<span class="w">        </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span><span class="w">    </span><span class="c1"># remove missing hindfoot_length</span>
+<span class="w">        </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">sex</span><span class="p">))</span><span class="w">                </span><span class="c1"># remove missing sex</span>
+</pre></div>
+</div>
+<p>Because we are interested in plotting how species abundances have changed
+through time, we are also going to remove observations for rare species (i.e.,
+that have been observed less than 50 times). We will do this in two steps: first
+we are going to create a data set that counts how often each species has been
+observed, and filter out the rare species; then, we will extract only the
+observations for these more common species:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">## Extract the most common species_id</span>
+<span class="n">species_counts</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span><span class="p">)</span>
+
+<span class="c1">## Only keep the most common species</span>
+<span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">species_id</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">species_counts</span><span class="o">$</span><span class="n">species_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">### Create the dataset for exporting:</span>
+<span class="c1">##  Start by removing observations for which the `species_id`, `weight`,</span>
+<span class="c1">##  `hindfoot_length`, or `sex` data are missing:</span>
+<span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">       </span><span class="nf">filter</span><span class="p">(</span><span class="n">species_id</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1"># remove missing species_id</span>
+<span class="w">       </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span><span class="w">                 </span><span class="c1"># remove missing weight</span>
+<span class="w">       </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span><span class="w">        </span><span class="c1"># remove missing hindfoot_length</span>
+<span class="w">       </span><span class="n">sex</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w">                      </span><span class="c1"># remove missing sex</span>
+
+<span class="c1">##  Now remove rare species in two steps. First, make a list of species which</span>
+<span class="c1">##  appear at least 50 times in our dataset:</span>
+<span class="n">species_counts</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span>
+
+<span class="c1">##  Second, keep only those species:</span>
+<span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">species_id</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">species_counts</span><span class="o">$</span><span class="n">species_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To make sure that everyone has the same data set, check that <code class="docutils literal notranslate"><span class="pre">surveys_complete</span></code>
+has <code class="docutils literal notranslate"><span class="pre">nrow(surveys_complete)</span></code> rows and <code class="docutils literal notranslate"><span class="pre">ncol(surveys_complete)</span></code> columns by
+typing <code class="docutils literal notranslate"><span class="pre">dim(surveys_complete)</span></code>.</p>
+<p>Now that our data set is ready, we can save it as a CSV file in our <code class="docutils literal notranslate"><span class="pre">data</span></code>
+folder.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">dir.exists</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">))</span><span class="w"> </span><span class="nf">dir.create</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">)</span>
+<span class="nf">write_csv</span><span class="p">(</span><span class="n">surveys_complete</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;data/surveys_complete.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="r-namespace">
 <h2>R namespace<a class="headerlink" href="#r-namespace" title="Link to this heading">#</a></h2>
@@ -426,7 +1077,24 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-dplyr-and-tidyr">What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">Pipes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutate">Mutate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-apply-combine-data-analysis-and-the-summarize-function">Split-apply-combine data analysis and the <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-by-and-summarize-functions">The <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#counting">Counting</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-with-pivot-longer-and-pivot-wider">Reshaping with pivot_longer and pivot_wider</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivoting-from-long-to-wide-format">Pivoting from long to wide format</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pivoting-from-wide-to-long-format">Pivoting from wide to long format</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data">Exporting data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 </ul>
