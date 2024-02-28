@@ -393,7 +393,7 @@ document.write(`
 <p>In this next section of Python</p>
 <section id="python-functions">
 <h2>Python functions<a class="headerlink" href="#python-functions" title="Link to this heading">#</a></h2>
-<p>Whenever you write some code you get tempted to cpoy and paste a block, change a variable, and have two nearly
+<p>Whenever you write some code you get tempted to copy and paste a block, change a variable, and have two nearly
 identical blocks of code, bar one variable. Might be OK with a single repeat, but what if you then need to
 do that 10 times, or 100 times, or a million times?</p>
 <p>This is where functions come in. You can generalise a but of code and package it up so you can call it
@@ -405,10 +405,10 @@ repeatedly. That might be within the same script; it might be as part of many sc
 <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The first thing to note is that a function is called with <cite>()</cite> parenthesies. Sometimes it gives back
-a value (called “returning a value”), sometimes it doesn not. Sometimes there are things inbetween the
-parantheses, sometimes not (these are called “arguments”).</p>
-<p>So using, or calling, a Python function is easy. Give the function name, open the brackets, add any arguments you need (seperated by commas),
+<p>The first thing to note is that a function is called with <cite>()</cite> parentheses. Sometimes it gives back
+a value (called “returning a value”), sometimes it does not. Sometimes there are things in between the
+parentheses, sometimes not (these are called “arguments”).</p>
+<p>So using, or calling, a Python function is easy. Give the function name, open the brackets, add any arguments you need (separated by commas),
 close your brackets, if you are expecting a number back, store it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">return_value</span> <span class="o">=</span> <span class="n">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">)</span>
 </pre></div>
@@ -450,32 +450,32 @@ also a function. The return value of <cite>len(my_list)</cite> gets put in place
     <span class="k">return</span>
 </pre></div>
 </div>
-<p>The key thing are the keyword <cite>def</cite> folloed by the name of your function and the arguments expected, then a a <cite>:</cite>. Next comes your
+<p>The key thing are the keyword <cite>def</cite> followed by the name of your function and the arguments expected, then a a <cite>:</cite>. Next comes your
 function body (indented; remember whitespace matters!). At the end of your function, use the <cite>return</cite> keyword (with a value if you want
 to return something).</p>
-<p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Farenheit.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
+<p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Fahrenheit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFahrenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
 
     <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
 
     <span class="k">return</span> <span class="n">F</span>
 </pre></div>
 </div>
-<p>This function takes a value (Centrigrade) and converts it to Farenheit, returning that number. We would use it something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFarenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
+<p>This function takes a value (Centigrade) and converts it to Fahrenheit, returning that number. We would use it something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toFahrenheit</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">):</span>
 
     <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">Centigrade</span> <span class="o">+</span> <span class="mf">32.0</span>
 
     <span class="k">return</span> <span class="n">F</span>
 
-<span class="n">water_freezing</span> <span class="o">=</span> <span class="n">toFarenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Water freezes at &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">toFarenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; deg F&quot;</span><span class="p">)</span>
+<span class="n">water_freezing</span> <span class="o">=</span> <span class="n">toFahrenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Water freezes at &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">toFahrenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; deg F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="function-arguments-in-python">
 <h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Link to this heading">#</a></h4>
 <p>A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (kwargs) or generic arguments (args).</p>
-<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the funciton takes
+<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the function takes
 two keyword arguments:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 
@@ -486,7 +486,7 @@ two keyword arguments:</p>
 <span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;Bryan&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can see that by specifying two arguments in the function decleration we have access to those values inside the function.
+<p>You can see that by specifying two arguments in the function declaration we have access to those values inside the function.
 What happens if the user supplies only a single argument, not two as we’ve asked? Try the code below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 
@@ -643,7 +643,7 @@ modules, ratehr than creating them.</p>
 </pre></div>
 </div>
 <p>You can see we import the code we have already written. We can then call the functions we added from that module. Note the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.
-A function is referred to via the original module <code class="docutils literal notranslate"><span class="pre">.</span></code> function name. This seperates your current namesapce from the module’s.
+A function is referred to via the original module <code class="docutils literal notranslate"><span class="pre">.</span></code> function name. This separates your current namespace from the module’s.
 You can assign this to a local variable is you wish:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
 
@@ -652,7 +652,7 @@ You can assign this to a local variable is you wish:</p>
 <span class="n">fb</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also import single functions or items from a module, ratehr than the whole module:</p>
+<p>You can also import single functions or items from a module, rather than the whole module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">write_fibonacci</span>
 
 <span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
@@ -704,7 +704,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 <p>Where does Python look for modules? Python will look for modules in the following order:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>The directory contining the input script (or current directory where no script is specified)</p></li>
+<li><p>The directory containing the input script (or current directory where no script is specified)</p></li>
 <li><p>using the PYTHONPATH environment variable</p></li>
 <li><p>The system default path</p></li>
 </ul>
@@ -761,7 +761,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </div>
 <p>You can add to a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s1">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">435353</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">telelphone</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To check if a key is used in a dictionary, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword:</p>
@@ -878,7 +878,7 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </section>
 <section id="python-files">
 <h2>Python: Files<a class="headerlink" href="#python-files" title="Link to this heading">#</a></h2>
-<p>Writing software for scientific/research purposes often invovles reading in
+<p>Writing software for scientific/research purposes often involves reading in
 data from files. Python file handling is very powerful, but surprisingly
 easy to use and manage.</p>
 <p>Files in computing have a very long history and there’s a lot of baggage
@@ -918,7 +918,7 @@ on disk.</p>
 </div></blockquote>
 <p>It’s useful to get into the habit of closing files or using the Python <cite>with</cite> statement
 to prevent files being left open. This is especially important when writing to
-a file as often the data is “bufferred” by the system and only gets written once
+a file as often the data is “buffered” by the system and only gets written once
 the file handle is lost (i.e. <cite>.close()</cite> is called or the variable goes out of scope).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="c1"># do things</span>
@@ -968,7 +968,7 @@ to make this very clear. For example:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is an example of the type of processing; here splitting the line of text
-into words (seperated by spaces) and creating a list of those.</p>
+into words (separated by spaces) and creating a list of those.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p>Download <a class="reference external" href="https://raw.githubusercontent.com/jhill1/SEPwC/master/code_examples/depth_data.csv">this text file</a> .
@@ -1032,7 +1032,7 @@ of doing this!</p>
 No,<span class="w"> </span>really,<span class="w"> </span>hello!
 </pre></div>
 </div>
-<p>We could acheive the same thing using <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> but we are still responsible for adding the newlines:</p>
+<p>We could achieve the same thing using <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> but we are still responsible for adding the newlines:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
@@ -1057,7 +1057,7 @@ together.</p>
 others, but your job is to write clear code so use whichever is clearest for you.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Write your <cite>capitals</cite> dictionary into a file, seperated by commas, so country in
+<p>Write your <cite>capitals</cite> dictionary into a file, separated by commas, so country in
 column 1 and the city in column 2. Each country is then on a new line.
 This creates a CSV file, which you can load into Excel, etc.</p>
 </div>
@@ -1096,7 +1096,7 @@ in the course, for example:</p>
 </pre></div>
 </div>
 <p>which is the command to list things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, in a Unix shell with the option supplied to make it a table <code class="docutils literal notranslate"><span class="pre">-l</span></code>.
-Similaraly, we’ve covered:</p>
+Similarly, we’ve covered:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>dir1<span class="w"> </span>dir2
 </pre></div>
 </div>

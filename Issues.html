@@ -377,7 +377,7 @@ document.write(`
                   
   <section id="solving-issues-and-debugging">
 <h1>Solving issues and debugging<a class="headerlink" href="#solving-issues-and-debugging" title="Link to this heading">#</a></h1>
-<p>When writing code you will inevitavely get it wrong occasionally. You will therefore always hit some
+<p>When writing code you will inevitably get it wrong occasionally. You will therefore always hit some
 issues when writing any code. Some issues are easy to fix (you’ve typo’d a library or module), whilst some are
 extremely difficult to fix (a bug deep in a library that is used by a library you use). Here, we’re going to concentrate on what kind of issues
 you might come across and how you might go about understanding them.</p>
@@ -392,7 +392,7 @@ to “you haven’t set something you should have. This may not work”. Read it
 <li><p>errors: These are errors and you need to fix them. R and Python will tell you where the error is and often how to fix it.
 These are your problem to deal with.</p></li>
 <li><p>bugs: These are also errors and you also need to fix them. However, you may get no warnings, or message, just output you
-didn’t expect! A bug is simply unexpected beahviour. It is usually your problem to deal with, however, it is possible
+didn’t expect! A bug is simply unexpected behaviour. It is usually your problem to deal with, however, it is possible
 the bug is in a library you’re using. We will learn how to report these kind of issues if we need to.</p></li>
 <li><p>seg faults: This is a major error in the code. A segmentation fault (or seg fault) is usually caused by accessing memory
 you shouldn’t have access to. In Python and R these are very rare as memory allocation is handled for us, rather than by
@@ -404,8 +404,8 @@ us. However, libraries like numpy use C and hence we could experience one of the
 <h2>Simple issues<a class="headerlink" href="#simple-issues" title="Link to this heading">#</a></h2>
 <p>The majority of issues encountered when writing code are really straight forward. You have messed up the syntax, or typo’d a library name, etc.
 This happens a lot. As someone who has used dozens of programming languages over the years I often mix them up and type some weird hybrid
-of R, Python, Perl, PHP and/or Matlab. Possibly with a bit of Fortran and C in there too. Each language has it’s own idiosynchronies which you
-will get used to. In addiiton, it’s very easy to type a <code class="docutils literal notranslate"><span class="pre">[</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">{</span></code>.</p>
+of R, Python, Perl, PHP and/or Matlab. Possibly with a bit of Fortran and C in there too. Each language has it’s own idiosyncrasies which you
+will get used to. In addition, it’s very easy to type a <code class="docutils literal notranslate"><span class="pre">[</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">{</span></code>.</p>
 <p>What makes these errors simple though is that you are told about them when you run the code!
 Sometimes a bit obscurely, but once you can decipher the error message they are easy to fix.</p>
 <section id="r-examples">
@@ -448,7 +448,7 @@ R does contain a function called <code class="docutils literal notranslate"><spa
 <span class="m">1</span>:<span class="w"> </span>g<span class="o">(</span><span class="s2">&quot;a&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
-<p>So we now know it was the g(“a”) causing the issue and the error occured in the f function</p>
+<p>So we now know it was the g(“a”) causing the issue and the error occurred in the f function</p>
 </section>
 <section id="python-examples">
 <h3>Python examples<a class="headerlink" href="#python-examples" title="Link to this heading">#</a></h3>
@@ -517,7 +517,7 @@ re-read any documentation for the function and check you’re passing in the cor
 </section>
 <section id="warning-examples">
 <h3>Warning examples<a class="headerlink" href="#warning-examples" title="Link to this heading">#</a></h3>
-<p>Warnings are non-critical messages, normally issued by a library or module you’re using. However, most of the time
+<p>Warnings are noncritical messages, normally issued by a library or module you’re using. However, most of the time
 they are an error (as in you’re getting the wrong answer) but the code can still continue. You should therefore
 pay attention and decide if you do need to care.</p>
 <section id="r-warning-examples">
@@ -597,22 +597,22 @@ alter that.</p>
 <section id="bugs">
 <h2>Bugs<a class="headerlink" href="#bugs" title="Link to this heading">#</a></h2>
 <p>Bugs are errors in the code that result in incorrect output or the program to fail. In other words
-they are unintential behaviours of the code. With ever more complex software being developed which uses
+they are unintentional behaviours of the code. With ever more complex software being developed which uses
 a stack of other libraries to create the functionality making sure your code is bug free is getting harder
 but yet more important. It’s also important to note that bugs are always introduced by programmers; they
 don’t manifest themselves!</p>
 <p>There are a number of different categories of bugs:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Arthimetic: dividing by zero, creating a number larger than the computer can handle, loss of precision etc
+<li><p>Arithmetic: dividing by zero, creating a number larger than the computer can handle, loss of precision etc
 can all introduce bugs</p></li>
 <li><p>Control flow: your logic may not be correct, so the program goes into a branch not expected.</p></li>
 <li><p>Interfacing: If you use other libraries (which you will!) you can pass incorrect data to them. This
-is particularlly challenging when a library updates on a system and the interface (called the
+is particularly challenging when a library updates on a system and the interface (called the
 Application Programming Interface or API) changes.</p></li>
 <li><p>Concurrency: when using more than one core or using threads you can end up deadlocking (nothing runs) or
 a race condition (wrong order) etc. Parallel programming is very hard because of this.</p></li>
-<li><p>Resource bugs: Using an unitilised variable or a null pointer. This are actually quite hard to generate in
+<li><p>Resource bugs: Using an initialised variable or a null pointer. This are actually quite hard to generate in
 interpreted languages like Python and R.</p></li>
 <li><p>Syntax: Using <code class="docutils literal notranslate"><span class="pre">x==5</span></code> rather than <code class="docutils literal notranslate"><span class="pre">x=5</span></code> can be valid syntax but not what you expected. Again, in
 interpreted languages this is hard to do as you get an error or warning.</p></li>
@@ -628,11 +628,11 @@ code deletes the entire database.</p>
 <h3>Reporting a bug<a class="headerlink" href="#reporting-a-bug" title="Link to this heading">#</a></h3>
 <p>One of the best ways of giving back to the open souce community is to report bugs when you
 come across them. As a beginner programmer it’s more likely that the error is in your code
-rather than a well-used library like <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. However, you may well
+rather than a well used library like <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. However, you may well
 find the odd bug as you go.</p>
 <p>When reporting a bug you need to give enough information for the developer to recreate the problem.
 The most useful thing to provide is an example code which is as small as possible; a
-minimum reproduceable example or MRE. You would take your failing code and strip away anything
+minimum reproducible example or MRE. You would take your failing code and strip away anything
 that is not associated with the bug. You should then describe the error/issue, and give details
 of your set-up, including Python or R version, your operating system and what you expected to happen.</p>
 <p>What are come examples of bugs? They are actually quite easy to find as most of R and Python modules
@@ -666,7 +666,7 @@ error message on the internet. Copy and paste the error removing any filepaths.<
 </div>
 <p>The error is much longer than I gave here, but try copying and pasting the lower part into a search
 engine and you will hopefully find a page with some answers on what the error is and even how to fix it.
-Note that’ve not copied any of the specific parts of the error in a search, e.g.:</p>
+Note that I have not copied any of the specific parts of the error in a search, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">dtypes</span><span class="o">/</span><span class="n">cast</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1154</span><span class="p">,</span> <span class="ow">in</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">skipna</span><span class="p">)</span>
    <span class="mi">1150</span> <span class="k">elif</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
    <span class="mi">1151</span>
@@ -704,7 +704,7 @@ a number of website come up which help understand the error message a bit more.<
 <section id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Once you have some understanding of the error and the cause you can start to debug
-your code. The easiset form of debugging is called “print debugging”. You insert
+your code. The easiest form of debugging is called “print debugging”. You insert
 print statements around code to output the contents of variables to help you
 understand the flow of the program. The downside of this debugging is you have to
 add and then <em>remove</em> a lot of print statements!</p>
@@ -720,10 +720,10 @@ I first add “programming noise”; print statements like:</p>
 <p>By watching the print statements I can zero in where the code is breaking. I can then
 really zero in on a line or lines of code that are breaking.</p>
 <p>If the error is in a loop, it can be helpful to print the loop index and the value
-of any key variable sduring the loop. When you code breaks you know exactly which
+of any key variables during the loop. When you code breaks you know exactly which
 loop index it was on. Running this in RStudio or Spyder means you can then
 explore your data using that index. Very helpful!</p>
-<p>However print debugging can be unweidly, producing massive amounts of output
+<p>However print debugging can be unwieldy, producing massive amounts of output
 that can be be as hard to decipher as the error you’re trying to fix.</p>
 <div class="admonition-practical-exercise-python admonition">
 <p class="admonition-title">Practical exercise - Python</p>
@@ -751,7 +751,7 @@ that can be be as hard to decipher as the error you’re trying to fix.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>There were erros in syntax and logic! My version is below. More elgant solutions
+<p>There were errors in syntax and logic! My version is below. More elegant solutions
 can be found too.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>
@@ -808,7 +808,7 @@ can be found too.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>There were erros in syntax and logic! My version is below. More elgant solutions
+<p>There were errors in syntax and logic! My version is below. More elegant solutions
 can be found too.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>

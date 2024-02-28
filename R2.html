@@ -398,10 +398,10 @@ code which is identical apart from a single variable you can instead create a fu
 <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">vert_position</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The first thing to note is that a function is called with <cite>()</cite> parenthesies. Sometimes it gives back
+<p>The first thing to note is that a function is called with <cite>()</cite> parentheses. Sometimes it gives back
 a value (called “returning a value”), sometimes it does not. Sometimes there are things in between the
-parantheses, sometimes not (these things are called “arguments”).</p>
-<p>So using, or calling, a R function is easy. Give the function name, open the brackets, add any arguments you need (seperated by commas),
+parentheses, sometimes not (these things are called “arguments”).</p>
+<p>So using, or calling, a R function is easy. Give the function name, open the brackets, add any arguments you need (separated by commas),
 close your brackets, if you are expecting a number back, store it:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">return_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">,</span><span class="w"> </span><span class="n">arg3</span><span class="p">)</span>
 </pre></div>
@@ -462,7 +462,7 @@ and another string. Three functions nested within each ohter. This is equivalent
 </pre></div>
 </div>
 <p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Farenheit.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFarenheit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFahrenheit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">Centigrade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32.0</span>
 
@@ -470,8 +470,8 @@ and another string. Three functions nested within each ohter. This is equivalent
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This function takes a value (Centrigrade) and converts it to Farenheit, returning that number. We would use it something like this:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFarenheit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">funtion</span><span class="p">(</span><span class="n">Centrigrade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<p>This function takes a value (Centigrade) and converts it to Fahrenheit, returning that number. We would use it something like this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">toFahrenheit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">Centigrade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32.0</span>
 
@@ -479,16 +479,16 @@ and another string. Three functions nested within each ohter. This is equivalent
 <span class="p">}</span>
 
 <span class="c1"># store the number</span>
-<span class="n">water_freezing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">toFarenheit</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+<span class="n">water_freezing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">toFahrenheit</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 
 <span class="c1"># nested functions to print it</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Water freezes at &quot;</span><span class="p">,</span><span class="nf">toFarenheit</span><span class="p">(</span><span class="m">0</span><span class="p">),</span><span class="s">&quot; deg F&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Water freezes at &quot;</span><span class="p">,</span><span class="nf">toFahrenheit</span><span class="p">(</span><span class="m">0</span><span class="p">),</span><span class="s">&quot; deg F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="function-arguments-in-r">
 <h4>Function arguments in R<a class="headerlink" href="#function-arguments-in-r" title="Link to this heading">#</a></h4>
 <p>A function can take any number of inputs via arguments. You can even specify an unknown number of arguments</p>
-<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the funciton takes
+<p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the function takes
 two keyword arguments:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
@@ -500,7 +500,7 @@ two keyword arguments:</p>
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can see that by specifying two arguments in the function decleration we have access to those values inside the function.
+<p>You can see that by specifying two arguments in the function declaration we have access to those values inside the function.
 What happens if the user supplies only a single argument, not two as we’ve asked? Try the code below:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
@@ -566,7 +566,7 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 </section>
 <section id="r-libraries">
 <h2>R libraries<a class="headerlink" href="#r-libraries" title="Link to this heading">#</a></h2>
-<p>When writing code we want to package up functionality/code into descrete bundles. In R these are called libraries or packages.
+<p>When writing code we want to package up functionality/code into discrete bundles. In R these are called libraries or packages.
 You can then put this library on the internet such that other can download, install it and use it. You can also save your own code
 this way and use it in other code you write.</p>
 <p>We’re not going to get into creating your own R package/module here, but we will use R libraries a lot, so we will focus on using
@@ -577,7 +577,7 @@ libraries, rather than creating them.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>will load the ggplot2 library and namepsace into your current code. It will also load any other libraries that are required. If the library cannot be found, the code will stop executing.</p>
+<p>will load the ggplot2 library and namespace into your current code. It will also load any other libraries that are required. If the library cannot be found, the code will stop executing.</p>
 <p>R then allows you to call any functions within that library. Technically R does a search for functions so you may have two functions of the same name (e.g. <code class="docutils literal notranslate"><span class="pre">sum()</span></code>) so R has syntax to make sure it uses the correct one; the <code class="docutils literal notranslate"><span class="pre">::</span></code> notation. For example both <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">base</span></code> contain a function <code class="docutils literal notranslate"><span class="pre">intersect()</span></code>. To make sure you call the correct one:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
@@ -593,13 +593,13 @@ libraries, rather than creating them.</p>
 </pre></div>
 </div>
 <p>would load the contents of a files “common_funcs.R” into the current environment. R assumes this script is in the current directory.</p>
-<p>This can allow you to build a library of common functions, but not make them into a full package. Unlike the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function this does not allow you to use namespaces to seperate out functions or variables.</p>
+<p>This can allow you to build a library of common functions, but not make them into a full package. Unlike the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function this does not allow you to use namespaces to separate out functions or variables.</p>
 </section>
 </section>
 <section id="r-dictionaries">
 <h2>R dictionaries<a class="headerlink" href="#r-dictionaries" title="Link to this heading">#</a></h2>
 <p>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
-<p>R doesn’t have a built-in dictionary datatype, <em>but</em> vectors, matricies, lists etc can behave like dictionaries.</p>
+<p>R doesn’t have a built-in dictionary datatype, <em>but</em> vectors, matrices, lists etc can behave like dictionaries.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="o">=</span><span class="m">3452345</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mildred&#39;</span><span class="o">=</span><span class="m">532354</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -647,7 +647,7 @@ you reassign the output back into telephone:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">telephone</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;Grenville&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>If any code you write makes eavy use of dictionaries, it is worth writing little
+<p>If any code you write makes extensive use of dictionaries, it is worth writing little
 helper functions to do this so you code is cleaner.</p>
 <p>R does have libraries that make proper dictionaries. <cite>hash</cite> is one such library.
 If you are making heavy use of dictionaries, it may be better to use that library instead!</p>
@@ -742,16 +742,16 @@ come into being. We’ll learn a lot more in the data section.</p>
 <section id="read-and-write-tables-csv-files">
 <h3>Read and write tables/csv files<a class="headerlink" href="#read-and-write-tables-csv-files" title="Link to this heading">#</a></h3>
 <p>Most of the time when using R you end up reading data from CSV
-(Comma Seperated Values) or tables (the same as CSV, but seperated by
+(Comma Separated Values) or tables (the same as CSV, but separated by
 something other than a comma!). The syntax for these function is very similar.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">,</span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Those two lines of code produce identical results. The <cite>read.csv</cite> has
-the seperator (<cite>sep=</cite>) set to <cite>,</cite> by default. In <cite>read.table</cite> we specify
+the separator (<cite>sep=</cite>) set to <cite>,</cite> by default. In <cite>read.table</cite> we specify
 it. In other words <cite>read.table</cite> is more flexible in reading in data as it
-can read in data seperated by spaces, semi-colons, pipes, etc. Both
+can read in data separated by spaces, semi-colons, pipes, etc. Both
 functions return a data frame object (we’ll learn more on this later),
 with the columns labelled by the headers.</p>
 <p>Similarly if we have data in a variable, we can get R to write this out
@@ -761,13 +761,13 @@ in a CSV or table, easily:</p>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">df</span></code> is your data frame which contains the data, with the filename
 given by the <code class="docutils literal notranslate"><span class="pre">file</span></code> argument.</p>
-<p>There are a number of arguements you can give to the function to get the
+<p>There are a number of arguments you can give to the function to get the
 data file to look as you wish. This includes appending to an existing file,
-the type of quotes to use, the seperator and whether to use row and column names.</p>
+the type of quotes to use, the separator and whether to use row and column names.</p>
 <p>It’s worth finding the R manuals online to see these and experiment a little.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Write your <cite>capitals</cite> dictionary into a file, seperated by commas, so country in
+<p>Write your <cite>capitals</cite> dictionary into a file, separated by commas, so country in
 column 1 and the city in column 2. Each country is then on a new line.
 This creates a CSV file, which you can load into Excel, etc.</p>
 </div>
@@ -805,7 +805,7 @@ in the course, for example:</p>
 </pre></div>
 </div>
 <p>which is the command to list things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, in a Unix shell with the option supplied to make it a table <code class="docutils literal notranslate"><span class="pre">-l</span></code>.
-Similaraly, we’ve covered:</p>
+Similarly, we’ve covered:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>dir1<span class="w"> </span>dir2
 </pre></div>
 </div>
@@ -835,7 +835,7 @@ advanced usage options.</p>
 </pre></div>
 </div>
 <p>The arguments are stored in <code class="docutils literal notranslate"><span class="pre">args</span></code>. The first is always the name of the script, however, we
-automaticlaly removed that by using the <cite>trainlingOnly=True</cite> argument. Try it without:</p>
+automatically removed that by using the <cite>trainlingOnly=True</cite> argument. Try it without:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC/code_examples$<span class="w"> </span>Rscript<span class="w"> </span>command_args.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 <span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;/usr/lib/R/bin/exec/R&quot;</span><span class="w"> </span><span class="s2">&quot;--no-echo&quot;</span><span class="w">             </span><span class="s2">&quot;--no-restore&quot;</span>
 <span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;--file=command_args.R&quot;</span><span class="w"> </span><span class="s2">&quot;--args&quot;</span><span class="w">                </span><span class="s2">&quot;arg1&quot;</span>

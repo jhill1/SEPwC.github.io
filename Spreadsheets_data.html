@@ -386,7 +386,7 @@ document.write(`
                   
   <section id="moving-from-spreadsheets-to-data">
 <h1>Moving from spreadsheets to data<a class="headerlink" href="#moving-from-spreadsheets-to-data" title="Link to this heading">#</a></h1>
-<p>We often use spreadsheets to store data, visualise those data and even analyise it. It’s therefore useful
+<p>We often use spreadsheets to store data, visualise those data and even analyse it. It’s therefore useful
 to think about the differences between a spreadsheet of data and what a computer will do with it.</p>
 <p>When loading data into a program you are <strong>parsing</strong> the data from a file into variables. Whilst this
 can be done manually, there are libraries and tools to help us do this for most common
@@ -469,17 +469,17 @@ the processing done in a README or similar.</p>
 </section>
 <section id="using-excel">
 <h2>Using Excel<a class="headerlink" href="#using-excel" title="Link to this heading">#</a></h2>
-<p>Excel is one of the most ubiquitous peices of software in the world today. It’s spawned many copies
+<p>Excel is one of the most ubiquitous pieces of software in the world today. It’s spawned many copies
 including Google Sheets, Libreoffice Sheets, etc and itself is based on previous spreadsheet packages
 (VisiCalc, Lotus 1-2-3, etc).</p>
-<p>Spreadhseets offer a tabular view of data. They consist of cells, arranged in rows and columns. Columns are
+<p>Spreadsheets offer a tabular view of data. They consist of cells, arranged in rows and columns. Columns are
 often labelled using the alphabet (A, B, C, etc) and rows via a number. Each cell can therefore be located using a letter
 and number combination, e.g. A3. A user can input data into each cell or use formulas, e.g. <code class="docutils literal notranslate"><span class="pre">=5*3</span></code>, showing <code class="docutils literal notranslate"><span class="pre">15</span></code> in the cell.</p>
 <p>Like computer programs, spreadsheets can create formulaalues using formulas that take values from variables. Unlike
 a computer program the variable is another cell (rather than a named thing). For example, <code class="docutils literal notranslate"><span class="pre">=5*C3</span></code> would make that
 cell the value sof C3 multiplied by 5. These formulas can be chained together and hence produce quite complex spreadsheets,
 even to run simple algorithms, without resorting to computer code at all. Couple that to nice visual formatting
-and you can see why spreadsheets are ubiqutious office software!</p>
+and you can see why spreadsheets are ubiquitous office software!</p>
 <p>What a spreadsheet is not, is a database. A database is many tables of data that are related to each other (this is a
 <strong>relational database</strong>). A spreadsheet can contain many tables, but lacks the relational aspect to the data. It is
 however very common to call a spreadsheet or group of spreadsheets a database. It is therefore very common
@@ -499,8 +499,8 @@ using Excel or similar and from that you can check your script is running correc
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>However useful Excel and similar tools are though, they should be avoided for storing your final data in.
-They often have inbuilt algorithms to chnage data based on it’s format, e.g. SEPT2 (a gene name) can be
-translated into a date by Excel. If that chnage is then saved the data integrity is lost. <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">This occurs
+They often have inbuilt algorithms to change data based on it’s format, e.g. SEPT2 (a gene name) can be
+translated into a date by Excel. If that change is then saved the data integrity is lost. <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">This occurs
 in the scientific literature.</a></p>
 </div>
 </section>
@@ -584,13 +584,13 @@ As a programmer you would need to know that information beforehand to use them c
 <p>Network Common Data Format. This is a binary file format which store large arrays of data that are linked in
 some ways. Often used for spatial data. Arrays will be latitude, longitude and then values based on
 those arrays, e.g. sea surface temperature. It can handle multiple dimensions, so it is possible to
-store three-dimensional field that vary in time (4D!).</p>
+store three dimensional field that vary in time (4D!).</p>
 </section>
 <section id="geotiff">
 <h3>GeoTIFF<a class="headerlink" href="#geotiff" title="Link to this heading">#</a></h3>
 <p>Raster data (height data on a grid or similar) is often stored in a GeoTIFF file which is based on the common image format.
 TIFF is a lossless image format (unlike JPEG or GIF) and also contains a header. It’s this header that is crucial! It can
-contain the locational data and projection space.</p>
+contain the location data and projection space.</p>
 </section>
 <section id="xml">
 <h3>XML<a class="headerlink" href="#xml" title="Link to this heading">#</a></h3>

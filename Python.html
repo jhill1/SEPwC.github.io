@@ -387,7 +387,7 @@ interpreted languages tell you what is wrong, so it’s not as bad as it sounds.
 there are modules that will do just about anything. This makes Python a really
 powerful tool for writing code to analyse any number of problems.</p>
 <p>Python can be run on the command line, in a Jupyter notebook, in Google Colab,
-as a stand-alone script, or even as a full GUI program. There are modules
+as a standalone script, or even as a full GUI program. There are modules
 for plotting (matplotlib), scientific algorithms (scipy), numerical algorithms
 (numpy) and GIS (gdal).</p>
 <p>Let’s get a simple python code running!</p>
@@ -572,7 +572,7 @@ to a lot of data analysis.</p>
 </pre></div>
 </div>
 <p>This is error prone though. What if we make a typo (which is likely)? How would we know?
-Also this is very boring and repetitive. Note, I’ve used <code class="docutils literal notranslate"><span class="pre">;</span></code> to seperate out
+Also this is very boring and repetitive. Note, I’ve used <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate out
 statements so they can go on a single line.</p>
 <p>The entire idea of writing code it to remove the
 repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
@@ -1006,7 +1006,7 @@ underneath functions, classes and modules where public facing (i.e. where docume
 <span class="sd">    imag -- the imaginary part (default 0.0)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">imag</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">real</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">complex_zero</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="n">j</span><span class="o">+</span><span class="mi">0</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -1046,7 +1046,7 @@ completely superfluous if the code was written well:</p>
 
 <span class="k">def</span> <span class="nf">no_families</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">families_by_city</span><span class="p">[</span><span class="n">city</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">families_by_city</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No families in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1075,7 +1075,7 @@ is in the code. The why is how it’s written.</p>
 </section>
 <section id="python-exercises">
 <h2>Python Exercises<a class="headerlink" href="#python-exercises" title="Link to this heading">#</a></h2>
-<p>Try the following exercsies. For any of the exercises, feel free to type out the code and try it for real first, or figure out and see if you were right.</p>
+<p>Try the following exercises. For any of the exercises, feel free to type out the code and try it for real first, or figure out and see if you were right.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>Will the code below work?</p>
@@ -1105,7 +1105,16 @@ is in the code. The why is how it’s written.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>The number 13 is printed only. The range goes in steps of 2, so hits 15 on the second
+<p>The number 13 is printed only. However, this is only the case after we’ve fixed the code!</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The range goes in steps of 2, so hits 15 on the second
 iteration, which is equal to the upper limit of range, so the loop terminates.</p>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
@@ -1124,27 +1133,6 @@ iteration, which is equal to the upper limit of range, so the loop terminates.</
 <p class="admonition-title">Solution</p>
 <p>This one is tricky! What is printed are the last values of the loop, so “40   104.0”. The print
 statement is not indented to within the loop, so is only run when the loop is finished.</p>
-</div>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>What’s with <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code>? In all the exercises above converting centigrade to Farenheit I’ve used <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code>.
-Why not <code class="docutils literal notranslate"><span class="pre">9/5</span></code>? Let’s try it.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
-<span class="c1"># Where therefore expect F to be -4</span>
-<span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="n">F</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<p>This one is very subtle. <code class="docutils literal notranslate"><span class="pre">9/5*C</span></code> is done in integer maths. <code class="docutils literal notranslate"><span class="pre">9/5</span></code> comes out as <code class="docutils literal notranslate"><span class="pre">1</span></code> (try it in python). You therefore get the
-wrong answer. By typing <code class="docutils literal notranslate"><span class="pre">9.0/5.0</span></code> we push python into using floating point maths so you get <code class="docutils literal notranslate"><span class="pre">1.8</span></code>. You only need one floating
-point number in an operation to make it all floaitng point, so just using <code class="docutils literal notranslate"><span class="pre">9.0/5</span></code> will suffice. This is a very easy bug to introduce
-into any code (I have!) so it’s worth getting in the habit of typing <code class="docutils literal notranslate"><span class="pre">9.0</span></code> or <code class="docutils literal notranslate"><span class="pre">9.</span></code> when using any number you mean to be a float
-in python.</p>
 </div>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>

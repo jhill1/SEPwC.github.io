@@ -492,7 +492,7 @@ all of the variables and functions from the <code class="docutils literal notran
 </div>
 <p>There are a lot other features of objects in Python, but the main reason for learning about them here is that
 most other modules/libraries in Python create objects of some kind. You therefore need to be familiar with the
-idea of a varable, e.g. <code class="docutils literal notranslate"><span class="pre">buddy</span></code> being able to have a function to call using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation. When you see
+idea of a variable, e.g. <code class="docutils literal notranslate"><span class="pre">buddy</span></code> being able to have a function to call using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation. When you see
 this; you are dealing with an object.</p>
 </section>
 <section id="python-namespace">
@@ -508,12 +508,12 @@ names pointing to the object in memory. There are several layers of namespaces i
 <li><p>Local</p></li>
 </ol>
 </div></blockquote>
-<p>These have different lifespans and Python handles the creation and deletion of the namesapces
+<p>These have different lifespans and Python handles the creation and deletion of the namespaces
 as our code is executed.</p>
 <section id="the-namespaces">
 <h3>The namespaces<a class="headerlink" href="#the-namespaces" title="Link to this heading">#</a></h3>
 <p>The built-in namespace contains all of Python’s built-in object which are
-availabel everytime you run any Python. We can
+available every time you run any Python. We can
 look at this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
@@ -551,7 +551,7 @@ for a variable in:</p>
 <li><p>Built-in</p></li>
 </ol>
 </div></blockquote>
-<p>If you look for <code class="docutils literal notranslate"><span class="pre">max()</span></code> function, Python will look in the local, th enclosing, then global
+<p>If you look for <code class="docutils literal notranslate"><span class="pre">max()</span></code> function, Python will look in the local, then enclosing, then global
 then the built-in namespaces.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
 
@@ -648,7 +648,7 @@ behaviour to the previous example:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you create a global variable within a function it will be available to the global namesapce:</p>
+<p>If you create a global variable within a function it will be available to the global namespace:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
@@ -668,7 +668,7 @@ do not create scope.</p>
 crop date/times to a specific range and compare or take samples from our
 data every <em>N</em> minutes, for example. Python comes with a datetime module
 that helps us deal with these issues. It provides a variety of functions
-to work out durations, samples and deal with leap years and timezones.</p>
+to work out duration, samples and deal with leap years and timezones.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
@@ -763,9 +763,9 @@ We can use datetime’s <code class="docutils literal notranslate"><span class="
 </div>
 <p>You can see the various formatting options <a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior">here</a>.</p>
 <p>The final bit of the datetime we need to know about are timezones. The UK has two timezones, GMT and BST
-which occur in the winter and summer respecitvely. There is a Universal Time zone (UTC) which is
+which occur in the winter and summer respectively. There is a Universal Time zone (UTC) which is
 effectively GMT (but doesn’t shift in the UK summer!). The datetime object can handle
-timezones and can convert times for you (and takes care of durations over different timezones!).
+timezones and can convert times for you (and takes care of duration over different timezones!).
 However, we need another python module <code class="docutils literal notranslate"><span class="pre">pytz</span></code> to handle the actual timezones.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># note I&#39;ve only import the datetime object, not the whole datetime module</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
@@ -792,7 +792,7 @@ widely used in science and engineering. The NumPy library contains
 multidimensional array data structures, such as the homogeneous, N-dimensional
 <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, and a large library of functions that operate efficiently on these
 data structures.</p>
-<p>Python lists are general-purpose containers. They can be
+<p>Python lists are general purpose containers. They can be
 “heterogeneous”, meaning that they can contain elements of a variety of datatypes.</p>
 <p>However, scientific data is often numerical and hence <cite>homogeneous</cite>.
 NumPy is designed to work on such data, rather than be more general.</p>
@@ -815,7 +815,7 @@ an instance of <code class="docutils literal notranslate"><span class="pre">ndar
 </pre></div>
 </div>
 <p>This widespread convention allows access to NumPy features with a short,
-recognizable prefix (<code class="docutils literal notranslate"><span class="pre">np.</span></code>) while distinguishing NumPy features from others
+recognisable prefix (<code class="docutils literal notranslate"><span class="pre">np.</span></code>) while distinguishing NumPy features from others
 that have the same name (e.g. <code class="docutils literal notranslate"><span class="pre">max()</span></code>)</p>
 </section>
 <section id="numpy-array-fundamentals">
@@ -861,7 +861,7 @@ data in the original array. The original array can be mutated using the view.</p
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
 </pre></div>
 </div>
-<p>Two- and higher-dimensional arrays can be initialized from nested Python
+<p>Two- and higher-dimensional arrays can be initialised from nested Python
 sequences:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
 </pre></div>
@@ -1553,7 +1553,7 @@ See original `licence</a></p>
 <section id="python-pandas-module">
 <h2>Python: Pandas module<a class="headerlink" href="#python-pandas-module" title="Link to this heading">#</a></h2>
 <p>pandas is a Python package providing fast, flexible, and expressive data structures
-designed to make working with “relational” or “labeled” data both easy and intuitive.
+designed to make working with “relational” or “labelled” data both easy and intuitive.
 It aims to be the fundamental high-level building block for doing practical,
 real-world data analysis in Python.</p>
 <p>pandas is well suited for many different kinds of data:</p>
@@ -1585,7 +1585,7 @@ a two-dimension array or a table with rows and columns.</p></li>
 <p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by passing a list of values, letting pandas create
 a default <code class="xref py py-class docutils literal notranslate"><span class="pre">RangeIndex</span></code>.</p>
 <p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by passing a NumPy array with a datetime index using <code class="xref py py-func docutils literal notranslate"><span class="pre">date_range()</span></code>
-and labeled columns:</p>
+and labelled columns:</p>
 <p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by passing a dictionary of objects where the keys are the column
 labels and the values are the column values.</p>
 <p>The columns of the resulting <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> have different
@@ -1638,7 +1638,7 @@ copying data.</p>
 <p class="admonition-title">Note</p>
 <p>While standard Python / NumPy expressions for selecting and setting are
 intuitive and come in handy for interactive work, for production code, we
-recommend the optimized pandas data access methods, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.at()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.iat()</span></code>,
+recommend the optimised pandas data access methods, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.at()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.iat()</span></code>,
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.loc()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.iloc()</span></code>.</p>
 </div>
 <section id="getitem">
@@ -1773,7 +1773,7 @@ columns:</p>
 <h3>Time series<a class="headerlink" href="#time-series" title="Link to this heading">#</a></h3>
 <p>pandas has simple, powerful, and efficient functionality for performing
 resampling operations during frequency conversion (e.g., converting secondly
-data into 5-minutely data). This is extremely common in, but not limited to,
+data into 5-minute splices of data). This is extremely common in, but not limited to,
 financial applications.</p>
 <p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.tz_localize()</span></code> localizes a time series to a time zone:</p>
 <p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.tz_convert()</span></code> converts a timezones aware time series to another time zone:</p>
