@@ -344,6 +344,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-environments">Special environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#super-assignment">Super assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
@@ -364,8 +370,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data">Exporting data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 </ul>
             </nav>
         </div>
@@ -379,6 +383,227 @@ document.write(`
                   
   <section id="r-part-3">
 <h1>R: part 3<a class="headerlink" href="#r-part-3" title="Link to this heading">#</a></h1>
+<section id="r-namespace">
+<h2>R namespace<a class="headerlink" href="#r-namespace" title="Link to this heading">#</a></h2>
+<p>Namespace and scope are the section of code where your variables are valid. A namespace
+is a collection of currently defined symbolic names; basically a dictionary of variable
+names pointing to the object in memory.</p>
+<p>In R, the namespace and scope are referred to as the <code class="docutils literal notranslate"><span class="pre">environment</span></code>. You can create environments
+yourself, but they are also created in certain circumstances. There is always at least
+three <code class="docutils literal notranslate"><span class="pre">environment``s:</span> <span class="pre">``empty</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code>.</p>
+<p>The two important <code class="docutils literal notranslate"><span class="pre">environments</span></code> are the <code class="docutils literal notranslate"><span class="pre">current_env()</span></code> and the <code class="docutils literal notranslate"><span class="pre">global_env()</span></code>. The
+global environment is your “workspace” as it’s where all activity, outside functions, takes
+place.</p>
+<section id="special-environments">
+<h3>Special environments<a class="headerlink" href="#special-environments" title="Link to this heading">#</a></h3>
+<p>Most environments are not created by you, but by R. Each package attached
+using <code class="docutils literal notranslate"><span class="pre">library()</span></code> or <code class="docutils literal notranslate"><span class="pre">require()</span></code> becomes on of the parents of the global environment.
+The immediate parent of the global environment is the last package you attached, and
+the previous one is the parent to that…</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">rlang</span></code> packge to explore this.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nf">library</span><span class="p">(</span><span class="n">rlang</span><span class="p">)</span>
+
+<span class="nf">env_parents</span><span class="p">(</span><span class="nf">global_env</span><span class="p">())</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">rlang</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">3</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">graphics</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">4</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">grDevices</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">utils</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">datasets</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">7</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">methods</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">8</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">Autoloads</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">[[</span><span class="m">9</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">base</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">10</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">empty</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can see the ultimate parent is the <code class="docutils literal notranslate"><span class="pre">empty</span></code> environment, then we have <code class="docutils literal notranslate"><span class="pre">base</span></code>
+, <code class="docutils literal notranslate"><span class="pre">Autoloads</span></code>, etc until we get to <code class="docutils literal notranslate"><span class="pre">rlang</span></code> which is the last one we loaded. If we
+then load another package:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggpubr</span><span class="p">)</span>
+
+<span class="nf">env_parents</span><span class="p">(</span><span class="nf">global_env</span><span class="p">())</span>
+<span class="n">Loading</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="w"> </span><span class="n">ggplot2</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">ggpubr</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">ggplot2</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">3</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">rlang</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">4</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">graphics</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">grDevices</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">7</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">utils</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">8</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">datasets</span><span class="o">&gt;</span>
+<span class="w"> </span><span class="p">[[</span><span class="m">9</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">methods</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">10</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">Autoloads</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">11</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">base</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">12</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">empty</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can see <code class="docutils literal notranslate"><span class="pre">ggpubr</span></code> as the top package, but we can also see that <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> has also been loaded (by <code class="docutils literal notranslate"><span class="pre">ggpubr</span></code>).</p>
+<p>This ordering then dictates the search path when a variable or function is asked for. That’s leads to an interesting question
+as to which function gets called if there are more than one of the same name. In a new R session, run the following:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">rlang</span><span class="p">)</span>
+
+<span class="n">env_parents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;My env_parents()&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">env_parents</span><span class="p">(</span><span class="nf">global_env</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">env_parents()</span></code> printed to the screen. Your function is first in the search path, so it is
+called, not the function of the same name in the <code class="docutils literal notranslate"><span class="pre">rlang</span></code> package.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>So how can we call the <code class="docutils literal notranslate"><span class="pre">rlang</span></code> version?</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>rlang::env_parents(global_env())</p>
+<blockquote>
+<div><p>[[1]] $ &lt;env: package:rlang&gt;
+[[2]] $ &lt;env: package:stats&gt;
+[[3]] $ &lt;env: package:graphics&gt;
+[[4]] $ &lt;env: package:grDevices&gt;
+[[5]] $ &lt;env: package:utils&gt;
+[[6]] $ &lt;env: package:datasets&gt;
+[[7]] $ &lt;env: package:methods&gt;
+[[8]] $ &lt;env: Autoloads&gt;
+[[9]] $ &lt;env: package:base&gt;
+[[10]] $ &lt;env: empty&gt;</p>
+</div></blockquote>
+</div>
+<p>This is fine for our code, but what about within packages? What happens if <code class="docutils literal notranslate"><span class="pre">print</span></code> is a function in multiple
+packages?</p>
+<p>In R this is handled by the <em>function</em> environment and the <em>namespace</em> environment. The function environment is created
+every time you call a function and it is bound to the enviroment from where it’s created. Note there is another
+environment called the <code class="docutils literal notranslate"><span class="pre">caller_env()</span></code> which is where the function is called from. This is getting rather complex, but
+it means two things that are important to you:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>When you call a function and it returns nothing is kept. Eveyrthing you use within a function is destroyed.</p></li>
+<li><p>As a function is bound to the environment it is created, within a package, <em>that</em> function will be found first
+in the search</p></li>
+</ol>
+</div></blockquote>
+<p>The upshot of this is that it doesn’t matter which order you load libraries, the <code class="docutils literal notranslate"><span class="pre">print</span></code> function in <code class="docutils literal notranslate"><span class="pre">ggpubr</span></code> will always
+be called within <code class="docutils literal notranslate"><span class="pre">ggpubr</span></code> and the <code class="docutils literal notranslate"><span class="pre">print</span></code> function in side <code class="docutils literal notranslate"><span class="pre">rlang</span></code> will always be called within <code class="docutils literal notranslate"><span class="pre">rlang</span></code>. However, what this
+does mean is that sometimes your code behaviour <em>may</em> change depending on the order in which you load libraries. If you are expting
+a function called <code class="docutils literal notranslate"><span class="pre">sd</span></code> to be called from one library, but another library was loaded afterwards and also had that function, you might
+get the wrong one.</p>
+</section>
+<section id="super-assignment">
+<h3>Super assignment<a class="headerlink" href="#super-assignment" title="Link to this heading">#</a></h3>
+<p>Later, we will deal with R objects and you’ll see the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> operator for
+assigning values. You will have already seen the <cite>&lt;-</cite> assignment operator. Why
+the two?</p>
+<p>Regular assignment, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> always creates a variable in the current environment. Super
+assignment, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> never creates a variable in the current environment, but instead creates it
+in a parent environment.</p>
+<p>An object method creates a <code class="docutils literal notranslate"><span class="pre">function_env</span></code>; we don’t want that variable altered in the function and then
+lost, we want the variable altered in the object. Hence, we use the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> assignment to alter
+the variable in the environment <em>above</em> the function (which is the object).</p>
+</section>
+</section>
+<section id="r-objects">
+<h2>R objects<a class="headerlink" href="#r-objects" title="Link to this heading">#</a></h2>
+<p>We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
+data and functions to manipulate that data.</p>
+<p>R has support for objects and almost everything in R is actually an object. Those vectors,
+dateframes, etc are all objects in R. However, to
+create your own object you must first create a <code class="docutils literal notranslate"><span class="pre">Class</span></code>. R has several types of classes,
+S3, S4, and RC (and actually some others too). Here, we’ll stick to RC which requires a formal
+definition of the class and integrates the methods within the class in a more
+Object-Oriented way.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Person&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;numeric&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Person</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">41</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">alice</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is not a particularly useful object, but shows the basic principles. You can acess
+the fields using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="o">$</span><span class="n">name</span>
+<span class="n">alice</span><span class="o">$</span><span class="n">age</span>
+
+<span class="n">alice</span><span class="o">$</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
+<span class="n">alice</span><span class="o">$</span><span class="n">age</span>
+</pre></div>
+</div>
+<p>We need to add some methods/functions to go along with our class.
+Let’s create the dog class we thought about previously:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Dog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
+
+<span class="w">        </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">            </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;numeric&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">),</span>
+
+<span class="w">        </span><span class="n">methods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">            </span><span class="n">bark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">                </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Woof!&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="n">walkies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="s">&quot;muddy&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="n">beCleaned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;clean&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="s">&quot; is already clean&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;muddy&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="p">,</span><span class="s">&quot; is now clean&quot;</span><span class="p">))</span>
+<span class="w">                    </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="s">&quot;clean&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+
+
+<span class="n">wilf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Dog</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Wilf&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;Brown&quot;</span><span class="p">)</span>
+<span class="n">wilf</span><span class="o">$</span><span class="nf">bark</span><span class="p">()</span>
+<span class="n">wilf</span><span class="o">$</span><span class="nf">walkies</span><span class="p">()</span>
+<span class="n">wilf</span><span class="o">$</span><span class="n">state</span>
+</pre></div>
+</div>
+<p>There are a few things here that are worth pointing out. First is the structure; note that the
+fields are <code class="docutils literal notranslate"><span class="pre">list``ed</span> <span class="pre">and</span> <span class="pre">then</span> <span class="pre">the</span> <span class="pre">functions</span> <span class="pre">are</span> <span class="pre">also</span> <span class="pre">``list``ed.</span> <span class="pre">It's</span> <span class="pre">easy</span> <span class="pre">to</span> <span class="pre">forget</span> <span class="pre">a</span> <span class="pre">comma</span>
+<span class="pre">in</span> <span class="pre">there!</span> <span class="pre">Next</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">use</span> <span class="pre">of</span> <span class="pre">``&lt;&lt;-</span></code>. You’ll learn more about this in the namespaces section,
+but this is to make it clear which <code class="docutils literal notranslate"><span class="pre">state</span></code> you are referring to. Finally, note that both the
+functions and fields are accessed using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation.</p>
+<p>One of the key things about classes is that they can inherit other classes. We can therefore
+build complex stacks of classes using base classes. Let’s create a class for a Guide Dog:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">GuideDog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;GuideDog&quot;</span><span class="p">,</span>
+
+<span class="w">        </span><span class="n">contains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
+
+<span class="w">        </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">            </span><span class="n">training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;logical&quot;</span>
+<span class="w">        </span><span class="p">),</span>
+
+<span class="w">        </span><span class="n">methods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">            </span><span class="n">bark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Guide dogs don&#39;t bark&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="n">complete_training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">training</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="bp">T</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So here we’ve added a new function <code class="docutils literal notranslate"><span class="pre">complete_trianing</span></code> and overridden the <code class="docutils literal notranslate"><span class="pre">bark</span></code> function.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">buddy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GuideDog</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Buddy&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;tan&quot;</span><span class="p">,</span><span class="n">training</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+<span class="n">buddy</span><span class="o">$</span><span class="nf">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There are a lot other features of objects in R, but the main reason for learning about them here is that
+most other modules/libraries in R create objects of some kind. You therefore need to be familiar with the
+idea of a variable, e.g. <code class="docutils literal notranslate"><span class="pre">buddy</span></code> being able to have a function to call using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation. When you see
+this; you are dealing with an object.</p>
+</section>
 <section id="r-datetimes">
 <h2>R: Datetimes<a class="headerlink" href="#r-datetimes" title="Link to this heading">#</a></h2>
 </section>
@@ -1022,107 +1247,6 @@ folder.</p>
 </div>
 </section>
 </section>
-<section id="r-namespace">
-<h2>R namespace<a class="headerlink" href="#r-namespace" title="Link to this heading">#</a></h2>
-</section>
-<section id="r-objects">
-<h2>R objects<a class="headerlink" href="#r-objects" title="Link to this heading">#</a></h2>
-<p>We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
-data and functions to manipulate that data.</p>
-<p>R has support for objects and almost everything in R is actually an object. Those vectors,
-dateframes, etc are all objects in R. However, to
-create your own object you must first create a <code class="docutils literal notranslate"><span class="pre">Class</span></code>. R has several types of classes,
-S3, S4, and RC (and actually some others too). Here, we’ll stick to RC which requires a formal
-definition of the class and integrates the methods within the class in a more
-Object-Oriented way.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Person&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;numeric&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Person</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">41</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">alice</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This is not a particularly useful object, but shows the basic principles. You can acess
-the fields using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="o">$</span><span class="n">name</span>
-<span class="n">alice</span><span class="o">$</span><span class="n">age</span>
-
-<span class="n">alice</span><span class="o">$</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
-<span class="n">alice</span><span class="o">$</span><span class="n">age</span>
-</pre></div>
-</div>
-<p>We need to add some methods/functions to go along with our class.
-Let’s create the dog class we thought about previously:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Dog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
-
-<span class="w">        </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">            </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;numeric&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">),</span>
-
-<span class="w">        </span><span class="n">methods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">            </span><span class="n">bark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(){</span>
-<span class="w">                </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Woof!&quot;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="n">walkies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="s">&quot;muddy&quot;</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="n">beCleaned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;clean&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="s">&quot; is already clean&quot;</span><span class="p">))</span>
-<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;muddy&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="p">,</span><span class="s">&quot; is now clean&quot;</span><span class="p">))</span>
-<span class="w">                    </span><span class="n">state</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="s">&quot;clean&quot;</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">)</span>
-<span class="w">    </span><span class="p">)</span>
-
-
-<span class="n">wilf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Dog</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Wilf&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;Brown&quot;</span><span class="p">)</span>
-<span class="n">wilf</span><span class="o">$</span><span class="nf">bark</span><span class="p">()</span>
-<span class="n">wilf</span><span class="o">$</span><span class="nf">walkies</span><span class="p">()</span>
-<span class="n">wilf</span><span class="o">$</span><span class="n">state</span>
-</pre></div>
-</div>
-<p>There are a few things here that are worth pointing out. First is the structure; note that the
-fields are <code class="docutils literal notranslate"><span class="pre">list``ed</span> <span class="pre">and</span> <span class="pre">then</span> <span class="pre">the</span> <span class="pre">functions</span> <span class="pre">are</span> <span class="pre">also</span> <span class="pre">``list``ed.</span> <span class="pre">It's</span> <span class="pre">easy</span> <span class="pre">to</span> <span class="pre">forget</span> <span class="pre">a</span> <span class="pre">comma</span>
-<span class="pre">in</span> <span class="pre">there!</span> <span class="pre">Next</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">use</span> <span class="pre">of</span> <span class="pre">``&lt;&lt;-</span></code>. You’ll learn more about this in the namespaces section,
-but this is to make it clear which <code class="docutils literal notranslate"><span class="pre">state</span></code> you are referring to. Finally, note that both the
-functions and fields are accessed using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation.</p>
-<p>One of the key things about classes is that they can inherit other classes. We can therefore
-build complex stacks of classes using base classes. Let’s create a class for a Guide Dog:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">GuideDog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;GuideDog&quot;</span><span class="p">,</span>
-
-<span class="w">        </span><span class="n">contains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
-
-<span class="w">        </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">            </span><span class="n">training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;logical&quot;</span>
-<span class="w">        </span><span class="p">),</span>
-
-<span class="w">        </span><span class="n">methods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">            </span><span class="n">bark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Guide dogs don&#39;t bark&quot;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="n">complete_training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="n">training</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="bp">T</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">)</span>
-<span class="w">    </span><span class="p">)</span>
-</pre></div>
-</div>
-<p>So here we’ve added a new function <code class="docutils literal notranslate"><span class="pre">complete_trianing</span></code> and overridden the <code class="docutils literal notranslate"><span class="pre">bark</span></code> function.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">buddy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GuideDog</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Buddy&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;tan&quot;</span><span class="p">,</span><span class="n">training</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
-<span class="n">buddy</span><span class="o">$</span><span class="nf">bark</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>There are a lot other features of objects in R, but the main reason for learning about them here is that
-most other modules/libraries in R create objects of some kind. You therefore need to be familiar with the
-idea of a variable, e.g. <code class="docutils literal notranslate"><span class="pre">buddy</span></code> being able to have a function to call using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation. When you see
-this; you are dealing with an object.</p>
-</section>
 </section>
 
 
@@ -1170,6 +1294,12 @@ this; you are dealing with an object.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-environments">Special environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#super-assignment">Super assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
@@ -1190,8 +1320,6 @@ this; you are dealing with an object.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-data">Exporting data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-namespace">R namespace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 </ul>
   </nav></div>
 
