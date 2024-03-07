@@ -401,7 +401,7 @@ using <code class="docutils literal notranslate"><span class="pre">library()</sp
 The immediate parent of the global environment is the last package you attached, and
 the previous one is the parent to that…</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">rlang</span></code> packge to explore this.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nf">library</span><span class="p">(</span><span class="n">rlang</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">rlang</span><span class="p">)</span>
 
 <span class="nf">env_parents</span><span class="p">(</span><span class="nf">global_env</span><span class="p">())</span>
 <span class="w">  </span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">rlang</span><span class="o">&gt;</span>
@@ -457,22 +457,20 @@ called, not the function of the same name in the <code class="docutils literal n
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">rlang</span><span class="o">::</span><span class="nf">env_parents</span><span class="p">(</span><span class="nf">global_env</span><span class="p">())</span>
+
+<span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">rlang</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">3</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">graphics</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">4</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">grDevices</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">utils</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">datasets</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">7</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">methods</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">8</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">Autoloads</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">9</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">package</span><span class="o">:</span><span class="n">base</span><span class="o">&gt;</span>
+<span class="p">[[</span><span class="m">10</span><span class="p">]]</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="o">&lt;</span><span class="n">env</span><span class="o">:</span><span class="w"> </span><span class="n">empty</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>rlang::env_parents(global_env())</p>
-<blockquote>
-<div><p>[[1]] $ &lt;env: package:rlang&gt;
-[[2]] $ &lt;env: package:stats&gt;
-[[3]] $ &lt;env: package:graphics&gt;
-[[4]] $ &lt;env: package:grDevices&gt;
-[[5]] $ &lt;env: package:utils&gt;
-[[6]] $ &lt;env: package:datasets&gt;
-[[7]] $ &lt;env: package:methods&gt;
-[[8]] $ &lt;env: Autoloads&gt;
-[[9]] $ &lt;env: package:base&gt;
-[[10]] $ &lt;env: empty&gt;</p>
-</div></blockquote>
 </div>
 <p>This is fine for our code, but what about within packages? What happens if <code class="docutils literal notranslate"><span class="pre">print</span></code> is a function in multiple
 packages?</p>
@@ -495,7 +493,7 @@ get the wrong one.</p>
 </section>
 <section id="super-assignment">
 <h3>Super assignment<a class="headerlink" href="#super-assignment" title="Link to this heading">#</a></h3>
-<p>Later, we will deal with R objects and you’ll see the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> operator for
+<p>In the next section, we will deal with R objects and you’ll see the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> operator for
 assigning values. You will have already seen the <cite>&lt;-</cite> assignment operator. Why
 the two?</p>
 <p>Regular assignment, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> always creates a variable in the current environment. Super
@@ -606,6 +604,133 @@ this; you are dealing with an object.</p>
 </section>
 <section id="r-datetimes">
 <h2>R: Datetimes<a class="headerlink" href="#r-datetimes" title="Link to this heading">#</a></h2>
+<p>Dates and time are a common aspect of environmental data. We often need to
+crop date/times to a specific range and compare or take samples from our
+data every <em>N</em> minutes, for example. R does not handle date and times well
+without additional packages. Here, we’ll focus on the <code class="docutils literal notranslate"><span class="pre">lubridate</span></code> package
+which makes life a lot easier.</p>
+<p>There are three types of temporal data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>date: <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> a date only</p></li>
+<li><p>time: <code class="docutils literal notranslate"><span class="pre">&lt;time&gt;</span></code> which is within a day</p></li>
+<li><p>datetime: <code class="docutils literal notranslate"><span class="pre">&lt;dttm&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">POSIXct</span></code>, which is a unqiue time and date</p></li>
+</ul>
+</div></blockquote>
+<p>For most data you are going to be dealing with datetime objects and occasionaly dates. It’s
+rare to have only time!</p>
+<p>Let’s get some times and dates:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span>
+
+<span class="nf">date</span><span class="p">()</span>
+<span class="nf">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The first returns a date object, the second returns a datetime object. These are
+represented as a string to screen.</p>
+<p>In data, the date or time is represented in a number of ways; either as a complete
+string, or as columns with day, month, year, hour, minute, etc. What we need for our
+code is a datetime object, so we need to parse the string into those objects.</p>
+<p>We can therefore create arbitrary dates, times or datetime, rather than relying
+on <code class="docutils literal notranslate"><span class="pre">now()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ymd</span><span class="p">(</span><span class="s">&quot;2017-01-31&quot;</span><span class="p">)</span>
+<span class="nf">mdy</span><span class="p">(</span><span class="s">&quot;January 31st, 2017&quot;</span><span class="p">)</span>
+<span class="nf">dmy</span><span class="p">(</span><span class="s">&quot;31-Jan-2017&quot;</span><span class="p">)</span>
+<span class="nf">ymd</span><span class="p">(</span><span class="m">20170131</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create datetimes:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ymd_hms</span><span class="p">(</span><span class="s">&quot;2017-01-31 20:11:59&quot;</span><span class="p">)</span>
+<span class="nf">mdy_hm</span><span class="p">(</span><span class="s">&quot;01/31/2017 08:01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Representing dates and times as these object then allows calculations to be carried
+out, for example, creating a duration:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20240228</span><span class="p">)</span>
+<span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20230228</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">date1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">date2</span><span class="p">)</span>
+<span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date1</span><span class="o">-</span><span class="n">date2</span>
+
+
+<span class="c1"># what about leap years?</span>
+<span class="n">date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20240229</span><span class="p">)</span>
+<span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20230228</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">date1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">date2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, the difftime class which is the outcome of a duration depends on what the duration is, but comes in the
+form of weeks, days, seconds. Not that useful, so <code class="docutils literal notranslate"><span class="pre">lubridate</span></code> comes with a function to force it to seconds:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20240228</span><span class="p">)</span>
+<span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20230228</span><span class="p">)</span>
+
+<span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date1</span><span class="o">-</span><span class="n">date2</span>
+<span class="nf">as.duration</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The datetime module knows about leap years, etc so can account for those in durations. Try
+the above code with 29th Feb 2023, for example</p>
+<p>This all assumes that a datetime can be constructed from user input easily. Often we
+need to parse a string to create a datetime object. For example out data might be a
+CSV with dates listed as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1984</span>-1-0,<span class="w"> </span><span class="m">4</span>
+<span class="m">1984</span>-1-1,<span class="w"> </span><span class="m">5</span>
+<span class="m">1984</span>-1-2,<span class="w"> </span><span class="m">5</span>
+</pre></div>
+</div>
+<p>Here the date is represented by the year, month, day and then hour seperated by a hyphen.
+There is no minute or second data.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">make_datetime</span></code> (or <code class="docutils literal notranslate"><span class="pre">make_date</span></code>) method to parse these
+when in different columns</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2013</span><span class="p">,</span><span class="w"> </span><span class="m">2013</span><span class="p">,</span><span class="w"> </span><span class="m">2013</span><span class="p">)</span>
+<span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">31</span><span class="p">,</span><span class="w"> </span><span class="m">28</span><span class="p">,</span><span class="w"> </span><span class="m">31</span><span class="p">)</span>
+<span class="n">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+
+<span class="nf">make_datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can use string parsing to pull apart the first column to separate columns of year, month, day.</p>
+<p>Within <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> we can use the filter operator to do this over a whole dataframe.
+We can use the NYC filght data from <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> to try this (you may need to install this).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">nycflights13</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">flights</span><span class="p">)</span>
+<span class="n">flights</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="n">minute</span><span class="p">)</span>
+<span class="n">flights</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="n">minute</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">departure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">make_datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="n">minute</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note there is now a <code class="docutils literal notranslate"><span class="pre">&lt;dttm&gt;</span></code> column that is a datetime object.</p>
+<p>You can switch between dates and times using the <code class="docutils literal notranslate"><span class="pre">as_date()</span></code> and <code class="docutils literal notranslate"><span class="pre">as_datetime()</span></code> functions:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">as_datetime</span><span class="p">(</span><span class="nf">today</span><span class="p">())</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;2024-03-07 UTC&quot;</span>
+<span class="nf">as_date</span><span class="p">(</span><span class="nf">now</span><span class="p">())</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;2024-03-07&quot;</span>
+</pre></div>
+</div>
+<p>The final bit of the datetime we need to know about are timezones. The UK has two timezones, GMT and BST
+which occur in the winter and summer respectively. There is a Universal Time zone (UTC) which is
+effectively GMT (but doesn’t shift in the UK summer!). The datetime object can handle
+timezones and can convert times for you (and takes care of duration over different timezones!).</p>
+<p>Some timezone functions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the system timezone</span>
+<span class="n">Sys</span><span class="o">.</span><span class="n">timezone</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Europe/London&quot;</span>
+
+<span class="c1"># gives the top 6 timezone names</span>
+<span class="n">head</span><span class="p">(</span><span class="n">OlsonNames</span><span class="p">())</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Africa/Abidjan&quot;</span>     <span class="s2">&quot;Africa/Accra&quot;</span>       <span class="s2">&quot;Africa/Addis_Ababa&quot;</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="s2">&quot;Africa/Algiers&quot;</span>     <span class="s2">&quot;Africa/Asmara&quot;</span>      <span class="s2">&quot;Africa/Asmera&quot;</span>
+
+<span class="n">x1</span> <span class="o">&lt;-</span> <span class="n">ymd_hms</span><span class="p">(</span><span class="s2">&quot;2015-06-01 12:00:00&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="s2">&quot;America/New_York&quot;</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="n">ymd_hms</span><span class="p">(</span><span class="s2">&quot;2015-06-01 18:00:00&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="s2">&quot;Europe/Copenhagen&quot;</span><span class="p">)</span>
+<span class="n">x1</span><span class="o">-</span><span class="n">x2</span>
+</pre></div>
+</div>
+<p>Unless specified, lubridate will use UTC.</p>
 </section>
 <section id="r-dataframes">
 <h2>R dataframes<a class="headerlink" href="#r-dataframes" title="Link to this heading">#</a></h2>

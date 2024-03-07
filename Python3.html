@@ -728,18 +728,19 @@ out, for example, creating a duration:</p>
 
 <span class="c1"># what about leap years?</span>
 <span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
-<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">date1</span> <span class="o">-</span> <span class="n">date2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The datetime module knows about leap years, etc so can account for those in durations.</p>
+<p>The datetime module knows about leap years, etc so can account for those in durations. Try
+the above code with 29th Feb 2023, for example</p>
 <p>This all assumes that the datetime can be constructed from user input easily. Often we
 need to parse a string to create a datetime object. For example out data might be a
 CSV with dates listed as:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1984</span>-1-1-0,<span class="w"> </span><span class="m">480</span>
-<span class="m">1984</span>-1-1-1,<span class="w"> </span><span class="m">510</span>
-<span class="m">1984</span>-1-1-2,<span class="w"> </span><span class="m">580</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1984</span>-1-1,<span class="w"> </span><span class="m">4</span>
+<span class="m">1984</span>-1-1,<span class="w"> </span><span class="m">5</span>
+<span class="m">1984</span>-1-1,<span class="w"> </span><span class="m">5</span>
 </pre></div>
 </div>
 <p>Here the date is represented by the year, month, day and then hour seperated by a hyphen.
