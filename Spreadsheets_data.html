@@ -542,11 +542,11 @@ options.</p>
 </pre></div>
 </div>
 <p>The <a class="reference external" href="https://www.tidyverse.org/">Tidyverse</a> collection of packages has some additional
-function to read in CSV and we’’ cover those later.</p>
+function to read in CSV data..</p>
 </section>
 <section id="reading-csv-in-python">
 <h3>Reading CSV in Python<a class="headerlink" href="#reading-csv-in-python" title="Link to this heading">#</a></h3>
-<p>Python contains a useful <cite>csv</cite> library to help us here. It can handle different delimiters,
+<p>Python contains a useful <code class="docutils literal notranslate"><span class="pre">csv</span></code> library to help us here. It can handle different delimiters,
 quotes and headers making it much easier than trying to parse data ourselves. You can find
 the <a class="reference external" href="https://docs.python.org/3/library/csv.html">full documentation for the CSV module online</a>
 but briefly we can load data in using code like this:</p>
@@ -558,9 +558,8 @@ but briefly we can load data in using code like this:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The above reads the CSV file by row and prints out the content. The <cite>row</cite> variable is a list
+<p>The above reads the CSV file by row and prints out the content. The <code class="docutils literal notranslate"><span class="pre">row</span></code> variable is a list
 with each item containing the column data from that row.</p>
-<p>EXAMPLE</p>
 <p>Alternatively, you can read the data as a dictionary. Here we assume the CSV has a header:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
@@ -570,10 +569,9 @@ with each item containing the column data from that row.</p>
         <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>The <cite>row</cite> variable is now a dictionary, with the items labelled by whatever was in the first row (the header).
+<p>The <code class="docutils literal notranslate"><span class="pre">row</span></code> variable is now a dictionary, with the items labelled by whatever was in the first row (the header).
 As a programmer you would need to know that information beforehand to use them correctly.</p>
-<p>EXAMPLE</p>
-<p>We will cover the other main option, pandas, later.</p>
+<p>Pandas, covered earlier, can also read in CSV files.</p>
 </section>
 </section>
 <section id="other-data-formats">

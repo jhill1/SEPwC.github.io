@@ -351,7 +351,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-frames">Creating data frames</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-dplyr-and-tidyr">What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>
@@ -734,6 +737,59 @@ timezones and can convert times for you (and takes care of duration over differe
 </section>
 <section id="r-dataframes">
 <h2>R dataframes<a class="headerlink" href="#r-dataframes" title="Link to this heading">#</a></h2>
+<p>Data frames (tables) are an object of class <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>. They are a two dimensional
+array-like sructure where columns contains values of a single variable, and each row contains
+values for ever column. A spreadsheet in R.</p>
+<section id="creating-data-frames">
+<h3>Creating data frames<a class="headerlink" href="#creating-data-frames" title="Link to this heading">#</a></h3>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">data.frame()</span></code> function to create the data frame:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Tom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jerry&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spike&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
+
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the data frame has been created using existing vectors. The column names
+have been taken from the variable names. You can create a more usable version:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Tom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jerry&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spike&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
+
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Age&quot;</span><span class="o">=</span><span class="n">age</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can then access data using either indexing or using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accessing element at 3rd row and 2nd column</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">])</span>
+
+<span class="c1"># Accessing entire column named &quot;Age&quot;</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">Age</span><span class="p">)</span>
+
+<span class="c1"># Accessing the 2nd row</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can also add columns easily:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mouse&quot;</span><span class="p">,</span><span class="s">&quot;Cat&quot;</span><span class="p">,</span><span class="s">&quot;Dog&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also use logicals to select data:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Cat&quot;</span><span class="p">,]</span>
+</pre></div>
+</div>
+<p>Notice the trailing comma; try the same code without and see what is different. This is beacuse we
+want to access rows. Without the trailing comma we access a column. The <code class="docutils literal notranslate"><span class="pre">df$animal</span> <span class="pre">==</span> <span class="pre">&quot;Cat&quot;</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">FALSE</span> <span class="pre">TRUE</span> <span class="pre">FALSE</span></code>, which is applied to columns without that trailing comma, rather than the rows
+as we wanted. Try this code:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Mouse&quot;</span><span class="p">,]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Mouse&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>There are a number of other useful functions, such as <code class="docutils literal notranslate"><span class="pre">head()</span></code>, <code class="docutils literal notranslate"><span class="pre">tail()</span></code>, <code class="docutils literal notranslate"><span class="pre">rbind()</span></code> and <code class="docutils literal notranslate"><span class="pre">cbind()</span></code>.
+It’s worth looking those up and trying them out.</p>
+</section>
 </section>
 <section id="r-tidyverse">
 <h2>R: tidyverse<a class="headerlink" href="#r-tidyverse" title="Link to this heading">#</a></h2>
@@ -1426,7 +1482,10 @@ folder.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-objects">R objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-datetimes">R: Datetimes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-dataframes">R dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-frames">Creating data frames</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tidyverse">R: tidyverse</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-dplyr-and-tidyr">What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>

@@ -354,10 +354,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-testthat">R: testthat</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-testing">Continuous testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">Adding a workflow to your repoistory</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -437,7 +433,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.py</span></code>.</p>
-<p>We can then use a separate file to create our tests. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is largely automated in terms of finding and running tests; we simply need to stick to a naming convention of having <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code> or <code class="docutils literal notranslate"><span class="pre">*_test.py</span></code> in the filename. <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">will</span> <span class="pre">then</span> <span class="pre">find</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">those</span> <span class="pre">files</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">current</span> <span class="pre">directory</span> <span class="pre">and</span> <span class="pre">any</span> <span class="pre">subdirectories.</span> <span class="pre">You</span> <span class="pre">can</span> <span class="pre">organise</span> <span class="pre">your</span> <span class="pre">tests</span> <span class="pre">into</span> <span class="pre">files,</span> <span class="pre">with</span> <span class="pre">our</span> <span class="pre">without</span> <span class="pre">classes.</span> <span class="pre">If</span> <span class="pre">you</span> <span class="pre">do</span> <span class="pre">you</span> <span class="pre">a</span> <span class="pre">class</span> <span class="pre">it</span> <span class="pre">*must*</span> <span class="pre">begin</span> <span class="pre">with</span> <span class="pre">&quot;Test&quot;.</span> <span class="pre">For</span> <span class="pre">our</span> <span class="pre">check</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">above</span> <span class="pre">two</span> <span class="pre">functions</span> <span class="pre">we</span> <span class="pre">will</span> <span class="pre">create</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">class,</span> <span class="pre">with</span> <span class="pre">three</span> <span class="pre">methods</span> <span class="pre">to</span> <span class="pre">run</span> <span class="pre">a</span> <span class="pre">total</span> <span class="pre">of</span> <span class="pre">five</span> <span class="pre">tests.</span> <span class="pre">Create</span> <span class="pre">a</span> <span class="pre">file</span> <span class="pre">called</span> <span class="pre">``test_temperature_conversion.py</span></code> (note the filename convention here, prepend <code class="docutils literal notranslate"><span class="pre">test_</span></code> to the filename of the thing you’re testing).</p>
+<p>We can then use a separate file to create our tests. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is largely automated in terms of finding and running tests; we simply need to stick to a naming convention of having <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code> or <code class="docutils literal notranslate"><span class="pre">*_test.py</span></code> in the filename. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> will then find and run those files in the current directory and any subdirectories. You can organise your tests into files, with our without classes. If you do you a class it <em>must</em> begin with “Test”. For our check on the above two functions we will create a single class, with three methods to run a total of five tests. Create a file called <code class="docutils literal notranslate"><span class="pre">test_temperature_conversion.py</span></code> (note the filename convention here, prepend <code class="docutils literal notranslate"><span class="pre">test_</span></code> to the filename of the thing you’re testing).</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">temperature_conversion</span>
 
@@ -644,15 +640,6 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 </div>
 </section>
 </section>
-<section id="continuous-testing">
-<h2>Continuous testing<a class="headerlink" href="#continuous-testing" title="Link to this heading">#</a></h2>
-<p>Unitill now you have been resonsible for running the tests. If you’re disciplined then you ran them (and fixed errors) before you committed new code to your repository. There is an easier way though, with continuous integration (or CI) of tests.</p>
-<p>There are a number of services out there that will do this, but the most common to use is GitHub’s Actions. THis allows you to add the tests at any point (e.g. when committing, or at a pull request) and is faily simple to set up.</p>
-<section id="adding-a-workflow-to-your-repoistory">
-<h3>Adding a workflow to your repoistory<a class="headerlink" href="#adding-a-workflow-to-your-repoistory" title="Link to this heading">#</a></h3>
-<p>On GitHub, go to your respository and open the actions tab:</p>
-</section>
-</section>
 </section>
 
 
@@ -708,10 +695,6 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-frameworks">Testing frameworks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pytest">Python: pytest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-testthat">R: testthat</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-testing">Continuous testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-workflow-to-your-repoistory">Adding a workflow to your repoistory</a></li>
 </ul>
 </li>
 </ul>
