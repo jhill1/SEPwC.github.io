@@ -795,9 +795,9 @@ creating a structure of common functions across a number of projects/scripts.</p
 <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively. Both of these return lists
 which can be looped over, e.g.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
-<span class="n">names</span> <span class="o">=</span> <span class="n">keys</span><span class="p">(</span><span class="n">knights</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">knights</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">knights</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">knights</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>is a common idiom you will see in Python code.</p>
