@@ -466,7 +466,7 @@ and another string. Three functions nested within each ohter. This is equivalent
 
 <span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32.0</span>
 
-<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="bp">F</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="bp">F</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -475,7 +475,7 @@ and another string. Three functions nested within each ohter. This is equivalent
 
 <span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">Centigrade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32.0</span>
 
-<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="bp">F</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="bp">F</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1"># store the number</span>
@@ -506,7 +506,6 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
 
-<span class="w">    </span><span class="n">return</span>
 <span class="w"> </span><span class="p">}</span>
 
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
@@ -525,7 +524,6 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
 
-<span class="w">    </span><span class="n">return</span>
 <span class="w"> </span><span class="p">}</span>
 
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
@@ -535,8 +533,6 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">greeting</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
-
-<span class="w">    </span><span class="n">return</span>
 <span class="w"> </span><span class="p">}</span>
 
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ey-up&quot;</span><span class="p">)</span>
@@ -547,7 +543,6 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s">&quot;!&quot;</span><span class="p">))</span>
 
-<span class="w">    </span><span class="n">return</span>
 <span class="w"> </span><span class="p">}</span>
 
 <span class="nf">print_greeting</span><span class="p">(</span><span class="s">&quot;Bryan&quot;</span><span class="p">)</span>
