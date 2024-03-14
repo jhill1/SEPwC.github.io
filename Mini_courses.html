@@ -56,6 +56,7 @@
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Mini_courses';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -349,6 +350,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-r">Graphs - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-python">Graphs - Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-analysis-in-python">Tidal analysis in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-curves">Sine Curves</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -376,6 +381,380 @@ document.write(`
 </section>
 <section id="graphs-python">
 <h2>Graphs - Python<a class="headerlink" href="#graphs-python" title="Link to this heading">#</a></h2>
+</section>
+<section id="tidal-analysis-in-python">
+<h2>Tidal analysis in Python<a class="headerlink" href="#tidal-analysis-in-python" title="Link to this heading">#</a></h2>
+<p>Tides are a fundamental part of a number of coastal processes. As sea levels rise, tides will change,
+and hence our flood risk, coastal geomorphology and ecological systems will also change as a consequence.</p>
+<p>You can run the code below sequentially in Spyder/ipython or create a Jupyter notebook.
+Alternatively, save as a script and run from the command line.</p>
+<p>Some modules you will need to install are <em>uptide</em> and <em>wget</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>uptide
+pip<span class="w"> </span>install<span class="w"> </span>wget
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the modules we need</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">wget</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">uptide</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<p>Now we have out environment set up. We can create a couple of “helper” functions to make life easier later!</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_and_process_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">tide_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">tide_data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">month</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">day</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">hour</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="c1"># col 0 is year, col 1 is month, col2 is day, col3 hour</span>
+    <span class="n">tide_data</span> <span class="o">=</span> <span class="n">tide_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">tide_data</span> <span class="o">=</span> <span class="n">tide_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Tide&quot;</span><span class="p">})</span>
+    <span class="n">tide_data</span> <span class="o">=</span> <span class="n">tide_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="n">tide_data</span> <span class="o">=</span> <span class="n">tide_data</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">tide_data</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">300</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tide_data</span>
+
+<span class="k">def</span> <span class="nf">extract_single_year_remove_mean</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">year_string_start</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;0101&quot;</span>
+    <span class="n">year_string_end</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;1231&quot;</span>
+    <span class="n">year_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year_string_start</span><span class="p">:</span><span class="n">year_string_end</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]]</span>
+    <span class="c1"># remove mean to oscillate around zero</span>
+    <span class="n">mmm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">year_data</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">])</span>
+    <span class="n">year_data</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span> <span class="o">-=</span> <span class="n">mmm</span>
+
+    <span class="k">return</span> <span class="n">year_data</span>
+</pre></div>
+</div>
+<p>We are going to use data from the long term tidal record dataset held by the School of
+Ocean and Earth Science and Technology, University of Hawaii. Some of their tidal records
+go back over 100 years. We’re going to download data for three locations in Australia:
+Freemantle, WA; Booby Island, QLD; and Fort Denison, NSW.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">FortDenison_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h333.csv&quot;</span>
+<span class="n">BoobyIsland_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h336.csv&quot;</span>
+<span class="n">Freemantle_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h175.csv&quot;</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">FortDenison_url</span><span class="p">,</span> <span class="n">BoobyIsland_url</span><span class="p">,</span> <span class="n">Freemantle_url</span><span class="p">]</span>
+
+<span class="c1"># fetch our data and store</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1"># get the full path to the file</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="c1"># if exists, remove it directly</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now have three csv files which should be stored in your current directory (whever you are
+running this code from ).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and store as a pandas dataframe</span>
+<span class="n">Fort_Denison</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h333.csv&quot;</span><span class="p">)</span>
+<span class="n">Booby_Island</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h336.csv&quot;</span><span class="p">)</span>
+<span class="n">Freemantle</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h175.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now let’s plot these, choosing an arbitrary year to plot (rather than the whole dataset!)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot 1 years&#39; worth of tidal data</span>
+<span class="n">fig_summary</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig_summary</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">fd</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Fort_Denison</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fort Denison&quot;</span><span class="p">)</span>
+<span class="n">bi</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Booby_Island</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Booby_Island&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Freemantle</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Freemantle&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (mm)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)])</span>
+<span class="n">fig_summary</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The plot, though busy, already shows some interesting features. Booby Island has the highest tidal
+range and shows a clear annual signal. Freemantle has the smallest tidal range and seems fairly constant.</p>
+<p>Tide gauges often record the water level so can pick up storms and are affected by even small winds
+blowing onshore for example. This means the data you see might not be “just tides”, but also some
+aspect of weather, depending on how the data are processed. In addition, for long term records,
+the tide gauges will also record sea level rise. All heights are measured above a datum so you
+also have to be careful comparing raw data from one tide gauge to another.</p>
+<p>Let’s now look at one month in detail:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_june</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig_june</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">fd</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Fort_Denison</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fort Denison&quot;</span><span class="p">)</span>
+<span class="n">bi</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Booby_Island</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Booby_Island&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Freemantle</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Freemantle&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (mm)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">fig_june</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can now see more of the tidal signals. You may notice Freemantle shows fewer wiggles
+than the other two locations; this is because it is a diurnal tide: one tide per day.
+Fort Denison has a clear two tides per day; semi-diurnal. Booby Island normally has two
+tides per days, but some days, those two tides effectively blend into one (see around the
+17th June). This is a mixed diurnal-semi diurnal system.</p>
+<p>All tidal signals are essentially a mix of multiple sine curves. We know what the frequency of
+the external forcing is for tides (the rotation of the earth, the movement of the moon around
+the earth, etc), which allows us to break up the signal into constituent parts: the tidal
+constituents. These are often given labels such as M2, S2, K1, O1, etc. Each one has a
+particular frequency as given in the table below.</p>
+<table class="table" id="id1">
+<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Decription</p></th>
+<th class="head"><p>Darwin symbol</p></th>
+<th class="head"><p>Period (h)</p></th>
+<th class="head"><p>Speed (°/h)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Principal lunar semidiurnal</p></td>
+<td><p>M2</p></td>
+<td><p>12.4206012</p></td>
+<td><p>28.9841042</p></td>
+</tr>
+<tr class="row-odd"><td><p>Principal solar semidiurnal</p></td>
+<td><p>S2</p></td>
+<td><p>12</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>Lunar diurnal</p></td>
+<td><p>K1</p></td>
+<td><p>23.9344721</p></td>
+<td><p>15.0410686</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lunar diurnal</p></td>
+<td><p>O1</p></td>
+<td><p>25.8193387</p></td>
+<td><p>13.9430356</p></td>
+</tr>
+<tr class="row-even"><td><p>Lunisolar semidiurnal</p></td>
+<td><p>K2</p></td>
+<td><p>11.96723606</p></td>
+<td><p>30.0821373</p></td>
+</tr>
+<tr class="row-odd"><td><p>Larger lunar elliptic semidiurnal</p></td>
+<td><p>N2</p></td>
+<td><p>12.6583475</p></td>
+<td><p>28.4397295</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are over 400 different contiuents, but 60-ish is considered enough for accurate
+tidal predictions, but fewer still can be used for useful tidal predictions. The tidal
+signal can then be reconstructed by summing sine curves of the correct frequency and
+amplitude (and phase) to recreate and then predict the tides. At each location the amplitude
+and phase will be different.</p>
+<p>Let’s add up some sine curves to make something like the tide signals above.</p>
+<section id="sine-curves">
+<h3>Sine Curves<a class="headerlink" href="#sine-curves" title="Link to this heading">#</a></h3>
+<p>Sine cuves can be generalised to the formula:</p>
+<div class="math notranslate nohighlight">
+\[y = Asin(Bx + C) + D\]</div>
+<p><span class="math notranslate nohighlight">\(A\)</span> is the amplitude, <span class="math notranslate nohighlight">\(2 pi / B\)</span> is the period, <span class="math notranslate nohighlight">\(C\)</span> is the phase shift and <span class="math notranslate nohighlight">\(D\)</span> is the
+vertical shift. We know the period (from the table above) for each constiuent and <span class="math notranslate nohighlight">\(D\)</span> is not releant here,
+so we have two parameters to find: <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">A_m2</span> <span class="o">=</span> <span class="mf">0.53</span>
+<span class="n">B_m2</span> <span class="o">=</span> <span class="mf">12.4206012</span> <span class="c1"># hours</span>
+<span class="n">C_m2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="o">*</span><span class="mi">14</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># 14 days in hours</span>
+<span class="n">sin_curve</span> <span class="o">=</span> <span class="n">A_m2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">B_m2</span><span class="o">*</span><span class="n">times</span> <span class="o">+</span> <span class="n">C_m2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">sin_curve</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hours&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>That’s the M2 curve; let’s now add S2:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">A_s2</span> <span class="o">=</span> <span class="mf">0.23</span>
+<span class="n">B_s2</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">C_s2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">sin_curve</span> <span class="o">=</span> <span class="n">A_m2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">B_m2</span><span class="o">*</span><span class="n">times</span> <span class="o">+</span> <span class="n">C_m2</span><span class="p">)</span> <span class="o">+</span> \
+            <span class="n">A_s2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">B_s2</span><span class="o">*</span><span class="n">times</span> <span class="o">+</span> <span class="n">C_s2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">sin_curve</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hours&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The above shows what in effect is spring and neap tide using just two components, with different
+amplitudes and phases (and frequencies/periods).</p>
+<p>We can extract constituents from a tidal signal like those plotted above using least squares
+regression analysis to work out what the tidal constiuents are. Let’s do that now to pull
+out the common consituents from our tidal data.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s first pull out a single year&#39;s worth of data</span>
+<span class="c1"># and remove the mean value so the tides oscillate across zero</span>
+<span class="n">FD_2008</span> <span class="o">=</span> <span class="n">extract_single_year_remove_mean</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="n">Fort_Denison</span><span class="p">)</span>
+<span class="n">BI_2008</span> <span class="o">=</span> <span class="n">extract_single_year_remove_mean</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="n">Booby_Island</span><span class="p">)</span>
+<span class="n">F_2008</span> <span class="o">=</span> <span class="n">extract_single_year_remove_mean</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="n">Freemantle</span><span class="p">)</span>
+
+<span class="c1"># We can use the module uptide to work out the tidal constiuents</span>
+<span class="c1"># More on uptide: https://github.com/stephankramer/uptide</span>
+<span class="kn">import</span> <span class="nn">uptide</span>
+
+<span class="c1"># we create a Tides object with a list of the consituents we want.</span>
+<span class="n">tide</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">Tides</span><span class="p">([</span><span class="s1">&#39;M2&#39;</span><span class="p">])</span>
+
+<span class="c1"># We then set out start time. All data must then be in second since this time</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># so let&#39;s swap our dates for seconds since midnight 1/1/2008.</span>
+<span class="c1"># Note the 1e9 (the int64 seconds epoch in numpy is multiplied by this for some reason)</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">FD_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+
+<span class="c1"># We then send the elevation data (our tides) and time in seconds to uptide</span>
+<span class="c1"># and do the harmonic analysis</span>
+<span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+
+<span class="c1"># uptide returns the amplitudes as a list (in the order of the constiuents listed above) and the phases (in radians)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above numbers are the tidal amplitude for the M2 constiuent at Fort Denison (0.5013 m) and the phase (5.366 radians).
+We can look up what the actual numbers are for Fort Denison (exercise for the reader!).
+However, we’ve forgotten something: <em>timezones</em>!</p>
+<p>We also need to account for the timezone of the data. The phase is measured relative to
+UTC/GMT. We therefore need to tell the analysis the time data is in the Sydney timezone.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Sydney&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">FD_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+
+<span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span><span class="n">pha</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Extract the M2 component from Booby Island and Freemantle</strong></p>
+<blockquote>
+<div><p>Write code to extract the M2 amplitude and phase for the Freementle
+and Booby Island tidal data. Hint; remember the timezones!</p>
+</div></blockquote>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Lindeman&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">BI_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+
+<span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">BI_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span><span class="n">pha</span><span class="p">)</span>
+
+<span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Perth&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+
+<span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">F_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span><span class="n">pha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>What happens when we want multiple constiuents? The first thing we need to consider is how long our
+data record is. Consituents that have a period/frequency that is close together need a longer
+dataset to be able to seperate them out. We can use something called the Rayleigh Critereon
+to work out how long a record we need.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">constituents</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="s1">&#39;K2&#39;</span><span class="p">,</span> <span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;M4&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uptide</span><span class="o">.</span><span class="n">select_constituents</span><span class="p">(</span><span class="n">constituents</span><span class="p">,</span><span class="mi">15</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">))</span> <span class="c1"># This is 15 days in seconds</span>
+</pre></div>
+</div>
+<p>What we get back is that we can’t resolve the N2, K2 and Q1 from the list with 15 days worth of data.
+What if we had 30 days?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">constituents</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="s1">&#39;K2&#39;</span><span class="p">,</span> <span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;M4&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uptide</span><span class="o">.</span><span class="n">select_constituents</span><span class="p">(</span><span class="n">constituents</span><span class="p">,</span><span class="mi">30</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Nope! K2 is still not able to be resolved from 30 days worth of data. How many days would we need?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tide</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">Tides</span><span class="p">(</span><span class="n">constituents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tide</span><span class="o">.</span><span class="n">get_minimum_Rayleigh_period</span><span class="p">()</span><span class="o">/</span><span class="mf">86400.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>82.6 days worth of data to be able to work out the constituents listed above. So with our year of data we should be fine!</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Sydney&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">FD_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+
+<span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At Fort Denison our amplitudes and phases are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>M2: 0.503 m and 4.182 radians</p></li>
+<li><p>S2: 0.125 m and 4.599 radians</p></li>
+<li><p>N2: 0.115 m and 3.93 radians</p></li>
+<li><p>K2: 0.036 m and 4.27 radians</p></li>
+<li><p>O1: 0.097 m and 1.42 radians</p></li>
+<li><p>P1: 0.043 m and 1.99 radians</p></li>
+<li><p>Q1: 0.020 m and 1.016 radians</p></li>
+<li><p>M4: 0.003 m and 2.09 radians</p></li>
+</ul>
+</div></blockquote>
+<p>We could plot those using sine curves. However, <cite>uptide</cite> also has functionality to
+give us a total tidal signal from the amplitudes and phases.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span> <span class="c1"># 1 year in 1800 second intervals</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="n">tide</span><span class="o">.</span><span class="n">from_amplitude_phase</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">fig_summary</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig_summary</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="c1"># note we use seconds since as t (for the theoretical plot) is also in seconds</span>
+<span class="n">fd</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">seconds_since</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fort Denison&quot;</span><span class="p">)</span>
+<span class="n">theoretical</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Theoretical&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="c1"># uncomment line below and rerun to see a zoom in</span>
+<span class="c1">#ax.set_xlim([14, 44]) # only plot 30 days worth</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig_summary</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Extract all components and plot for Booby Island and Freemantle</strong></p>
+<p>Do the same for Booby Island and Freemantle.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Lindeman&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">BI_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+<span class="n">amp_bi</span><span class="p">,</span><span class="n">pha_bi</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">BI_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Perth&quot;</span><span class="p">)</span>
+<span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+<span class="n">amp_f</span><span class="p">,</span><span class="n">pha_f</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">F_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span> <span class="c1"># 1 year in 1800 second intervals</span>
+
+<span class="n">eta_bi</span> <span class="o">=</span> <span class="n">tide</span><span class="o">.</span><span class="n">from_amplitude_phase</span><span class="p">(</span><span class="n">amp_bi</span><span class="p">,</span> <span class="n">pha_bi</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">eta_f</span> <span class="o">=</span> <span class="n">tide</span><span class="o">.</span><span class="n">from_amplitude_phase</span><span class="p">(</span><span class="n">amp_f</span><span class="p">,</span> <span class="n">pha_f</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">fig_summary</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig_summary</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="c1"># note we use seconds since as t (for the theoretical plot) is also in seconds</span>
+<span class="n">bi</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">seconds_since</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">BI_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bobby Island&quot;</span><span class="p">)</span>
+<span class="n">theoretical_bi</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">eta_bi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dasjed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BI Theoretical&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">seconds_since</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">F_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Freemantle&quot;</span><span class="p">)</span>
+<span class="n">theoretical_f</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">86400</span><span class="p">,</span> <span class="n">eta_f</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;F Theoretical&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Water height (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="c1"># uncomment line below and rerun to see a zoom in</span>
+<span class="c1">#ax.set_xlim([14, 44]) # only plot 30 days worth</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig_summary</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -429,6 +808,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-r">Graphs - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-python">Graphs - Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-analysis-in-python">Tidal analysis in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-curves">Sine Curves</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
