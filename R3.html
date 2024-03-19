@@ -388,7 +388,7 @@ document.write(`
 <h1>R: part 3<a class="headerlink" href="#r-part-3" title="Link to this heading">#</a></h1>
 <section id="r-namespace">
 <h2>R namespace<a class="headerlink" href="#r-namespace" title="Link to this heading">#</a></h2>
-<p>Namespace and scope are the section of code where your variables are valid. A namespace
+<p id="index-0">Namespace and scope are the section of code where your variables are valid. A namespace
 is a collection of currently defined symbolic names; basically a dictionary of variable
 names pointing to the object in memory.</p>
 <p>In R, the namespace and scope are referred to as the <code class="docutils literal notranslate"><span class="pre">environment</span></code>. You can create environments
@@ -399,7 +399,7 @@ global environment is your “workspace” as it’s where all activity, outside
 place.</p>
 <section id="special-environments">
 <h3>Special environments<a class="headerlink" href="#special-environments" title="Link to this heading">#</a></h3>
-<p>Most environments are not created by you, but by R. Each package attached
+<p id="index-1">Most environments are not created by you, but by R. Each package attached
 using <code class="docutils literal notranslate"><span class="pre">library()</span></code> or <code class="docutils literal notranslate"><span class="pre">require()</span></code> becomes on of the parents of the global environment.
 The immediate parent of the global environment is the last package you attached, and
 the previous one is the parent to that…</p>
@@ -496,7 +496,7 @@ get the wrong one.</p>
 </section>
 <section id="super-assignment">
 <h3>Super assignment<a class="headerlink" href="#super-assignment" title="Link to this heading">#</a></h3>
-<p>In the next section, we will deal with R objects and you’ll see the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> operator for
+<p id="index-2">In the next section, we will deal with R objects and you’ll see the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code> operator for
 assigning values. You will have already seen the <cite>&lt;-</cite> assignment operator. Why
 the two?</p>
 <p>Regular assignment, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> always creates a variable in the current environment. Super
@@ -509,7 +509,7 @@ the variable in the environment <em>above</em> the function (which is the object
 </section>
 <section id="r-objects">
 <h2>R objects<a class="headerlink" href="#r-objects" title="Link to this heading">#</a></h2>
-<p>We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
+<p id="index-3">We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
 data and functions to manipulate that data.</p>
 <p>R has support for objects and almost everything in R is actually an object. Those vectors,
 dateframes, etc are all objects in R. However, to
@@ -607,7 +607,7 @@ this; you are dealing with an object.</p>
 </section>
 <section id="r-datetimes">
 <h2>R: Datetimes<a class="headerlink" href="#r-datetimes" title="Link to this heading">#</a></h2>
-<p>Dates and time are a common aspect of environmental data. We often need to
+<p id="index-4">Dates and time are a common aspect of environmental data. We often need to
 crop date/times to a specific range and compare or take samples from our
 data every <em>N</em> minutes, for example. R does not handle date and times well
 without additional packages. Here, we’ll focus on the <code class="docutils literal notranslate"><span class="pre">lubridate</span></code> package
@@ -737,7 +737,7 @@ timezones and can convert times for you (and takes care of duration over differe
 </section>
 <section id="r-dataframes">
 <h2>R dataframes<a class="headerlink" href="#r-dataframes" title="Link to this heading">#</a></h2>
-<p>Data frames (tables) are an object of class <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>. They are a two dimensional
+<p id="index-5">Data frames (tables) are an object of class <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>. They are a two dimensional
 array-like sructure where columns contains values of a single variable, and each row contains
 values for ever column. A spreadsheet in R.</p>
 <section id="creating-data-frames">
@@ -793,7 +793,7 @@ It’s worth looking those up and trying them out.</p>
 </section>
 <section id="r-tidyverse">
 <h2>R: tidyverse<a class="headerlink" href="#r-tidyverse" title="Link to this heading">#</a></h2>
-<p>This chapter is taken from the <a class="reference external" href="https://datacarpentry.org/R-ecology-lesson/03-dplyr.html">Data Carpentary on the tidyverse</a> under
+<p id="index-6">This chapter is taken from the <a class="reference external" href="https://datacarpentry.org/R-ecology-lesson/03-dplyr.html">Data Carpentary on the tidyverse</a> under
 CC-BY 4.0 licence.</p>
 <p>Bracket subsetting is handy, but it can be cumbersome and difficult to read,
 especially for complicated operations. Enter <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>. <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> is a package for
@@ -814,7 +814,7 @@ of.</p></li>
 </div></blockquote>
 <section id="what-are-dplyr-and-tidyr">
 <h3>What are <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>?<a class="headerlink" href="#what-are-dplyr-and-tidyr" title="Link to this heading">#</a></h3>
-<p>The package <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides helper tools for the most common data manipulation
+<p id="index-8"><span id="index-7"></span>The package <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides helper tools for the most common data manipulation
 tasks. It is built to work directly with data frames with the
 ability to work directly with data stored in an external database. The benefits of
 doing this are that the data can be managed natively in a relational database,
@@ -856,7 +856,7 @@ tidyverse package <code class="docutils literal notranslate"><span class="pre">r
 </section>
 <section id="selecting-columns-and-filtering-rows">
 <h3>Selecting columns and filtering rows<a class="headerlink" href="#selecting-columns-and-filtering-rows" title="Link to this heading">#</a></h3>
-<p>To select columns of a data frame, use <code class="docutils literal notranslate"><span class="pre">select()</span></code>. The first argument
+<p id="index-10"><span id="index-9"></span>To select columns of a data frame, use <code class="docutils literal notranslate"><span class="pre">select()</span></code>. The first argument
 to this function is the data frame (<code class="docutils literal notranslate"><span class="pre">surveys</span></code>), and the subsequent
 arguments are the columns to keep.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
@@ -876,7 +876,7 @@ and <code class="docutils literal notranslate"><span class="pre">species_id</spa
 </section>
 <section id="pipes">
 <h3>Pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h3>
-<p>What if you want to select and filter at the same time? There are three
+<p id="index-11">What if you want to select and filter at the same time? There are three
 ways to do this: use intermediate steps, nested functions, or pipes.</p>
 <p>With intermediate steps, you create a temporary data frame and use
 that as input to the next function, like this:</p>
@@ -941,7 +941,7 @@ can assign it a new name:</p>
 </section>
 <section id="mutate">
 <h3>Mutate<a class="headerlink" href="#mutate" title="Link to this heading">#</a></h3>
-<p>Frequently you’ll want to create new columns based on the values in existing
+<p id="index-12">Frequently you’ll want to create new columns based on the values in existing
 columns, for example to do unit conversions, or to find the ratio of values in two
 columns. For this we’ll use <cite>mutate()</cite>.</p>
 <p>To create a new column of weight in kg:</p>
@@ -1000,7 +1000,7 @@ then combine the results. Key functions of <code class="docutils literal notrans
 <cite>group_by()</cite> and <cite>summarize()</cite>.</p>
 <section id="the-group-by-and-summarize-functions">
 <h4>The <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions<a class="headerlink" href="#the-group-by-and-summarize-functions" title="Link to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">group_by()</span></code> is often used together with <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>, which collapses each
+<p id="index-14"><span id="index-13"></span><code class="docutils literal notranslate"><span class="pre">group_by()</span></code> is often used together with <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>, which collapses each
 group into a single-row summary of that group.  <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> takes as arguments
 the column names that contain the <strong>categorical</strong> variables for which you want
 to calculate the summary statistics. So to compute the mean <cite>weight</cite> by sex:</p>
@@ -1076,7 +1076,7 @@ sort on <code class="docutils literal notranslate"><span class="pre">min_weight<
 </section>
 <section id="counting">
 <h4>Counting<a class="headerlink" href="#counting" title="Link to this heading">#</a></h4>
-<p>When working with data, we often want to know the number of observations found
+<p id="index-15">When working with data, we often want to know the number of observations found
 for each factor or combination of factors. For this task, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides
 <code class="docutils literal notranslate"><span class="pre">count()</span></code>. For example, if we wanted to count the number of rows of data for
 each sex, we would do:</p>
@@ -1167,7 +1167,7 @@ observations (hint: see <code class="docutils literal notranslate"><span class="
 </section>
 <section id="reshaping-with-pivot-longer-and-pivot-wider">
 <h3>Reshaping with pivot_longer and pivot_wider<a class="headerlink" href="#reshaping-with-pivot-longer-and-pivot-wider" title="Link to this heading">#</a></h3>
-<p>In the [spreadsheet
+<p id="index-16">In the [spreadsheet
 lesson](<a class="reference external" href="https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/">https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/</a>),
 we discussed how to structure our data leading to the four rules defining a tidy
 dataset:</p>
@@ -1201,7 +1201,7 @@ and <code class="docutils literal notranslate"><span class="pre">pivot_longer()<
 transitions between these layouts more straightforward than you might think! The animation below
 shows how these two formats relate to each other, and gives you an idea of how we can use R
 to shift from one format to the other.</p>
-<img alt="animation of pivot from wide to long" src="_images/tidyr-pivot_wider_longer.gif" />
+<img alt="animation of pivot from wide to long" src="_images/tidyr-pivot_wider_longer.png" />
 <section id="pivoting-from-long-to-wide-format">
 <h4>Pivoting from long to wide format<a class="headerlink" href="#pivoting-from-long-to-wide-format" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> takes three principal arguments:</p>
@@ -1357,7 +1357,7 @@ columns for <code class="docutils literal notranslate"><span class="pre">pivot_w
 </section>
 <section id="exporting-data">
 <h3>Exporting data<a class="headerlink" href="#exporting-data" title="Link to this heading">#</a></h3>
-<p>Now that you have learned how to use <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> to extract information from
+<p id="index-17">Now that you have learned how to use <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> to extract information from
 or summarize your raw data, you may want to export these new data sets to share
 them with your collaborators or for archival.</p>
 <p>Similar to the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function used for reading CSV files into R, there is

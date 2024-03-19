@@ -397,7 +397,7 @@ document.write(`
 </section>
 <section id="pyplot-tutorial">
 <h2>Pyplot tutorial<a class="headerlink" href="#pyplot-tutorial" title="Link to this heading">#</a></h2>
-<p>This is based on the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> tutorial from the Matplotlib Development Team</p>
+<p id="index-0">This is based on the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> tutorial from the Matplotlib Development Team</p>
 <p>An introduction to the pyplot interface. It’s worth reading the
 extensive <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> documentation.</p>
 <section id="introduction-to-pyplot">
@@ -443,7 +443,7 @@ arguments.  For example, to plot x versus y, you can write:</p>
 </section>
 <section id="formatting-the-style-of-your-plot">
 <h2>Formatting the style of your plot<a class="headerlink" href="#formatting-the-style-of-your-plot" title="Link to this heading">#</a></h2>
-<p>For every x, y pair of arguments, there is an optional third argument
+<p id="index-1">For every x, y pair of arguments, there is an optional third argument
 which is the format string that indicates the color and line type of
 the plot.  The letters and symbols of the format string are from
 MATLAB, and you concatenate a color string with a line style string.
@@ -476,7 +476,7 @@ using arrays.</p>
 </div>
 <section id="plotting-with-keyword-strings">
 <h3>Plotting with keyword strings<a class="headerlink" href="#plotting-with-keyword-strings" title="Link to this heading">#</a></h3>
-<p>There are some instances where you have data in a format that lets you
+<p id="index-2">There are some instances where you have data in a format that lets you
 access particular variables with strings. For example, with <a class="reference external" href="https://numpy.org/doc/stable/user/basics.rec.html#structured-arrays">structured arrays</a>
 or <cite>pandas.DataFrame</cite>.</p>
 <p>Matplotlib allows you to provide such an object with
@@ -497,7 +497,7 @@ the strings corresponding to these variables.</p>
 </section>
 <section id="plotting-with-categorical-variables">
 <h3>Plotting with categorical variables<a class="headerlink" href="#plotting-with-categorical-variables" title="Link to this heading">#</a></h3>
-<p>It is also possible to create a plot using categorical variables.
+<p id="index-3">It is also possible to create a plot using categorical variables.
 Matplotlib allows you to pass categorical variables directly to
 many plotting functions. For example:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;group_a&#39;</span><span class="p">,</span> <span class="s1">&#39;group_b&#39;</span><span class="p">,</span> <span class="s1">&#39;group_c&#39;</span><span class="p">]</span>
@@ -518,7 +518,7 @@ many plotting functions. For example:</p>
 </section>
 <section id="controlling-line-properties">
 <h3>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Link to this heading">#</a></h3>
-<p>Lines have many attributes that you can set: linewidth, dash style,
+<p id="index-4">Lines have many attributes that you can set: linewidth, dash style,
 antialiased, etc; see <cite>matplotlib.lines.Line2D</cite>.  There are
 several ways to set line properties</p>
 <ul>
@@ -668,7 +668,7 @@ MATLAB-style string/value pairs:</p>
 </section>
 <section id="working-with-multiple-figures-and-axes">
 <h3>Working with multiple figures and axes<a class="headerlink" href="#working-with-multiple-figures-and-axes" title="Link to this heading">#</a></h3>
-<p>MATLAB, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyplot</span></code>, have the concept of the current figure
+<p id="index-6"><span id="index-5"></span>MATLAB, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyplot</span></code>, have the concept of the current figure
 and the current axes.  All plotting functions apply to the current
 axes.  The function <cite>~.pyplot.gca</cite> returns the current axes (a
 <cite>matplotlib.axes.Axes</cite> instance), and <cite>~.pyplot.gcf</cite> returns the current
@@ -743,7 +743,7 @@ is called.</p>
 </section>
 <section id="working-with-text">
 <span id="id1"></span><h3>Working with text<a class="headerlink" href="#working-with-text" title="Link to this heading">#</a></h3>
-<p><cite>~.pyplot.text</cite> can be used to add text in an arbitrary location, and
+<p id="index-7"><cite>~.pyplot.text</cite> can be used to add text in an arbitrary location, and
 <cite>~.pyplot.xlabel</cite>, <cite>~.pyplot.ylabel</cite> and <cite>~.pyplot.title</cite> are used to add
 text in the indicated locations</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">15</span>
@@ -770,7 +770,7 @@ passing keyword arguments into the text functions or using <cite>~.pyplot.setp</
 </div>
 <section id="using-mathematical-expressions-in-text">
 <h4>Using mathematical expressions in text<a class="headerlink" href="#using-mathematical-expressions-in-text" title="Link to this heading">#</a></h4>
-<p>Matplotlib accepts TeX equation expressions in any text expression.
+<p id="index-8">Matplotlib accepts TeX equation expressions in any text expression.
 For example to write the expression <span class="math notranslate nohighlight">\(\sigma_i=15\)</span> in the title,
 you can write a TeX expression surrounded by dollar signs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\sigma_i=15$&#39;</span><span class="p">)</span>
@@ -787,7 +787,7 @@ postscript.</p>
 </section>
 <section id="annotating-text">
 <h4>Annotating text<a class="headerlink" href="#annotating-text" title="Link to this heading">#</a></h4>
-<p>The uses of the basic <cite>~.pyplot.text</cite> function above
+<p id="index-9">The uses of the basic <cite>~.pyplot.text</cite> function above
 place text at an arbitrary position on the Axes.  A common use for
 text is to annotate some feature of the plot, and the
 <cite>~.pyplot.annotate</cite> method provides helper
@@ -816,7 +816,7 @@ variety of other coordinate systems one can choose.</p>
 </section>
 <section id="logarithmic-and-other-nonlinear-axes">
 <h3>Logarithmic and other nonlinear axes<a class="headerlink" href="#logarithmic-and-other-nonlinear-axes" title="Link to this heading">#</a></h3>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> supports not only linear axis scales, but also
+<p id="index-11"><span id="index-10"></span><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> supports not only linear axis scales, but also
 logarithmic and logit scales. This is commonly used if data spans many orders
 of magnitude. Changing the scale of an axis is easy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>

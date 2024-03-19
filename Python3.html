@@ -416,7 +416,7 @@ document.write(`
 <h1>Python: part 3<a class="headerlink" href="#python-part-3" title="Link to this heading">#</a></h1>
 <section id="python-objects">
 <h2>Python objects<a class="headerlink" href="#python-objects" title="Link to this heading">#</a></h2>
-<p>We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
+<p id="index-0">We discussed objects back in <a class="reference internal" href="Code_basics.html#objects-and-classes"><span class="std std-ref">Objects and classes</span></a> which are containers for both
 data and functions to manipulate that data.</p>
 <p>Python has support for objects and almost everything in Python is actually an object. To
 create your own object you must first create a <code class="docutils literal notranslate"><span class="pre">Class</span></code>.</p>
@@ -470,7 +470,7 @@ build complex stacks of classes using base classes. Let’s create a class for a
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>This create a new class from the Dog class previously. It doesn’t add anything as yet, but we have
+<p>This creates a new class from the Dog class previously. It doesn’t add anything as yet, but we have
 all of the variables and functions from the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. We can add to or override any of these.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GuideDog</span><span class="p">(</span><span class="n">Dog</span><span class="p">):</span>
 
@@ -497,7 +497,7 @@ this; you are dealing with an object.</p>
 </section>
 <section id="python-namespace">
 <h2>Python: namespace<a class="headerlink" href="#python-namespace" title="Link to this heading">#</a></h2>
-<p>Namespace and scope are the section of code where your variables are valid. A namespace
+<p id="index-1">Namespace and scope are the section of code where your variables are valid. A namespace
 is a collection of currently defined symbolic names; basically a dictionary of variable
 names pointing to the object in memory. There are several layers of namespaces in Python:</p>
 <blockquote>
@@ -512,7 +512,7 @@ names pointing to the object in memory. There are several layers of namespaces i
 as our code is executed.</p>
 <section id="the-namespaces">
 <h3>The namespaces<a class="headerlink" href="#the-namespaces" title="Link to this heading">#</a></h3>
-<p>The built-in namespace contains all of Python’s built-in object which are
+<p>The built-in namespace contains all of Python’s built-in objects which are
 available every time you run any Python. We can
 look at this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
@@ -538,7 +538,7 @@ created only exist within that function.</p>
 </section>
 <section id="python-scope">
 <h3>Python Scope<a class="headerlink" href="#python-scope" title="Link to this heading">#</a></h3>
-<p>These namespaces mean variables of the same name can exist at the same time. As long as they are
+<p id="index-2">These namespaces mean variables of the same name can exist at the same time. As long as they are
 in a different namespace they won’t interfere with each other. But how does Python know which one
 to use. This is the concept of scope.</p>
 <p>Python looks for variables in the reverse order of the list above, so we will look
@@ -599,7 +599,7 @@ then the built-in namespaces.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>What ahppens this time? Did you use a fresh ipython or script?</p>
+<p>What happens this time? Did you use a fresh ipython or script?</p>
 <p>So how do you modify variables that aren’t in the current scope?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
@@ -664,7 +664,7 @@ do not create scope.</p>
 </section>
 <section id="python-datetimes">
 <h2>Python: Datetimes<a class="headerlink" href="#python-datetimes" title="Link to this heading">#</a></h2>
-<p>Dates and time are a common aspect of environmental data. We often need to
+<p id="index-3">Dates and time are a common aspect of environmental data. We often need to
 crop date/times to a specific range and compare or take samples from our
 data every <em>N</em> minutes, for example. Python comes with a datetime module
 that helps us deal with these issues. It provides a variety of functions
@@ -788,7 +788,7 @@ However, we need another python module <code class="docutils literal notranslate
 </section>
 <section id="python-numpy">
 <h2>Python: Numpy<a class="headerlink" href="#python-numpy" title="Link to this heading">#</a></h2>
-<p>NumPy (<strong>Num</strong>erical <strong>Py</strong>thon) is an open source Python library that is
+<p id="index-4">NumPy (<strong>Num</strong>erical <strong>Py</strong>thon) is an open source Python library that is
 widely used in science and engineering. The NumPy library contains
 multidimensional array data structures, such as the homogeneous, N-dimensional
 <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, and a large library of functions that operate efficiently on these
@@ -913,7 +913,7 @@ nature and use NumPy!</p>
 </section>
 <section id="numpy-array-attributes">
 <h3>Numpy array attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h3>
-<p>The number of dimensions of an array is contained in the <code class="docutils literal notranslate"><span class="pre">ndim</span></code> attribute.</p>
+<p id="index-5">The number of dimensions of an array is contained in the <code class="docutils literal notranslate"><span class="pre">ndim</span></code> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
 <span class="go">2</span>
 </pre></div>
@@ -944,7 +944,7 @@ only one “data type”. The data type is recorded in the <code class="docutils
 </section>
 <section id="how-to-create-a-basic-array">
 <h3>How to create a basic array<a class="headerlink" href="#how-to-create-a-basic-array" title="Link to this heading">#</a></h3>
-<p>Besides creating an array from a sequence of elements, you can easily create an
+<p id="index-6">Besides creating an array from a sequence of elements, you can easily create an
 array filled with <code class="docutils literal notranslate"><span class="pre">0</span></code>’s:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
 </pre></div>
@@ -1004,7 +1004,7 @@ specify which data type you want using the <code class="docutils literal notrans
 </section>
 <section id="adding-removing-and-sorting-elements">
 <h3>Adding, removing, and sorting elements<a class="headerlink" href="#adding-removing-and-sorting-elements" title="Link to this heading">#</a></h3>
-<p>Sorting an element is simple with <code class="docutils literal notranslate"><span class="pre">np.sort()</span></code>. You can specify the axis, kind,
+<p id="index-7">Sorting an element is simple with <code class="docutils literal notranslate"><span class="pre">np.sort()</span></code>. You can specify the axis, kind,
 and order when you call the function.</p>
 <p>If you start with this array:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -1051,7 +1051,7 @@ the elements that you want to keep.</p>
 </section>
 <section id="how-do-you-know-the-shape-and-size-of-an-array">
 <h3>How do you know the shape and size of an array?<a class="headerlink" href="#how-do-you-know-the-shape-and-size-of-an-array" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">ndarray.ndim</span></code> will tell you the number of axes, or dimensions, of the array.</p>
+<p id="index-9"><span id="index-8"></span><code class="docutils literal notranslate"><span class="pre">ndarray.ndim</span></code> will tell you the number of axes, or dimensions, of the array.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ndarray.size</span></code> will tell you the total number of elements of the array. This
 is the <em>product</em> of the elements of the array’s shape.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ndarray.shape</span></code> will display a tuple of integers that indicate the number of
@@ -1086,7 +1086,7 @@ elements stored along each dimension of the array. If, for example, you have a
 </section>
 <section id="can-you-reshape-an-array">
 <h3>Can you reshape an array?<a class="headerlink" href="#can-you-reshape-an-array" title="Link to this heading">#</a></h3>
-<p><strong>Yes!</strong></p>
+<p id="index-10"><strong>Yes!</strong></p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">arr.reshape()</span></code> will give a new shape to an array without changing the
 data. Just remember that when you use the reshape method, the array you want to
 produce needs to have the same number of elements as the original array. If you
@@ -1134,7 +1134,7 @@ to preserve the indexing convention or not reorder the data.</p>
 </section>
 <section id="how-to-convert-a-1d-array-into-a-2d-array-how-to-add-a-new-axis-to-an-array">
 <h3>How to convert a 1D array into a 2D array (how to add a new axis to an array)<a class="headerlink" href="#how-to-convert-a-1d-array-into-a-2d-array-how-to-add-a-new-axis-to-an-array" title="Link to this heading">#</a></h3>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> and <code class="docutils literal notranslate"><span class="pre">np.expand_dims</span></code> to increase the dimensions of
+<p id="index-11">You can use <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> and <code class="docutils literal notranslate"><span class="pre">np.expand_dims</span></code> to increase the dimensions of
 your existing array.</p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> will increase the dimensions of your array by one dimension
 when used once. This means that a <strong>1D</strong> array will become a <strong>2D</strong> array, a
@@ -1188,7 +1188,7 @@ with <code class="docutils literal notranslate"><span class="pre">np.expand_dims
 </section>
 <section id="indexing-and-slicing">
 <h3>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h3>
-<p>You can index and slice NumPy arrays in the same ways you can slice Python
+<p id="index-12">You can index and slice NumPy arrays in the same ways you can slice Python
 lists.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
@@ -1204,7 +1204,7 @@ lists.</p>
 </div>
 <p>You can visualize it this way:</p>
 <img alt="_images/np_indexing.png" src="_images/np_indexing.png" />
-<p>You may want to take a section of your array or specific array elements to use
+<p id="index-13">You may want to take a section of your array or specific array elements to use
 in further analysis or additional operations. To do that, you’ll need to subset,
 slice, and/or index your arrays.</p>
 <p>If you want to select values from your array that fulfill certain conditions,
@@ -1293,7 +1293,7 @@ array of indices will be empty. For example:</p>
 </section>
 <section id="how-to-create-an-array-from-existing-data">
 <h3>How to create an array from existing data<a class="headerlink" href="#how-to-create-an-array-from-existing-data" title="Link to this heading">#</a></h3>
-<p>You can easily create a new array from a section of an existing array.</p>
+<p id="index-14">You can easily create a new array from a section of an existing array.</p>
 <p>Let’s say you have this array:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </pre></div>
@@ -1390,7 +1390,7 @@ original array!</p>
 </section>
 <section id="basic-array-operations">
 <h3>Basic array operations<a class="headerlink" href="#basic-array-operations" title="Link to this heading">#</a></h3>
-<p>Once you’ve created your arrays, you can start to work with them.  Let’s say,
+<p id="index-15">Once you’ve created your arrays, you can start to work with them.  Let’s say,
 for example, that you’ve created two arrays, one called “data” and one called
 “ones”</p>
 <img alt="_images/np_array_data_ones.png" src="_images/np_array_data_ones.png" />
@@ -1439,7 +1439,7 @@ and arrays in higher dimensions.</p>
 </section>
 <section id="transposing-and-reshaping-a-matrix">
 <h3>Transposing and reshaping a matrix<a class="headerlink" href="#transposing-and-reshaping-a-matrix" title="Link to this heading">#</a></h3>
-<p>It’s common to need to transpose your matrices. NumPy arrays have the property
+<p id="index-16">It’s common to need to transpose your matrices. NumPy arrays have the property
 <code class="docutils literal notranslate"><span class="pre">T</span></code> that allows you to transpose a matrix.</p>
 <img alt="_images/np_transposing_reshaping.png" src="_images/np_transposing_reshaping.png" />
 <p>You may also need to switch the dimensions of a matrix. This can happen when,
@@ -1472,7 +1472,7 @@ according to the values you specify.</p>
 <span class="go">       [2, 5]])</span>
 </pre></div>
 </div>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">arr.T</span></code></p>
+<p id="index-17">You can also use <code class="docutils literal notranslate"><span class="pre">arr.T</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span><span class="o">.</span><span class="n">T</span>
 <span class="go">array([[0, 3],</span>
 <span class="go">       [1, 4],</span>
@@ -1553,7 +1553,7 @@ See original `licence</a></p>
 </section>
 <section id="python-pandas-module">
 <h2>Python: Pandas module<a class="headerlink" href="#python-pandas-module" title="Link to this heading">#</a></h2>
-<p>pandas is a Python package providing fast, flexible, and expressive data structures
+<p id="index-18">pandas is a Python package providing fast, flexible, and expressive data structures
 designed to make working with “relational” or “labelled” data both easy and intuitive.
 It aims to be the fundamental high-level building block for doing practical,
 real-world data analysis in Python.</p>
@@ -1570,7 +1570,7 @@ real-world data analysis in Python.</p>
 <p>We normally import as follows:</p>
 <section id="basic-data-structures-in-pandas">
 <h3>Basic data structures in pandas<a class="headerlink" href="#basic-data-structures-in-pandas" title="Link to this heading">#</a></h3>
-<p>pandas provides two types of classes for handling data:</p>
+<p id="index-19">pandas provides two types of classes for handling data:</p>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code>: a one-dimensional labeled array holding data of any type</dt><dd><p>such as integers, strings, Python objects etc.</p>
@@ -1583,7 +1583,7 @@ a two-dimension array or a table with rows and columns.</p></li>
 </section>
 <section id="object-creation">
 <h3>Object creation<a class="headerlink" href="#object-creation" title="Link to this heading">#</a></h3>
-<p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by passing a list of values, letting pandas create
+<p id="index-20">Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by passing a list of values, letting pandas create
 a default <code class="xref py py-class docutils literal notranslate"><span class="pre">RangeIndex</span></code>.</p>
 <p>Creating a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> by passing a NumPy array with a datetime index using <code class="xref py py-func docutils literal notranslate"><span class="pre">date_range()</span></code>
 and labelled columns:</p>
@@ -1615,7 +1615,7 @@ truncated for brevity.</p>
 </section>
 <section id="viewing-data">
 <h3>Viewing data<a class="headerlink" href="#viewing-data" title="Link to this heading">#</a></h3>
-<p>Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.tail()</span></code> to view the top and bottom rows of the frame
+<p id="index-21">Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.tail()</span></code> to view the top and bottom rows of the frame
 respectively:</p>
 <p>Display the <code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.index</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.columns</span></code>:</p>
 <p>Return a NumPy representation of the underlying data with <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_numpy()</span></code>
@@ -1630,12 +1630,12 @@ copying data.</p>
 </div>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">describe()</span></code> shows a quick statistic summary of your data:</p>
 <p>Transposing your data:</p>
-<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_index()</span></code> sorts by an axis:</p>
+<span class="target" id="index-22"></span><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_index()</span></code> sorts by an axis:</p>
 <p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code> sorts by values:</p>
 </section>
 <section id="selection">
 <h3>Selection<a class="headerlink" href="#selection" title="Link to this heading">#</a></h3>
-<div class="admonition note">
+<div class="admonition note" id="index-23">
 <p class="admonition-title">Note</p>
 <p>While standard Python / NumPy expressions for selecting and setting are
 intuitive and come in handy for interactive work, for production code, we
@@ -1668,7 +1668,7 @@ yields a <code class="xref py py-class docutils literal notranslate"><span class
 </section>
 <section id="boolean-indexing">
 <h4>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Link to this heading">#</a></h4>
-<p>Select rows where <code class="docutils literal notranslate"><span class="pre">df.A</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p id="index-24">Select rows where <code class="docutils literal notranslate"><span class="pre">df.A</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>Selecting values from a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> where a boolean condition is met:</p>
 <p>Using <code class="xref py py-func docutils literal notranslate"><span class="pre">isin()</span></code> method for filtering:</p>
 </section>
@@ -1683,7 +1683,7 @@ yields a <code class="xref py py-class docutils literal notranslate"><span class
 </section>
 <section id="missing-data">
 <h4>Missing data<a class="headerlink" href="#missing-data" title="Link to this heading">#</a></h4>
-<p>For NumPy data types, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> represents missing data. It is by
+<p id="index-25">For NumPy data types, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> represents missing data. It is by
 default not included in computations.</p>
 <p>Reindexing allows you to change/add/delete the index on a specified axis. This
 returns a copy of the data:</p>
@@ -1695,7 +1695,7 @@ returns a copy of the data:</p>
 <section id="panda-operations">
 <h3>panda Operations<a class="headerlink" href="#panda-operations" title="Link to this heading">#</a></h3>
 <section id="stats">
-<h4>Stats<a class="headerlink" href="#stats" title="Link to this heading">#</a></h4>
+<span id="index-26"></span><h4>Stats<a class="headerlink" href="#stats" title="Link to this heading">#</a></h4>
 <p>Operations in general <em>exclude</em> missing data.</p>
 <p>Calculate the mean value for each column:</p>
 <p>Calculate the mean value for each row:</p>
@@ -1705,15 +1705,15 @@ automatically broadcasts along the specified dimension and will fill unaligned l
 </section>
 <section id="user-defined-functions">
 <h4>User defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h4>
-<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.agg()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.transform()</span></code> applies a user defined function
+<p id="index-27"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.agg()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.transform()</span></code> applies a user defined function
 that reduces or broadcasts its result respectively.</p>
 </section>
 <section id="value-counts">
 <h4>Value Counts<a class="headerlink" href="#value-counts" title="Link to this heading">#</a></h4>
-</section>
+<span class="target" id="index-28"></span></section>
 <section id="string-methods">
 <h4>String Methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h4>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> is equipped with a set of string processing methods in the <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<p id="index-29"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> is equipped with a set of string processing methods in the <code class="docutils literal notranslate"><span class="pre">str</span></code>
 attribute that make it easy to operate on each element of the array, as in the
 code snippet below.</p>
 </section>
@@ -1721,8 +1721,8 @@ code snippet below.</p>
 <section id="merge">
 <h3>Merge<a class="headerlink" href="#merge" title="Link to this heading">#</a></h3>
 <section id="concat">
-<h4>Concat<a class="headerlink" href="#concat" title="Link to this heading">#</a></h4>
-<p>pandas provides various facilities for easily combining together <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> and
+<span id="index-30"></span><h4>Concat<a class="headerlink" href="#concat" title="Link to this heading">#</a></h4>
+<p id="index-31">pandas provides various facilities for easily combining together <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> and
 <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> objects with various kinds of set logic for the indexes
 and relational algebra functionality in the case of join / merge-type
 operations.</p>
@@ -1737,12 +1737,12 @@ of building a <code class="xref py py-class docutils literal notranslate"><span 
 </section>
 <section id="join">
 <h4>Join<a class="headerlink" href="#join" title="Link to this heading">#</a></h4>
-<p><code class="xref py py-func docutils literal notranslate"><span class="pre">merge()</span></code> enables SQL style join types along specific columns.</p>
+<p id="index-32"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge()</span></code> enables SQL style join types along specific columns.</p>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">merge()</span></code> on unique keys:</p>
 </section>
 <section id="grouping">
 <h4>Grouping<a class="headerlink" href="#grouping" title="Link to this heading">#</a></h4>
-<p>By “group by” we are referring to a process involving one or more of the
+<p id="index-33">By “group by” we are referring to a process involving one or more of the
 following steps:</p>
 <ul class="simple">
 <li><p><strong>Splitting</strong> the data into groups based on some criteria</p></li>
@@ -1758,8 +1758,8 @@ groups:</p>
 <section id="reshaping">
 <h3>Reshaping<a class="headerlink" href="#reshaping" title="Link to this heading">#</a></h3>
 <section id="stack">
-<h4>Stack<a class="headerlink" href="#stack" title="Link to this heading">#</a></h4>
-<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">stack()</span></code> method “compresses” a level in the DataFrame’s
+<span id="index-34"></span><h4>Stack<a class="headerlink" href="#stack" title="Link to this heading">#</a></h4>
+<span class="target" id="index-35"></span><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">stack()</span></code> method “compresses” a level in the DataFrame’s
 columns:</p>
 <p>With a “stacked” DataFrame or Series (having a <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code> as the
 <code class="docutils literal notranslate"><span class="pre">index</span></code>), the inverse operation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">stack()</span></code> is
@@ -1767,12 +1767,12 @@ columns:</p>
 </section>
 <section id="pivot-tables">
 <h4>Pivot tables<a class="headerlink" href="#pivot-tables" title="Link to this heading">#</a></h4>
-<p><code class="xref py py-func docutils literal notranslate"><span class="pre">pivot_table()</span></code> pivots a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> specifying the <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code></p>
+<span class="target" id="index-36"></span><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pivot_table()</span></code> pivots a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> specifying the <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code></p>
 </section>
 </section>
 <section id="time-series">
 <h3>Time series<a class="headerlink" href="#time-series" title="Link to this heading">#</a></h3>
-<p>pandas has simple, powerful, and efficient functionality for performing
+<p id="index-37">pandas has simple, powerful, and efficient functionality for performing
 resampling operations during frequency conversion (e.g., converting secondly
 data into 5-minute splices of data). This is extremely common in, but not limited to,
 financial applications.</p>
@@ -1782,7 +1782,7 @@ financial applications.</p>
 </section>
 <section id="categoricals">
 <h3>Categoricals<a class="headerlink" href="#categoricals" title="Link to this heading">#</a></h3>
-<p>pandas can include categorical data in a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p id="index-38">pandas can include categorical data in a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>Converting the raw grades to a categorical data type:</p>
 <p>Rename the categories to more meaningful names:</p>
 <p>Reorder the categories and simultaneously add the missing categories (methods under <code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.cat()</span></code> return a new <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code> by default):</p>

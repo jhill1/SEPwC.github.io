@@ -400,7 +400,7 @@ as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
 <section id="filesystems">
 <h2>Filesystems<a class="headerlink" href="#filesystems" title="Link to this heading">#</a></h2>
-<p>Every computer needs to store files so it can be used. A variety of media have been used
+<p id="index-0">Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
 have come across things like FAT95, NTFS, ext4, journaling, etc. These are all types of filesystems.
@@ -414,7 +414,7 @@ files at some point, we need to understand how to access files and hence, we nee
 understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
 <section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<p>Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
+<p id="index-1">Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
 <div class="admonition-practical-exercise admonition">
@@ -436,7 +436,7 @@ it’s in <code class="docutils literal notranslate"><span class="pre">Documents
 </section>
 <section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
-<p>Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (forward slash: note the direction of the slash compared
+<p id="index-2">Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (forward slash: note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
 <code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. These contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> there is a directory with your username. Within there are your images, music, etc.</p>
@@ -447,7 +447,7 @@ a different file to <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
-<p>Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
+<p id="index-3">Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
 standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
 are some binaries (i.e. programmes) in <code class="docutils literal notranslate"><span class="pre">\bin</span></code>, etc.</p>
@@ -691,7 +691,7 @@ of both main types.</p>
 </section>
 <section id="absolute-vs-relative-paths">
 <h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
-<p>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
+<p id="index-6"><span id="index-5"></span><span id="index-4"></span>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
 paths. These are paths that start from where you currently are (be that in the command line or running
 a programme).</p>
@@ -776,7 +776,7 @@ process to be turned into a programme. Interpreted languages do not, and can be 
 immediately</p>
 <section id="compiled-languages">
 <h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Link to this heading">#</a></h3>
-<p>Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
+<p id="index-7">Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
 an executable. You can then give someone else the executable and they can run the software. Most software is
 written in those kind of languages. Note that the user does not need the source code.
 Languages like Java are also compiled but at the time of execution
@@ -784,7 +784,7 @@ Languages like Java are also compiled but at the time of execution
 </section>
 <section id="interpreted-languages">
 <h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Link to this heading">#</a></h3>
-<p>In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
+<p id="index-8">In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
 with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
 You therefore need another user to have the python executable their system to be able to run your code. The user
 must also have your source code. This is the main difference between compiled and interpreted languages.
@@ -804,7 +804,7 @@ as the interpreter cannot optimise as well as a separate compiler.</p>
 </section>
 <section id="more-basic-command-line-functions">
 <h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Link to this heading">#</a></h2>
-<p>You were introduced to some basic command line functions earlier. We looked at those
+<p id="index-9">You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
 <p>The Command Line Interface (CLI) is a powerful way of interacting with a computer. Imagine
 you have a folder full of images and you want to move those that have “_final_” in their
@@ -836,7 +836,7 @@ simplify somethings later. Moreover, many tools we will use later to help use de
 understanding of how the computer works, we can be more efficient at using one and hence get
 more done when programming.</p>
 <p>So what are the basic commands you should know? Here’s a list:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
+<p id="index-11"><span id="index-10"></span><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>mv</p></li>
@@ -848,7 +848,7 @@ more done when programming.</p>
 <li><p>rmdir</p></li>
 </ul>
 </div></blockquote>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></p>
+<p id="index-12"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>ren or move</p></li>
