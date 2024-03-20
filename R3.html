@@ -393,7 +393,7 @@ is a collection of currently defined symbolic names; basically a dictionary of v
 names pointing to the object in memory.</p>
 <p>In R, the namespace and scope are referred to as the <code class="docutils literal notranslate"><span class="pre">environment</span></code>. You can create environments
 yourself, but they are also created in certain circumstances. There is always at least
-three <code class="docutils literal notranslate"><span class="pre">environment``s:</span> <span class="pre">``empty</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code>.</p>
+three <code class="docutils literal notranslate"><span class="pre">environments</span></code>: <code class="docutils literal notranslate"><span class="pre">empty</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code>.</p>
 <p>The two important <code class="docutils literal notranslate"><span class="pre">environments</span></code> are the <code class="docutils literal notranslate"><span class="pre">current_env()</span></code> and the <code class="docutils literal notranslate"><span class="pre">global_env()</span></code>. The
 global environment is your “workspace” as it’s where all activity, outside functions, takes
 place.</p>
@@ -943,7 +943,7 @@ can assign it a new name:</p>
 <h3>Mutate<a class="headerlink" href="#mutate" title="Link to this heading">#</a></h3>
 <p id="index-12">Frequently you’ll want to create new columns based on the values in existing
 columns, for example to do unit conversions, or to find the ratio of values in two
-columns. For this we’ll use <cite>mutate()</cite>.</p>
+columns. For this we’ll use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>.</p>
 <p>To create a new column of weight in kg:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
@@ -1201,7 +1201,7 @@ and <code class="docutils literal notranslate"><span class="pre">pivot_longer()<
 transitions between these layouts more straightforward than you might think! The animation below
 shows how these two formats relate to each other, and gives you an idea of how we can use R
 to shift from one format to the other.</p>
-<img alt="animation of pivot from wide to long" src="_images/tidyr-pivot_wider_longer.png" />
+<img alt="animation of pivot from wide to long" src="_images/tidyr-pivot_wider_longer.gif" />
 <section id="pivoting-from-long-to-wide-format">
 <h4>Pivoting from long to wide format<a class="headerlink" href="#pivoting-from-long-to-wide-format" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> takes three principal arguments:</p>

@@ -348,7 +348,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-r">Graphs - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-tutorial">ggplot2 tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-basics">Plotting basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themes">Themes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">Axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#axes-limits-and-scales">Axes limits and scales</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-legends">Plot legends</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facets">Facets</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-tutorial">Pyplot tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pyplot">Introduction to pyplot</a></li>
 </ul>
@@ -392,12 +410,442 @@ document.write(`
 <section id="stats-r">
 <h2>Stats - R<a class="headerlink" href="#stats-r" title="Link to this heading">#</a></h2>
 </section>
-<section id="graphs-r">
-<h2>Graphs - R<a class="headerlink" href="#graphs-r" title="Link to this heading">#</a></h2>
+<section id="ggplot2-tutorial">
+<h2>ggplot2 tutorial<a class="headerlink" href="#ggplot2-tutorial" title="Link to this heading">#</a></h2>
+<p id="index-0"><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is a popular library for creating pretty graphs and figures in R. It
+works in a simialr way to the tidyverse in terms of using dataframes as the basic data
+and then adding layers on top to create the final plot.</p>
+<p>This section is based on the tutorial by
+<a class="reference external" href="https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/">Cedric Scherer</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is also used as a basis for other graphing packages, such as <code class="docutils literal notranslate"><span class="pre">ggpubr</span></code> which simplifies some
+of the syntax here to create publicaiton-level quality graphs. By learning <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> you should find
+<code class="docutils literal notranslate"><span class="pre">ggpubr</span></code> very easy to use and have the knowledge to create more bespoke plots where needed.</p>
+<section id="the-dataset">
+<h3>The dataset<a class="headerlink" href="#the-dataset" title="Link to this heading">#</a></h3>
+<p>We are using data from the National Morbidity and Mortality Air Pollution Study (NMMAPS).
+To make the plots manageable we are limiting the data to Chicago and 1997–2000. For more detail
+on this data set, consult Roger Peng’s book Statistical Methods in Environmental Epidemiology
+with R. You can download the data we are using during this tutorial here (but you don’t have to).</p>
+<p>We can import the data into our R session for example with read_csv() from the {readr} package.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">chic</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">readr</span><span class="o">::</span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://cedricscherer.com/data/chicago-nmmaps-custom.csv&quot;</span><span class="p">)</span>
+<span class="n">tibble</span><span class="o">::</span><span class="nf">glimpse</span><span class="p">(</span><span class="n">chic</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="plotting-basics">
+<h3>Plotting basics<a class="headerlink" href="#plotting-basics" title="Link to this heading">#</a></h3>
+<p>A ggplot is built up from a few basic elements:</p>
+<ol class="arabic simple">
+<li><p>Data: The raw data that you want to plot.</p></li>
+<li><p>Geometries <code class="docutils literal notranslate"><span class="pre">geom_</span></code>: The geometric shapes that will represent the data.</p></li>
+<li><p>Aesthetics <code class="docutils literal notranslate"><span class="pre">aes()</span></code>: Aesthetics of the geometric and statistical objects, such as position, color, size, shape, and transparency</p></li>
+<li><p>Scales <code class="docutils literal notranslate"><span class="pre">scale_</span></code>: Maps between the data and the aesthetic dimensions, such as data range to plot width or factor values to colors.</p></li>
+<li><p>Statistical transformations <code class="docutils literal notranslate"><span class="pre">stat_</span></code>: Statistical summaries of the data, such as quantiles, fitted curves, and sums.</p></li>
+<li><p>Coordinate system <code class="docutils literal notranslate"><span class="pre">coord_</span></code>: The transformation used for mapping data coordinates into the plane of the data rectangle.</p></li>
+<li><p>Facets <code class="docutils literal notranslate"><span class="pre">facet_</span></code>: The arrangement of the data into a grid of plots.</p></li>
+<li><p>Visual themes <code class="docutils literal notranslate"><span class="pre">theme()</span></code>: The overall visual defaults of a plot, such as background, grids, axes, default typeface, sizes and colors.</p></li>
+</ol>
+<p>You need to specify the <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">geometry</span></code> and <code class="docutils literal notranslate"><span class="pre">aesthetics</span></code> as a minimum. To build up a ggplot we tell
+ggplot the data, e.g. <code class="docutils literal notranslate"><span class="pre">ggplot(data</span> <span class="pre">=</span> <span class="pre">df)</span></code>. We then tell it which variables to plot i nthe aesthetics: <code class="docutils literal notranslate"><span class="pre">aes(x=var1,</span> <span class="pre">y=var2)</span>
+<span class="pre">and</span> <span class="pre">then</span> <span class="pre">we</span> <span class="pre">need</span> <span class="pre">to</span> <span class="pre">say</span> <span class="pre">what</span> <span class="pre">kind</span> <span class="pre">of</span> <span class="pre">plot</span> <span class="pre">via</span> <span class="pre">the</span> <span class="pre">geometry:</span> <span class="pre">``geom_point()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span>
+<span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_line</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that we’ve stored the plot into an object, <cite>g</cite>. To display, we simply type <cite>g</cite> to the R console. However, here,
+I’ve added  line geometry too. You can add other things to <cite>g</cite> on the fly:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(this will display immediately and does not affect the <code class="docutils literal notranslate"><span class="pre">g</span></code> object. Try plotting just <code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">+</span> <span class="pre">geom_line()</span></code> again).</p>
+<p>You can maniuplate aspects of the geometry directly in the geometry function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="s">&quot;diamond&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that ggplot2 understand <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">col</span></code> and, of course, you can add more geometries:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;diamond&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dotted&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="themes">
+<h3>Themes<a class="headerlink" href="#themes" title="Link to this heading">#</a></h3>
+<p>Themes allow the setting up of axes, grids, fonts etc in a consistant way. <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> comes with a
+number of built-in themes.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">theme_set</span><span class="p">(</span><span class="nf">theme_bw</span><span class="p">())</span>
+
+<span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">theme_set</span></code> alters all plots in your current R session (or script). You can apply a theme to a
+particular plot only too. Many aspects of the plot can be altered via the <code class="docutils literal notranslate"><span class="pre">theme()</span></code> function.
+To see which details of a ggplot theme can be modified have a look here — and take some time; it’s a long list.
+<a class="reference external" href="https://ggplot2.tidyverse.org/reference/theme.html">https://ggplot2.tidyverse.org/reference/theme.html</a></p>
+</section>
+<section id="axes">
+<h3>Axes<a class="headerlink" href="#axes" title="Link to this heading">#</a></h3>
+<p>The default axes titles use the variable names. Let’s add some well-written labels to the axes.
+For this, we add labs() providing a character string for each label we want to change (here x and y):</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note, we’re not saving the plot object into a variable and are instead instantly plotting it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">theme()</span></code> is an essential command to modify particular theme elements (texts and titles,
+boxes, symbols, backgrounds, etc). We are going to use them a lot! For now, we are going to modify
+text elements. We can change the properties of all or particular text elements (here axis titles)
+by overwriting the default <code class="docutils literal notranslate"><span class="pre">element_text()</span></code> within the <code class="docutils literal notranslate"><span class="pre">theme()</span></code> call:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.title.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">),</span>
+<span class="w">             </span><span class="n">axis.title.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We’ve adjusted the font size and the vertical positioning. Note that the <code class="docutils literal notranslate"><span class="pre">vjust</span></code> is the same of the positioning
+of the horizontal axis; i.e. along the axis. There are a lot of things you can alter, but font size and positioning are
+the crucial ones to know about.</p>
+<p>The font axes text can also be altered:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dodgerblue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">),</span>
+<span class="w">             </span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;italic&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This includes rotating the labels:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>And removing ticks and text (not advised!):</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.ticks.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span>
+<span class="w">             </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">element_blonk()</span></code> functions allows to remove any aspect of the theme, e.g. axes labels, if you wish.</p>
+<section id="axes-limits-and-scales">
+<h4>Axes limits and scales<a class="headerlink" href="#axes-limits-and-scales" title="Link to this heading">#</a></h4>
+<p>A key part of producing attractive plots is the scale and limits of the axes. Using these you can ensure the
+data are plotted correctly, e.g. on log-log axes or the key part of the data can be shown. You can, of course,
+subset your data to do this, but you can also</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;firebrick&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">ylim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>There are other ways of limiting the plot using <code class="docutils literal notranslate"><span class="pre">scale_y_continuous(limits</span> <span class="pre">=</span> <span class="pre">c(0,50))</span></code> or
+<code class="docutils literal notranslate"><span class="pre">coord_cartesian(ylim</span> <span class="pre">=</span> <span class="pre">c(0,50))</span></code>. These give similar results, but are, in fact, slightly different.
+Try them both instead of the <code class="docutils literal notranslate"><span class="pre">ylim()</span></code>.</p>
+<img alt="Graphs plotted using the ylim or scale (left) vs the coord_cartesian (right)." src="_images/axis-limit-comp-1.png" />
+<p>Note the lack of buffer on the <code class="docutils literal notranslate"><span class="pre">coord_cartesian()</span></code> plot, compared to the <code class="docutils literal notranslate"><span class="pre">scale_y_continuous()</span></code> plot?
+This is the difference between subsetting (<code class="docutils literal notranslate"><span class="pre">scale_y_continuous</span></code> and <code class="docutils literal notranslate"><span class="pre">ylim()</span></code>) and clipping (<code class="docutils literal notranslate"><span class="pre">coord_cartesian()</span></code>).
+This is even more pronounced on a box-whisker plot:</p>
+<img alt="Boxplots plotted using the ylim or scale (left) vs the coord_cartesian (right)." src="_images/axis-limit-comp-box-1.png" />
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Notice the median lines are different here! If you scale or impose <code class="docutils literal notranslate"><span class="pre">ylim</span></code> it is worth checking your data without
+limits first! In other word, build up your plot carefully and also run the stats within R, not just rely on reading
+the graphs…</p>
+</div>
+<p>You can force R to plot starting from some coordinates, e.g. the (0,0) origin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chic_high</span> <span class="o">&lt;-</span> <span class="n">dplyr</span><span class="p">::</span><span class="nb">filter</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">,</span> <span class="n">o3</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">ggplot</span><span class="p">(</span><span class="n">chic_high</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">temp</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">o3</span><span class="p">))</span> <span class="o">+</span>
+       <span class="n">geom_point</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;darkcyan&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Temperature higher than 25°F&quot;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Ozone higher than 20 ppb&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">expand_limits</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But we can also force it to literally start at the origin!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">chic_high</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">temp</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">o3</span><span class="p">))</span> <span class="o">+</span>
+       <span class="n">geom_point</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;darkcyan&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Temperature higher than 25°F&quot;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Ozone higher than 20 ppb&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">expand_limits</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">coord_cartesian</span><span class="p">(</span><span class="n">expand</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">clip</span> <span class="o">=</span> <span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The argument clip = “off” in any coordinate system (<code class="docutils literal notranslate"><span class="pre">coord_*</span></code>), allows to draw outside of the panel area.</p>
+</div>
+<p>Scaling is an important part of plotting. If you are expecting a 1:1 ratio between your variables, creating
+a plot with the axes scaled to that helps visualisation. For demonstrating purposes, let’s plot temperature
+against temperature with some random noise. The coord_equal() is a coordinate system with a specified ratio
+representing the number of units on the y-axis equivalent to one unit on the x-axis. The default, ratio = 1,
+ensures that one unit on the x-axis is the same length as one unit on the y-axis:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">chic</span><span class="p">),</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sienna&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F) + random noise&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">xlim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">ylim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">150</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">coord_fixed</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ratios larger than 1 make the units on the y-axis long thatn those on the x, and
+vice-versa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">temp</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">rnorm</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">chic</span><span class="p">),</span> <span class="n">sd</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)))</span> <span class="o">+</span>
+       <span class="n">geom_point</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;sienna&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Temperature (°F)&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Temperature (°F) + random noise&quot;</span><span class="p">)</span> <span class="o">+</span>
+       <span class="n">xlim</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span> <span class="o">+</span> <span class="n">ylim</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span> <span class="o">+</span>
+       <span class="n">coord_fixed</span><span class="p">(</span><span class="n">ratio</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="plot-legends">
+<h3>Plot legends<a class="headerlink" href="#plot-legends" title="Link to this heading">#</a></h3>
+<p>We often colour code parts of our graphs, and then add a legend to show how the data are separated.
+We will <code class="docutils literal notranslate"><span class="pre">color</span></code> code the plot based on season. Or to phrase it in a more <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>’ish way: we map the
+variable season to the aesthetic <code class="docutils literal notranslate"><span class="pre">color</span></code>. One nice thing about <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is that it adds a legend by
+default when mapping a variable to an aesthetic. You can see that by default the legend title is
+what we specified in the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span>
+<span class="w">       </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>How can you remove the legend if it’s added by default?</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span>
+<span class="w">       </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">guides(color</span> <span class="pre">=</span> <span class="pre">&quot;none&quot;)</span></code> or <code class="docutils literal notranslate"><span class="pre">scale_color_discrete(guide</span> <span class="pre">=</span> <span class="pre">&quot;none&quot;)</span></code> depending on
+the specific case. While the change of the theme element removes all legends at once,
+you can remove particular legends with the latter options while keeping some others:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span>
+<span class="w">       </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span>
+<span class="w">       </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">guides</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we’ve kept the legend for the shape, but not colour. Note that the aesthetics is where
+we map shape and colour. If we do it outside the aesthetic we don’t get a legend for that property.</p>
+<p>We can remove titles for legend using the <code class="docutils literal notranslate"><span class="pre">element_blank()</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>And also chnage the position:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;top&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The possible options are “top”, “right”, “left” and “bottom”. You can also specify
+a coordinate for the legend to be from 0 to 1 (0 is the left/bottom, 1 is the right/top):</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">.</span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="n">.</span><span class="m">15</span><span class="p">),</span>
+<span class="w">      </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;transparent&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The legend also has a transparent background here to make sure no points are hidden. You can also switch the
+direction:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">.</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">.</span><span class="m">97</span><span class="p">),</span>
+<span class="w">      </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;transparent&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">guides</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">guide_legend</span><span class="p">(</span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;horizontal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The default title is dictated by the variable name, just as the axes. To change it
+to something more readable use the <code class="docutils literal notranslate"><span class="pre">labs()</span></code> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Seasons\nindicated\nby colors:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You will probably want to alter the order in which the legend elements appear, e.g. for
+seasons, putting them in order makes sense. We can’t that in <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and instead we
+have to alter the variable in the dataframe itself. We alter the <code class="docutils literal notranslate"><span class="pre">levels</span></code> in the <code class="docutils literal notranslate"><span class="pre">season</span></code>
+column:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">chic</span><span class="o">$</span><span class="n">season</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">    </span><span class="nf">factor</span><span class="p">(</span><span class="n">chic</span><span class="o">$</span><span class="n">season</span><span class="p">,</span>
+<span class="w">           </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Winter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spring&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Summer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Autumn&quot;</span><span class="p">))</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can alter the labels though easily in <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">scale_color_discrete</span><span class="p">(</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Seasons:&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mar—May&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jun—Aug&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sep—Nov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dec—Feb&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>If you add multiple geometries you will find the legend has them all on too, for example:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_rug</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note the line in the legend symbols? This comes from the <code class="docutils literal notranslate"><span class="pre">geom_rug()</span></code>. To turn it off
+you add the <code class="docutils literal notranslate"><span class="pre">show.legend</span> <span class="pre">=</span> <span class="pre">FALSE</span></code> to the <code class="docutils literal notranslate"><span class="pre">geom_*()</span></code> call:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_rug</span><span class="p">(</span><span class="n">show.legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The examples above are for discrete or categorical data. <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> also shows legends
+for continuous data, such as the temperature:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span>
+<span class="w">       </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is possible to force discrete legends or binned legends too.</p>
+<section id="colours">
+<h4>Colours<a class="headerlink" href="#colours" title="Link to this heading">#</a></h4>
+<p>A key part of the plot is the colour scheme chosen. There are two main
+colour elements to alter; <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. These can be either a single colour
+or assigned to a variable. For a specified colour add the colour to the <code class="docutils literal notranslate"><span class="pre">geometry()</span></code>
+function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">stroke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span>
+<span class="w">           </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#3cc08f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#c08f3c&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, I’ve specifed the <code class="docutils literal notranslate"><span class="pre">color</span></code> and the <code class="docutils literal notranslate"><span class="pre">fill</span></code>. The <code class="docutils literal notranslate"><span class="pre">color</span></code> is
+used as an outline, where the <code class="docutils literal notranslate"><span class="pre">fill</span></code> is used in the centre of the shape.
+Note I’ve also had to specify a stroke (the outline) to show the this. Also note
+I’ve specified colours using hexidecimal codes. These are the R(ed) G(reen) B(lue)
+components in values of 0 to 255 in hexidecimal. There are lot of webpages
+to find the hex codes of colours around.</p>
+<p>You can also asign a palatte to a colour. This is obviously most useful when assign
+colour to a variable. You can alter these using the <code class="docutils literal notranslate"><span class="pre">scale_color_*</span></code> and <code class="docutils literal notranslate"><span class="pre">scale_fill_*</span></code>
+functions. You can also manually create a palette.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ga</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We’ve created a <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> object, <code class="docutils literal notranslate"><span class="pre">ga</span></code> with the default palette. Now lets
+alter this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">ga</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale_color_brewer</span><span class="p">(</span><span class="n">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Set1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">Set1</span></code> scheme from R Color Brewer. If we wanted to set our own colours:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">ga</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;dodgerblue4&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;darkolivegreen4&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;darkorchid3&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;goldenrod1&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>For continuous variables we need the <code class="docutils literal notranslate"><span class="pre">scale_*_gradient()</span></code> or <code class="docutils literal notranslate"><span class="pre">scale_*_continuous()</span></code>
+functions:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">gb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">             </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">             </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F):&quot;</span><span class="p">)</span>
+
+<span class="n">gb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale_color_continuous</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can use a diverging colour scheme:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">mid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">chic</span><span class="o">$</span><span class="n">temp</span><span class="p">)</span><span class="w">  </span><span class="c1">## midpoint</span>
+<span class="n">gb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale_color_gradient2</span><span class="p">(</span><span class="n">midpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is possible to specify your own colour palette, but I would recommend sticking to
+pre-defined ones, espesially the <code class="docutils literal notranslate"><span class="pre">viridis</span></code> set, which are colour-blind safe.</p>
+<blockquote>
+<div><p>p1 &lt;- gb + scale_color_viridis_c() + ggtitle(“‘viridis’ (default)”)
+p2 &lt;- gb + scale_color_viridis_c(option = “inferno”) + ggtitle(“‘inferno’”)
+p3 &lt;- gb + scale_color_viridis_c(option = “plasma”) + ggtitle(“‘plasma’”)
+p4 &lt;- gb + scale_color_viridis_c(option = “cividis”) + ggtitle(“‘cividis’”)</p>
+<p>library(patchwork)
+(p1 + p2 + p3 + p4) * theme(legend.position = “bottom”)</p>
+</div></blockquote>
+</section>
+</section>
+<section id="multiple-plots">
+<h3>Multiple plots<a class="headerlink" href="#multiple-plots" title="Link to this heading">#</a></h3>
+<p>In the last example I snuck in an example of adding multiple plots to a figure!
+There are two main ways to do this: using the built-in <code class="docutils literal notranslate"><span class="pre">facet</span></code> or using an external
+package, such as <code class="docutils literal notranslate"><span class="pre">patchwork</span></code>.</p>
+<section id="facets">
+<h4>Facets<a class="headerlink" href="#facets" title="Link to this heading">#</a></h4>
+<p>Facets act on a variable in your data so are an easy way to separate out components.
+There are two ways to do this using either <code class="docutils literal notranslate"><span class="pre">facet_grid</span></code> or <code class="docutils literal notranslate"><span class="pre">facet_wrap</span></code>. The first
+can produce a grid based on one or two variables. The latter produces a “ribbon” of plots.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;orangered&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">facet_grid</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">season</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Try the above with <code class="docutils literal notranslate"><span class="pre">facet_grid(season</span> <span class="pre">~</span> <span class="pre">year)</span></code> too. The <code class="docutils literal notranslate"><span class="pre">facet_wrap</span></code> produces something similar:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;chartreuse4&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+
+<span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are a number of other options to tailor the plot just to your liking. In the above
+example, the wrap uses the same axis (this is generally what you would want!), but here, we don’t.
+We can alter using the <code class="docutils literal notranslate"><span class="pre">scales</span> <span class="pre">=</span> <span class="pre">&quot;free&quot;</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we use two variables with <code class="docutils literal notranslate"><span class="pre">facet_wrap</span></code> we can a slightly different view:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">season</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free_x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="saving-the-plot">
+<h3>Saving the plot<a class="headerlink" href="#saving-the-plot" title="Link to this heading">#</a></h3>
+<p>Assuming you have saved your plot into an object you can save the plot to a file using
+the <code class="docutils literal notranslate"><span class="pre">ggsave()</span></code> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;output_filename.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot</span><span class="o">=</span><span class="n">final_plot</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">297</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="m">210</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="o">=</span><span class="s">&quot;mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This saves an A4 PDF of the <code class="docutils literal notranslate"><span class="pre">final_plot</span></code> object. Look up the <code class="docutils literal notranslate"><span class="pre">ggsave</span></code> function for more options.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">patchwork</span></code> (or <code class="docutils literal notranslate"><span class="pre">ggarange</span></code> or any other package to place multiple plots together) that
+object is the output of the <code class="docutils literal notranslate"><span class="pre">patchwork</span></code> call:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">final_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p4</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bottom&quot;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;output_filename.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot</span><span class="o">=</span><span class="n">final_plot</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">297</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="m">210</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="o">=</span><span class="s">&quot;mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="pyplot-tutorial">
 <h2>Pyplot tutorial<a class="headerlink" href="#pyplot-tutorial" title="Link to this heading">#</a></h2>
-<p id="index-0">This is based on the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> tutorial from the Matplotlib Development Team</p>
+<p id="index-1">This is based on the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> tutorial from the Matplotlib Development Team</p>
 <p>An introduction to the pyplot interface. It’s worth reading the
 extensive <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> documentation.</p>
 <section id="introduction-to-pyplot">
@@ -443,7 +891,7 @@ arguments.  For example, to plot x versus y, you can write:</p>
 </section>
 <section id="formatting-the-style-of-your-plot">
 <h2>Formatting the style of your plot<a class="headerlink" href="#formatting-the-style-of-your-plot" title="Link to this heading">#</a></h2>
-<p id="index-1">For every x, y pair of arguments, there is an optional third argument
+<p id="index-2">For every x, y pair of arguments, there is an optional third argument
 which is the format string that indicates the color and line type of
 the plot.  The letters and symbols of the format string are from
 MATLAB, and you concatenate a color string with a line style string.
@@ -476,7 +924,7 @@ using arrays.</p>
 </div>
 <section id="plotting-with-keyword-strings">
 <h3>Plotting with keyword strings<a class="headerlink" href="#plotting-with-keyword-strings" title="Link to this heading">#</a></h3>
-<p id="index-2">There are some instances where you have data in a format that lets you
+<p id="index-3">There are some instances where you have data in a format that lets you
 access particular variables with strings. For example, with <a class="reference external" href="https://numpy.org/doc/stable/user/basics.rec.html#structured-arrays">structured arrays</a>
 or <cite>pandas.DataFrame</cite>.</p>
 <p>Matplotlib allows you to provide such an object with
@@ -497,7 +945,7 @@ the strings corresponding to these variables.</p>
 </section>
 <section id="plotting-with-categorical-variables">
 <h3>Plotting with categorical variables<a class="headerlink" href="#plotting-with-categorical-variables" title="Link to this heading">#</a></h3>
-<p id="index-3">It is also possible to create a plot using categorical variables.
+<p id="index-4">It is also possible to create a plot using categorical variables.
 Matplotlib allows you to pass categorical variables directly to
 many plotting functions. For example:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;group_a&#39;</span><span class="p">,</span> <span class="s1">&#39;group_b&#39;</span><span class="p">,</span> <span class="s1">&#39;group_c&#39;</span><span class="p">]</span>
@@ -518,7 +966,7 @@ many plotting functions. For example:</p>
 </section>
 <section id="controlling-line-properties">
 <h3>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Link to this heading">#</a></h3>
-<p id="index-4">Lines have many attributes that you can set: linewidth, dash style,
+<p id="index-5">Lines have many attributes that you can set: linewidth, dash style,
 antialiased, etc; see <cite>matplotlib.lines.Line2D</cite>.  There are
 several ways to set line properties</p>
 <ul>
@@ -668,7 +1116,7 @@ MATLAB-style string/value pairs:</p>
 </section>
 <section id="working-with-multiple-figures-and-axes">
 <h3>Working with multiple figures and axes<a class="headerlink" href="#working-with-multiple-figures-and-axes" title="Link to this heading">#</a></h3>
-<p id="index-6"><span id="index-5"></span>MATLAB, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyplot</span></code>, have the concept of the current figure
+<p id="index-7"><span id="index-6"></span>MATLAB, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyplot</span></code>, have the concept of the current figure
 and the current axes.  All plotting functions apply to the current
 axes.  The function <cite>~.pyplot.gca</cite> returns the current axes (a
 <cite>matplotlib.axes.Axes</cite> instance), and <cite>~.pyplot.gcf</cite> returns the current
@@ -743,7 +1191,7 @@ is called.</p>
 </section>
 <section id="working-with-text">
 <span id="id1"></span><h3>Working with text<a class="headerlink" href="#working-with-text" title="Link to this heading">#</a></h3>
-<p id="index-7"><cite>~.pyplot.text</cite> can be used to add text in an arbitrary location, and
+<p id="index-8"><cite>~.pyplot.text</cite> can be used to add text in an arbitrary location, and
 <cite>~.pyplot.xlabel</cite>, <cite>~.pyplot.ylabel</cite> and <cite>~.pyplot.title</cite> are used to add
 text in the indicated locations</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">15</span>
@@ -770,7 +1218,7 @@ passing keyword arguments into the text functions or using <cite>~.pyplot.setp</
 </div>
 <section id="using-mathematical-expressions-in-text">
 <h4>Using mathematical expressions in text<a class="headerlink" href="#using-mathematical-expressions-in-text" title="Link to this heading">#</a></h4>
-<p id="index-8">Matplotlib accepts TeX equation expressions in any text expression.
+<p id="index-9">Matplotlib accepts TeX equation expressions in any text expression.
 For example to write the expression <span class="math notranslate nohighlight">\(\sigma_i=15\)</span> in the title,
 you can write a TeX expression surrounded by dollar signs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\sigma_i=15$&#39;</span><span class="p">)</span>
@@ -787,7 +1235,7 @@ postscript.</p>
 </section>
 <section id="annotating-text">
 <h4>Annotating text<a class="headerlink" href="#annotating-text" title="Link to this heading">#</a></h4>
-<p id="index-9">The uses of the basic <cite>~.pyplot.text</cite> function above
+<p id="index-10">The uses of the basic <cite>~.pyplot.text</cite> function above
 place text at an arbitrary position on the Axes.  A common use for
 text is to annotate some feature of the plot, and the
 <cite>~.pyplot.annotate</cite> method provides helper
@@ -816,7 +1264,7 @@ variety of other coordinate systems one can choose.</p>
 </section>
 <section id="logarithmic-and-other-nonlinear-axes">
 <h3>Logarithmic and other nonlinear axes<a class="headerlink" href="#logarithmic-and-other-nonlinear-axes" title="Link to this heading">#</a></h3>
-<p id="index-11"><span id="index-10"></span><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> supports not only linear axis scales, but also
+<p id="index-12"><span id="index-11"></span><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> supports not only linear axis scales, but also
 logarithmic and logit scales. This is commonly used if data spans many orders
 of magnitude. Changing the scale of an axis is easy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
@@ -1299,7 +1747,25 @@ give us a total tidal signal from the amplitudes and phases.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-r">Graphs - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-tutorial">ggplot2 tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-basics">Plotting basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themes">Themes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">Axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#axes-limits-and-scales">Axes limits and scales</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-legends">Plot legends</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#facets">Facets</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-tutorial">Pyplot tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pyplot">Introduction to pyplot</a></li>
 </ul>
