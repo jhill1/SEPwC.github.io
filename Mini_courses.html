@@ -345,15 +345,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-tutorial">ggplot2 tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-basics">Plotting basics</a></li>
@@ -375,9 +366,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-tutorial">Pyplot tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pyplot">Introduction to pyplot</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-the-style-of-your-plot">Formatting the style of your plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-the-style-of-your-plot">Formatting the style of your plot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-keyword-strings">Plotting with keyword strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-categorical-variables">Plotting with categorical variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-line-properties">Controlling line properties</a></li>
@@ -390,10 +379,23 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-and-other-nonlinear-axes">Logarithmic and other nonlinear axes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentiment-analysis">Sentiment Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pipeline-in-r">The pipeline in R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inner-join-to-get-the-sentiments-from-your-data">Using the <cite>inner join</cite> to get the sentiments from your data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-analysis-in-python">Tidal analysis in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-curves">Sine Curves</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 </ul>
             </nav>
         </div>
@@ -407,95 +409,6 @@ document.write(`
                   
   <section id="mini-courses">
 <h1>Mini-courses<a class="headerlink" href="#mini-courses" title="Link to this heading">#</a></h1>
-<section id="gis">
-<h2>GIS<a class="headerlink" href="#gis" title="Link to this heading">#</a></h2>
-<p>This is a brief introduction to geospatial data which applied to both Python
-and R. Geospatial data is information that also has a geographical component.
-Example include house proces, coupled to locations; roads and road types or hazard
-assessment.</p>
-<p>There are three things we need to learn about first:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>vector data</p></li>
-<li><p>raster data</p></li>
-<li><p>projection spaces or coordinate spaces</p></li>
-</ul>
-</div></blockquote>
-<section id="vector-data">
-<h3>Vector data<a class="headerlink" href="#vector-data" title="Link to this heading">#</a></h3>
-<p>Vector data represent geometries via mathematicla objects. You can zoom
-into a vector infinitely at it will remain infintely small! There are
-three types of vector data:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>points</p></li>
-<li><p>lines</p></li>
-<li><p>polygons</p></li>
-</ul>
-</div></blockquote>
-<p>Vectors are most commonly stored as shapefiles: <code class="docutils literal notranslate"><span class="pre">*.shp</span></code> files. We call then shapefiles
-put they actually consist of a number of files. So a file called <code class="docutils literal notranslate"><span class="pre">landslides.shp</span></code> also
-will have <code class="docutils literal notranslate"><span class="pre">landslides.prj</span></code>, <code class="docutils literal notranslate"><span class="pre">landslides.dbf</span></code> and <code class="docutils literal notranslate"><span class="pre">landslides.shx</span></code> and a few more beside.
-All files are required to fully define the shapefile.</p>
-<p>Shapefiles often contain data alongside the vector representation. So for example, the shape
-of buildings might be contained in the shapefile, but the polygons with the outline of the building
-footprint might also contains the address, the price, the date built, etc.</p>
-</section>
-<section id="raster-data">
-<h3>Raster data<a class="headerlink" href="#raster-data" title="Link to this heading">#</a></h3>
-<p>Raster data are a grid of pixels of a resolution. Each pixel has a value, such as height
-temperature, land use category, etc. The data are stored in <em>bands</em>, so a raster can contain
-multiple datasets within the same structure and file. It’s common for colour
-images, such as satellite images, to be stored in a R(ed), G(reeen), and B(lue) bands.</p>
-<p>The image below shows the difference between how data is stored in both raster
-and vector formats; either can be used, but raster data have a “resolution” issue where
-the size of the grid alters the accuracy of the data. However, raster data can store a
-lot of data very efficiently, e.g. land hieght data where you need continuous measurements.</p>
-<figure class="align-default" id="id3">
-<img alt="Difference between raster and vector images." src="_images/raster_vector_gis.png" />
-<figcaption>
-<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="coredinate-references-system-crs">
-<h3>Coredinate References System (CRS)<a class="headerlink" href="#coredinate-references-system-crs" title="Link to this heading">#</a></h3>
-<p>GIS is a 2D system. But the Earth is 3D; almost a sphere in fact. To display the
-3D surface to a 2D screen you need to project into a 2D space; the CRS. Any
-CRS required trade offs. You can preserve area or shape or distance, but not all three!
-Compare the two projections of the Earth below; the Mollweide preserves areas, so the size of Greenland
-to Africa is shown to scale, but you could not navigate using this map; your bearings
-would be very wrong! The Mercator projection preserves areas; excellent for navigation, but
-not so good for comparing areas. Greenland (2.1 million km<sup>2</sup>) is not bigger than the whole of Africa
-(30.1 million km<sup>2</sup>)!</p>
-<p>In R and Python if you are doing operations on geospatial data they <strong>must</strong> be in the
-same project space. Your operation may work, but you won’t get the result you want!</p>
-<p>Common projection spaces are “mercator” and “Universal Tranverse Mercator (UTM)”. For
-“regional” studies UTM is best. It’s in metres (not degrees!) and covers a reasonably
-large area with little deformation.</p>
-<figure class="align-default" id="id4">
-<img alt="A global Mollweide projection which preserves area." src="_images/Mollweide_projection_SW.jpg" />
-<figcaption>
-<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id5">
-<img alt="A global Mercator projection which preserves angles." src="_images/Mercator_projection_Square.JPG" />
-<figcaption>
-<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="gis-r">
-<h2>GIS - R<a class="headerlink" href="#gis-r" title="Link to this heading">#</a></h2>
-</section>
-<section id="gis-python">
-<h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
-</section>
-<section id="stats-r">
-<h2>Stats - R<a class="headerlink" href="#stats-r" title="Link to this heading">#</a></h2>
-</section>
 <section id="ggplot2-tutorial">
 <h2>ggplot2 tutorial<a class="headerlink" href="#ggplot2-tutorial" title="Link to this heading">#</a></h2>
 <p id="index-0"><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is a popular library for creating pretty graphs and figures in R. It
@@ -974,9 +887,8 @@ arguments.  For example, to plot x versus y, you can write:</p>
 </pre></div>
 </div>
 </section>
-</section>
 <section id="formatting-the-style-of-your-plot">
-<h2>Formatting the style of your plot<a class="headerlink" href="#formatting-the-style-of-your-plot" title="Link to this heading">#</a></h2>
+<h3>Formatting the style of your plot<a class="headerlink" href="#formatting-the-style-of-your-plot" title="Link to this heading">#</a></h3>
 <p id="index-2">For every x, y pair of arguments, there is an optional third argument
 which is the format string that indicates the color and line type of
 the plot.  The letters and symbols of the format string are from
@@ -1008,6 +920,7 @@ using arrays.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
 <section id="plotting-with-keyword-strings">
 <h3>Plotting with keyword strings<a class="headerlink" href="#plotting-with-keyword-strings" title="Link to this heading">#</a></h3>
 <p id="index-3">There are some instances where you have data in a format that lets you
@@ -1276,7 +1189,7 @@ maintains internal references until <cite>~.pyplot.close</cite>
 is called.</p>
 </section>
 <section id="working-with-text">
-<span id="id2"></span><h3>Working with text<a class="headerlink" href="#working-with-text" title="Link to this heading">#</a></h3>
+<span id="id1"></span><h3>Working with text<a class="headerlink" href="#working-with-text" title="Link to this heading">#</a></h3>
 <p id="index-8"><cite>~.pyplot.text</cite> can be used to add text in an arbitrary location, and
 <cite>~.pyplot.xlabel</cite>, <cite>~.pyplot.ylabel</cite> and <cite>~.pyplot.title</cite> are used to add
 text in the indicated locations</p>
@@ -1409,6 +1322,147 @@ is shown below.</p>
 details.</p>
 </section>
 </section>
+<section id="sentiment-analysis">
+<h2>Sentiment Analysis<a class="headerlink" href="#sentiment-analysis" title="Link to this heading">#</a></h2>
+<p>Sentiment analysis or opinion mining is a way of extracting feelings from large amounts of text. When
+we read text we can use our understanding of the words to derive an emotion from the text the
+author is trying to convey. This can be characterised as <em>positive</em> or <em>negative</em> or even in
+more nuanced emotions like <em>joy</em> or <em>anger</em>.</p>
+<p>This section is heavily based on <a class="reference external" href="https://www.tidytextmining.com/sentiment.html">“Text Mining with R”</a></p>
+<section id="the-pipeline-in-r">
+<h3>The pipeline in R<a class="headerlink" href="#the-pipeline-in-r" title="Link to this heading">#</a></h3>
+<p>We can use R’s <cite>tidyverse</cite>, along with <cite>tidytext</cite>, data structures to perform these kinds of analyses quite easily,
+building a pipeline, something like this:</p>
+<p>The Sentiment lexicon is the key to this. The simpliest way to analyse text is to break it into tokens: words.
+Obviously, this is a bit simplisitc, we could have a positive word “great”, preceeded by a negative one “not”,
+which flips the entire meaning. However, the idea behind sentiment analysis is to analyse vast amounts of text,
+so these issues get lost as noise. It’s something you need to be aware of though if you want to do
+this on real data.</p>
+<p>There are three <cite>sentiment</cite> databases, packaged into a R library, we can use for general-purpose analysis:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>AFINN</cite> from <a class="reference external" href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">Finn Årup Nielsen</a></p></li>
+<li><p><cite>bing</cite> from <a class="reference external" href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu and collaborators</a></p></li>
+<li><p><cite>nrc</cite> from <a class="reference external" href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">Saif Mohammad and Peter Turney</a></p></li>
+</ul>
+</div></blockquote>
+<p>All of these are based on unigrams; single words, and are in English only. The <cite>nrc</cite> classifies
+words in a binary fashion (i.e. yes/no) into categorieis of poisitve, negative, anger, joy, sadness, etc.
+The <cite>bing</cite> lexicon categorises words into positive or negative. The <cite>AFINN</cite> lexicon creates a score between
+-5 and 5 to show the sentiment (on a negative to positive scale).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each lexicon has a licence. You’ll need to agree to the licence before using it. You will
+need to check if that licence is OK with your project. See <a class="reference internal" href="Licences.html#software-licences"><span class="std std-ref">Software licences</span></a>.</p>
+</div>
+<p>Let’s get these lexicons and see what they contain.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidytext</span><span class="p">)</span>
+
+<span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;afinn&quot;</span><span class="p">)</span>
+
+<span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;bing&quot;</span><span class="p">)</span>
+
+<span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each one is a table of words (the unigram) and the sentiment, either as an emotion, positive/negative, or a score.</p>
+</section>
+<section id="using-the-inner-join-to-get-the-sentiments-from-your-data">
+<h3>Using the <cite>inner join</cite> to get the sentiments from your data<a class="headerlink" href="#using-the-inner-join-to-get-the-sentiments-from-your-data" title="Link to this heading">#</a></h3>
+<p>We can use the Jane Austen book database as our text. Let’s first see which words are used to convey “joy” in
+<em>Emma</em>. We firs tneed to seperate the words into seperate rows in a dataframe, for which we can use
+<cite>unnest_tokens()</cite>. When we do this, we can also set up some other columns to help keep track of chapters, etc.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">janeaustenr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+
+<span class="n">tidy_books</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">austen_books</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1"># so we have each book as a group</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="w">            </span><span class="c1"># add some new columns</span>
+<span class="w">    </span><span class="n">linenumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">row_number</span><span class="p">(),</span><span class="w">  </span><span class="c1"># like a line number</span>
+<span class="w">    </span><span class="n">chapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="nf">str_detect</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="c1"># a chapter</span>
+<span class="w">                                </span><span class="nf">regex</span><span class="p">(</span><span class="s">&quot;^chapter [\\divxlc]&quot;</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">ignore_case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">ungroup</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1"># now we&#39;ve done that, ungroup</span>
+<span class="w">  </span><span class="nf">unnest_tokens</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="c1"># and finally seperate out the words!</span>
+</pre></div>
+</div>
+<p>For <cite>unnest_tokens</cite> we chose the column <cite>word</cite>; this is very helpful - look at the output
+from the sentiment lexiconcs before; note they also have a column`word`. This means we can easy
+to an <cite>inner_join</cite> on our data and the lexicon to get the sentiment.</p>
+<p>Let’s do that, but first we need to filter for the book <em>Emma</em>, then we can do the join and look
+at the output:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">nrc_joy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">           </span><span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;joy&quot;</span><span class="p">)</span>
+
+<span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">filter</span><span class="p">(</span><span class="n">book</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Emma&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">inner_join</span><span class="p">(</span><span class="n">nrc_joy</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">count</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should see the output of the most “joyfull” words in <em>Emma</em>, listed in number of
+occurances order. My output gave “good”, “friend”, “hope” as the top three.</p>
+<p>We can use the same idea, but analyse the text in “blocks” to see how sentiment
+changes throughout the book. It’s a matter of keep track with an index. Here, we’ll use 80
+lines of text to form a section. This will depend what text you are analysing.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>
+
+<span class="n">jane_austen_sentiment</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;bing&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">negative</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we’ve done the <cite>inner_join</cite> with the <cite>bing</cite> database and then counted that over
+80 lines of text (%/% does integer division). The <cite>pivot_wider</cite> pulls the negative and positive sentiments
+into separate columns (the <cite>n</cite> is introduced from the <cite>count</cite>), then finally, the <cite>mutate</cite> creates a
+total score. You’ll get a warning about “many-to-many” relationships. This is because of the multiple
+matches to words (i.e. words occur multiple times in <em>Emma</em>). Have a look at the <cite>jane_austen_sentiment</cite>
+dataframe. Also look at the original <cite>tidy_books</cite> frame. Note that columns <cite>linenumber</cite> and <cite>chapter</cite> have been
+dropped during the processing. We can quickly plot these data:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">jane_austen_sentiment</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">book</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_col</span><span class="p">(</span><span class="n">show.legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free_x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="A graphs of overall sentiment for each of Austen's novels." src="_images/jane_austen_sentiment.png" />
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Use the NRC and AFINN databases</strong></p>
+<p>Repeat the analysis of all Jane Austen’s book, but using the AFFIN and NRC
+lexicon databases. Remember for AFINN, it’s a score. Remember for NRC there
+are positive and negative labels (not just “joy”, etc).</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_afinn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;afinn&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarise</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>After <cite>inner_join</cite> with the database, we need to <cite>group_by</cite> the linenumbers
+to create the index; we can then summarise by summing the <cite>value</cite> from <cite>afinn</cite>
+over the index (i.e. every 80 lines).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_nrc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">               </span><span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;negative&quot;</span><span class="p">))</span>
+<span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">negative</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similar to the <cite>bing</cite> data, you do an <cite>inner_join</cite>, but here, we <cite>filter</cite> the
+<cite>nrc</cite> data to only include <cite>positive</cite> and <cite>negative</cite> sentiments (not <cite>joy</cite>, <cite>anger</cite>, etc).
+The rest of the functions are then identical to the <cite>bing</cite> example.</p>
+</div>
+</section>
+</section>
 <section id="tidal-analysis-in-python">
 <h2>Tidal analysis in Python<a class="headerlink" href="#tidal-analysis-in-python" title="Link to this heading">#</a></h2>
 <p>Tides are a fundamental part of a number of coastal processes. As sea levels rise, tides will change,
@@ -1528,8 +1582,8 @@ the external forcing is for tides (the rotation of the earth, the movement of th
 the earth, etc), which allows us to break up the signal into constituent parts: the tidal
 constituents. These are often given labels such as M2, S2, K1, O1, etc. Each one has a
 particular frequency as given in the table below.</p>
-<table class="table" id="id6">
-<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id6" title="Link to this table">#</a></caption>
+<table class="table" id="id3">
+<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Decription</p></th>
 <th class="head"><p>Darwin symbol</p></th>
@@ -1783,6 +1837,92 @@ give us a total tidal signal from the amplitudes and phases.</p>
 </div>
 </section>
 </section>
+<section id="gis">
+<h2>GIS<a class="headerlink" href="#gis" title="Link to this heading">#</a></h2>
+<p>This is a brief introduction to geospatial data which applied to both Python
+and R. Geospatial data is information that also has a geographical component.
+Example include house proces, coupled to locations; roads and road types or hazard
+assessment.</p>
+<p>There are three things we need to learn about first:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>vector data</p></li>
+<li><p>raster data</p></li>
+<li><p>projection spaces or coordinate spaces</p></li>
+</ul>
+</div></blockquote>
+<section id="vector-data">
+<h3>Vector data<a class="headerlink" href="#vector-data" title="Link to this heading">#</a></h3>
+<p>Vector data represent geometries via mathematicla objects. You can zoom
+into a vector infinitely at it will remain infintely small! There are
+three types of vector data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>points</p></li>
+<li><p>lines</p></li>
+<li><p>polygons</p></li>
+</ul>
+</div></blockquote>
+<p>Vectors are most commonly stored as shapefiles: <code class="docutils literal notranslate"><span class="pre">*.shp</span></code> files. We call then shapefiles
+put they actually consist of a number of files. So a file called <code class="docutils literal notranslate"><span class="pre">landslides.shp</span></code> also
+will have <code class="docutils literal notranslate"><span class="pre">landslides.prj</span></code>, <code class="docutils literal notranslate"><span class="pre">landslides.dbf</span></code> and <code class="docutils literal notranslate"><span class="pre">landslides.shx</span></code> and a few more beside.
+All files are required to fully define the shapefile.</p>
+<p>Shapefiles often contain data alongside the vector representation. So for example, the shape
+of buildings might be contained in the shapefile, but the polygons with the outline of the building
+footprint might also contains the address, the price, the date built, etc.</p>
+</section>
+<section id="raster-data">
+<h3>Raster data<a class="headerlink" href="#raster-data" title="Link to this heading">#</a></h3>
+<p>Raster data are a grid of pixels of a resolution. Each pixel has a value, such as height
+temperature, land use category, etc. The data are stored in <em>bands</em>, so a raster can contain
+multiple datasets within the same structure and file. It’s common for colour
+images, such as satellite images, to be stored in a R(ed), G(reeen), and B(lue) bands.</p>
+<p>The image below shows the difference between how data is stored in both raster
+and vector formats; either can be used, but raster data have a “resolution” issue where
+the size of the grid alters the accuracy of the data. However, raster data can store a
+lot of data very efficiently, e.g. land hieght data where you need continuous measurements.</p>
+<figure class="align-default" id="id4">
+<img alt="Difference between raster and vector images." src="_images/raster_vector_gis.png" />
+<figcaption>
+<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="coredinate-references-system-crs">
+<h3>Coredinate References System (CRS)<a class="headerlink" href="#coredinate-references-system-crs" title="Link to this heading">#</a></h3>
+<p>GIS is a 2D system. But the Earth is 3D; almost a sphere in fact. To display the
+3D surface to a 2D screen you need to project into a 2D space; the CRS. Any
+CRS required trade offs. You can preserve area or shape or distance, but not all three!
+Compare the two projections of the Earth below; the Mollweide preserves areas, so the size of Greenland
+to Africa is shown to scale, but you could not navigate using this map; your bearings
+would be very wrong! The Mercator projection preserves areas; excellent for navigation, but
+not so good for comparing areas. Greenland (2.1 million km<sup>2</sup>) is not bigger than the whole of Africa
+(30.1 million km<sup>2</sup>)!</p>
+<p>In R and Python if you are doing operations on geospatial data they <strong>must</strong> be in the
+same project space. Your operation may work, but you won’t get the result you want!</p>
+<p>Common projection spaces are “mercator” and “Universal Tranverse Mercator (UTM)”. For
+“regional” studies UTM is best. It’s in metres (not degrees!) and covers a reasonably
+large area with little deformation.</p>
+<figure class="align-default" id="id5">
+<img alt="A global Mollweide projection which preserves area." src="_images/Mollweide_projection_SW.jpg" />
+<figcaption>
+<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="A global Mercator projection which preserves angles." src="_images/Mercator_projection_Square.JPG" />
+<figcaption>
+<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="gis-r">
+<h2>GIS - R<a class="headerlink" href="#gis-r" title="Link to this heading">#</a></h2>
+</section>
+<section id="gis-python">
+<h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
 
@@ -1830,15 +1970,6 @@ give us a total tidal signal from the amplitudes and phases.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stats-r">Stats - R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-tutorial">ggplot2 tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset">The dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-basics">Plotting basics</a></li>
@@ -1860,9 +1991,7 @@ give us a total tidal signal from the amplitudes and phases.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-tutorial">Pyplot tutorial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pyplot">Introduction to pyplot</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-the-style-of-your-plot">Formatting the style of your plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-the-style-of-your-plot">Formatting the style of your plot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-keyword-strings">Plotting with keyword strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-categorical-variables">Plotting with categorical variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-line-properties">Controlling line properties</a></li>
@@ -1875,10 +2004,23 @@ give us a total tidal signal from the amplitudes and phases.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-and-other-nonlinear-axes">Logarithmic and other nonlinear axes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentiment-analysis">Sentiment Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pipeline-in-r">The pipeline in R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inner-join-to-get-the-sentiments-from-your-data">Using the <cite>inner join</cite> to get the sentiments from your data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-analysis-in-python">Tidal analysis in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-curves">Sine Curves</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 </ul>
   </nav></div>
 
