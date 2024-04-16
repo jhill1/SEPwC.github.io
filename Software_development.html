@@ -361,7 +361,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-driven development</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-templates-or-patterns">Design templates or patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-your-code">Linting your code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><cite>lintr</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><cite>pylint</cite></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -382,9 +386,11 @@ portion of that cycle. When we write code for ourselves, we are software enginee
 but we are going to learn some of the basics of the process, which helps us write better code.</p>
 <section id="revision-control">
 <h2>Revision control<a class="headerlink" href="#revision-control" title="Link to this heading">#</a></h2>
-<p>We’ve already learnt one of the key tools (or if you’ve skipped to this bit, you can go back and learn about it), which is revision control.
-Rather than keep separate versions of code in separate files (which would be a nightmare for any reasonable sized application), we keep versions
-of files in a revision control system. In this course we’ve learnt about <cite>git</cite>, but there are other tools, jut not as popular.</p>
+<p>We’ve already learnt one of the key tools (or if you’ve skipped to this bit, you can go back and learn about it),
+which is <a class="reference internal" href="Revision_control.html#revision-control-with-git"><span class="std std-ref">revision control</span></a>.
+Rather than keep separate versions of code in separate files (which would be a nightmare for any reasonable sized application),
+we keep versions of files in a revision control system. In this course we’ve learnt about <cite>git</cite>, but there are other
+tools, jut not as popular.</p>
 <p>However, revision control is a tool to help development; it does not solve all problems. You can use it in a number of ways depending on the project, the number of people and the aims of the code. There is no single right way to do this and any development tools helps set up a process, but it’s humans that actually devise and use (or not!) any processes.</p>
 <section id="simple-way">
 <h3>Simple way<a class="headerlink" href="#simple-way" title="Link to this heading">#</a></h3>
@@ -399,7 +405,7 @@ of files in a revision control system. In this course we’ve learnt about <cite
 </section>
 <section id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
-<p>How do you know your code is correct? See this chapter!</p>
+<p>How do you know your code is correct? <a class="reference internal" href="Testing_code.html#testing-code"><span class="std std-ref">See this chapter</span></a>!</p>
 </section>
 <section id="development-process">
 <h2>Development process<a class="headerlink" href="#development-process" title="Link to this heading">#</a></h2>
@@ -460,9 +466,174 @@ of files in a revision control system. In this course we’ve learnt about <cite
 <p>The tests are written immediately after requirements capture and before any code is written (so the test will all fail!). You get approval from the client that the tests meet the requirements and then write code to pass the tests. Once done, you have met the requirements.</p>
 </section>
 </section>
-<section id="design-templates-or-patterns">
-<h2>Design templates or patterns<a class="headerlink" href="#design-templates-or-patterns" title="Link to this heading">#</a></h2>
-<p>Common patterns of code structure seen a lot.</p>
+<section id="linting-your-code">
+<h2>Linting your code<a class="headerlink" href="#linting-your-code" title="Link to this heading">#</a></h2>
+<p><em>Linting</em> refers to running your code through software that checks the syntax and layout/formatting of your code. The
+term comes from the fluff shed by clothing, i.e. <cite>lint</cite> removes the extraneous fluff from your code. It often
+points our better ways of writing functions, sylistic issues with your code and, when working in a team, checks
+things are consistant across the whole team (e.g. using 4 spaces to indent, rather than some people using 3 or 2).</p>
+<p>Both R and Python (and most other languages) have some form of lint software available. For R the
+package is called <cite>lintr</cite>, for Python it’s <cite>pylint</cite>. Let’s deal with these in turn.</p>
+<section id="lintr">
+<h3><cite>lintr</cite><a class="headerlink" href="#lintr" title="Link to this heading">#</a></h3>
+<p><cite>lintr</cite> is used inside an R environment.</p>
+<p>Create a file (e.g. <cite>test_lint.R</cite>) contining the following:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="nf">list</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now open R and type the following:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lintr</span><span class="p">)</span>
+
+<span class="n">lintr</span><span class="o">::</span><span class="nf">lint</span><span class="p">(</span><span class="s">&quot;test_lint.R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should see something like the following output:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w">     </span><span class="n">lintr</span><span class="o">::</span><span class="nf">lint</span><span class="p">(</span><span class="s">&quot;test_lint.R&quot;</span><span class="p">)</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">object_name_linter</span><span class="p">]</span><span class="w"> </span><span class="n">Variable</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">snake_case</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">symbols.</span>
+<span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="o">^~~~~~~~~~~~~~~~~~~~~</span>
+<span class="n">est_lint.R</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">22</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">assignment_linter</span><span class="p">]</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="o">&lt;-</span><span class="p">,</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">assignment.</span>
+<span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">                     </span><span class="o">^</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">22</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">infix_spaces_linter</span><span class="p">]</span><span class="w"> </span><span class="n">Put</span><span class="w"> </span><span class="n">spaces</span><span class="w"> </span><span class="n">around</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">infix</span><span class="w"> </span><span class="n">operators.</span>
+<span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">                     </span><span class="o">^</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">33</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">brace_linter</span><span class="p">]</span><span class="w"> </span><span class="n">There</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="n">before</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">opening</span><span class="w"> </span><span class="n">curly</span><span class="w"> </span><span class="n">brace.</span>
+<span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">                                </span><span class="o">^</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">33</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">paren_body_linter</span><span class="p">]</span><span class="w"> </span><span class="n">There</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">parenthesis</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="n">expression.</span>
+<span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
+<span class="w">                                </span><span class="o">^</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">indentation_linter</span><span class="p">]</span><span class="w"> </span><span class="n">Indentation</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">spaces</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="n">spaces.</span>
+<span class="w">    </span><span class="nf">list</span><span class="p">()</span>
+<span class="w">  </span><span class="o">~^</span>
+<span class="n">test_lint.R</span><span class="o">:</span><span class="m">4</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="w"> </span><span class="n">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">trailing_blank_lines_linter</span><span class="p">]</span><span class="w"> </span><span class="n">Trailing</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">superfluous.</span>
+</pre></div>
+</div>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Fix the errors!</strong></p>
+<p>Each warning gives the line number and the change to make, so do it and remove them all.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">true_and_false_symbol_linter</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">list</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Running the lint function on that should return nothing.</p>
+</div>
+</section>
+<section id="pylint">
+<h3><cite>pylint</cite><a class="headerlink" href="#pylint" title="Link to this heading">#</a></h3>
+<p><cite>pylint</cite> is run from the command line (e.g. your Anaconda bash or the terminal emulator). Create a
+file called “circle.py” with the following contents:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/user/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">radius</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">,</span> \
+            <span class="s2">&quot;circle radius must be a positive number&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(radius=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+<p>Run pylint on that file in the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pylint<span class="w"> </span>circle.py
+</pre></div>
+</div>
+<p>and you should see the following output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************<span class="w"> </span>Module<span class="w"> </span>circle
+circle.py:5:9:<span class="w"> </span>C0303:<span class="w"> </span>Trailing<span class="w"> </span>whitespace<span class="w"> </span><span class="o">(</span>trailing-whitespace<span class="o">)</span>
+circle.py:15:34:<span class="w"> </span>C0303:<span class="w"> </span>Trailing<span class="w"> </span>whitespace<span class="w"> </span><span class="o">(</span>trailing-whitespace<span class="o">)</span>
+circle.py:19:0:<span class="w"> </span>C0303:<span class="w"> </span>Trailing<span class="w"> </span>whitespace<span class="w"> </span><span class="o">(</span>trailing-whitespace<span class="o">)</span>
+circle.py:1:0:<span class="w"> </span>C0114:<span class="w"> </span>Missing<span class="w"> </span>module<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-module-docstring<span class="o">)</span>
+circle.py:7:0:<span class="w"> </span>C0115:<span class="w"> </span>Missing<span class="w"> </span>class<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-class-docstring<span class="o">)</span>
+circle.py:14:4:<span class="w"> </span>C0116:<span class="w"> </span>Missing<span class="w"> </span><span class="k">function</span><span class="w"> </span>or<span class="w"> </span>method<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-function-docstring<span class="o">)</span>
+circle.py:17:4:<span class="w"> </span>C0116:<span class="w"> </span>Missing<span class="w"> </span><span class="k">function</span><span class="w"> </span>or<span class="w"> </span>method<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-function-docstring<span class="o">)</span>
+circle.py:3:0:<span class="w"> </span>W0611:<span class="w"> </span>Unused<span class="w"> </span>import<span class="w"> </span>string<span class="w"> </span><span class="o">(</span>unused-import<span class="o">)</span>
+
+-----------------------------------
+Your<span class="w"> </span>code<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>rated<span class="w"> </span>at<span class="w"> </span><span class="m">3</span>.33/10
+</pre></div>
+</div>
+<p>Each line of the output contains the line and column of the file, along with a
+description of the warning/error.</p>
+<div class="admonition-practical-exercise admonition">
+<p class="admonition-title">Practical exercise</p>
+<p><strong>Fix the errors!</strong></p>
+<p>Each warning gives the line number and the change to make, so do it and remove them all.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/user/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module calculates propeties of a circle</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to represent the circle.</span>
+
+<span class="sd">        ..........</span>
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    radius: str</span>
+<span class="sd">        the radius of the Circle</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    area():</span>
+<span class="sd">        Prints the Circle&#39;s area.</span>
+
+<span class="sd">    perimeter():</span>
+<span class="sd">        Prints the Circle&#39;s perimeter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs all the necessary attributes for the Circle object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            radius: str</span>
+<span class="sd">                the radius of the Circle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">radius</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">,</span> \
+            <span class="s2">&quot;circle radius must be a positive number&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;calculate the area of the circle, return the result&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;calculate the perimeter of the circle, return the result&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(radius=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+<p>Running the <cite>pylint</cite> command on that should return nothing.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -528,7 +699,11 @@ of files in a revision control system. In this course we’ve learnt about <cite
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-driven development</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-templates-or-patterns">Design templates or patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-your-code">Linting your code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><cite>lintr</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><cite>pylint</cite></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
