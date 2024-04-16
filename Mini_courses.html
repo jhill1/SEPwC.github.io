@@ -394,7 +394,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terra-library">The <cite>terra</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sf-library">The <cite>sf</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 </ul>
             </nav>
@@ -1919,6 +1924,135 @@ large area with little deformation.</p>
 </section>
 <section id="gis-r">
 <h2>GIS - R<a class="headerlink" href="#gis-r" title="Link to this heading">#</a></h2>
+<p>R has a number of packages that can help with GIS analysis. We’re going to focus on
+two: <cite>terra</cite> and <cite>sf</cite>. For most tasks <cite>terra</cite> might be enough as it can handle
+vector and raster data. <cite>sf</cite> focusses on vector data only.</p>
+<p>You should download this <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/gis_data.zip">zip file</a>
+which contains the data required. Make sure you
+change your working directory to match where you’ve downloaded the data.</p>
+<section id="the-terra-library">
+<h3>The <cite>terra</cite> library<a class="headerlink" href="#the-terra-library" title="Link to this heading">#</a></h3>
+<p>The <cite>terra</cite> library is based around two key classes: <cite>SpatRatser</cite> and <cite>SpatVector</cite>.
+Let’s look at rasters first.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">raster</span><span class="p">(</span><span class="s">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
+<span class="n">my_raster</span>
+</pre></div>
+</div>
+<p>R will print out some basic info on the raster. This incluudes the extent, the projection
+space and min and max values.</p>
+<p>You can summerise the raster too:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For this raster dataset, there is a single band. Rasters can store multiple
+bands in a single file. It’s common, for example, to store the R, G and B
+colours seperately. You can check this using the <cite>nlyr</cite> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">nlyr</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Raster data can contain missing data, held in the <cite>NoDataValue</cite> property of
+the raster. This value tells any reader to ignore this cell. When loading in R,
+these values will be assigned as <cite>NA</cite> in the variable where you load the raster.
+The actual value could be anything, but common values include <cite>-9999</cite> and <cite>-3.4e+38</cite>.
+When plotting in R, those <cite>NA</cite> will be transparent, but you can choose another
+colour.</p>
+<p>The data in the raster contains the Coordinate Reference System (CRS) otherwise
+known as the projection space. This tells you where that raster is located
+and what the coordinates mean (metres, degrees, etc). You can also change that
+projection space using the <cite>project()</cite> function. When you project onto another
+CRS you will change your data. By default the projection will use
+bilinear interpolation to generate the data at the new coordinates. You can
+chnage this to cubic, or cubicspline or use another algorithm. Stick with
+bilinear unless you have a reason to change this.</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p>Have a search using a popular search engine to see if you can figure out
+why biliner interpolation is default.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Bilinear interpolation will not add any new values to the new data. The
+new data maximum value will be equal to, or slightly less, than the old data;
+and likewise, the minimum will be the same or slightly greater. Cubic or cubicspline
+can <em>overshoot</em> the limits of the old data, but can also produce smoother data,
+without abrupt changes. Whenever you project onto a new coordinate syste, you
+are altering the data.</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">raster_in_latlon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;+init=EPSG:4326&quot;</span><span class="p">)</span>
+<span class="nf">crs</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">)</span>
+<span class="nf">ext</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">)</span>
+<span class="nf">crs</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
+<span class="nf">ext</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The raster is transformed from the original project space (UTM 31N) to a lat/lon
+projection space: WGS84. I’ve also thrown in the <cite>ext()</cite> function which gives
+you the extent of the raster in the corrdinate space.</p>
+<p>When dealing with raster data you often need the rasters to be identical;
+same resolution, same extents, same projection space. Once identical, then
+simple calculations (and indeed more complex ones!) can be carried out.</p>
+<p>To write any raster to file, use the <cite>writeRaster</cite> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">writeRaster</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UK_tidal_range.tiff&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">filetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GTiff&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span>
+<span class="w">            </span><span class="n">NAflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-9999</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hopefully, the options used here are obvious! Use the overwrite option with caution!
+<cite>terra</cite> comes with a number of useful functions, including those to calculate
+slope, proximity distance, extract data from rasters, create a stack of rasters,
+and to <em>rasterise</em> a vector (i.e. convert from vector to
+raster).</p>
+<p>The <cite>terra</cite> library can also load vector data:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The same functions as above (<cite>crs()</cite>, <cite>ext()</cite>, <cite>project()</cite>) work as expected on
+vector data.</p>
+</section>
+<section id="the-sf-library">
+<h3>The <cite>sf</cite> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
+<p>R also have another popular library fpr dealing with shapefiles/vector data; <cite>sf</cite>.
+This library has more features than <cite>terra</cite> so is worth learning.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vector data can be points, lines or polygons. We can find out which using:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_geomoetry_type</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can then find out the CRS and extennt:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_crs</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
+<span class="nf">st_bbox</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also use <cite>sf</cite> to create a shapefil on the fly:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">aoi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.polygons</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">ext</span><span class="p">(</span><span class="n">my_raster</span><span class="p">),</span><span class="w"> </span><span class="n">crs</span><span class="o">=</span><span class="n">terra</span><span class="o">::</span><span class="nf">crs</span><span class="p">(</span><span class="n">my_raster</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Here, I’ve created a polygon with the extent from a raster (loaded via <cite>terra</cite>)
+and the same CRS as that raster. I’ve explicitly flagged the use of <cite>terra</cite> functions
+here to make it clear where my extents came from.</p>
+<p>The <cite>sf</cite> library has a number of functions not available in <cite>terra</cite>, such as
+sampling within a polygon, geometry calculations (differences, unions, intersections),
+and geometric calculations (area, distances, lengths).</p>
+</section>
+<section id="switching-between-the-two">
+<h3>Switching between the two<a class="headerlink" href="#switching-between-the-two" title="Link to this heading">#</a></h3>
+<p>Using two different libraries for shapefiles can be a pain, but it is fairly
+easy to switch a vector dataset between the two.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Will convert a <cite>terra</cite> vector to the <cite>sf</cite> format. Normall, <cite>terra</cite> can deal with
+<cite>sf</cite> objects, but you sometimes need to wrap the <cite>sf</cite> object in the <cite>st_zm</cite> function:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">points_as_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="nf">st_zm</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">),</span><span class="w"> </span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <cite>st_zm</cite> function removes all <cite>z</cite> and <cite>m</cite> data which makes the object
+compatible with <cite>terra</cite>.</p>
+</section>
 </section>
 <section id="gis-python">
 <h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
@@ -2019,7 +2153,12 @@ large area with little deformation.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terra-library">The <cite>terra</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sf-library">The <cite>sf</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
 </ul>
   </nav></div>
