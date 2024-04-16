@@ -832,15 +832,22 @@ own column, and rows are instead more aggregated groups
 (e.g., a time period, an experimental unit like a plot or a batch number).
 Moving back and forth between these formats is non-trivial, and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> gives you tools
 for this and more sophisticated data manipulation.</p>
+<p>First, <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/surveys.csv">download the data file we’re going to use, which can be found here</a>.</p>
 <p>We’ll read in our data using the <cite>read_csv()</cite> function from the
 tidyverse package <code class="docutils literal notranslate"><span class="pre">readr</span></code>.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;data_raw/portal_data_joined.csv&quot;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;surveys.csv&quot;</span><span class="p">)</span>
 
 <span class="c1">## inspect the data</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">surveys</span><span class="p">)</span>
 <span class="c1">## preview the data</span>
 <span class="nf">view</span><span class="p">(</span><span class="n">surveys</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you’re in the same directory as the data you’ve downloaded or give the
+full path. See <a class="reference internal" href="How_a_computer_works.html#absolute-vs-relative-paths"><span class="std std-ref">the section on filenames and paths</span></a> for more
+info.</p>
 </div>
 <p>Next, we’re going to learn some of the most common <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions:</p>
 <blockquote>
