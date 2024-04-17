@@ -400,7 +400,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <cite>rasterio</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-geopandas-library">The <cite>geopandas</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <cite>shapely</cite> library</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1587,8 +1592,8 @@ the external forcing is for tides (the rotation of the earth, the movement of th
 the earth, etc), which allows us to break up the signal into constituent parts: the tidal
 constituents. These are often given labels such as M2, S2, K1, O1, etc. Each one has a
 particular frequency as given in the table below.</p>
-<table class="table" id="id3">
-<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<table class="table" id="id4">
+<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Decription</p></th>
 <th class="head"><p>Darwin symbol</p></th>
@@ -1886,10 +1891,10 @@ images, such as satellite images, to be stored in a R(ed), G(reeen), and B(lue) 
 and vector formats; either can be used, but raster data have a “resolution” issue where
 the size of the grid alters the accuracy of the data. However, raster data can store a
 lot of data very efficiently, e.g. land hieght data where you need continuous measurements.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <img alt="Difference between raster and vector images." src="_images/raster_vector_gis.png" />
 <figcaption>
-<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1908,16 +1913,16 @@ same project space. Your operation may work, but you won’t get the result you 
 <p>Common projection spaces are “mercator” and “Universal Tranverse Mercator (UTM)”. For
 “regional” studies UTM is best. It’s in metres (not degrees!) and covers a reasonably
 large area with little deformation.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id6">
 <img alt="A global Mollweide projection which preserves area." src="_images/Mollweide_projection_SW.jpg" />
 <figcaption>
-<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id7">
 <img alt="A global Mercator projection which preserves angles." src="_images/Mercator_projection_Square.JPG" />
 <figcaption>
-<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1938,15 +1943,15 @@ Let’s look at rasters first.</p>
 <span class="n">my_raster</span>
 </pre></div>
 </div>
-<p>R will print out some basic info on the raster. This incluudes the extent, the projection
+<p>R will print out some basic info on the raster. This includes the extent, the projection
 space and min and max values.</p>
-<p>You can summerise the raster too:</p>
+<p>You can summarise the raster too:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For this raster dataset, there is a single band. Rasters can store multiple
 bands in a single file. It’s common, for example, to store the R, G and B
-colours seperately. You can check this using the <cite>nlyr</cite> function:</p>
+colours separately. You can check this using the <cite>nlyr</cite> function:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">nlyr</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1962,12 +1967,12 @@ and what the coordinates mean (metres, degrees, etc). You can also change that
 projection space using the <cite>project()</cite> function. When you project onto another
 CRS you will change your data. By default the projection will use
 bilinear interpolation to generate the data at the new coordinates. You can
-chnage this to cubic, or cubicspline or use another algorithm. Stick with
+change this to cubic, or cubicspline or use another algorithm. Stick with
 bilinear unless you have a reason to change this.</p>
 <div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
 <p>Have a search using a popular search engine to see if you can figure out
-why biliner interpolation is default.</p>
+why bilinear interpolation is default.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -1975,7 +1980,7 @@ why biliner interpolation is default.</p>
 new data maximum value will be equal to, or slightly less, than the old data;
 and likewise, the minimum will be the same or slightly greater. Cubic or cubicspline
 can <em>overshoot</em> the limits of the old data, but can also produce smoother data,
-without abrupt changes. Whenever you project onto a new coordinate syste, you
+without abrupt changes. Whenever you project onto a new coordinate system you
 are altering the data.</p>
 </div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">raster_in_latlon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;+init=EPSG:4326&quot;</span><span class="p">)</span>
@@ -1987,7 +1992,7 @@ are altering the data.</p>
 </div>
 <p>The raster is transformed from the original project space (UTM 31N) to a lat/lon
 projection space: WGS84. I’ve also thrown in the <cite>ext()</cite> function which gives
-you the extent of the raster in the corrdinate space.</p>
+you the extent of the raster in the coordinate space.</p>
 <p>When dealing with raster data you often need the rasters to be identical;
 same resolution, same extents, same projection space. Once identical, then
 simple calculations (and indeed more complex ones!) can be carried out.</p>
@@ -2012,14 +2017,14 @@ vector data.</p>
 </section>
 <section id="the-sf-library">
 <h3>The <cite>sf</cite> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
-<p>R also have another popular library fpr dealing with shapefiles/vector data; <cite>sf</cite>.
+<p>R also have another popular library for dealing with shapefiles/vector data; <cite>sf</cite>.
 This library has more features than <cite>terra</cite> so is worth learning.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
 <span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Vector data can be points, lines or polygons. We can find out which using:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_geomoetry_type</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_geometry_type</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We can then find out the CRS and extennt:</p>
@@ -2027,7 +2032,7 @@ This library has more features than <cite>terra</cite> so is worth learning.</p>
 <span class="nf">st_bbox</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can also use <cite>sf</cite> to create a shapefil on the fly:</p>
+<p>We can also use <cite>sf</cite> to create a shapefile on the fly:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">aoi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.polygons</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">ext</span><span class="p">(</span><span class="n">my_raster</span><span class="p">),</span><span class="w"> </span><span class="n">crs</span><span class="o">=</span><span class="n">terra</span><span class="o">::</span><span class="nf">crs</span><span class="p">(</span><span class="n">my_raster</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2045,7 +2050,7 @@ easy to switch a vector dataset between the two.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Will convert a <cite>terra</cite> vector to the <cite>sf</cite> format. Normall, <cite>terra</cite> can deal with
+<p>Will convert a <cite>terra</cite> vector to the <cite>sf</cite> format. Normally, <cite>terra</cite> can deal with
 <cite>sf</cite> objects, but you sometimes need to wrap the <cite>sf</cite> object in the <cite>st_zm</cite> function:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">points_as_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="nf">st_zm</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">),</span><span class="w"> </span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
@@ -2056,6 +2061,140 @@ compatible with <cite>terra</cite>.</p>
 </section>
 <section id="gis-python">
 <h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
+<p>Python has a number of packages that can help with GIS analysis. We’re going to focus on
+three: <cite>rasterio</cite>, <cite>geopandas</cite> and <cite>shapely</cite>.</p>
+<p>You should download this <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/gis_data.zip">zip file</a>
+which contains the data required. Make sure you
+change your working directory to match where you’ve downloaded the data.</p>
+<section id="the-rasterio-library">
+<h3>The <cite>rasterio</cite> library<a class="headerlink" href="#the-rasterio-library" title="Link to this heading">#</a></h3>
+<p>The <cite>rasterio</cite> library is used to load, manipulate and plot raster
+data.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rasterio</span>
+
+<span class="n">my_raster</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
+<span class="n">my_raster</span>
+</pre></div>
+</div>
+<p>Python will print out some basic info on the raster. This includes the filename
+and the read/write status. <cite>rasterio</cite> uses a number of attributes to contain information
+about the raster:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">width</span>
+<span class="n">my_raster</span><span class="o">.</span><span class="n">height</span>
+<span class="n">my_raster</span><span class="o">.</span><span class="n">nodata</span>
+</pre></div>
+</div>
+<p>For this raster dataset, there is a single band. Rasters can store multiple
+bands in a single file. It’s common, for example, to store the R, G and B
+colours separately. You can check this using the <cite>count</cite> attribute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">count</span>
+</pre></div>
+</div>
+<p>Raster data can contain missing data, held in the <cite>nodata</cite> property of
+the raster. This value tells any reader to ignore this cell. When loading in Python,
+these values will be assigned as <cite>nan</cite> in the variable where you load the raster.
+The actual value could be anything, but common values include <cite>-9999</cite> and <cite>-3.4e+38</cite>.
+When plotting in Python, those <cite>nan</cite> will be transparent, but you can choose another
+colour.</p>
+<p>The data in the raster contains the Coordinate Reference System (CRS) otherwise
+known as the projection space. This tells you where that raster is located
+and what the coordinates mean (metres, degrees, etc). You can also change that
+projection space using the <cite>reproject()</cite> function from <cite>rasterio.warp’. When you project onto another
+CRS you will change your data. By default the projection will use
+nearest neighbour interpolation to generate the data at the new coordinates. You can
+change this to bilinear, cubic, or cubicspline or use another algorithm. Use
+bilinear unless you have a reason not to. The algorithms are in
+`rasterio.warp.Resampling</cite>.</p>
+<div class="admonition-thought-exercise admonition">
+<p class="admonition-title">Thought exercise</p>
+<p>Have a search using a popular search engine to see if you can figure out
+why bilinear interpolation is default.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p>Bilinear interpolation will not add any new values to the new data. The
+new data maximum value will be equal to, or slightly less, than the old data;
+and likewise, the minimum will be the same or slightly greater. Cubic or cubicspline
+can <em>overshoot</em> the limits of the old data, but can also produce smoother data,
+without abrupt changes. Whenever you project onto a new coordinate syste, you
+are altering the data.</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">rasterio.warp</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">calculate_default_transform</span><span class="p">,</span><span class="w"> </span><span class="n">reproject</span><span class="p">,</span><span class="w"> </span><span class="n">Resampling</span>
+
+<span class="n">dstCrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;init&#39;</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;EPSG:4326&#39;</span><span class="p">}</span>
+<span class="c1"># we need to work out the new shape and size of rthe destination</span>
+<span class="n">transform</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">calculate_default_transform</span><span class="p">(</span>
+<span class="w">    </span><span class="n">my_raster.crs</span><span class="p">,</span><span class="w"> </span><span class="n">dstCrs</span><span class="p">,</span><span class="w"> </span><span class="n">my_raster.width</span><span class="p">,</span><span class="w"> </span><span class="n">my_raster.height</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">my_raster.bounds</span><span class="p">)</span>
+<span class="c1"># we need to setup the meta data for the new raster</span>
+<span class="n">kwargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">my_raster.meta.copy</span><span class="p">()</span>
+<span class="nf">kwargs.update</span><span class="p">({</span>
+<span class="w">    </span><span class="s">&#39;crs&#39;</span><span class="o">:</span><span class="w"> </span><span class="n">dstCrs</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&#39;transform&#39;</span><span class="o">:</span><span class="w"> </span><span class="n">transform</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&#39;width&#39;</span><span class="o">:</span><span class="w"> </span><span class="n">width</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&#39;height&#39;</span><span class="o">:</span><span class="w"> </span><span class="n">height</span>
+<span class="p">})</span>
+<span class="c1"># open a file for writing</span>
+<span class="n">dstRst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rasterio.open</span><span class="p">(</span><span class="s">&#39;Reprojected.tif&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="c1"># reproject</span>
+<span class="nf">reproject</span><span class="p">(</span>
+<span class="w">    </span><span class="n">source</span><span class="o">=</span><span class="nf">rasterio.band</span><span class="p">(</span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">    </span><span class="n">destination</span><span class="o">=</span><span class="nf">rasterio.band</span><span class="p">(</span><span class="n">dstRst</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">    </span><span class="n">src_crs</span><span class="o">=</span><span class="n">my_raster.crs</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dst_crs</span><span class="o">=</span><span class="n">dstCrs</span><span class="p">,</span>
+<span class="w">    </span><span class="n">resampling</span><span class="o">=</span><span class="n">Resampling.bilinear</span><span class="p">)</span>
+<span class="c1"># close the file</span>
+<span class="nf">dstRst.close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The raster is transformed from the original project space (UTM 31N) to a lat/lon
+projection space: WGS84. This is quite complex bit of code. You first define the
+new CRS. You then calculate the transform needed (.e.g how big the new raster needs to
+be). You then set-up a new file to put the transformed raster in. <cite>rasterio</cite> just
+deals with raster on disk, not memory so everything needs to be saved to a file somewhere.
+Finally, the data are reprojected, and then the file closed to save the data.</p>
+<p>When dealing with raster data you often need the rasters to be identical;
+same resolution, same extents, same projection space. Once identical, then
+simple calculations (and indeed more complex ones!) can be carried out.</p>
+</section>
+<section id="the-geopandas-library">
+<h3>The <cite>geopandas</cite> library<a class="headerlink" href="#the-geopandas-library" title="Link to this heading">#</a></h3>
+<p><cite>geopandas</cite> is the geographical equivalent to <cite>pandas</cite>. It deals with dataframes
+but those dataframes have a <cite>geometry</cite> component. It therefore maps onto GIS Vector
+data very well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
+
+<span class="n">tide_gauges</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
+<span class="n">tide_gauges</span>
+</pre></div>
+</div>
+<p>Vector data can be points, lines or polygons. The <cite>geomoetry</cite> column tells us this and is,
+in fact, a <cite>shapely</cite> object. <cite>geopandas</cite> can carry out a number of geometric calculations, e.g.
+distances:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">whitby</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+<span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">whitby</span><span class="p">)</span>
+<span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <cite>geopandas</cite> library has a number of functions, such as
+sampling within a polygon, geometry calculations (differences, unions, intersections),
+and geometric calculations (area, distances, lengths).</p>
+</section>
+<section id="the-shapely-library">
+<h3>The <cite>shapely</cite> library<a class="headerlink" href="#the-shapely-library" title="Link to this heading">#</a></h3>
+<p><cite>shapely</cite> is a library designed to do geometry calculations. It uses GIS Vector data
+which can be loaded into a <cite>Geometry</cite>. You can also create geometries very easily in
+<cite>shapely</cite>. However, you often don’t need to use the main functions in <cite>shapely</cite> itself
+as <cite>geopandas</cite> is built on top of <cite>shapely</cite>. It’s often needed for creating new
+vector data though.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+
+<span class="n">my_box</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">my_raster</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates a polygon using the extent (bounds) of the raster object we loaded earlier.</p>
+<p>You can similar create points, lines, etc. Most of the geometric operations in <cite>geopandas</cite>
+come from <cite>shapely</cite>, including things like <cite>within</cite>, <cite>intersects</cite>, etc.</p>
+</section>
 </section>
 </section>
 
@@ -2159,7 +2298,12 @@ compatible with <cite>terra</cite>.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <cite>rasterio</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-geopandas-library">The <cite>geopandas</cite> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <cite>shapely</cite> library</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
