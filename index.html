@@ -324,9 +324,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -342,14 +340,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -361,6 +351,7 @@ document.write(`
                   
   <section id="welcome-to-solving-environmental-problems-with-code-sepwc">
 <h1>Welcome to Solving Environmental Problems with Code (SEPwC)<a class="headerlink" href="#welcome-to-solving-environmental-problems-with-code-sepwc" title="Link to this heading">#</a></h1>
+<img alt="SEPwC logo" class="align-center" src="_images/favicon-180x180.png" />
 <p>The aim of this module is to teach you the basics of writing simple computer scripts so
 that you can analyse data to help solve problems. These data may be spatial (i.e. like GIS)
 or text (e.g. transcripts of interviews) or collected in the field (so you can do some stats).</p>
@@ -370,15 +361,14 @@ scratch which can load in data, processes it and produce some meaningful output.
 <p>The table below contains suggestions of which blocks of works to cover in each week
 to help guide you. However, you can forge ahead, but equally, don’t worry if you
 slip behind a little.</p>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p><strong>Acknowledgements</strong></p>
 <p>This course was developed in my mind over many years. I jumped at the opportunity to make it real. It is influenced
 by a number of collaborators and colleagues. Thanks to the Software Carpentry initiative for their courses, training
 and influence. The git-novice course was the influence for the Git section. Thanks to colleagues David Ham, Colin Cotter
 and Lawrence Mitchel who created courses at their institutions which influenced me greatly. Thanks to Marijan Beg at Imperial
 College London for making his Python course open. I borrowed material from there for the Python and R sections. I also
 borrowed ideas from Hadley Wickham’s various R books and websites.</p>
-<p>Thanks need to go to Katie Lee and Holly Smith for recording a large number of the videos on this website; thanks both!</p>
+<p>Thanks need to go to Katie Lee and Holly Smith for recording a large number of the videos on this website; thanks both! also thanks to Sofia Foster, an undergrad student in the first year this course ran, who inspired the current logo design.</p>
 <p>Thanks also to the fantastic group of developers that have made all the software used here. R, Python, Sphinx, Linux,
 matplotlib, ggplot2, numpy, gdal, etc. The list should go on, but there is simply too much. The fact that so much of this
 software is free (in terms of beer and speech) is amazing.</p>
@@ -428,26 +418,149 @@ software is free (in terms of beer and speech) is amazing.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_a_computer_works.html#filesystems">Filesystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_a_computer_works.html#navigating-a-filesystem">Navigating a filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_a_computer_works.html#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_a_computer_works.html#from-source-code-to-programme">From source code to programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_a_computer_works.html#more-basic-command-line-functions">More basic command line functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Licences.html#copyleft">Copyleft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Licences.html#permissive">Permissive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Licences.html#adding-a-licence-to-your-code">Adding a licence to your code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#some-terminology">Some terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#defining-a-variable">Defining a variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#datatypes">Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#booleans-and-logic">Booleans and Logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#outputs">Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#loops">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#conditionals">Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Code_basics.html#objects-and-classes">Objects and classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Algorithms.html#making-a-jam-sandwich">Making a jam sandwich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Algorithms.html#creating-a-number-guessing-game">Creating a number guessing game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Algorithms.html#creating-the-sum-of-an-integer-number">Creating the sum of an integer number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Algorithms.html#searching-for-a-number">Searching for a number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Algorithms.html#create-a-word-cloud">Create a word cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python.html#intro-to-python">Intro to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html#python-loops">Python Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html#python-conditionals">Python conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html#python-comments">Python comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html#python-exercises">Python Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="R.html#intro-to-r">Intro to R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R.html#r-loops">R Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R.html#r-conditionals">R conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R.html#r-comments">R comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R.html#r-exercises">R Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Issues.html#types-of-issues">Types of issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Issues.html#simple-issues">Simple issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Issues.html#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Issues.html#fixing-errors">Fixing Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Issues.html#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#setting-up-git">Setting up git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#our-first-repository">Our first repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#adding-files">Adding files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#git-history">Git history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#ignoring-files">Ignoring files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#github">Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#conflict">Conflict!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-functions">Python functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-modules">Python modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-dictionaries">Python: dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-files">Python: Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-command-line-arguments">Python: command line arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python2.html#python-exercises-2">Python Exercises 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-functions">R functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-libraries">R libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-dictionaries">R dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-files">R: files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-command-line-arguments">R command line arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2.html#r-exercises-2">R Exercises 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python3.html#python-objects">Python objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python3.html#python-namespace">Python: namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python3.html#python-datetimes">Python: Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python3.html#python-numpy">Python: Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python3.html#python-pandas-module">Python: Pandas module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="R3.html#r-namespace">R namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R3.html#r-objects">R objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R3.html#r-datetimes">R: Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R3.html#r-dataframes">R dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R3.html#r-tidyverse">R: tidyverse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#data-management">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#using-excel">Using Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#csv-files">CSV files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#other-data-formats">Other data formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#simple-testing">Simple testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#regression-tests">Regression tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#static-tests">Static tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#ui-tests">UI tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#testing-frameworks">Testing frameworks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Software_development.html#revision-control">Revision control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Software_development.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Software_development.html#development-process">Development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Software_development.html#development-processes">Development processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Software_development.html#linting-your-code">Linting your code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#ggplot2-tutorial">ggplot2 tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#pyplot-tutorial">Pyplot tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#sentiment-analysis">Sentiment Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#tidal-analysis-in-python">Tidal analysis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#gis-r">GIS - R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mini_courses.html#gis-python">GIS - Python</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 </div>
-</section>
 </section>
 
 
@@ -477,20 +590,7 @@ software is free (in terms of beer and speech) is amazing.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
