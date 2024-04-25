@@ -420,28 +420,31 @@ outlined above to represent the game.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>My code would be something like this.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/pcode.png"><img alt="pc" src="_images/pcode.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
 
-<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1"># we create a guess that cannot be the answer...</span>
+ <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+ <span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="c1"># we create a guess that cannot be the answer...</span>
 
-<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span>
-    <span class="n">guess</span> <span class="o">=</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;What&#39;s your guess?)</span>
-    <span class="k">if</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You guessed right!)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!)</span>
-        <span class="n">exit</span><span class="p">()</span>
-    <span class="n">end</span> <span class="k">if</span>
+ <span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span>
+     <span class="n">guess</span> <span class="o">=</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;What&#39;s your guess?)</span>
+     <span class="k">if</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is less than my number&quot;</span><span class="p">)</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+     <span class="k">else</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your guess is greater than my number&quot;</span><span class="p">)</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+     <span class="k">else</span> <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! You guessed right!)</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!)</span>
+         <span class="n">exit</span><span class="p">()</span>
+     <span class="n">end</span> <span class="k">if</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -457,18 +460,21 @@ outlined above to represent the game.</p>
 <li><p>intialise our sum to zero</p></li>
 <li><p>loop over the list and add the numbers together</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10456</span>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/pcode.png"><img alt="pc" src="_images/pcode.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">number</span> <span class="o">=</span> <span class="mi">10456</span>
 
-<span class="c1"># no language has a function to split an integer number, *but* if we turn it into a string, we can</span>
-<span class="c1"># split it easily in most!</span>
-<span class="n">number_as_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="n">chars</span> <span class="o">=</span> <span class="n">as_chars</span><span class="p">(</span><span class="n">number_as_string</span><span class="p">)</span>
-<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chars</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+ <span class="c1"># no language has a function to split an integer number, *but* if we turn it into a string, we can</span>
+ <span class="c1"># split it easily in most!</span>
+ <span class="n">number_as_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+ <span class="n">chars</span> <span class="o">=</span> <span class="n">as_chars</span><span class="p">(</span><span class="n">number_as_string</span><span class="p">)</span>
+ <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chars</span>
+     <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>The solution needed a bit of lateral thinking in terms of thinking how a computer would represent an
 integer and how you might break it up. Don’t worry if your psuedo code didn’t contain that
@@ -486,19 +492,22 @@ level of detail!</p>
 <li><p>if the number matches the target, exit and report the index</p></li>
 <li><p>if the match isn’t found, exit with a negative number to indicate failure</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/pcode.png"><img alt="pc" src="_images/pcode.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+ <span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
 
-<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">list</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">index</span>
-    <span class="c1"># remember to increment the index each loop!</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+ <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">list</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span>
+         <span class="k">return</span> <span class="n">index</span>
+     <span class="c1"># remember to increment the index each loop!</span>
+     <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="c1"># we cna only get here if the number wasn&#39;t found</span>
-<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+ <span class="c1"># we cna only get here if the number wasn&#39;t found</span>
+ <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
+</div>
 </div>
 <p>The above is a linear search algorithm. Fine for small lists, but very slow for very long lists, especially if your
 target is near the end. Binary search is another search algorithm used.</p>
@@ -524,6 +533,8 @@ the words “and”, “the”, “or”. Let’s start with a list.</p>
 <p>Let’s start writing the pseudo-code. A possible solution is below.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/pcode.png"><img alt="pc" src="_images/pcode.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">load_textfile</span><span class="p">(</span><span class="s2">&quot;our text_file.txt&quot;</span><span class="p">)</span>
 <span class="n">words</span> <span class="o">=</span> <span class="n">split_into_words</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
@@ -545,6 +556,7 @@ the words “and”, “the”, “or”. Let’s start with a list.</p>
 
  <span class="n">make_word_cloud</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 <p>The code is quite complex so let’s run through an example of that. Here’s our text:</p>
@@ -643,8 +655,8 @@ the words “and”, “the”, “or”. Let’s start with a list.</p>
 <p>We then count the number of times those words occur, by looping over the original word list and counting them.
 We know there are 13 unique words. We set up a list where the count is sorted in the same location as the unique
 word, so our lists are like this:</p>
-<table class="table" id="id1">
-<caption><span class="caption-text">Unique word count</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<table class="table" id="id5">
+<caption><span class="caption-text">Unique word count</span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
 <th class="head"><p>Word</p></th>

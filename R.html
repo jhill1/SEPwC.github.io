@@ -411,10 +411,15 @@ for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}y = 2.5 - 1.22625\\y = 1.27375\end{aligned}\end{align} \]</div>
 <p>using a calculator. So let’s do that in R:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">5</span><span class="o">*</span><span class="m">0.5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">0.5</span><span class="o">*</span><span class="m">9.81</span><span class="o">*</span><span class="m">0.5</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Great! Our first R code! Let’s build this up to use variables. Type the following code and execute:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.5</span>
 <span class="n">initial_velocity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 <span class="n">gravity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">9.81</span>
@@ -423,10 +428,13 @@ for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and
 <span class="nf">print</span><span class="p">(</span><span class="n">vert_position</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>This code is, in essence, identical to the one above, but instead of <em>hard-coding</em> the numbers, we’ve used
 variables. The formula is now written in good, descriptive variable names, using spaces and parentheses to
 separate the terms for readability. Not that exciting yet. What if we want to calculate the height for a
 bunch of times? Let’s add a loop!</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">times</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span>
 <span class="n">initial_velocity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 <span class="n">gravity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">9.81</span>
@@ -437,9 +445,12 @@ bunch of times? Let’s add a loop!</p>
 <span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <p>This is not the most elegant way to do this, but it works. You now have the height of the ball
 at time 0 to 0.9 in steps of 0.1.</p>
 <p>Shall we plot this?</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the problem</span>
 <span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span>
 <span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
@@ -455,6 +466,7 @@ at time 0 to 0.9 in steps of 0.1.</p>
 <span class="c1"># the times and heights are now stored, so we can plot</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="w"> </span><span class="n">heights</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <img alt="_images/R_ball_graph.png" src="_images/R_ball_graph.png" />
 <p>That’s not bad for a few lines of code. You can’t publish that graph (axes labels without units, etc.), but for
@@ -686,8 +698,8 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 </pre></div>
 </div>
 <p>How do we write a program that prints out such a statement, based on that input? We know the following:</p>
-<table class="table" id="id1">
-<caption><span class="caption-text">Environments</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<table class="table" id="id5">
+<caption><span class="caption-text">Environments</span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Temperature</p></th>
 <th class="head"><p>Humidity</p></th>

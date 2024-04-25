@@ -584,54 +584,57 @@ description of the warning/error.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/user/bin/env python3</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This module calculates propeties of a circle</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="c1">#!/user/bin/env python3</span>
+<span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> This module calculates propeties of a circle</span>
+<span class="sd"> &quot;&quot;&quot;</span>
 
-<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+ <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
 
-<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to represent the circle.</span>
+ <span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+<span class="w">     </span><span class="sd">&quot;&quot;&quot;A class to represent the circle.</span>
 
-<span class="sd">        ..........</span>
-<span class="sd">    Attributes</span>
-<span class="sd">    ----------</span>
-<span class="sd">    radius: str</span>
-<span class="sd">        the radius of the Circle</span>
+<span class="sd">         ..........</span>
+<span class="sd">     Attributes</span>
+<span class="sd">     ----------</span>
+<span class="sd">     radius: str</span>
+<span class="sd">         the radius of the Circle</span>
 
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">    area():</span>
-<span class="sd">        Prints the Circle&#39;s area.</span>
+<span class="sd">     Methods</span>
+<span class="sd">     -------</span>
+<span class="sd">     area():</span>
+<span class="sd">         Prints the Circle&#39;s area.</span>
 
-<span class="sd">    perimeter():</span>
-<span class="sd">        Prints the Circle&#39;s perimeter.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructs all the necessary attributes for the Circle object.</span>
+<span class="sd">     perimeter():</span>
+<span class="sd">         Prints the Circle&#39;s perimeter.</span>
+<span class="sd">     &quot;&quot;&quot;</span>
+     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Constructs all the necessary attributes for the Circle object.</span>
 
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">            radius: str</span>
-<span class="sd">                the radius of the Circle</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">assert</span> <span class="n">radius</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">,</span> \
-            <span class="s2">&quot;circle radius must be a positive number&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+<span class="sd">         Parameters</span>
+<span class="sd">         ----------</span>
+<span class="sd">             radius: str</span>
+<span class="sd">                 the radius of the Circle</span>
+<span class="sd">         &quot;&quot;&quot;</span>
+         <span class="k">assert</span> <span class="n">radius</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">,</span> \
+             <span class="s2">&quot;circle radius must be a positive number&quot;</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
 
-    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;calculate the area of the circle, return the result&#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">         </span><span class="sd">&#39;&#39;&#39;calculate the area of the circle, return the result&#39;&#39;&#39;</span>
+         <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
 
-    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;calculate the perimeter of the circle, return the result&#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+     <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">         </span><span class="sd">&#39;&#39;&#39;calculate the perimeter of the circle, return the result&#39;&#39;&#39;</span>
+         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(radius=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="si">}</span><span class="s2">)&quot;</span>
+     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(radius=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
+</div>
 </div>
 <p>Running the <cite>pylint</cite> command on that should return nothing.</p>
 </div>

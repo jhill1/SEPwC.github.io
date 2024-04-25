@@ -524,11 +524,14 @@ they are an error (as in you’re getting the wrong answer) but the code can sti
 pay attention and decide if you do need to care.</p>
 <section id="r-warning-examples">
 <h4>R warning examples<a class="headerlink" href="#r-warning-examples" title="Link to this heading">#</a></h4>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="kc">NA</span>
 <span class="n">Warning</span><span class="w"> </span><span class="n">message</span><span class="o">:</span>
 <span class="n">In</span><span class="w"> </span><span class="nf">cor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="n">deviation</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">zero</span>
 </pre></div>
+</div>
 </div>
 <p>Here, the user has tried to perform a correlation with 2 points. The warning shows this isn’t a good idea,
 but the <code class="docutils literal notranslate"><span class="pre">cor</span></code> function could produce an answer (albeit <code class="docutils literal notranslate"><span class="pre">NA</span></code>).</p>
@@ -536,12 +539,15 @@ but the <code class="docutils literal notranslate"><span class="pre">cor</span><
 <section id="python-warning-example">
 <h4>Python warning example<a class="headerlink" href="#python-warning-example" title="Link to this heading">#</a></h4>
 <p>In this example I divide by zero; mathmatically producing infinity.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">0</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">f6baf8772c4a</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span> <span class="ne">RuntimeWarning</span><span class="p">:</span> <span class="n">divide</span> <span class="n">by</span> <span class="n">zero</span> <span class="n">encountered</span> <span class="ow">in</span> <span class="n">divide</span>
    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">0</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="n">inf</span><span class="p">])</span>
 </pre></div>
+</div>
 </div>
 <p>Note I get a <code class="docutils literal notranslate"><span class="pre">RuntimeWarning</span></code> which gives a message and the line of code. I still get an answer,
 here, <code class="docutils literal notranslate"><span class="pre">inf</span></code>.</p>
@@ -550,6 +556,8 @@ numbers were supplied by a user or in the data. The warnings can therefore be ve
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p>Try the following codes and check you understand the warning or error.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span> <span class="o">=</span> <span class="p">(</span>
  <span class="s1">&#39;https://example.com/1&#39;</span><span class="p">,</span>
  <span class="s1">&#39;https://example.com/2&quot;,</span>
@@ -558,6 +566,9 @@ numbers were supplied by a user or in the data. The warnings can therefore be ve
 <span class="nb">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_URLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
 <span class="w"> </span><span class="s">&#39;https://example.com/1&#39;</span><span class="p">,</span>
 <span class="w"> </span><span class="s">&#39;https://example.com/2&quot;,</span>
@@ -566,20 +577,33 @@ numbers were supplied by a user or in the data. The warnings can therefore be ve
 <span class="nf">print</span><span class="p">(</span><span class="n">list_of_URLs</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;username1&#39;</span>
-<span class="k">pass</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;username1&#39;</span>
+ <span class="k">pass</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Mercedes&#39;</span>
 <span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Aston Martin&#39;</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span> <span class="ow">is</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10000</span>
 <span class="n">x</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="toggle admonition">
@@ -665,6 +689,8 @@ and libraries are open source and hence issues/bugs are reported.</p>
 understand it yourself. If you can’t figure it out, then you can try searching for the
 error message on the internet. Copy and paste the error removing any filepaths.</p>
 <p>Try the following:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:[</span><span class="s1">&#39;1.0692e+06&#39;</span><span class="p">]})</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
@@ -672,9 +698,12 @@ error message on the internet. Copy and paste the error removing any filepaths.<
 <span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;1.0692e+06&#39;</span>
 </pre></div>
 </div>
+</div>
 <p>The error is much longer than I gave here, but try copying and pasting the lower part into a search
 engine and you will hopefully find a page with some answers on what the error is and even how to fix it.
 Note that I have not copied any of the specific parts of the error in a search, e.g.:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">dtypes</span><span class="o">/</span><span class="n">cast</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1154</span><span class="p">,</span> <span class="ow">in</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">skipna</span><span class="p">)</span>
    <span class="mi">1150</span> <span class="k">elif</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
    <span class="mi">1151</span>
@@ -688,12 +717,15 @@ Note that I have not copied any of the specific parts of the error in a search, 
 <span class="n">File</span> <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">lib</span><span class="o">.</span><span class="n">pyx</span><span class="p">:</span><span class="mi">668</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">astype_intsafe</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>You’ll note that they are specific to the version of Python I’m using and to where pandas is installed, and even the
 OS I’m using. Anyone using Windows, Python 3.11 and a version of pandas installed via Anaconda will have very
 different paths to mine! Search engines aren’t that good…</p>
 <p>The above example is also a good example of the fact this is <em>your</em> error. It is not a bug in the pandas library.
 The code creates a number as a string that cannot be converted into an int (as it’s a floating point number).</p>
 <p>Let’s do an example in R now.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Date</span><span class="o">=</span><span class="nf">as.Date</span><span class="p">(</span><span class="nf">character</span><span class="p">()),</span>
 <span class="w">             </span><span class="n">country</span><span class="o">=</span><span class="nf">factor</span><span class="p">(),</span>
 <span class="w">             </span><span class="n">total</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(),</span>
@@ -704,6 +736,7 @@ The code creates a number as a string that cannot be converted into an int (as i
 <span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">`$&lt;-.data.frame`</span><span class="p">(</span><span class="n">`*tmp*`</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
 <span class="w">    </span><span class="n">replacement</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">row</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="m">0</span>
 </pre></div>
+</div>
 </div>
 <p>I would copy and paste the error, replacing some terms, something like
 <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">in</span> <span class="pre">`$&lt;-.data.frame`(`*tmp*`,</span> <span class="pre">total,</span> <span class="pre">replacement</span> <span class="pre">has</span> <span class="pre">1</span> <span class="pre">row,</span> <span class="pre">data</span> <span class="pre">has</span> <span class="pre">0</span></code>
@@ -718,12 +751,15 @@ understand the flow of the program. The downside of this debugging is you have t
 add and then <em>remove</em> a lot of print statements!</p>
 <p>If I’m not sure why code is not working, and perhaps more importantly, where,
 I first add “programming noise”; print statements like:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/pcode.png"><img alt="pc" src="_images/pcode.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PN: 1&quot;</span><span class="p">)</span>
 
 <span class="o">...</span> <span class="n">some</span> <span class="n">code</span> <span class="o">...</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PN: 2&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>By watching the print statements I can zero in where the code is breaking. I can then
 really zero in on a line or lines of code that are breaking.</p>
@@ -735,6 +771,8 @@ explore your data using that index. Very helpful!</p>
 that can be be as hard to decipher as the error you’re trying to fix.</p>
 <div class="admonition-practical-exercise-python admonition">
 <p class="admonition-title">Practical exercise - Python</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>
 <span class="c1"># If number if odd, print sum of all odd numbers from</span>
@@ -757,10 +795,13 @@ that can be be as hard to decipher as the error you’re trying to fix.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>There were errors in syntax and logic! My version is below. More elegant solutions
 can be found too.</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>
 <span class="c1"># If number if odd, print sum of all odd numbers from</span>
@@ -788,8 +829,11 @@ can be found too.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="admonition-practical-exercise-r admonition">
 <p class="admonition-title">Practical exercise - R</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>
 <span class="c1"># If number if odd, print sum of all odd numbers from</span>
@@ -814,10 +858,13 @@ can be found too.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>There were errors in syntax and logic! My version is below. More elegant solutions
 can be found too.</p>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># If number is even, print the sum of all even numbers from</span>
 <span class="c1"># 1 to N, inclusive</span>
 <span class="c1"># If number if odd, print sum of all odd numbers from</span>
@@ -850,6 +897,7 @@ can be found too.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/GjewIVXl_Ts" style="border: 0; height: 345px; width: 560px">
 </iframe></div><section id="console-debugging">
@@ -861,6 +909,8 @@ you can explore them to see what might be wrong.</p>
 console (in Spyder or RStudio is fine).</p>
 <div class="admonition-practical-exercise-python admonition">
 <p class="admonition-title">Practical exercise - Python</p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print each combo of description-animal combinations</span>
 <span class="c1"># If you are about to print &quot;funny dog&quot;, break out of the loop</span>
 
@@ -873,20 +923,29 @@ console (in Spyder or RStudio is fine).</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>My first error was:</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-2-c3f93577d321&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span>
     <span class="n">descriptions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;funny`, &#39;</span><span class="n">cute</span><span class="s1">&#39;, &#39;</span><span class="n">friendly</span><span class="s1">&#39;]</span>
                          <span class="o">^</span>
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
 </div>
+</div>
 <p>I then tried to fix that line alone in the console:</p>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">descriptions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;funny&#39;</span><span class="p">,</span> <span class="s1">&#39;cute&#39;</span><span class="p">,</span> <span class="s1">&#39;friendly&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
 <p>That works, so now I can try the next line by itself. That also gives an error:</p>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;koala&quot;, &#39;</span><span class="n">cat</span><span class="s1">&#39;, &#39;</span><span class="n">dog</span><span class="s1">&#39;, &#39;</span><span class="n">panda</span><span class="s1">&#39;]</span>
    <span class="o">...</span><span class="p">:</span>
   <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-4-35bcfad5a05c&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
@@ -895,8 +954,11 @@ console (in Spyder or RStudio is fine).</p>
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
 </div>
+</div>
 <p>I see the issue: <cite>“</cite> instead of <cite>‘</cite>. So again, get that line right in the console.</p>
 <p>Got that done, so now I can copy and paste the loop only. Yet another error:</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">ca6d0650fc82</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
 <span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">description</span><span class="p">:</span>
@@ -906,9 +968,12 @@ console (in Spyder or RStudio is fine).</p>
 <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;description&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </pre></div>
 </div>
+</div>
 <p>I can see the issue (forgot an <cite>s</cite>). so fix that and try again. I can fix it by pressing up and
 navigating to the right place and fix the code. I can then use the arrows to go back to the bottom
 of the code block and press return to re-run. An now the code produces something!</p>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span>         <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">descriptions</span><span class="p">:</span>
    <span class="o">...</span><span class="p">:</span>             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
    <span class="o">...</span><span class="p">:</span>                 <span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
@@ -927,10 +992,13 @@ of the code block and press return to re-run. An now the code produces something
 <span class="n">friendlypanda</span>
 </pre></div>
 </div>
+</div>
 <p>Not quite right, but runs now at least. A little trick in ipython is to use the <cite>%history</cite> which gives
 all the code I’ve run. I can grab that and re-write my base code. I can then debug as above or continue
 in the ipython console.</p>
 <p>My final code is:</p>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print each combo of description-animal combinations</span>
 <span class="c1"># If you are about to print &quot;funny dog&quot;, break out of the loop</span>
 
@@ -952,8 +1020,11 @@ in the ipython console.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="admonition-practical-exercise-r admonition">
 <p class="admonition-title">Practical exercise - R</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print each combo of description-animal combinations</span>
 <span class="c1"># If you are about to print &quot;funny dog&quot;, break out of the loop</span>
 
@@ -968,9 +1039,12 @@ in the ipython console.</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>My first error was, copying and pasting the code in the R console:</p>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span>         <span class="c1"># Print each combo of description-animal combinations</span>
 <span class="o">&gt;</span>         <span class="c1"># If you are about to print &quot;funny dog&quot;, break out of the loop</span>
 <span class="o">&gt;</span>
@@ -987,14 +1061,17 @@ in the ipython console.</p>
 <span class="n">Error</span><span class="p">:</span> <span class="nb">object</span> <span class="s1">&#39;description&#39;</span> <span class="ow">not</span> <span class="n">found</span>
 </pre></div>
 </div>
+</div>
 <p>A lot of errors. We can probably fix them from top to bottom. So let’s
 try dealing with the first error by editing the <cite>descriptions</cite> variable.
 We can try in the console to get it to work. Pressing up in the R console until
-we get to the line. Then edit the line; note the backtick vs <cite>‘</cite>. so
-<cite>descriptions = c(‘funny’, ‘cute’, ‘friendly’)</cite>. That works! Do the same
-for the <cite>animals</cite> variable too.</p>
+we get to the line. Then edit the line; note the backtick vs <code class="docutils literal notranslate"><span class="pre">'</span></code>. so
+<code class="docutils literal notranslate"><span class="pre">descriptions</span> <span class="pre">=</span> <span class="pre">c('funny',</span> <span class="pre">'cute',</span> <span class="pre">'friendly')</span></code>. That works! Do the same
+for the <code class="docutils literal notranslate"><span class="pre">animals</span></code> variable too.</p>
 <p>Now let’s deal with the loops error; once we have the two vectors set-up
 properly, copy and paste the loop:</p>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w">         </span><span class="nf">for </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="o">+</span><span class="w">             </span><span class="nf">for </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="o">+</span><span class="w">                 </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
@@ -1003,8 +1080,11 @@ properly, copy and paste the loop:</p>
 <span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="s">&#39;description&#39;</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">found</span>
 </pre></div>
 </div>
-<p>Typo! It should be <cite>descriptions</cite>. Fix that by pressing up, and editing the code; you’ll then
+</div>
+<p>Typo! It should be <code class="docutils literal notranslate"><span class="pre">descriptions</span></code>. Fix that by pressing up, and editing the code; you’ll then
 need to copy and paste the rest of the loop in. Success! Running code!</p>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w">         </span><span class="nf">for </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">descriptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="o">+</span><span class="w">             </span><span class="nf">for </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="o">+</span><span class="w">                 </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
@@ -1024,8 +1104,11 @@ need to copy and paste the rest of the loop in. Success! Running code!</p>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;friendly panda&quot;</span>
 </pre></div>
 </div>
+</div>
 <p>Not quite right, but runs now at least. Now we need to edit the loop to get the logic right.</p>
 <p>My final code is:</p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print each combo of description-animal combinations</span>
 <span class="c1"># If you are about to print &quot;funny dog&quot;, break out of the loop</span>
 
@@ -1045,6 +1128,7 @@ need to copy and paste the rest of the loop in. Success! Running code!</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">

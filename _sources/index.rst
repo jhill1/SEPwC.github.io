@@ -6,7 +6,6 @@
 Welcome to Solving Environmental Problems with Code (SEPwC)
 ===========================================================
 
-
 .. image:: ../images/favicon-180x180.png
    :alt: SEPwC logo
    :align: center
@@ -55,7 +54,90 @@ slip behind a little.
    * - 11
      - Assessment
 
+Conventions used. Any code will be in a block, with an icon showing the language:
+
+.. code-block:: R
+   :caption: |R|
+
+    # some R code
+    library(tidyverse)
+
+or
+
+.. code-block:: Python
+   :caption: |python|
+
+    # some Python code
+    import numpy as np
+
+Any output or commands in the command line will be shown using an icon like this:
+
+.. code-block:: bash
+   :caption: |cli|
+
+    ls -al
+
+An additional logo will show which operating system the commands are for
+
+     - Mac only: |mac|
+     - Linux only: |linux|
+     - Windows only: |win|
+     - Mac and Linux:  |maclin|
+     - All OSes: |all|
+
+So for example:
+
+.. code-block:: bash
+   :caption: |cli| |maclin|
+
+    ls -al
+
+for Linux/Mac commands, and 
+
+.. code-block:: bash
+   :caption: |cli| |win|
+
+    dir /a:h
+
+for Window CLI commands.
+
+Sometimes, output is shown from Python or R. These will be labelled as Python and R with 
+the command line icon:
+
+
+.. code-block:: Python
+   :caption: |python|
+
+    # some Python code
+    print("Hello World!")
+
+.. code-block:: bash
+   :caption: |cli| |python| 
+
+    Hello World!
     
+If a command and the output are shown in the same block, the command will be prefixed
+by either a ``$`` (|maclin|) or a ``>`` (|win|) symbol. *Do not copy or type those symbols in*.
+For example:
+
+.. code-block:: bash
+   :caption: |cli| |maclin|
+
+   $ pwd
+   /home/jh1889/work/teaching/SEPwC/source
+
+Type in the ``pwd`` command only into the command line.
+
+Finally, I also use psuedo-code in the early stages. This is not a real language so can't be run or compiled! 
+All psuedo-code is labelled with this symbol:
+
+.. code-block:: 
+   :caption: |pc|
+
+    variable = 23.432
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:

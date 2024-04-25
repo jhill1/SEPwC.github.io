@@ -527,6 +527,8 @@ options.</p>
 <section id="reading-csv-in-r">
 <h3>Reading CSV in R<a class="headerlink" href="#reading-csv-in-r" title="Link to this heading">#</a></h3>
 <p>CSV files are handled in R without an additional libraries. <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html">The full documentation can be found online</a> but some brief examples:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read CSV into DataFrame</span>
 <span class="n">read_csv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file.csv&#39;</span><span class="p">)</span>
 
@@ -543,6 +545,7 @@ options.</p>
 <span class="n">read_csv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;/Users/admin/file_noheader.csv&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="s">&#39;FALSE&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>The <a class="reference external" href="https://www.tidyverse.org/">Tidyverse</a> collection of packages has some additional
 function to read in CSV data..</p>
 </section>
@@ -552,6 +555,8 @@ function to read in CSV data..</p>
 quotes and headers making it much easier than trying to parse data ourselves. You can find
 the <a class="reference external" href="https://docs.python.org/3/library/csv.html">full documentation for the CSV module online</a>
 but briefly we can load data in using code like this:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eggs.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
@@ -560,9 +565,12 @@ but briefly we can load data in using code like this:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>The above reads the CSV file by row and prints out the content. The <code class="docutils literal notranslate"><span class="pre">row</span></code> variable is a list
 with each item containing the column data from that row.</p>
 <p>Alternatively, you can read the data as a dictionary. Here we assume the CSV has a header:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;names.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
@@ -570,6 +578,7 @@ with each item containing the column data from that row.</p>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
 </pre></div>
+</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">row</span></code> variable is now a dictionary, with the items labelled by whatever was in the first row (the header).
 As a programmer you would need to know that information beforehand to use them correctly.</p>
@@ -596,6 +605,8 @@ contain the location data and projection space.</p>
 <h3>XML<a class="headerlink" href="#xml" title="Link to this heading">#</a></h3>
 <p>XML (eXtensible Markup Language) is a tree-structed, tag-based format that is human and machine readable but can also
 contain binary data. An example:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;employees&gt;</span>
 <span class="w">  </span><span class="nt">&lt;employee&gt;</span>
 <span class="w">    </span><span class="nt">&lt;firstName&gt;</span>John<span class="nt">&lt;/firstName&gt;</span><span class="w"> </span><span class="nt">&lt;lastName&gt;</span>Doe<span class="nt">&lt;/lastName&gt;</span>
@@ -609,18 +620,22 @@ contain binary data. An example:</p>
 <span class="nt">&lt;/employees&gt;</span>
 </pre></div>
 </div>
+</div>
 <p>Both R and Python have XML parsers available.</p>
 </section>
 <section id="json">
 <h3>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <p>JSON (JavaScript Object Notation) is another text-based format that is human and machine readable. It is
 similar in structure to a dictionary.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;employees&quot;</span><span class="p">:[</span>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Smith&quot;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;Jones&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]}</span>
 </pre></div>
+</div>
 </div>
 <p>Both R and Python have JSON parsers available.</p>
 </section>

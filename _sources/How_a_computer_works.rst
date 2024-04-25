@@ -113,7 +113,7 @@ symbols.
 
 ..  tip::
 
-    |mac| Mac only
+    Mac only: |mac|
 
     Linux only: |linux|
 
@@ -122,21 +122,6 @@ symbols.
     Mac and Linux:  |maclin|
 
     All OSes: |all|
-
-.. |mac| image:: ../images/Apple_logo.png
-   :height: 12
-
-.. |linux| image:: ../images/Linux_logo.png
-   :height: 12
-
-.. |win| image:: ../images/Windows_logo.png
-   :height: 12
-
-.. |maclin| image:: ../images/linux_mac_logo.png
-   :height: 12
-
-.. |all| image:: ../images/win_linux_mac_logo.png
-   :height: 12
 
 
 Navigating a filesystem
@@ -147,13 +132,17 @@ command line. We're going to explore using both. Before we do this, we need a fe
 
 The first is to list which directory you are in.
 
-|maclin|
-``pwd``
+.. code-block:: bash
+   :caption: |cli| |maclin|
+
+    pwd
 
 which stand for "present working directory". On Windows, you use a different command:
 
-|win|
-``cd``
+.. code-block:: bash
+   :caption: |cli| |win|
+
+    cd
 
 which actually stands for "change directory" (more on that later), but without any arguments (see later)
 prints the current directory.
@@ -161,13 +150,13 @@ prints the current directory.
 These commands will print your current directory, so something like:
 
 .. code-block:: bash
-   :caption: |maclin|
+   :caption: |cli| |maclin|
 
    $ pwd
    /home/jh1889/work/teaching/SEPwC/source
 
 .. code-block:: bat
-   :caption: |win|
+   :caption: |cli| |win|
 
    > cd
    C:\Documents\jh1889\
@@ -175,24 +164,28 @@ These commands will print your current directory, so something like:
 So now you know where you are on a command line. What's there? For this we need to list the directory.
 The command for that is:
 
-|maclin|
-``ls``
+.. code-block:: bash
+   :caption: |cli| |maclin|
 
-|win|
-``dir``
+    ls
+
+.. code-block:: bat
+   :caption: |cli| |win|
+
+    dir
 
 You see a list of files. Depending on the system details that might give you different colours
 for directories and files, or be monochrome. The ``$`` and ``>`` symbols are prompts; do not type them!
 
 .. code-block:: bash
-   :caption: |maclin|
+   :caption: |cli| |maclin|
 
    $ ls
    Assessments.rst  Expectations.rst  Week_1.rst  Week_3.rst  Week_5.rst  Week_7.rst  ytemplates
    conf.py          index.rst         Week_2.rst  Week_4.rst  Week_6.rst  ystatic
    
 .. code-block:: bat
-   :caption: |win|
+   :caption: |cli| |win|
 
    > dir
      Volume in drive C has no label.
@@ -218,16 +211,17 @@ for directories and files, or be monochrome. The ``$`` and ``>`` symbols are pro
 We can now see where you are, what's in that directory; what about moving into a new directory? For that we use the
 change directory command:
 
-|all|
-``cd``
+.. code-block:: bash
+   :caption: |cli| |all|
+
+    cd
 
 We saw this already for Windows, but we need to give an argument (this is the directory we want to move into). 
 
 .. code-block::
-   :caption: |all|
+   :caption: |cli| |all|
 
-   cd ystatic
-   ls 
+   cd Documents
 
 Great! We can now navigate down the filesystem. What about going up a directory?
 
@@ -235,7 +229,7 @@ In all OSes the ``..`` is the parent directory to where we currently are. Simila
 one level we run the command:
 
 .. code-block:: bash
-   :caption: |all|
+   :caption: |cli| |all|
 
     cd ..
 
@@ -243,22 +237,22 @@ We can traverse up and down in quite complex ways using this. Let's imagine we w
 a subfolder:
 
 .. code-block:: bash
-   :caption: |maclin|
+   :caption: |cli| |maclin|
 
     cd ../../subfolder
 
 .. code-block:: bat
-   :caption: |win|
+   :caption: |cli| |win|
 
     cd ..\..\subfolder
 
 .. warning::
 
-    Windows drives, labelled A, B, C, D, etc are a small 'gotcha' when using ``cd``. Try this (assuming 
+    |win| Windows drives, labelled A, B, C, D, etc are a small 'gotcha' when using ``cd``. Try this (assuming 
     you have two drive letters available):
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
         cd H:Documents
 
@@ -266,12 +260,21 @@ a subfolder:
     to swap drives first. You have to type the drive letter to do so:
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
        H:
 
     You will then find you prompt has switch to ``H:\Documents``. This has caught me out a number of times.
-       
+
+    Alternatively, you can give the ``/d`` argument to ``cd``
+
+    .. code-block:: bat
+       :caption: |cli| |win|
+
+        cd /d H:Documents
+
+    and ``cd`` will also switch drives.
+
 
 .. admonition:: Practical exercise
 
@@ -291,17 +294,17 @@ a subfolder:
 
     Double-click the ``cli_example`` folder
 
-    In a command line:
+    In a new command line:
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
         cd cli_example
         dir
         pwd
 
     .. code-block:: bash
-       :caption: |maclin|
+       :caption: |cli| |maclin|
 
         cd cli_example
         ls
@@ -321,14 +324,14 @@ a subfolder:
     Let's do the the same in the command line:
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
         cd data_files\sedimentary_data\site1
         dir
         pwd
 
     .. code-block:: bash
-       :caption: |maclin|
+       :caption: |cli| |maclin|
 
         cd data_files/sedimentary_data/site1
         ls
@@ -337,14 +340,14 @@ a subfolder:
     Note that we can put several directories together. We can do the same to go up, then back down directories:
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
         cd ..\..\gis_data\site_locations
         dir
         pwd
 
     .. code-block:: bash
-       :caption: |maclin|
+       :caption: |cli| |maclin|
 
         cd ../../gis_data/site_locations
         ls
@@ -547,8 +550,10 @@ command.
 CLIs work by running the command you type, plus the arguments you give it. Arguments can be
 mandatory or optional (and therefore called options). A typical command might look like:
 
-|maclin|
-``cp -r my_dir my_dir2``
+.. code-block:: bash
+   :caption: |cli| |maclin|
+   
+    cp -r my_dir my_dir2
 
 This copies (``cp``) ``my_dir`` to ``my_dir2`` recursively ``-r``. The two 
 directory names are mandatory arguments. The ``-r`` is optional. 
@@ -606,7 +611,7 @@ So what are the basic commands you should know? Here's a list:
 
 .. Attention::
    
-   ``rm``, ``del``, and ``rmdir`` delete files permanently. They do *not* move the into Trash or similar. 
+   ``rm``, ``del``, and ``rmdir`` delete files/directories permanently. They do *not* move the into Trash or similar. 
 
 
 ..  youtube:: WUlRxCAYHTY
@@ -663,7 +668,7 @@ So what are the basic commands you should know? Here's a list:
     :class: toggle
     
     .. code-block:: bash
-       :caption: |maclin|
+       :caption: |cli| |maclin|
 
         cd cli_example/data_files/gid_data/site_locations
         mkdir site_2
@@ -684,7 +689,7 @@ So what are the basic commands you should know? Here's a list:
         mv cli_example cli_example_cli
 
     .. code-block:: bat
-       :caption: |win|
+       :caption: |cli| |win|
 
         cd cli_example\data_files\gid_data\site_locations
         md site_2

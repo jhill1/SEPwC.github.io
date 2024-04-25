@@ -461,11 +461,11 @@ are some binaries (i.e. programmes) in <code class="docutils literal notranslate
 symbols.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><a class="reference internal" href="_images/Apple_logo.png"><img alt="mac" src="_images/Apple_logo.png" style="height: 12px;" /></a> Mac only</p>
-<p>Linux only: <a class="reference internal" href="_images/Linux_logo.png"><img alt="linux" src="_images/Linux_logo.png" style="height: 12px;" /></a></p>
-<p>Windows only: <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></p>
-<p>Mac and Linux:  <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
-<p>All OSes: <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></p>
+<p>Mac only: <a class="reference internal" href="_images/Apple_logo.png"><img alt="mac" src="_images/Apple_logo.png" style="height: 16px;" /></a></p>
+<p>Linux only: <a class="reference internal" href="_images/Linux_logo.png"><img alt="linux" src="_images/Linux_logo.png" style="height: 16px;" /></a></p>
+<p>Windows only: <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></p>
+<p>Mac and Linux:  <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></p>
+<p>All OSes: <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></p>
 </div>
 </section>
 </section>
@@ -474,23 +474,31 @@ symbols.</p>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
 <p>The first is to list which directory you are in.</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
 <p>which stand for “present working directory”. On Windows, you use a different command:</p>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span>
+</pre></div>
+</div>
+</div>
 <p>which actually stands for “change directory” (more on that later), but without any arguments (see later)
 prints the current directory.</p>
 <p>These commands will print your current directory, so something like:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 /home/jh1889/work/teaching/SEPwC/source
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> cd
 C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </pre></div>
@@ -498,22 +506,30 @@ C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </div>
 <p>So now you know where you are on a command line. What’s there? For this we need to list the directory.
 The command for that is:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
-<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">dir</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>ls
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">dir</span>
+</pre></div>
+</div>
+</div>
 <p>You see a list of files. Depending on the system details that might give you different colours
 for directories and files, or be monochrome. The <code class="docutils literal notranslate"><span class="pre">$</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols are prompts; do not type them!</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 Assessments.rst<span class="w">  </span>Expectations.rst<span class="w">  </span>Week_1.rst<span class="w">  </span>Week_3.rst<span class="w">  </span>Week_5.rst<span class="w">  </span>Week_7.rst<span class="w">  </span>ytemplates
 conf.py<span class="w">          </span>index.rst<span class="w">         </span>Week_2.rst<span class="w">  </span>Week_4.rst<span class="w">  </span>Week_6.rst<span class="w">  </span>ystatic
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> dir
   Volume in drive C has no label.
   Volume Serial Number is F204-1461
@@ -538,58 +554,69 @@ conf.py<span class="w">          </span>index.rst<span class="w">         </span
 </div>
 <p>We can now see where you are, what’s in that directory; what about moving into a new directory? For that we use the
 change directory command:</p>
-<p><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span>
+</pre></div>
+</div>
+</div>
 <p>We saw this already for Windows, but we need to give an argument (this is the directory we want to move into).</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ystatic</span>
-<span class="n">ls</span>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span>
 </pre></div>
 </div>
 </div>
 <p>Great! We can now navigate down the filesystem. What about going up a directory?</p>
 <p>In all OSes the <code class="docutils literal notranslate"><span class="pre">..</span></code> is the parent directory to where we currently are. Similarly, <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory. So to go up
 one level we run the command:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
 </div>
 <p>We can traverse up and down in quite complex ways using this. Let’s imagine we want to go up two directories, then down into
 a subfolder:</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../subfolder
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\subfolder
 </pre></div>
 </div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Windows drives, labelled A, B, C, D, etc are a small ‘gotcha’ when using <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Try this (assuming
+<p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a> Windows drives, labelled A, B, C, D, etc are a small ‘gotcha’ when using <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Try this (assuming
 you have two drive letters available):</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> H:Documents
 </pre></div>
 </div>
 </div>
 <p>And nothing will happen. The prompt will still say <code class="docutils literal notranslate"><span class="pre">C:</span></code>. The command has worked, but Windows wants you
 to swap drives first. You have to type the drive letter to do so:</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>H<span class="p">:</span>
 </pre></div>
 </div>
 </div>
 <p>You will then find you prompt has switch to <code class="docutils literal notranslate"><span class="pre">H:\Documents</span></code>. This has caught me out a number of times.</p>
+<p>Alternatively, you can give the <code class="docutils literal notranslate"><span class="pre">/d</span></code> argument to <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> /d H:Documents
+</pre></div>
+</div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">cd</span></code> will also switch drives.</p>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
@@ -601,17 +628,17 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 <p>Assuming the zip file has been extracted you should see a folder called <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> like this image:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_1.png" />
 <p>Double-click the <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> folder</p>
-<p>In a command line:</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<p>In a new command line:</p>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cli_example
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -624,16 +651,16 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_3.png" />
 <p>Let’s do the the same in the command line:</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> data_files\sedimentary_data\site1
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>data_files/sedimentary_data/site1
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -641,16 +668,16 @@ should see:</p>
 </div>
 </div>
 <p>Note that we can put several directories together. We can do the same to go up, then back down directories:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\gis_data\site_locations
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../gis_data/site_locations
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -698,10 +725,10 @@ all the directories until you get to the file you’re after. I did however snea
 paths. These are paths that start from where you currently are (be that in the command line or running
 a programme).</p>
 <p>Let’s do an example. Here’s an absolute path:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>
 <code class="docutils literal notranslate"><span class="pre">/home/jon/my_exciting_project/data/very_important_data.csv</span></code></p>
 <p>Now let’s cd into the scripts folder</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a>
+<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>
 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/jon/my_exciting_project/scripts</span></code></p>
 <p>The data (<em>very_important_data.csv</em>) is one directory up (now in <code class="docutils literal notranslate"><span class="pre">my_exciting_project</span></code>) and then into data.
 So relative to scripts, that’s <code class="docutils literal notranslate"><span class="pre">../data/very_important_data.csv</span></code></p>
@@ -730,8 +757,8 @@ to actually do something. Ultimately, all computer code does this. It is possibl
 computer code at this level: assembler code. Back in the day (i.e. when I started programming),
 this is how you programmed computers, especially for games where you needed maximum performance.
 This is an example of assembler code for an x86 processor (i.e. what the type of processor you probably have):</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
  <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
  <span class="o">.</span><span class="n">CODE</span>
@@ -814,8 +841,12 @@ name somewhere else. In the GUI, this could take a while. In the command line it
 command.</p>
 <p>CLIs work by running the command you type, plus the arguments you give it. Arguments can be
 mandatory or optional (and therefore called options). A typical command might look like:</p>
-<p><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a>
-<code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">my_dir</span> <span class="pre">my_dir2</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>my_dir<span class="w"> </span>my_dir2
+</pre></div>
+</div>
+</div>
 <p>This copies (<code class="docutils literal notranslate"><span class="pre">cp</span></code>) <code class="docutils literal notranslate"><span class="pre">my_dir</span></code> to <code class="docutils literal notranslate"><span class="pre">my_dir2</span></code> recursively <code class="docutils literal notranslate"><span class="pre">-r</span></code>. The two
 directory names are mandatory arguments. The <code class="docutils literal notranslate"><span class="pre">-r</span></code> is optional.</p>
 <div class="admonition attention">
@@ -838,7 +869,7 @@ simplify somethings later. Moreover, many tools we will use later to help use de
 understanding of how the computer works, we can be more efficient at using one and hence get
 more done when programming.</p>
 <p>So what are the basic commands you should know? Here’s a list:</p>
-<p id="index-11"><span id="index-10"></span><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></p>
+<p id="index-11"><span id="index-10"></span><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>mv</p></li>
@@ -850,7 +881,7 @@ more done when programming.</p>
 <li><p>rmdir</p></li>
 </ul>
 </div></blockquote>
-<p id="index-12"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></p>
+<p id="index-12"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>ren or move</p></li>
@@ -863,7 +894,7 @@ more done when programming.</p>
 </div></blockquote>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, and <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> delete files permanently. They do <em>not</em> move the into Trash or similar.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, and <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> delete files/directories permanently. They do <em>not</em> move the into Trash or similar.</p>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/WUlRxCAYHTY" style="border: 0; height: 345px; width: 560px">
@@ -906,8 +937,8 @@ using the zip file and folder we extracted earlier.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cli_example/data_files/gid_data/site_locations
 <span class="w"> </span>mkdir<span class="w"> </span>site_2
 <span class="w"> </span>cp<span class="w"> </span>site_1.*<span class="w"> </span>site_2
@@ -928,8 +959,8 @@ using the zip file and folder we extracted earlier.</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 12px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example\data_files\gid_data\site_locations
  <span class="k">md</span> site_2
  <span class="k">copy</span> site_1.* site_2
