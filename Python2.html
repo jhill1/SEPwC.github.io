@@ -676,6 +676,8 @@ modules, ratehr than creating them.</p>
 <h3>Import statement<a class="headerlink" href="#import-statement" title="Link to this heading">#</a></h3>
 <p id="index-7">To use an existing module or package in your code you must <code class="docutils literal notranslate"><span class="pre">import</span></code> it.</p>
 <p>Let’s create a small script and save the file:</p>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fibonacci numbers module</span>
 
 <span class="k">def</span> <span class="nf">write_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># write Fibonacci series up to n</span>
@@ -694,7 +696,10 @@ modules, ratehr than creating them.</p>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
+</div>
 <p>Write the above into a file called <code class="docutils literal notranslate"><span class="pre">fibo.py</span></code> and save it. In that same directory, open your interpreter and do:</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
 
 <span class="n">fibo</span><span class="o">.</span><span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
@@ -703,9 +708,12 @@ modules, ratehr than creating them.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>You can see we import the code we have already written. We can then call the functions we added from that module. Note the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.
 A function is referred to via the original module <code class="docutils literal notranslate"><span class="pre">.</span></code> function name. This separates your current namespace from the module’s.
 You can assign this to a local variable is you wish:</p>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
 
 <span class="n">fb</span> <span class="o">=</span> <span class="n">fibo</span><span class="o">.</span><span class="n">write_fibonacci</span>
@@ -713,28 +721,41 @@ You can assign this to a local variable is you wish:</p>
 <span class="n">fb</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>You can also import single functions or items from a module, rather than the whole module:</p>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">write_fibonacci</span>
 
 <span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Note that I no longer need to use the <code class="docutils literal notranslate"><span class="pre">.</span></code> format to access that function. The function is imported into my current namespace. You can import the whole module into your namespace too:</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>This is generally not advised as it pollutes your namespace, but you will see this a lot!</p>
 <p>We can also rename the module as we <code class="docutils literal notranslate"><span class="pre">import</span></code> it. This is very common for a number of popular modules:</p>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span> <span class="k">as</span> <span class="nn">fib</span>
 
 <span class="n">fib</span><span class="o">.</span><span class="n">write_fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>You will often see:</p>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
+</div>
 </div>
 <p>for example.</p>
 <div class="video_wrapper align-center" style="text-align: center">
@@ -744,20 +765,29 @@ You can assign this to a local variable is you wish:</p>
 <h3>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Link to this heading">#</a></h3>
 <p id="index-8">Python is a versatile language, so modules can also be scripts! Python has a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code> which is set to a value of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is a file is called as a script.</p>
 <p>Running something like this in the command line:</p>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>fibo.py
 </pre></div>
+</div>
 </div>
 <p>will set this <code class="docutils literal notranslate"><span class="pre">__name__</span></code> variable to <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
 <p>Exercise: try this</p>
 <p>We can make use of this to write a script within our module. Add the following code to the bottom of <code class="docutils literal notranslate"><span class="pre">fibo.py</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
    <span class="kn">import</span> <span class="nn">sys</span>
    <span class="n">write_fibonacci</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
+</div>
 <p>The call the script directly via the command line:</p>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>fibo.py<span class="w"> </span><span class="m">10</span>
 </pre></div>
+</div>
 </div>
 <p>You can, of course, still import the module as before and that code will not be run. This is really useful for running a test suite for example or
 creating a structure of common functions across a number of projects/scripts.</p>
@@ -773,15 +803,20 @@ creating a structure of common functions across a number of projects/scripts.</p
 </ul>
 </div></blockquote>
 <p>However, you can modify this as a programmer too. We can use the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> variable:</p>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/home/jhill1/python/&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>will add the directory to the end of that list above.</p>
 </section>
 <section id="seeing-what-is-in-a-module">
 <h3>Seeing what is in a module<a class="headerlink" href="#seeing-what-is-in-a-module" title="Link to this heading">#</a></h3>
 <p id="index-10">The built-in function <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is used to find out which names a module defines. It returns a sorted list of strings:</p>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="nb">dir</span><span class="p">(</span><span class="n">fibo</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;return_fibonacci&#39;</span><span class="p">,</span> <span class="s1">&#39;write_fibonacci&#39;</span><span class="p">]</span>
@@ -809,44 +844,45 @@ creating a structure of common functions across a number of projects/scripts.</p
  <span class="s1">&#39;warnoptions&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
 </section>
 </section>
 <section id="python-dictionaries">
 <h2>Python: dictionaries<a class="headerlink" href="#python-dictionaries" title="Link to this heading">#</a></h2>
 <p id="index-12"><span id="index-11"></span>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
 <p>Python has dictionaries as an in-built datatype, set up using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> braces:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="mi">3452345</span><span class="p">,</span> <span class="s1">&#39;Mildred&#39;</span><span class="p">:</span> <span class="mi">532354</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>You can then access using the keys, much like in a list:</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <p>You can add to a dictionary by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> notation:</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="s1">&#39;Grenville&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">435353</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>To check if a key is used in a dictionary, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Bob&#39;</span> <span class="ow">in</span> <span class="n">telephone</span>
 <span class="s1">&#39;Jack&#39;</span> <span class="ow">in</span> <span class="n">telephone</span>
 </pre></div>
 </div>
 </div>
 <p>In addition to the <code class="docutils literal notranslate"><span class="pre">{}</span></code> construction you can also use <code class="docutils literal notranslate"><span class="pre">dict</span></code> construction:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">3452345</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Mildred&#39;</span><span class="p">,</span> <span class="mi">53235</span><span class="p">)])</span>
 <span class="c1"># or even</span>
 <span class="n">telephone</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Bob</span><span class="o">=</span><span class="mi">3452345</span><span class="p">,</span> <span class="n">Mildred</span><span class="o">=</span><span class="mi">53235</span><span class="p">)</span>
@@ -857,8 +893,8 @@ creating a structure of common functions across a number of projects/scripts.</p
 <section id="looping-with-python-dictionaries">
 <h3>Looping with Python dictionaries<a class="headerlink" href="#looping-with-python-dictionaries" title="Link to this heading">#</a></h3>
 <p id="index-13">Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them.</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">knights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -875,8 +911,8 @@ creating a structure of common functions across a number of projects/scripts.</p
 <p id="index-16"><span id="index-15"></span><span id="index-14"></span>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively. Both of these return lists
 which can be looped over, e.g.</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
 <span class="n">names</span> <span class="o">=</span> <span class="n">knights</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -892,8 +928,8 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
     <span class="s2">&quot;UK&quot;</span><span class="p">:</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span>
@@ -911,8 +947,8 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Italy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Rome&quot;</span>
 <span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Mexico&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Mexico City&quot;</span>
 </pre></div>
@@ -925,8 +961,8 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;UK&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -938,8 +974,8 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Burkina Faso&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Wagadugu&quot;</span>
 </pre></div>
 </div>
@@ -959,8 +995,8 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="s2">&quot;UK&quot;</span> <span class="ow">in</span> <span class="n">captials</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;UK&quot;</span><span class="p">])</span>
 
@@ -992,8 +1028,11 @@ come into being. We’ll learn a lot more in the data section.</p>
 <h3>Opening and closing files<a class="headerlink" href="#opening-and-closing-files" title="Link to this heading">#</a></h3>
 <p id="index-18">Before reading or writing data to a file we must first open that
 file and specify if we are going to read from it, or write to it.</p>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>The above opens the file with name <cite>my_file.txt</cite> (in the current directory) in <cite>read</cite> mode.
 The variable <cite>file</cite> is the file handle. It’s the variable by which you can access the file
@@ -1009,20 +1048,26 @@ on disk.</p>
 <li><p><cite>a+</cite>: To append and read data from the file. It won’t override existing data.</p></li>
 </ul>
 <p>A file, once finished with, needs closing too.</p>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="c1"># do things</span>
 <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div></blockquote>
 <p>It’s useful to get into the habit of closing files or using the Python <cite>with</cite> statement
 to prevent files being left open. This is especially important when writing to
 a file as often the data is “buffered” by the system and only gets written once
 the file handle is lost (i.e. <cite>.close()</cite> is called or the variable goes out of scope).</p>
+<div class="literal-block-wrapper docutils container" id="id46">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="c1"># do things</span>
     <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <p>The <cite>file.close()</cite> is now redundant, but can still be used in the code to make it clear if needed. What the
 <code class="docutils literal notranslate"><span class="pre">with</span></code> block does is call <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> functions, so files are automatically
@@ -1033,6 +1078,8 @@ closed etc.</p>
 <p id="index-19">We can now open and close files, how do we get information from them? We’ll focus on text files for now. Most
 binary files have a Python module to read them, so are more specialist in nature.</p>
 <p>We can read text files line-by-line or in one go. To read line-by-line:</p>
+<div class="literal-block-wrapper docutils container" id="id47">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id47" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 <span class="c1"># This will print every line one by one in the file</span>
@@ -1040,31 +1087,41 @@ binary files have a Python module to read them, so are more specialist in nature
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">file</span></code> operator is also an iterable object, so a loop over each element in the <code class="docutils literal notranslate"><span class="pre">file</span></code> allows us
 to read the text line-by-line.</p>
 <p>If we want to read in all the text at once:</p>
+<div class="literal-block-wrapper docutils container" id="id48">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id48" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">file.read()</span></code> function grabs all the text from the file into memory (and here prints immediately, but can also
 be stored in a variable). The <code class="docutils literal notranslate"><span class="pre">read()</span></code> function can also take an argument for the number of characters to read,
 for example this reads the first 5 characters:</p>
+<div class="literal-block-wrapper docutils container" id="id49">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id49" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>My preferred way of reading text files is by line and performing any operations on a line-by-line basis. This
 works for most files as data in text files tends to be organised that way. I use the <code class="docutils literal notranslate"><span class="pre">readline()</span></code> function
 to make this very clear. For example:</p>
+<div class="literal-block-wrapper docutils container" id="id50">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id50" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datafile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p id="index-20">The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is an example of the type of processing; here splitting the line of text
 into words (separated by spaces) and creating a list of those.</p>
@@ -1080,6 +1137,8 @@ the lines by commas and printing to screen each line.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code, wrapping both parts into one code.</p>
+<div class="literal-block-wrapper docutils container" id="id51">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id51" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;depth_data.csv&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">all_file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">all_file</span><span class="p">)</span>
@@ -1091,7 +1150,10 @@ the lines by commas and printing to screen each line.</p>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>which produces:</p>
+<div class="literal-block-wrapper docutils container" id="id52">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id52" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>File,Top,Bottom
 core_13.xlsx,22.75,30
 core_16.xlsx,27,33
@@ -1103,6 +1165,7 @@ core_17.xlsx,27.75,43
 <span class="o">[</span><span class="s1">&#39;core_17.xlsx&#39;</span>,<span class="w"> </span><span class="s1">&#39;27.75&#39;</span>,<span class="w"> </span><span class="s1">&#39;43\n&#39;</span><span class="o">]</span>
 </pre></div>
 </div>
+</div>
 <p>Note how the second method has produced lists (due to the <cite>split()</cite> function) which
 we could iterate over and do something sensible with, e.g. opening the file in the first
 element, perhaps.</p>
@@ -1111,44 +1174,62 @@ element, perhaps.</p>
 <section id="writing-files">
 <h3>Writing files<a class="headerlink" href="#writing-files" title="Link to this heading">#</a></h3>
 <p id="index-21">Writing files is a bit different to reading files. You are in charge of putting the line breaks in!</p>
+<div class="literal-block-wrapper docutils container" id="id53">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id53" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello World!!!&quot;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No, really, hello!&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>The above opens a text file for writing (note the <code class="docutils literal notranslate"><span class="pre">'w'</span></code>) and writes a single line of text. Try it.</p>
 <p>To get multiple lines we either need to create a string with those newline characters in it <em>or</em> use
 the <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> function with a list of strings. As with a lot of things in Python there are a number of ways
 of doing this!</p>
 <p>Let’s add some newlines to the example above first.</p>
+<div class="literal-block-wrapper docutils container" id="id54">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id54" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">\n</span></code> character - this is a newline character. So you will now have a file that contains:</p>
+<div class="literal-block-wrapper docutils container" id="id55">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id55" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hellow<span class="w"> </span>World!!!
 No,<span class="w"> </span>really,<span class="w"> </span>hello!
 </pre></div>
 </div>
+</div>
 <p>We could achieve the same thing using <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> but we are still responsible for adding the newlines:</p>
+<div class="literal-block-wrapper docutils container" id="id56">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id56" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Produces the same output as above. If your list of strings doesn’t have newline characters, then something like
 this works well:</p>
+<div class="literal-block-wrapper docutils container" id="id57">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id57" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">contents</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>Here, we join each element of contents with a newline character. We could also do:</p>
+<div class="literal-block-wrapper docutils container" id="id58">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id58" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World!!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;No, really, hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>Here, we are using generator expressions (the <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">for</span> <span class="pre">l</span> <span class="pre">in</span> <span class="pre">contents</span></code>) and formatting expressions to stick a string a newline
 together.</p>
@@ -1162,6 +1243,8 @@ This creates a CSV file, which you can load into Excel, etc.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id59">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id59" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
     <span class="s2">&quot;UK&quot;</span><span class="p">:</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span>
@@ -1173,6 +1256,7 @@ This creates a CSV file, which you can load into Excel, etc.</p>
     <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">capitals</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">country</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">capitals</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>The file then contains:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@mirovia:~/work/teaching/SEPwC/source$<span class="w"> </span>more<span class="w"> </span>capitals.csv
@@ -1191,16 +1275,16 @@ Burkina<span class="w"> </span>Faso,Ouagadougou
 <p id="index-22">The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
 The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
 in the course, for example:</p>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id60">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id60" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l
 </pre></div>
 </div>
 </div>
 <p>which is the command to list things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, in a Unix shell with the option supplied to make it a table <code class="docutils literal notranslate"><span class="pre">-l</span></code>.
 Similarly, we’ve covered:</p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id61">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id61" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>dir1<span class="w"> </span>dir2
 </pre></div>
 </div>
@@ -1211,15 +1295,15 @@ advanced usage options.</p>
 <section id="python-and-the-command-line">
 <h3>Python and the command line<a class="headerlink" href="#python-and-the-command-line" title="Link to this heading">#</a></h3>
 <p id="index-23">When you run a Python script, with some arbitrary text after:</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id62">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id62" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>arg_script.py<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 </pre></div>
 </div>
 </div>
 <p>that text is passed to the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module in Python. Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.py</span></code></p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id63">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id63" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Argument list&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
@@ -1228,15 +1312,15 @@ advanced usage options.</p>
 </div>
 </div>
 <p>Now run that on the command line.</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id64">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id64" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>arg_script.py<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 </pre></div>
 </div>
 </div>
 <p>Your output is:</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id65">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id65" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Length:<span class="w"> </span><span class="m">4</span>
 Argument<span class="w"> </span>List:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;arg_script.py&#39;</span>,<span class="w"> </span><span class="s1">&#39;arg1&#39;</span>,<span class="w"> </span><span class="s1">&#39;arg2&#39;</span>,<span class="w"> </span><span class="s1">&#39;arg3&#39;</span><span class="o">]</span>
 </pre></div>
@@ -1245,8 +1329,8 @@ Argument<span class="w"> </span>List:<span class="w"> </span><span class="o">[</
 <p>The arguments are stored in <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. The first is always the name of the script. The rest
 are what the user has given. These could be files or options of some kind (e.g. keywords).
 Within our script we access them as we would any other list:</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id66">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id66" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="n">copy_from</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1268,8 +1352,8 @@ and print them out on individual lines. Do not include the script name.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id67">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id67" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1289,8 +1373,8 @@ and print them out on individual lines. Do not include the script name.</p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. Moreover,
 the module will help with error messages, etc when the user gives incorrect arguments.</p>
 <p>The core functionality of <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is the <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code></p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id68">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id68" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
@@ -1302,8 +1386,8 @@ the module will help with error messages, etc when the user gives incorrect argu
 </div>
 </div>
 <p>Once an ArgumentParser is set-up you can then add optional and positional arguments to that.</p>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id69">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id69" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span>
                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the file to read the data from&quot;</span><span class="p">)</span> <span class="c1"># a positional argument</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--count&#39;</span>
@@ -1317,8 +1401,8 @@ the module will help with error messages, etc when the user gives incorrect argu
 <p>You can also specify which variable the argument is parsered into, the type, if an argument is required, if it should be a list
 and a lot more too.</p>
 <p>You then parse the argument and put them in variables as you see fit</p>
-<div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id70">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id70" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">boundary_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">filename</span>
 <span class="n">polygon_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">polygon</span>
@@ -1344,8 +1428,8 @@ to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id43">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id71">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id71" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -1382,8 +1466,8 @@ to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
 <h3>Getting input from a user in Python<a class="headerlink" href="#getting-input-from-a-user-in-python" title="Link to this heading">#</a></h3>
 <p id="index-25">If you want to ask the user something, e.g. a file name
 or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
-<div class="literal-block-wrapper docutils container" id="id44">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id72">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id72" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you wish to continue (Y/N)?&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
     <span class="c1"># do something</span>
@@ -1411,6 +1495,8 @@ to import to do random integers</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code</p>
+<div class="literal-block-wrapper docutils container" id="id73">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id73" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -1437,6 +1523,7 @@ to import to do random integers</p>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>Modify the guessing game code to include a maximum
@@ -1446,6 +1533,8 @@ print a message to say the user lost the game</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code</p>
+<div class="literal-block-wrapper docutils container" id="id74">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id74" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -1476,6 +1565,7 @@ print a message to say the user lost the game</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, you had 5 goes. I win!&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>

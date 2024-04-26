@@ -1659,10 +1659,15 @@ and hence our flood risk, coastal geomorphology and ecological systems will also
 <p>You can run the code below sequentially in Spyder/ipython or create a Jupyter notebook.
 Alternatively, save as a script and run from the command line.</p>
 <p>Some modules you will need to install are <em>uptide</em> and <em>wget</em></p>
+<div class="literal-block-wrapper docutils container" id="id66">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id66" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>uptide
 pip<span class="w"> </span>install<span class="w"> </span>wget
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id67">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id67" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the modules we need</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1675,7 +1680,10 @@ pip<span class="w"> </span>install<span class="w"> </span>wget
 <span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 </div>
+</div>
 <p>Now we have out environment set up. We can create a couple of “helper” functions to make life easier later!</p>
+<div class="literal-block-wrapper docutils container" id="id68">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id68" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_and_process_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">tide_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">tide_data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">month</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">day</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">hour</span><span class="o">=</span><span class="n">tide_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
@@ -1698,10 +1706,13 @@ pip<span class="w"> </span>install<span class="w"> </span>wget
     <span class="k">return</span> <span class="n">year_data</span>
 </pre></div>
 </div>
+</div>
 <p>We are going to use data from the long term tidal record dataset held by the School of
 Ocean and Earth Science and Technology, University of Hawaii. Some of their tidal records
 go back over 100 years. We’re going to download data for three locations in Australia:
 Freemantle, WA; Booby Island, QLD; and Fort Denison, NSW.</p>
+<div class="literal-block-wrapper docutils container" id="id69">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id69" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">FortDenison_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h333.csv&quot;</span>
 <span class="n">BoobyIsland_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h336.csv&quot;</span>
 <span class="n">Freemantle_url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/csv/fast/hourly/h175.csv&quot;</span>
@@ -1715,15 +1726,21 @@ Freemantle, WA; Booby Island, QLD; and Fort Denison, NSW.</p>
     <span class="n">file_name</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>We now have three csv files which should be stored in your current directory (whever you are
 running this code from ).</p>
+<div class="literal-block-wrapper docutils container" id="id70">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id70" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and store as a pandas dataframe</span>
 <span class="n">Fort_Denison</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h333.csv&quot;</span><span class="p">)</span>
 <span class="n">Booby_Island</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h336.csv&quot;</span><span class="p">)</span>
 <span class="n">Freemantle</span> <span class="o">=</span> <span class="n">read_and_process_data</span><span class="p">(</span><span class="s2">&quot;h175.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Now let’s plot these, choosing an arbitrary year to plot (rather than the whole dataset!)</p>
+<div class="literal-block-wrapper docutils container" id="id71">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id71" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot 1 years&#39; worth of tidal data</span>
 <span class="n">fig_summary</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig_summary</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
@@ -1739,6 +1756,7 @@ running this code from ).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>The plot, though busy, already shows some interesting features. Booby Island has the highest tidal
 range and shows a clear annual signal. Freemantle has the smallest tidal range and seems fairly constant.</p>
 <p>Tide gauges often record the water level so can pick up storms and are affected by even small winds
@@ -1747,6 +1765,8 @@ aspect of weather, depending on how the data are processed. In addition, for lon
 the tide gauges will also record sea level rise. All heights are measured above a datum so you
 also have to be careful comparing raw data from one tide gauge to another.</p>
 <p>Let’s now look at one month in detail:</p>
+<div class="literal-block-wrapper docutils container" id="id72">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id72" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig_june</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig_june</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">fd</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Fort_Denison</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fort Denison&quot;</span><span class="p">)</span>
@@ -1761,6 +1781,7 @@ also have to be careful comparing raw data from one tide gauge to another.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>We can now see more of the tidal signals. You may notice Freemantle shows fewer wiggles
 than the other two locations; this is because it is a diurnal tide: one tide per day.
 Fort Denison has a clear two tides per day; semi-diurnal. Booby Island normally has two
@@ -1771,8 +1792,8 @@ the external forcing is for tides (the rotation of the earth, the movement of th
 the earth, etc), which allows us to break up the signal into constituent parts: the tidal
 constituents. These are often given labels such as M2, S2, K1, O1, etc. Each one has a
 particular frequency as given in the table below.</p>
-<table class="table" id="id66">
-<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id66" title="Link to this table">#</a></caption>
+<table class="table" id="id73">
+<caption><span class="caption-text">Tidal periods</span><a class="headerlink" href="#id73" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Decription</p></th>
 <th class="head"><p>Darwin symbol</p></th>
@@ -1827,6 +1848,8 @@ and phase will be different.</p>
 <p><span class="math notranslate nohighlight">\(A\)</span> is the amplitude, <span class="math notranslate nohighlight">\(2 pi / B\)</span> is the period, <span class="math notranslate nohighlight">\(C\)</span> is the phase shift and <span class="math notranslate nohighlight">\(D\)</span> is the
 vertical shift. We know the period (from the table above) for each constiuent and <span class="math notranslate nohighlight">\(D\)</span> is not releant here,
 so we have two parameters to find: <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<div class="literal-block-wrapper docutils container" id="id74">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id74" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">A_m2</span> <span class="o">=</span> <span class="mf">0.53</span>
 <span class="n">B_m2</span> <span class="o">=</span> <span class="mf">12.4206012</span> <span class="c1"># hours</span>
 <span class="n">C_m2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1840,7 +1863,10 @@ so we have two parameters to find: <span class="math notranslate nohighlight">\(
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>That’s the M2 curve; let’s now add S2:</p>
+<div class="literal-block-wrapper docutils container" id="id75">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id75" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">A_s2</span> <span class="o">=</span> <span class="mf">0.23</span>
 <span class="n">B_s2</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">C_s2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
@@ -1853,11 +1879,14 @@ so we have two parameters to find: <span class="math notranslate nohighlight">\(
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <p>The above shows what in effect is spring and neap tide using just two components, with different
 amplitudes and phases (and frequencies/periods).</p>
 <p>We can extract constituents from a tidal signal like those plotted above using least squares
 regression analysis to work out what the tidal constiuents are. Let’s do that now to pull
 out the common consituents from our tidal data.</p>
+<div class="literal-block-wrapper docutils container" id="id76">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id76" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s first pull out a single year&#39;s worth of data</span>
 <span class="c1"># and remove the mean value so the tides oscillate across zero</span>
 <span class="n">FD_2008</span> <span class="o">=</span> <span class="n">extract_single_year_remove_mean</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="n">Fort_Denison</span><span class="p">)</span>
@@ -1886,11 +1915,14 @@ out the common consituents from our tidal data.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>The above numbers are the tidal amplitude for the M2 constiuent at Fort Denison (0.5013 m) and the phase (5.366 radians).
 We can look up what the actual numbers are for Fort Denison (exercise for the reader!).
 However, we’ve forgotten something: <em>timezones</em>!</p>
 <p>We also need to account for the timezone of the data. The phase is measured relative to
 UTC/GMT. We therefore need to tell the analysis the time data is in the Sydney timezone.</p>
+<div class="literal-block-wrapper docutils container" id="id77">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id77" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Sydney&quot;</span><span class="p">)</span>
 <span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">FD_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
@@ -1898,6 +1930,7 @@ UTC/GMT. We therefore need to tell the analysis the time data is in the Sydney t
 <span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span><span class="n">pha</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
@@ -1909,6 +1942,8 @@ and Booby Island tidal data. Hint; remember the timezones!</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id78">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id78" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Lindeman&quot;</span><span class="p">)</span>
 <span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">BI_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
@@ -1925,26 +1960,38 @@ and Booby Island tidal data. Hint; remember the timezones!</p>
 </pre></div>
 </div>
 </div>
+</div>
 <p>What happens when we want multiple constiuents? The first thing we need to consider is how long our
 data record is. Consituents that have a period/frequency that is close together need a longer
 dataset to be able to seperate them out. We can use something called the Rayleigh Critereon
 to work out how long a record we need.</p>
+<div class="literal-block-wrapper docutils container" id="id79">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id79" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">constituents</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="s1">&#39;K2&#39;</span><span class="p">,</span> <span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;M4&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">uptide</span><span class="o">.</span><span class="n">select_constituents</span><span class="p">(</span><span class="n">constituents</span><span class="p">,</span><span class="mi">15</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">))</span> <span class="c1"># This is 15 days in seconds</span>
 </pre></div>
 </div>
+</div>
 <p>What we get back is that we can’t resolve the N2, K2 and Q1 from the list with 15 days worth of data.
 What if we had 30 days?</p>
+<div class="literal-block-wrapper docutils container" id="id80">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id80" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">constituents</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="s1">&#39;K2&#39;</span><span class="p">,</span> <span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;M4&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">uptide</span><span class="o">.</span><span class="n">select_constituents</span><span class="p">(</span><span class="n">constituents</span><span class="p">,</span><span class="mi">30</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>Nope! K2 is still not able to be resolved from 30 days worth of data. How many days would we need?</p>
+<div class="literal-block-wrapper docutils container" id="id81">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id81" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tide</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">Tides</span><span class="p">(</span><span class="n">constituents</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tide</span><span class="o">.</span><span class="n">get_minimum_Rayleigh_period</span><span class="p">()</span><span class="o">/</span><span class="mf">86400.</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>82.6 days worth of data to be able to work out the constituents listed above. So with our year of data we should be fine!</p>
+<div class="literal-block-wrapper docutils container" id="id82">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id82" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Sydney&quot;</span><span class="p">)</span>
 <span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">FD_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
@@ -1952,6 +1999,7 @@ What if we had 30 days?</p>
 <span class="n">amp</span><span class="p">,</span><span class="n">pha</span> <span class="o">=</span> <span class="n">uptide</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">tide</span><span class="p">,</span> <span class="n">FD_2008</span><span class="p">[</span><span class="s1">&#39;Tide&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seconds_since</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>At Fort Denison our amplitudes and phases are:</p>
 <blockquote>
@@ -1968,6 +2016,8 @@ What if we had 30 days?</p>
 </div></blockquote>
 <p>We could plot those using sine curves. However, <cite>uptide</cite> also has functionality to
 give us a total tidal signal from the amplitudes and phases.</p>
+<div class="literal-block-wrapper docutils container" id="id83">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id83" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span> <span class="c1"># 1 year in 1800 second intervals</span>
 <span class="n">eta</span> <span class="o">=</span> <span class="n">tide</span><span class="o">.</span><span class="n">from_amplitude_phase</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">pha</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 <span class="n">fig_summary</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1985,6 +2035,7 @@ give us a total tidal signal from the amplitudes and phases.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Extract all components and plot for Booby Island and Freemantle</strong></p>
@@ -1992,6 +2043,8 @@ give us a total tidal signal from the amplitudes and phases.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id84">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id84" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tz</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Australia/Lindeman&quot;</span><span class="p">)</span>
 <span class="n">tide</span><span class="o">.</span><span class="n">set_initial_time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">seconds_since</span> <span class="o">=</span> <span class="p">(</span><span class="n">BI_2008</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">tz</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
@@ -2022,6 +2075,7 @@ give us a total tidal signal from the amplitudes and phases.</p>
 <span class="n">fig_summary</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2070,10 +2124,10 @@ images, such as satellite images, to be stored in a R(ed), G(reeen), and B(lue) 
 and vector formats; either can be used, but raster data have a “resolution” issue where
 the size of the grid alters the accuracy of the data. However, raster data can store a
 lot of data very efficiently, e.g. land hieght data where you need continuous measurements.</p>
-<figure class="align-default" id="id67">
+<figure class="align-default" id="id85">
 <img alt="Difference between raster and vector images." src="_images/raster_vector_gis.png" />
 <figcaption>
-<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id67" title="Link to this image">#</a></p>
+<p><span class="caption-text">Raster vs Vector for a land-use type dataset. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Joey-das-WBF">Johannes Rössel</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id85" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2092,16 +2146,16 @@ same project space. Your operation may work, but you won’t get the result you 
 <p>Common projection spaces are “mercator” and “Universal Tranverse Mercator (UTM)”. For
 “regional” studies UTM is best. It’s in metres (not degrees!) and covers a reasonably
 large area with little deformation.</p>
-<figure class="align-default" id="id68">
+<figure class="align-default" id="id86">
 <img alt="A global Mollweide projection which preserves area." src="_images/Mollweide_projection_SW.jpg" />
 <figcaption>
-<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id68" title="Link to this image">#</a></p>
+<p><span class="caption-text">Mollweide projection of the Earth, preserving areas. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id86" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id69">
+<figure class="align-default" id="id87">
 <img alt="A global Mercator projection which preserves angles." src="_images/Mercator_projection_Square.JPG" />
 <figcaption>
-<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id69" title="Link to this image">#</a></p>
+<p><span class="caption-text">Mercator projection of the Earth, preserving angles. From <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> by <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Daniel R. Strebe</a> (CC-BY-SA licence)</span><a class="headerlink" href="#id87" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2118,8 +2172,8 @@ change your working directory to match where you’ve downloaded the data.</p>
 <h3>The <cite>terra</cite> library<a class="headerlink" href="#the-terra-library" title="Link to this heading">#</a></h3>
 <p>The <cite>terra</cite> library is based around two key classes: <cite>SpatRatser</cite> and <cite>SpatVector</cite>.
 Let’s look at rasters first.</p>
-<div class="literal-block-wrapper docutils container" id="id70">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id70" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id88">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id88" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">raster</span><span class="p">(</span><span class="s">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
 <span class="n">my_raster</span>
 </pre></div>
@@ -2128,8 +2182,8 @@ Let’s look at rasters first.</p>
 <p>R will print out some basic info on the raster. This includes the extent, the projection
 space and min and max values.</p>
 <p>You can summarise the raster too:</p>
-<div class="literal-block-wrapper docutils container" id="id71">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id71" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id89">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id89" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2137,8 +2191,8 @@ space and min and max values.</p>
 <p>For this raster dataset, there is a single band. Rasters can store multiple
 bands in a single file. It’s common, for example, to store the R, G and B
 colours separately. You can check this using the <cite>nlyr</cite> function:</p>
-<div class="literal-block-wrapper docutils container" id="id72">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id72" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id90">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id90" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">nlyr</span><span class="p">(</span><span class="n">my_raster</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2171,8 +2225,8 @@ can <em>overshoot</em> the limits of the old data, but can also produce smoother
 without abrupt changes. Whenever you project onto a new coordinate system you
 are altering the data.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id73">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id73" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id91">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id91" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">raster_in_latlon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;+init=EPSG:4326&quot;</span><span class="p">)</span>
 <span class="nf">crs</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">)</span>
 <span class="nf">ext</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">)</span>
@@ -2188,8 +2242,8 @@ you the extent of the raster in the coordinate space.</p>
 same resolution, same extents, same projection space. Once identical, then
 simple calculations (and indeed more complex ones!) can be carried out.</p>
 <p>To write any raster to file, use the <cite>writeRaster</cite> function:</p>
-<div class="literal-block-wrapper docutils container" id="id74">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id74" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id92">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id92" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">writeRaster</span><span class="p">(</span><span class="n">raster_in_latlon</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;UK_tidal_range.tiff&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="n">filetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GTiff&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span>
@@ -2203,8 +2257,8 @@ slope, proximity distance, extract data from rasters, create a stack of rasters,
 and to <em>rasterise</em> a vector (i.e. convert from vector to
 raster).</p>
 <p>The <cite>terra</cite> library can also load vector data:</p>
-<div class="literal-block-wrapper docutils container" id="id75">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id75" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id93">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id93" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2216,31 +2270,31 @@ vector data.</p>
 <h3>The <cite>sf</cite> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
 <p>R also have another popular library for dealing with shapefiles/vector data; <cite>sf</cite>.
 This library has more features than <cite>terra</cite> so is worth learning.</p>
-<div class="literal-block-wrapper docutils container" id="id76">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id76" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id94">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id94" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
 <span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>Vector data can be points, lines or polygons. We can find out which using:</p>
-<div class="literal-block-wrapper docutils container" id="id77">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id77" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id95">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id95" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_geometry_type</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>We can then find out the CRS and extennt:</p>
-<div class="literal-block-wrapper docutils container" id="id78">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id78" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id96">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id96" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_crs</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 <span class="nf">st_bbox</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>We can also use <cite>sf</cite> to create a shapefile on the fly:</p>
-<div class="literal-block-wrapper docutils container" id="id79">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id79" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id97">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id97" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">aoi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.polygons</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">ext</span><span class="p">(</span><span class="n">my_raster</span><span class="p">),</span><span class="w"> </span><span class="n">crs</span><span class="o">=</span><span class="n">terra</span><span class="o">::</span><span class="nf">crs</span><span class="p">(</span><span class="n">my_raster</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2256,16 +2310,16 @@ and geometric calculations (area, distances, lengths).</p>
 <h3>Switching between the two<a class="headerlink" href="#switching-between-the-two" title="Link to this heading">#</a></h3>
 <p>Using two different libraries for shapefiles can be a pain, but it is fairly
 easy to switch a vector dataset between the two.</p>
-<div class="literal-block-wrapper docutils container" id="id80">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id80" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id98">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id98" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <p>Will convert a <cite>terra</cite> vector to the <cite>sf</cite> format. Normally, <cite>terra</cite> can deal with
 <cite>sf</cite> objects, but you sometimes need to wrap the <cite>sf</cite> object in the <cite>st_zm</cite> function:</p>
-<div class="literal-block-wrapper docutils container" id="id81">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id81" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id99">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id99" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">points_as_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="nf">st_zm</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">),</span><span class="w"> </span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2285,8 +2339,8 @@ change your working directory to match where you’ve downloaded the data.</p>
 <h3>The <cite>rasterio</cite> library<a class="headerlink" href="#the-rasterio-library" title="Link to this heading">#</a></h3>
 <p>The <cite>rasterio</cite> library is used to load, manipulate and plot raster
 data.</p>
-<div class="literal-block-wrapper docutils container" id="id82">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id82" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id100">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id100" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rasterio</span>
 
 <span class="n">my_raster</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
@@ -2297,8 +2351,8 @@ data.</p>
 <p>Python will print out some basic info on the raster. This includes the filename
 and the read/write status. <cite>rasterio</cite> uses a number of attributes to contain information
 about the raster:</p>
-<div class="literal-block-wrapper docutils container" id="id83">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id83" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id101">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id101" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">width</span>
 <span class="n">my_raster</span><span class="o">.</span><span class="n">height</span>
 <span class="n">my_raster</span><span class="o">.</span><span class="n">nodata</span>
@@ -2308,8 +2362,8 @@ about the raster:</p>
 <p>For this raster dataset, there is a single band. Rasters can store multiple
 bands in a single file. It’s common, for example, to store the R, G and B
 colours separately. You can check this using the <cite>count</cite> attribute:</p>
-<div class="literal-block-wrapper docutils container" id="id84">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id84" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id102">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id102" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">count</span>
 </pre></div>
 </div>
@@ -2343,8 +2397,8 @@ can <em>overshoot</em> the limits of the old data, but can also produce smoother
 without abrupt changes. Whenever you project onto a new coordinate syste, you
 are altering the data.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id85">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id85" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id103">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id103" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rasterio.warp</span> <span class="kn">import</span> <span class="n">calculate_default_transform</span><span class="p">,</span> <span class="n">reproject</span><span class="p">,</span> <span class="n">Resampling</span>
 
 <span class="n">dstCrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">}</span>
@@ -2388,8 +2442,8 @@ simple calculations (and indeed more complex ones!) can be carried out.</p>
 <p><cite>geopandas</cite> is the geographical equivalent to <cite>pandas</cite>. It deals with dataframes
 but those dataframes have a <cite>geometry</cite> component. It therefore maps onto GIS Vector
 data very well.</p>
-<div class="literal-block-wrapper docutils container" id="id86">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id86" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id104">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id104" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
 
 <span class="n">tide_gauges</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
@@ -2400,8 +2454,8 @@ data very well.</p>
 <p>Vector data can be points, lines or polygons. The <cite>geomoetry</cite> column tells us this and is,
 in fact, a <cite>shapely</cite> object. <cite>geopandas</cite> can carry out a number of geometric calculations, e.g.
 distances:</p>
-<div class="literal-block-wrapper docutils container" id="id87">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id87" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id105">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id105" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">whitby</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
 <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">whitby</span><span class="p">)</span>
 <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span>
@@ -2419,8 +2473,8 @@ which can be loaded into a <cite>Geometry</cite>. You can also create geometries
 <cite>shapely</cite>. However, you often don’t need to use the main functions in <cite>shapely</cite> itself
 as <cite>geopandas</cite> is built on top of <cite>shapely</cite>. It’s often needed for creating new
 vector data though.</p>
-<div class="literal-block-wrapper docutils container" id="id88">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id88" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id106">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id106" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
 
 <span class="n">my_box</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">my_raster</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>

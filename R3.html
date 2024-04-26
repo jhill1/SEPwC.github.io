@@ -531,16 +531,24 @@ create your own object you must first create a <code class="docutils literal not
 S3, S4, and RC (and actually some others too). Here, we’ll stick to RC which requires a formal
 definition of the class and integrates the methods within the class in a more
 Object-Oriented way.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Person&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;character&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;numeric&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Person</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">41</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">alice</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>This is not a particularly useful object, but shows the basic principles. You can acess
 the fields using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">alice</span><span class="o">$</span><span class="n">name</span>
 <span class="n">alice</span><span class="o">$</span><span class="n">age</span>
 
@@ -548,8 +556,11 @@ the fields using the <code class="docutils literal notranslate"><span class="pre
 <span class="n">alice</span><span class="o">$</span><span class="n">age</span>
 </pre></div>
 </div>
+</div>
 <p>We need to add some methods/functions to go along with our class.
 Let’s create the dog class we thought about previously:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Dog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
 
 <span class="w">        </span><span class="n">fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
@@ -583,6 +594,7 @@ Let’s create the dog class we thought about previously:</p>
 <span class="n">wilf</span><span class="o">$</span><span class="n">state</span>
 </pre></div>
 </div>
+</div>
 <p>There are a few things here that are worth pointing out. First is the structure; note that the
 fields are <code class="docutils literal notranslate"><span class="pre">list</span></code> -ed and then the functions are also <code class="docutils literal notranslate"><span class="pre">list</span></code> -ed. It’s easy to forget a comma
 in there! Next is the use of <code class="docutils literal notranslate"><span class="pre">&lt;&lt;-</span></code>. You’ll learn more about this in the namespaces section,
@@ -590,6 +602,8 @@ but this is to make it clear which <code class="docutils literal notranslate"><s
 functions and fields are accessed using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation.</p>
 <p>One of the key things about classes is that they can inherit other classes. We can therefore
 build complex stacks of classes using base classes. Let’s create a class for a Guide Dog:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">GuideDog</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setRefClass</span><span class="p">(</span><span class="s">&quot;GuideDog&quot;</span><span class="p">,</span>
 
 <span class="w">        </span><span class="n">contains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Dog&quot;</span><span class="p">,</span>
@@ -609,10 +623,14 @@ build complex stacks of classes using base classes. Let’s create a class for a
 <span class="w">    </span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>So here we’ve added a new function <code class="docutils literal notranslate"><span class="pre">complete_trianing</span></code> and overridden the <code class="docutils literal notranslate"><span class="pre">bark</span></code> function.</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">buddy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GuideDog</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Buddy&quot;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;tan&quot;</span><span class="p">,</span><span class="n">training</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
 <span class="n">buddy</span><span class="o">$</span><span class="nf">bark</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <p>There are a lot other features of objects in R, but the main reason for learning about them here is that
 most other modules/libraries in R create objects of some kind. You therefore need to be familiar with the
@@ -637,11 +655,14 @@ which makes life a lot easier.</p>
 <p>For most data you are going to be dealing with datetime objects and occasionaly dates. It’s
 rare to have only time!</p>
 <p>Let’s get some times and dates:</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span>
 
 <span class="nf">date</span><span class="p">()</span>
 <span class="nf">now</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <p>The first returns a date object, the second returns a datetime object. These are
 represented as a string to screen.</p>
@@ -650,19 +671,27 @@ string, or as columns with day, month, year, hour, minute, etc. What we need for
 code is a datetime object, so we need to parse the string into those objects.</p>
 <p>We can therefore create arbitrary dates, times or datetime, rather than relying
 on <code class="docutils literal notranslate"><span class="pre">now()</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ymd</span><span class="p">(</span><span class="s">&quot;2017-01-31&quot;</span><span class="p">)</span>
 <span class="nf">mdy</span><span class="p">(</span><span class="s">&quot;January 31st, 2017&quot;</span><span class="p">)</span>
 <span class="nf">dmy</span><span class="p">(</span><span class="s">&quot;31-Jan-2017&quot;</span><span class="p">)</span>
 <span class="nf">ymd</span><span class="p">(</span><span class="m">20170131</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>To create datetimes:</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ymd_hms</span><span class="p">(</span><span class="s">&quot;2017-01-31 20:11:59&quot;</span><span class="p">)</span>
 <span class="nf">mdy_hm</span><span class="p">(</span><span class="s">&quot;01/31/2017 08:01&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Representing dates and times as these object then allows calculations to be carried
 out, for example, creating a duration:</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20240228</span><span class="p">)</span>
 <span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20230228</span><span class="p">)</span>
 
@@ -677,8 +706,11 @@ out, for example, creating a duration:</p>
 <span class="nf">print</span><span class="p">(</span><span class="n">date1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">date2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>However, the difftime class which is the outcome of a duration depends on what the duration is, but comes in the
 form of weeks, days, seconds. Not that useful, so <code class="docutils literal notranslate"><span class="pre">lubridate</span></code> comes with a function to force it to seconds:</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20240228</span><span class="p">)</span>
 <span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ymd</span><span class="p">(</span><span class="m">20230228</span><span class="p">)</span>
 
@@ -686,20 +718,23 @@ form of weeks, days, seconds. Not that useful, so <code class="docutils literal 
 <span class="nf">as.duration</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>The datetime module knows about leap years, etc so can account for those in durations. Try
 the above code with 29th Feb 2023, for example</p>
 <p>This all assumes that a datetime can be constructed from user input easily. Often we
 need to parse a string to create a datetime object. For example out data might be a
 CSV with dates listed as:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1984</span>-1-0,<span class="w"> </span><span class="m">4</span>
-<span class="m">1984</span>-1-1,<span class="w"> </span><span class="m">5</span>
-<span class="m">1984</span>-1-2,<span class="w"> </span><span class="m">5</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">1984-1-0, 4</span>
+<span class="go">1984-1-1, 5</span>
+<span class="go">1984-1-2, 5</span>
 </pre></div>
 </div>
 <p>Here the date is represented by the year, month, day and then hour seperated by a hyphen.
 There is no minute or second data.</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">make_datetime</span></code> (or <code class="docutils literal notranslate"><span class="pre">make_date</span></code>) method to parse these
 when in different columns</p>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2013</span><span class="p">,</span><span class="w"> </span><span class="m">2013</span><span class="p">,</span><span class="w"> </span><span class="m">2013</span><span class="p">)</span>
 <span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">31</span><span class="p">,</span><span class="w"> </span><span class="m">28</span><span class="p">,</span><span class="w"> </span><span class="m">31</span><span class="p">)</span>
@@ -708,9 +743,12 @@ when in different columns</p>
 <span class="nf">make_datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>We can use string parsing to pull apart the first column to separate columns of year, month, day.</p>
 <p>Within <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> we can use the filter operator to do this over a whole dataframe.
 We can use the NYC filght data from <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> to try this (you may need to install this).</p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">nycflights13</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">flights</span><span class="p">)</span>
 <span class="n">flights</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -720,32 +758,39 @@ We can use the NYC filght data from <code class="docutils literal notranslate"><
 <span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">departure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">make_datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">hour</span><span class="p">,</span><span class="w"> </span><span class="n">minute</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
 <p>Note there is now a <code class="docutils literal notranslate"><span class="pre">&lt;dttm&gt;</span></code> column that is a datetime object.</p>
 <p>You can switch between dates and times using the <code class="docutils literal notranslate"><span class="pre">as_date()</span></code> and <code class="docutils literal notranslate"><span class="pre">as_datetime()</span></code> functions:</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">as_datetime</span><span class="p">(</span><span class="nf">today</span><span class="p">())</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;2024-03-07 UTC&quot;</span>
 <span class="nf">as_date</span><span class="p">(</span><span class="nf">now</span><span class="p">())</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;2024-03-07&quot;</span>
 </pre></div>
 </div>
+</div>
 <p>The final bit of the datetime we need to know about are timezones. The UK has two timezones, GMT and BST
 which occur in the winter and summer respectively. There is a Universal Time zone (UTC) which is
 effectively GMT (but doesn’t shift in the UK summer!). The datetime object can handle
 timezones and can convert times for you (and takes care of duration over different timezones!).</p>
 <p>Some timezone functions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the system timezone</span>
-<span class="n">Sys</span><span class="o">.</span><span class="n">timezone</span><span class="p">()</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Europe/London&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># the system timezone</span>
+<span class="nf">Sys.timezone</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;Europe/London&quot;</span>
 
 <span class="c1"># gives the top 6 timezone names</span>
-<span class="n">head</span><span class="p">(</span><span class="n">OlsonNames</span><span class="p">())</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Africa/Abidjan&quot;</span>     <span class="s2">&quot;Africa/Accra&quot;</span>       <span class="s2">&quot;Africa/Addis_Ababa&quot;</span>
-<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="s2">&quot;Africa/Algiers&quot;</span>     <span class="s2">&quot;Africa/Asmara&quot;</span>      <span class="s2">&quot;Africa/Asmera&quot;</span>
+<span class="nf">head</span><span class="p">(</span><span class="nf">OlsonNames</span><span class="p">())</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;Africa/Abidjan&quot;</span><span class="w">     </span><span class="s">&quot;Africa/Accra&quot;</span><span class="w">       </span><span class="s">&quot;Africa/Addis_Ababa&quot;</span>
+<span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;Africa/Algiers&quot;</span><span class="w">     </span><span class="s">&quot;Africa/Asmara&quot;</span><span class="w">      </span><span class="s">&quot;Africa/Asmera&quot;</span>
 
-<span class="n">x1</span> <span class="o">&lt;-</span> <span class="n">ymd_hms</span><span class="p">(</span><span class="s2">&quot;2015-06-01 12:00:00&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="s2">&quot;America/New_York&quot;</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">&lt;-</span> <span class="n">ymd_hms</span><span class="p">(</span><span class="s2">&quot;2015-06-01 18:00:00&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="s2">&quot;Europe/Copenhagen&quot;</span><span class="p">)</span>
+<span class="n">x1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ymd_hms</span><span class="p">(</span><span class="s">&quot;2015-06-01 12:00:00&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;America/New_York&quot;</span><span class="p">)</span>
+<span class="n">x2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ymd_hms</span><span class="p">(</span><span class="s">&quot;2015-06-01 18:00:00&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Europe/Copenhagen&quot;</span><span class="p">)</span>
 <span class="n">x1</span><span class="o">-</span><span class="n">x2</span>
 </pre></div>
+</div>
 </div>
 <p>Unless specified, lubridate will use UTC.</p>
 </section>
@@ -757,6 +802,8 @@ values for ever column. A spreadsheet in R.</p>
 <section id="creating-data-frames">
 <h3>Creating data frames<a class="headerlink" href="#creating-data-frames" title="Link to this heading">#</a></h3>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">data.frame()</span></code> function to create the data frame:</p>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Tom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jerry&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spike&quot;</span><span class="p">)</span>
 <span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
 
@@ -764,8 +811,11 @@ values for ever column. A spreadsheet in R.</p>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Here, the data frame has been created using existing vectors. The column names
 have been taken from the variable names. You can create a more usable version:</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Tom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jerry&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spike&quot;</span><span class="p">)</span>
 <span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
 
@@ -773,7 +823,10 @@ have been taken from the variable names. You can create a more usable version:</
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>You can then access data using either indexing or using the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accessing element at 3rd row and 2nd column</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">])</span>
 
@@ -784,22 +837,32 @@ have been taken from the variable names. You can create a more usable version:</
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
 <p>You can also add columns easily:</p>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mouse&quot;</span><span class="p">,</span><span class="s">&quot;Cat&quot;</span><span class="p">,</span><span class="s">&quot;Dog&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>You can also use logicals to select data:</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Cat&quot;</span><span class="p">,]</span>
 </pre></div>
+</div>
 </div>
 <p>Notice the trailing comma; try the same code without and see what is different. This is beacuse we
 want to access rows. Without the trailing comma we access a column. The <code class="docutils literal notranslate"><span class="pre">df$animal</span> <span class="pre">==</span> <span class="pre">&quot;Cat&quot;</span></code> returns
 <code class="docutils literal notranslate"><span class="pre">FALSE</span> <span class="pre">TRUE</span> <span class="pre">FALSE</span></code>, which is applied to columns without that trailing comma, rather than the rows
 as we wanted. Try this code:</p>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Mouse&quot;</span><span class="p">,]</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">animal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Mouse&quot;</span><span class="p">]</span>
 </pre></div>
+</div>
 </div>
 <p>There are a number of other useful functions, such as <code class="docutils literal notranslate"><span class="pre">head()</span></code>, <code class="docutils literal notranslate"><span class="pre">tail()</span></code>, <code class="docutils literal notranslate"><span class="pre">rbind()</span></code> and <code class="docutils literal notranslate"><span class="pre">cbind()</span></code>.
 It’s worth looking those up and trying them out.</p>
@@ -849,8 +912,8 @@ for this and more sophisticated data manipulation.</p>
 <p>First, <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/surveys.csv">download the data file we’re going to use, which can be found here</a>.</p>
 <p>We’ll read in our data using the <cite>read_csv()</cite> function from the
 tidyverse package <code class="docutils literal notranslate"><span class="pre">readr</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;surveys.csv&quot;</span><span class="p">)</span>
 
 <span class="c1">## inspect the data</span>
@@ -883,16 +946,16 @@ info.</p>
 <p id="index-10"><span id="index-9"></span>To select columns of a data frame, use <code class="docutils literal notranslate"><span class="pre">select()</span></code>. The first argument
 to this function is the data frame (<code class="docutils literal notranslate"><span class="pre">surveys</span></code>), and the subsequent
 arguments are the columns to keep.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>To select all columns <em>except</em> certain ones, put a “-” in front of
 the variable to exclude it.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">record_id</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">species_id</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -900,8 +963,8 @@ the variable to exclude it.</p>
 <p>This will select all the variables in <code class="docutils literal notranslate"><span class="pre">surveys</span></code> except <code class="docutils literal notranslate"><span class="pre">record_id</span></code>
 and <code class="docutils literal notranslate"><span class="pre">species_id</span></code>.</p>
 <p>To choose rows based on a specific criterion, use <code class="docutils literal notranslate"><span class="pre">filter()</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1995</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -913,8 +976,8 @@ and <code class="docutils literal notranslate"><span class="pre">species_id</spa
 ways to do this: use intermediate steps, nested functions, or pipes.</p>
 <p>With intermediate steps, you create a temporary data frame and use
 that as input to the next function, like this:</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
 <span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">surveys2</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
 </pre></div>
@@ -923,8 +986,8 @@ that as input to the next function, like this:</p>
 <p>This is readable, but can clutter up your workspace with lots of objects that
 you have to name individually. With multiple steps, that can be hard to keep track of.</p>
 <p>You can also nest functions (i.e. one function inside of another), like this:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="nf">filter</span><span class="p">(</span><span class="n">surveys</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -937,8 +1000,8 @@ when you need to do many things to the same dataset.  Pipes in R look like
 <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> and are made available via the <code class="docutils literal notranslate"><span class="pre">magrittr</span></code> package, installed automatically
 with <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>. If you use RStudio, you can type the pipe with <kbd class="kbd docutils literal notranslate">Ctrl</kbd> +
 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">M</kbd> if you have a PC or <kbd class="kbd docutils literal notranslate">Cmd</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">M</kbd>: if you have a Mac.</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
@@ -959,8 +1022,8 @@ but by combining them into linear workflows with the pipe we can accomplish
 more complex manipulations of data frames.</p>
 <p>If we want to create a new object with this smaller version of the data, we
 can assign it a new name:</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_sml</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
@@ -977,8 +1040,8 @@ can assign it a new name:</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1995</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span>
@@ -993,16 +1056,16 @@ can assign it a new name:</p>
 columns, for example to do unit conversions, or to find the ratio of values in two
 columns. For this we’ll use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>.</p>
 <p>To create a new column of weight in kg:</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>You can also create a second new column based on the first new column within the same call of <cite>mutate()</cite>:</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span>
 <span class="w">         </span><span class="n">weight_lb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight_kg</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2.2</span><span class="p">)</span>
@@ -1012,8 +1075,8 @@ columns. For this we’ll use <code class="docutils literal notranslate"><span c
 <p>If this runs off your screen and you just want to see the first few rows, you
 can use a pipe to view the <cite>head()</cite> of the data. (Pipes work with non-<code class="docutils literal notranslate"><span class="pre">dplyr</span></code>
 functions, too, as long as the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> or <cite>magrittr</cite> package is loaded).</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">head</span><span class="p">()</span>
@@ -1022,8 +1085,8 @@ functions, too, as long as the <code class="docutils literal notranslate"><span 
 </div>
 <p>The first few rows of the output are full of <cite>NA`s, so if we wanted to remove
 those we could insert a `filter()</cite> in the chain:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">weight_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1043,8 +1106,8 @@ converted to centimeters. In this <code class="docutils literal notranslate"><sp
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_hindfoot_cm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">hindfoot_cm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hindfoot_length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1067,8 +1130,8 @@ then combine the results. Key functions of <code class="docutils literal notrans
 group into a single-row summary of that group.  <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> takes as arguments
 the column names that contain the <strong>categorical</strong> variables for which you want
 to calculate the summary statistics. So to compute the mean <cite>weight</cite> by sex:</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
@@ -1078,8 +1141,8 @@ to calculate the summary statistics. So to compute the mean <cite>weight</cite> 
 <p>You may also have noticed that the output from these calls doesn’t run off the
 screen anymore. It’s one of the advantages of <cite>tbl_df</cite> over data frame.</p>
 <p>You can also group by multiple columns:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1096,8 +1159,8 @@ could be determined. The resulting <code class="docutils literal notranslate"><s
 remove the missing values for weight before we attempt to calculate the summary
 statistics on weight. Because the missing values are removed first, we can omit
 <code class="docutils literal notranslate"><span class="pre">na.rm</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> when computing the mean:</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1109,8 +1172,8 @@ statistics on weight. Because the missing values are removed first, we can omit
 anymore. If you want to display more data, you can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function
 at the end of your chain with the argument <cite>n</cite> specifying the number of rows to
 display:</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1122,8 +1185,8 @@ display:</p>
 <p>Once the data are grouped, you can also summarize multiple variables at the same
 time (and not necessarily on the same variable). For instance, we could add a
 column indicating the minimum weight for each species for each sex:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1134,8 +1197,8 @@ column indicating the minimum weight for each species for each sex:</p>
 </div>
 <p>It is sometimes useful to rearrange the result of a query to inspect the values. For instance, we can
 sort on <code class="docutils literal notranslate"><span class="pre">min_weight</span></code> to put the lighter species first:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1146,8 +1209,8 @@ sort on <code class="docutils literal notranslate"><span class="pre">min_weight<
 </div>
 </div>
 <p>To sort in descending order, we need to add the <cite>desc()</cite> function. If we want to sort the results by decreasing order of mean weight:</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id46">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1164,8 +1227,8 @@ sort on <code class="docutils literal notranslate"><span class="pre">min_weight<
 for each factor or combination of factors. For this task, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> provides
 <code class="docutils literal notranslate"><span class="pre">count()</span></code>. For example, if we wanted to count the number of rows of data for
 each sex, we would do:</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id47">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id47" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
@@ -1174,8 +1237,8 @@ each sex, we would do:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">count()</span></code> function is shorthand for something we’ve already seen: grouping by a variable,
 and summarizing it by counting the number of observations in that group.
 In other words, <code class="docutils literal notranslate"><span class="pre">surveys</span> <span class="pre">%&gt;%</span> <span class="pre">count()</span></code> is equivalent to:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id48">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id48" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n</span><span class="p">())</span>
@@ -1183,8 +1246,8 @@ In other words, <code class="docutils literal notranslate"><span class="pre">sur
 </div>
 </div>
 <p>For convenience, <code class="docutils literal notranslate"><span class="pre">count()</span></code> provides the <code class="docutils literal notranslate"><span class="pre">sort</span></code> argument:</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id49">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id49" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
@@ -1194,8 +1257,8 @@ In other words, <code class="docutils literal notranslate"><span class="pre">sur
 for <em>one</em> factor (i.e., <code class="docutils literal notranslate"><span class="pre">sex</span></code>). If we wanted to count <em>combination of factors</em>,
 such as <code class="docutils literal notranslate"><span class="pre">sex</span></code> and <code class="docutils literal notranslate"><span class="pre">species</span></code>, we would specify the first and the second factor
 as the arguments of <code class="docutils literal notranslate"><span class="pre">count()</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id50">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id50" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">)</span>
 </pre></div>
@@ -1205,8 +1268,8 @@ as the arguments of <code class="docutils literal notranslate"><span class="pre"
 according to a number of criteria so that we have a better comparison.
 For instance, we might want to arrange the table above in (i) an alphabetical order of
 the levels of the species and (ii) in descending order of the count:</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id51">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id51" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">arrange</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="nf">desc</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
@@ -1221,8 +1284,8 @@ the <em>albigula</em> species that are not specified for its sex (i.e. <code cla
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id52">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id52" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">plot_type</span><span class="p">)</span>
 </pre></div>
@@ -1237,8 +1300,8 @@ observations (hint: see <code class="docutils literal notranslate"><span class="
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id53">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id53" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1259,8 +1322,8 @@ observations (hint: see <code class="docutils literal notranslate"><span class="
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id54">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id54" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1325,8 +1388,8 @@ the value provided.</p>
 genus in each plot over the entire survey period. We use <code class="docutils literal notranslate"><span class="pre">filter()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> to filter our observations and variables of
 interest, and create a new variable for the <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id55">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id55" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">genus</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1340,8 +1403,8 @@ interest, and create a new variable for the <code class="docutils literal notran
 multiple rows, 196 observations of 3 variables.
 Using <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> with the names from <cite>genus</cite> and with values from <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> this becomes
 24 observations of 11 variables, one row for each plot.</p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id56">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id56" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genus</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_weight</span><span class="p">)</span>
 
@@ -1353,8 +1416,8 @@ Using <code class="docutils literal notranslate"><span class="pre">pivot_wider()
 <p>We could now plot comparisons between the weight of genera (one is called a genus,
 multiple are called genera) in different plots,
 although we may wish to fill in the missing values first.</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id57">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id57" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_gw</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genus</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_weight</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">head</span><span class="p">()</span>
@@ -1382,8 +1445,8 @@ the other variable contains the values previously associated with the column nam
 <p>To recreate <cite>surveys_gw</cite> from <cite>surveys_wide</cite> we would create a names variable called
 <cite>genus</cite> and value variable called <cite>mean_weight</cite>.</p>
 <p>In pivoting longer, we also need to specify what columns to reshape. If the columns are directly adjacent as they are here, we don’t even need to list the all out: we can just use the <cite>:</cite> operator!</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id58">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id58" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;genus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span>
 
@@ -1398,8 +1461,8 @@ replicate has the same composition</p>
 <p>We could also have used a specification for what columns to exclude. In this example,
 we will use all columns <em>except</em> <cite>plot_id</cite> for the names variable. By using the minus sign
 in the <code class="docutils literal notranslate"><span class="pre">cols</span></code> argument, we omit <cite>plot_id</cite> from being reshaped</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id59">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id59" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;genus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">head</span><span class="p">()</span>
@@ -1417,8 +1480,8 @@ genera within a particular chunk of data. It’s a powerful function! See
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id60">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id60" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide_genera</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">plot_id</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">n_genera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n_distinct</span><span class="p">(</span><span class="n">genus</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1436,8 +1499,8 @@ genera within a particular chunk of data. It’s a powerful function! See
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id61">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id61" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide_genera</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;n_genera&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">plot_id</span><span class="p">)</span>
 </pre></div>
@@ -1474,8 +1537,8 @@ columns for <code class="docutils literal notranslate"><span class="pre">pivot_w
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id62">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id62" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_long</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">measurement</span><span class="p">,</span><span class="w"> </span><span class="n">plot_type</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1505,8 +1568,8 @@ re-generate them.</p>
 cleaned up version of the data set that doesn’t include any missing data.</p>
 <p>Let’s start by removing observations of animals for which <code class="docutils literal notranslate"><span class="pre">weight</span></code> and
 <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> are missing, or the <code class="docutils literal notranslate"><span class="pre">sex</span></code> has not been determined:</p>
-<div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id63">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id63" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span><span class="w">          </span><span class="c1"># remove missing weight</span>
 <span class="w">        </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="p">),</span><span class="w">    </span><span class="c1"># remove missing hindfoot_length</span>
@@ -1520,8 +1583,8 @@ that have been observed less than 50 times). We will do this in two steps: first
 we are going to create a data set that counts how often each species has been
 observed, and filter out the rare species; then, we will extract only the
 observations for these more common species:</p>
-<div class="literal-block-wrapper docutils container" id="id43">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id64">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id64" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">## Extract the most common species_id</span>
 <span class="n">species_counts</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_complete</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">species_id</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1533,8 +1596,8 @@ observations for these more common species:</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id44">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id65">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id65" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">### Create the dataset for exporting:</span>
 <span class="c1">##  Start by removing observations for which the `species_id`, `weight`,</span>
 <span class="c1">##  `hindfoot_length`, or `sex` data are missing:</span>
@@ -1562,8 +1625,8 @@ has <code class="docutils literal notranslate"><span class="pre">nrow(surveys_co
 typing <code class="docutils literal notranslate"><span class="pre">dim(surveys_complete)</span></code>.</p>
 <p>Now that our data set is ready, we can save it as a CSV file in our <code class="docutils literal notranslate"><span class="pre">data</span></code>
 folder.</p>
-<div class="literal-block-wrapper docutils container" id="id45">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id66">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id66" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">dir.exists</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">))</span><span class="w"> </span><span class="nf">dir.create</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">)</span>
 <span class="nf">write_csv</span><span class="p">(</span><span class="n">surveys_complete</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;data/surveys_complete.csv&quot;</span><span class="p">)</span>
 </pre></div>

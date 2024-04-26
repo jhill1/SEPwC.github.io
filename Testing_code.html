@@ -515,14 +515,22 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <section id="r-testthat">
 <h3>R: testthat<a class="headerlink" href="#r-testthat" title="Link to this heading">#</a></h3>
 <p>The first thing that you need to do is install the testthat R package. This can be done from CRAN using the code below.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Once testthat is installed, you can load it into your R sessions just like any other R package.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>We’re going to test our Fahrenheit to Celsius and vice-versa functions from the first R chapter. Let’s get these two functions in an R test file and save it:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">F_to_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">F_temp</span><span class="p">){</span>
 <span class="w">    </span><span class="n">C_temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">F_temp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="o">/</span><span class="m">9</span><span class="p">;</span>
 <span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">C_temp</span><span class="p">);</span>
@@ -534,9 +542,12 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code>.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function of the testthat package to write sime simple tests for our two functions. The <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function follows a simple structure with two arguments: <code class="docutils literal notranslate"><span class="pre">desc</span></code> provides a description (in quotes) of whatever is being tested, and <code class="docutils literal notranslate"><span class="pre">code</span></code> provides whatever code (within curly brackets) to test.</p>
 <p>Within the bracketed code to be tested, one or more <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> functions are run; each call to <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> is an independent test. The <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> function takes two arguments: <code class="docutils literal notranslate"><span class="pre">object</span></code> is the object that is being examined by the function and <code class="docutils literal notranslate"><span class="pre">condition</span></code> is the condition that the object is meant to satisfy.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fahrenheit to Celsius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">  </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">F_to_C</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
@@ -549,7 +560,10 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="p">})</span>
 </pre></div>
 </div>
+</div>
 <p>We can create the same test for the <code class="docutils literal notranslate"><span class="pre">C_to_F</span></code> function:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_that</span><span class="p">(</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Celsius to Fahrenheit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">  </span><span class="n">temp_F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">C_to_F</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
@@ -562,8 +576,11 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="p">})</span>
 </pre></div>
 </div>
+</div>
 <p>You can run those two tests if you’ve compied them into your R session (along with the <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code> file: hint <code class="docutils literal notranslate"><span class="pre">source</span></code>).</p>
 <p>The better idea is to simply run all the tests at once. So let’s create a test file with the following contents (including a fake test that will fail).</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">);</span>
 <span class="nf">context</span><span class="p">(</span><span class="s">&quot;Temperature function testing&quot;</span><span class="p">);</span>
 <span class="nf">source</span><span class="p">(</span><span class="s">&quot;temperature_conversion.R&quot;</span><span class="p">);</span>
@@ -597,12 +614,18 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="p">})</span>
 </pre></div>
 </div>
+</div>
 <p>Save that as <code class="docutils literal notranslate"><span class="pre">test-temperature_conversion.R</span></code> (note the convention here; use the same filename as what is to be tested, with <code class="docutils literal notranslate"><span class="pre">test-</span></code> pre-pended).</p>
 <p>We can run that from the command line:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>test-temperature_conversion.R
 </pre></div>
 </div>
+</div>
 <p>which gives the output:</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🎊
 <span class="n">Test</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span>🥳
 ──<span class="w"> </span><span class="nf">Failure </span><span class="p">(</span><span class="o">???</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="n">wrong</span><span class="w"> </span>──────────────────────────────────
@@ -620,11 +643,17 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="n">Execution</span><span class="w"> </span><span class="n">halted</span>
 </pre></div>
 </div>
+</div>
 <p>If you’re in an R session you can run all tests in a directory:</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">test_dir</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>which gives the output:</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>✔<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="bp">F</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">S</span><span class="w">  </span><span class="n">OK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Context</span>
 ✖<span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="m">4</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Temperature</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">testing</span>
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -654,6 +683,7 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 <span class="p">[</span><span class="w"> </span><span class="n">FAIL</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">WARN</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SKIP</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">PASS</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">]</span>
 <span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">failures</span>
 </pre></div>
+</div>
 </div>
 </section>
 </section>
