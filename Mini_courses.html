@@ -461,8 +461,8 @@ with R. You can download the data we are using during this tutorial here (but yo
 <li><p>Visual themes <code class="docutils literal notranslate"><span class="pre">theme()</span></code>: The overall visual defaults of a plot, such as background, grids, axes, default typeface, sizes and colors.</p></li>
 </ol>
 <p>You need to specify the <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">geometry</span></code> and <code class="docutils literal notranslate"><span class="pre">aesthetics</span></code> as a minimum. To build up a ggplot we tell
-ggplot the data, e.g. <code class="docutils literal notranslate"><span class="pre">ggplot(data</span> <span class="pre">=</span> <span class="pre">df)</span></code>. We then tell it which variables to plot i nthe aesthetics: <code class="docutils literal notranslate"><span class="pre">aes(x=var1,</span> <span class="pre">y=var2)</span>
-<span class="pre">and</span> <span class="pre">then</span> <span class="pre">we</span> <span class="pre">need</span> <span class="pre">to</span> <span class="pre">say</span> <span class="pre">what</span> <span class="pre">kind</span> <span class="pre">of</span> <span class="pre">plot</span> <span class="pre">via</span> <span class="pre">the</span> <span class="pre">geometry:</span> <span class="pre">``geom_point()</span></code>:</p>
+ggplot the data, e.g. <code class="docutils literal notranslate"><span class="pre">ggplot(data</span> <span class="pre">=</span> <span class="pre">df)</span></code>. We then tell it which variables to plot i nthe aesthetics: <code class="docutils literal notranslate"><span class="pre">aes(x=var1,</span> <span class="pre">y=var2)</span></code>
+and then we need to say what kind of plot via the geometry: <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span>
@@ -1561,9 +1561,9 @@ need to check if that licence is OK with your project. See <a class="reference i
 </pre></div>
 </div>
 </div>
-<p>For <cite>unnest_tokens</cite> we chose the column <cite>word</cite>; this is very helpful - look at the output
-from the sentiment lexiconcs before; note they also have a column`word`. This means we can easy
-to an <cite>inner_join</cite> on our data and the lexicon to get the sentiment.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">unnest_tokens</span></code> we chose the column <code class="docutils literal notranslate"><span class="pre">word</span></code> ; this is very helpful - look at the output
+from the sentiment lexiconcs before; note they also have a column <code class="docutils literal notranslate"><span class="pre">word</span></code>. This means we can easy
+to an <code class="docutils literal notranslate"><span class="pre">inner_join</span></code> on our data and the lexicon to get the sentiment.</p>
 <p>Let’s do that, but first we need to filter for the book <em>Emma</em>, then we can do the join and look
 at the output:</p>
 <div class="literal-block-wrapper docutils container" id="id61">

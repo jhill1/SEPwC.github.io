@@ -630,7 +630,7 @@ we can see that Git has created a hidden directory within <code class="file docu
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">.   ..      .git</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">.    ..    .git</span>
 </pre></div>
 </div>
 <p>Git uses this special subdirectory to store all the information about the project,
@@ -734,8 +734,11 @@ Therefore, always check your current directory using the command <cite>pwd</cite
 <h2>Adding files<a class="headerlink" href="#adding-files" title="Link to this heading">#</a></h2>
 <p>First let’s make sure we’re still in the right directory.
 You should be in the <cite>planets</cite> directory.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/planets
 </pre></div>
+</div>
 </div>
 <p>Let’s create a file called <cite>mars.txt</cite> that contains some notes
 about the Red Planet’s suitability as a base.
@@ -743,31 +746,43 @@ We’ll use <cite>nano</cite> to edit the file; you can use whatever editor you 
 In particular, this does not have to be the <cite>core.editor</cite> you set globally earlier. But remember,
 the bash command to create or edit a new file will depend on the
 editor you choose (it might not be <cite>nano</cite>).</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
 </pre></div>
+</div>
 </div>
 <p>Type the text below into the <cite>mars.txt</cite> file:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <p>Let’s first verify that the file was properly created by running the list command (<cite>ls</cite>):</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">mars.txt</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> contains a single line, which we can see by running:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>mars.txt
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
 <p>If we check the status of our project again,
 Git tells us that it’s noticed the new file:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
@@ -784,12 +799,18 @@ Git tells us that it’s noticed the new file:</p>
 <p>The “untracked files” message means that there’s a file in the directory
 that Git isn’t keeping track of.
 We can tell Git to track a file using <cite>git add</cite>:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
 </pre></div>
 </div>
+</div>
 <p>and then check that the right thing happened:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 
@@ -804,8 +825,11 @@ We can tell Git to track a file using <cite>git add</cite>:</p>
 <p>Git now knows that it’s supposed to keep track of <cite>mars.txt</cite>,
 but it hasn’t recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Start notes on Mars as a base&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main (root-commit) f22b25e] Start notes on Mars as a base</span>
 <span class="go">1 file changed, 1 insertion(+)</span>
@@ -827,8 +851,11 @@ If you want to go into more detail, add a blank line between the summary line an
 Use this additional space to explain why you made changes and/or what their impact will be.</p>
 </div>
 <p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">nothing to commit, working tree clean</span>
@@ -836,8 +863,11 @@ Use this additional space to explain why you made changes and/or what their impa
 </div>
 <p>it tells us everything is up to date. If we want to know what we’ve done recently,
 we can ask Git to show us the project’s history using <cite>git log</cite>:</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
 <span class="go">Author: Jon Hill &lt;jon.hill@york.ac.uk&gt;</span>
@@ -870,9 +900,12 @@ so that our filesystem doesn’t become cluttered
 <p>Now suppose we adds more information to the file.
 (Again, we’ll edit with <code class="docutils literal notranslate"><span class="pre">nano</span></code> and then <code class="docutils literal notranslate"><span class="pre">cat</span></code> the file to show its contents;
 you may use a different editor, and don’t need to <code class="docutils literal notranslate"><span class="pre">cat</span></code>.)</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
 cat<span class="w"> </span>mars.txt
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
@@ -880,8 +913,11 @@ cat<span class="w"> </span>mars.txt
 </div>
 <p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now,
 it tells us that a file it already knows about has been modified:</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
@@ -900,8 +936,11 @@ So let’s do that now. It is good practice to always review
 our changes before saving them. We do this using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.
 This shows us the differences between the current state
 of the file and the most recently saved version:</p>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">diff --git a/mars.txt b/mars.txt</span>
 <span class="go">index df0654a..315bf3a 100644</span>
@@ -929,8 +968,11 @@ In particular,
 the <code class="docutils literal notranslate"><span class="pre">+</span></code> marker in the first column shows where we added a line.</p></li>
 </ol>
 <p>After reviewing our change, it’s time to commit it:</p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
@@ -945,9 +987,12 @@ the <code class="docutils literal notranslate"><span class="pre">+</span></code>
 <p>Whoops:
 Git won’t commit because we didn’t use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> first.
 Let’s fix that:</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars&#39; moons on werewolves</span>
 <span class="go"> 1 file changed, 1 insertion(+)</span>
@@ -991,17 +1036,23 @@ than you would like!</p>
 <p>Let’s watch as our changes to a file move from our editor
 to the staging area and into long-term storage.
 First, we’ll add another line to the file:</p>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
 cat<span class="w"> </span>mars.txt
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 <span class="go">The two moons may be a problem for werewolves</span>
 <span class="go">But the Mummy will appreciate the lack of humidity</span>
 </pre></div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">diff --git a/mars.txt b/mars.txt</span>
 <span class="go">index 315bf3a..b36abfd 100644</span>
@@ -1016,15 +1067,21 @@ cat<span class="w"> </span>mars.txt
 <p>So far, so good: we’ve added one line to the end of the file
 (shown with a <cite>+</cite> in the first column). Now let’s put that change in the staging area
 and see what <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> reports:</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
 git<span class="w"> </span>diff
 </pre></div>
 </div>
+</div>
 <p>There is no output: as far as Git can tell,
 there’s no difference between what it’s been asked to save permanently
 and what’s currently in the directory. However, if we do this:</p>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>--staged
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">diff --git a/mars.txt b/mars.txt</span>
 <span class="go">index 315bf3a..b36abfd 100644</span>
@@ -1038,24 +1095,33 @@ and what’s currently in the directory. However, if we do this:</p>
 </div>
 <p>it shows us the difference between the last committed change
 and what’s in the staging area. Let’s save our changes:</p>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Discuss concerns about Mars&#39; climate for Mummy&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 005937f] Discuss concerns about Mars&#39; climate for Mummy</span>
 <span class="go">1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
 <p>check our status:</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>and look at the history of what we’ve done so far:</p>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
@@ -1105,8 +1171,11 @@ Navigate through matches pressing <kbd class="kbd docutils literal notranslate">
 number of commits that Git lists by using <cite>-N</cite>, where <cite>N</cite> is the number of
 commits that you want to view. For example, if you only want information from
 the last commit you can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>-1
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>-1
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
 <span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
@@ -1116,8 +1185,11 @@ the last commit you can use:</p>
 </pre></div>
 </div>
 <p>You can also reduce the quantity of information using the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
 <span class="go">34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
@@ -1129,8 +1201,11 @@ combination adds <cite>–graph</cite> to display the commit history as a text-b
 graph and to indicate which commits are associated with the
 current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 [other Git references][git-references]:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
 <span class="go">* 34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
@@ -1145,11 +1220,14 @@ current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
 <ol class="arabic simple">
 <li><p>Git does not track directories on their own, only files within them. Try it for yourself:</p></li>
 </ol>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>spaceships
 git<span class="w"> </span>status
 git<span class="w"> </span>add<span class="w"> </span>spaceships
 git<span class="w"> </span>status
 </pre></div>
+</div>
 </div>
 <p>Note, our newly created empty directory <cite>spaceships</cite> does not appear in
 the list of untracked files even if we explicitly add it (<em>via</em> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>) to our
@@ -1161,24 +1239,29 @@ the repository. In fact, you can name such files anything you like.</p>
 <li><p>If you create a directory in your Git repository and populate it with files,
 you can add all files in the directory at once by:</p></li>
 </ol>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>&lt;directory-with-files&gt;
 </pre></div>
 </div>
+</div>
 <p>Try it for yourself:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>spaceships/apollo-11<span class="w"> </span>spaceships/sputnik-1
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>spaceships/apollo-11<span class="w"> </span>spaceships/sputnik-1
 git<span class="w"> </span>status
 git<span class="w"> </span>add<span class="w"> </span>spaceships
 git<span class="w"> </span>status
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 <p>Before moving on, we will commit these changes.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add some initial thoughts on spaceships&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add some initial thoughts on spaceships&quot;</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 </div>
 <p>To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
@@ -1244,32 +1327,47 @@ and commit those changes.</p></li>
 <p>The output below from <cite>cat mars.txt</cite> reflects only content added during
 this exercise. Your output may vary.</p>
 <p>First we make our changes to the <cite>mars.txt</cite> and <cite>venus.txt</cite> files:</p>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
 cat<span class="w"> </span>mars.txt
 </pre></div>
 </div>
+</div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Maybe I should start with a base on Venus.</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>venus.txt
-cat<span class="w"> </span>venus.txt
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nano<span class="w"> </span>venus.txt
+<span class="w"> </span>cat<span class="w"> </span>venus.txt
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Venus is a nice planet and I definitely should consider it as a base.</span>
 </pre></div>
 </div>
 <p>Now you can add both files to the staging area. We can do that in one line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt<span class="w"> </span>venus.txt
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.txt<span class="w"> </span>venus.txt
 </pre></div>
+</div>
 </div>
 <p>Or with multiple commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>add<span class="w"> </span>venus.txt
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>venus.txt
 </pre></div>
 </div>
+</div>
 <p>Now the files are ready to commit. You can check that using <cite>git status</cite>. If you are ready to commit use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Write plans to start a base on Venus&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Write plans to start a base on Venus&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main cc127c2]</span>
 <span class="go">Write plans to start a base on Venus</span>
@@ -1294,28 +1392,43 @@ commit your changes</p></li>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>If needed, move out of the <cite>planets</cite> folder:</p>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
+</div>
 <p>Create a new folder called <cite>bio</cite> and ‘move’ into it:</p>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>bio
 <span class="nb">cd</span><span class="w"> </span>bio
 </pre></div>
 </div>
+</div>
 <p>Initialise git:</p>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
 </pre></div>
 </div>
+</div>
 <p>Create your biography file <cite>me.txt</cite> using <cite>nano</cite> or another text editor.
 Once in place, add and commit it to the repository:</p>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>me.txt
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add biography file&quot;</span>
 </pre></div>
 </div>
+</div>
 <p>Modify the file as described (modify one line, add a fourth line).
 To display the differences between its updated state and its original state, use <cite>git diff</cite>:</p>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>me.txt
 </pre></div>
+</div>
 </div>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
@@ -2274,8 +2387,11 @@ machine. This is called “cloning a repo”.</p>
 needs to clone the Owner’s repository to a different location than her own
 repository with the same name.</p>
 <p>To clone the Owner’s repo into her <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder, the Collaborator enters:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:jh1889/planets.git<span class="w"> </span>~/Desktop/jh1889-planets
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:jh1889/planets.git<span class="w"> </span>~/Desktop/jh1889-planets
 </pre></div>
+</div>
 </div>
 <p>Replace ‘jh1889’ with the Owner’s username.</p>
 <p>If you choose to clone without the clone path
@@ -2285,25 +2401,34 @@ Make sure to navigate to the <code class="docutils literal notranslate"><span cl
 <a class="reference external image-reference" href="../images/github-collaboration.png"><img alt="After Creating Clone of Repository" src="_images/github-collaboration.png" /></a>
 <p>The Collaborator can now make a change in her clone of the Owner’s repository,
 exactly the same way as we’ve been doing before:</p>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/jh1889-planets
 nano<span class="w"> </span>pluto.txt
 cat<span class="w"> </span>pluto.txt
 </pre></div>
 </div>
+</div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">It is so a planet!</span>
 </pre></div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>pluto.txt
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add notes about Pluto&quot;</span>
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">1 file changed, 1 insertion(+)</span>
 <span class="go">create mode 100644 pluto.txt</span>
 </pre></div>
 </div>
 <p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+<div class="literal-block-wrapper docutils container" id="id46">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 4, done.</span>
 <span class="go">Counting objects: 4, done.</span>
@@ -2353,8 +2478,11 @@ is known - its name. For example, one could use this to change <code class="docu
 </ul>
 </div>
 <p>To download the Collaborator’s changes from GitHub, the Owner now enters:</p>
+<div class="literal-block-wrapper docutils container" id="id47">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id47" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
+</div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 4, done.</span>
 <span class="go">remote: Counting objects: 100% (4/4), done.</span>
@@ -2419,15 +2547,9 @@ has some suggestions to propose.</p>
 code to comment, a blue comment icon appears to open a comment window.</p>
 <p>The Collaborator posts her comments and suggestions using the GitHub interface.</p>
 </div>
-<dl class="simple">
-<dt>:: youtube: lsEOUnM8WPo</dt><dd><dl class="field-list simple">
-<dt class="field-odd">align<span class="colon">:</span></dt>
-<dd class="field-odd"><p>center</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</section>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/lsEOUnM8WPo" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
 <section id="conflict">
 <h2>Conflict!<a class="headerlink" href="#conflict" title="Link to this heading">#</a></h2>
 <p>As soon as people can work in parallel, they’ll likely step on each other’s
