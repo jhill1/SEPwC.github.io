@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPHGXML15W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GPHGXML15W');
+    </script>
+        <link href="_static/images/sepwc_logo.svg" rel="icon" type="image/svg+xml">
+    <link href="https://raw.githubusercontent.com/jhill1/SEPwC/master/images/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="https://raw.githubusercontent.com/jhill1/SEPwC/master/images/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jhill1/SEPwC/master/images/favicon-180x180.png" sizes="180x180" type="image/png">
+    <title>Our first coding exercise &#8212; SEPwC  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@latest/public/build/quizdown.js"></script>
+    <script>quizdown.init({"quizdown_js": "https://cdn.jsdelivr.net/gh/bonartm/quizdown-js@latest/public/build/quizdown.js"});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'a_first_coding_exercise';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python: part 3" href="Python3.html" />
+    <link rel="prev" title="Software development" href="Software_development.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SEPwC  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithms.html">Thinking like a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python.html">Python: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R.html">R: the fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Solving issues and debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Our first coding exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jhill1/SEPwC.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/a_first_coding_exercise.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Our first coding exercise</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-do">What to do</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="our-first-coding-exercise">
+<h1>Our first coding exercise<a class="headerlink" href="#our-first-coding-exercise" title="Link to this heading">#</a></h1>
+<p>We are going to write a very simple application to keep track of
+a to-do list. The application will be based around the CLI and take
+three commands: list, add and remove. You add an item to the list using the <cite>add</cite>
+option, remove using the <cite>remove</cite> option and print out the current list
+using <cite>list</cite>.</p>
+<p>To keep tabs on what items are on the list we wil lsave the list to a
+text file (yes, this does mean you could just edit the text file…
+I didn’t say this was a realistic application…).</p>
+<p>We can do this in either R or Python. This coding exercise is very similar
+to the final assignment in terms of a skeleton code, functions to complete
+and a test suite to check it’s working OK.</p>
+<section id="what-to-do">
+<h2>What to do<a class="headerlink" href="#what-to-do" title="Link to this heading">#</a></h2>
+<p><cite>cd</cite> into a directory where you want to do this work. Then go to the repository
+and fork it. Then run:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="o">[</span>USERNAME<span class="o">]</span>/SEPwC_formative.git
+</pre></div>
+</div>
+</div>
+<p>With your username and (assuming you didn’t change it) the repo name above.</p>
+<p>You should then see <cite>python</cite> and <cite>R</cite> folders with a <cite>todo.py</cite> or <cite>todo.R</cite> and the answers.
+<cite>cd</cite> into your language and open up the file.</p>
+<p>In the file you’ll see a skeleton code; three functions that need to be completed,
+but their structure is ready for you. You’ll also see some completed functions
+that parse command line arguments.</p>
+<p>Inside the folder you checked out there’s also a <cite>test</cite> folder. In there you’ll
+find a <cite>test_script</cite> and a file called <cite>test_list.txt</cite>. These are the tests. Open
+the <cite>test_script</cite> file and have a look at the tests.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">pylint.lint</span> <span class="kn">import</span> <span class="n">Run</span>
+<span class="kn">from</span> <span class="nn">pylint.reporters</span> <span class="kn">import</span> <span class="n">CollectingReporter</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;../&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;./&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">asdict</span>
+<span class="kn">import</span> <span class="nn">todo</span>
+<span class="n">test_file</span> <span class="o">=</span> <span class="s2">&quot;test/test_list.txt&quot;</span>
+
+<span class="k">class</span> <span class="nc">TestTodoList</span><span class="p">():</span>
+
+<span class="k">def</span> <span class="nf">test_list_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">todo</span><span class="o">.</span><span class="n">TASK_FILE</span> <span class="o">=</span> <span class="n">test_file</span>
+    <span class="n">task_list</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">list_tasks</span><span class="p">()</span>
+    <span class="n">expected_list</span> <span class="o">=</span><span class="s2">&quot;1. Item 1</span><span class="se">\n</span><span class="s2">2. Item 2</span><span class="se">\n</span><span class="s2">3. Item 3</span><span class="se">\n</span><span class="s2">4. Item 4</span><span class="se">\n</span><span class="s2">5. Item 5&quot;</span>
+
+    <span class="k">assert</span> <span class="n">task_list</span> <span class="o">==</span> <span class="n">expected_list</span>
+</pre></div>
+</div>
+</div>
+<p>and for R:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressPackageStartupMessages</span><span class="p">({</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># load in the script you want to test</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;../todo.R&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">local</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">test_file</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;test_list.txt&quot;</span>
+
+
+<span class="c1"># tests --------------------</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;list_tasks works correctly&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1"># Assuming test_file is defined and the necessary setup is done</span>
+
+<span class="w">  </span><span class="n">TASK_FILE</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="w"> </span><span class="n">test_file</span>
+
+<span class="w">  </span><span class="n">task_list</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list_tasks</span><span class="p">()</span>
+<span class="w">  </span><span class="n">expected_list</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;1. Item 1\n2. Item 2\n3. Item 3\n4. Item 4\n5. Item 5&quot;</span>
+
+<span class="w">  </span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">task_list</span><span class="p">,</span><span class="w"> </span><span class="n">expected_list</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>You can run the tests now; they should fail as you have no code, but go ahead:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
+Rscript<span class="w"> </span>test_script.R
+</pre></div>
+</div>
+</div>
+<p>And you see some failures, like this:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@envpc467:~/work/teaching/SEPwC/SEPwC_formative/R/test$<span class="w"> </span>Rscript<span class="w"> </span>test_script.R
+──<span class="w"> </span>Failure:<span class="w"> </span>list_tasks<span class="w"> </span>works<span class="w"> </span>correctly<span class="w"> </span>─────────────────────────────────────────
+<span class="sb">`</span>task_list<span class="sb">`</span><span class="w"> </span>not<span class="w"> </span>equal<span class="w"> </span>to<span class="w"> </span><span class="sb">`</span>expected_list<span class="sb">`</span>.
+target<span class="w"> </span>is<span class="w"> </span>NULL,<span class="w"> </span>current<span class="w"> </span>is<span class="w"> </span>character
+
+Error:
+!<span class="w"> </span>Test<span class="w"> </span>failed
+Backtrace:
+<span class="w">    </span>▆
+<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>├─testthat::test_that<span class="o">(</span>...<span class="o">)</span>
+<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>│<span class="w"> </span>└─withr<span class="w"> </span><span class="o">(</span><span class="nb">local</span><span class="o">)</span><span class="w"> </span><span class="sb">`</span>&lt;fn&gt;<span class="sb">`</span><span class="o">()</span>
+<span class="w"> </span><span class="m">3</span>.<span class="w"> </span>└─reporter<span class="nv">$stop_if_needed</span><span class="o">()</span>
+<span class="w"> </span><span class="m">4</span>.<span class="w">   </span>└─rlang::abort<span class="o">(</span><span class="s2">&quot;Test failed&quot;</span>,<span class="w"> </span><span class="nv">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>NULL<span class="o">)</span>
+Execution<span class="w"> </span>halted
+</pre></div>
+</div>
+</div>
+<p>Your task is to complete the functions and pass all the tests. It’s a “simple”
+as that. Start by writing the <cite>list</cite> function, running the test each time. Remember
+to commit your changes as you go (even if the tests don’t work fully). Use
+the internet, AI and your peers to help you complete this as you see fit. This
+is a practice for the full assessment, but is not marked in any way.</p>
+<p>Once you’re happy with it (and by the week 9) session, add me (<cite>jhill1</cite>) as a collaborator
+and I will add comments on your coding style.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Software_development.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Software development</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Python3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python: part 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-do">What to do</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jon Hill
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Jon Hill.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
