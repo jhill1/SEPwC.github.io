@@ -336,21 +336,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-source-code-to-programme">From source code to programme</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages">Compiled languages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-languages">Interpreted languages</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-basic-command-line-functions">More basic command line functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-command-line-functions">More command line functions</a></li>
 </ul>
             </nav>
         </div>
@@ -390,9 +389,95 @@ turn it on. The BIOS does this. It’s a very basic OS on a chip.</p></li>
 you can then log on and start using it. There is a lot of jargon around computers. We will try and cover this
 as we go, but look up anything you come across that isn’t explained.</p>
 </div></blockquote>
+<section id="from-source-code-to-programme">
+<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Link to this heading">#</a></h2>
+<p>You may have heard the term <em>source code</em>, but what is it?
+Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
+computer can do billions of these every second (this is the clock speed so 1 Ghz can do 1
+billion ‘things’ per second). The moving of these
+gates allow the computer to add two numbers or multiply two numbers or move data around, etc.
+These are called instructions. The CPU translate these instructions into moving those gates around
+to actually do something. Ultimately, all computer code does this. It is possible to write
+computer code at this level: assembler code. Back in the day (i.e. when I started programming),
+this is how you programmed computers, especially for games where you needed maximum performance.
+This is an example of assembler code for an x86 processor (i.e. what the type of processor you probably have):</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
+ <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
+ <span class="o">.</span><span class="n">CODE</span>
+ <span class="n">PUBLIC</span> <span class="n">_myFunc</span>
+ <span class="n">_myFunc</span> <span class="n">PROC</span>
+   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Prologue</span>
+   <span class="n">push</span> <span class="n">ebp</span>     <span class="p">;</span> <span class="n">Save</span> <span class="n">the</span> <span class="n">old</span> <span class="n">base</span> <span class="n">pointer</span> <span class="n">value</span><span class="o">.</span>
+   <span class="n">mov</span> <span class="n">ebp</span><span class="p">,</span> <span class="n">esp</span> <span class="p">;</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">new</span> <span class="n">base</span> <span class="n">pointer</span> <span class="n">value</span><span class="o">.</span>
+   <span class="n">sub</span> <span class="n">esp</span><span class="p">,</span> <span class="mi">4</span>   <span class="p">;</span> <span class="n">Make</span> <span class="n">room</span> <span class="k">for</span> <span class="n">one</span> <span class="mi">4</span><span class="o">-</span><span class="n">byte</span> <span class="n">local</span> <span class="n">variable</span><span class="o">.</span>
+   <span class="n">push</span> <span class="n">edi</span>     <span class="p">;</span> <span class="n">Save</span> <span class="n">the</span> <span class="n">values</span> <span class="n">of</span> <span class="n">registers</span> <span class="n">that</span> <span class="n">the</span> <span class="n">function</span>
+   <span class="n">push</span> <span class="n">esi</span>     <span class="p">;</span> <span class="n">will</span> <span class="n">modify</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">uses</span> <span class="n">EDI</span> <span class="ow">and</span> <span class="n">ESI</span><span class="o">.</span>
+   <span class="p">;</span> <span class="p">(</span><span class="n">no</span> <span class="n">need</span> <span class="n">to</span> <span class="n">save</span> <span class="n">EBX</span><span class="p">,</span> <span class="n">EBP</span><span class="p">,</span> <span class="ow">or</span> <span class="n">ESP</span><span class="p">)</span>
+
+   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Body</span>
+   <span class="n">mov</span> <span class="n">eax</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>   <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">1</span> <span class="n">into</span> <span class="n">EAX</span>
+   <span class="n">mov</span> <span class="n">esi</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">12</span><span class="p">]</span>  <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">2</span> <span class="n">into</span> <span class="n">ESI</span>
+   <span class="n">mov</span> <span class="n">edi</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span>  <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">3</span> <span class="n">into</span> <span class="n">EDI</span>
+
+   <span class="n">mov</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">edi</span>   <span class="p">;</span> <span class="n">Move</span> <span class="n">EDI</span> <span class="n">into</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
+   <span class="n">add</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">esi</span>   <span class="p">;</span> <span class="n">Add</span> <span class="n">ESI</span> <span class="n">into</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
+   <span class="n">add</span> <span class="n">eax</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>   <span class="p">;</span> <span class="n">Add</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
+                      <span class="p">;</span> <span class="n">into</span> <span class="n">EAX</span> <span class="p">(</span><span class="n">final</span> <span class="n">result</span><span class="p">)</span>
+
+   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Epilogue</span>
+   <span class="n">pop</span> <span class="n">esi</span>      <span class="p">;</span> <span class="n">Recover</span> <span class="n">register</span> <span class="n">values</span>
+   <span class="n">pop</span>  <span class="n">edi</span>
+   <span class="n">mov</span> <span class="n">esp</span><span class="p">,</span> <span class="n">ebp</span> <span class="p">;</span> <span class="n">Deallocate</span> <span class="n">local</span> <span class="n">variables</span>
+   <span class="n">pop</span> <span class="n">ebp</span> <span class="p">;</span> <span class="n">Restore</span> <span class="n">the</span> <span class="n">caller</span><span class="s1">&#39;s base pointer value</span>
+   <span class="n">ret</span>
+ <span class="n">_myFunc</span> <span class="n">ENDP</span>
+ <span class="n">END</span>
+</pre></div>
+</div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
+</aside>
+</aside>
+<p>Fortunately, things have moved on and we can write code in <em>higher level languages</em>. These
+come in two broad types: <em>compiled</em> and <em>interpreted</em>. Compiled languages go through a two-step
+process to be turned into a programme. Interpreted languages do not, and can be run (executed)
+immediately</p>
+<section id="compiled-languages">
+<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Link to this heading">#</a></h3>
+<p id="index-0">Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
+an executable. You can then give someone else the executable and they can run the software. Most software is
+written in those kind of languages. Note that the user does not need the source code.
+Languages like Java are also compiled but at the time of execution
+(called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
+</section>
+<section id="interpreted-languages">
+<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Link to this heading">#</a></h3>
+<p id="index-1">In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
+with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
+You therefore need another user to have the python executable their system to be able to run your code. The user
+must also have your source code. This is the main difference between compiled and interpreted languages.
+Compiled languages are a lot more flexible and require the user to do less. Interpreted languages are
+easier (don’t need to compile!) but need a user to set something up ahead of time.</p>
+<p>The line between these is getting blurred all the time as you can compile Python into an executable and use C
+within a Python programme without pre-compiling. However, for most users, the distinction is clear: if you
+must compile to run, then it’s a compiled language. If you don’t need to do that it’s interpreted.
+Some languages are both.</p>
+<p>So what happens during compiling or interpretation? Remember that assemble code above? That’s what the compiler
+does to your source code. It turns it from human readable code to those CPU instructions. Modern compilers
+are very clever and can optimise your code very well to get the most out of your computer. Interpreters do the
+same thing but as you execute the script. The python (or R) executable is therefore turning your code/script into those kind of
+instructions as it’s running. Interpreted languages are therefore generally slower than compiled code
+as the interpreter cannot optimise as well as a separate compiler.</p>
+</section>
+</section>
 <section id="filesystems">
 <h2>Filesystems<a class="headerlink" href="#filesystems" title="Link to this heading">#</a></h2>
-<p id="index-0">Every computer needs to store files so it can be used. A variety of media have been used
+<p id="index-2">Every computer needs to store files so it can be used. A variety of media have been used
 in the past to do this: punch cards, tapes, floppy disks, CDs, DVDs, and of course, hard drives
 and solid state drives. How we store the data onto the drive is called the filesystem. You may
 have come across things like FAT95, NTFS, ext4, journaling, etc. These are all types of filesystems.
@@ -406,7 +491,7 @@ files at some point, we need to understand how to access files and hence, we nee
 understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
 <section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<p id="index-1">Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
+<p id="index-3">Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
 (i.e. divide your 1 Tb drive into a 250 Gb drive and a 750 Gb drive). Drives are given letters, A:, B:, C:, etc. C: is
 the root drive where Windows actually lives, along with your programs (apps) and your data and files.</p>
 <div class="admonition-practical-exercise admonition">
@@ -428,7 +513,7 @@ it’s in <code class="docutils literal notranslate"><span class="pre">Documents
 </section>
 <section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
-<p id="index-2">Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (forward slash: note the direction of the slash compared
+<p id="index-4">Linux organises things around the root drive, which is access via <code class="docutils literal notranslate"><span class="pre">/</span></code> (forward slash: note the direction of the slash compared
 to Windows - yes, they use the opposite direction). In root you then find a bunch of standard directories, <code class="docutils literal notranslate"><span class="pre">\etc</span></code>, <code class="docutils literal notranslate"><span class="pre">\bin</span></code>
 <code class="docutils literal notranslate"><span class="pre">\var</span></code>, etc. These contain the system files. One directory is called <code class="docutils literal notranslate"><span class="pre">\home</span></code>. This is where user files live. Within
 <code class="docutils literal notranslate"><span class="pre">\home</span></code> there is a directory with your username. Within there are your images, music, etc.</p>
@@ -439,14 +524,11 @@ a different file to <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
-<p id="index-3">Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
-standard folder names and moved a few things around compared to Linux. I’ll note the differences only here.</p>
+<p id="index-5">Mac is very similar to Linux (it is in fact based on Unix, which Linux is too). Unlike Linux, Apple added some
+standard folder names and moved a few things around compared to Linux. I’ll only note the differences here.</p>
 <p>User directories live in <code class="docutils literal notranslate"><span class="pre">\Users</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\home</span></code>. Applications are stored <code class="docutils literal notranslate"><span class="pre">\Applications</span></code>, but there
 are some binaries (i.e. programmes) in <code class="docutils literal notranslate"><span class="pre">\bin</span></code>, etc.</p>
 <p>Like Linux, MacOS is case sensitive.</p>
-</section>
-<section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <p>As we have to deal with multiple OSes, from here we will designate sections with
 symbols.</p>
 <div class="admonition tip">
@@ -463,16 +545,19 @@ symbols.</p>
 <h2>Navigating a filesystem<a class="headerlink" href="#navigating-a-filesystem" title="Link to this heading">#</a></h2>
 <p>There are two ways to navigate your files; some form of graphic interface (all three common OSes have a similar tool) or the
 command line. We’re going to explore using both. Before we do this, we need a few basic command line tools to move around the files.</p>
+<p>To access the terminal or command line depends on the systems you’re using. On Linux, you need to find the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> application.
+On Windows you need to find the Command Prompt (<code class="docutils literal notranslate"><span class="pre">cmd</span></code>). On MacOs you need the <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> application. Most OSes have some form
+of search function to find these. Once open, try the commands below.</p>
 <p>The first is to list which directory you are in.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
 </div>
 <p>which stand for “present working directory”. On Windows, you use a different command:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span>
 </pre></div>
 </div>
@@ -480,15 +565,15 @@ command line. We’re going to explore using both. Before we do this, we need a 
 <p>which actually stands for “change directory” (more on that later), but without any arguments (see later)
 prints the current directory.</p>
 <p>These commands will print your current directory, so something like:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 /home/jh1889/work/teaching/SEPwC/source
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> cd
 C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </pre></div>
@@ -496,30 +581,30 @@ C<span class="p">:</span><span class="nl">\Documents\jh1889\</span>
 </div>
 <p>So now you know where you are on a command line. What’s there? For this we need to list the directory.
 The command for that is:</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>ls
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">dir</span>
 </pre></div>
 </div>
 </div>
 <p>You see a list of files. Depending on the system details that might give you different colours
 for directories and files, or be monochrome. The <code class="docutils literal notranslate"><span class="pre">$</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols are prompts; do not type them!</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 Assessments.rst<span class="w">  </span>Expectations.rst<span class="w">  </span>Week_1.rst<span class="w">  </span>Week_3.rst<span class="w">  </span>Week_5.rst<span class="w">  </span>Week_7.rst<span class="w">  </span>ytemplates
 conf.py<span class="w">          </span>index.rst<span class="w">         </span>Week_2.rst<span class="w">  </span>Week_4.rst<span class="w">  </span>Week_6.rst<span class="w">  </span>ystatic
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">&gt;</span> dir
   Volume in drive C has no label.
   Volume Serial Number is F204-1461
@@ -544,15 +629,15 @@ conf.py<span class="w">          </span>index.rst<span class="w">         </span
 </div>
 <p>We can now see where you are, what’s in that directory; what about moving into a new directory? For that we use the
 change directory command:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span>
 </pre></div>
 </div>
 </div>
 <p>We saw this already for Windows, but we need to give an argument (this is the directory we want to move into).</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span>
 </pre></div>
 </div>
@@ -560,22 +645,22 @@ change directory command:</p>
 <p>Great! We can now navigate down the filesystem. What about going up a directory?</p>
 <p>In all OSes the <code class="docutils literal notranslate"><span class="pre">..</span></code> is the parent directory to where we currently are. Similarly, <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory. So to go up
 one level we run the command:</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/win_linux_mac_logo.png"><img alt="all" src="_images/win_linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
 </div>
 <p>We can traverse up and down in quite complex ways using this. Let’s imagine we want to go up two directories, then down into
-a subfolder:</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+a subfolder (we’ll try this for real later; if you try this now you’ll get an error as this path won’t exist):</p>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../subfolder
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\subfolder
 </pre></div>
 </div>
@@ -584,24 +669,24 @@ a subfolder:</p>
 <p class="admonition-title">Warning</p>
 <p><a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a> Windows drives, labelled A, B, C, D, etc are a small ‘gotcha’ when using <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Try this (assuming
 you have two drive letters available):</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> H:Documents
 </pre></div>
 </div>
 </div>
 <p>And nothing will happen. The prompt will still say <code class="docutils literal notranslate"><span class="pre">C:</span></code>. The command has worked, but Windows wants you
 to swap drives first. You have to type the drive letter to do so:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>H<span class="p">:</span>
 </pre></div>
 </div>
 </div>
 <p>You will then find you prompt has switch to <code class="docutils literal notranslate"><span class="pre">H:\Documents</span></code>. This has caught me out a number of times.</p>
 <p>Alternatively, you can give the <code class="docutils literal notranslate"><span class="pre">/d</span></code> argument to <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> /d H:Documents
 </pre></div>
 </div>
@@ -619,16 +704,16 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_1.png" />
 <p>Double-click the <code class="docutils literal notranslate"><span class="pre">cli_example</span></code> folder</p>
 <p>In a new command line:</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cli_example
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -641,16 +726,16 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_3.png" />
 <p>Let’s do the the same in the command line:</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> data_files\sedimentary_data\site1
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>data_files/sedimentary_data/site1
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -658,16 +743,16 @@ should see:</p>
 </div>
 </div>
 <p>Note that we can put several directories together. We can do the same to go up, then back down directories:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\gis_data\site_locations
  <span class="k">dir</span>
  pwd
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../gis_data/site_locations
 <span class="w"> </span>ls
 <span class="w"> </span><span class="nb">pwd</span>
@@ -710,7 +795,7 @@ of both main types.</p>
 </section>
 <section id="absolute-vs-relative-paths">
 <h2>Absolute vs Relative paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
-<p id="index-6"><span id="index-5"></span><span id="index-4"></span>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
+<p id="index-8"><span id="index-7"></span><span id="index-6"></span>Most of the file-paths above are absolute paths. You start at the root of the drive (<code class="docutils literal notranslate"><span class="pre">C:</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code>) and give the
 all the directories until you get to the file you’re after. I did however sneak in a few <em>relative</em>
 paths. These are paths that start from where you currently are (be that in the command line or running
 a programme).</p>
@@ -732,97 +817,11 @@ the script. If you move the script elsewhere, things might break. You can, of co
 mix and match; so pull data from an absolute path in one place and from a relative path
 in another. Finally, you can ask the user where to get data from too (or pull data
 from the internet) saving all this hassle.</p>
-<p>However, when starting to write your own script you will <cite>hard-code</cite> the filenames and hence
+<p>However, when starting to write your own script you will <em>hard-code</em> the filenames and hence
 you need to know the difference between relative and absolute paths.</p>
 </section>
-<section id="from-source-code-to-programme">
-<h2>From source code to programme<a class="headerlink" href="#from-source-code-to-programme" title="Link to this heading">#</a></h2>
-<p>You may have heard the term <cite>source code</cite> (I’ve probably used it already!), but what is it?
-Computers work by moving gates back and forth (0 or 1) to perform operations. A modern
-computer can do billions of these every second (this is the clock speed so 1 Ghz can do 1
-billion ‘things’ per second). The moving of these
-gates allow the computer to add two numbers or multiple two numbers or move data around, etc.
-These are called instructions. The CPU translate these instructions into moving those gates around
-to actually do something. Ultimately, all computer code does this. It is possible to write
-computer code at this level: assembler code. Back in the day (i.e. when I started programming),
-this is how you programmed computers, especially for games where you needed maximum performance.
-This is an example of assembler code for an x86 processor (i.e. what the type of processor you probably have):</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">Example of x86 assembler code <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">.486</span>
- <span class="o">.</span><span class="n">MODEL</span> <span class="n">FLAT</span>
- <span class="o">.</span><span class="n">CODE</span>
- <span class="n">PUBLIC</span> <span class="n">_myFunc</span>
- <span class="n">_myFunc</span> <span class="n">PROC</span>
-   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Prologue</span>
-   <span class="n">push</span> <span class="n">ebp</span>     <span class="p">;</span> <span class="n">Save</span> <span class="n">the</span> <span class="n">old</span> <span class="n">base</span> <span class="n">pointer</span> <span class="n">value</span><span class="o">.</span>
-   <span class="n">mov</span> <span class="n">ebp</span><span class="p">,</span> <span class="n">esp</span> <span class="p">;</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">new</span> <span class="n">base</span> <span class="n">pointer</span> <span class="n">value</span><span class="o">.</span>
-   <span class="n">sub</span> <span class="n">esp</span><span class="p">,</span> <span class="mi">4</span>   <span class="p">;</span> <span class="n">Make</span> <span class="n">room</span> <span class="k">for</span> <span class="n">one</span> <span class="mi">4</span><span class="o">-</span><span class="n">byte</span> <span class="n">local</span> <span class="n">variable</span><span class="o">.</span>
-   <span class="n">push</span> <span class="n">edi</span>     <span class="p">;</span> <span class="n">Save</span> <span class="n">the</span> <span class="n">values</span> <span class="n">of</span> <span class="n">registers</span> <span class="n">that</span> <span class="n">the</span> <span class="n">function</span>
-   <span class="n">push</span> <span class="n">esi</span>     <span class="p">;</span> <span class="n">will</span> <span class="n">modify</span><span class="o">.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">uses</span> <span class="n">EDI</span> <span class="ow">and</span> <span class="n">ESI</span><span class="o">.</span>
-   <span class="p">;</span> <span class="p">(</span><span class="n">no</span> <span class="n">need</span> <span class="n">to</span> <span class="n">save</span> <span class="n">EBX</span><span class="p">,</span> <span class="n">EBP</span><span class="p">,</span> <span class="ow">or</span> <span class="n">ESP</span><span class="p">)</span>
-
-   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Body</span>
-   <span class="n">mov</span> <span class="n">eax</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>   <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">1</span> <span class="n">into</span> <span class="n">EAX</span>
-   <span class="n">mov</span> <span class="n">esi</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">12</span><span class="p">]</span>  <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">2</span> <span class="n">into</span> <span class="n">ESI</span>
-   <span class="n">mov</span> <span class="n">edi</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span>  <span class="p">;</span> <span class="n">Move</span> <span class="n">value</span> <span class="n">of</span> <span class="n">parameter</span> <span class="mi">3</span> <span class="n">into</span> <span class="n">EDI</span>
-
-   <span class="n">mov</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">edi</span>   <span class="p">;</span> <span class="n">Move</span> <span class="n">EDI</span> <span class="n">into</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
-   <span class="n">add</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="n">esi</span>   <span class="p">;</span> <span class="n">Add</span> <span class="n">ESI</span> <span class="n">into</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
-   <span class="n">add</span> <span class="n">eax</span><span class="p">,</span> <span class="p">[</span><span class="n">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>   <span class="p">;</span> <span class="n">Add</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">local</span> <span class="n">variable</span>
-                      <span class="p">;</span> <span class="n">into</span> <span class="n">EAX</span> <span class="p">(</span><span class="n">final</span> <span class="n">result</span><span class="p">)</span>
-
-   <span class="p">;</span> <span class="n">Subroutine</span> <span class="n">Epilogue</span>
-   <span class="n">pop</span> <span class="n">esi</span>      <span class="p">;</span> <span class="n">Recover</span> <span class="n">register</span> <span class="n">values</span>
-   <span class="n">pop</span>  <span class="n">edi</span>
-   <span class="n">mov</span> <span class="n">esp</span><span class="p">,</span> <span class="n">ebp</span> <span class="p">;</span> <span class="n">Deallocate</span> <span class="n">local</span> <span class="n">variables</span>
-   <span class="n">pop</span> <span class="n">ebp</span> <span class="p">;</span> <span class="n">Restore</span> <span class="n">the</span> <span class="n">caller</span><span class="s1">&#39;s base pointer value</span>
-   <span class="n">ret</span>
- <span class="n">_myFunc</span> <span class="n">ENDP</span>
- <span class="n">END</span>
-</pre></div>
-</div>
-</div>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>From: <a class="reference external" href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
-</aside>
-</aside>
-<p>Fortunately, things have moved on and we can write code in <cite>higher level languages</cite>. These
-come in two broad types: <cite>compiled</cite> and <cite>interpreted</cite>. Compiled languages go through a two-step
-process to be turned into a programme. Interpreted languages do not, and can be run (executed)
-immediately</p>
-<section id="compiled-languages">
-<h3>Compiled languages<a class="headerlink" href="#compiled-languages" title="Link to this heading">#</a></h3>
-<p id="index-7">Compiled languages are ones like FORTRAN, C, C++. You write code as text files, then compile these into
-an executable. You can then give someone else the executable and they can run the software. Most software is
-written in those kind of languages. Note that the user does not need the source code.
-Languages like Java are also compiled but at the time of execution
-(called Just in Time or JIT) languages. Java bridges the gap between compiled and interpreted.</p>
-</section>
-<section id="interpreted-languages">
-<h3>Interpreted languages<a class="headerlink" href="#interpreted-languages" title="Link to this heading">#</a></h3>
-<p id="index-8">In contrast, interpreted languages are not compiled. You execute the source code. So you can write a text file
-with your code and run it straight away. Examples of languages that are interpreted are R, Python, Matlab.
-You therefore need another user to have the python executable their system to be able to run your code. The user
-must also have your source code. This is the main difference between compiled and interpreted languages.
-Compiled languages are a lot more flexible and require the user to do less. Interpreted languages are
-easier (don’t need to compile!) but need a user to set something up ahead of time.</p>
-<p>The line between these is getting blurred all the time as you can compile Python into an executable and use C
-within a Python programme without pre-compiling. However, for most users, the distinction is clear: if you
-must compile to run, then it’s a compiled language. If you don’t need to do that it’s interpreted.
-Some languages are both.</p>
-<p>So what happens during compiling or interpretation? Remember that assemble code above? That’s what the compiler
-does to your source code. It turns it from human readable code to those CPU instructions. Modern compilers
-are very clever and can optimise your code very well to get the most out of your computer. Interpreters do the
-same thing but as you execute the script. The python (or R) executable is therefore turning your code/script into those kind of
-instructions as it’s running. Interpreted languages are therefore generally slower than compiled code
-as the interpreter cannot optimise as well as a separate compiler.</p>
-</section>
-</section>
-<section id="more-basic-command-line-functions">
-<h2>More basic command line functions<a class="headerlink" href="#more-basic-command-line-functions" title="Link to this heading">#</a></h2>
+<section id="more-command-line-functions">
+<h2>More command line functions<a class="headerlink" href="#more-command-line-functions" title="Link to this heading">#</a></h2>
 <p id="index-9">You were introduced to some basic command line functions earlier. We looked at those
 without really explaining them properly, so let’s dig a little deeper into command lines.</p>
 <p>The Command Line Interface (CLI) is a powerful way of interacting with a computer. Imagine
@@ -976,7 +975,7 @@ using the zip file and folder we extracted earlier.</p>
 <p class="admonition-title">Learn More</p>
 <p>In the above example, the renaming of files with the same name, but different extensions is a little cumbersome. It was fine with six
 files, but what if there were 100 files. On the command line that’s annoying. In the GUI it would be very annoying! In Linux there is the
-<code class="docutils literal notranslate"><span class="pre">rename</span></code> command that can do it in one go. You can also write a small <code class="docutils literal notranslate"><span class="pre">bash</span></code> script to do it in a loop. In windows you can download tools
+<code class="docutils literal notranslate"><span class="pre">rename</span></code> command that can do it in one go. You can also write a small <em>bash</em> script to do it in a loop. In windows you can download tools
 that do this or, like Linux, write a short script to do it. This shows the power of the command line and scripting.</p>
 </div>
 </section>
@@ -1028,21 +1027,20 @@ that do this or, like Linux, write a short script to do it. This shows the power
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-source-code-to-programme">From source code to programme</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages">Compiled languages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-languages">Interpreted languages</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-basic-command-line-functions">More basic command line functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystems">Filesystems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-a-filesystem">Navigating a filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-command-line-functions">More command line functions</a></li>
 </ul>
   </nav></div>
 
@@ -1067,7 +1065,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

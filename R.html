@@ -340,12 +340,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tools-of-the-trade">R tools of the trade</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-r">Intro to R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-loops">R Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-loops">R <cite>for</cite> Loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-while-loop">R <cite>while</cite> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-loops">R <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-while-loop">R <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-conditionals">R conditionals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-if-statement">R <cite>if</cite> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-if-statement">R <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-comments">R comments</a><ul class="nav section-nav flex-column">
@@ -375,10 +375,11 @@ stricter. We have to get the syntax correct or things won’t work. However
 interpreted languages tell you what is wrong, so it’s not as bad as it sounds.</p>
 <section id="r-tools-of-the-trade">
 <h2>R tools of the trade<a class="headerlink" href="#r-tools-of-the-trade" title="Link to this heading">#</a></h2>
-<p>On all systems, install the latest version of <cite>R &lt;https://cran.r-project.org/doc/manuals/r-patched/R-admin.html&gt;_</cite>.</p>
-<p><cite>Rstudio &lt;https://posit.co/download/rstudio-desktop/&gt;_</cite> is also very useful on all systems. R is relatively simple to
+<p>On all systems, install the latest version of <a class="reference external" href="https://cran.r-project.org/doc/manuals/r-patched/R-admin.html">R</a>.</p>
+<p><a class="reference external" href="https://posit.co/download/rstudio-desktop/">Rstudio</a> is also very useful on all systems. R is relatively simple to
 keep up-to-date and install additional packages. Every so often it’s worth deleting packages installed in your home space
-for older versions.</p>
+for older versions. There’s a brief introduction to <a class="reference internal" href="Software_development.html#rstudio"><span class="std std-ref">RStudio</span></a> in the <a class="reference internal" href="Software_development.html#software-development"><span class="std std-ref">Software development</span></a> section. It might be worth going there
+and coming back here at this point.</p>
 </section>
 <section id="intro-to-r">
 <h2>Intro to R<a class="headerlink" href="#intro-to-r" title="Link to this heading">#</a></h2>
@@ -390,7 +391,7 @@ This makes R a really powerful tool for writing code to analyse any number of pr
 as a stand-alone script, even on websites. There are libraries
 for fancy plotting (ggplot2), scientific algorithms (e.g. deSolve), AI (dnn) and GIS (r-gdal).</p>
 <p>Let’s get a simple R code running!</p>
-<p>We want to calculate the height of a ball after time, t, which we can do using this formula</p>
+<p>We want to calculate the height of a ball after time, <span class="math notranslate nohighlight">\(t\)</span>, which we can do using this formula</p>
 <div class="math notranslate nohighlight">
 \[y(t) = v_{0}t- \frac{1}{2}gt^2\]</div>
 <p>where:</p>
@@ -543,7 +544,7 @@ to a lot of data analysis.</p>
 is very boring and repetitive. The entire idea of writing code it to remove the
 repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
 <section id="r-for-loops">
-<h3>R <cite>for</cite> Loops<a class="headerlink" href="#r-for-loops" title="Link to this heading">#</a></h3>
+<h3>R <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#r-for-loops" title="Link to this heading">#</a></h3>
 <p id="index-1">‘for’ loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
@@ -568,9 +569,9 @@ see the following:</p>
 <span class="go">[1] 10</span>
 </pre></div>
 </div>
-<p>The loop is made using the <cite>for</cite> command, which is then followed by the loop conditions
-in parenthesis <cite>(  )</cite>. The loop itself is delimited using curly braces <cite>{  }</cite>. R doesn’t care
-about indentation as long as the <cite>{ }</cite> contains the statements within the loop. So this code
+<p>The loop is made using the <code class="docutils literal notranslate"><span class="pre">for</span></code> command, which is then followed by the loop conditions
+in parenthesis <code class="docutils literal notranslate"><span class="pre">(</span>&#160; <span class="pre">)</span></code>. The loop itself is delimited using curly braces <code class="docutils literal notranslate"><span class="pre">{</span>&#160; <span class="pre">}</span></code>. R doesn’t care
+about indentation as long as the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> contains the statements within the loop. So this code
 works just as well:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
@@ -593,7 +594,7 @@ to read it, rather than computer to execute it.</p>
 </div>
 </div>
 <p>The output will be identical to the above, but we’re accessing the list via the index
-(here, the variable <cite>i</cite>). What does <cite>i</cite> do then? Let’s edit the code and find out.</p>
+(here, the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>). What does <code class="docutils literal notranslate"><span class="pre">i</span></code> do then? Let’s edit the code and find out.</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
@@ -611,19 +612,19 @@ to read it, rather than computer to execute it.</p>
 <span class="go">6</span>
 </pre></div>
 </div>
-<p><cite>i</cite> goes from 1 (R starts counting from 1, Python from 0) to the length of the list. The <cite>seq</cite> function
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code> goes from 1 (R starts counting from 1, Python from 0) to the length of the list. The <code class="docutils literal notranslate"><span class="pre">seq</span></code> function
 creates a list containing those numbers. So although this loops looks different to the first one we created,
 it’s actually identical in terms of it’s construction.</p>
-<p>The <cite>seq</cite> function is <cite>seq(start, stop, increment)</cite>
-which generates a list of integers: <cite>start</cite>, <cite>start+increment</cite>, <cite>start+2*increment</cite>, and so on up to, and including, <cite>stop</cite>.
-We can also write <cite>seq(stop)</cite> as an abbreviation for <cite>seq(1, stop, 1)</cite>, or <cite>seq(start,stop)</cite> to assume an increment
+<p>The <code class="docutils literal notranslate"><span class="pre">seq</span></code> function is <code class="docutils literal notranslate"><span class="pre">seq(start,</span> <span class="pre">stop,</span> <span class="pre">increment)</span></code>
+which generates a list of integers: <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">start+increment</span></code>, <code class="docutils literal notranslate"><span class="pre">start+2*increment</span></code>, and so on up to, and including, <code class="docutils literal notranslate"><span class="pre">stop</span></code>.
+We can also write <code class="docutils literal notranslate"><span class="pre">seq(stop)</span></code> as an abbreviation for <code class="docutils literal notranslate"><span class="pre">seq(1,</span> <span class="pre">stop,</span> <span class="pre">1)</span></code>, or <code class="docutils literal notranslate"><span class="pre">seq(start,stop)</span></code> to assume an increment
 of 1.</p>
 <p>For loops are a really useful way of doing the same thing to each item in a list.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Writing our table for conversion using a `for` loop?</strong></p>
+<p><strong>Writing our table for conversion using a ``for`` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>for</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -637,18 +638,18 @@ of 1.</p>
 </pre></div>
 </div>
 </div>
-<p>This version uses the <cite>seq</cite> function to go from -20 to 40 in steps of 5
-and calculates F, before printing C and F. Note the use of <cite>paste</cite> to join the
-two number together on one line.</p>
+<p>This version uses the <code class="docutils literal notranslate"><span class="pre">seq</span></code> function to go from -20 to 40 in steps of 5
+and calculates F, before printing C and F. Note the use of <code class="docutils literal notranslate"><span class="pre">paste</span></code> to join the
+two numbers together on one line.</p>
 </div>
-<p>In a <cite>for</cite> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
-R also has a <cite>while</cite> loop which will keep going as long as some condition is true.</p>
+<p>In a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop we always know how many times we should iterate that loop. What if we don’t know in advance?
+R also has a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which will keep going as long as some condition is true.</p>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/i98WjaITzNk" style="border: 0; height: 345px; width: 560px">
 </iframe></div></section>
 <section id="r-while-loop">
-<h3>R <cite>while</cite> loop<a class="headerlink" href="#r-while-loop" title="Link to this heading">#</a></h3>
-<p id="index-2">A while-loop executes repeatedly a set of statements as long as a boolean condition is <cite>True</cite></p>
+<h3>R <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#r-while-loop" title="Link to this heading">#</a></h3>
+<p id="index-2">A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nf">while </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -686,13 +687,13 @@ R also has a <cite>while</cite> loop which will keep going as long as some condi
 <span class="go">[1] 11</span>
 </pre></div>
 </div>
-<p>Note the counter started from 0 and the while loop kept going until it was <cite>&gt;10</cite>. The condition
+<p>Note the counter started from 0 and the while loop kept going until it was <code class="docutils literal notranslate"><span class="pre">&gt;10</span></code>. The condition
 can be any conditional statement, including key presses (but that requires some knowledge we don’t have yet).</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Writing our table for conversion using a `while` loop?</strong></p>
+<p><strong>Writing our table for conversion using a ``while`` loop?</strong></p>
 <blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <cite>while</cite> loop.</p>
+<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -755,12 +756,12 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 </table>
 </div>
 <p>So we need to be able to make a decision, based on those the variables, temperature and humidity.
-This is where <cite>if</cite> statements come in.</p>
+This is where <code class="docutils literal notranslate"><span class="pre">if</span></code> statements come in.</p>
 <section id="r-if-statement">
-<h3>R <cite>if</cite> statement<a class="headerlink" href="#r-if-statement" title="Link to this heading">#</a></h3>
-<p id="index-4">The <cite>if</cite> statement consists of an <cite>if</cite> condition, followed by zero or more <cite>else if</cite> conditions. A final <cite>else</cite>
-statement can be used to capture the situation where everything is <cite>FALSE</cite>.
-In general, we can put together multiple conditions. Only the first condition that is <cite>TRUE</cite> is executed.</p>
+<h3>R <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#r-if-statement" title="Link to this heading">#</a></h3>
+<p id="index-4">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
+statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.
+In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is executed.</p>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -800,9 +801,9 @@ In general, we can put together multiple conditions. Only the first condition th
 <p>Not the best of code, engineering-wise, but it will work. Try it out.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Add an `else` block</strong></p>
+<p><strong>Add an ``else`` block</strong></p>
 <blockquote>
-<div><p>Amend the example below to add an <cite>else</cite> block to print something if humidity is not “high”</p>
+<div><p>Amend the example below to add an <code class="docutils literal notranslate"><span class="pre">else</span></code> block to print something if humidity is not “high”</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
@@ -827,7 +828,7 @@ so you should see:</p>
 </div>
 </div>
 <p>We now need to do all combinations, with some logic to decide a few things. There are (as always!)
-a number of ways of doing this. This is using <cite>else if</cite> and boolean operators:</p>
+a number of ways of doing this. This is using <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> and boolean operators:</p>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
@@ -845,17 +846,17 @@ a number of ways of doing this. This is using <cite>else if</cite> and boolean o
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;I don&#39;t understand the inputs&quot;</span><span class="p">)</span>
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Temperature: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="p">))</span>
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Humidity: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">humidity</span><span class="p">))</span>
-<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Both should be `high` or `low`&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Both should be &#39;high&#39; or &#39;low&#39;&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<p>Here, we’ve used the <cite>&amp;</cite> operator (and) to check that <em>both</em> temperature and humidity are
+<p>Here, we’ve used the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator (and) to check that <em>both</em> temperature and humidity are
 set appropriately. If the user supplies anything other than “high” or “low” it should print
 an message.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
-<p>Note the error message we gave in the <cite>else</cite> block contains what the user
+<p>Note the error message we gave in the <code class="docutils literal notranslate"><span class="pre">else</span></code> block contains what the user
 had supplied us with. It often helps to print out the variables in question
 when you do the else like this. It helps you, the programmer, to debug and it helps
 the user possibly see what to change to fix. Here, we’ve also told the user what they should be</p>
@@ -864,7 +865,7 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/BVik22tUSwo" style="border: 0; height: 345px; width: 560px">
-</iframe></div><p>The second way of working out the logic is by nested <cite>if</cite> statements. Here’s an example:</p>
+</iframe></div><p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id21">
 <span id="index-5"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">71</span>
@@ -908,32 +909,32 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 <li><p>otherwise the mark is between 0 and 39 (inclusive), which is a fail mark.</p></li>
 </ul>
 </div></blockquote>
-<p>Check you understand the flow of the code and note that the <cite>if</cite> statements are done in order, so
-if the first one is <cite>FALSE</cite>, <cite>mark</cite> must be less than 40 or greater than 100.</p>
+<p>Check you understand the flow of the code and note that the <code class="docutils literal notranslate"><span class="pre">if</span></code> statements are done in order, so
+if the first one is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, <code class="docutils literal notranslate"><span class="pre">mark</span></code> must be less than 40 or greater than 100.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Test the code</strong></p>
 <blockquote>
-<div><p>Try the code above with different values of <cite>mark</cite>. Does it work as expected?</p>
+<div><p>Try the code above with different values of <code class="docutils literal notranslate"><span class="pre">mark</span></code>. Does it work as expected?</p>
 </div></blockquote>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>It should work for all floating point and integer values of mark. What if you set <cite>mark = “test”</cite>?
+<p>It should work for all floating point and integer values of mark. What if you set <code class="docutils literal notranslate"><span class="pre">mark</span> <span class="pre">=</span> <span class="pre">&quot;test&quot;</span></code>?
 Then what does it do? You should see:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[1] &quot;This mark is too high.&quot;</span>
 </pre></div>
 </div>
-<p>which is because 100 is converted to a string by R to do the comparison. “test” is &gt; than “100” (“t” is
+<p>which is because 100 is converted to a string by R to do the comparison. <code class="docutils literal notranslate"><span class="pre">test</span></code> is &gt; than “100” (“t” is
 after “1” in the alphabet). You need to be careful of this when doing comparisons!</p>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/Czeh0-sUgtM" style="border: 0; height: 345px; width: 560px">
-</iframe></div><p>Now you’ve seen nested <cite>if</cite> statements in action. Try the final practical exercise of this section.</p>
+</iframe></div><p>Now you’ve seen nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements in action. Try the final practical exercise of this section.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Nested `if` version</strong></p>
-<p>Re-write the environment code using nested <cite>if</cite> statements</p>
+<p><strong>Nested ``if`` version</strong></p>
+<p>Re-write the environment code using nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -962,7 +963,7 @@ after “1” in the alphabet). You need to be careful of this when doing compar
 <span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;I don&#39;t understand the humidity&quot;</span><span class="p">)</span>
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Humidity: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">humidity</span><span class="p">))</span>
-<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Should be `high` or `low`&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Should be &#39;high&#39; or &#39;low&#39;&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1080,7 +1081,7 @@ can’t compensate for poor style by adding comments…</p>
 </pre></div>
 </div>
 </div>
-<p>That comments adds nothing to the understanding. If <cite>a</cite> was a proper variable name, e.g. <cite>list_of_cells</cite> then even adding a comment becomes somewhat
+<p>That comments adds nothing to the understanding. If <code class="docutils literal notranslate"><span class="pre">a</span></code> was a proper variable name, e.g. <code class="docutils literal notranslate"><span class="pre">list_of_cells</span></code> then even adding a comment becomes somewhat
 redundant. Add a block comment to the top of a function with details of the function and there is no need at all to comment the return statement.</p>
 <p>The best hint for comments is to write them at the top of code blocks:</p>
 <div class="literal-block-wrapper docutils container" id="id30">
@@ -1242,12 +1243,12 @@ statement is outside the loop, so is only run when the loop is finished.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tools-of-the-trade">R tools of the trade</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-r">Intro to R</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-loops">R Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-loops">R <cite>for</cite> Loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-while-loop">R <cite>while</cite> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-for-loops">R <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-while-loop">R <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-conditionals">R conditionals</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-if-statement">R <cite>if</cite> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-if-statement">R <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-comments">R comments</a><ul class="nav section-nav flex-column">
@@ -1281,7 +1282,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

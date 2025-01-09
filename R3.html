@@ -866,7 +866,7 @@ CC-BY 4.0 licence.</p>
 especially for complicated operations. Enter <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>. <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> is a package for
 helping with tabular data manipulation. It pairs nicely with <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> which
 enables you to swiftly convert between different data formats for plotting and analysis.</p>
-<p>The <cite>tidyverse</cite> package is an “umbrella-package” that installs <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>,
+<p>The <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> package is an “umbrella-package” that installs <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>,
 and several other useful packages for data analysis, such as  <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>, <code class="docutils literal notranslate"><span class="pre">tibble</span></code>, etc.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> package tries to address 3 common issues that arise when
 doing data analysis in R:</p>
@@ -900,7 +900,7 @@ own column, and rows are instead more aggregated groups
 Moving back and forth between these formats is non-trivial, and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> gives you tools
 for this and more sophisticated data manipulation.</p>
 <p>First, <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/surveys.csv">download the data file we’re going to use, which can be found here</a>.</p>
-<p>We’ll read in our data using the <cite>read_csv()</cite> function from the
+<p>We’ll read in our data using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function from the
 tidyverse package <code class="docutils literal notranslate"><span class="pre">readr</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id26">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
@@ -1063,8 +1063,8 @@ columns. For this we’ll use <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <p>If this runs off your screen and you just want to see the first few rows, you
-can use a pipe to view the <cite>head()</cite> of the data. (Pipes work with non-<code class="docutils literal notranslate"><span class="pre">dplyr</span></code>
-functions, too, as long as the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> or <cite>magrittr</cite> package is loaded).</p>
+can use a pipe to view the <code class="docutils literal notranslate"><span class="pre">head()</span></code> of the data. (Pipes work with non-<code class="docutils literal notranslate"><span class="pre">dplyr</span></code>
+functions, too, as long as the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> or <code class="docutils literal notranslate"><span class="pre">magrittr</span></code> package is loaded).</p>
 <div class="literal-block-wrapper docutils container" id="id37">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1073,8 +1073,8 @@ functions, too, as long as the <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 </div>
-<p>The first few rows of the output are full of <cite>NA`s, so if we wanted to remove
-those we could insert a `filter()</cite> in the chain:</p>
+<p>The first few rows of the output are full of <code class="docutils literal notranslate"><span class="pre">NA</span></code>’s, so if we wanted to remove
+those we could insert a <code class="docutils literal notranslate"><span class="pre">filter()</span></code> in the chain:</p>
 <div class="literal-block-wrapper docutils container" id="id38">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1113,13 +1113,13 @@ converted to centimeters. In this <code class="docutils literal notranslate"><sp
 <p>Many data analysis tasks can be approached using the <em>split-apply-combine</em>
 paradigm: split the data into groups, apply some analysis to each group, and
 then combine the results. Key functions of <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> for this workflow are
-<cite>group_by()</cite> and <cite>summarize()</cite>.</p>
+<code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>.</p>
 <section id="the-group-by-and-summarize-functions">
 <h4>The <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions<a class="headerlink" href="#the-group-by-and-summarize-functions" title="Link to this heading">#</a></h4>
 <p id="index-14"><span id="index-13"></span><code class="docutils literal notranslate"><span class="pre">group_by()</span></code> is often used together with <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>, which collapses each
 group into a single-row summary of that group.  <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> takes as arguments
 the column names that contain the <strong>categorical</strong> variables for which you want
-to calculate the summary statistics. So to compute the mean <cite>weight</cite> by sex:</p>
+to calculate the summary statistics. So to compute the mean <code class="docutils literal notranslate"><span class="pre">weight</span></code> by sex:</p>
 <div class="literal-block-wrapper docutils container" id="id40">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1129,7 +1129,7 @@ to calculate the summary statistics. So to compute the mean <cite>weight</cite> 
 </div>
 </div>
 <p>You may also have noticed that the output from these calls doesn’t run off the
-screen anymore. It’s one of the advantages of <cite>tbl_df</cite> over data frame.</p>
+screen anymore. It’s one of the advantages of <code class="docutils literal notranslate"><span class="pre">tbl_df</span></code> over data frame.</p>
 <p>You can also group by multiple columns:</p>
 <div class="literal-block-wrapper docutils container" id="id41">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
@@ -1141,7 +1141,7 @@ screen anymore. It’s one of the advantages of <cite>tbl_df</cite> over data fr
 </div>
 </div>
 <p>Here, we used <code class="docutils literal notranslate"><span class="pre">tail()</span></code> to look at the last six rows of our summary. Before, we had
-used <cite>head()</cite> to look at the first six rows. We can see that the <code class="docutils literal notranslate"><span class="pre">sex</span></code> column contains
+used <code class="docutils literal notranslate"><span class="pre">head()</span></code> to look at the first six rows. We can see that the <code class="docutils literal notranslate"><span class="pre">sex</span></code> column contains
 <code class="docutils literal notranslate"><span class="pre">NA</span></code> values because some animals had escaped before their sex and body weights
 could be determined. The resulting <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> column does not contain <code class="docutils literal notranslate"><span class="pre">NA</span></code> but
 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (which refers to “Not a Number”) because <code class="docutils literal notranslate"><span class="pre">mean()</span></code> was called on a vector of
@@ -1160,7 +1160,7 @@ statistics on weight. Because the missing values are removed first, we can omit
 </div>
 <p>Here, again, the output from these calls doesn’t run off the screen
 anymore. If you want to display more data, you can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function
-at the end of your chain with the argument <cite>n</cite> specifying the number of rows to
+at the end of your chain with the argument <code class="docutils literal notranslate"><span class="pre">n</span></code> specifying the number of rows to
 display:</p>
 <div class="literal-block-wrapper docutils container" id="id43">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
@@ -1198,7 +1198,7 @@ sort on <code class="docutils literal notranslate"><span class="pre">min_weight<
 </pre></div>
 </div>
 </div>
-<p>To sort in descending order, we need to add the <cite>desc()</cite> function. If we want to sort the results by decreasing order of mean weight:</p>
+<p>To sort in descending order, we need to add the <code class="docutils literal notranslate"><span class="pre">desc()</span></code> function. If we want to sort the results by decreasing order of mean weight:</p>
 <div class="literal-block-wrapper docutils container" id="id46">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1254,7 +1254,7 @@ as the arguments of <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </div>
-<p>With the above code, we can proceed with <cite>arrange()</cite> to sort the table
+<p>With the above code, we can proceed with <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> to sort the table
 according to a number of criteria so that we have a better comparison.
 For instance, we might want to arrange the table above in (i) an alphabetical order of
 the levels of the species and (ii) in descending order of the count:</p>
@@ -1328,9 +1328,8 @@ observations (hint: see <code class="docutils literal notranslate"><span class="
 </section>
 <section id="reshaping-with-pivot-longer-and-pivot-wider">
 <h3>Reshaping with pivot_longer and pivot_wider<a class="headerlink" href="#reshaping-with-pivot-longer-and-pivot-wider" title="Link to this heading">#</a></h3>
-<p id="index-16">In the [spreadsheet
-lesson](<a class="reference external" href="https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/">https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/</a>),
-we discussed how to structure our data leading to the four rules defining a tidy
+<p id="index-16">In the <a class="reference internal" href="Spreadsheets_data.html#moving-from-spreadsheets-to-data"><span class="std std-ref">Moving from spreadsheets to data</span></a>,
+we discuss how to structure our data leading to the four rules defining a tidy
 dataset:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -1347,7 +1346,7 @@ associated with each record. What if instead of comparing records, we
 wanted to compare the different mean weight of each genus between plots? (Ignoring <code class="docutils literal notranslate"><span class="pre">plot_type</span></code> for simplicity).</p>
 <p>We’d need to create a new table where each row (the unit) is comprised of values of variables
 associated with each plot. In practical terms this means the values
-in <cite>genus</cite> would become the names of column variables and the cells would contain the
+in <code class="docutils literal notranslate"><span class="pre">genus</span></code> would become the names of column variables and the cells would contain the
 values of the mean weight observed on each plot.</p>
 <p>Having created a new table, it is therefore straightforward to explore the
 relationship between the weight of different genera within, and between, the
@@ -1356,7 +1355,7 @@ but we have <strong>reshaped</strong> the data according to the observations of 
 average genus weight per plot instead of recordings per date.</p>
 <p>The opposite transformation would be to transform column names into values of
 a variable.</p>
-<p>We can do both these of transformations with two <cite>tidyr</cite> functions, <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code>
+<p>We can do both these of transformations with two <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> functions, <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>.</p>
 <p>These may sound like dramatically different data layouts, but there are some tools that make
 transitions between these layouts more straightforward than you might think! The animation below
@@ -1391,7 +1390,7 @@ interest, and create a new variable for the <code class="docutils literal notran
 </div>
 <p>This yields <code class="docutils literal notranslate"><span class="pre">surveys_gw</span></code> where the observations for each plot are distributed across
 multiple rows, 196 observations of 3 variables.
-Using <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> with the names from <cite>genus</cite> and with values from <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> this becomes
+Using <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> with the names from <code class="docutils literal notranslate"><span class="pre">genus</span></code> and with values from <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code> this becomes
 24 observations of 11 variables, one row for each plot.</p>
 <div class="literal-block-wrapper docutils container" id="id56">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id56" title="Link to this code">#</a></div>
@@ -1432,9 +1431,10 @@ the other variable contains the values previously associated with the column nam
 <li><p><em>cols</em> are the name of the columns we use to make this pivot (or to drop).</p></li>
 </ol>
 </div></blockquote>
-<p>To recreate <cite>surveys_gw</cite> from <cite>surveys_wide</cite> we would create a names variable called
-<cite>genus</cite> and value variable called <cite>mean_weight</cite>.</p>
-<p>In pivoting longer, we also need to specify what columns to reshape. If the columns are directly adjacent as they are here, we don’t even need to list the all out: we can just use the <cite>:</cite> operator!</p>
+<p>To recreate <code class="docutils literal notranslate"><span class="pre">surveys_gw</span></code> from <code class="docutils literal notranslate"><span class="pre">surveys_wide</span></code> we would create a names variable called
+<code class="docutils literal notranslate"><span class="pre">genus</span></code> and value variable called <code class="docutils literal notranslate"><span class="pre">mean_weight</span></code>.</p>
+<p>In pivoting longer, we also need to specify what columns to reshape. If the columns are directly adjacent as
+they are here, we don’t even need to list the all out: we can just use the <code class="docutils literal notranslate"><span class="pre">:</span></code> operator!</p>
 <div class="literal-block-wrapper docutils container" id="id58">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id58" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1449,8 +1449,8 @@ the other variable contains the values previously associated with the column nam
 and then longer can be a useful way to balance out a dataset so that every
 replicate has the same composition</p>
 <p>We could also have used a specification for what columns to exclude. In this example,
-we will use all columns <em>except</em> <cite>plot_id</cite> for the names variable. By using the minus sign
-in the <code class="docutils literal notranslate"><span class="pre">cols</span></code> argument, we omit <cite>plot_id</cite> from being reshaped</p>
+we will use all columns <em>except</em> <code class="docutils literal notranslate"><span class="pre">plot_id</span></code> for the names variable. By using the minus sign
+in the <code class="docutils literal notranslate"><span class="pre">cols</span></code> argument, we omit <code class="docutils literal notranslate"><span class="pre">plot_id</span></code> from being reshaped</p>
 <div class="literal-block-wrapper docutils container" id="id59">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id59" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_wide</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1461,10 +1461,10 @@ in the <code class="docutils literal notranslate"><span class="pre">cols</span><
 </div>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Reshape the <cite>surveys</cite> data frame with <cite>year</cite> as columns, <cite>plot_id</cite>
+<p>Reshape the <code class="docutils literal notranslate"><span class="pre">surveys</span></code> data frame with <code class="docutils literal notranslate"><span class="pre">year</span></code> as columns, <code class="docutils literal notranslate"><span class="pre">plot_id</span></code>
 as rows, and the
 number of genera per plot as the values. You will need to summarize before
-reshaping, and use the function <cite>n_distinct()</cite> to get the number of unique
+reshaping, and use the function <code class="docutils literal notranslate"><span class="pre">n_distinct()</span></code> to get the number of unique
 genera within a particular chunk of data. It’s a powerful function! See
 <code class="docutils literal notranslate"><span class="pre">?n_distinct</span></code> for more.</p>
 </div>
@@ -1504,7 +1504,7 @@ two measurement columns: <code class="docutils literal notranslate"><span class=
 difficult to do things like look at the relationship between mean values of
 each measurement per year in different plot types. Let’s walk through a
 common solution for this type of problem. First, use <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code> to create a
-dataset where we have a names column called <cite>measurement</cite> and a
+dataset where we have a names column called <code class="docutils literal notranslate"><span class="pre">measurement</span></code> and a
 <code class="docutils literal notranslate"><span class="pre">value</span></code> column that takes on the value of either <code class="docutils literal notranslate"><span class="pre">hindfoot_length</span></code> or
 <code class="docutils literal notranslate"><span class="pre">weight</span></code>. <em>Hint</em>: You’ll need to specify which columns will be part of the reshape.</p>
 </div>
@@ -1551,7 +1551,7 @@ in our working directory that will store this generated dataset. We don’t want
 to write generated datasets in the same directory as our raw data. It’s good
 practice to keep them separate. The <code class="docutils literal notranslate"><span class="pre">data_raw</span></code> folder should only contain the raw,
 unaltered data, and should be left alone to make sure we don’t delete or modify
-it. In contrast, our script will generate the contents of the <cite>data</cite>
+it. In contrast, our script will generate the contents of the <code class="docutils literal notranslate"><span class="pre">data</span></code>
 directory, so even if the files it contains are deleted, we can always
 re-generate them.</p>
 <p>In preparation for our next lesson on plotting, we are going to prepare a
@@ -1589,8 +1589,8 @@ observations for these more common species:</p>
 <div class="literal-block-wrapper docutils container" id="id65">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id65" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">### Create the dataset for exporting:</span>
-<span class="c1">##  Start by removing observations for which the `species_id`, `weight`,</span>
-<span class="c1">##  `hindfoot_length`, or `sex` data are missing:</span>
+<span class="c1">##  Start by removing observations for which the &#39;species_id&#39;, &#39;weight&#39;,</span>
+<span class="c1">##  &#39;hindfoot_length&#39;, or &#39;sex&#39; data are missing:</span>
 <span class="n">surveys_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">surveys</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">       </span><span class="nf">filter</span><span class="p">(</span><span class="n">species_id</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1"># remove missing species_id</span>
 <span class="w">       </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">weight</span><span class="p">),</span><span class="w">                 </span><span class="c1"># remove missing weight</span>
@@ -1725,7 +1725,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

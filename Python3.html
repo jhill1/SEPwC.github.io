@@ -651,7 +651,7 @@ is deleted. The <code class="docutils literal notranslate"><span class="pre">pri
 </pre></div>
 </div>
 </div>
-<p>Here, both the global <em>and</em> <cite>local</cite> give the same answer. We’ve modified the global variable within
+<p>Here, both the global <em>and</em> local versions of <code class="docutils literal notranslate"><span class="pre">x</span></code> give the same answer. We’ve modified the global variable within
 the function. However, if we create a list of the same variable name, we’ll have similar
 behaviour to the previous example:</p>
 <div class="literal-block-wrapper docutils container" id="id13">
@@ -705,7 +705,7 @@ do not create scope.</p>
 crop date/times to a specific range and compare or take samples from our
 data every <em>N</em> minutes, for example. Python comes with a datetime module
 that helps us deal with these issues. It provides a variety of functions
-to work out duration, samples and deal with leap years and timezones.</p>
+to work out duration, samples and deal with leap years and time zones.</p>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -798,7 +798,7 @@ CSV with dates listed as:</p>
 </pre></div>
 </div>
 </div>
-<p>Here the date is represented by the year, month, day and then hour seperated by a hyphen.
+<p>Here the date is represented by the year, month, day and then hour separated by a hyphen.
 There is no minute or second data.
 We can use datetime’s <code class="docutils literal notranslate"><span class="pre">strptime()</span></code> method to parse these strings:</p>
 <div class="literal-block-wrapper docutils container" id="id22">
@@ -824,11 +824,11 @@ We can use datetime’s <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <p>You can see the various formatting options <a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior">here</a>.</p>
-<p>The final bit of the datetime we need to know about are timezones. The UK has two timezones, GMT and BST
+<p>The final bit of the datetime we need to know about are time zones. The UK has two time zones, GMT and BST
 which occur in the winter and summer respectively. There is a Universal Time zone (UTC) which is
 effectively GMT (but doesn’t shift in the UK summer!). The datetime object can handle
-timezones and can convert times for you (and takes care of duration over different timezones!).
-However, we need another python module <code class="docutils literal notranslate"><span class="pre">pytz</span></code> to handle the actual timezones.</p>
+time zones and can convert times for you (and takes care of duration over different time zones!).
+However, we need another python module <code class="docutils literal notranslate"><span class="pre">pytz</span></code> to handle the actual time zones.</p>
 <div class="literal-block-wrapper docutils container" id="id24">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># note I&#39;ve only import the datetime object, not the whole datetime module</span>
@@ -858,13 +858,13 @@ multidimensional array data structures, such as the homogeneous, N-dimensional
 <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, and a large library of functions that operate efficiently on these
 data structures.</p>
 <p>Python lists are general purpose containers. They can be
-“heterogeneous”, meaning that they can contain elements of a variety of datatypes.</p>
-<p>However, scientific data is often numerical and hence <cite>homogeneous</cite>.
+<em>heterogeneous</em>, meaning that they can contain elements of a variety of datatypes.</p>
+<p>However, scientific data is often numerical and hence <em>homogeneous</em>.
 NumPy is designed to work on such data, rather than be more general.</p>
 <p>Most NumPy arrays have some restrictions. For instance:</p>
 <ul class="simple">
 <li><p>All elements of the array must be of the same type of data.</p></li>
-<li><p>Once created, the total size of the the array can’t change.</p></li>
+<li><p>Once created, the total size of the array can’t change.</p></li>
 <li><p>The shape must be “rectangular”, not “jagged”; e.g., each row of
 a two-dimensional array must have the same number of columns.</p></li>
 </ul>
@@ -872,7 +872,8 @@ a two-dimensional array must have the same number of columns.</p></li>
 make the array faster, more memory efficient, and more convenient to use than
 less restrictive data structures.</p>
 <p>For the remainder of this document, we will use the word “array” to refer to
-an instance of <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
+an instance of <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. You should work through the examples below in
+a ipython or python terminal.</p>
 <section id="how-to-import-numpy">
 <h3>How to import NumPy<a class="headerlink" href="#how-to-import-numpy" title="Link to this heading">#</a></h3>
 <p>Numpy is generally imported into Python code like this:</p>
@@ -1129,12 +1130,12 @@ and order when you call the function.</p>
 </div>
 <p>In addition to sort, which returns a sorted copy of an array, you can use:</p>
 <ul class="simple">
-<li><p><cite>argsort</cite>, which is an indirect sort along a specified axis,</p></li>
-<li><p><cite>lexsort</cite>, which is an indirect stable sort on multiple keys,</p></li>
-<li><p><cite>searchsorted</cite>, which will find elements in a sorted array, and</p></li>
-<li><p><cite>partition</cite>, which is a partial sort.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argsort</span></code>, which is an indirect sort along a specified axis,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lexsort</span></code>, which is an indirect stable sort on multiple keys,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">searchsorted</span></code>, which will find elements in a sorted array, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">partition</span></code>, which is a partial sort.</p></li>
 </ul>
-<p>To read more about sorting an array, see: <cite>sort</cite>.</p>
+<p>To read more about sorting an array, see: <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.sort.html#sorting">sort functions</a>.</p>
 <p>If you start with these arrays:</p>
 <div class="literal-block-wrapper docutils container" id="id46">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
@@ -1171,7 +1172,7 @@ and order when you call the function.</p>
 </div>
 <p>In order to remove elements from an array, it’s simple to use indexing to select
 the elements that you want to keep.</p>
-<p>To read more about concatenate, see: <cite>concatenate</cite>.</p>
+<p>To read more about concatenate, see: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html">concatenate help</a>.</p>
 </section>
 <section id="how-do-you-know-the-shape-and-size-of-an-array">
 <h3>How do you know the shape and size of an array?<a class="headerlink" href="#how-do-you-know-the-shape-and-size-of-an-array" title="Link to this heading">#</a></h3>
@@ -1744,8 +1745,8 @@ according to the values you specify.</p>
 </pre></div>
 </div>
 </div>
-<p>To learn more about transposing and reshaping arrays, see <cite>transpose</cite> and
-<cite>reshape</cite>.</p>
+<p>To learn more about transposing and reshaping arrays, see <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.transpose.html#numpy-transpose">transpose</a> and
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.reshape.html#numpy-reshape">reshape</a> documents.</p>
 <p>NumPy’s <code class="docutils literal notranslate"><span class="pre">np.flip()</span></code> function allows you to flip, or reverse, the contents of
 an array along an axis. When using <code class="docutils literal notranslate"><span class="pre">np.flip()</span></code>, specify the array you would like
 to reverse and the axis. If you don’t specify the axis, NumPy will reverse the
@@ -2705,7 +2706,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

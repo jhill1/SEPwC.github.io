@@ -392,9 +392,9 @@ different versions need to be tracked and labelled to make sure any processing i
 <p>Data comes in many formats. We need to think about what this is and how to read it.</p>
 <p>Human readable data is any data that can be opened in a text editor and a human can decipher it. This means
 the data is text based (even if it’s numbers), not binary (zeros and ones). Common human readable data
-are CSV (comma seperated values) or XML (eXtensible Markup Language).</p>
+are CSV (comma separated values) or XML (eXtensible Markup Language).</p>
 <p>Machine readable is data that can easily be read by a computer program. This means it needs to be
-well structured, labelled and with clear definiaitons of what things are. It can be in binary format
+well structured, labelled and with clear definiations of what things are. It can be in binary format
 which is impossible (I assume!) for humans to read.</p>
 <p>What we would like as programmers is human readable data that is also machine readable. Human readable
 data is much easier to debug (as we can read it!), but it also needs to be machine readable
@@ -439,22 +439,31 @@ the data.</p>
 to be done programmitically in your script. Examples of this step are to make each column a variable, so for example if your data records
 <code class="docutils literal notranslate"><span class="pre">female_treated</span></code>, <code class="docutils literal notranslate"><span class="pre">female_untreated</span></code>, <code class="docutils literal notranslate"><span class="pre">male_treated</span></code>, <code class="docutils literal notranslate"><span class="pre">male_untrested</span></code>, split this into <code class="docutils literal notranslate"><span class="pre">sex</span></code> and <code class="docutils literal notranslate"><span class="pre">treated</span></code>. This
 will enable easier analysis later.</p>
-<p>It is also advised to remove any units frm the data and either add it to the column header/label or as a seperate column (the latter is
+<p>It is also advised to remove any units from the data and either add it to the column header/label or as a separate column (the latter is
 important if the units change, for example a mix of mm and m). It may be easier to translate all values to the same units rather than having
-a seperate unit column.</p>
-<p>It may also be easier to seperate your data into multiple files that are linked using some consistant ID. Here, we are moving towards
+a separate unit column.</p>
+<p>It may also be easier to separate your data into multiple files that are linked using some consistent ID. Here, we are moving towards
 more of a relational database structure, but it means we can manipulate data more easily any script we write. Again, this may be done
 within the script rather than explicitly with the data.</p>
 <p>The final processing step may be to convert from <code class="docutils literal notranslate"><span class="pre">wide</span></code> format to <code class="docutils literal notranslate"><span class="pre">long</span></code> format. Both R and Python can do this automatically
 and we’ll cover this later.</p>
+<p>These steps can be summerised into four rules:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Each variable has its own column</p></li>
+<li><p>Each observation has its own row</p></li>
+<li><p>Each value must have its own cell</p></li>
+<li><p>Each type of observational unit forms a table</p></li>
+</ol>
+</div></blockquote>
 </section>
 <section id="create-a-doi">
 <h4>Create a DOI<a class="headerlink" href="#create-a-doi" title="Link to this heading">#</a></h4>
 <p>If your dataset is part of the research (e.g. collected by you) it might be a good idea to deposit the data in
-a respoitory and obtain a DOI (Digital Object Identifier) to that others can use the data and cite you. Common
+a repository and obtain a DOI (Digital Object Identifier) to that others can use the data and cite you. Common
 repositories for this are FigShare, Dryad, and Zenodo.</p>
 <p>All the processing above can be largely automated. Any processing software should be treated like any other software and
-stored in revision control, preferably alongside your data. It then details your processing pipeline. Otherwsie, document
+stored in revision control, preferably alongside your data. It then details your processing pipeline. Otherwise, document
 the processing done in a README or similar.</p>
 </section>
 </section>
@@ -500,13 +509,13 @@ in the scientific literature.</a></p>
 <section id="csv-files">
 <h2>CSV files<a class="headerlink" href="#csv-files" title="Link to this heading">#</a></h2>
 <p>CSV files are text files. They contain data in text format, with columns seperated by a delimiter
-and rows seperated by a new line.</p>
-<p>The delimaiter is often a comma <cite>,</cite>, hence CSV (Comma Seperated Values). Other common delimiters
+and rows separated by a new line.</p>
+<p>The delimiter is often a comma <cite>,</cite>, hence CSV (Comma Separated Values). Other common delimiters
 are whitespace, <kbd class="kbd docutils literal notranslate">Tab</kbd>, or pipe symbols <kbd class="kbd docutils literal notranslate">|</kbd>. Data that contains the delimiter can be quoted
-using <cite>“</cite>.</p>
+using <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
 <p>CSV is obviously a spreadsheet-based data storage format. Data will be in the form of a table with columns
-and rows. The first row may be a header contining the information about each column or that may be
-in a seperate file (e.g. a text file).</p>
+and rows. The first row may be a header continuing the information about each column or that may be
+in a separate file (e.g. a text file).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>There is no well-defined standard format for CSV files. They can therefore be difficult to process
@@ -736,7 +745,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

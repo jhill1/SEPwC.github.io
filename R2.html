@@ -393,7 +393,7 @@ code which is identical apart from a single variable you can instead create a fu
 </pre></div>
 </div>
 </div>
-<p>The first thing to note is that a function is called with <cite>()</cite> parentheses. Sometimes it gives back
+<p>The first thing to note is that a function is called with <code class="docutils literal notranslate"><span class="pre">()</span></code> parentheses. Sometimes it gives back
 a value (called “returning a value”), sometimes it does not. Sometimes there are things in between the
 parentheses, sometimes not (these things are called “arguments”).</p>
 <p>So using, or calling, a R function is easy. Give the function name, open the brackets, add any arguments you need (separated by commas),
@@ -411,7 +411,7 @@ close your brackets, if you are expecting a number back, store it:</p>
 </pre></div>
 </div>
 </div>
-<p>Here, we’re calling the <cite>print</cite> function to print out the result of the <code class="docutils literal notranslate"><span class="pre">paste</span></code> function, which pastes together a string, the <code class="docutils literal notranslate"><span class="pre">length</span></code> of a list
+<p>Here, we’re calling the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to print out the result of the <code class="docutils literal notranslate"><span class="pre">paste</span></code> function, which pastes together a string, the <code class="docutils literal notranslate"><span class="pre">length</span></code> of a list
 and another string. Three functions nested within each ohter. This is equivalent of:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
@@ -690,14 +690,14 @@ reassigning the dictionary to the same variable. For example:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;Grenville&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Gives the <cite>telephone</cite> dictionary without <cite>“Grenville”</cite>. To make that change permanaent,
+<p>Gives the <code class="docutils literal notranslate"><span class="pre">telephone</span></code> dictionary without <code class="docutils literal notranslate"><span class="pre">&quot;Grenville&quot;</span></code>. To make that change permanent,
 you reassign the output back into telephone:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">telephone</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">telephone</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;Grenville&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>If any code you write makes extensive use of dictionaries, it is worth writing little
 helper functions to do this so you code is cleaner.</p>
-<p>R does have libraries that make proper dictionaries. <cite>hash</cite> is one such library.
+<p>R does have libraries that make proper dictionaries. <code class="docutils literal notranslate"><span class="pre">hash</span></code> is one such library.
 If you are making heavy use of dictionaries, it may be better to use that library instead!</p>
 <div class="admonition-practical-exercise-capital-cities admonition">
 <p class="admonition-title">Practical exercise - capital cities</p>
@@ -775,7 +775,7 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </section>
 <section id="r-files">
 <h2>R: files<a class="headerlink" href="#r-files" title="Link to this heading">#</a></h2>
-<p id="index-4">Writing software for scientific/research purposes often invovles reading in
+<p id="index-4">Writing software for scientific/research purposes often involves reading in
 data from files. R file handling is very powerful, but surprisingly
 easy to use and manage, but there are a lot of overlapping functions
 that do very similar things.</p>
@@ -799,9 +799,9 @@ something other than a comma!). The syntax for these function is very similar.</
 </pre></div>
 </div>
 </div>
-<p>Those two lines of code produce identical results. The <cite>read.csv</cite> has
-the separator (<cite>sep=</cite>) set to <cite>,</cite> by default. In <cite>read.table</cite> we specify
-it. In other words <cite>read.table</cite> is more flexible in reading in data as it
+<p>Those two lines of code produce identical results. The <code class="docutils literal notranslate"><span class="pre">read.csv</span></code> function has
+the separator (<code class="docutils literal notranslate"><span class="pre">sep=</span></code>) set to <code class="docutils literal notranslate"><span class="pre">,</span></code> by default. In <code class="docutils literal notranslate"><span class="pre">read.table</span></code> we specify
+it. In other words <code class="docutils literal notranslate"><span class="pre">read.table</span></code> is more flexible in reading in data as it
 can read in data separated by spaces, semi-colons, pipes, etc. Both
 functions return a data frame object (we’ll learn more on this later),
 with the columns labelled by the headers.</p>
@@ -821,7 +821,7 @@ the type of quotes to use, the separator and whether to use row and column names
 <p>It’s worth finding the R manuals online to see these and experiment a little.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Write your <cite>capitals</cite> dictionary into a file, separated by commas, so country in
+<p>Write your <code class="docutils literal notranslate"><span class="pre">capitals</span></code> dictionary into a file, separated by commas, so country in
 column 1 and the city in column 2. Each country is then on a new line.
 This creates a CSV file, which you can load into Excel, etc.</p>
 </div>
@@ -849,7 +849,7 @@ This creates a CSV file, which you can load into Excel, etc.</p>
 <span class="s2">&quot;Burkina Faso&quot;</span>,<span class="s2">&quot;Ouagadougou&quot;</span>
 </pre></div>
 </div>
-<p>Why did I use the <cite>write.table</cite> function? What happens if <cite>write.csv</cite> is used?</p>
+<p>Why did I use the <code class="docutils literal notranslate"><span class="pre">write.table</span></code> function? What happens if <code class="docutils literal notranslate"><span class="pre">write.csv</span></code> is used?</p>
 </div>
 </section>
 </section>
@@ -879,14 +879,25 @@ advanced usage options.</p>
 <h3>R and the command line<a class="headerlink" href="#r-and-the-command-line" title="Link to this heading">#</a></h3>
 <p>When you run a R script via the Rscript command, with some arbitrary text after:</p>
 <div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>arg_script.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 </pre></div>
 </div>
 </div>
-<p>that text is passed to the <cite>script for you to access. Let’s create this simple script, named ``arg_script.R`</cite></p>
+<p>that text is passed to the script for you to access. On windows things are a bit different as
+the <code class="docutils literal notranslate"><span class="pre">Rscript.exe</span></code> is not generally on the path, so ou have to give the full path, something
+like:</p>
 <div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files\R\R-3.6.0\bin\Rscript.exe&quot;</span><span class="w"> </span>arg_script.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
+</pre></div>
+</div>
+</div>
+<p>Replacing the R version appropriately. You’ll need to do this for the rest of this
+tutorial or add the <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> exectuable to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
+<p>Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.R</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 <span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Length: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span>
@@ -894,15 +905,15 @@ advanced usage options.</p>
 </div>
 </div>
 <p>Now run that on the command line.</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>arg_script.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 </pre></div>
 </div>
 </div>
 <p>Your output is:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC/code_examples$<span class="w"> </span>Rscript<span class="w"> </span>command_args.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 <span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="s2">&quot;arg2&quot;</span><span class="w"> </span><span class="s2">&quot;arg3&quot;</span>
 <span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;Length: 3&quot;</span>
@@ -910,9 +921,9 @@ advanced usage options.</p>
 </div>
 </div>
 <p>The arguments are stored in <code class="docutils literal notranslate"><span class="pre">args</span></code>. The first is always the name of the script, however, we
-automatically removed that by using the <cite>trainlingOnly=True</cite> argument. Try it without:</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+automatically removed that by using the <code class="docutils literal notranslate"><span class="pre">trainlingOnly=True</span></code> argument. Try it without:</p>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jh1889@thalassa:~/work/teaching/SEPwC/code_examples$<span class="w"> </span>Rscript<span class="w"> </span>command_args.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
 <span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;/usr/lib/R/bin/exec/R&quot;</span><span class="w"> </span><span class="s2">&quot;--no-echo&quot;</span><span class="w">             </span><span class="s2">&quot;--no-restore&quot;</span>
 <span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;--file=command_args.R&quot;</span><span class="w"> </span><span class="s2">&quot;--args&quot;</span><span class="w">                </span><span class="s2">&quot;arg1&quot;</span>
@@ -921,12 +932,12 @@ automatically removed that by using the <cite>trainlingOnly=True</cite> argument
 </pre></div>
 </div>
 </div>
-<p>Oh! That’s not quite what we were expecting. You can see what <cite>Rscript</cite> actually does under the hood; it calls
-the R command with <cite>–no-echo</cite>, <cite>–no-restore</cite> and the <cite>–file</cite> arguments, with the further <cite>–args</cite> argument. Only
-then do we see our actual arguments. So best to leave <cite>trailingOnly=TRUE</cite>.</p>
+<p>Oh! That’s not quite what we were expecting. You can see what <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> actually does under the hood; it calls
+the R command with <code class="docutils literal notranslate"><span class="pre">--no-echo</span></code>, <code class="docutils literal notranslate"><span class="pre">--no-restore</span></code> and the <code class="docutils literal notranslate"><span class="pre">--file</span></code> arguments, with the further <code class="docutils literal notranslate"><span class="pre">--args</span></code> argument. Only
+then do we see our actual arguments. So best to leave <code class="docutils literal notranslate"><span class="pre">trailingOnly=TRUE</span></code>.</p>
 <p>Within our script we access them as we would any other list:</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">copy_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
 <span class="n">copy_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
@@ -949,8 +960,8 @@ R specific things; just the user arguments.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">arg</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -970,8 +981,8 @@ R specific things; just the user arguments.</p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">commandArgs</span></code>
 function. Moreover, the library will help with error messages, etc when the user gives incorrect arguments.</p>
 <p>The core functionality of <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is the <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code></p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;argparse&quot;</span><span class="p">)</span>
 
 <span class="n">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ArgumentParser</span><span class="p">(</span>
@@ -983,8 +994,8 @@ function. Moreover, the library will help with error messages, etc when the user
 </div>
 </div>
 <p>Once an OptionParser is set-up you can then add optional and positional arguments to that.</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">$</span><span class="nf">add_option</span><span class="p">(</span><span class="s">&quot;filename&quot;</span>
 <span class="w">                  </span><span class="n">help</span><span class="o">=</span><span class="s">&quot;the file to read the data from&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># a positional argument</span>
 <span class="n">parser</span><span class="o">$</span><span class="nf">add_option</span><span class="p">(</span><span class="s">&#39;-c&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;--count&#39;</span>
@@ -995,11 +1006,11 @@ function. Moreover, the library will help with error messages, etc when the user
 </pre></div>
 </div>
 </div>
-<p>You can also specify which variable the argument is parsered into, the type, if an argument is required, if it should be a list
+<p>You can also specify which variable the argument is parsed into, the type, if an argument is required, if it should be a list
 and a lot more too.</p>
 <p>You then parse the argument and put them in variables as you see fit</p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="o">$</span><span class="nf">parse_args</span><span class="p">()</span>
 <span class="n">intput_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">$</span><span class="n">filename</span>
 <span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="o">$</span><span class="n">count</span>
@@ -1011,12 +1022,12 @@ and a lot more too.</p>
 <p class="admonition-title">Practical exercise - more complex arguments</p>
 <p>Write a simple R script that returns the square of a given number,
 e.g. if the users give 2, the program returns 4 to screen.
-It must have the following arguments using <cite>argparse</cite>.</p>
+It must have the following arguments using <code class="docutils literal notranslate"><span class="pre">argparse</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <cite>int</cite> value of 0, 1 or 2.
-This increases the verbosity of the output from just the number (<cite>verbosity==0</cite>)
-to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
+<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <code class="docutils literal notranslate"><span class="pre">int</span></code> value of 0, 1 or 2.
+This increases the verbosity of the output from just the number (<code class="docutils literal notranslate"><span class="pre">verbosity==0</span></code>)
+to a full sentence (<code class="docutils literal notranslate"><span class="pre">verbosity==2</span></code>), with default of 0.</p></li>
 <li><p>restrict the input number to an integer only</p></li>
 <li><p>add a check for negative numbers as input</p></li>
 <li><p>optional output to a file</p></li>
@@ -1026,8 +1037,8 @@ to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">argparse</span><span class="p">)</span>
 
 <span class="n">parser</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="nf">ArgumentParser</span><span class="p">(</span>
@@ -1080,8 +1091,8 @@ ask for a single line.</p>
 <p>If you search online for how to read user input from keyboard in R you will find
 reference to the <code class="docutils literal notranslate"><span class="pre">scan</span></code>, <code class="docutils literal notranslate"><span class="pre">readline</span></code> and <code class="docutils literal notranslate"><span class="pre">readlines</span></code> functions. They all work
 well in an interactive environment, but not when running as a batch script via <code class="docutils literal notranslate"><span class="pre">Rscript</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readLines</span><span class="p">(</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;stdin&quot;</span><span class="p">),</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">if </span><span class="p">(</span><span class="n">answer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Y&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1"># do something</span>
@@ -1109,8 +1120,8 @@ to search the internet for how to handle random numbers.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="s">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Can you guess what it is?&quot;</span><span class="p">)</span>
@@ -1147,8 +1158,8 @@ print a message to say the user lost the game</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>This is my code</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Welcome to the number guessing game!&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="s">&quot;I have thought of a number between 1 and 100&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="s">&quot;You have 5 tries to guess&quot;</span><span class="p">)</span>
@@ -1284,7 +1295,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

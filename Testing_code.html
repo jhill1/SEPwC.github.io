@@ -504,14 +504,14 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 </section>
 <section id="r-testthat">
 <h3>R: testthat<a class="headerlink" href="#r-testthat" title="Link to this heading">#</a></h3>
-<p>The first thing that you need to do is install the testthat R package. This can be done from CRAN using the code below.</p>
+<p>The first thing that you need to do is install the <code class="docutils literal notranslate"><span class="pre">testthat</span></code> R package. This can be done from CRAN using the code below.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Once testthat is installed, you can load it into your R sessions just like any other R package.</p>
+<p>Once <code class="docutils literal notranslate"><span class="pre">testthat</span></code> is installed, you can load it into your R sessions just like any other R package.</p>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">)</span>
@@ -534,7 +534,7 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 </div>
 </div>
 <p>Save the contents as <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code>.</p>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function of the testthat package to write sime simple tests for our two functions. The <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function follows a simple structure with two arguments: <code class="docutils literal notranslate"><span class="pre">desc</span></code> provides a description (in quotes) of whatever is being tested, and <code class="docutils literal notranslate"><span class="pre">code</span></code> provides whatever code (within curly brackets) to test.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function of the <code class="docutils literal notranslate"><span class="pre">testthat</span></code> package to write some simple tests for our two functions. The <code class="docutils literal notranslate"><span class="pre">test_that</span></code> function follows a simple structure with two arguments: <code class="docutils literal notranslate"><span class="pre">desc</span></code> provides a description (in quotes) of whatever is being tested, and <code class="docutils literal notranslate"><span class="pre">code</span></code> provides whatever code (within curly brackets) to test.</p>
 <p>Within the bracketed code to be tested, one or more <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> functions are run; each call to <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> is an independent test. The <code class="docutils literal notranslate"><span class="pre">expect_that</span></code> function takes two arguments: <code class="docutils literal notranslate"><span class="pre">object</span></code> is the object that is being examined by the function and <code class="docutils literal notranslate"><span class="pre">condition</span></code> is the condition that the object is meant to satisfy.</p>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
@@ -567,7 +567,7 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 </pre></div>
 </div>
 </div>
-<p>You can run those two tests if you’ve compied them into your R session (along with the <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code> file: hint <code class="docutils literal notranslate"><span class="pre">source</span></code>).</p>
+<p>You can run those two tests if you’ve copied them into your R session (along with the <code class="docutils literal notranslate"><span class="pre">temperature_conversion.R</span></code> file: hint <code class="docutils literal notranslate"><span class="pre">source</span></code>).</p>
 <p>The better idea is to simply run all the tests at once. So let’s create a test file with the following contents (including a fake test that will fail).</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
@@ -759,7 +759,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

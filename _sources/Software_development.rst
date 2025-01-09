@@ -14,7 +14,7 @@ Revision control
 We've already learnt one of the key tools (or if you've skipped to this bit, you can go back and learn about it), 
 which is :ref:`revision control <Revision control with Git>`.
 Rather than keep separate versions of code in separate files (which would be a nightmare for any reasonable sized application), 
-we keep versions of files in a revision control system. In this course we've learnt about `git`, but there are other 
+we keep versions of files in a revision control system. In this course we've learnt about ``git``, but there are other 
 tools, jut not as popular. 
 
 However, revision control is a tool to help development; it does not solve all problems. You can use it in a number of ways depending on the project, the number of people and the aims of the code. There is no single right way to do this and any development tools helps set up a process, but it's humans that actually devise and use (or not!) any processes.
@@ -115,24 +115,65 @@ Test-driven development turns the development cycle around to put testing up-fro
 
 The tests are written immediately after requirements capture and before any code is written (so the test will all fail!). You get approval from the client that the tests meet the requirements and then write code to pass the tests. Once done, you have met the requirements. 
 
+Development tools
+-----------------
+
+One of the amazing thing about writing software is there is no "right way" to do it. You do it however you
+feel comfortable and productive. I use a text editor and the command line. Others use an Integrated
+Development Environment (IDE) which comes in various levels of complexity and features.
+
+All IDEs are essentially a text editor with some form of hook to a compiler or runtime environment. For R
+and Python, which don't need compiling, its the runtime environment option. Most IDEs have a debugger built in, 
+along with syntax highlighting and variable/function completion.
+
+I don't use these tools as I often write code on HPC (High Performance Computing) platforms which generally 
+don't have them or they are very slow when used over internet connections. I therefore prefer to use more
+basic tools which will be on any computer I use. However, once you know how to use them well, they can make
+ou more productive. 
+
+Spyder
+~~~~~~
+
+Spyder is an open-source cross-platform IDE. The Python Spyder IDE is written completely in Python and is designed by scientists,
+so is ideal for us. The interface is dvided into a few windows. On the left is the editor window where you can type code and save 
+as a python file. On the right are two sub windows. The lower half is the Python interpreter. You can run python code directly in here. 
+The upper part is where plots, docs and other info appears. There's also a variable inspector and file browser you can use in this window; 
+click the tabs at the bottom to see.
+
+.. image:: ../images/spyder-default-layout-main.png
+
+Spyder has a bunch of useful tools, including github integration and code analysis, which can make your life easier. It is worth
+spending a bit of time to go through `the Spyder documentation <https://docs.spyder-ide.org/current/videos/index.html>`_
+and getting things set up as you want them. 
+
+RStudio
+~~~~~~~
+
+RStudio is a free and open-source IDE for R (and Python). There are also commerical versions available. Like Spyder it
+includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, 
+history, debugging, and workspace management.
+
+.. image:: ../images/rstudio-panes-labeled.jpeg
+
+You can integrate with git and, again, like Spyder, `it's worth reading through the docs to get things set up <https://docs.posit.co/ide/user/>`_.
 
 Linting your code
 -------------------
 
 *Linting* refers to running your code through software that checks the syntax and layout/formatting of your code. The
-term comes from the fluff shed by clothing, i.e. `lint` removes the extraneous fluff from your code. It often
+term comes from the fluff shed by clothing, i.e. ``lint`` removes the extraneous fluff from your code. It often
 points our better ways of writing functions, sylistic issues with your code and, when working in a team, checks
 things are consistant across the whole team (e.g. using 4 spaces to indent, rather than some people using 3 or 2).
 
 Both R and Python (and most other languages) have some form of lint software available. For R the 
-package is called `lintr`, for Python it's `pylint`. Let's deal with these in turn.
+package is called ``lintr``, for Python it's ``pylint``. Let's deal with these in turn.
 
-`lintr`
-~~~~~~~~
+``lintr``
+~~~~~~~~~
 
-`lintr` is used inside an R environment. 
+``lintr`` is used inside an R environment. 
 
-Create a file (e.g. `test_lint.R`) contining the following:
+Create a file (e.g. :file:`test_lint.R`) containing the following:
 
 .. code-block:: R
     :caption: |R|
@@ -195,11 +236,11 @@ You should see something like the following output:
 
     Running the lint function on that should return nothing.
 
-`pylint`
-~~~~~~~~
+``pylint``
+~~~~~~~~~~
 
-`pylint` is run from the command line (e.g. your Anaconda bash or the terminal emulator). Create a 
-file called "circle.py" with the following contents:
+``pylint`` is run from the command line (e.g. your Anaconda bash or the terminal emulator). Create a 
+file called :file:`circle.py` with the following contents:
 
 .. code-block:: Python
     :caption: |python|
@@ -226,7 +267,7 @@ file called "circle.py" with the following contents:
         def __repr__(self):
             return f"{self.__class__.__name__}(radius={self.radius})"
 
-Run pylint on that file in the command line:
+Run ``pylint`` on that file in the command line:
 
 .. code-block:: bash
     :caption: |cli|
@@ -318,3 +359,176 @@ description of the warning/error.
 
 .. youtube:: Wogad7fNZlY
    :align: center
+
+
+Using AI in development
+------------------------
+
+AI has great potential to help with a number of software development
+tasks such as refactoring, creating function templates, etc. It can also
+help read and understand documents, as well as help you understand code. 
+
+A number of IDEs (Integrated Development Environment) has some form of AI 
+integrated in. However, you often need to pay for these...or pay for the AI.
+We can use free versions of AI to help us though. Both ChatGPT and Google's Gemini
+are pretty good. We're going to focus on Gemini here.
+
+Using it a document explainer or searcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's try using AI to understand some ``git`` commands. Let's imagine we've been
+working but want to throw all our changes away and revert the code back
+to the last commit. Let's ask ChatGPT
+
+.. code-block::
+   :caption: |ai|
+
+   how do i revert a git repo to the last commit state?
+
+Which should return two different options:
+ - ``git reset --hard``
+ - ``git revert``
+
+This gives us a good start, but actually doesn't fully answer my question. 
+The last option of ``git revert`` reverts the last commit! It does not undo any staged
+or unstaged changes. The first command does the trick but have some subtleties
+about exactly what it'll do. There are context though.
+
+So AI helped us a bit here, but didn't give a full answer straight off. But you can 
+keep asking it questions to get the clarification needed. So let's ask another question:
+
+.. code-block::
+   :caption: |ai|
+
+   does git reset --hard remove unstaged changes?
+
+And read the answer. On my answer, it also recommends looking at ``git stash``. Let's
+continue and see what that's about...ask about ``git stash``
+
+You can export your chat to Google docs or email to store it, but it will also appear on the left-hand
+side menu.
+
+Let's try this again, but let's learn about the R package ``tidyverse`` or the Python package ``pandas``. 
+First let's explain what a dataframe is:
+
+.. code-block::
+   :caption: |ai|
+
+   In tidyverse, what is a dataframe?
+
+And then, let's compare to pandas:
+
+.. code-block::
+   :caption: |ai|
+
+   How does it differ from a pandas dataframe?
+
+Ai is a powerful tool for researching the basic concepts of new modules/libraries or ideas. It can 
+summerise these easily and quickly to give you a good overview. 
+
+It can also help with specific questions too:
+
+.. code-block:: 
+   :caption: |ai| 
+
+   How do I use pandas to load a csv file?
+
+Try asking that? You should get something like the following code:
+
+.. code-block:: python
+   :caption: |python|
+
+   import pandas as pd
+   
+   # Load the CSV file into a pandas DataFrame
+   df = pd.read_csv('path/to/your/file.csv') 
+   
+   # Example with optional parameters:
+   df = pd.read_csv('data.csv', 
+                    header=0,  # Specify the row number for the column names (default is 0)
+                    names=['col1', 'col2', 'col3'],  # Provide custom column names
+                    index_col='col1',  # Set 'col1' as the index column
+                    usecols=['col1', 'col3'],  # Read only specific columns
+                    nrows=5  # Read only the first 5 rows
+                   )
+   
+   # Print the first few rows of the DataFrame
+   print(df.head())
+
+Which is a pretty clear simple example, with a more complex one.
+
+Code generation
+~~~~~~~~~~~~~~~
+
+One of the more powerful features of AI is that it can generate code. We can set specific prompts
+to write code to accomplish a task. Let's try the following:
+
+.. code-block::
+   :caption: |ai|
+
+   write an R function to convert centigrade to fareheit
+
+Note, I have deliberately spelled ``farenheit`` incorrectly to demonstrate that AI understands some typos, etc.
+I got the following code back:
+
+.. code-block:: R
+   :caption: |R|
+   
+   celsius_to_fahrenheit <- function(celsius) {
+       fahrenheit <- (celsius * 9/5) + 32
+       return(fahrenheit)
+   }
+
+Compare that to the code you wrote in :ref:`R functions`. The formula is correct etc.
+
+.. admonition:: Practical exercise
+
+    We can try something more complex. Get Gemini to write out code for the 
+    random number guessing game from :ref:`R Exercises 2` or :ref:`Python Exercises 2`.
+
+    Does it work straight off? How does it compare to your hand written code?
+
+..  admonition:: Solution
+    :class: toggle
+
+    .. code-block::
+       :caption: |ai|
+    
+       in R can you write a number guessing game where the user has to guess a generated random number between 0 and 100. The user should have 5 tries.
+
+    .. code-block:: R
+       :caption: |R|
+
+        # Function to play the number guessing game
+        play_guessing_game <- function() {
+          # Generate a random number between 0 and 100
+          target_number <- sample(0:100, 1) 
+
+          # Initialize number of attempts
+          attempts <- 0
+
+          # Game loop
+          while (attempts < 5) {
+            attempts <- attempts + 1
+
+            # Get user input
+            guess <- as.integer(readline("Enter your guess: "))
+
+            # Check if the guess is correct
+            if (guess == target_number) {
+              cat("Congratulations! You guessed the number in", attempts, "attempts.\n")
+              return()
+            } else if (guess < target_number) {
+              cat("Too low. Try again.\n")
+            } else {
+              cat("Too high. Try again.\n")
+            }
+          }
+
+          # If the user runs out of attempts
+          cat("Sorry, you ran out of attempts. The number was", target_number, ".\n")
+        }
+
+        # Start the game
+        play_guessing_game()
+

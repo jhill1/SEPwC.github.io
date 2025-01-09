@@ -400,7 +400,7 @@ repeatedly. That might be within the same script; it might be part of many scrip
 </pre></div>
 </div>
 </div>
-<p>The first thing to note is that a function is called with <cite>()</cite> parentheses. Sometimes it gives back
+<p>The first thing to note is that a function is called with <code class="docutils literal notranslate"><span class="pre">()</span></code> parentheses. Sometimes it gives back
 a value (called “returning a value”), sometimes it does not. Sometimes there are things in between the
 parentheses, sometimes not (these are called “arguments”).</p>
 <p>So using, or calling, a Python function is easy. Give the function name, open the brackets, add any arguments you need (separated by commas),
@@ -418,8 +418,8 @@ close your brackets, if you are expecting a number back, store it:</p>
 </pre></div>
 </div>
 </div>
-<p id="index-2">Here, we’re calling the <cite>range</cite> function to go from <cite>0</cite> to the length of my_list (<cite>len(my_list)</cite>) in steps of 1. But <cite>len()</cite> is
-also a function. The return value of <cite>len(my_list)</cite> gets put in place of that bit of code. This is exactly equivalent of doing:</p>
+<p id="index-2">Here, we’re calling the <code class="docutils literal notranslate"><span class="pre">range</span></code> function to go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to the length of my_list (<code class="docutils literal notranslate"><span class="pre">len(my_list)</span></code>) in steps of 1. But <code class="docutils literal notranslate"><span class="pre">len()</span></code> is
+also a function. The return value of <code class="docutils literal notranslate"><span class="pre">len(my_list)</span></code> gets put in place of that bit of code. This is exactly equivalent of doing:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
@@ -462,8 +462,8 @@ also a function. The return value of <cite>len(my_list)</cite> gets put in place
 </pre></div>
 </div>
 </div>
-<p>The key thing are the keyword <cite>def</cite> followed by the name of your function and the arguments expected, then a a <cite>:</cite>. Next comes your
-function body (indented; remember whitespace matters!). At the end of your function, use the <cite>return</cite> keyword (with a value if you want
+<p>The key thing are the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> followed by the name of your function and the arguments expected, then a <code class="docutils literal notranslate"><span class="pre">:</span></code>. Next comes your
+function body (indented; remember whitespace matters!). At the end of your function, use the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword (with a value if you want
 to return something).</p>
 <p>Rather than staying abstract, let’s do something more concrete. Let’s write a function to convert from Centigrade to Fahrenheit.</p>
 <div class="literal-block-wrapper docutils container" id="id7">
@@ -492,7 +492,7 @@ to return something).</p>
 </div>
 <section id="function-arguments-in-python">
 <h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Link to this heading">#</a></h4>
-<p id="index-4">A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (kwargs) or generic arguments (args).</p>
+<p id="index-4">A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>) or generic arguments (<code class="docutils literal notranslate"><span class="pre">args</span></code>).</p>
 <p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the function takes
 two keyword arguments:</p>
 <div class="literal-block-wrapper docutils container" id="id9">
@@ -1024,18 +1024,18 @@ file and specify if we are going to read from it, or write to it.</p>
 </pre></div>
 </div>
 </div>
-<p>The above opens the file with name <cite>my_file.txt</cite> (in the current directory) in <cite>read</cite> mode.
-The variable <cite>file</cite> is the file handle. It’s the variable by which you can access the file
+<p>The above opens the file with name <code class="docutils literal notranslate"><span class="pre">my_file.txt</span></code> (in the current directory) in <code class="docutils literal notranslate"><span class="pre">read</span></code> mode.
+The variable <code class="docutils literal notranslate"><span class="pre">file</span></code> is the file handle. It’s the variable by which you can access the file
 on disk.</p>
 <p>The various modes are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><cite>r</cite>: open an existing file for a read operation.</p></li>
-<li><p><cite>w</cite>: open an existing file for a write operation. If the file already contains some data, then it will be overridden but if the file is not present then it creates the file as well.</p></li>
-<li><p><cite>a</cite>: open an existing file for append operation. It won’t override existing data.</p></li>
-<li><p><cite>r+</cite>: To read and write data into the file. The previous data in the file will be overridden.</p></li>
-<li><p><cite>w+</cite>: To write and read data. It will override existing data.</p></li>
-<li><p><cite>a+</cite>: To append and read data from the file. It won’t override existing data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>: open an existing file for a read operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code>: open an existing file for a write operation. If the file already contains some data, then it will be overwritten but if the file is not present then it creates the file as well.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: open an existing file for append operation. It won’t override existing data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r+</span></code>: To read and write data into the file. The previous data in the file will be overwritten.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w+</span></code>: To write and read data. It will overwrite existing data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a+</span></code>: To append and read data from the file. It won’t overwrite existing data.</p></li>
 </ul>
 <p>A file, once finished with, needs closing too.</p>
 <div class="literal-block-wrapper docutils container" id="id45">
@@ -1047,10 +1047,10 @@ on disk.</p>
 </div>
 </div>
 </div></blockquote>
-<p>It’s useful to get into the habit of closing files or using the Python <cite>with</cite> statement
+<p>It’s useful to get into the habit of closing files or using the Python <code class="docutils literal notranslate"><span class="pre">with</span></code> statement
 to prevent files being left open. This is especially important when writing to
 a file as often the data is “buffered” by the system and only gets written once
-the file handle is lost (i.e. <cite>.close()</cite> is called or the variable goes out of scope).</p>
+the file handle is lost (i.e. <code class="docutils literal notranslate"><span class="pre">.close()</span></code> is called or the variable goes out of scope).</p>
 <div class="literal-block-wrapper docutils container" id="id46">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -1059,7 +1059,7 @@ the file handle is lost (i.e. <cite>.close()</cite> is called or the variable go
 </pre></div>
 </div>
 </div>
-<p>The <cite>file.close()</cite> is now redundant, but can still be used in the code to make it clear if needed. What the
+<p>The <code class="docutils literal notranslate"><span class="pre">file.close()</span></code> is now redundant, but can still be used in the code to make it clear if needed. What the
 <code class="docutils literal notranslate"><span class="pre">with</span></code> block does is call <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> functions, so files are automatically
 closed etc.</p>
 </section>
@@ -1156,7 +1156,7 @@ core_17.xlsx,27.75,43
 </pre></div>
 </div>
 </div>
-<p>Note how the second method has produced lists (due to the <cite>split()</cite> function) which
+<p>Note how the second method has produced lists (due to the <code class="docutils literal notranslate"><span class="pre">split()</span></code> function) which
 we could iterate over and do something sensible with, e.g. opening the file in the first
 element, perhaps.</p>
 </div>
@@ -1227,7 +1227,7 @@ together.</p>
 others, but your job is to write clear code so use whichever is clearest for you.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p>Write your <cite>capitals</cite> dictionary into a file, separated by commas, so country in
+<p>Write your <code class="docutils literal notranslate"><span class="pre">capitals</span></code> dictionary into a file, separated by commas, so country in
 column 1 and the city in column 2. Each country is then on a new line.
 This creates a CSV file, which you can load into Excel, etc.</p>
 </div>
@@ -1375,7 +1375,7 @@ the module will help with error messages, etc when the user gives incorrect argu
 </pre></div>
 </div>
 </div>
-<p>Once an ArgumentParser is set-up you can then add optional and positional arguments to that.</p>
+<p>Once an <code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code> is set-up you can then add optional and positional arguments to that.</p>
 <div class="literal-block-wrapper docutils container" id="id69">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id69" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span>
@@ -1388,7 +1388,7 @@ the module will help with error messages, etc when the user gives incorrect argu
 </pre></div>
 </div>
 </div>
-<p>You can also specify which variable the argument is parsered into, the type, if an argument is required, if it should be a list
+<p>You can also specify which variable the argument is parsed into, the type, if an argument is required, if it should be a list
 and a lot more too.</p>
 <p>You then parse the argument and put them in variables as you see fit</p>
 <div class="literal-block-wrapper docutils container" id="id70">
@@ -1404,10 +1404,10 @@ and a lot more too.</p>
 <p class="admonition-title">Practical exercise - more complex arguments</p>
 <p>Write a simple python script that returns the square of a given number,
 e.g. if the users give 2, the program returns 4 to screen.
-It must have the following arguments using <cite>argparse</cite>.</p>
+It must have the following arguments using <code class="docutils literal notranslate"><span class="pre">argparse</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <cite>int</cite> value of 0, 1 or 2.
+<li><p>an optional <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag, which can take an <code class="docutils literal notranslate"><span class="pre">int</span></code> value of 0, 1 or 2.
 This increases the verbosity of the output from just the number (<cite>verbosity==0</cite>)
 to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
 <li><p>restrict the input number to an integer only</p></li>
@@ -1664,7 +1664,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

@@ -353,9 +353,14 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-driven development</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-tools">Development tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rstudio">RStudio</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-your-code">Linting your code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><cite>lintr</cite></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><cite>pylint</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><code class="docutils literal notranslate"><span class="pre">lintr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><code class="docutils literal notranslate"><span class="pre">pylint</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ai-in-development">Using AI in development</a><ul class="nav section-nav flex-column">
@@ -386,7 +391,7 @@ but we are going to learn some of the basics of the process, which helps us writ
 <p>We’ve already learnt one of the key tools (or if you’ve skipped to this bit, you can go back and learn about it),
 which is <a class="reference internal" href="Revision_control.html#revision-control-with-git"><span class="std std-ref">revision control</span></a>.
 Rather than keep separate versions of code in separate files (which would be a nightmare for any reasonable sized application),
-we keep versions of files in a revision control system. In this course we’ve learnt about <cite>git</cite>, but there are other
+we keep versions of files in a revision control system. In this course we’ve learnt about <code class="docutils literal notranslate"><span class="pre">git</span></code>, but there are other
 tools, jut not as popular.</p>
 <p>However, revision control is a tool to help development; it does not solve all problems. You can use it in a number of ways depending on the project, the number of people and the aims of the code. There is no single right way to do this and any development tools helps set up a process, but it’s humans that actually devise and use (or not!) any processes.</p>
 <section id="simple-way">
@@ -463,18 +468,51 @@ tools, jut not as popular.</p>
 <p>The tests are written immediately after requirements capture and before any code is written (so the test will all fail!). You get approval from the client that the tests meet the requirements and then write code to pass the tests. Once done, you have met the requirements.</p>
 </section>
 </section>
+<section id="development-tools">
+<h2>Development tools<a class="headerlink" href="#development-tools" title="Link to this heading">#</a></h2>
+<p>One of the amazing thing about writing software is there is no “right way” to do it. You do it however you
+feel comfortable and productive. I use a text editor and the command line. Others use an Integrated
+Development Environment (IDE) which comes in various levels of complexity and features.</p>
+<p>All IDEs are essentially a text editor with some form of hook to a compiler or runtime environment. For R
+and Python, which don’t need compiling, its the runtime environment option. Most IDEs have a debugger built in,
+along with syntax highlighting and variable/function completion.</p>
+<p>I don’t use these tools as I often write code on HPC (High Performance Computing) platforms which generally
+don’t have them or they are very slow when used over internet connections. I therefore prefer to use more
+basic tools which will be on any computer I use. However, once you know how to use them well, they can make
+ou more productive.</p>
+<section id="spyder">
+<h3>Spyder<a class="headerlink" href="#spyder" title="Link to this heading">#</a></h3>
+<p>Spyder is an open-source cross-platform IDE. The Python Spyder IDE is written completely in Python and is designed by scientists,
+so is ideal for us. The interface is dvided into a few windows. On the left is the editor window where you can type code and save
+as a python file. On the right are two sub windows. The lower half is the Python interpreter. You can run python code directly in here.
+The upper part is where plots, docs and other info appears. There’s also a variable inspector and file browser you can use in this window;
+click the tabs at the bottom to see.</p>
+<img alt="_images/spyder-default-layout-main.png" src="_images/spyder-default-layout-main.png" />
+<p>Spyder has a bunch of useful tools, including github integration and code analysis, which can make your life easier. It is worth
+spending a bit of time to go through <a class="reference external" href="https://docs.spyder-ide.org/current/videos/index.html">the Spyder documentation</a>
+and getting things set up as you want them.</p>
+</section>
+<section id="rstudio">
+<h3>RStudio<a class="headerlink" href="#rstudio" title="Link to this heading">#</a></h3>
+<p>RStudio is a free and open-source IDE for R (and Python). There are also commerical versions available. Like Spyder it
+includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting,
+history, debugging, and workspace management.</p>
+<img alt="_images/rstudio-panes-labeled.jpeg" src="_images/rstudio-panes-labeled.jpeg" />
+<p>You can integrate with git and, again, like Spyder, <a class="reference external" href="https://docs.posit.co/ide/user/">it’s worth reading through the docs to get things set up</a>.</p>
+</section>
+</section>
 <section id="linting-your-code">
 <h2>Linting your code<a class="headerlink" href="#linting-your-code" title="Link to this heading">#</a></h2>
 <p><em>Linting</em> refers to running your code through software that checks the syntax and layout/formatting of your code. The
-term comes from the fluff shed by clothing, i.e. <cite>lint</cite> removes the extraneous fluff from your code. It often
+term comes from the fluff shed by clothing, i.e. <code class="docutils literal notranslate"><span class="pre">lint</span></code> removes the extraneous fluff from your code. It often
 points our better ways of writing functions, sylistic issues with your code and, when working in a team, checks
 things are consistant across the whole team (e.g. using 4 spaces to indent, rather than some people using 3 or 2).</p>
 <p>Both R and Python (and most other languages) have some form of lint software available. For R the
-package is called <cite>lintr</cite>, for Python it’s <cite>pylint</cite>. Let’s deal with these in turn.</p>
+package is called <code class="docutils literal notranslate"><span class="pre">lintr</span></code>, for Python it’s <code class="docutils literal notranslate"><span class="pre">pylint</span></code>. Let’s deal with these in turn.</p>
 <section id="lintr">
-<h3><cite>lintr</cite><a class="headerlink" href="#lintr" title="Link to this heading">#</a></h3>
-<p><cite>lintr</cite> is used inside an R environment.</p>
-<p>Create a file (e.g. <cite>test_lint.R</cite>) contining the following:</p>
+<h3><code class="docutils literal notranslate"><span class="pre">lintr</span></code><a class="headerlink" href="#lintr" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">lintr</span></code> is used inside an R environment.</p>
+<p>Create a file (e.g. <code class="file docutils literal notranslate"><span class="pre">test_lint.R</span></code>) containing the following:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">T_and_F_symbol_linter</span><span class="o">=</span><span class="nf">function</span><span class="p">(){</span>
@@ -537,9 +575,9 @@ package is called <cite>lintr</cite>, for Python it’s <cite>pylint</cite>. Let
 </div>
 </section>
 <section id="pylint">
-<h3><cite>pylint</cite><a class="headerlink" href="#pylint" title="Link to this heading">#</a></h3>
-<p><cite>pylint</cite> is run from the command line (e.g. your Anaconda bash or the terminal emulator). Create a
-file called “circle.py” with the following contents:</p>
+<h3><code class="docutils literal notranslate"><span class="pre">pylint</span></code><a class="headerlink" href="#pylint" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pylint</span></code> is run from the command line (e.g. your Anaconda bash or the terminal emulator). Create a
+file called <code class="file docutils literal notranslate"><span class="pre">circle.py</span></code> with the following contents:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/user/bin/env python3</span>
@@ -566,7 +604,7 @@ file called “circle.py” with the following contents:</p>
 </pre></div>
 </div>
 </div>
-<p>Run pylint on that file in the command line:</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pylint</span></code> on that file in the command line:</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pylint<span class="w"> </span>circle.py
@@ -666,7 +704,7 @@ We can use free versions of AI to help us though. Both ChatGPT and Google’s Ge
 are pretty good. We’re going to focus on Gemini here.</p>
 <section id="using-it-a-document-explainer-or-searcher">
 <h3>Using it a document explainer or searcher<a class="headerlink" href="#using-it-a-document-explainer-or-searcher" title="Link to this heading">#</a></h3>
-<p>Let’s try using AI to understand some <cite>git</cite> commands. Let’s imagine we’ve been
+<p>Let’s try using AI to understand some <code class="docutils literal notranslate"><span class="pre">git</span></code> commands. Let’s imagine we’ve been
 working but want to throw all our changes away and revert the code back
 to the last commit. Let’s ask ChatGPT</p>
 <div class="literal-block-wrapper docutils container" id="id8">
@@ -677,17 +715,17 @@ to the last commit. Let’s ask ChatGPT</p>
 </div>
 <dl class="simple">
 <dt>Which should return two different options:</dt><dd><ul class="simple">
-<li><p><cite>git reset –hard</cite></p></li>
-<li><p><cite>git revert</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code></p></li>
 </ul>
 </dd>
 </dl>
 <p>This gives us a good start, but actually doesn’t fully answer my question.
-The last option of <cite>git revert</cite> reverts the last commit! It does not undo any staged
+The last option of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> reverts the last commit! It does not undo any staged
 or unstaged changes. The first command does the trick but have some subtleties
 about exactly what it’ll do. There are context though.</p>
 <p>So AI helped us a bit here, but didn’t give a full answer straight off. But you can
-keep asking it questions to get the clarificaiton needed. So let’s ask another question:</p>
+keep asking it questions to get the clarification needed. So let’s ask another question:</p>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/ai.png"><img alt="ai" src="_images/ai.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>does git reset --hard remove unstaged changes?
@@ -887,9 +925,14 @@ random number guessing game from <a class="reference internal" href="R2.html#r-e
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-driven development</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-tools">Development tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rstudio">RStudio</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-your-code">Linting your code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><cite>lintr</cite></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><cite>pylint</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lintr"><code class="docutils literal notranslate"><span class="pre">lintr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pylint"><code class="docutils literal notranslate"><span class="pre">pylint</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ai-in-development">Using AI in development</a><ul class="nav section-nav flex-column">
@@ -921,7 +964,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>

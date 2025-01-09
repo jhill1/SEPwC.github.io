@@ -454,7 +454,7 @@ the <code class="docutils literal notranslate"><span class="pre">git</span></cod
 </section>
 <section id="setting-up-git">
 <h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Link to this heading">#</a></h2>
-<p>For all the command-line examples below using either the <cite>git bash</cite> application (<a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a>) or the terminal (<a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>).
+<p>For all the command-line examples below using either the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> application (<a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a>) or the terminal (<a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>).
 On linux you can access the terminal via the Start Menu equivalent on most systems. On Macs, the terminal may be
 hidden in the Utilities folder under Applications.</p>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
@@ -600,8 +600,8 @@ same commands to choose another editor or update your email address.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><strong>Git Help and Manual</strong></p>
-<p>Always remember that if you forget the subcommands or options of a <cite>git</cite> command, you can access the
-relevant list of options typing <cite>git &lt;command&gt; -h</cite> or access the corresponding Git manual by typing
+<p>Always remember that if you forget the subcommands or options of a <code class="docutils literal notranslate"><span class="pre">git</span></code> command, you can access the
+relevant list of options typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">&lt;command&gt;</span> <span class="pre">-h</span></code> or access the corresponding Git manual by typing
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">&lt;command&gt;</span> <span class="pre">--help</span></code>, e.g.:</p>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
@@ -701,7 +701,7 @@ by asking Git to tell us the status of our project:</p>
 <span class="go">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
-<p>If you are using a different version of <cite>git</cite>, the exact
+<p>If you are using a different version of <code class="docutils literal notranslate"><span class="pre">git</span></code>, the exact
 wording of the output might be slightly different.</p>
 <div class="admonition-thought-exercise admonition">
 <p class="admonition-title">Thought exercise</p>
@@ -722,16 +722,16 @@ ls<span class="w"> </span>-a<span class="w">          </span><span class="c1"># 
 </pre></div>
 </div>
 </div>
-<p>Is the <cite>git init</cite> command, run inside the <cite>moons</cite> subdirectory, required for
-tracking files stored in the <cite>moons</cite> subdirectory?</p>
+<p>Is the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command, run inside the <code class="docutils literal notranslate"><span class="pre">moons</span></code> subdirectory, required for
+tracking files stored in the <code class="docutils literal notranslate"><span class="pre">moons</span></code> subdirectory?</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>No. The worker does not need to make the <cite>moons</cite> subdirectory a Git repository
-because the <cite>planets</cite> repository can track any files, sub-directories, and
+<p>No. The worker does not need to make the <code class="docutils literal notranslate"><span class="pre">moons</span></code> subdirectory a Git repository
+because the <code class="docutils literal notranslate"><span class="pre">planets</span></code> repository can track any files, sub-directories, and
 subdirectory files under the <cite>planets</cite> directory.  Thus, in order to track
-all information about moons, The worker only needed to add the <cite>moons</cite> subdirectory
-to the <cite>planets</cite> directory.</p>
+all information about moons, The worker only needed to add the <code class="docutils literal notranslate"><span class="pre">moons</span></code> subdirectory
+to the <code class="docutils literal notranslate"><span class="pre">planets</span></code> directory.</p>
 <p>Additionally, Git repositories can interfere with each other if they are “nested”:
 the outer repository will try to version-control
 the inner repository. Therefore, it’s best to create each new Git
@@ -754,7 +754,7 @@ above:</p>
 <p><strong>Correcting `git init` Mistakes</strong></p>
 <p>The project manager explains how a nested repository is redundant and may cause confusion
 down the road. We would like to remove the nested repository. How can we undo
-the last <cite>git init</cite> in the <cite>moons</cite> subdirectory?</p>
+the last <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> in the <code class="docutils literal notranslate"><span class="pre">moons</span></code> subdirectory?</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -768,13 +768,13 @@ that are not tracked by Git can easily be removed like any other “ordinary” 
 </pre></div>
 </div>
 </div>
-<p>Similarly a directory can be removed using <cite>rm -r dirname</cite> or <cite>rm -rf dirname</cite>.
+<p>Similarly a directory can be removed using <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">dirname</span></code> or <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">dirname</span></code>.
 If the files or folder being removed in this fashion are tracked by Git, then their removal
 becomes another change that we will need to track, as we will see in the next section.</p>
 <p><strong>Solution</strong></p>
-<p>Git keeps all of its files in the <cite>.git</cite> directory.
-To recover from this little mistake, we can just remove the <cite>.git</cite>
-folder in the moons subdirectory by running the following command from inside the <cite>planets</cite> directory:</p>
+<p>Git keeps all of its files in the <code class="file docutils literal notranslate"><span class="pre">.git</span></code> directory.
+To recover from this little mistake, we can just remove the <code class="docutils literal notranslate"><span class="pre">.git</span></code>
+folder in the moons subdirectory by running the following command from inside the <code class="docutils literal notranslate"><span class="pre">planets</span></code> directory:</p>
 <div class="literal-block-wrapper docutils container" id="id21">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>moons/.git
@@ -783,36 +783,36 @@ folder in the moons subdirectory by running the following command from inside th
 </div>
 <p>But be careful! Running this command in the wrong directory will remove
 the entire Git history of a project you might want to keep.
-Therefore, always check your current directory using the command <cite>pwd</cite>.</p>
+Therefore, always check your current directory using the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code>.</p>
 </div>
 </section>
 <section id="adding-files">
 <h2>Adding files<a class="headerlink" href="#adding-files" title="Link to this heading">#</a></h2>
 <p>First let’s make sure we’re still in the right directory.
-You should be in the <cite>planets</cite> directory.</p>
+You should be in the <code class="file docutils literal notranslate"><span class="pre">planets</span></code> directory.</p>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Desktop/planets
 </pre></div>
 </div>
 </div>
-<p>Let’s create a file called <cite>mars.txt</cite> that contains some notes
+<p>Let’s create a file called <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> that contains some notes
 about the Red Planet’s suitability as a base.
-We’ll use <cite>nano</cite> to edit the file; you can use whatever editor you like.
-In particular, this does not have to be the <cite>core.editor</cite> you set globally earlier. But remember,
+We’ll use <code class="docutils literal notranslate"><span class="pre">nano</span></code> to edit the file; you can use whatever editor you like.
+In particular, this does not have to be the <code class="docutils literal notranslate"><span class="pre">core.editor</span></code> you set globally earlier. But remember,
 the bash command to create or edit a new file will depend on the
-editor you choose (it might not be <cite>nano</cite>).</p>
+editor you choose (it might not be <code class="docutils literal notranslate"><span class="pre">nano</span></code>).</p>
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
 </pre></div>
 </div>
 </div>
-<p>Type the text below into the <cite>mars.txt</cite> file:</p>
+<p>Type the text below into the <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> file:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
 </pre></div>
 </div>
-<p>Let’s first verify that the file was properly created by running the list command (<cite>ls</cite>):</p>
+<p>Let’s first verify that the file was properly created by running the list command (<code class="docutils literal notranslate"><span class="pre">ls</span></code>):</p>
 <div class="literal-block-wrapper docutils container" id="id24">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
@@ -854,7 +854,7 @@ Git tells us that it’s noticed the new file:</p>
 </div>
 <p>The “untracked files” message means that there’s a file in the directory
 that Git isn’t keeping track of.
-We can tell Git to track a file using <cite>git add</cite>:</p>
+We can tell Git to track a file using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id27">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
@@ -878,7 +878,7 @@ We can tell Git to track a file using <cite>git add</cite>:</p>
 <span class="go">  new file:   mars.txt</span>
 </pre></div>
 </div>
-<p>Git now knows that it’s supposed to keep track of <cite>mars.txt</cite>,
+<p>Git now knows that it’s supposed to keep track of <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>,
 but it hasn’t recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:</p>
 <div class="literal-block-wrapper docutils container" id="id29">
@@ -918,7 +918,7 @@ Use this additional space to explain why you made changes and/or what their impa
 </pre></div>
 </div>
 <p>it tells us everything is up to date. If we want to know what we’ve done recently,
-we can ask Git to show us the project’s history using <cite>git log</cite>:</p>
+we can ask Git to show us the project’s history using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id31">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
@@ -947,7 +947,7 @@ The listing for each commit includes</p>
 </iframe></div><div class="toggle admonition">
 <p class="admonition-title">Learn more</p>
 <p><strong>Where Are My Changes?</strong></p>
-<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> at this point, we will still see just one file called <cite>mars.txt</cite>.
+<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> at this point, we will still see just one file called <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code>.
 That’s because Git saves information about files’ history
 in the special <code class="file docutils literal notranslate"><span class="pre">.git</span></code> directory mentioned earlier
 so that our filesystem doesn’t become cluttered
@@ -964,7 +964,7 @@ cat<span class="w"> </span>mars.txt
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
+<span class="go">The two moons may be a problem for satellites</span>
 </pre></div>
 </div>
 <p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now,
@@ -1004,7 +1004,7 @@ of the file and the most recently saved version:</p>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,2 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go">+The two moons may be a problem for werewolves</span>
+<span class="go">+The two moons may be a problem for satellite</span>
 </pre></div>
 </div>
 <p>The output is cryptic because
@@ -1026,7 +1026,7 @@ the <code class="docutils literal notranslate"><span class="pre">+</span></code>
 <p>After reviewing our change, it’s time to commit it:</p>
 <div class="literal-block-wrapper docutils container" id="id35">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on satellite&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1046,11 +1046,11 @@ Let’s fix that:</p>
 <div class="literal-block-wrapper docutils container" id="id36">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on werewolves&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add concerns about effects of Mars&#39; moons on satellites&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars&#39; moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 34961b1] Add concerns about effects of Mars&#39; moons on satellites</span>
 <span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
@@ -1100,8 +1100,8 @@ cat<span class="w"> </span>mars.txt
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id38">
@@ -1116,12 +1116,12 @@ cat<span class="w"> </span>mars.txt
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,2 +1,3 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go"> The two moons may be a problem for werewolves</span>
-<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go"> The two moons may be a problem for satellites</span>
+<span class="go">+But Branston will appreciate the lack of humidity</span>
 </pre></div>
 </div>
 <p>So far, so good: we’ve added one line to the end of the file
-(shown with a <cite>+</cite> in the first column). Now let’s put that change in the staging area
+(shown with a <code class="docutils literal notranslate"><span class="pre">+</span></code> in the first column). Now let’s put that change in the staging area
 and see what <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> reports:</p>
 <div class="literal-block-wrapper docutils container" id="id39">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
@@ -1145,19 +1145,19 @@ and what’s currently in the directory. However, if we do this:</p>
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,2 +1,3 @@</span>
 <span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 </pre></div>
 </div>
 <p>it shows us the difference between the last committed change
 and what’s in the staging area. Let’s save our changes:</p>
 <div class="literal-block-wrapper docutils container" id="id41">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Discuss concerns about Mars&#39; climate for Mummy&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Discuss concerns about Mars&#39; climate for Branston&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 005937f] Discuss concerns about Mars&#39; climate for Mummy</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[main 005937f] Discuss concerns about Mars&#39; climate for Branston</span>
 <span class="go">1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
@@ -1179,20 +1179,20 @@ and what’s in the staging area. Let’s save our changes:</p>
 </pre></div>
 </div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
-<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (head -&gt; main)</span>
+<span class="go">author: Muske &lt;e.Muske@tesla.com&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
 
-<span class="go">   Discuss concerns about Mars&#39; climate for Mummy</span>
+<span class="go">   Discuss concerns about Mars&#39; climate for Branston</span>
 
 <span class="go">commit 34961b159c27df3b475cfe4415d94a6d1fcd064d</span>
-<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Author: Muske &lt;e.Muske@tesla.com&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:07:21 2013 -0400</span>
 
-<span class="go">    Add concerns about effects of Mars&#39; moons on werewolves</span>
+<span class="go">    Add concerns about effects of Mars&#39; moons on satellites</span>
 
 <span class="go">commit f22b25e3233b4645dabd0d81e651fe074bd8e73b</span>
-<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Author: Muske &lt;e.Muske@tesla.com&gt;</span>
 <span class="go">Date:   Thu Aug 22 09:51:46 2013 -0400</span>
 
 <span class="go">    Start notes on Mars as a base</span>
@@ -1224,7 +1224,7 @@ Navigate through matches pressing <kbd class="kbd docutils literal notranslate">
 <p class="admonition-title">Learn more</p>
 <p><strong>Limit Log Size</strong></p>
 <p>To avoid having <cite>git log</cite> cover your entire terminal screen, you can limit the
-number of commits that Git lists by using <cite>-N</cite>, where <cite>N</cite> is the number of
+number of commits that Git lists by using <code class="docutils literal notranslate"><span class="pre">-N</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of
 commits that you want to view. For example, if you only want information from
 the last commit you can use:</p>
 <div class="literal-block-wrapper docutils container" id="id44">
@@ -1234,10 +1234,10 @@ the last commit you can use:</p>
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -&gt; main)</span>
-<span class="go">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="go">Author: Muske &lt;e.Muske@tesla.com&gt;</span>
 <span class="go">Date:   Thu Aug 22 10:14:07 2013 -0400</span>
 
-<span class="go">Discuss concerns about Mars&#39; climate for Mummy</span>
+<span class="go">Discuss concerns about Mars&#39; climate for Branston</span>
 </pre></div>
 </div>
 <p>You can also reduce the quantity of information using the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option:</p>
@@ -1247,24 +1247,23 @@ the last commit you can use:</p>
 </pre></div>
 </div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
-<span class="go">34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Branston</span>
+<span class="go">34961b1 Add concerns about effects of Mars&#39; moons on satellites</span>
 <span class="go">f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
-<p>You can also combine the <cite>–oneline</cite> option with others. One useful
-combination adds <cite>–graph</cite> to display the commit history as a text-based
+<p>You can also combine the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option with others. One useful
+combination adds <code class="docutils literal notranslate"><span class="pre">--graph</span></code> to display the commit history as a text-based
 graph and to indicate which commits are associated with the
-current <cite>HEAD</cite>, the current branch <cite>main</cite>, or
-[other Git references][git-references]:</p>
+current <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, the current branch <code class="docutils literal notranslate"><span class="pre">main</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id46">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph
 </pre></div>
 </div>
 </div>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Mummy</span>
-<span class="go">* 34961b1 Add concerns about effects of Mars&#39; moons on werewolves</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">* 005937f (HEAD -&gt; main) Discuss concerns about Mars&#39; climate for Branston</span>
+<span class="go">* 34961b1 Add concerns about effects of Mars&#39; moons on satellites</span>
 <span class="go">* f22b25e Start notes on Mars as a base</span>
 </pre></div>
 </div>
@@ -1331,8 +1330,8 @@ repository (<code class="docutils literal notranslate"><span class="pre">git</sp
 last commit made to <cite>mars.txt</cite>?</p>
 <ol class="arabic simple">
 <li><p>“Changes”</p></li>
-<li><p>“Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”</p></li>
-<li><p>“Discuss effects of Mars’ climate on the Mummy”</p></li>
+<li><p>“Added line ‘But Branston will appreciate the lack of humidity’ to mars.txt”</p></li>
+<li><p>“Discuss effects of Mars’ climate on Branston”</p></li>
 </ol>
 </div>
 <div class="toggle admonition">
@@ -1370,9 +1369,9 @@ to my local Git repository?</p>
 <p>The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.</p>
 <ol class="arabic simple">
-<li><p>Add some text to <cite>mars.txt</cite> noting your decision
+<li><p>Add some text to <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> noting your decision
 to consider Venus as a base</p></li>
-<li><p>Create a new file <cite>venus.txt</cite> with your initial thoughts
+<li><p>Create a new file <code class="file docutils literal notranslate"><span class="pre">venus.txt</span></code> with your initial thoughts
 about Venus as a base for you and your friends</p></li>
 <li><p>Add changes from both files to the staging area,
 and commit those changes.</p></li>
@@ -1380,9 +1379,9 @@ and commit those changes.</p></li>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>The output below from <cite>cat mars.txt</cite> reflects only content added during
+<p>The output below from <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">mars.txt</span></code> reflects only content added during
 this exercise. Your output may vary.</p>
-<p>First we make our changes to the <cite>mars.txt</cite> and <cite>venus.txt</cite> files:</p>
+<p>First we make our changes to the <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> and <code class="file docutils literal notranslate"><span class="pre">venus.txt</span></code> files:</p>
 <div class="literal-block-wrapper docutils container" id="id51">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id51" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>mars.txt
@@ -1438,8 +1437,8 @@ cat<span class="w"> </span>mars.txt
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Creating a biography</strong></p>
 <ul class="simple">
-<li><p>Create a new Git repository on your computer called <cite>bio</cite>.</p></li>
-<li><p>Write a three-line biography for yourself in a file called <cite>me.txt</cite>,
+<li><p>Create a new Git repository on your computer called <code class="docutils literal notranslate"><span class="pre">bio</span></code>.</p></li>
+<li><p>Write a three-line biography for yourself in a file called <code class="file docutils literal notranslate"><span class="pre">me.txt</span></code>,
 commit your changes</p></li>
 <li><p>Modify one line, add a fourth line</p></li>
 <li><p>Display the differences between its updated state and its original state.</p></li>
@@ -1500,8 +1499,8 @@ directory by using the identifier <code class="docutils literal notranslate"><sp
 progress by looking, so let’s do that using our <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.  Before we start,
 let’s make a change to <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code>, adding yet another line.</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 <span class="go">An ill-considered change</span>
 </pre></div>
 </div>
@@ -1518,8 +1517,8 @@ let’s make a change to <code class="file docutils literal notranslate"><span c
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1,3 +1,4 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go"> The two moons may be a problem for werewolves</span>
-<span class="go"> But the Mummy will appreciate the lack of humidity</span>
+<span class="go"> The two moons may be a problem for satellites</span>
+<span class="go"> But Branston will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change.</span>
 </pre></div>
 </div>
@@ -1548,8 +1547,8 @@ again, but with the notation <code class="docutils literal notranslate"><span cl
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go">+The two moons may be a problem for werewolves</span>
-<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+The two moons may be a problem for satellites</span>
+<span class="go">+But Branston will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
 </pre></div>
 </div>
@@ -1594,8 +1593,8 @@ has a unique 40-character identifier. Our first commit was given the ID
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go">+The two moons may be a problem for werewolves</span>
-<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+The two moons may be a problem for satellites</span>
+<span class="go">+But Branston will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
 </pre></div>
 </div>
@@ -1613,8 +1612,8 @@ so Git lets us use just the first few characters (typically seven for normal siz
 <span class="go">+++ b/mars.txt</span>
 <span class="go">@@ -1 +1,4 @@</span>
 <span class="go"> Cold and dry, but everything is my favourite colour</span>
-<span class="go">+The two moons may be a problem for werewolves</span>
-<span class="go">+But the Mummy will appreciate the lack of humidity</span>
+<span class="go">+The two moons may be a problem for satellites</span>
+<span class="go">+But Branston will appreciate the lack of humidity</span>
 <span class="go">+An ill-considered change</span>
 </pre></div>
 </div>
@@ -1648,8 +1647,8 @@ cat<span class="w"> </span>mars.txt
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 </pre></div>
 </div>
 <p>As you might guess from its name, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> checks out (i.e. restores) an old version of a file.
@@ -1698,10 +1697,10 @@ by using <code class="docutils literal notranslate"><span class="pre">git</span>
 </pre></div>
 </div>
 </div>
-<p>to revert <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> to its state after the commit <code class="docutils literal notranslate"><span class="pre">f22b25e</span></code>. But be careful!
+<p>to revert <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> to its state after the commit <code class="docutils literal notranslate"><span class="pre">f22b25e</span></code>. But be careful!
 The command <code class="docutils literal notranslate"><span class="pre">checkout</span></code> has other important functionalities and Git will misunderstand
 your intentions if you are not accurate with the typing. For example,
-if you forget <cite>mars.txt</cite> in the previous command.</p>
+if you forget <code class="file docutils literal notranslate"><span class="pre">mars.txt</span></code> in the previous command.</p>
 <div class="literal-block-wrapper docutils container" id="id73">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id73" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>f22b25e
@@ -1742,7 +1741,7 @@ you’ll see that it includes this hint:</p>
 </pre></div>
 </div>
 <p>As it says, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> without a version identifier restores files to the state saved in <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.
-The double dash <cite>–</cite> is needed to separate the names of the files being recovered
+The double dash <code class="docutils literal notranslate"><span class="pre">--</span></code> is needed to separate the names of the files being recovered
 from the command itself: without it,
 Git would try to use the name of the file as the commit identifier.</p>
 </div>
@@ -1792,7 +1791,7 @@ wants to undo it.  Jennifer wants to undo correctly so everyone in the project�
 repository gets the correct change. The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">[erroneous</span> <span class="pre">commit</span> <span class="pre">ID]</span></code> will create a
 new commit that reverses the erroneous commit.</p>
 <p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> is different from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[commit</span> <span class="pre">ID]</span></code>
-because <cite>git checkout</cite> returns the files not yet committed within the local repository
+because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> returns the files not yet committed within the local repository
 to a previous state, whereas <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>
 reverses changes committed to the local and project repositories.</p>
 <p>Below are the right steps and explanations for Jennifer to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>,
@@ -2057,7 +2056,7 @@ Hint: Find out what <cite>!</cite> (the exclamation point operator) does</p>
 <p class="admonition-title">Solution</p>
 <p><strong>Solution</strong></p>
 <p>You would add the following two lines to your .gitignore:</p>
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">\*.dat           # ignore all data files</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">\*.dat          # ignore all data files</span>
 <span class="go">!final.dat      # except final.data</span>
 </pre></div>
 </div>
@@ -2125,10 +2124,10 @@ You want to keep them but you do not want to track them through <code class="doc
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <ol class="arabic simple">
-<li><p>append either <cite>log_*</cite>  or  <cite>log*</cite>  as a new entry in your .gitignore</p></li>
+<li><p>append either <code class="docutils literal notranslate"><span class="pre">log_*</span></code>  or  <code class="docutils literal notranslate"><span class="pre">log*</span></code>  as a new entry in your .gitignore</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>track <cite>log_01</cite> using   <cite>git add -f log_01</cite></p></li>
+<li><p>track <code class="docutils literal notranslate"><span class="pre">log_01</span></code> using   <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-f</span> <span class="pre">log_01</span></code></p></li>
 </ol>
 </div>
 </section>
@@ -3317,7 +3316,7 @@ By Jon Hill
 
   <p class="copyright">
     
-      © Copyright 2024, Jon Hill.
+      © Copyright 2025, Jon Hill.
       <br/>
     
   </p>
