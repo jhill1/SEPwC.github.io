@@ -70,7 +70,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'R_ggplot2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="genindex.html" />
+    <link rel="next" title="Mini course: Pyplot tutorial" href="python_plotting.html" />
     <link rel="prev" title="Testing code" href="Testing_code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,6 +180,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -436,7 +440,7 @@ I’ve added  line geometry too. You can add other things to <code class="docuti
 </section>
 <section id="themes">
 <h2>Themes<a class="headerlink" href="#themes" title="Link to this heading">#</a></h2>
-<p>Themes allow the setting up of axes, grids, fonts etc in a consistent way. <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> comes with a
+<p id="index-1">Themes allow the setting up of axes, grids, fonts etc in a consistent way. <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> comes with a
 number of built-in themes.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
@@ -452,7 +456,7 @@ To see which details of a ggplot theme can be modified have a <a class="referenc
 </section>
 <section id="axes">
 <h2>Axes<a class="headerlink" href="#axes" title="Link to this heading">#</a></h2>
-<p>The default axes titles use the variable names. Let’s add some well-written labels to the axes.
+<p id="index-2">The default axes titles use the variable names. Let’s add some well-written labels to the axes.
 For this, we add labs() providing a character string for each label we want to change (here x and y):</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
@@ -601,7 +605,7 @@ vice-versa:</p>
 </section>
 <section id="plot-legends">
 <h2>Plot legends<a class="headerlink" href="#plot-legends" title="Link to this heading">#</a></h2>
-<p>We often colour code parts of our graphs, and then add a legend to show how the data are separated.
+<p id="index-3">We often colour code parts of our graphs, and then add a legend to show how the data are separated.
 We will <code class="docutils literal notranslate"><span class="pre">color</span></code> code the plot based on season. Or to phrase it in a more <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>’ish way: we map the
 variable season to the aesthetic <code class="docutils literal notranslate"><span class="pre">color</span></code>. One nice thing about <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is that it adds a legend by
 default when mapping a variable to an aesthetic. You can see that by default the legend title is
@@ -763,7 +767,7 @@ for continuous data, such as the temperature:</p>
 <p>It is possible to force discrete legends or binned legends too.</p>
 <section id="colours">
 <h3>Colours<a class="headerlink" href="#colours" title="Link to this heading">#</a></h3>
-<p>A key part of the plot is the colour scheme chosen. There are two main
+<p id="index-4">A key part of the plot is the colour scheme chosen. There are two main
 colour elements to alter; <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. These can be either a single colour
 or assigned to a variable. For a specified colour add the colour to the <code class="docutils literal notranslate"><span class="pre">geometry()</span></code>
 function:</p>
@@ -837,7 +841,7 @@ pre-defined ones, especially the <code class="docutils literal notranslate"><spa
 </section>
 <section id="multiple-plots">
 <h2>Multiple plots<a class="headerlink" href="#multiple-plots" title="Link to this heading">#</a></h2>
-<p>In the last code I snuck in an example of adding multiple plots to a figure!
+<p id="index-5">In the last code I snuck in an example of adding multiple plots to a figure!
 There are two main ways to do this: using the built-in <code class="docutils literal notranslate"><span class="pre">facet</span></code> or using an external
 package, such as <code class="docutils literal notranslate"><span class="pre">patchwork</span></code>.</p>
 <section id="facets">
@@ -887,7 +891,7 @@ We can alter using the <code class="docutils literal notranslate"><span class="p
 </section>
 <section id="saving-the-plot">
 <h2>Saving the plot<a class="headerlink" href="#saving-the-plot" title="Link to this heading">#</a></h2>
-<p>Assuming you have saved your plot into an object you can save the plot to a file using
+<p id="index-6">Assuming you have saved your plot into an object you can save the plot to a file using
 the <code class="docutils literal notranslate"><span class="pre">ggsave()</span></code> function:</p>
 <div class="literal-block-wrapper docutils container" id="id39">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
@@ -929,11 +933,11 @@ object is the output of the <code class="docutils literal notranslate"><span cla
       </div>
     </a>
     <a class="right-next"
-       href="genindex.html"
+       href="python_plotting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Mini course: Pyplot tutorial</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

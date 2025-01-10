@@ -180,7 +180,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -368,7 +372,7 @@
                   
   <section id="r-the-fundamentals">
 <h1>R: the fundamentals<a class="headerlink" href="#r-the-fundamentals" title="Link to this heading">#</a></h1>
-<p>We’re now going to learn the basics of a language. If you’ve chosen
+<p id="index-0">We’re now going to learn the basics of a language. If you’ve chosen
 R, keep reading. If you’ve chosen Python <a class="reference internal" href="Python.html#python-the-fundamentals"><span class="std std-ref">go to this section</span></a>.</p>
 <p>Computer languages are much simpler than natural languages, but much
 stricter. We have to get the syntax correct or things won’t work. However
@@ -383,7 +387,7 @@ and coming back here at this point.</p>
 </section>
 <section id="intro-to-r">
 <h2>Intro to R<a class="headerlink" href="#intro-to-r" title="Link to this heading">#</a></h2>
-<p>R is an interpreted language that has become incredibly popular, but
+<p id="index-1">R is an interpreted language that has become incredibly popular, but
 was originally designed as a free, open-source version of “S”; a statistical
 analysis package. Due to popularity, there are libraries that will do just about anything.
 This makes R a really powerful tool for writing code to analyse any number of problems.</p>
@@ -488,7 +492,7 @@ R-specific parts and go through these in more detail.</p>
 </iframe></div></section>
 <section id="r-loops">
 <h2>R Loops<a class="headerlink" href="#r-loops" title="Link to this heading">#</a></h2>
-<p id="index-0">As we saw in the coding fundamentals, loops are a tool to iterate over
+<p id="index-2">As we saw in the coding fundamentals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
 or through time (as in the example above). They are therefore fundamental
 to a lot of data analysis.</p>
@@ -545,7 +549,7 @@ is very boring and repetitive. The entire idea of writing code it to remove the
 repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
 <section id="r-for-loops">
 <h3>R <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#r-for-loops" title="Link to this heading">#</a></h3>
-<p id="index-1">‘for’ loops work in Python using a control variable (the thing that increments each loop) and
+<p id="index-3">‘for’ loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
 a bit abstract, so let’s do some examples.</p>
@@ -649,7 +653,7 @@ R also has a <code class="docutils literal notranslate"><span class="pre">while<
 </iframe></div></section>
 <section id="r-while-loop">
 <h3>R <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#r-while-loop" title="Link to this heading">#</a></h3>
-<p id="index-2">A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p id="index-4">A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nf">while </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -717,7 +721,7 @@ can be any conditional statement, including key presses (but that requires some 
 </section>
 <section id="r-conditionals">
 <h2>R conditionals<a class="headerlink" href="#r-conditionals" title="Link to this heading">#</a></h2>
-<p id="index-3">As we saw in the coding fundamentals, conditionals are a tool to make decisions
+<p id="index-5">As we saw in the coding fundamentals, conditionals are a tool to make decisions
 in code; they control the flow of code. We can make those decisions based on the state of the program at the time.</p>
 <p>We want to inform the user if their climate is either a hot desert, arctic desert, temperate rainforest, or tropical
 rainforest. We ask them to supply either a “high” or “low” temperature and either a “high” or “low” humidity.</p>
@@ -759,7 +763,7 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 This is where <code class="docutils literal notranslate"><span class="pre">if</span></code> statements come in.</p>
 <section id="r-if-statement">
 <h3>R <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#r-if-statement" title="Link to this heading">#</a></h3>
-<p id="index-4">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
+<p id="index-6">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
 statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.
 In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is executed.</p>
 <div class="literal-block-wrapper docutils container" id="id16">
@@ -867,7 +871,7 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/BVik22tUSwo" style="border: 0; height: 345px; width: 560px">
 </iframe></div><p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id21">
-<span id="index-5"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">71</span>
 
 <span class="nf">if </span><span class="p">(</span><span class="n">mark</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -977,7 +981,7 @@ there is repeated code and it might be harder to follow the logic. I prefer the 
 </section>
 <section id="r-comments">
 <h2>R comments<a class="headerlink" href="#r-comments" title="Link to this heading">#</a></h2>
-<p id="index-6">All computer languages have some mechanisms to add text that is not part of the code
+<p id="index-7">All computer languages have some mechanisms to add text that is not part of the code
 itself. These are called comments. The idea of these snippets of text are to provide
 commentary to help someone (including future you) understand the code
 that has been written.</p>
@@ -985,7 +989,7 @@ that has been written.</p>
 inline comments and block comments.</p>
 <section id="inline-comments-r">
 <h3>Inline comments (R)<a class="headerlink" href="#inline-comments-r" title="Link to this heading">#</a></h3>
-<p id="index-7">Inline comments occur within the line of code:</p>
+<p id="index-8">Inline comments occur within the line of code:</p>
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span><span class="c1"># Increment x</span>
@@ -1005,7 +1009,7 @@ may be preferable to the second style of comments</p>
 </section>
 <section id="block-comments-r">
 <h3>Block comments (R)<a class="headerlink" href="#block-comments-r" title="Link to this heading">#</a></h3>
-<p id="index-8">Block comments occupy one or more lines. In python they look like:</p>
+<p id="index-9">Block comments occupy one or more lines. In python they look like:</p>
 <div class="literal-block-wrapper docutils container" id="id25">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1"># increment count to account for boundary cell</span>

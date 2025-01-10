@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -428,7 +432,7 @@ also a function. The return value of <code class="docutils literal notranslate">
 </div>
 </div>
 <p>where we store the length in a variable, then use it.</p>
-<div class="admonition-practical-exercise admonition" id="index-3">
+<div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Nested functions</strong></p>
 <blockquote>
@@ -492,7 +496,7 @@ to return something).</p>
 </div>
 <section id="function-arguments-in-python">
 <h4>Function arguments in Python<a class="headerlink" href="#function-arguments-in-python" title="Link to this heading">#</a></h4>
-<p id="index-4">A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>) or generic arguments (<code class="docutils literal notranslate"><span class="pre">args</span></code>).</p>
+<p id="index-3">A function can take any number of inputs via arguments. You can even specify an unknown number of arguments. This are either keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>) or generic arguments (<code class="docutils literal notranslate"><span class="pre">args</span></code>).</p>
 <p>Above we used a keyword argument, which gave us the variable name inside the function. Here is an example where the function takes
 two keyword arguments:</p>
 <div class="literal-block-wrapper docutils container" id="id9">
@@ -539,7 +543,7 @@ What happens if the user supplies only a single argument, not two as we’ve ask
 </div>
 <p>We can also write functions that have default values.</p>
 <div class="literal-block-wrapper docutils container" id="id12">
-<span id="index-5"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
@@ -657,14 +661,14 @@ keyword arguments using a similar approach called <code class="docutils literal 
 </section>
 <section id="python-modules">
 <h2>Python modules<a class="headerlink" href="#python-modules" title="Link to this heading">#</a></h2>
-<p id="index-6">When writing code we want to package up functionality/code into descrete bundles. In Python these are called modules or packages.
+<p id="index-4">When writing code we want to package up functionality/code into descrete bundles. In Python these are called modules or packages.
 You can then put this module on the internet such that other can download, install it and use it. You can also save your own code
 this way and use it in other code you write.</p>
 <p>We’re not going to get into creating your own Python package/module here, but we will use Python modules a lot, so we will focus on using
 modules, ratehr than creating them.</p>
 <section id="import-statement">
 <h3>Import statement<a class="headerlink" href="#import-statement" title="Link to this heading">#</a></h3>
-<p id="index-7">To use an existing module or package in your code you must <code class="docutils literal notranslate"><span class="pre">import</span></code> it.</p>
+<p id="index-5">To use an existing module or package in your code you must <code class="docutils literal notranslate"><span class="pre">import</span></code> it.</p>
 <p>Let’s create a small script and save the file:</p>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
@@ -753,7 +757,7 @@ You can assign this to a local variable is you wish:</p>
 </iframe></div></section>
 <section id="executing-modules-as-scripts">
 <h3>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Link to this heading">#</a></h3>
-<p id="index-8">Python is a versatile language, so modules can also be scripts! Python has a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code> which is set to a value of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is a file is called as a script.</p>
+<p>Python is a versatile language, so modules can also be scripts! Python has a special variable called <code class="docutils literal notranslate"><span class="pre">__name__</span></code> which is set to a value of <code class="docutils literal notranslate"><span class="pre">__main__</span></code> is a file is called as a script.</p>
 <p>Running something like this in the command line:</p>
 <div class="literal-block-wrapper docutils container" id="id27">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
@@ -784,7 +788,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 <section id="module-search-path">
 <h3>Module search path<a class="headerlink" href="#module-search-path" title="Link to this heading">#</a></h3>
-<p id="index-9">Where does Python look for modules? Python will look for modules in the following order:</p>
+<p>Where does Python look for modules? Python will look for modules in the following order:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The directory containing the input script (or current directory where no script is specified)</p></li>
@@ -804,7 +808,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 <section id="seeing-what-is-in-a-module">
 <h3>Seeing what is in a module<a class="headerlink" href="#seeing-what-is-in-a-module" title="Link to this heading">#</a></h3>
-<p id="index-10">The built-in function <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is used to find out which names a module defines. It returns a sorted list of strings:</p>
+<p>The built-in function <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is used to find out which names a module defines. It returns a sorted list of strings:</p>
 <div class="literal-block-wrapper docutils container" id="id31">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span><span class="o">,</span> <span class="nn">sys</span>
@@ -839,7 +843,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 <section id="python-dictionaries">
 <h2>Python: dictionaries<a class="headerlink" href="#python-dictionaries" title="Link to this heading">#</a></h2>
-<p id="index-12"><span id="index-11"></span>Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
+<p id="index-6">Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
 <p>Python has dictionaries as an in-built datatype, set up using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> braces:</p>
 <div class="literal-block-wrapper docutils container" id="id32">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
@@ -882,7 +886,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </div>
 <section id="looping-with-python-dictionaries">
 <h3>Looping with Python dictionaries<a class="headerlink" href="#looping-with-python-dictionaries" title="Link to this heading">#</a></h3>
-<p id="index-13">Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them.</p>
+<p id="index-7">Like lists, dictionaries are at their most powerful in loops. Also like lists there are a number of ways of looping over them.</p>
 <div class="literal-block-wrapper docutils container" id="id37">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
@@ -898,7 +902,7 @@ creating a structure of common functions across a number of projects/scripts.</p
 </section>
 <section id="useful-dictionary-functions">
 <h3>Useful dictionary functions<a class="headerlink" href="#useful-dictionary-functions" title="Link to this heading">#</a></h3>
-<p id="index-16"><span id="index-15"></span><span id="index-14"></span>Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and
+<p id="index-8">Dictionaries also come with a number of useful functions. Commonly used ones are <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">values()</span></code> which return a list of the keys and values respectively. Both of these return lists
 which can be looped over, e.g.</p>
 <div class="literal-block-wrapper docutils container" id="id38">
@@ -1003,7 +1007,7 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </section>
 <section id="python-files">
 <h2>Python: Files<a class="headerlink" href="#python-files" title="Link to this heading">#</a></h2>
-<p id="index-17">Writing software for scientific/research purposes often involves reading in
+<p id="index-9">Writing software for scientific/research purposes often involves reading in
 data from files. Python file handling is very powerful, but surprisingly
 easy to use and manage.</p>
 <p>Files in computing have a very long history and there’s a lot of baggage
@@ -1016,7 +1020,7 @@ characters at the end of each line for a EOL or End of Line.</p>
 come into being. We’ll learn a lot more in the data section.</p>
 <section id="opening-and-closing-files">
 <h3>Opening and closing files<a class="headerlink" href="#opening-and-closing-files" title="Link to this heading">#</a></h3>
-<p id="index-18">Before reading or writing data to a file we must first open that
+<p>Before reading or writing data to a file we must first open that
 file and specify if we are going to read from it, or write to it.</p>
 <div class="literal-block-wrapper docutils container" id="id44">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
@@ -1065,7 +1069,7 @@ closed etc.</p>
 </section>
 <section id="reading-files">
 <h3>Reading files<a class="headerlink" href="#reading-files" title="Link to this heading">#</a></h3>
-<p id="index-19">We can now open and close files, how do we get information from them? We’ll focus on text files for now. Most
+<p>We can now open and close files, how do we get information from them? We’ll focus on text files for now. Most
 binary files have a Python module to read them, so are more specialist in nature.</p>
 <p>We can read text files line-by-line or in one go. To read line-by-line:</p>
 <div class="literal-block-wrapper docutils container" id="id47">
@@ -1113,7 +1117,7 @@ to make this very clear. For example:</p>
 </pre></div>
 </div>
 </div>
-<p id="index-20">The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is an example of the type of processing; here splitting the line of text
+<p id="index-10">The <code class="docutils literal notranslate"><span class="pre">split()</span></code> function is an example of the type of processing; here splitting the line of text
 into words (separated by spaces) and creating a list of those.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
@@ -1163,7 +1167,7 @@ element, perhaps.</p>
 </section>
 <section id="writing-files">
 <h3>Writing files<a class="headerlink" href="#writing-files" title="Link to this heading">#</a></h3>
-<p id="index-21">Writing files is a bit different to reading files. You are in charge of putting the line breaks in!</p>
+<p>Writing files is a bit different to reading files. You are in charge of putting the line breaks in!</p>
 <div class="literal-block-wrapper docutils container" id="id53">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id53" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1262,7 +1266,7 @@ Burkina<span class="w"> </span>Faso,Ouagadougou
 </section>
 <section id="python-command-line-arguments">
 <h2>Python: command line arguments<a class="headerlink" href="#python-command-line-arguments" title="Link to this heading">#</a></h2>
-<p id="index-22">The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
+<p id="index-11">The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
 The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
 in the course, for example:</p>
 <div class="literal-block-wrapper docutils container" id="id60">
@@ -1284,7 +1288,7 @@ Similarly, we’ve covered:</p>
 advanced usage options.</p>
 <section id="python-and-the-command-line">
 <h3>Python and the command line<a class="headerlink" href="#python-and-the-command-line" title="Link to this heading">#</a></h3>
-<p id="index-23">When you run a Python script, with some arbitrary text after:</p>
+<p id="index-12">When you run a Python script, with some arbitrary text after:</p>
 <div class="literal-block-wrapper docutils container" id="id62">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id62" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>arg_script.py<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
@@ -1358,7 +1362,7 @@ and print them out on individual lines. Do not include the script name.</p>
 </section>
 <section id="python-advanced-command-line-interface">
 <h3>Python advanced command line interface<a class="headerlink" href="#python-advanced-command-line-interface" title="Link to this heading">#</a></h3>
-<p id="index-24">Python has a number of modules that make command line parsing a lot easier and more functional. The most commonly used is
+<p id="index-13">Python has a number of modules that make command line parsing a lot easier and more functional. The most commonly used is
 <code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>. Moreover,
 the module will help with error messages, etc when the user gives incorrect arguments.</p>
@@ -1454,7 +1458,7 @@ to a full sentence (<cite>verbosity==2</cite>), with default of 0.</p></li>
 </section>
 <section id="getting-input-from-a-user-in-python">
 <h3>Getting input from a user in Python<a class="headerlink" href="#getting-input-from-a-user-in-python" title="Link to this heading">#</a></h3>
-<p id="index-25">If you want to ask the user something, e.g. a file name
+<p id="index-14">If you want to ask the user something, e.g. a file name
 or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">input</span></code> function.</p>
 <div class="literal-block-wrapper docutils container" id="id72">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id72" title="Link to this code">#</a></div>

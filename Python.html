@@ -180,7 +180,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -391,7 +395,7 @@ such as virtual environment are common, where a whole new Python environment is 
 </section>
 <section id="intro-to-python">
 <h2>Intro to Python<a class="headerlink" href="#intro-to-python" title="Link to this heading">#</a></h2>
-<p>Python is an interpreted language that has become incredibly popular. Due to that
+<p id="index-0">Python is an interpreted language that has become incredibly popular. Due to that
 there are modules that will do just about anything. This makes Python a really
 powerful tool for writing code to analyse any number of problems.</p>
 <p>Python can be run on the command line, in a Jupyter notebook, in Google Colab,
@@ -452,7 +456,7 @@ bunch of times? Let’s add a loop!</p>
 </pre></div>
 </div>
 </div>
-<p id="index-0">This is not the most elegant way to do this, but it works. You now have the height of the ball
+<p id="index-1">This is not the most elegant way to do this, but it works. You now have the height of the ball
 at time 0 to 0.9 in steps of 0.1. Note the indentation. In Python <em>whitespace</em> matters. It signifies
 which statements are part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. You must be consistent with indentation or your
 code will not run.</p>
@@ -510,7 +514,7 @@ be the values at the final iteration of the loop.</p>
 </div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/7U89TwLas1I" style="border: 0; height: 345px; width: 560px">
-</iframe></div><p id="index-1">Shall we plot this?</p>
+</iframe></div><p id="index-2">Shall we plot this?</p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
@@ -554,7 +558,7 @@ Python-specific parts and go through these in more detail.</p>
 </iframe></div></section>
 <section id="python-loops">
 <h2>Python Loops<a class="headerlink" href="#python-loops" title="Link to this heading">#</a></h2>
-<p id="index-2">As we saw in the coding fundamentals, loops are a tool to iterate over
+<p id="index-3">As we saw in the coding fundamentals, loops are a tool to iterate over
 many “bits” of data, like rows or columns in a spreadsheet, a list of parameters,
 or through time (as in the example above). They are therefore fundamental
 to a lot of data analysis.</p>
@@ -613,7 +617,7 @@ statements so they can go on a single line.</p>
 repetitive, boring stuff and let the computer do that work. This is where loops come in.</p>
 <section id="python-for-loops">
 <h3>Python <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#python-for-loops" title="Link to this heading">#</a></h3>
-<p id="index-3"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops work in Python using a control variable (the thing that increments each loop) and
+<p id="index-4"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops work in Python using a control variable (the thing that increments each loop) and
 an iterator (the thing we’re iterating over). This is a really powerful concept as
 we can iterate over a list or a counter with the same construct. This is all
 a bit abstract, so let’s do some examples.</p>
@@ -678,7 +682,7 @@ to be four spaces, rather than the <code class="docutils literal notranslate"><s
 <p><code class="docutils literal notranslate"><span class="pre">i</span></code> goes from 0 (Python starts counting from 0. R starts from 1) to the length of the list - 1. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function
 creates a list containing those numbers. So although this loops looks different to the first one we created,
 it’s actually identical in terms of it’s construction.</p>
-<p id="index-4">The <code class="docutils literal notranslate"><span class="pre">range</span></code> function is <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">increment)</span></code>
+<p id="index-5">The <code class="docutils literal notranslate"><span class="pre">range</span></code> function is <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">increment)</span></code>
 which generates a list of integers: <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">start+increment</span></code>, <code class="docutils literal notranslate"><span class="pre">start+2*increment</span></code>, and so on up to, but not including, <code class="docutils literal notranslate"><span class="pre">stop</span></code>.
 We can also write <code class="docutils literal notranslate"><span class="pre">range(stop)</span></code> as an abbreviation for <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">stop,</span> <span class="pre">1)</span></code>, or <code class="docutils literal notranslate"><span class="pre">range(start,stop)</span></code> to assume an increment
 of 1.</p>
@@ -711,7 +715,7 @@ Python also has a <code class="docutils literal notranslate"><span class="pre">w
 </iframe></div></section>
 <section id="python-while-loop">
 <h3>Python <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#python-while-loop" title="Link to this heading">#</a></h3>
-<p id="index-5">A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p id="index-6">A while-loop executes repeatedly a set of statements as long as a boolean condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
@@ -780,7 +784,7 @@ the the loop above where we had to use 41…).</p>
 </section>
 <section id="python-conditionals">
 <h2>Python conditionals<a class="headerlink" href="#python-conditionals" title="Link to this heading">#</a></h2>
-<p id="index-6">As we saw in the coding fundamentals, conditionals are a tool to make decisions
+<p id="index-7">As we saw in the coding fundamentals, conditionals are a tool to make decisions
 in code; they control the flow of code. We can make those decisions based on the state of the program at the time.</p>
 <p>We want to inform the user if their climate is either a hot desert, arctic desert, temperate rainforest, or tropical
 rainforest. We ask them to supply either a “high” or “low” temperature and either a “high” or “low” humidity.</p>
@@ -822,7 +826,7 @@ rainforest. We ask them to supply either a “high” or “low” temperature a
 This is where <code class="docutils literal notranslate"><span class="pre">if</span></code> statements come in.</p>
 <section id="python-if-statement">
 <h3>Python <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#python-if-statement" title="Link to this heading">#</a></h3>
-<p id="index-7">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
+<p id="index-8">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
 statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">True</span></code> is executed.</p>
 <div class="literal-block-wrapper docutils container" id="id22">
@@ -930,7 +934,7 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 </div>
 <p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id28">
-<span id="index-8"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">mark</span><span class="o">=</span><span class="mi">71</span>
 
  <span class="k">if</span> <span class="n">mark</span> <span class="o">&gt;=</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">mark</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
@@ -1122,7 +1126,7 @@ what the function does, what the arguments are. You may also add what is returne
 </section>
 <section id="what-to-comment-python">
 <h3>What to comment (Python)<a class="headerlink" href="#what-to-comment-python" title="Link to this heading">#</a></h3>
-<p id="index-13">The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
+<p>The above tell you <em>how</em> to write a comment, but <em>what</em> should you comment? Comments need to
 be useful for the people that come after you (including you) so they can understand the code better.
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
 It’s often easier to say what <em>not</em> to do, so let’s head in that direction…</p>

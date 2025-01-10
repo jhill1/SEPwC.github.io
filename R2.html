@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -612,7 +616,7 @@ this way and use it in other code you write.</p>
 libraries, rather than creating them.</p>
 <section id="loading-libraries">
 <h3>Loading libraries<a class="headerlink" href="#loading-libraries" title="Link to this heading">#</a></h3>
-<p>Libraries are loaded via either the <code class="docutils literal notranslate"><span class="pre">library</span></code> or <code class="docutils literal notranslate"><span class="pre">require</span></code> functions.</p>
+<p id="index-3">Libraries are loaded via either the <code class="docutils literal notranslate"><span class="pre">library</span></code> or <code class="docutils literal notranslate"><span class="pre">require</span></code> functions.</p>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
@@ -633,7 +637,7 @@ libraries, rather than creating them.</p>
 </section>
 <section id="sourcing-other-code">
 <h3>Sourcing other code<a class="headerlink" href="#sourcing-other-code" title="Link to this heading">#</a></h3>
-<p>You can also include the contents of another script directly into your own using the <code class="docutils literal notranslate"><span class="pre">source</span></code> function.</p>
+<p id="index-4">You can also include the contents of another script directly into your own using the <code class="docutils literal notranslate"><span class="pre">source</span></code> function.</p>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;common_funcs.R&quot;</span><span class="p">)</span>
@@ -646,7 +650,7 @@ libraries, rather than creating them.</p>
 </section>
 <section id="r-dictionaries">
 <h2>R dictionaries<a class="headerlink" href="#r-dictionaries" title="Link to this heading">#</a></h2>
-<p id="index-3">Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
+<p id="index-5">Dictionaries are linked lists; rather than accessing items via a numerical index, you access via a <code class="docutils literal notranslate"><span class="pre">key</span></code>. A dictionary therefore contains a list of keys and a list of corresponding values. The keys have to be unique, but the values do not.</p>
 <p>R doesn’t have a built-in dictionary datatype, <em>but</em> vectors, matrices, lists etc can behave like dictionaries.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">telephone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="o">=</span><span class="m">3452345</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mildred&#39;</span><span class="o">=</span><span class="m">532354</span><span class="p">)</span>
 </pre></div>
@@ -775,7 +779,7 @@ city as the value, e.g. Germany - Berlin, UK - London.</p>
 </section>
 <section id="r-files">
 <h2>R: files<a class="headerlink" href="#r-files" title="Link to this heading">#</a></h2>
-<p id="index-4">Writing software for scientific/research purposes often involves reading in
+<p id="index-6">Writing software for scientific/research purposes often involves reading in
 data from files. R file handling is very powerful, but surprisingly
 easy to use and manage, but there are a lot of overlapping functions
 that do very similar things.</p>
@@ -789,7 +793,7 @@ characters at the end of each line for a EOL or End of Line.</p>
 come into being. We’ll learn a lot more in the data section.</p>
 <section id="read-and-write-tables-csv-files">
 <h3>Read and write tables/csv files<a class="headerlink" href="#read-and-write-tables-csv-files" title="Link to this heading">#</a></h3>
-<p>Most of the time when using R you end up reading data from CSV
+<p id="index-7">Most of the time when using R you end up reading data from CSV
 (Comma Separated Values) or tables (the same as CSV, but separated by
 something other than a comma!). The syntax for these function is very similar.</p>
 <div class="literal-block-wrapper docutils container" id="id21">
@@ -855,7 +859,7 @@ This creates a CSV file, which you can load into Excel, etc.</p>
 </section>
 <section id="r-command-line-arguments">
 <h2>R command line arguments<a class="headerlink" href="#r-command-line-arguments" title="Link to this heading">#</a></h2>
-<p id="index-5">The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
+<p id="index-8">The simplest user-facing scripts/software use the Command Line Interface (CLI) to interact with a user.
 The CLI allows the user to pass options to a script as they execute. We have already used these elsewhere
 in the course, for example:</p>
 <div class="literal-block-wrapper docutils container" id="id24">
@@ -877,7 +881,7 @@ Similarly, we’ve covered:</p>
 advanced usage options.</p>
 <section id="r-and-the-command-line">
 <h3>R and the command line<a class="headerlink" href="#r-and-the-command-line" title="Link to this heading">#</a></h3>
-<p>When you run a R script via the Rscript command, with some arbitrary text after:</p>
+<p id="index-9">When you run a R script via the Rscript command, with some arbitrary text after:</p>
 <div class="literal-block-wrapper docutils container" id="id26">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>arg_script.R<span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>arg3
@@ -976,7 +980,7 @@ R specific things; just the user arguments.</p>
 </section>
 <section id="r-advanced-command-line-interface">
 <h3>R advanced command line interface<a class="headerlink" href="#r-advanced-command-line-interface" title="Link to this heading">#</a></h3>
-<p id="index-6">R has a number of libraries that make command line parsing a lot easier and more functional. The most commonly used is
+<p id="index-10">R has a number of libraries that make command line parsing a lot easier and more functional. The most commonly used is
 <code class="docutils literal notranslate"><span class="pre">argparse</span></code></p>
 <p>With <code class="docutils literal notranslate"><span class="pre">argparse</span></code> you define the options in your code and then <code class="docutils literal notranslate"><span class="pre">argparse</span></code> figures out how to get those from the <code class="docutils literal notranslate"><span class="pre">commandArgs</span></code>
 function. Moreover, the library will help with error messages, etc when the user gives incorrect arguments.</p>
@@ -1082,7 +1086,7 @@ to a full sentence (<code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="getting-input-from-a-user-in-r">
 <h3>Getting input from a user in R<a class="headerlink" href="#getting-input-from-a-user-in-r" title="Link to this heading">#</a></h3>
-<p>If you want to ask the user something, e.g. a file name
+<p id="index-11">If you want to ask the user something, e.g. a file name
 or if they wish to continue, you can use the <code class="docutils literal notranslate"><span class="pre">readLines</span></code> function.
 However, this is a bit hacky; it wasn’t really designed for this, so
 it works well enough, but for running within an <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> <em>and</em> in the console

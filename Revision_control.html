@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -447,14 +451,14 @@ problems.</p></li>
 </section>
 <section id="installing-git">
 <h2>Installing Git<a class="headerlink" href="#installing-git" title="Link to this heading">#</a></h2>
-<p>Git is easily installed on all systems. On linux, use your package manager. On MacOS
+<p id="index-1">Git is easily installed on all systems. On linux, use your package manager. On MacOS
 install <cite>via HomeBrew &lt;https://git-scm.com/download/mac&gt;_</cite>. On Windows install the
 <cite>standalone installer &lt;https://git-scm.com/download/win&gt;_</cite>, which provides
 the <code class="docutils literal notranslate"><span class="pre">git</span></code> executable and the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> tool.</p>
 </section>
 <section id="setting-up-git">
 <h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Link to this heading">#</a></h2>
-<p>For all the command-line examples below using either the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> application (<a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a>) or the terminal (<a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>).
+<p id="index-2">For all the command-line examples below using either the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> application (<a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a>) or the terminal (<a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>).
 On linux you can access the terminal via the Start Menu equivalent on most systems. On Macs, the terminal may be
 hidden in the Utilities folder under Applications.</p>
 <p>When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples
@@ -624,7 +628,7 @@ More generally, you can get the list of available <code class="docutils literal 
 </iframe></div></section>
 <section id="our-first-repository">
 <h2>Our first repository<a class="headerlink" href="#our-first-repository" title="Link to this heading">#</a></h2>
-<p>Once Git is configured, we can start using it.</p>
+<p id="index-3">Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
 <p>First, let’s create a new directory in the <code class="file docutils literal notranslate"><span class="pre">Desktop/</span></code> folder for our work and then change the current working directory to the newly created one:</p>
@@ -638,7 +642,7 @@ mkdir<span class="w"> </span>planets
 </div>
 <p>Then we tell Git to make <code class="file docutils literal notranslate"><span class="pre">planets/</span></code> a repository – a place where Git can store versions of our files:</p>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<span id="index-4"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
 </pre></div>
 </div>
@@ -788,7 +792,7 @@ Therefore, always check your current directory using the command <code class="do
 </section>
 <section id="adding-files">
 <h2>Adding files<a class="headerlink" href="#adding-files" title="Link to this heading">#</a></h2>
-<p>First let’s make sure we’re still in the right directory.
+<p id="index-5">First let’s make sure we’re still in the right directory.
 You should be in the <code class="file docutils literal notranslate"><span class="pre">planets</span></code> directory.</p>
 <div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
@@ -878,7 +882,7 @@ We can tell Git to track a file using <code class="docutils literal notranslate"
 <span class="go">  new file:   mars.txt</span>
 </pre></div>
 </div>
-<p>Git now knows that it’s supposed to keep track of <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>,
+<p id="index-6">Git now knows that it’s supposed to keep track of <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>,
 but it hasn’t recorded these changes as a commit yet.
 To get it to do that, we need to run one more command:</p>
 <div class="literal-block-wrapper docutils container" id="id29">
@@ -920,7 +924,7 @@ Use this additional space to explain why you made changes and/or what their impa
 <p>it tells us everything is up to date. If we want to know what we’ve done recently,
 we can ask Git to show us the project’s history using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<span id="index-7"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
@@ -967,7 +971,7 @@ cat<span class="w"> </span>mars.txt
 <span class="go">The two moons may be a problem for satellites</span>
 </pre></div>
 </div>
-<p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now,
+<p id="index-8">When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now,
 it tells us that a file it already knows about has been modified:</p>
 <div class="literal-block-wrapper docutils container" id="id33">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
@@ -993,7 +997,7 @@ our changes before saving them. We do this using <code class="docutils literal n
 This shows us the differences between the current state
 of the file and the most recently saved version:</p>
 <div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<span id="index-9"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff
 </pre></div>
 </div>
@@ -1068,7 +1072,7 @@ but <em>not</em> commit some of our work drafting the conclusion
 </iframe></div><p>To allow for this, Git has a special <em>staging area</em>
 where it keeps track of things that have been added to
 the current changeset but not yet committed.</p>
-<div class="toggle admonition">
+<div class="toggle admonition" id="index-10">
 <p class="admonition-title">Learn more</p>
 <p><strong>Staging Area</strong></p>
 <p>If you think of Git as taking snapshots of changes over the life of a project,
@@ -1491,7 +1495,7 @@ To display the differences between its updated state and its original state, use
 </iframe></div></section>
 <section id="git-history">
 <h2>Git history<a class="headerlink" href="#git-history" title="Link to this heading">#</a></h2>
-<p>No, not the story of how Git came to be, but how do we get at the history of our commits.
+<p id="index-11">No, not the story of how Git came to be, but how do we get at the history of our commits.
 In the previous section we see we can refer to commits by the unique identifiers.
 You can refer to the <em>most recent commit</em> of the working
 directory by using the identifier <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.</p>
@@ -1782,7 +1786,7 @@ restore <em>any other files that are changed</em> to that version, erasing any c
 have made to those files!</p>
 <p>As discussed above, you are left in a <em>detached</em> <cite>HEAD</cite> state, and you don’t want to be there.</p>
 </div>
-<div class="admonition-thought-exercise admonition">
+<div class="admonition-thought-exercise admonition" id="index-12">
 <p class="admonition-title">Thought exercise</p>
 <p><strong>Reverting a Commit</strong></p>
 <p>Jennifer is collaborating with colleagues on her Python script.  She
@@ -1908,7 +1912,7 @@ the difference between each commit.</p>
 </section>
 <section id="ignoring-files">
 <h2>Ignoring files<a class="headerlink" href="#ignoring-files" title="Link to this heading">#</a></h2>
-<p>What if we have files that we do not want Git to track for us,
+<p id="index-13">What if we have files that we do not want Git to track for us,
 like backup files created by our editor or intermediate files created during data analysis?
 Let’s create a few dummy files:</p>
 <div class="literal-block-wrapper docutils container" id="id79">
@@ -2532,7 +2536,7 @@ repositories before merging.</p>
 </section>
 <section id="collaboration-with-git">
 <h2>Collaboration with Git<a class="headerlink" href="#collaboration-with-git" title="Link to this heading">#</a></h2>
-<p>For the next step, get into pairs.  One person will be the “Owner” and the other
+<p id="index-14">For the next step, get into pairs.  One person will be the “Owner” and the other
 will be the “Collaborator”. The goal is that the Collaborator add changes into
 the Owner’s repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.</p>
@@ -2593,7 +2597,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <span class="go">create mode 100644 pluto.txt</span>
 </pre></div>
 </div>
-<p>Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
+<p id="index-15">Then push the change to the <em>Owner’s repository</em> on GitHub:</p>
 <div class="literal-block-wrapper docutils container" id="id102">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id102" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
@@ -2722,7 +2726,7 @@ code to comment, a blue comment icon appears to open a comment window.</p>
 </iframe></div></section>
 <section id="conflict">
 <h2>Conflict!<a class="headerlink" href="#conflict" title="Link to this heading">#</a></h2>
-<p>As soon as people can work in parallel, they’ll likely step on each other’s
+<p id="index-16">As soon as people can work in parallel, they’ll likely step on each other’s
 toes. This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy. Version control helps us manage these
@@ -2737,8 +2741,8 @@ repository:</p>
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 </pre></div>
 </div>
 <p>Let’s add a line to the collaborator’s copy only:</p>
@@ -2750,8 +2754,8 @@ cat<span class="w"> </span>mars.txt
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 <span class="go">This line added to one copy</span>
 </pre></div>
 </div>
@@ -2794,8 +2798,8 @@ cat<span class="w"> </span>mars.txt
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 <span class="go">We added a different line in the other copy</span>
 </pre></div>
 </div>
@@ -2865,8 +2869,8 @@ in the affected file:</p>
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 <span class="go">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
 <span class="go">We added a different line in the other copy</span>
 <span class="go">=======</span>
@@ -2892,8 +2896,8 @@ Let’s replace both so that the file looks like this:</p>
 </div>
 </div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Cold and dry, but everything is my favourite colour</span>
-<span class="go">The two moons may be a problem for werewolves</span>
-<span class="go">But the Mummy will appreciate the lack of humidity</span>
+<span class="go">The two moons may be a problem for satellites</span>
+<span class="go">But Branston will appreciate the lack of humidity</span>
 <span class="go">We removed the conflict on this line</span>
 </pre></div>
 </div>

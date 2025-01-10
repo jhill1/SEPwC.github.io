@@ -70,6 +70,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'GIS';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="genindex.html" />
+    <link rel="prev" title="Mini course: Tidal analysis in Python" href="tides_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -121,8 +123,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -162,7 +162,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="How_a_computer_works.html">How a computer works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Licences.html">Software licences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Code_basics.html">The fundamentals of code</a></li>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -342,7 +343,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system-crs">Coordinate References System (CRS)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
@@ -371,7 +372,7 @@
   <section id="mini-course-gis">
 <h1>Mini-course: GIS<a class="headerlink" href="#mini-course-gis" title="Link to this heading">#</a></h1>
 <section id="gis">
-<h2>GIS<a class="headerlink" href="#gis" title="Link to this heading">#</a></h2>
+<span id="index-0"></span><h2>GIS<a class="headerlink" href="#gis" title="Link to this heading">#</a></h2>
 <p>This is a brief introduction to geospatial data which applied to both Python
 and R. Geospatial data is information that also has a geographical component.
 Example include house proces, coupled to locations; roads and road types or hazard
@@ -386,7 +387,7 @@ assessment.</p>
 </div></blockquote>
 <section id="vector-data">
 <h3>Vector data<a class="headerlink" href="#vector-data" title="Link to this heading">#</a></h3>
-<p>Vector data represent geometries via mathematicla objects. You can zoom
+<p id="index-1">Vector data represent geometries via mathematicla objects. You can zoom
 into a vector infinitely at it will remain infintely small! There are
 three types of vector data:</p>
 <blockquote>
@@ -406,7 +407,7 @@ footprint might also contains the address, the price, the date built, etc.</p>
 </section>
 <section id="raster-data">
 <h3>Raster data<a class="headerlink" href="#raster-data" title="Link to this heading">#</a></h3>
-<p>Raster data are a grid of pixels of a resolution. Each pixel has a value, such as height
+<p id="index-2">Raster data are a grid of pixels of a resolution. Each pixel has a value, such as height
 temperature, land use category, etc. The data are stored in <em>bands</em>, so a raster can contain
 multiple datasets within the same structure and file. It’s common for colour
 images, such as satellite images, to be stored in a R(ed), G(reeen), and B(lue) bands.</p>
@@ -421,9 +422,9 @@ lot of data very efficiently, e.g. land hieght data where you need continuous me
 </figcaption>
 </figure>
 </section>
-<section id="coredinate-references-system-crs">
-<h3>Coredinate References System (CRS)<a class="headerlink" href="#coredinate-references-system-crs" title="Link to this heading">#</a></h3>
-<p>GIS is a 2D system. But the Earth is 3D; almost a sphere in fact. To display the
+<section id="coordinate-references-system-crs">
+<h3>Coordinate References System (CRS)<a class="headerlink" href="#coordinate-references-system-crs" title="Link to this heading">#</a></h3>
+<p id="index-3">GIS is a 2D system. But the Earth is 3D; almost a sphere in fact. To display the
 3D surface to a 2D screen you need to project into a 2D space; the CRS. Any
 CRS required trade offs. You can preserve area or shape or distance, but not all three!
 Compare the two projections of the Earth below; the Mollweide preserves areas, so the size of Greenland
@@ -452,7 +453,7 @@ large area with little deformation.</p>
 </section>
 <section id="gis-r">
 <h2>GIS - R<a class="headerlink" href="#gis-r" title="Link to this heading">#</a></h2>
-<p>R has a number of packages that can help with GIS analysis. We’re going to focus on
+<p id="index-4">R has a number of packages that can help with GIS analysis. We’re going to focus on
 two: <code class="docutils literal notranslate"><span class="pre">terra</span></code> and <code class="docutils literal notranslate"><span class="pre">sf</span></code>. For most tasks <code class="docutils literal notranslate"><span class="pre">terra</span></code> might be enough as it can handle
 vector and raster data. <code class="docutils literal notranslate"><span class="pre">sf</span></code> focusses on vector data only.</p>
 <p>You should download this <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/gis_data.zip">zip file</a>
@@ -460,7 +461,7 @@ which contains the data required. Make sure you
 change your working directory to match where you’ve downloaded the data.</p>
 <section id="the-terra-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library<a class="headerlink" href="#the-terra-library" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library is based around two key classes: <code class="docutils literal notranslate"><span class="pre">SpatRatser</span></code> and <code class="docutils literal notranslate"><span class="pre">SpatVector</span></code>.
+<p id="index-5">The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library is based around two key classes: <code class="docutils literal notranslate"><span class="pre">SpatRatser</span></code> and <code class="docutils literal notranslate"><span class="pre">SpatVector</span></code>.
 Let’s look at rasters first.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
@@ -558,7 +559,7 @@ vector data.</p>
 </section>
 <section id="the-sf-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">sf</span></code> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
-<p>R also have another popular library for dealing with shapefiles/vector data; <code class="docutils literal notranslate"><span class="pre">sf</span></code>.
+<p id="index-6">R also have another popular library for dealing with shapefiles/vector data; <code class="docutils literal notranslate"><span class="pre">sf</span></code>.
 This library has more features than <code class="docutils literal notranslate"><span class="pre">terra</span></code> so is worth learning.</p>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
@@ -620,14 +621,14 @@ compatible with <code class="docutils literal notranslate"><span class="pre">ter
 </section>
 <section id="gis-python">
 <h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
-<p>Python has a number of packages that can help with GIS analysis. We’re going to focus on
+<p id="index-7">Python has a number of packages that can help with GIS analysis. We’re going to focus on
 three: <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> and <code class="docutils literal notranslate"><span class="pre">shapely</span></code>.</p>
 <p>You should download this <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/gis_data.zip">zip file</a>
 which contains the data required. Make sure you
 change your working directory to match where you’ve downloaded the data.</p>
 <section id="the-rasterio-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library<a class="headerlink" href="#the-rasterio-library" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library is used to load, manipulate and plot raster
+<p id="index-8">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library is used to load, manipulate and plot raster
 data.</p>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
@@ -729,7 +730,7 @@ simple calculations (and indeed more complex ones!) can be carried out.</p>
 </section>
 <section id="the-geopandas-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> library<a class="headerlink" href="#the-geopandas-library" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is the geographical equivalent to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It deals with dataframes
+<p id="index-9"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is the geographical equivalent to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It deals with dataframes
 but those dataframes have a <code class="docutils literal notranslate"><span class="pre">geometry</span></code> component. It therefore maps onto GIS Vector
 data very well.</p>
 <div class="literal-block-wrapper docutils container" id="id22">
@@ -758,7 +759,7 @@ and geometric calculations (area, distances, lengths).</p>
 </section>
 <section id="the-shapely-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library<a class="headerlink" href="#the-shapely-library" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> is a library designed to do geometry calculations. It uses GIS Vector data
+<p id="index-10"><code class="docutils literal notranslate"><span class="pre">shapely</span></code> is a library designed to do geometry calculations. It uses GIS Vector data
 which can be loaded into a <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>. You can also create geometries very easily in
 <code class="docutils literal notranslate"><span class="pre">shapely</span></code>. However, you often don’t need to use the main functions in <code class="docutils literal notranslate"><span class="pre">shapely</span></code> itself
 as <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is built on top of <code class="docutils literal notranslate"><span class="pre">shapely</span></code>. It’s often needed for creating new
@@ -789,6 +790,24 @@ come from <code class="docutils literal notranslate"><span class="pre">shapely</
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tides_python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mini course: Tidal analysis in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="genindex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -809,7 +828,7 @@ come from <code class="docutils literal notranslate"><span class="pre">shapely</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coredinate-references-system-crs">Coredinate References System (CRS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system-crs">Coordinate References System (CRS)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">

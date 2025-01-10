@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -542,13 +546,13 @@ re-read any documentation for the function and check you’re passing in the cor
 </section>
 <section id="warning-examples">
 <h3>Warning examples<a class="headerlink" href="#warning-examples" title="Link to this heading">#</a></h3>
-<p>Warnings are noncritical messages, normally issued by a library or module you’re using. However, most of the time
+<p id="index-2">Warnings are noncritical messages, normally issued by a library or module you’re using. However, most of the time
 they are an error (as in you’re getting the wrong answer) but the code can still continue. You should therefore
 pay attention and decide if you do need to care.</p>
 <section id="r-warning-examples">
 <h4>R warning examples<a class="headerlink" href="#r-warning-examples" title="Link to this heading">#</a></h4>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<span id="index-3"></span><div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="kc">NA</span>
 <span class="n">Warning</span><span class="w"> </span><span class="n">message</span><span class="o">:</span>
@@ -561,7 +565,7 @@ but the <code class="docutils literal notranslate"><span class="pre">cor</span><
 </section>
 <section id="python-warning-example">
 <h4>Python warning example<a class="headerlink" href="#python-warning-example" title="Link to this heading">#</a></h4>
-<p>In this example I divide by zero; mathmatically producing infinity.</p>
+<p id="index-4">In this example I divide by zero; mathmatically producing infinity.</p>
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -647,7 +651,7 @@ alter that.</p>
 </section>
 <section id="bugs">
 <h2>Bugs<a class="headerlink" href="#bugs" title="Link to this heading">#</a></h2>
-<p>Bugs are errors in the code that result in incorrect output or the program to fail. In other words
+<p id="index-5">Bugs are errors in the code that result in incorrect output or the program to fail. In other words
 they are unintentional behaviours of the code. With ever more complex software being developed which uses
 a stack of other libraries to create the functionality making sure your code is bug free is getting harder
 but yet more important. It’s also important to note that bugs are always introduced by programmers; they
@@ -767,7 +771,7 @@ a number of website come up which help understand the error message a bit more.<
 </section>
 <section id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
-<p>Once you have some understanding of the error and the cause you can start to debug
+<p id="index-6">Once you have some understanding of the error and the cause you can start to debug
 your code. The easiest form of debugging is called “print debugging”. You insert
 print statements around code to output the contents of variables to help you
 understand the flow of the program. The downside of this debugging is you have to
@@ -925,7 +929,7 @@ can be found too.</p>
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/GjewIVXl_Ts" style="border: 0; height: 345px; width: 560px">
 </iframe></div><section id="console-debugging">
 <h3>Console debugging<a class="headerlink" href="#console-debugging" title="Link to this heading">#</a></h3>
-<p>Another way, alluded to above, is within R (or Rstudio) or ipython (or Spyder) is
+<p id="index-7">Another way, alluded to above, is within R (or Rstudio) or ipython (or Spyder) is
 to run your code. When you get to the error your variables are still available and
 you can explore them to see what might be wrong.</p>
 <p>Let’s do a similar exercise to the above in the console. Launch either the Python or R

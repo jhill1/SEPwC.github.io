@@ -70,7 +70,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Testing_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mini-courses" href="Mini_courses.html" />
+    <link rel="next" title="Mini course: ggplot2 tutorial" href="R_ggplot2.html" />
     <link rel="prev" title="Moving from spreadsheets to data" href="Spreadsheets_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Testing code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mini_courses.html">Mini-courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
 </ul>
 
@@ -359,7 +363,7 @@
                   
   <section id="testing-code">
 <h1>Testing code<a class="headerlink" href="#testing-code" title="Link to this heading">#</a></h1>
-<p>You’ve spend days writing the most elegant and beautiful code imaginable. It’s readable, well designed and runs quickly. How do you know it runs correctly? How do you know how easy it is to break? This is where testing comes in.</p>
+<p id="index-0">You’ve spend days writing the most elegant and beautiful code imaginable. It’s readable, well designed and runs quickly. How do you know it runs correctly? How do you know how easy it is to break? This is where testing comes in.</p>
 <p>Testing is integral to writing software as otherwise there is no point in writing it. You will, of course, test in some way as you write code as you will run your code to check it doesn’t give syntax errors at least! In this chapter you’ll learn how to transition from informal <em>ad hoc</em> testing (simple testing), to automated testing (also known as unit testing). This will:</p>
 <blockquote>
 <div><ul class="simple">
@@ -379,12 +383,11 @@
 </section>
 <section id="regression-tests">
 <h2>Regression tests<a class="headerlink" href="#regression-tests" title="Link to this heading">#</a></h2>
-<p>When it comes to formal testing, the first type of test is called a <em>regression test</em>. This takes a full run of the code and checks that output is what is expected. This could be based on theoretical consideration or from past executions of the code. The distinction to other kinds of tests is that the whole program is run from start to finish.</p>
-<p>Examples of theoretical and past behaviour</p>
+<p id="index-1">When it comes to formal testing, the first type of test is called a <em>regression test</em>. This takes a full run of the code and checks that output is what is expected. This could be based on theoretical consideration or from past executions of the code. The distinction to other kinds of tests is that the whole program is run from start to finish.</p>
 </section>
 <section id="unit-tests">
 <h2>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h2>
-<p>Whilst regression tests test the whole executable, unit tests only test a single function or object within the code. The generally check against theoretical results (or simple calculations) with strictly controlled input to the function. This is often where we test unexpected behaviour too; for example putting two strings into a function to add two numbers: do we get a sensible error message?</p>
+<p id="index-2">Whilst regression tests test the whole executable, unit tests only test a single function or object within the code. The generally check against theoretical results (or simple calculations) with strictly controlled input to the function. This is often where we test unexpected behaviour too; for example putting two strings into a function to add two numbers: do we get a sensible error message?</p>
 <p>Unit tests are designed to test each function to the limits and make sure it returns the right answers and behaves correctly if the wrong kind of data is passed in. If all the program’s functions are tested then, in theory, the whole program should work.</p>
 <p>Unit tests also help with debugging. If a user reports a bug, the error message often gives the function that it occurred in. Using the user’s data you can create a unit test to confirm the bug (replicate it). Then debug your code until that new test passes.</p>
 <p>Examples; simple function with assert, assert nearly, etc.</p>
@@ -409,7 +412,7 @@
 <p>Both R and Python have testing frameworks; modules/libraries that help set-up, run and tear-down all tests in your code. We’ll cover each in turn, but skip to whichever language you’ve chosen.</p>
 <section id="python-pytest">
 <h3>Python: pytest<a class="headerlink" href="#python-pytest" title="Link to this heading">#</a></h3>
-<p id="index-0">Python has a few testing packages. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is a very common one. It</p>
+<p id="index-3">Python has a few testing packages. <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is a very common one. It</p>
 <p>We’re going to test our Fahrenheit to Celsius and vice-versa functions from the first Python chapter. Let’s get these two functions in an Python test file and save it:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -504,7 +507,7 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
 </section>
 <section id="r-testthat">
 <h3>R: testthat<a class="headerlink" href="#r-testthat" title="Link to this heading">#</a></h3>
-<p>The first thing that you need to do is install the <code class="docutils literal notranslate"><span class="pre">testthat</span></code> R package. This can be done from CRAN using the code below.</p>
+<p id="index-4">The first thing that you need to do is install the <code class="docutils literal notranslate"><span class="pre">testthat</span></code> R package. This can be done from CRAN using the code below.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;testthat&quot;</span><span class="p">)</span>
@@ -700,11 +703,11 @@ FAILED<span class="w"> </span>test_temperature_conversion.py::TestTemperatureCon
       </div>
     </a>
     <a class="right-next"
-       href="Mini_courses.html"
+       href="R_ggplot2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mini-courses</p>
+        <p class="prev-next-title">Mini course: ggplot2 tutorial</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
