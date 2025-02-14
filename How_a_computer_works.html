@@ -492,7 +492,7 @@ ext4 or similar.</p>
 <p>The OS then stores files on its filesystem. Each OS has different characteristics and ways of
 storing your files. This we do care about. As we will be writing software that will load in data from
 files at some point, we need to understand how to access files and hence, we need to
-understand the filesystem for he OS we’re using. We’ll go through each OS in turn.</p>
+understand the filesystem for the OS we’re using. We’ll go through each OS in turn.</p>
 <section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <p id="index-3">Windows organises files into drives. Drives are usually physical drives, but can be partitions on a single drive too
@@ -712,7 +712,7 @@ to your Home directory. Extract it. Keep the original zip file (or make a note t
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> cli_example
  <span class="k">dir</span>
- pwd
+ <span class="k">cd</span>
 </pre></div>
 </div>
 </div>
@@ -734,7 +734,7 @@ should see:</p>
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> data_files\sedimentary_data\site1
  <span class="k">dir</span>
- pwd
+ <span class="k">cd</span>
 </pre></div>
 </div>
 </div>
@@ -751,7 +751,7 @@ should see:</p>
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span> <span class="k">cd</span> ..\..\gis_data\site_locations
  <span class="k">dir</span>
- pwd
+ <span class="k">cd</span>
 </pre></div>
 </div>
 </div>
@@ -765,7 +765,7 @@ should see:</p>
 </div>
 <p>And in the GUI, if you go up one directory, then into <code class="docutils literal notranslate"><span class="pre">gis_data</span></code>, then <code class="docutils literal notranslate"><span class="pre">site_locations</span></code> you should see:</p>
 <img alt="image of files and folders" src="_images/filesystem_gui_ex1_4.png" />
-<p>Feel free to continue to explore the folders, using both the GUI and CLI to navigate. Remember to use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to
+<p>Feel free to continue to explore the folders, using both the GUI and CLI to navigate. Remember to use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span></code> to
 find where you are if you need to.</p>
 <p>Once you’ve done this in Windows or Linux (or Mac), try on the other operating system as it’s good to have a basic understanding
 of both main types.</p>
