@@ -763,9 +763,8 @@ This is where <code class="docutils literal notranslate"><span class="pre">if</s
 <h3>R <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#r-if-statement" title="Link to this heading">#</a></h3>
 <p id="index-6">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
 statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.
-In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is executed.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is executed; so something like this (where <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">stuff</span> <span class="pre">&gt;</span></code> would be
+replaced by actual code in real life).</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="n">block</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">statements</span><span class="p">,</span><span class="w"> </span><span class="n">executed</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">condition1</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="kc">TRUE</span><span class="o">&gt;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">condition2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -779,10 +778,9 @@ In general, we can put together multiple conditions. Only the first condition th
 <span class="o">&lt;</span><span class="n">next</span><span class="w"> </span><span class="n">statement</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">program</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</div>
 <p>Let’s do one of the conditions of our table above.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 <span class="n">temperature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 
@@ -793,8 +791,8 @@ In general, we can put together multiple conditions. Only the first condition th
 </div>
 </div>
 <p>Here, we’ve check the value of humidity. If the value is “high”, the following is printed:</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">[1] &quot;Either temperate or tropical rainforest&quot;</span>
 </pre></div>
 </div>
@@ -810,8 +808,8 @@ In general, we can put together multiple conditions. Only the first condition th
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;HIGH&quot;</span>
 <span class="n">temperature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 
@@ -831,8 +829,8 @@ so you should see:</p>
 </div>
 <p>We now need to do all combinations, with some logic to decide a few things. There are (as always!)
 a number of ways of doing this. This is using <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> and boolean operators:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 <span class="n">temperature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 
@@ -868,8 +866,8 @@ be given <em>before</em> any processing takes place. This code is so tiny that i
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/BVik22tUSwo" style="border: 0; height: 345px; width: 560px">
 </iframe></div><p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">71</span>
 
 <span class="nf">if </span><span class="p">(</span><span class="n">mark</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -941,8 +939,8 @@ after “1” in the alphabet). You need to be careful of this when doing compar
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>Your code should look something like the following:</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 <span class="n">temperature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;high&quot;</span>
 
@@ -988,16 +986,16 @@ inline comments and block comments.</p>
 <section id="inline-comments-r">
 <h3>Inline comments (R)<a class="headerlink" href="#inline-comments-r" title="Link to this heading">#</a></h3>
 <p id="index-8">Inline comments occur within the line of code:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span><span class="c1"># Increment x</span>
 </pre></div>
 </div>
 </div>
 <p>This style of comment should be avoided if possible. The above example is distracting
 and unnecessary. It may sometimes be useful, for example:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span><span class="c1"># account for boundary cell</span>
 </pre></div>
 </div>
@@ -1008,16 +1006,16 @@ may be preferable to the second style of comments</p>
 <section id="block-comments-r">
 <h3>Block comments (R)<a class="headerlink" href="#block-comments-r" title="Link to this heading">#</a></h3>
 <p id="index-9">Block comments occupy one or more lines. In python they look like:</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1"># increment count to account for boundary cell</span>
 <span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
 <p>Or if you want multiple lines:</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1"># increment count to</span>
 <span class="w"> </span><span class="c1"># account for boundary cell</span>
 <span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
@@ -1032,8 +1030,8 @@ be useful for the people that come after you (including you) so they can underst
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
 It’s often easier to say what <em>not</em> to do, so let’s head in that direction…</p>
 <p>This is poor coding and commenting:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># A dictionary of families who live in each city</span>
 <span class="n">mydict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
 <span class="w">    </span><span class="s">&quot;York&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Powell&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Brantley&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Young&quot;</span><span class="p">),</span>
@@ -1056,8 +1054,8 @@ It’s often easier to say what <em>not</em> to do, so let’s head in that dire
 </div>
 <p>The comments really help understand the code and the intentions, but there are
 completely superfluous if the code was written well:</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">families_by_city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
 <span class="w">    </span><span class="s">&quot;York&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Powell&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Brantley&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Young&quot;</span><span class="p">),</span>
 <span class="w">    </span><span class="s">&quot;Stevenage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Montgomery&quot;</span><span class="p">),</span>
@@ -1077,8 +1075,8 @@ completely superfluous if the code was written well:</p>
 <p>This code doesn’t need any comments now; the variable names make things a lot clearer. You
 can’t compensate for poor style by adding comments…</p>
 <p>You should also avoid comments that simply repeat the code:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">return</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">  </span><span class="c1"># Returns a</span>
 </pre></div>
 </div>
@@ -1086,8 +1084,8 @@ can’t compensate for poor style by adding comments…</p>
 <p>That comments adds nothing to the understanding. If <code class="docutils literal notranslate"><span class="pre">a</span></code> was a proper variable name, e.g. <code class="docutils literal notranslate"><span class="pre">list_of_cells</span></code> then even adding a comment becomes somewhat
 redundant. Add a block comment to the top of a function with details of the function and there is no need at all to comment the return statement.</p>
 <p>The best hint for comments is to write them at the top of code blocks:</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># load in our layers. They have the same extents and resolution</span>
 <span class="n">dem</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">raster</span><span class="p">(</span><span class="s">&#39;test_dem_clipped.tif&#39;</span><span class="p">)</span>
 <span class="n">drainage</span><span class="w"> </span><span class="o">&lt;-</span><span class="nf">raster</span><span class="p">(</span><span class="s">&#39;test_rivers_buffer_utm_clipped.tif&#39;</span><span class="p">)</span>
@@ -1113,8 +1111,8 @@ is in the code. The why is how it’s written.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>Will the code below work?</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">45</span>
 <span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Fred&quot;</span>
 
@@ -1136,8 +1134,8 @@ coercion for most datatypes and hence can introduce bugs if you’re not careful
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>What is printed here?</p>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span>
 
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">13</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1155,8 +1153,8 @@ then stops at 15 inclusive.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>What is printed here?</p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-20</span><span class="p">,</span><span class="m">41</span><span class="p">,</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="bp">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.0</span><span class="o">/</span><span class="m">5.0</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span>
 <span class="p">}</span>
@@ -1179,8 +1177,8 @@ statement is outside the loop, so is only run when the loop is finished.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">conversion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.092903</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">sqft</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">sqm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqft</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">conversion</span>

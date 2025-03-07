@@ -450,8 +450,8 @@ problems.</p></li>
 <section id="installing-git">
 <h2>Installing Git<a class="headerlink" href="#installing-git" title="Link to this heading">#</a></h2>
 <p id="index-1">Git is easily installed on all systems. On linux, use your package manager. On MacOS
-install <cite>via HomeBrew &lt;https://git-scm.com/download/mac&gt;_</cite>. On Windows install the
-<cite>standalone installer &lt;https://git-scm.com/download/win&gt;_</cite>, which provides
+install <a class="reference external" href="https://git-scm.com/download/mac">via HomeBrew</a>. On Windows install the
+<a class="reference external" href="https://git-scm.com/download/win">standalone installer</a>, which provides
 the <code class="docutils literal notranslate"><span class="pre">git</span></code> executable and the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> tool.</p>
 </section>
 <section id="setting-up-git">
@@ -523,35 +523,17 @@ On macOS and Linux:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Atom</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;atom</span> <span class="pre">--wait&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>nano</p></td>
+<tr class="row-even"><td><p>nano</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;nano</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>BBEdit (Mac, with command line tools)</p></td>
+<tr class="row-odd"><td><p>BBEdit (Mac, with command line tools)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;bbedit</span> <span class="pre">-w&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Sublime Text (Mac)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;/Applications/Sublime\</span> <span class="pre">Text.app/Contents/SharedSupport/bin/subl</span> <span class="pre">-n</span> <span class="pre">-w&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Sublime Text (Win, 32-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Sublime Text (Win, 64-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Notepad (Win)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;c:/Windows/System32/notepad.exe&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Notepad++ (Win, 32-bit install)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Notepad++ (Win, 64-bit install)</p></td>
+<tr class="row-odd"><td><p>Notepad++ (Win, 64-bit install)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Kate (Linux)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;kate&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Gedit (Linux)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;gedit</span> <span class="pre">--wait</span> <span class="pre">--new-window&quot;</span></code></p></td>
@@ -571,7 +553,7 @@ On macOS and Linux:</p>
 </tbody>
 </table>
 </div>
-<p>It is possible to reconfigure the text editor for Git whenever you want to change it.</p>
+<p>It is possible to reconfigure the text editor for Git whenever you want to change it. <code class="docutils literal notranslate"><span class="pre">nano</span></code> is probably the best bet as it’s usually on every system.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p><strong>Exiting Vim</strong></p>
@@ -629,6 +611,7 @@ More generally, you can get the list of available <code class="docutils literal 
 <p id="index-3">Once Git is configured, we can start using it.</p>
 <p>We will use a story of Muske and Branston who are investigating if it
 is possible to send a planetary lander to Mars.</p>
+<p>On Mac or Linux (<a class="reference internal" href="_images/linux_mac_logo.png"><img alt="maclin" src="_images/linux_mac_logo.png" style="height: 16px;" /></a>), run the following in a terminal. On windows (<a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a>), run these commands in the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> application.</p>
 <p>First, let’s create a new directory in the <code class="file docutils literal notranslate"><span class="pre">Desktop/</span></code> folder for our work and then change the current working directory to the newly created one:</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
@@ -980,7 +963,7 @@ it tells us that a file it already knows about has been modified:</p>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
 <span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
-<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
 <span class="go">    modified:   mars.txt</span>
 
@@ -1035,7 +1018,7 @@ the <code class="docutils literal notranslate"><span class="pre">+</span></code>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes not staged for commit:</span>
 <span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
-<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
 <span class="go">    modified:   mars.txt</span>
 
