@@ -45,6 +45,11 @@ Generating visualizations with pyplot is very quick:
     plt.ylabel('some numbers')
     plt.show()
 
+.. figure:: ../images/matplotlib_fig1.png
+    :alt: A simple line plot of numbers 1-4 on both x and y axis
+    
+    Simple line plot from the code above.
+
 You may be wondering why the x-axis ranges from 0-3 and the y-axis
 from 1-4.  If you provide a single list or array to
 ``plot``, matplotlib assumes it is a
@@ -60,6 +65,12 @@ arguments.  For example, to plot x versus y, you can write:
     :caption: |python|
 
     plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+    plt.show()
+
+.. figure:: ../images/matplotlib_fig2.png
+    :alt: A simple line plot of given arrays for x and y
+    
+    Simple line plot from the code above.
 
 Formatting the style of your plot
 ----------------------------------
@@ -79,6 +90,12 @@ example, to plot the above with red circles, you would issue
     plt.plot([1, 2, 3, 4], [1, 4, 9, 16], 'ro')
     plt.axis((0, 6, 0, 20))
     plt.show()
+
+.. figure:: ../images/matplotlib_fig3.png
+    :alt: A simple scatter plot of given arrays for x and y using red circles
+    
+    Simple scatter plot from the code above.
+
 
 See the ``plot`` documentation for a complete
 list of line styles and format strings.  The
@@ -104,6 +121,12 @@ using arrays.
     # red dashes, blue squares and green triangles
     plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
     plt.show()
+
+.. figure:: ../images/matplotlib_fig4.png
+    :alt: A scatter plot show different formatting in a single plot call
+
+    Scatter plot from the code above.
+
 
 
 Plotting with keyword strings
@@ -161,6 +184,49 @@ many plotting functions. For example:
     plt.plot(names, values)
     plt.suptitle('Categorical Plotting')
     plt.show()
+
+.. figure:: ../images/matplotlib_fig5.png
+    :alt: Three subplots showing display of categorical arrays
+    
+    Three plots in one graph; all of catgorical arrays
+
+In the above code, I've also introduced the idea of subplots. This allows you to
+place seperate plots in a single figure. The figure also has a size ``(9, 3)`` inches.
+Each subplot is added in the following way:
+
+ - ``subplot(131)`` means I am going to give you 1 row and 3 columns of plots; this is plot 1
+ - ``subplot(132)`` means I am going to give you 1 row and 3 columns of plots; this is plot 2
+ - ``subplot(133)`` means I am going to give you 1 row and 3 columns of plots; this is plot 3
+
+.. admonition:: Practical exercise
+
+    Repeat the above plot, but do three rows and 1 column.
+
+.. admonition:: Solution
+   :class: toggle
+
+   .. code-block:: Python
+      :caption: |python|
+
+      names = ['group_a', 'group_b', 'group_c']
+      values = [1, 10, 100]
+      plt.figure(figsize=(3, 9))
+
+      plt.subplot(311)
+      plt.bar(names, values)
+      plt.subplot(312)
+      plt.scatter(names, values)
+      plt.subplot(313)
+      plt.plot(names, values)
+      plt.suptitle('Categorical Plotting')
+      plt.show()
+
+   Note, apart from altering the order of the subplot calls, I've also switch the size of the figure.
+   
+   .. figure:: ../images/matplotlib_fig6.png
+      :alt: Three subplots showing display of categorical arrays using rows
+    
+      Three plots in one graph; all of catgorical arrays
 
 
 Controlling line properties
@@ -323,7 +389,9 @@ as your heart desires:
     plt.subplot(211)             # make subplot(211) in the first figure
                                  # current
     plt.title('Easy as 1, 2, 3') # subplot 211 title
+    plt.show()
 
+The above code will open two figures.
 
 If you are making lots of figures, you need to be aware of one
 more thing: the memory required for a figure is not completely
@@ -355,7 +423,7 @@ text in the indicated locations
     n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
 
 
-    plt.xlabel('Smarts')
+    plt.xlabel('IQ')
     plt.ylabel('Probability')
     plt.title('Histogram of IQ')
     plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
@@ -363,6 +431,10 @@ text in the indicated locations
     plt.grid(True)
     plt.show()
 
+.. figure:: ../images/matplotlib_fig7.png
+   :alt: Histogram of IQ showing how to add text, including greek symbols
+
+   Demonstration of using the ``plt.text`` and greek letters.
 
 All of the ``text`` functions return a ``matplotlib.text.Text``
 instance.  Just as with lines above, you can customize the properties by
@@ -379,6 +451,7 @@ Using mathematical expressions in text
 .. index::
   single: pyplot; maths 
 
+In the example above I used `TeX <https://en.wikipedia.org/wiki/TeX>`_ type expressions to give Greek letters.
 Matplotlib accepts TeX equation expressions in any text expression.
 For example to write the expression :math:`\sigma_i=15` in the title,
 you can write a TeX expression surrounded by dollar signs:
@@ -390,12 +463,12 @@ you can write a TeX expression surrounded by dollar signs:
 
 The ``r`` preceding the title string is important -- it signifies
 that the string is a *raw* string and not to treat backslashes as
-python escapes.  matplotlib has a built-in TeX expression parser and
-layout engine, and ships its own math fonts.Thus, you can use mathematical text across
-platforms without requiring a TeX installation.  For those who have LaTeX
+python escapes.  ``matplotlib`` has a built-in TeX expression parser and
+layout engine, and ships its own math fonts. Thus, you can use mathematical text across
+platforms without requiring a TeX installation. For those who have LaTeX
 and dvipng installed, you can also use LaTeX to format your text and
 incorporate the output directly into your display figures or saved
-postscript. 
+postscript. This allows the creation of publication-ready images.
 
 Annotating text
 ~~~~~~~~~~~~~~~~~~
@@ -431,6 +504,11 @@ these arguments are ``(x, y)`` tuples.
 In this basic example, both the ``xy`` (arrow tip) and ``xytext``
 locations (text location) are in data coordinates.  There are a
 variety of other coordinate systems one can choose. 
+
+.. figure:: ../images/matplotlib_fig8.png
+   :alt: Using the annotate command
+
+   Demonstration of the ``annotate`` function.
 
 
 Logarithmic and other nonlinear axes
@@ -499,6 +577,13 @@ is shown below.
 
     plt.show()
 
+.. figure:: ../images/matplotlib_fig9.png
+   :alt: Example of using different scales on axes
+
+   Demonstration using different scales on the axes.
+
+
 It is also possible to add your own scale, see `matplotlib.scale <https://matplotlib.org/stable/api/scale_api.html#module-matplotlib.scale>`_ for
 details.
+
 
