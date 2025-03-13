@@ -887,7 +887,7 @@ advanced usage options.</p>
 </div>
 </div>
 <p>that text is passed to the script for you to access. On windows things are a bit different as
-the <code class="docutils literal notranslate"><span class="pre">Rscript.exe</span></code> is not generally on the path, so ou have to give the full path, something
+the <code class="docutils literal notranslate"><span class="pre">Rscript.exe</span></code> is not generally on the path, so you have to give the full path, something
 like:</p>
 <div class="literal-block-wrapper docutils container" id="id27">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Windows_logo.png"><img alt="win" src="_images/Windows_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
@@ -896,8 +896,12 @@ like:</p>
 </div>
 </div>
 <p>Replacing the R version appropriately. You’ll need to do this for the rest of this
-tutorial or add the <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> exectuable to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
-<p>Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.R</span></code></p>
+tutorial or add the <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> exectuable to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable (not possible
+if you don’t have admin rights). As an alternative you can create an alias. This video
+takes you though this.</p>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/0ZI-EHZWxfQ" style="border: 0; height: 345px; width: 560px">
+</iframe></div><p>Let’s create this simple script, named <code class="docutils literal notranslate"><span class="pre">arg_script.R</span></code></p>
 <div class="literal-block-wrapper docutils container" id="id28">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>

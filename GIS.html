@@ -341,7 +341,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system-crs">Coordinate References System (CRS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system">Coordinate References System</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
@@ -420,18 +420,18 @@ lot of data very efficiently, e.g. land hieght data where you need continuous me
 </figcaption>
 </figure>
 </section>
-<section id="coordinate-references-system-crs">
-<h3>Coordinate References System (CRS)<a class="headerlink" href="#coordinate-references-system-crs" title="Link to this heading">#</a></h3>
+<section id="coordinate-references-system">
+<h3>Coordinate References System<a class="headerlink" href="#coordinate-references-system" title="Link to this heading">#</a></h3>
 <p id="index-3">GIS is a 2D system. But the Earth is 3D; almost a sphere in fact. To display the
-3D surface to a 2D screen you need to project into a 2D space; the CRS. Any
-CRS required trade offs. You can preserve area or shape or distance, but not all three!
+3D surface to a 2D screen you need to project into a 2D space; the Coordinate References System
+(CRS). Any  CRS required trade offs. You can preserve area or shape or distance, but not all three!
 Compare the two projections of the Earth below; the Mollweide preserves areas, so the size of Greenland
 to Africa is shown to scale, but you could not navigate using this map; your bearings
-would be very wrong! The Mercator projection preserves areas; excellent for navigation, but
+would be very wrong! The Mercator projection preserves angles; excellent for navigation, but
 not so good for comparing areas. Greenland (2.1 million km<sup>2</sup>) is not bigger than the whole of Africa
 (30.1 million km<sup>2</sup>)!</p>
 <p>In R and Python if you are doing operations on geospatial data they <strong>must</strong> be in the
-same project space. Your operation may work, but you won’t get the result you want!</p>
+same projection space. Your operation may work, but you won’t get the result you want!</p>
 <p>Common projection spaces are “mercator” and “Universal Tranverse Mercator (UTM)”. For
 “regional” studies UTM is best. It’s in metres (not degrees!) and covers a reasonably
 large area with little deformation.</p>
@@ -463,7 +463,7 @@ change your working directory to match where you’ve downloaded the data.</p>
 Let’s look at rasters first.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">raster</span><span class="p">(</span><span class="s">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rast</span><span class="p">(</span><span class="s">&quot;tidal_range.tif&quot;</span><span class="p">)</span>
 <span class="n">my_raster</span>
 </pre></div>
 </div>
@@ -548,13 +548,15 @@ raster).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library can also load vector data:</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>The same functions as above (<code class="docutils literal notranslate"><span class="pre">crs()</span></code>, <code class="docutils literal notranslate"><span class="pre">ext()</span></code>, <code class="docutils literal notranslate"><span class="pre">project()</span></code>) work as expected on
 vector data.</p>
-</section>
+<div class="video_wrapper align-center" style="text-align: center">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/bzD-DGFcxUw" style="border: 0; height: 345px; width: 560px">
+</iframe></div></section>
 <section id="the-sf-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">sf</span></code> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
 <p id="index-6">R also have another popular library for dealing with shapefiles/vector data; <code class="docutils literal notranslate"><span class="pre">sf</span></code>.
@@ -562,7 +564,7 @@ This library has more features than <code class="docutils literal notranslate"><
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
-<span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
+<span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,7 +603,7 @@ and geometric calculations (area, distances, lengths).</p>
 easy to switch a vector dataset between the two.</p>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">))</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -826,7 +828,7 @@ come from <code class="docutils literal notranslate"><span class="pre">shapely</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis">GIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system-crs">Coordinate References System (CRS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-references-system">Coordinate References System</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">

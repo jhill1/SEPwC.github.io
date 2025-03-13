@@ -688,9 +688,7 @@ of 1.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Writing our table for conversion using a</strong> <code class="docutils literal notranslate"><span class="pre">for</span></code> <strong>loop?</strong></p>
-<blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
-</div></blockquote>
+<p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -757,9 +755,7 @@ can be any conditional statement, including key presses (but that requires some 
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Writing our table for conversion using a</strong> <code class="docutils literal notranslate"><span class="pre">while</span></code> <strong>loop?</strong></p>
-<blockquote>
-<div><p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
-</div></blockquote>
+<p>Write out the Fahrenheit to Celsius conversion table using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
@@ -826,25 +822,23 @@ This is where <code class="docutils literal notranslate"><span class="pre">if</s
 <h3>Python <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#python-if-statement" title="Link to this heading">#</a></h3>
 <p id="index-8">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, followed by zero or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions. A final <code class="docutils literal notranslate"><span class="pre">else</span></code>
 statement can be used to capture the situation where everything is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
-In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">True</span></code> is executed.</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
-     <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
- <span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
-     <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
- <span class="k">elif</span> <span class="n">condition3</span><span class="p">:</span>
-     <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">2</span> <span class="n">are</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition3</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
- <span class="k">else</span><span class="p">:</span>
-     <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">3</span> <span class="n">are</span> <span class="kc">False</span><span class="o">&gt;</span>
+In general, we can put together multiple conditions. Only the first condition that is <code class="docutils literal notranslate"><span class="pre">True</span></code> is executed.
+The bits between the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> is where you would add your code to run on each condition.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">elif</span> <span class="n">condition3</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">2</span> <span class="n">are</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">condition3</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">block</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">executed</span> <span class="k">if</span> <span class="n">conditions</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">3</span> <span class="n">are</span> <span class="kc">False</span><span class="o">&gt;</span>
 
- <span class="o">&lt;</span><span class="nb">next</span> <span class="n">statement</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">next</span> <span class="n">statement</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</div>
 <p>Let’s do one of the conditions of our table above.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 
@@ -854,8 +848,8 @@ In general, we can put together multiple conditions. Only the first condition th
 </div>
 </div>
 <p>Here, we’ve check the value of humidity. If the value is “high”, the following is printed:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Either temperate or tropical rainforest</span>
 </pre></div>
 </div>
@@ -865,15 +859,13 @@ In general, we can put together multiple conditions. Only the first condition th
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Add an</strong> <code class="docutils literal notranslate"><span class="pre">else</span></code> <strong>block</strong></p>
-<blockquote>
-<div><p>Amend the example above to add an <code class="docutils literal notranslate"><span class="pre">else</span></code> block to print a message about not understanding the input
+<p>Amend the example above to add an <code class="docutils literal notranslate"><span class="pre">else</span></code> block to print a message about not understanding the input
 if humidity is not “high”</p>
-</div></blockquote>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;HIGH&quot;</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 
@@ -886,8 +878,8 @@ if humidity is not “high”</p>
 </div>
 <p>Here, we’ve printed the message “Don’t understand “ with the value of humidity then printed,
 so you should see:</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Don&#39;t understand HIGH</span>
 </pre></div>
 </div>
@@ -895,8 +887,8 @@ so you should see:</p>
 </div>
 <p>We now need to do all combinations, with some logic to decide a few things. There are (as always!)
 a number of ways of doing this. This is using <code class="docutils literal notranslate"><span class="pre">elif</span></code> and boolean operators:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 
@@ -931,8 +923,8 @@ the user possibly see what to change to fix. Here, we’ve also told the user wh
 be given <em>before</em> any processing takes place. This code is so tiny that it makes no difference.</p>
 </div>
 <p>The second way of working out the logic is by nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. Here’s an example:</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">mark</span><span class="o">=</span><span class="mi">71</span>
 
  <span class="k">if</span> <span class="n">mark</span> <span class="o">&gt;=</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">mark</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
@@ -977,16 +969,14 @@ if the first one is <code class="docutils literal notranslate"><span class="pre"
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
 <p><strong>Test the code</strong></p>
-<blockquote>
-<div><p>Try the code above with different values of <code class="docutils literal notranslate"><span class="pre">mark</span></code>. Does it work as expected?</p>
-</div></blockquote>
+<p>Try the code above with different values of <code class="docutils literal notranslate"><span class="pre">mark</span></code>. Does it work as expected?</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>It should work for all floating point and integer values of mark. What if you set <code class="docutils literal notranslate"><span class="pre">mark</span> <span class="pre">=</span> <span class="pre">&quot;test&quot;</span></code>?
 Then what does it do? You should see something like:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/cli.png"><img alt="cli" src="_images/cli.png" style="height: 16px;" /></a> <a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">---------------------------------------------------------------------------</span>
 <span class="go">TypeError                                 Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-3-aaf3cf3cd246&gt; in &lt;module&gt;()</span>
@@ -1007,14 +997,14 @@ Then what does it do? You should see something like:</p>
 </iframe></div><p>Now you’ve seen nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements in action. Try the final practical exercise of this section.</p>
 <div class="admonition-practical-exercise admonition">
 <p class="admonition-title">Practical exercise</p>
-<p><strong>Nested ``if`` version</strong></p>
+<p><strong>Nested ** ``if`` ** version</strong></p>
 <p>Re-write the environment code using nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>Your code should look something like the following:</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
  <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
 
@@ -1060,16 +1050,16 @@ styles to keep your code consistent.
 <section id="inline-comments-python">
 <h3>Inline comments (Python)<a class="headerlink" href="#inline-comments-python" title="Link to this heading">#</a></h3>
 <p id="index-10">Inline comments occur within the line of code:</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Increment x</span>
 </pre></div>
 </div>
 </div>
 <p>This style of comment should be avoided if possible. The above example is distracting
 and unnecessary. It may sometimes be useful, for example:</p>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># account for boundary cell</span>
 </pre></div>
 </div>
@@ -1080,16 +1070,16 @@ may be preferable to the second style of comments</p>
 <section id="block-comments-python">
 <h3>Block comments (Python)<a class="headerlink" href="#block-comments-python" title="Link to this heading">#</a></h3>
 <p id="index-11">Block comments occupy one or more lines. In python they look like:</p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1"># increment count to account for boundary cell</span>
  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <p>Or if you want multiple lines:</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1"># increment count to</span>
  <span class="c1"># account for boundary cell</span>
  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1104,8 +1094,8 @@ why you may “wrap” comments onto multiple lines.</p>
 <p id="index-12">Python also has a second style of comments that also act as a way of documenting code. They should be used
 underneath functions, classes and modules where public facing (i.e. where documentation is helpful!).</p>
 <p>An example is something like this:</p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
 <span class="w">     </span><span class="sd">&quot;&quot;&quot;Form a complex number.</span>
 
@@ -1129,8 +1119,8 @@ be useful for the people that come after you (including you) so they can underst
 They should not simply repeat the code, nor be used to explain code that could have better variable names.
 It’s often easier to say what <em>not</em> to do, so let’s head in that direction…</p>
 <p>This is poor coding and commenting:</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1"># A dictionary of families who live in each city</span>
  <span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span>
      <span class="s2">&quot;York&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Powell&quot;</span><span class="p">,</span> <span class="s2">&quot;Brantley&quot;</span><span class="p">,</span> <span class="s2">&quot;Young&quot;</span><span class="p">],</span>
@@ -1150,8 +1140,8 @@ It’s often easier to say what <em>not</em> to do, so let’s head in that dire
 </div>
 <p>The comments really help understand the code and the intentions, but there are
 completely superfluous if the code was written well:</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">families_by_city</span> <span class="o">=</span> <span class="p">{</span>
      <span class="s2">&quot;York&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Powell&quot;</span><span class="p">,</span> <span class="s2">&quot;Brantley&quot;</span><span class="p">,</span> <span class="s2">&quot;Young&quot;</span><span class="p">],</span>
      <span class="s2">&quot;Stevenage&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Montgomery&quot;</span><span class="p">],</span>
@@ -1168,8 +1158,8 @@ completely superfluous if the code was written well:</p>
 <p>This code doesn’t need any comments now; the variable names make things a lot clearer. You
 can’t compensate for poor style by adding comments…</p>
 <p>You should also avoid comments that simply repeat the code:</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">return</span> <span class="n">a</span>  <span class="c1"># Returns a</span>
 </pre></div>
 </div>
@@ -1177,8 +1167,8 @@ can’t compensate for poor style by adding comments…</p>
 <p>That comments adds nothing to the understanding. If <code class="docutils literal notranslate"><span class="pre">a</span></code> was a proper variable name, e.g. <code class="docutils literal notranslate"><span class="pre">list_of_cells</span></code> then even adding a comment becomes somewhat
 redundant. Add a docstring to the top of a function and there is no need at all to comment the return statement.</p>
 <p>The best hint for comments is to write them at the top of code blocks:</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1"># we now extend this mask - we only need to do this, if the</span>
  <span class="c1"># no data occurs (i.e. no contiguous data)</span>
  <span class="k">if</span> <span class="p">(</span><span class="n">nodata</span> <span class="ow">in</span> <span class="n">orig_raster</span><span class="p">):</span>
@@ -1200,8 +1190,8 @@ is in the code. The why is how it’s written.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>Will the code below work?</p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="n">a</span> <span class="o">=</span> <span class="mi">45</span>
  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Fred&quot;</span>
 
@@ -1220,8 +1210,8 @@ is in the code. The why is how it’s written.</p>
 </iframe></div><div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>What is printed here?</p>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">15</span>
 
  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2</span><span class="p">)):</span>
@@ -1233,8 +1223,8 @@ is in the code. The why is how it’s written.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>The number 13 is printed only. However, this is only the case after we’ve fixed the code!</p>
-<div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">15</span>
 
  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
@@ -1250,8 +1240,8 @@ iteration, which is equal to the upper limit of range, so the loop terminates.</
 </iframe></div><div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>What is printed here?</p>
-<div class="literal-block-wrapper docutils container" id="id43">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span> <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
      <span class="n">F</span> <span class="o">=</span> <span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="mi">32</span>
 
@@ -1273,8 +1263,8 @@ statement is not indented to within the loop, so is only run when the loop is fi
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<div class="literal-block-wrapper docutils container" id="id44">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">conversion</span> <span class="o">=</span> <span class="mf">0.092903</span>
 <span class="k">for</span> <span class="n">sqft</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">sqm</span> <span class="o">=</span> <span class="n">sqft</span> <span class="o">*</span> <span class="n">conversion</span>
