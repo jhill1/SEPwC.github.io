@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPHGXML15W"></script>
@@ -27,40 +26,44 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Sentiment_analysis';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -69,6 +72,7 @@
     <link rel="prev" title="Mini course: Pyplot tutorial" href="python_plotting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,32 +80,16 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,7 +97,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -117,16 +104,25 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +137,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="index.html">
   
@@ -152,7 +150,14 @@
     <p class="title logo__title">SEPwC  documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
@@ -193,7 +198,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -202,14 +207,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -300,27 +305,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -352,17 +349,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="mini-course-sentiment-analysis">
-<h1>Mini course: Sentiment Analysis<a class="headerlink" href="#mini-course-sentiment-analysis" title="Permalink to this heading">#</a></h1>
+<h1>Mini course: Sentiment Analysis<a class="headerlink" href="#mini-course-sentiment-analysis" title="Link to this heading">#</a></h1>
 <p id="index-0">Sentiment analysis or opinion mining is a way of extracting feelings from large amounts of text. When
 we read text we can use our understanding of the words to derive an emotion from the text the
 author is trying to convey. This can be characterised as <em>positive</em> or <em>negative</em> or even in
 more nuanced emotions like <em>joy</em> or <em>anger</em>.</p>
 <p>This section is heavily based on <a class="reference external" href="https://www.tidytextmining.com/sentiment.html">“Text Mining with R”</a></p>
 <section id="the-pipeline-in-r">
-<h2>The pipeline in R<a class="headerlink" href="#the-pipeline-in-r" title="Permalink to this heading">#</a></h2>
+<h2>The pipeline in R<a class="headerlink" href="#the-pipeline-in-r" title="Link to this heading">#</a></h2>
 <p id="index-1">We can use R’s <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code>, along with <code class="docutils literal notranslate"><span class="pre">tidytext</span></code>, data structures to perform these kinds of analyses quite easily,
 building a pipeline, something like this:</p>
 <p>The Sentiment lexicon is the key to this. The simplest way to analyse text is to break it into tokens: words.
@@ -389,7 +386,7 @@ need to check if that licence is OK with your project. See <a class="reference i
 </div>
 <p>Let’s get these lexicons and see what they contain.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidytext</span><span class="p">)</span>
 
 <span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;afinn&quot;</span><span class="p">)</span>
@@ -403,25 +400,25 @@ need to check if that licence is OK with your project. See <a class="reference i
 <p>Each one is a table of words (the unigram) and the sentiment, either as an emotion, positive/negative, or a score.</p>
 </section>
 <section id="using-the-inner-join-to-get-the-sentiments-from-your-data">
-<h2>Using the <code class="docutils literal notranslate"><span class="pre">inner</span> <span class="pre">join</span></code> to get the sentiments from your data<a class="headerlink" href="#using-the-inner-join-to-get-the-sentiments-from-your-data" title="Permalink to this heading">#</a></h2>
+<h2>Using the <code class="docutils literal notranslate"><span class="pre">inner</span> <span class="pre">join</span></code> to get the sentiments from your data<a class="headerlink" href="#using-the-inner-join-to-get-the-sentiments-from-your-data" title="Link to this heading">#</a></h2>
 <p>We can use the Jane Austen book database as our text. Let’s first see which words are used to convey “joy” in
 <em>Emma</em>. We first need to separate the words into rows in a dataframe, for which we can use
 <code class="docutils literal notranslate"><span class="pre">unnest_tokens()</span></code>. When we do this, we can also set up some other columns to help keep track of chapters, etc.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">janeaustenr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
 
-<span class="n">tidy_books</span> <span class="o">&lt;-</span> <span class="nf">austen_books</span><span class="p">()</span> <span class="o">%&gt;%</span>
-  <span class="nf">group_by</span><span class="p">(</span><span class="n">book</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1"># so we have each book as a group</span>
-  <span class="nf">mutate</span><span class="p">(</span>            <span class="c1"># add some new columns</span>
-    <span class="n">linenumber</span> <span class="o">=</span> <span class="nf">row_number</span><span class="p">(),</span>  <span class="c1"># like a line number</span>
-    <span class="n">chapter</span> <span class="o">=</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">str_detect</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="c1"># a chapter</span>
-                                <span class="nf">regex</span><span class="p">(</span><span class="s">&quot;^chapter [\\divxlc]&quot;</span><span class="p">,</span>
-                                      <span class="n">ignore_case</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))))</span> <span class="o">%&gt;%</span>
-  <span class="nf">ungroup</span><span class="p">()</span> <span class="o">%&gt;%</span> <span class="c1"># now we&#39;ve done that, ungroup</span>
-  <span class="nf">unnest_tokens</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># and finally seperate out the words!</span>
+<span class="n">tidy_books</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">austen_books</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">book</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1"># so we have each book as a group</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="w">            </span><span class="c1"># add some new columns</span>
+<span class="w">    </span><span class="n">linenumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">row_number</span><span class="p">(),</span><span class="w">  </span><span class="c1"># like a line number</span>
+<span class="w">    </span><span class="n">chapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="nf">str_detect</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="c1"># a chapter</span>
+<span class="w">                                </span><span class="nf">regex</span><span class="p">(</span><span class="s">&quot;^chapter [\\divxlc]&quot;</span><span class="p">,</span>
+<span class="w">                                      </span><span class="n">ignore_case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">ungroup</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1"># now we&#39;ve done that, ungroup</span>
+<span class="w">  </span><span class="nf">unnest_tokens</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="c1"># and finally seperate out the words!</span>
 </pre></div>
 </div>
 </div>
@@ -431,14 +428,14 @@ to an <code class="docutils literal notranslate"><span class="pre">inner_join</s
 <p>Let’s do that, but first we need to filter for the book <em>Emma</em>, then we can do the join and look
 at the output:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">nrc_joy</span> <span class="o">&lt;-</span> <span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-           <span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span> <span class="o">==</span> <span class="s">&quot;joy&quot;</span><span class="p">)</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">nrc_joy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">           </span><span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;joy&quot;</span><span class="p">)</span>
 
-<span class="n">tidy_books</span> <span class="o">%&gt;%</span>
-   <span class="nf">filter</span><span class="p">(</span><span class="n">book</span> <span class="o">==</span> <span class="s">&quot;Emma&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-   <span class="nf">inner_join</span><span class="p">(</span><span class="n">nrc_joy</span><span class="p">)</span> <span class="o">%&gt;%</span>
-   <span class="nf">count</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">sort</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">filter</span><span class="p">(</span><span class="n">book</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Emma&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">inner_join</span><span class="p">(</span><span class="n">nrc_joy</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">count</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -448,14 +445,14 @@ occurrences order. My output gave “good”, “friend”, “hope” as the to
 changes throughout the book. It’s a matter of keep track with an index. Here, we’ll use 80
 lines of text to form a section. This will depend what text you are analysing.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>
 
-<span class="n">jane_austen_sentiment</span> <span class="o">&lt;-</span> <span class="n">tidy_books</span> <span class="o">%&gt;%</span>
-  <span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;bing&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
-  <span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">linenumber</span> <span class="o">%/%</span> <span class="m">80</span><span class="p">,</span> <span class="n">sentiment</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span> <span class="o">=</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">values_from</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">values_fill</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span> <span class="o">=</span> <span class="n">positive</span> <span class="o">-</span> <span class="n">negative</span><span class="p">)</span>
+<span class="n">jane_austen_sentiment</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;bing&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">negative</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -467,12 +464,12 @@ matches to words (i.e. words occur multiple times in <em>Emma</em>). Have a look
 dataframe. Also look at the original <code class="docutils literal notranslate"><span class="pre">tidy_books</span></code> frame. Note that columns <code class="docutils literal notranslate"><span class="pre">linenumber</span></code> and <code class="docutils literal notranslate"><span class="pre">chapter</span></code> have been
 dropped during the processing. We can quickly plot these data:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">jane_austen_sentiment</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">book</span><span class="p">))</span> <span class="o">+</span>
-    <span class="nf">geom_col</span><span class="p">(</span><span class="n">show.legend</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">book</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">scales</span> <span class="o">=</span> <span class="s">&quot;free_x&quot;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">jane_austen_sentiment</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">book</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_col</span><span class="p">(</span><span class="n">show.legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free_x&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -487,11 +484,11 @@ are positive and negative labels (not just “joy”, etc).</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_afinn</span> <span class="o">&lt;-</span> <span class="n">tidy_books</span> <span class="o">%&gt;%</span>
-    <span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;afinn&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">linenumber</span> <span class="o">%/%</span> <span class="m">80</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarise</span><span class="p">(</span><span class="n">sentiment</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_afinn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;afinn&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarise</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -499,14 +496,14 @@ are positive and negative labels (not just “joy”, etc).</p>
 to create the index; we can then summarise by summing the <code class="docutils literal notranslate"><span class="pre">value</span></code> from <code class="docutils literal notranslate"><span class="pre">afinn</span></code>
 over the index (i.e. every 80 lines).</p>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_nrc</span> <span class="o">&lt;-</span> <span class="n">tidy_books</span> <span class="o">%&gt;%</span>
-    <span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-               <span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span> <span class="s">&quot;negative&quot;</span><span class="p">))</span>
-              <span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">linenumber</span> <span class="o">%/%</span> <span class="m">80</span><span class="p">,</span> <span class="n">sentiment</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span> <span class="o">=</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">values_from</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">values_fill</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span> <span class="o">=</span> <span class="n">positive</span> <span class="o">-</span> <span class="n">negative</span><span class="p">)</span>
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">jane_austen_sentiment_nrc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tidy_books</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">inner_join</span><span class="p">(</span><span class="nf">get_sentiments</span><span class="p">(</span><span class="s">&quot;nrc&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">               </span><span class="nf">filter</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;positive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;negative&quot;</span><span class="p">))</span>
+<span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">count</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linenumber</span><span class="w"> </span><span class="o">%/%</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="n">sentiment</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentiment</span><span class="p">,</span><span class="w"> </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">values_fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sentiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">negative</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -525,7 +522,7 @@ The rest of the functions are then identical to the <code class="docutils litera
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -553,7 +550,9 @@ The rest of the functions are then identical to the <code class="docutils litera
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -611,8 +610,8 @@ By Jon Hill
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
