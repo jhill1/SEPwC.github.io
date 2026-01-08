@@ -28,30 +28,27 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
@@ -71,7 +68,6 @@
     <link rel="next" title="How a computer works" href="How_a_computer_works.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -122,8 +130,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -153,11 +160,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -172,12 +183,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="a_first_coding_exercise.html">Our first coding exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R3.html">R: part 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
@@ -306,16 +318,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -374,13 +394,13 @@ slip behind a little.</p>
 <td><p><a class="reference internal" href="Revision_control.html#revision-control-with-git"><span class="std std-ref">Revision control</span></a>,</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p><a class="reference internal" href="Python2.html#python-part-2"><span class="std std-ref">Python</span></a> or <a class="reference internal" href="R2.html#r-part-2"><span class="std std-ref">R</span></a> 2,  <a class="reference internal" href="Testing_code.html#testing-code"><span class="std std-ref">Testing code</span></a>,</p></td>
+<td><p><a class="reference internal" href="Python2.html#python-part-2"><span class="std std-ref">Python</span></a> or <a class="reference internal" href="R2.html#r-part-2"><span class="std std-ref">R</span></a> 2,  <a class="reference internal" href="Software_development.html#software-development"><span class="std std-ref">Software development</span></a>,</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
-<td><p><a class="reference internal" href="Python3.html#python-part-3"><span class="std std-ref">Python</span></a> or <a class="reference internal" href="R3.html#r-part-3"><span class="std std-ref">R</span></a> 3,  <a class="reference internal" href="Spreadsheets_data.html#moving-from-spreadsheets-to-data"><span class="std std-ref">Moving from spreadsheets to data</span></a>,</p></td>
+<td><p><a class="reference internal" href="Testing_code.html#testing-code"><span class="std std-ref">Testing code</span></a>, <a class="reference internal" href="github.html#using-git-with-github"><span class="std std-ref">GitHub</span></a>, <a class="reference internal" href="a_first_coding_exercise.html#our-first-coding-exercise"><span class="std std-ref">formative exercise</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
-<td><p><a class="reference internal" href="Software_development.html#software-development"><span class="std std-ref">Software development</span></a>, <a class="reference internal" href="a_first_coding_exercise.html#our-first-coding-exercise"><span class="std std-ref">formative exercise</span></a></p></td>
+<td><p><a class="reference internal" href="Python3.html#python-part-3"><span class="std std-ref">Python</span></a> or <a class="reference internal" href="R3.html#r-part-3"><span class="std std-ref">R</span></a> 3,  <a class="reference internal" href="Spreadsheets_data.html#moving-from-spreadsheets-to-data"><span class="std std-ref">Moving from spreadsheets to data</span></a>,</p></td>
 </tr>
 <tr class="row-odd"><td><p>8</p></td>
 <td><p>Mini-courses</p></td>
@@ -574,9 +594,6 @@ software is free (in terms of beer and speech) is amazing.</p>
 <li class="toctree-l2"><a class="reference internal" href="Revision_control.html#adding-files">Adding files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Revision_control.html#git-history">Git history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Revision_control.html#ignoring-files">Ignoring files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#github">Github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#collaboration-with-git">Collaboration with Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Revision_control.html#conflict">Conflict!</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a><ul>
@@ -597,6 +614,12 @@ software is free (in terms of beer and speech) is amazing.</p>
 <li class="toctree-l2"><a class="reference internal" href="R2.html#r-exercises-2">R Exercises 2</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="github.html#github">Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github.html#collaboration-with-git">Collaboration with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github.html#conflict">Conflict!</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Software_development.html#revision-control">Revision control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Software_development.html#testing">Testing</a></li>
@@ -605,6 +628,15 @@ software is free (in terms of beer and speech) is amazing.</p>
 <li class="toctree-l2"><a class="reference internal" href="Software_development.html#development-tools">Development tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Software_development.html#linting-your-code">Linting your code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Software_development.html#using-ai-in-development">Using AI in development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#simple-testing">Simple testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#regression-tests">Regression tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#static-tests">Static tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#ui-tests">UI tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#testing-frameworks">Testing frameworks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="a_first_coding_exercise.html">Our first coding exercise</a><ul>
@@ -632,15 +664,6 @@ software is free (in terms of beer and speech) is amazing.</p>
 <li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#using-excel">Using Excel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#csv-files">CSV files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spreadsheets_data.html#other-data-formats">Other data formats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#simple-testing">Simple testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#regression-tests">Regression tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#unit-tests">Unit tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#static-tests">Static tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#ui-tests">UI tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Testing_code.html#testing-frameworks">Testing frameworks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="R_ggplot2.html">Mini course: ggplot2 tutorial</a><ul>
@@ -754,8 +777,8 @@ By Jon Hill
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
