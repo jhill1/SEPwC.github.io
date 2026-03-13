@@ -182,8 +182,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="a_first_coding_exercise.html">Our first coding exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Spreadsheets_data.html">Moving from spreadsheets to data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mini course: ggplot2 tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GIS.html">Mini-course: GIS</a></li>
@@ -375,6 +376,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-exercises">ggplot2 Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -931,6 +933,171 @@ object is the output of the <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 </section>
+<section id="ggplot2-exercises">
+<h2>ggplot2 Exercises<a class="headerlink" href="#ggplot2-exercises" title="Link to this heading">#</a></h2>
+<p>Building on the concepts covered in the tutorial, complete the following exercises using the <code class="docutils literal notranslate"><span class="pre">chic</span></code> dataset.</p>
+<div class="admonition-exercise-1-exploring-geometries admonition">
+<p class="admonition-title">Exercise 1: Exploring Geometries</p>
+<p><strong>Goal:</strong> Understand how different <code class="docutils literal notranslate"><span class="pre">geom_</span></code> functions change the visualization.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Create a scatter plot of Ozone (<code class="docutils literal notranslate"><span class="pre">o3</span></code>) on the y-axis against Temperature (<code class="docutils literal notranslate"><span class="pre">temp</span></code>) on the x-axis.</p></li>
+<li><p><strong>Bonus:</strong> Add a “trend line” over the points using <code class="docutils literal notranslate"><span class="pre">geom_smooth(method</span> <span class="pre">=</span> <span class="pre">&quot;lm&quot;)</span></code>. How does the relationship look?</p></li>
+<li><p><strong>Variation:</strong> Change the points to a specific color (e.g., “darkgreen”) and use a different shape (e.g., shape 17, which is a triangle).</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic scatter plot with a linear trend line</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o3</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;darkgreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">17</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">       </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-2-theme-and-label-polishing admonition">
+<p class="admonition-title">Exercise 2: Theme and Label Polishing</p>
+<p><strong>Goal:</strong> Practice making a plot “publication-ready.”</p>
+<p><strong>Task:</strong> Take the plot from Exercise 1 and:</p>
+<ol class="arabic simple">
+<li><p>Add a title and subtitle using <code class="docutils literal notranslate"><span class="pre">labs()</span></code>.</p></li>
+<li><p>Change the overall theme to <code class="docutils literal notranslate"><span class="pre">theme_minimal()</span></code>.</p></li>
+<li><p>Rotate the x-axis text by 45 degrees so the labels don’t overlap.</p></li>
+<li><p>Increase the font size of the axis titles to 18 using <code class="docutils literal notranslate"><span class="pre">element_text(size</span> <span class="pre">=</span> <span class="pre">18)</span></code>.</p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding labels and adjusting theme elements</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o3</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;darkgreen&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">17</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">         </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ozone Levels vs Temperature&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Data from NMMAPS Chicago (1997-2000)&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Temperature (°F)&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ozone (ppb)&quot;</span>
+<span class="w">     </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">         </span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">         </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">)</span>
+<span class="w">     </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-3-legend-and-color-logic admonition">
+<p class="admonition-title">Exercise 3: Legend and Color Logic</p>
+<p><strong>Goal:</strong> Master mapping variables to aesthetics versus setting them manually.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Create a plot of <code class="docutils literal notranslate"><span class="pre">date</span></code> vs <code class="docutils literal notranslate"><span class="pre">temp</span></code>, but color the points by the <code class="docutils literal notranslate"><span class="pre">season</span></code> variable.</p></li>
+<li><p><strong>Constraint:</strong> Use <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> to set specific colors for the seasons (e.g., Winter = “blue”, Summer = “red”, etc.).</p></li>
+<li><p><strong>Advanced:</strong> Move the legend to the bottom of the plot and remove the legend title.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manual color scales and legend positioning</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">         </span><span class="s">&quot;Winter&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s">&quot;Spring&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;green&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s">&quot;Summer&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s">&quot;Autumn&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;orange&quot;</span>
+<span class="w">     </span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">         </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bottom&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">legend.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">()</span>
+<span class="w">     </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-4-faceting-and-subsets admonition">
+<p class="admonition-title">Exercise 4: Faceting and Subsets</p>
+<p><strong>Goal:</strong> Learn how to break complex data into digestible chunks.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Use <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code> to create a separate plot for each <code class="docutils literal notranslate"><span class="pre">year</span></code> in the dataset showing <code class="docutils literal notranslate"><span class="pre">date</span></code> vs <code class="docutils literal notranslate"><span class="pre">temp</span></code>.</p></li>
+<li><p><strong>Experiment:</strong> Use <code class="docutils literal notranslate"><span class="pre">scales</span> <span class="pre">=</span> <span class="pre">&quot;free_x&quot;</span></code> in your facet call. What happens to the x-axis of each individual plot?</p></li>
+<li><p><strong>Challenge:</strong> Create a grid using <code class="docutils literal notranslate"><span class="pre">facet_grid(year</span> <span class="pre">~</span> <span class="pre">season)</span></code> to see how temperature varies across both years and seasons simultaneously.</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grid of plots using year and season</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">facet_grid</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">season</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-5-critical-data-limits admonition">
+<p class="admonition-title">Exercise 5: Critical Data Limits</p>
+<p><strong>Goal:</strong> Understand the difference between “subsetting” and “clipping” data.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Create a boxplot of <code class="docutils literal notranslate"><span class="pre">temp</span></code> for each <code class="docutils literal notranslate"><span class="pre">season</span></code>.</p></li>
+<li><p><strong>The Test:</strong> Apply <code class="docutils literal notranslate"><span class="pre">ylim(25,</span> <span class="pre">75)</span></code> to the plot. Then, try the same plot but use <code class="docutils literal notranslate"><span class="pre">coord_cartesian(ylim</span> <span class="pre">=</span> <span class="pre">c(25,</span> <span class="pre">75))</span></code> instead.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Think about it:</strong> Why do the boxes/medians change position in one version but not the other? Re-read the “Caution” section in the tutorial if you aren’t sure!</p>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparison of scaling vs clipping</span>
+<span class="c1"># Version A: ylim (removes data points outside range, affects boxplot stats)</span>
+<span class="n">p1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">geom_boxplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">ylim</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Scaling (ylim)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Version B: coord_cartesian (zooms in without removing data)</span>
+<span class="n">p2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">geom_boxplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Clipping (coord_cartesian)&quot;</span><span class="p">)</span>
+
+<span class="c1"># (Optional) Use patchwork to see them side-by-side</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+<span class="n">p1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-final-challenge-the-perfect-output admonition">
+<p class="admonition-title">Final Challenge: The “Perfect” Output</p>
+<p><strong>Task:</strong> Combine your favorite plot from the exercises above and save it as a high-resolution PDF with a width of
+200mm and height of 150mm using <code class="docutils literal notranslate"><span class="pre">ggsave()</span></code>. Verify that the file opens and looks correct on your computer.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id46">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Saving the final result</span>
+<span class="n">final_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">chic</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">theme_bw</span><span class="p">()</span>
+
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;chicago_temp_plot.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">final_plot</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">150</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 
@@ -994,6 +1161,7 @@ object is the output of the <code class="docutils literal notranslate"><span cla
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ggplot2-exercises">ggplot2 Exercises</a></li>
 </ul>
   </nav></div>
 

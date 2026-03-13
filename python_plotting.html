@@ -183,8 +183,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="a_first_coding_exercise.html">Our first coding exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
@@ -372,6 +372,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-and-other-nonlinear-axes">Logarithmic and other nonlinear axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-exercises">Pyplot Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -997,6 +998,193 @@ details.</p>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/SZeWul7uujU" style="border: 0; height: 345px; width: 560px">
 </iframe></div></section>
+<section id="pyplot-exercises">
+<h2>Pyplot Exercises<a class="headerlink" href="#pyplot-exercises" title="Link to this heading">#</a></h2>
+<p>These exercises are designed to test your understanding of the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface,
+ranging from basic plotting to advanced layout and annotation.</p>
+<div class="admonition-exercise-1-basic-line-and-marker-styling admonition">
+<p class="admonition-title">Exercise 1: Basic Line and Marker Styling</p>
+<p><strong>Goal:</strong> Practice using format strings and basic plot decoration.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Task:</strong> Create a plot using two NumPy arrays:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> should be values from 0 to 10.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> should be the square of those values.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Requirements:</strong></dt><dd><ol class="arabic simple">
+<li><p>Plot the data using green triangles connected by a dashed line (Hint: search format strings like <code class="docutils literal notranslate"><span class="pre">'g^--'</span></code>).</p></li>
+<li><p>Add a label to the x-axis called “Input Value” and the y-axis called “Square Value”.</p></li>
+<li><p>Set the axis limits so x goes from 0 to 12 and y goes from 0 to 120.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;g^--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Input Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Square Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-2-categorical-subplots admonition">
+<p class="admonition-title">Exercise 2: Categorical Subplots</p>
+<p><strong>Goal:</strong> Master the grid layout system and different plot types.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Task:</strong> Given the following data:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">activities</span> <span class="pre">=</span> <span class="pre">['Reading',</span> <span class="pre">'Gaming',</span> <span class="pre">'Sleeping',</span> <span class="pre">'Coding']</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hours</span> <span class="pre">=</span> <span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">8,</span> <span class="pre">5]</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Requirements:</strong></dt><dd><ol class="arabic simple">
+<li><p>Create a figure with a size of 12x4 inches.</p></li>
+<li><p>Create two subplots side-by-side (1 row, 2 columns).</p></li>
+<li><p>The first subplot should be a <strong>bar chart</strong>.</p></li>
+<li><p>The second subplot should be a <strong>scatter plot</strong>.</p></li>
+<li><p>Add a “super title” (<code class="docutils literal notranslate"><span class="pre">suptitle</span></code>) for the entire figure called “My Daily Routine”.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">activities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Reading&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaming&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleeping&#39;</span><span class="p">,</span> <span class="s1">&#39;Coding&#39;</span><span class="p">]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Subplot 1: Bar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hours&#39;</span><span class="p">)</span>
+
+<span class="c1"># Subplot 2: Scatter</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">hours</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hours&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;My Daily Routine&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-3-annotations-and-math-text admonition">
+<p class="admonition-title">Exercise 3: Annotations and Math Text</p>
+<p><strong>Goal:</strong> Use TeX expressions and annotations to highlight data.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Plot a sine wave (<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.sin(x)</span></code>) for <code class="docutils literal notranslate"><span class="pre">x</span></code> values between 0 and <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
+<li><dl class="simple">
+<dt><strong>Requirements:</strong></dt><dd><ol class="arabic simple">
+<li><p>Use a raw string (<code class="docutils literal notranslate"><span class="pre">r''</span></code>) to set the title to the mathematical formula: <span class="math notranslate nohighlight">\(\alpha = \sin(\beta)\)</span>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">plt.annotate</span></code> function to point to the peak of the wave (where <span class="math notranslate nohighlight">\(x = \pi/2\)</span> and <span class="math notranslate nohighlight">\(y = 1\)</span>).</p></li>
+<li><p>Set the annotation text to say “Maximum” and ensure the arrow is visible.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\alpha = \sin(\beta)$&#39;</span><span class="p">)</span>
+
+<span class="c1"># Annotate the peak</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Maximum&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise-4-logarithmic-scaling admonition">
+<p class="admonition-title">Exercise 4: Logarithmic Scaling</p>
+<p><strong>Goal:</strong> Visualize data across different magnitudes.</p>
+<ul class="simple">
+<li><p><strong>Task:</strong> Create a plot where <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">np.linspace(0,</span> <span class="pre">10,</span> <span class="pre">100)</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.exp(x)</span></code>.</p></li>
+<li><dl class="simple">
+<dt><strong>Requirements:</strong></dt><dd><ol class="arabic simple">
+<li><p>Plot <code class="docutils literal notranslate"><span class="pre">x</span></code> vs <code class="docutils literal notranslate"><span class="pre">y</span></code> on a <strong>linear</strong> scale.</p></li>
+<li><p>In a second subplot (or second figure), plot the same data but change the y-axis to a <strong>logarithmic</strong> scale using <code class="docutils literal notranslate"><span class="pre">plt.yscale('log')</span></code>.</p></li>
+<li><p>Enable the grid on both plots.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Memory Tip:</strong> If you are creating multiple figures in a script or notebook, remember to use <code class="docutils literal notranslate"><span class="pre">plt.close()</span></code> to release memory!</p>
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Linear Scale&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Logarithmic Scale&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Helpful for preventing label overlap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 
@@ -1056,6 +1244,7 @@ details.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-and-other-nonlinear-axes">Logarithmic and other nonlinear axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyplot-exercises">Pyplot Exercises</a></li>
 </ul>
   </nav></div>
 
