@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Debuggers" href="debuggers.html" />
-    <link rel="prev" title="Mini course: Tidal analysis in Python" href="tides_python.html" />
+    <link rel="prev" title="Python Xarray Module" href="Python_xarray.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,8 +182,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Revision_control.html">Revision control with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python2.html">Python: part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="R2.html">R: part 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Software_development.html">Software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Using git with Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing_code.html">Testing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="a_first_coding_exercise.html">Our first coding exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python3.html">Python: part 3</a></li>
@@ -193,6 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_plotting.html">Mini course: Pyplot tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sentiment_analysis.html">Mini course: Sentiment Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tides_python.html">Mini course: Tidal analysis in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_xarray.html">Python Xarray Module</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mini-course: GIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debuggers.html">Debuggers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
@@ -367,14 +368,25 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terra-library">The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasterising-a-shapefile">Rasterising a shapefile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-proximity">Calculating proximity</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sf-library">The <code class="docutils literal notranslate"><span class="pre">sf</span></code> library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reprojecting-to-match-another-raster">Reprojecting to match another raster</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-geopandas-library">The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-xarray-library">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-in-data">Reading in data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-xarray-and-running-xarray-spatial">Creating an xarray and running xarray-spatial</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-rasterised-data-from-shapefiles">Creating rasterised data from shapefiles</a></li>
 </ul>
 </li>
 </ul>
@@ -397,25 +409,21 @@ and R. Geospatial data is information that also has a geographical component.
 Example include house proces, coupled to locations; roads and road types or hazard
 assessment.</p>
 <p>There are three things we need to learn about first:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>vector data</p></li>
 <li><p>raster data</p></li>
 <li><p>projection spaces or coordinate spaces</p></li>
 </ul>
-</div></blockquote>
 <section id="vector-data">
 <h3>Vector data<a class="headerlink" href="#vector-data" title="Link to this heading">#</a></h3>
 <p id="index-1">Vector data represent geometries via mathematicla objects. You can zoom
 into a vector infinitely at it will remain infintely small! There are
 three types of vector data:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>points</p></li>
 <li><p>lines</p></li>
 <li><p>polygons</p></li>
 </ul>
-</div></blockquote>
 <p>Vectors are most commonly stored as shapefiles: <code class="docutils literal notranslate"><span class="pre">*.shp</span></code> files. We call then shapefiles
 put they actually consist of a number of files. So a file called <code class="docutils literal notranslate"><span class="pre">landslides.shp</span></code> also
 will have <code class="docutils literal notranslate"><span class="pre">landslides.prj</span></code>, <code class="docutils literal notranslate"><span class="pre">landslides.dbf</span></code> and <code class="docutils literal notranslate"><span class="pre">landslides.shx</span></code> and a few more beside.
@@ -565,8 +573,7 @@ simple calculations (and indeed more complex ones!) can be carried out.</p>
 <code class="docutils literal notranslate"><span class="pre">terra</span></code> comes with a number of useful functions, including those to calculate
 slope, proximity distance, extract data from rasters, create a stack of rasters,
 and to <em>rasterise</em> a vector (i.e. convert from vector to
-raster).</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library can also load vector data:</p>
+raster). The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library can also load vector data:</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">)</span>
@@ -574,39 +581,85 @@ raster).</p>
 </div>
 </div>
 <p>The same functions as above (<code class="docutils literal notranslate"><span class="pre">crs()</span></code>, <code class="docutils literal notranslate"><span class="pre">ext()</span></code>, <code class="docutils literal notranslate"><span class="pre">project()</span></code>) work as expected on
-vector data.</p>
+vector data. Let’s look at some of the other functions in detail.</p>
+</section>
+<section id="rasterising-a-shapefile">
+<h3>Rasterising a shapefile<a class="headerlink" href="#rasterising-a-shapefile" title="Link to this heading">#</a></h3>
+<p id="index-6">Often, you will need to convert vector data (like our tide gauges) into a grid format to perform
+pixel-by-pixel calculations with other raster data. In <code class="docutils literal notranslate"><span class="pre">terra</span></code>, this is done using the <code class="docutils literal notranslate"><span class="pre">rasterize()</span></code> function.</p>
+<p>To rasterise a vector, you always need a <em>template</em> raster. This template defines the physical grid:
+the extent, resolution, and CRS of the output. We can use our existing <code class="docutils literal notranslate"><span class="pre">my_raster</span></code> as the template.</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, ensure our vector data is loaded as a terra SpatVector</span>
+<span class="n">tide_gauges_vect</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># Rasterise the points, burning a specific column (e.g., &quot;ID&quot;) into the pixels</span>
+<span class="c1"># Any pixel that doesn&#39;t overlap a point will automatically become NA</span>
+<span class="n">gauges_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="n">tide_gauges_vect</span><span class="p">,</span><span class="w"> </span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="s">&quot;ID&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s see what it looks like</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">gauges_raster</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="calculating-proximity">
+<h3>Calculating proximity<a class="headerlink" href="#calculating-proximity" title="Link to this heading">#</a></h3>
+<p id="index-7">A very common spatial operation is finding the distance from every pixel in a landscape to a specific feature of
+interest—like a road, river, or in our case, a tide gauge. The <code class="docutils literal notranslate"><span class="pre">terra</span></code> package handles this elegantly with the <code class="docutils literal notranslate"><span class="pre">distance()</span></code> function.</p>
+<p>If you pass a raster containing <code class="docutils literal notranslate"><span class="pre">NA</span></code> and non-<code class="docutils literal notranslate"><span class="pre">NA</span></code> values to <code class="docutils literal notranslate"><span class="pre">distance()</span></code>, it calculates the distance
+from all the <code class="docutils literal notranslate"><span class="pre">NA</span></code> cells to the nearest non-<code class="docutils literal notranslate"><span class="pre">NA</span></code> cell. We can use the rasterised gauges we just created to build a proximity map.</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate distance from all empty pixels to the nearest tide gauge</span>
+<span class="n">proximity_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">gauges_raster</span><span class="p">)</span>
+
+<span class="c1"># Plot the result to see the distance gradients</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">proximity_raster</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This generates a continuous surface where the value of every pixel represents the distance to the nearest
+gauge.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The distance is calculated in the units of your Coordinate Reference System. If your CRS is in metres (like UTM),
+the output values are in metres. If it’s in degrees (like WGS84), the output is in degrees
+which is often less useful for distance analysis!</p>
+</div>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/bzD-DGFcxUw" style="border: 0; height: 345px; width: 560px">
 </iframe></div></section>
 <section id="the-sf-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">sf</span></code> library<a class="headerlink" href="#the-sf-library" title="Link to this heading">#</a></h3>
-<p id="index-6">R also have another popular library for dealing with shapefiles/vector data; <code class="docutils literal notranslate"><span class="pre">sf</span></code>.
+<p id="index-8">R also have another popular library for dealing with shapefiles/vector data; <code class="docutils literal notranslate"><span class="pre">sf</span></code>.
 This library has more features than <code class="docutils literal notranslate"><span class="pre">terra</span></code> so is worth learning.</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
 <span class="n">tide_gauges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>Vector data can be points, lines or polygons. We can find out which using:</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_geometry_type</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>We can then find out the CRS and extennt:</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">st_crs</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 <span class="nf">st_bbox</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">sf</span></code> to create a shapefile on the fly:</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">aoi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.polygons</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">ext</span><span class="p">(</span><span class="n">my_raster</span><span class="p">),</span><span class="w"> </span><span class="n">crs</span><span class="o">=</span><span class="n">terra</span><span class="o">::</span><span class="nf">crs</span><span class="p">(</span><span class="n">my_raster</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -622,16 +675,16 @@ and geometric calculations (area, distances, lengths).</p>
 <h3>Switching between the two<a class="headerlink" href="#switching-between-the-two" title="Link to this heading">#</a></h3>
 <p>Using two different libraries for shapefiles can be a pain, but it is fairly
 easy to switch a vector dataset between the two.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">sf</span><span class="o">::</span><span class="nf">st_as_sf</span><span class="p">(</span><span class="n">terra</span><span class="o">::</span><span class="nf">vect</span><span class="p">(</span><span class="s">&quot;tide_gauges.shp&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <p>Will convert a <code class="docutils literal notranslate"><span class="pre">terra</span></code> vector to the <code class="docutils literal notranslate"><span class="pre">sf</span></code> format. Normally, <code class="docutils literal notranslate"><span class="pre">terra</span></code> can deal with
 <code class="docutils literal notranslate"><span class="pre">sf</span></code> objects, but you sometimes need to wrap the <code class="docutils literal notranslate"><span class="pre">sf</span></code> object in the <code class="docutils literal notranslate"><span class="pre">st_zm</span></code> function:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/R_logo.png"><img alt="R" src="_images/R_logo.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">points_as_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="nf">st_zm</span><span class="p">(</span><span class="n">tide_gauges</span><span class="p">),</span><span class="w"> </span><span class="n">my_raster</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -642,17 +695,17 @@ compatible with <code class="docutils literal notranslate"><span class="pre">ter
 </section>
 <section id="gis-python">
 <h2>GIS - Python<a class="headerlink" href="#gis-python" title="Link to this heading">#</a></h2>
-<p id="index-7">Python has a number of packages that can help with GIS analysis. We’re going to focus on
+<p id="index-9">Python has a number of packages that can help with GIS analysis. We’re going to focus on
 three: <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> and <code class="docutils literal notranslate"><span class="pre">shapely</span></code>.</p>
 <p>You should download this <a class="reference external" href="https://github.com/jhill1/SEPwC/raw/master/code_examples/gis_data.zip">zip file</a>
 which contains the data required. Make sure you
 change your working directory to match where you’ve downloaded the data.</p>
 <section id="the-rasterio-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library<a class="headerlink" href="#the-rasterio-library" title="Link to this heading">#</a></h3>
-<p id="index-8">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library is used to load, manipulate and plot raster
+<p id="index-10">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library is used to load, manipulate and plot raster
 data.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rasterio</span>
 
 <span class="n">my_raster</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gis_data/tidal_range.tif&quot;</span><span class="p">)</span>
@@ -663,8 +716,8 @@ data.</p>
 <p>Python will print out some basic info on the raster. This includes the filename
 and the read/write status. <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> uses a number of attributes to contain information
 about the raster:</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">width</span>
 <span class="n">my_raster</span><span class="o">.</span><span class="n">height</span>
 <span class="n">my_raster</span><span class="o">.</span><span class="n">nodata</span>
@@ -674,8 +727,8 @@ about the raster:</p>
 <p>For this raster dataset, there is a single band. Rasters can store multiple
 bands in a single file. It’s common, for example, to store the R, G and B
 colours separately. You can check this using the <code class="docutils literal notranslate"><span class="pre">count</span></code> attribute:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_raster</span><span class="o">.</span><span class="n">count</span>
 </pre></div>
 </div>
@@ -709,8 +762,8 @@ can <em>overshoot</em> the limits of the old data, but can also produce smoother
 without abrupt changes. Whenever you project onto a new coordinate syste, you
 are altering the data.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rasterio.warp</span> <span class="kn">import</span> <span class="n">calculate_default_transform</span><span class="p">,</span> <span class="n">reproject</span><span class="p">,</span> <span class="n">Resampling</span>
 
 <span class="n">dstCrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">}</span>
@@ -748,14 +801,35 @@ Finally, the data are reprojected, and then the file closed to save the data.</p
 <p>When dealing with raster data you often need the rasters to be identical;
 same resolution, same extents, same projection space. Once identical, then
 simple calculations (and indeed more complex ones!) can be carried out.</p>
+<section id="reprojecting-to-match-another-raster">
+<h4>Reprojecting to match another raster<a class="headerlink" href="#reprojecting-to-match-another-raster" title="Link to this heading">#</a></h4>
+<p>One of the most common GIS tasks is ensuring two datasets align perfectly on the same pixel grid so you
+can perform maths on them. <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> makes this incredibly simple with the <code class="docutils literal notranslate"><span class="pre">reproject_match</span></code> function.</p>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume we have a source raster that is in a different CRS or resolution</span>
+<span class="n">source_da</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;path/to/source_data.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># And we have a template raster that we want our source to match</span>
+<span class="n">template_da</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;path/to/template_data.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># Reproject and resample the source to perfectly align with the template</span>
+<span class="n">matched_da</span> <span class="o">=</span> <span class="n">source_da</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject_match</span><span class="p">(</span><span class="n">template_da</span><span class="p">)</span>
+
+<span class="c1"># Now you can safely perform operations between the two!</span>
+<span class="c1"># e.g., difference = template_da - matched_da</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 <section id="the-geopandas-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> library<a class="headerlink" href="#the-geopandas-library" title="Link to this heading">#</a></h3>
-<p id="index-9"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is the geographical equivalent to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It deals with dataframes
+<p id="index-11"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is the geographical equivalent to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. It deals with dataframes
 but those dataframes have a <code class="docutils literal notranslate"><span class="pre">geometry</span></code> component. It therefore maps onto GIS Vector
 data very well.</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
 
 <span class="n">tide_gauges</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;gis_data/tide_gauges.shp&quot;</span><span class="p">)</span>
@@ -766,8 +840,8 @@ data very well.</p>
 <p>Vector data can be points, lines or polygons. The <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column tells us this and is,
 in fact, a <code class="docutils literal notranslate"><span class="pre">shapely</span></code> object. <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> can carry out a number of geometric calculations, e.g.
 distances:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">whitby</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
 <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tide_gauges</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">whitby</span><span class="p">)</span>
 <span class="n">tide_gauges</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span>
@@ -777,16 +851,17 @@ distances:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> library has a number of functions, such as
 sampling within a polygon, geometry calculations (differences, unions, intersections),
 and geometric calculations (area, distances, lengths).</p>
+<p>Example of sampling</p>
 </section>
 <section id="the-shapely-library">
 <h3>The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library<a class="headerlink" href="#the-shapely-library" title="Link to this heading">#</a></h3>
-<p id="index-10"><code class="docutils literal notranslate"><span class="pre">shapely</span></code> is a library designed to do geometry calculations. It uses GIS Vector data
+<p id="index-12"><code class="docutils literal notranslate"><span class="pre">shapely</span></code> is a library designed to do geometry calculations. It uses GIS Vector data
 which can be loaded into a <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>. You can also create geometries very easily in
 <code class="docutils literal notranslate"><span class="pre">shapely</span></code>. However, you often don’t need to use the main functions in <code class="docutils literal notranslate"><span class="pre">shapely</span></code> itself
 as <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is built on top of <code class="docutils literal notranslate"><span class="pre">shapely</span></code>. It’s often needed for creating new
 vector data though.</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
 
 <span class="n">my_box</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">my_raster</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
@@ -796,6 +871,123 @@ vector data though.</p>
 <p>This creates a polygon using the extent (bounds) of the raster object we loaded earlier.</p>
 <p>You can similar create points, lines, etc. Most of the geometric operations in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>
 come from <code class="docutils literal notranslate"><span class="pre">shapely</span></code>, including things like <code class="docutils literal notranslate"><span class="pre">within</span></code>, <code class="docutils literal notranslate"><span class="pre">intersects</span></code>, etc.</p>
+</section>
+<section id="the-xarray-library">
+<h3>The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> library<a class="headerlink" href="#the-xarray-library" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> is a module that deals with grid-like data. It’s therefore really useful for GIS applications
+and has an extension libraries like <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> which links <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> with <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, and <code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code>
+which adds spatial algorithms (like slope and proximity) and more geographical things like hydrology to <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.</p>
+<p><a class="reference internal" href="Python_xarray.html#python-xarray-module"><span class="std std-ref">I’ve covered Xarray here</span></a>, so let’s dive into the geospatial aspects only.</p>
+<section id="reading-in-data">
+<h4>Reading in data<a class="headerlink" href="#reading-in-data" title="Link to this heading">#</a></h4>
+<p>To read geospatial raster data (like GeoTIFFs) directly into an <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>,
+we use <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code>. When you import <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code>, it registers the <code class="docutils literal notranslate"><span class="pre">.rio</span></code> accessor,
+which gives your <code class="docutils literal notranslate"><span class="pre">xarray</span></code> objects geospatial awareness like CRS and spatial bounds.</p>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">rioxarray</span>
+
+<span class="c1"># Open a GeoTIFF file</span>
+<span class="c1"># rioxarray automatically parses the CRS and transform information</span>
+<span class="n">elevation_da</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;path/to/elevation.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># You can easily check the coordinate reference system (CRS)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevation_da</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="c1"># To drop the &#39;band&#39; dimension if it&#39;s just a single-band raster:</span>
+<span class="n">elevation_da</span> <span class="o">=</span> <span class="n">elevation_da</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">drop_vars</span><span class="p">(</span><span class="s2">&quot;band&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="creating-an-xarray-and-running-xarray-spatial">
+<h4>Creating an xarray and running xarray-spatial<a class="headerlink" href="#creating-an-xarray-and-running-xarray-spatial" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code> provides numba-compiled spatial algorithms. Let’s take the
+elevation <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> we just loaded and calculate the terrain slope and aspect.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For terrain calculations to be accurate, your data should generally be in a
+projected coordinate system (like UTM) rather than geographic coordinates (like WGS84).</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xrspatial</span> <span class="kn">import</span> <span class="n">slope</span><span class="p">,</span> <span class="n">aspect</span>
+
+<span class="c1"># Calculate the slope (returns a new DataArray with slope values in degrees)</span>
+<span class="n">terrain_slope</span> <span class="o">=</span> <span class="n">slope</span><span class="p">(</span><span class="n">elevation_da</span><span class="p">)</span>
+
+<span class="c1"># Calculate the aspect (compass direction the slope faces)</span>
+<span class="n">terrain_aspect</span> <span class="o">=</span> <span class="n">aspect</span><span class="p">(</span><span class="n">elevation_da</span><span class="p">)</span>
+
+<span class="c1"># You can then plot this easily using xarray&#39;s built-in plotting</span>
+<span class="n">terrain_slope</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="creating-rasterised-data-from-shapefiles">
+<h3>Creating rasterised data from shapefiles<a class="headerlink" href="#creating-rasterised-data-from-shapefiles" title="Link to this heading">#</a></h3>
+<p>To convert vector data (like shapefiles or GeoJSONs) into grid-like <code class="docutils literal notranslate"><span class="pre">xarray</span></code> data without relying on heavy
+external dependencies, we can combine <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> with <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> (which comes bundled with <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code>).</p>
+<p>This approach involves reading the shapes, defining our target grid, and “burning” the vector values into a raster array.</p>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text"><a class="reference internal" href="_images/Python-logo-notext.png"><img alt="python" src="_images/Python-logo-notext.png" style="height: 16px;" /></a></span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">rasterio</span> <span class="kn">import</span> <span class="n">features</span>
+<span class="kn">from</span> <span class="nn">rasterio.transform</span> <span class="kn">import</span> <span class="n">from_bounds</span>
+
+<span class="c1"># 1. Read in your vector data</span>
+<span class="n">vector_data</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;path/to/land_cover.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Define the pixel size (resolution) and calculate grid dimensions</span>
+<span class="n">pixel_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">vector_data</span><span class="o">.</span><span class="n">total_bounds</span>
+
+<span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">xmax</span> <span class="o">-</span> <span class="n">xmin</span><span class="p">)</span> <span class="o">/</span> <span class="n">pixel_size</span><span class="p">))</span>
+<span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">ymax</span> <span class="o">-</span> <span class="n">ymin</span><span class="p">)</span> <span class="o">/</span> <span class="n">pixel_size</span><span class="p">))</span>
+
+<span class="c1"># Create an affine transform mapping pixel coordinates to geographic space</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">from_bounds</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># 3. Create an iterable of (geometry, value) pairs for the rasterizer</span>
+<span class="n">shapes</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vector_data</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">vector_data</span><span class="p">[</span><span class="s2">&quot;land_class_id&quot;</span><span class="p">])</span>
+
+<span class="c1"># 4. Rasterize the geometries into a NumPy array</span>
+<span class="n">rasterized_array</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">rasterize</span><span class="p">(</span>
+    <span class="n">shapes</span><span class="o">=</span><span class="n">shapes</span><span class="p">,</span>
+    <span class="n">out_shape</span><span class="o">=</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Your chosen NoData/Background value</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span>
+<span class="p">)</span>
+
+<span class="c1"># 5. Wrap the resulting NumPy array in an xarray.DataArray</span>
+<span class="c1"># Generate the x and y coordinates representing the center of each pixel</span>
+<span class="n">x_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span> <span class="o">+</span> <span class="n">pixel_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">-</span> <span class="n">pixel_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="n">y_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">ymax</span> <span class="o">-</span> <span class="n">pixel_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">ymin</span> <span class="o">+</span> <span class="n">pixel_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="n">land_cover_da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">rasterized_array</span><span class="p">,</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y_coords</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x_coords</span><span class="p">},</span>
+    <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;land_class_id&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Finally, tell rioxarray what the Coordinate Reference System is!</span>
+<span class="n">land_cover_da</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">write_crs</span><span class="p">(</span><span class="n">vector_data</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you simply want to cookie-cutter (clip) an existing xarray raster using a shapefile,
+you don’t need to rasterize the shapefile at all! You can just run
+<code class="docutils literal notranslate"><span class="pre">clipped_da</span> <span class="pre">=</span> <span class="pre">existing_raster.rio.clip(vector_data.geometry,</span> <span class="pre">vector_data.crs)</span></code>.</p>
+</div>
 </section>
 </section>
 </section>
@@ -812,12 +1004,12 @@ come from <code class="docutils literal notranslate"><span class="pre">shapely</
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tides_python.html"
+       href="Python_xarray.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mini course: Tidal analysis in Python</p>
+        <p class="prev-next-title">Python Xarray Module</p>
       </div>
     </a>
     <a class="right-next"
@@ -853,14 +1045,25 @@ come from <code class="docutils literal notranslate"><span class="pre">shapely</
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-r">GIS - R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terra-library">The <code class="docutils literal notranslate"><span class="pre">terra</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasterising-a-shapefile">Rasterising a shapefile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-proximity">Calculating proximity</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sf-library">The <code class="docutils literal notranslate"><span class="pre">sf</span></code> library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-the-two">Switching between the two</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-python">GIS - Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rasterio-library">The <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reprojecting-to-match-another-raster">Reprojecting to match another raster</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-geopandas-library">The <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shapely-library">The <code class="docutils literal notranslate"><span class="pre">shapely</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-xarray-library">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-in-data">Reading in data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-xarray-and-running-xarray-spatial">Creating an xarray and running xarray-spatial</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-rasterised-data-from-shapefiles">Creating rasterised data from shapefiles</a></li>
 </ul>
 </li>
 </ul>
